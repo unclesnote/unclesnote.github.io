@@ -1,0 +1,206 @@
+---
+layout: default
+---
+{% assign VERBOSE=false %}
+{% assign TAG="[home] " %}
+
+{% include lang.html %}
+
+{% if VERBOSE == true %}
+  {{ TAG }}lang={{ page.lang }}<br>
+{% endif %}
+
+{% comment %}-------------------------------------------------------------------{% endcomment %}
+{% comment %} prj_lang_bag / _prj_lang_bag_pin / prj_size_lang_total_pages      {% endcomment %}
+{% comment %}-------------------------------------------------------------------{% endcomment %}
+{% assign prj_lang_bag = site.posts | where_exp: 'item', 'item.lang == page.lang and item.layout == "post" and item.hidden != true' %}
+{% assign prj_lang_bag_pin = prj_lang_bag | where_exp: 'item', 'item.pin == true' %}
+
+{% if VERBOSE == true %}
+  {{ TAG }}prj_lang_bag.size={{ prj_lang_bag.size }}<br>
+  {{ TAG }}prj_lang_bag_pin.size={{ prj_lang_bag_pin.size }}<br>
+{% endif %}
+
+{% assign prj_size_lang_total_pages = prj_lang_bag.size | divided_by: site.prj_paginate %}
+{% assign size_lang_remain_posts = prj_lang_bag.size | modulo: site.prj_paginate %}
+
+{% if VERBOSE == true %}
+  {{ TAG }}prj_size_lang_total_pages(before)={{ prj_size_lang_total_pages }}<br>
+{% endif %}
+
+{% if size_lang_remain_posts > 0 %}
+  {% assign prj_size_lang_total_pages = prj_size_lang_total_pages | plus: 1 %}  
+{% endif %}
+
+{% if VERBOSE == true %}
+  {{ TAG }}size_lang_remain_posts={{ size_lang_remain_posts }}<br>
+  {{ TAG }}prj_size_lang_total_pages(after)={{ prj_size_lang_total_pages }}<br>
+{% endif %}
+
+<!-- capture content -->
+{% capture content %}
+  <!-- prj_lang_bag_pin  -->
+  {% for post in prj_lang_bag_pin %}
+    <article class="card-wrapper">
+      <a href="{{ post.url | relative_url }}" class="card post-preview flex-md-row-reverse">
+        {% if post.image %}
+          {% if post.image.lqip %}
+            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+          {% endif %}
+
+          {% assign src = post.image.path | default: post.image %}
+          {% unless src contains '//' %}
+            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
+
+          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+
+          <img src="{{ src }}" w="17" h="10" alt="{{ alt }}" {{ lqip }}>
+        {% endif %}
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              {% include no-linenos.html content=post.content %}
+              {{ content | markdownify | strip_html | truncate: 200 | escape }}
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              {% include datetime.html date=post.date lang=lang %}
+
+              <!-- categories -->
+              {% if post.categories.size > 0 %}
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  {% for category in post.categories %}
+                    {{ category }}
+                    {%- unless forloop.last -%},{%- endunless -%}
+                  {% endfor %}
+                </span>
+              {% endif %}
+            </div>
+
+            {% if post.pin %}
+              <div class="pin ms-1">
+                <i class="fas fa-thumbtack fa-fw"></i>
+                <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
+              </div>
+            {% endif %}
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </a>
+    </article>    
+  {% endfor %}
+
+  <!-- prj_lang_bag  -->
+  {% if VERBOSE == true %}
+    {{ TAG }}page.ro_page_num = {{ page.ro_page_num }}<br>
+    {{ TAG }}site.prj_paginate = {{ site.prj_paginate }}<br>
+  {% endif %}
+
+  {% assign tmp_offset = page.ro_page_num | times: site.prj_paginate %}
+  {% assign tmp_offset = tmp_offset | minus: 1 %}
+  {% if page.ro_page_num == 1 and prj_lang_bag.size <= site.prj_paginate  %}
+    {% assign tmp_offset = 0 %}
+  {% endif %}
+
+  {% assign tmp_post_cnt_max = page.ro_page_num | times: site.prj_paginate %}
+  {% assign tmp_post_cnt = 0 %}
+
+  {% if VERBOSE == true %}
+    {{ TAG }}tmp_offset = {{ tmp_offset }}<br>
+    {{ TAG }}tmp_post_cnt_max = {{ tmp_post_cnt_max }}<br>
+  {% endif %}
+
+  {% for post in prj_lang_bag %}
+    {% assign tmp_post_cnt = tmp_post_cnt | plus: 1 %}
+
+    {% if tmp_post_cnt < tmp_offset %}
+      {% continue %}
+    {% endif %}
+    {% if tmp_post_cnt > tmp_post_cnt_max %}
+      {% continue %}
+    {% endif %}
+
+    {% if VERBOSE == true %}
+      {{ TAG }}tmp_post_cnt = {{ tmp_post_cnt }}<br>
+    {% endif %}
+
+    <article class="card-wrapper">
+      <a href="{{ post.url | relative_url }}" class="card post-preview flex-md-row-reverse">
+        {% if post.image %}
+          {% if post.image.lqip %}
+            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+          {% endif %}
+
+          {% assign src = post.image.path | default: post.image %}
+          {% unless src contains '//' %}
+            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
+
+          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
+
+          <img src="{{ src }}" w="17" h="10" alt="{{ alt }}" {{ lqip }}>
+        {% endif %}
+
+        <div class="card-body d-flex flex-column">
+          <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+
+          <div class="card-text content mt-0 mb-2">
+            <p>
+              {% include no-linenos.html content=post.content %}
+              {{ content | markdownify | strip_html | truncate: 200 | escape }}
+            </p>
+          </div>
+
+          <div class="post-meta flex-grow-1 d-flex align-items-end">
+            <div class="me-auto">
+              <!-- posted date -->
+              <i class="far fa-calendar fa-fw me-1"></i>
+              {% include datetime.html date=post.date lang=lang %}
+
+              <!-- categories -->
+              {% if post.categories.size > 0 %}
+                <i class="far fa-folder-open fa-fw me-1"></i>
+                <span class="categories">
+                  {% for category in post.categories %}
+                    {{ category }}
+                    {%- unless forloop.last -%},{%- endunless -%}
+                  {% endfor %}
+                </span>
+              {% endif %}
+            </div>
+
+            {% if post.pin %}
+              <div class="pin ms-1">
+                <i class="fas fa-thumbtack fa-fw"></i>
+                <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
+              </div>
+            {% endif %}
+          </div>
+          <!-- .post-meta -->
+        </div>
+        <!-- .card-body -->
+      </a>
+    </article>    
+  {% endfor %}
+
+{% endcapture %}
+
+
+<div id="post-list" class="flex-grow-1 pe-xl-2">
+  {% include refactor-content.html content=content lang=lang %}
+</div>
+<!-- #post-list -->
+
+{% if prj_size_lang_total_pages > 1 %}
+  {% include post-paginator.html %}
+{% endif %}

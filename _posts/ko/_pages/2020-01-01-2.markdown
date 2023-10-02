@@ -1,0 +1,6 @@
+---
+title: Page 2
+layout: home
+ro_ref: page
+ro_page_num: 2
+---

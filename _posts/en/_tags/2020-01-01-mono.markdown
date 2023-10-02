@@ -1,0 +1,8 @@
+---
+title: "Mono"
+layout: tag
+ro_ref: en-tag-Mono
+tag: "Mono"
+tag_web: "mono"
+lang: en
+---

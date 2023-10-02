@@ -1,0 +1,8 @@
+---
+title: "VS Code"
+layout: category
+ro_ref: en-category-VS Code
+category: "VS Code"
+category_web: "vs-code"
+lang: en
+---

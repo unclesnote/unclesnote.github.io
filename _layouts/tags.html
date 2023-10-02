@@ -1,0 +1,33 @@
+---
+layout: page
+# All the Tags of posts.
+---
+{% assign VERBOSE=false %}
+{% assign TAG="[tags.html] " %}
+
+{% include prj_tag.html %}
+
+<div id="tags" class="d-flex flex-wrap mx-xl-2">
+  {% assign tags = '' | split: '' %}
+  {% for t in site.tags %}
+    {% assign tags = tags | push: t[0] %}
+  {% endfor %}
+
+  {% assign sorted_tags = tags | sort_natural %}
+
+
+  {% for idx_tag in (0..prj_tag_list.size) %}
+    {% if idx_tag == prj_tag_list.size %}{% break %}{% endif %}
+    <div>
+      <a class="tag" href="{{ page.lang | relative_url }}/tags{{ prj_tag_list[idx_tag] | slugify | url_encode | relative_url }}">
+        {{ prj_tag_list[idx_tag] -}}
+        {% if prj_tag_list_cnt_a.size > 0 %}
+        <span class="text-muted">{{ prj_tag_list_cnt_a[idx_tag] }}</span>
+        {% else %}
+        <span class="text-muted">{{ prj_tag_list_cnt_b[idx_tag] }}</span>
+        {% endif %}
+      </a>
+    </div>
+  {% endfor %}
+  
+</div>

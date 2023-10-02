@@ -1,0 +1,13 @@
+{% comment %}
+  Detect appearance language and return information
+{% endcomment %}
+
+{% assign prj_site_title = "Default Title" %}
+{% assign prj_site_tagline = "Default Tagline" %}
+
+{% for index in (0..site.languages.size) %}
+    {% if site.languages[index] == page.lang %}
+        {% assign prj_site_title = site.titles[index] %}
+        {% assign prj_site_tagline = site.taglines[index] %}
+    {% endif %}
+{% endfor %}
