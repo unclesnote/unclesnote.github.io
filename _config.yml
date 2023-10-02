@@ -22,7 +22,7 @@ title: Uncle Sammy # the main title
 tagline: Travel with Uncle Sam # it will display as the sub-title
 
 languages: ["en"                    , "ko"       ]
-titles:    ["Uncle Sammy"           , "엉클 샘" ] 
+titles:    ["Uncle's Note"           , "엉클의 노트" ] 
 taglines:  ["Uncle Sammy's IT & Dev Scribblepad" , "엉클 샘의 IT & 개발 낙서장" ]
 
 description: >- # used by seo meta and the atom feed
