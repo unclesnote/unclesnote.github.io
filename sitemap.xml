@@ -1,0 +1,45 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- capture content %}
+{%- for post in site.posts %}
+  {%- if post.layout == "post" %}
+<url>
+  <loc>{{ site.url }}{{- post.url -}}</loc>
+  <lastmod>{{- post.date | date: "%Y-%m-%dT%H:%M:%S%:z" -}}</lastmod>
+    {%- for llang in site.languages %}
+  <xhtml:link rel="alternate" hreflang="{{ llang }}" href="{{ site.url }}/{{ llang }}/{{ post.ro_ref }}" />
+    {%- endfor %}
+</url>
+  {%- elsif post.layout == "home" and post.ro_ref == "home" %}
+<url>
+  <loc>{{ site.url }}/{{- post.lang -}}</loc>
+  {%- capture date_home %}{{- post.date | date: "%Y-%m-%dT%H:%M:%S%:z" -}}{%- endcapture %}
+  <lastmod>{{- date_home -}}</lastmod>
+    {%- for llang in site.languages %}
+  <xhtml:link rel="alternate" hreflang="{{ llang }}" href="{{ site.url }}/{{ llang }}" />
+    {%- endfor %}
+</url>
+  {%- elsif post.layout == "category" or post.layout == "tag" %}
+<url>
+  <loc>{{ site.url }}{{- post.url -}}</loc>
+</url>    
+  {%- endif %}
+{%- endfor %}
+<url>
+  <loc>{{ site.url }}</loc>
+  <lastmod>{{- date_home -}}</lastmod>
+  <priority>1.0</priority>
+  {%- for llang in site.languages %}
+  <xhtml:link rel="alternate" hreflang="{{ llang }}" href="{{ site.url }}/{{ llang }}" />
+  {%- endfor %}
+</url>
+{%- endcapture -%}
+
+{{ content }}
+</urlset>

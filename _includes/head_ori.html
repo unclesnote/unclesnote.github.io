@@ -42,32 +42,9 @@
     {%- unless page.layout == 'home' -%}
       {{ page.title | append: ' | ' }}
     {%- endunless -%}
-
-    {%- for index in (0..site.languages.size) -%}
-      {%- if index == site.languages.size -%}{%- break -%}{%- endif -%}
-      {%- if page.lang == site.languages[index] -%}
-        {{ site.titles[index] }}
-      {%- endif -%}
-    {%- endfor -%}
-    
+    {{ site.title }}
   </title>
 
-  <!-- hreflang -->
-  {% if page.layout == "home" -%}
-    {% for llang in site.languages -%}
-    <link rel="alternate" href="{{ site.url }}/{{ llang }}" hreflang="{{ llang }}" />
-    {% endfor -%}
-    <link rel="alternate" href="{{ site.url }}/en" hreflang="en" hreflang="x-default" />
-
-  {% elsif page.layout == "post" -%} 
-    {% for llang in site.languages -%}
-    <link rel="alternate" href="{{ site.url }}/{{ llang }}/{{ page.ro_ref }}" hreflang="{{ llang }}" />
-    {% endfor -%}
-    <link rel="alternate" href="{{ site.url }}/en/{{ page.ro_ref }}" hreflang="en" hreflang="x-default" />
-
-  {% endif -%}
-
-  <!-- favicons -->
   {% include_cached favicons.html %}
 
   {% if site.resources.ignore_env != jekyll.environment and site.resources.self_hosted %}
