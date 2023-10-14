@@ -1,5 +1,9 @@
 ---
 title:  Ubuntu에서 VS Code를 사용하여 C 개발 환경을 만드는 방법
+image:
+  path: /assets/images/230928213423/ko-thumb-vs_code-csharp-dev-kit-extension.png
+  alt: Ubuntu에서 VS Code를 사용하여 C 개발 환경을 만드는 방법
+images: ["/assets/images/230928213423/vs_code-csharp-dev-kit-extension.png", "/assets/images/230928213423/vs_code-generate-asset-for-build-and-debug.png", "/assets/images/230928213423/vs_code-visual-nuget.png"]
 categories: [C 샤프, VS 코드]
 tags: [CSharp, 개발, 비주얼스튜디오, VSCode]
 description:  C# 소프트웨어는 일반적으로 Windows의 Visual Studio에서 개발할 수 있습니다. 그러나 Ubuntu 환경에서도 개발이 가능합니다. 잘 알려진 IDE로는 Mono 프로젝트에서 제공하는 MonoDevelop이 있습니다. 하지만 이보다 더 많은 것을 사용하는 VS Code C# 소프트웨어 개발 환경을 만들어 보겠습니다. 우분투 20.04 기준입니다.

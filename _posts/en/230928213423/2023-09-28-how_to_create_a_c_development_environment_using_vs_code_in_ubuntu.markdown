@@ -1,5 +1,9 @@
 ---
 title:  How to create a C development environment using VS Code in Ubuntu
+image:
+  path: /assets/images/230928213423/en-thumb-vs_code-csharp-dev-kit-extension.png
+  alt: How to create a C development environment using VS Code in Ubuntu
+images: ["/assets/images/230928213423/vs_code-csharp-dev-kit-extension.png", "/assets/images/230928213423/vs_code-generate-asset-for-build-and-debug.png", "/assets/images/230928213423/vs_code-visual-nuget.png"]
 categories: [C Sharp, VS Code]
 tags: [CSharp, Development, VisualStudio, VSCode]
 description:  C# software can be developed in Visual Studio on Windows in general. However, it can also be developed in Ubuntu environments. A well-known IDE is MonoDevelop provided by the Mono project. However, let's create a VS Code C# software development environment  that uses more than this. Based on Ubuntu 20.04.

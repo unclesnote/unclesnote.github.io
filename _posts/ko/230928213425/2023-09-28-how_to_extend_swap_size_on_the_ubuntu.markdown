@@ -1,9 +1,13 @@
 ---
 title:  Ubuntu에서 스왑 크기를 확장하는 방법
+image:
+  path: /assets/images/230928213425/ko-thumb-swapfile-ubuntu-system-monitor.png
+  alt: Ubuntu에서 스왑 크기를 확장하는 방법
+images: ["/assets/images/230928213425/swapfile-ubuntu-system-monitor.png"]
 categories: [우분투]
 tags: [우분투, 메모리, 교환]
 description:  우분투에서 스왑은 윈도우즈의 가상 메모리에 해당하는 개념으로, 물리 메모리가 부족할 경우 파일을 메모리로 사용한다. Ubuntu에서 스왑 파일을 생성하고 등록하는 방법을 게시하세요. 본 포스팅은 Ubuntu 20.04 버전을 기준으로 작성되었습니다. 어떤 경우에는 메모리 부족으로 인해 큰 패키지를 빌드하는 데 실패할 수 있습니다. 그러나 충분한 스왑 파일이 있으면 성공적으로 빌드하는 데 도움이 됩니다.
-toc: true
+toc: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-09-28 21:34:25 +0900

@@ -22,7 +22,7 @@ title: Uncle Sammy # the main title
 tagline: Travel with Uncle Sam # it will display as the sub-title
 
 languages: ["en"                    , "ko"       ]
-titles:    ["Uncle's Note"           , "엉클스 노트" ] 
+titles:    ["Uncle's Note"           , "엉클스 노트" ]
 taglines:  ["Uncle Sammy's IT & Dev Scribblepad" , "엉클 샘의 IT & 개발 낙서장" ]
 
 description: >- # used by seo meta and the atom feed
@@ -173,10 +173,10 @@ defaults:
   - scope:
       path: _posts/en/2020-01-01-index.markdown
       type: posts
-    values: 
+    values:
       layout: home
-      comments: false 
-      toc: false 
+      comments: false
+      toc: false
       permalink: /en/
       lang: en
   - scope:
@@ -220,10 +220,10 @@ defaults:
   - scope:
       path: _posts/ko/2020-01-01-index.markdown
       type: posts
-    values: 
+    values:
       layout: home
-      comments: false 
-      toc: false 
+      comments: false
+      toc: false
       permalink: /ko/
       lang: ko
   - scope:

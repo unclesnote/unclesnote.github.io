@@ -1,9 +1,13 @@
 ---
 title:  How to extend swap size on the Ubuntu
+image:
+  path: /assets/images/230928213425/en-thumb-swapfile-ubuntu-system-monitor.png
+  alt: How to extend swap size on the Ubuntu
+images: ["/assets/images/230928213425/swapfile-ubuntu-system-monitor.png"]
 categories: [Ubuntu]
 tags: [Ubuntu, Memory, Swap]
 description:  In Ubuntu, swap is a concept that corresponds to Windows' virtual memory, and when physical memory is insufficient, files are used as memory. Post how to create and register swap files in Ubuntu. This post is based on Ubuntu 20.04 version. In some cases, building large packages can fail due to low memory. However, having enough swap files will help you build successfully.
-toc: true
+toc: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-09-28 21:34:25 +0900

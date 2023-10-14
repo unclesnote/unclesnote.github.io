@@ -2,16 +2,21 @@
 layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" 
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
 {%- capture content %}
 {%- for post in site.posts %}
   {%- if post.layout == "post" %}
 <url>
   <loc>{{ site.url }}{{- post.url -}}</loc>
   <lastmod>{{- post.date | date: "%Y-%m-%dT%H:%M:%S%:z" -}}</lastmod>
+    {%- for img in post.images %}
+  <image:image>
+    <image:loc>{{ site.url }}{{ img }}</image:loc>
+  </image:image>
+    {%- endfor %}
     {%- for llang in site.languages %}
   <xhtml:link rel="alternate" hreflang="{{ llang }}" href="{{ site.url }}/{{ llang }}/{{ post.ro_ref }}" />
     {%- endfor %}
@@ -28,7 +33,7 @@ layout: null
   {%- elsif post.layout == "category" or post.layout == "tag" %}
 <url>
   <loc>{{ site.url }}{{- post.url -}}</loc>
-</url>    
+</url>
   {%- endif %}
 {%- endfor %}
 <url>

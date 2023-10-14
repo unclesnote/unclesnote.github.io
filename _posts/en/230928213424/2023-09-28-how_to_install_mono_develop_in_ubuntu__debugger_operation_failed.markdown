@@ -1,7 +1,11 @@
 ---
 title:  How to install Mono Develop in Ubuntu (Debugger operation failed)
+image:
+  path: /assets/images/230928213424/en-thumb-c_sharp_mono-foscal-fossa.png
+  alt: How to install Mono Develop in Ubuntu (Debugger operation failed)
+images: ["/assets/images/230928213424/c_sharp_mono-foscal-fossa.png", "/assets/images/230928213424/c_sharp_mono-beaver.png", "/assets/images/230928213424/c_sharp_mono-debugger-operation-failed.png"]
 categories: [C Sharp]
-tags: [CSharp, Debugger, Mono, Ubuntu]
+tags: [CSharp, Debugger, Mono]
 description:  C# software can be developed not only in Windows environments but also in Linux environments. Therefore, the Mono Project organization distributes an IDE called Mono Development, and let's find out how to install it. It is described based on Ubuntu 20.04 version.
 toc: false
 # Below is readonly values if it's decided once

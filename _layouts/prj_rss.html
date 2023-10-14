@@ -1,0 +1,85 @@
+---
+layout: null
+---
+{%- capture content -%}
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+<channel>
+    {%- assign site_title = "" %}
+    {%- for index in (0..site.languages.size) -%}
+      {%- if index == site.languages.size -%}{%- break -%}{%- endif -%}
+      {%- if page.lang == site.languages[index] %}
+    <title><![CDATA[{{ site.titles[index] }}]]></title>
+        {%- assign site_title = site.titles[index] -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor %}
+    <atom:link href="{{ site.url }}{{ page.url }}" rel="self" type="application/rss+xml" />
+    <link>{{ site.url }}</link>
+    <image>
+      <url>{{ site.url }}/assets/img/site.png</url>
+      <title><![CDATA[{{ site_title }}]]></title>
+      <link>{{ site.url }}</link>
+    </image>
+    <language>{{ page.lang }}</language>
+    {%- for index in (0..site.languages.size) -%}
+      {%- if index == site.languages.size -%}{%- break -%}{%- endif -%}
+      {%- if page.lang == site.languages[index] %}
+    <description><![CDATA[{{ site.taglines[index] }}]]></description>
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor %}
+    <generator>{{ site.url }}</generator>
+    {%- for post in site.posts %}
+      {%- if post.layout == "post" and post.lang == page.lang %}
+    <lastBuildDate>{{- post.date | date: "%a, %d %b %Y %H:%M:%S %z" -}}</lastBuildDate>
+    <pubDate>{{- post.date | date: "%a, %d %b %Y %H:%M:%S %z" -}}</pubDate>
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- for post in site.posts %}
+      {%- if post.layout == "post" and post.lang == page.lang %}
+    <item>
+      <author>{{- site_title -}}</author>
+      <title><![CDATA[{{- post.title -}}]]></title>
+      <link>{{- site.url -}}{{- post.url -}}</link>
+      <guid>{{- site.url -}}{{- post.url -}}</guid>
+      <dc:creator><![CDATA[{{ site_title }}]]></dc:creator>
+      <pubDate>{{- post.date | date: "%a, %d %b %Y %H:%M:%S %z" -}}</pubDate>
+      <category><![CDATA[
+      {%- for cat in post.categories -%}
+        {{ cat }}
+        {%- if forloop.last == false -%},{%- endif -%}
+      {%- endfor -%}
+      ]]></category>
+      <tag><![CDATA[
+        {%- for tag in post.tags -%}
+          {{ tag }}
+          {%- if forloop.last == false -%},{%- endif -%}
+        {%- endfor -%}
+      ]]></tag>
+      <guid isPermaLink="true">{{- site.url -}}{{- post.url -}}</guid>
+      <description><![CDATA[{{- post.description -}}]]></description>
+      <content:encoded><![CDATA[{{ post.content }}]]></content:encoded>
+      {%- if post.image.path %}
+      <media:thumbnail url="{{- site.url -}}{{ post.image.path }}" />
+      {%- endif -%}
+      {%- for img in post.images %}
+      <media:content url="{{- site.url -}}{{ img }}" medium="image" />
+      {%- endfor -%}
+    </item>
+      {%- endif -%}
+    {%- endfor -%}
+
+</channel>
+</rss>
+{%- endcapture -%}
+{{- content -}}

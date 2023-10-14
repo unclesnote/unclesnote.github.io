@@ -1,7 +1,11 @@
 ---
 title:  Ubuntu에서 Mono Development를 설치하는 방법(디버거 작업 실패)
+image:
+  path: /assets/images/230928213424/ko-thumb-c_sharp_mono-foscal-fossa.png
+  alt: Ubuntu에서 Mono Development를 설치하는 방법(디버거 작업 실패)
+images: ["/assets/images/230928213424/c_sharp_mono-foscal-fossa.png", "/assets/images/230928213424/c_sharp_mono-beaver.png", "/assets/images/230928213424/c_sharp_mono-debugger-operation-failed.png"]
 categories: [C 샤프]
-tags: [CSharp, 디버거, 단핵증, 우분투]
+tags: [CSharp, 디버거, 단핵증]
 description:  C# 소프트웨어는 Windows 환경뿐만 아니라 Linux 환경에서도 개발이 가능합니다. 따라서 Mono Project 조직에서는 Mono Development라는 IDE를 배포하고 있으며, 이를 설치하는 방법을 알아보겠습니다. Ubuntu 20.04 버전을 기준으로 설명합니다.
 toc: false
 # Below is readonly values if it's decided once
