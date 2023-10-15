@@ -1,0 +1,17 @@
+---
+layout: null
+---
+{%- capture content -%}
+{%- for post in site.posts -%}
+  {%- if post.lang == page.lang and post.ro_id == page.post_id -%}
+<!doctype html>
+<html>
+  <head>
+  <meta http-equiv="refresh" content="0; url={{ site.url }}{{ post.url }}">
+  <title>{{ post.title }}</title>
+  </head>
+</html>
+  {%- endif -%}
+{%- endfor -%}
+{%- endcapture -%}
+{{ content }}
