@@ -73,7 +73,8 @@ Learn about .NET Runtimes and SDKs:
 | Visual Nuget | Managing Nuggets Packages            | https://marketplace.visualstudio.com/items?itemName=FullStackSpider.visual-nuget |
 
 ![이건 캡션이에요](/assets/images/230928213423/vs_code-csharp-dev-kit-extension.png)  
-*[이건 캡션이에요]*  
+_이건 캡션이에요_
+
 `보기 > 터미널`을 엽니다. 그리고 내 프로젝트 폴더를 만들고 콘솔 프로젝트를 만듭니다.  
 
 ```shell

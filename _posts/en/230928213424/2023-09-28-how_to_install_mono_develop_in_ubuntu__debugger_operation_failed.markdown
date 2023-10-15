@@ -47,14 +47,17 @@ $ sudo apt update
 $ sudo apt install monodevelop
 ```
 ![Ubuntu 20.04 - Foscal Fossa](/assets/images/230928213424/c_sharp_mono-foscal-fossa.png)  
-*[Ubuntu 20.04 - Foscal Fossa]*  
+_Ubuntu 20.04 - Foscal Fossa_
+
 ![Ubuntu 18.04 - Bionic Beaver](/assets/images/230928213424/c_sharp_mono-beaver.png)  
-*[Ubuntu 18.04 - Bionic Beaver]*  
+_Ubuntu 18.04 - Bionic Beaver_
+
 ## Troubleshooting on Mono Develop
 ### Debugger operation failed
 When executing an application with debugging on Mono Develop, a `Debugger operation failed` error occurs.  
 ![Debugger operation failed](/assets/images/230928213424/c_sharp_mono-debugger-operation-failed.png)  
-*[Debugger operation failed]*  
+_Debugger operation failed_
+
 Creating a `gnome-terminal` folder in `/user/lib` and creating a symbolic link from the `gnome-terminal-server` solves the problem.  
 
 ```shell

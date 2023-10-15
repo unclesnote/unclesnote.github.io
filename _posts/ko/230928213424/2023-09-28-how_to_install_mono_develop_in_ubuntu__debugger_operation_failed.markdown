@@ -47,14 +47,17 @@ $ sudo apt update
 $ sudo apt install monodevelop
 ```
 ![우분투 20.04 - Foscal Fossa](/assets/images/230928213424/c_sharp_mono-foscal-fossa.png)  
-*[우분투 20.04 - Foscal Fossa]*  
+_우분투 20.04 - Foscal Fossa_
+
 ![우분투 18.04 - 바이오닉 비버](/assets/images/230928213424/c_sharp_mono-beaver.png)  
-*[우분투 18.04 - 바이오닉 비버]*  
+_우분투 18.04 - 바이오닉 비버_
+
 ## 모노 현상 문제 해결
 ### 디버거 작업이 실패했습니다.
 Mono Development에서 디버깅을 사용하여 애플리케이션을 실행하면 '디버거 작업 실패' 오류가 발생합니다.  
 ![디버거 작업이 실패했습니다.](/assets/images/230928213424/c_sharp_mono-debugger-operation-failed.png)  
-*[디버거 작업이 실패했습니다.]*  
+_디버거 작업이 실패했습니다._
+
 `/user/lib`에 `gnome-terminal` 폴더를 생성하고 `gnome-terminal-server`에서 심볼릭 링크를 생성하면 문제가 해결됩니다.  
 
 ```shell

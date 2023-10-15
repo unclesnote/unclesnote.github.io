@@ -73,7 +73,8 @@ Search for `c#` as a keyword, and install `C# Dev Kit` including others.
 | Visual Nuget | Managing Nuggets Packages            | https://marketplace.visualstudio.com/items?itemName=FullStackSpider.visual-nuget |
 
 ![this is caption](/assets/images/230928213423/vs_code-csharp-dev-kit-extension.png)  
-*[this is caption]*  
+_this is caption_
+
 Open `View > Terminal`. And create my project folder and create console projects.  
 
 ```shell
