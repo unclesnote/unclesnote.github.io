@@ -2,12 +2,28 @@
 layout: null
 ---
 {%- capture content -%}
+{%- assign site_title = "" %}
+{%- for index in (0..site.languages.size) -%}
+  {%- if index == site.languages.size -%}{%- break -%}{%- endif -%}
+  {%- if page.lang == site.languages[index] %}
+    {%- assign site_title = site.titles[index] -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor %}
+
 {%- for post in site.posts -%}
   {%- if post.lang == page.lang and post.ro_id == page.post_id -%}
 <!DOCTYPE html>
 <html lang="{{ post.lang }}">
   <meta charset="utf-8">
   <title>{{ post.title }}</title>
+  <meta property="og:url" content="{{ site.url }}{{ post.url }}" />
+  <meta property="og:site_name" content="{{ site_title }}" />
+  {%- if page.thumbnail %}
+  <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}" />
+  {%- endif %}
+  <meta property="og:image:alt" content="{{ post.title }}" />
+  <meta property="og:type" content="article" />
   <link rel="canonical" href="{{ site.url }}{{ post.url }}">
   <script>location="{{ site.url }}{{ post.url }}"</script>
   <meta http-equiv="refresh" content="0; url={{ site.url }}{{ post.url }}">

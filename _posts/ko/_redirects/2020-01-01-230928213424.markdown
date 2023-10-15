@@ -1,5 +1,6 @@
 ---
 layout: prj_redirects
 post_id: 230928213424
+thumbnail: /assets/images/230928213424/ko-thumb-c_sharp_mono-foscal-fossa.png
 lang: ko
 ---

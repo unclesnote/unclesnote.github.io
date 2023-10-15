@@ -1,5 +1,6 @@
 ---
 layout: prj_redirects
 post_id: 230928213423
+thumbnail: /assets/images/230928213423/en-thumb-vs_code-csharp-dev-kit-extension.png
 lang: en
 ---

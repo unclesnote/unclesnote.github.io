@@ -1,5 +1,6 @@
 ---
 layout: prj_redirects
 post_id: 230928213425
+thumbnail: /assets/images/230928213425/ko-thumb-swapfile-ubuntu-system-monitor.png
 lang: ko
 ---
