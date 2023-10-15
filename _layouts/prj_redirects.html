@@ -4,12 +4,16 @@ layout: null
 {%- capture content -%}
 {%- for post in site.posts -%}
   {%- if post.lang == page.lang and post.ro_id == page.post_id -%}
-<!doctype html>
-<html>
-  <head>
-  <meta http-equiv="refresh" content="0; url={{ site.url }}{{ post.url }}">
+<!DOCTYPE html>
+<html lang="{{ post.lang }}">
+  <meta charset="utf-8">
   <title>{{ post.title }}</title>
-  </head>
+  <link rel="canonical" href="{{ site.url }}{{ post.url }}">
+  <script>location="{{ site.url }}{{ post.url }}"</script>
+  <meta http-equiv="refresh" content="0; url={{ site.url }}{{ post.url }}">
+  <meta name="robots" content="noindex">
+  <h1>{{ post.title }}</h1>
+  <a href="{{ site.url }}{{ post.url }}">Click here if you are not redirected.</a>
 </html>
   {%- endif -%}
 {%- endfor -%}
