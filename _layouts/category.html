@@ -56,13 +56,12 @@ layout: page
       {% endfor %} 
 
       {% if is_found_category == true %}
-        <li class="d-flex justify-content-between px-md-3">
-          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <span class="dash flex-grow-1"></span>
-          {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
-        </li>
+      <li class="d-flex justify-content-between px-md-3">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <span class="dash flex-grow-1"></span>
+        {% include datetime.html date=post.date class='text-muted small text-nowrap' lang=lang %}
+      </li>
       {% endif %}
-      
     {% endfor %}
   </ul>
 </div>
