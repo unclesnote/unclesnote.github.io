@@ -113,7 +113,7 @@ pwa:
 
 
 # Pagination, It's like disabled by setting large value because build failure if set it to 0
-paginate: 10000
+#paginate: 10000
 prj_paginate: 7    # Custome Pagination
 
 # The base URL of your site
@@ -291,11 +291,11 @@ exclude:
   - rollup.config.js
   - package*.json
 
-jekyll-archives:
-  enabled: [categories, tags]
-  layouts:
-    category: category
-    tag: tag
-  permalinks:
-    tag: /tags/:name/
-    category: /categories/:name/
+#jekyll-archives:
+#  enabled: [categories, tags]
+#  layouts:
+#    category: category
+#    tag: tag
+#  permalinks:
+#    tag: /tags/:name/
+#    category: /categories/:name/
