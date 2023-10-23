@@ -1,8 +1,0 @@
----
-title: "단핵증"
-layout: tag
-ro_ref: ko-tag-단핵증
-tag: "단핵증"
-tag_web: "단핵증"
-lang: ko
----

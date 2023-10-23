@@ -1,0 +1,8 @@
+---
+title: "虚拟盒子"
+layout: category
+ro_ref: zh-category-虚拟盒子
+category: "虚拟盒子"
+category_web: "虚拟盒子"
+lang: zh
+---

@@ -1,8 +1,0 @@
----
-title: "메모리"
-layout: tag
-ro_ref: ko-tag-메모리
-tag: "메모리"
-tag_web: "메모리"
-lang: ko
----

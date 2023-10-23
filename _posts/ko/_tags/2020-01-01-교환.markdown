@@ -1,8 +1,0 @@
----
-title: "교환"
-layout: tag
-ro_ref: ko-tag-교환
-tag: "교환"
-tag_web: "교환"
-lang: ko
----

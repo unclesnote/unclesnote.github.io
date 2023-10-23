@@ -1,8 +1,0 @@
----
-title: "개발"
-layout: tag
-ro_ref: ko-tag-개발
-tag: "개발"
-tag_web: "개발"
-lang: ko
----

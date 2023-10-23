@@ -1,0 +1,8 @@
+---
+title: "산출"
+layout: tag
+ro_ref: ko-tag-산출
+tag: "산출"
+tag_web: "산출"
+lang: ko
+---

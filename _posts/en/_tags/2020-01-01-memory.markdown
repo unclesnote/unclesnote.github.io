@@ -1,8 +1,0 @@
----
-title: "Memory"
-layout: tag
-ro_ref: en-tag-Memory
-tag: "Memory"
-tag_web: "memory"
-lang: en
----

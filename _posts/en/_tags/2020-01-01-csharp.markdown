@@ -1,8 +1,0 @@
----
-title: "CSharp"
-layout: tag
-ro_ref: en-tag-CSharp
-tag: "CSharp"
-tag_web: "csharp"
-lang: en
----

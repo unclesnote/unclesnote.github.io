@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231023215842
+thumbnail: /assets/images/231023215842/ko-thumb-default.png
+lang: ko
+---

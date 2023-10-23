@@ -1,6 +1,0 @@
----
-layout: null
-post_id: 230928213425
-thumbnail: /assets/images/230928213425/en-thumb-swapfile-ubuntu-system-monitor.png
-lang: en
----

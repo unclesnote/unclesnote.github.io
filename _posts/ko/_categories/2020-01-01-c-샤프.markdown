@@ -1,8 +1,0 @@
----
-title: "C 샤프"
-layout: category
-ro_ref: ko-category-C 샤프
-category: "C 샤프"
-category_web: "c-샤프"
-lang: ko
----
