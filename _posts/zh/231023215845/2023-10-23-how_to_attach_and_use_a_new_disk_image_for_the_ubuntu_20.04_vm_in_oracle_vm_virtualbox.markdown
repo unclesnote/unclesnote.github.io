@@ -25,7 +25,7 @@ lang: zh
 
 #VirtualBox #GParted #fstab  
 ## 1. 在 Virtual Box 中创建磁盘映像并将其附加到 Ubuntu VM
-我打算添加55GB磁盘，方法是在“Virtual Media Manager”中提前创建一个全尺寸的图像文件。有多种方法可以根据使用的容量来增加图像容量，但我在某处看到，一旦图像文件大小增加，即使使用较少，它也不会再次减少。我们选择了一种更可靠的静态尺寸方法。  
+我打算添加55GB磁盘，方法是在`Virtual Media Manager`中提前创建一个全尺寸的图像文件。有多种方法可以根据使用的容量来增加图像容量，但我在某处看到，一旦图像文件大小增加，即使使用较少，它也不会再次减少。我们选择了一种更可靠的静态尺寸方法。  
 ![Attach Disk-create-virtual-box-disk-image](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
 创建镜像一段时间后，您可以在列表中查看已创建的镜像。  
 ![Attach Disk-virtual-box-media-image](/assets/images/231023215845/attach_disk-virtual-box-media-image.png)  
@@ -35,7 +35,7 @@ lang: zh
 ![Attach Disk-attached-disk-image](/assets/images/231023215845/attach_disk-attached-disk-image.png)  
 ## 2. 使用 GNOME GUI 中的 Gparted 工具初始化磁盘设备
 在 Virtual Box 中运行 Ubuntu VM，我们将创建磁盘表和分区并继续格式化。  
-当然，有控制台工具，例如“fdisk”，但为了方便起见，我们将使用 GNOME 的 GUI 分区工具“GParted”。  
+当然，有控制台工具，例如`fdisk`，但为了方便起见，我们将使用 GNOME 的 GUI 分区工具`GParted`。  
 
 ```shell
 # install gparted
@@ -43,24 +43,24 @@ sudo apt-get install gparted
 # run gparted
 gparted
 ```
-选择连接的磁盘设备并应用“msdos”格式的分区表。  
+选择连接的磁盘设备并应用`msdos`格式的分区表。  
 ![Attach Disk-create-partition-table](/assets/images/231023215845/attach_disk-create-partition-table.png)  
 现在我们将创建一个分区。就我而言，我创建了一个完整大小的分区，如下所示。  
 ![Attach Disk-create-partition](/assets/images/231023215845/attach_disk-create-partition.png)  
-将其格式化为“ext4”格式，然后单击绿色复选框以应用所有先前的设置。  
+将其格式化为`ext4`格式，然后单击绿色复选框以应用所有先前的设置。  
 ![Attach Disk-format-disk](/assets/images/231023215845/attach_disk-format-disk.png)  
-检查分区信息中的“UUID”并复制。 UUID是设备的唯一ID。在下一节中，每次 Ubuntu 启动时都需要 UUID 来自动使磁盘可用。  
+检查分区信息中的`UUID`并复制。 UUID是设备的唯一ID。在下一节中，每次 Ubuntu 启动时都需要 UUID 来自动使磁盘可用。  
 ![Attach Disk-disk-uuid](/assets/images/231023215845/attach_disk-disk-uuid.png)  
 ## 3. 使磁盘在每次 Ubuntu 启动时可用
-当前状态下，格式化的磁盘设备已就绪，但没有可写入文件的路径。因此，我们将通过将我的特定文件夹连接到硬盘设备来创建一条路径。这是“挂载”。  
-上面gparted中标识的“UUID”代表硬盘设备，我们将这个设备连接到“/mnt/data”文件夹，创建一个可以写入文件的路径。由于每次 Ubuntu 启动时磁盘都需要可用，因此我们将在“/etc/fstab”中对此进行描述。  
+当前状态下，格式化的磁盘设备已就绪，但没有可写入文件的路径。因此，我们将通过将我的特定文件夹连接到硬盘设备来创建一条路径。这是`挂载`。  
+上面gparted中标识的`UUID`代表硬盘设备，我们将这个设备连接到`/mnt/data`文件夹，创建一个可以写入文件的路径。由于每次 Ubuntu 启动时磁盘都需要可用，因此我们将在`/etc/fstab`中对此进行描述。  
 下面的行将添加到 `/etc/fstab` 中。  
 
 ```bash
 # UUID=<hard disk device UUID> <folder where the device will be mounted> ext4    defaults          0       0 
 UUID=e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
 ```
-然后，我们将创建一个从挂载的“/mnt/data”到主目录中“data”文件夹的符号链接。  
+然后，我们将创建一个从挂载的`/mnt/data`到主目录中`data`文件夹的符号链接。  
 详细过程如下，如果完成所有步骤，请重新启动。  
 
 ```shell

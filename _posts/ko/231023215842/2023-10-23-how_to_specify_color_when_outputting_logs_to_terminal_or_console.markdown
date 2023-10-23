@@ -20,7 +20,7 @@ lang: ko
 소프트웨어를 개발할 때 로그는 작동을 확인하고 문제의 원인을 찾는 데 도움이 됩니다. 심각한 오류 또는 경고 수준에 대한 로그에 찾기 쉬운 색상이 있으면 도움이 될 것입니다.  
 VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을 설정할 수 있지만, IDE 없이 소프트웨어를 실행하거나 Linux 등 크로스 컴파일 환경에서 소프트웨어를 실행하는 경우 설정이 적용되지 않습니다. . 따라서 터미널 관점에서 독립적으로 텍스트 색상을 설정하는 방법을 소개하겠습니다.  
 > **Visual Studio Code에서 출력 텍스트 색상을 변경하는 방법**  
-> VS Code의 경우 `Settings &gt; User &gt; Workbanch &gt; Appearance &gt; Edit in Settings.json`의 `workbench.colorCustomizations`에서 색상 값을 설정하여 디버그 콘솔 또는 출력 창의 색상을 변경할 수 있습니다.  
+> VS Code의 경우 `Settings > User > Workbanch > Appearance > Edit in Settings.json`의 `workbench.colorCustomizations`에서 색상 값을 설정하여 디버그 콘솔 또는 출력 창의 색상을 변경할 수 있습니다.  
 > `workbench.colorCustomizations`의 매개변수는 아래 링크를 참고하세요.  
 >   
 > [https://code.visualstudio.com/api/references/theme-color](https://code.visualstudio.com/api/references/theme-color){:target="_blank"}    
