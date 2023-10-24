@@ -57,6 +57,9 @@ google_analytics:
 naver_analytics:
   id: 1484dffc3f56610
 
+naver_search_advisor:
+  id: b1692675ab310e3ffe0d2827958296dc5e04a6b5
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,
