@@ -51,6 +51,9 @@ google_site_verification: # fill in to your verification string
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
+google_adsense:
+  id: ca-pub-4780870735701245
+  
 google_analytics:
   id: G-NF80DWFNHD
 
