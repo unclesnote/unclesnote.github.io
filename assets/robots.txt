@@ -4,7 +4,9 @@ permalink: /robots.txt
 ---
 
 User-agent: *
-
 Disallow: /norobots/
+
+User-agent: Yeti
+Allow: /ko/
 
 Sitemap: {{ '/sitemap.xml' | absolute_url }}
