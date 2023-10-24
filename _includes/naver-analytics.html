@@ -1,0 +1,13 @@
+<!-- Naver Analytics -->
+{%- if jekyll.environment == 'production' %}
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "{{ site.naver_analytics.id }}";
+if(window.wcs) {
+  wcs_do();
+}
+</script>
+{%- else %}
+<!-- Naver Analytics - skept because it's not production -->
+{%- endif %}

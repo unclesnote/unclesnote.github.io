@@ -32,6 +32,9 @@ const allowedDomains = [
     'www.googletagmanager.com',
     'www.google-analytics.com',
   {% endif %}
+  {% if site.naver_analytics.id != empty and site.naver_analytics.id %}
+    'wcs.naver.net',
+  {% endif %}
 
   '{{ site.url | split: "//" | last }}',
 

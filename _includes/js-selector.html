@@ -104,3 +104,8 @@
     {% include google-analytics.html %}
   {% endif %}
 {% endif %}
+
+<!-- Naver Analytics -->
+{% if site.naver_analytics.id != empty and site.naver_analytics.id %}
+  {% include naver-analytics.html %}
+{% endif %}
