@@ -54,6 +54,9 @@ google_site_verification: # fill in to your verification string
 google_analytics:
   id: G-NF80DWFNHD
 
+google_search_console:
+  id: Zs7ioN9Ej7SeJQzICZhs1Q1SfBnN7pK0oI3GEy6uncY
+
 naver_analytics:
   id: 1484dffc3f56610
 
