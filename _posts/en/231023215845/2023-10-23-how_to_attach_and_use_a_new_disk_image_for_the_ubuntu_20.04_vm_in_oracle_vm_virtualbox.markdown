@@ -8,7 +8,8 @@ categories: [Ubuntu, Virtual Box]
 tags: [Ubuntu, VirtualBox]
 description:  We will explain how to create, attach, and use disks in the Ubuntu(20.04) VM of Oracle VM VirtualBox. A rough outline of the procedure is as follows. #VirtualBox #GParted #fstab
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:45 +0900

@@ -1,4 +1,5 @@
 <!-- The Top Bar -->
+{% include prj_site.html %}
 
 <header id="topbar-wrapper" aria-label="Top Bar">
   <div
@@ -46,7 +47,7 @@
 
     <div id="topbar-title">
       {% if page.layout == 'home' %}
-        {{- site.data.locales[include.lang].title | default: site.title -}}
+        {{- site.data.locales[include.lang].title | default: prj_site_title -}}
       {% elsif page.collection == 'tabs' or page.layout == 'page' %}
         {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
         {{- site.data.locales[include.lang].tabs[tab_key] | default: page.title -}}

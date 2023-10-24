@@ -8,7 +8,8 @@ categories: [Ubuntu]
 tags: [VSCode, Terminal, DebugConsole, Output, Ubuntu]
 description:  When developing software, logs help you check operation and find the cause of problems. It would be helpful if the logs for critical error or warning levels had colors that were easy to find. You can set the color of the log text in the IDE you are using, such as VS Code or Visual Studio, but if the software is run without an IDE or in a cross-compilation environment such as Linux, the setting will not be applied. Therefore, I will introduce a method to set the color of text independently from the terminal perspective.
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:42 +0900
@@ -54,9 +55,9 @@ Let’s look at the table below first. Each element for changing the text color 
 | Text(Foreground) Color  | Optional  | You can set the text background color by selecting from already defined color codes.                                                                     |
 | `(Escape Character)[0m` | Yes       | Resets the text color and style once set. If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
 
-Although the `escape chacter` is mandatory, you can use one of the three described later depending on the expression method.  
-You can add the `style`, `text color`, and `background color` to suit your taste by separating them with `;`. We will explain the options that can be expressed later, but the order does not matter because the numbers representing each are unique.  
-And finally, reset the text color and style using `(escape character)[0m`. Unless reset, subsequent text colors and styles will continue.  
+Although the `Escape Chacter` is mandatory, you can use one of the three described later depending on the expression method.  
+You can add the `Style`, `Text Color`, and `Background Color` to suit your taste by separating them with `;`. We will explain the options that can be expressed later, but the order does not matter because the numbers representing each are unique.  
+And finally, reset the text color and style using `(Escape Character)[0m`. Unless reset, subsequent text colors and styles will continue.  
 ## Color and Style Codes
 ### 1. Escape Character
 The escape character below is the same as 27 in ASCII code, and the expression method is as follows, and you can use any one.  

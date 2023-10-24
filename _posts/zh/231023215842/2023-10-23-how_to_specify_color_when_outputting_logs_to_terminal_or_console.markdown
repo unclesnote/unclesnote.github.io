@@ -8,7 +8,8 @@ categories: [乌班图]
 tags: [VS代码, 终端, 调试控制台, 输出, 乌班图]
 description:  在开发软件时，日志可以帮助您检查运行情况并查找问题原因。如果严重错误或警告级别的日志具有易于查找的颜色，将会很有帮助。您可以在您使用的 IDE（例如 VS Code 或 Visual Studio）中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。因此，我将介绍一种从终端角度独立设置文本颜色的方法。
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:42 +0900
@@ -55,7 +56,7 @@ lang: zh
 | `(Escape Character)[0m` | Yes       | Resets the text color and style once set. If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
 
 尽管`转义字符`是强制性的，但您可以根据表达方法使用后面描述的三种字符之一。  
-您可以根据自己的喜好添加`样式`、`文本颜色`和`背景颜色`，并用`;`分隔它们。我们稍后将解释可以表达的选项，但顺序并不重要，因为代表每个选项的数字是唯一的。  
+您可以根据自己的喜好添加`样式`、`文本颜色`和`背景颜色`，并用`;`分隔它们。我们稍后将解释可以表达的选项，但顺序并不重要，因为代表每个选项的数字都是唯一的。  
 最后，使用`(转义字符)[0m`重置文本颜色和样式。除非重置，否则后续文本颜色和样式将继续。  
 ## 颜色和款式代码
 ### 1. 转义字符

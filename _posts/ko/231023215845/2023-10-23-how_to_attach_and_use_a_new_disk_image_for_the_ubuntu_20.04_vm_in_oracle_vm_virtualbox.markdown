@@ -8,7 +8,8 @@ categories: [우분투, 가상박스]
 tags: [우분투, 버추얼박스]
 description:  Oracle VM VirtualBox의 Ubuntu(20.04) VM에서 디스크를 생성, 연결, 사용하는 방법을 설명하겠습니다. 대략적인 절차는 다음과 같습니다. #가상박스 #GParted #fstab
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:45 +0900

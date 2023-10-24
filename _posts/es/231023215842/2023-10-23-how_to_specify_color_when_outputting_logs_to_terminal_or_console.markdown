@@ -8,7 +8,8 @@ categories: [ubuntu]
 tags: [CódigoVS, Terminal, Consoladedepuración, Producción, ubuntu]
 description:  Al desarrollar software, los registros le ayudan a comprobar el funcionamiento y encontrar la causa de los problemas. Sería útil si los registros de errores críticos o niveles de advertencia tuvieran colores que fueran fáciles de encontrar. Puede configurar el color del texto del registro en el IDE que está utilizando, como VS Code o Visual Studio, pero si el software se ejecuta sin un IDE o en un entorno de compilación cruzada como Linux, la configuración no se aplicará. . Por lo tanto, presentaré un método para configurar el color del texto independientemente de la perspectiva del terminal.
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:42 +0900
@@ -54,9 +55,9 @@ Veamos primero la tabla a continuación. Se enumera cada elemento para cambiar e
 | Text(Foreground) Color  | Optional  | You can set the text background color by selecting from already defined color codes.                                                                     |
 | `(Escape Character)[0m` | Yes       | Resets the text color and style once set. If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
 
-Aunque el "carácter de escape" es obligatorio, puede utilizar uno de los tres que se describen más adelante dependiendo del método de expresión.  
-Puede agregar el `estilo`, el `color de texto` y el `color de fondo` según sus gustos separándolos con `;`. Más adelante explicaremos las opciones que se pueden expresar, pero el orden no importa porque los números que representan cada una son únicos.  
-Y finalmente, restablezca el color y estilo del texto usando "(carácter de escape) [0m". A menos que se reinicie, los colores y estilos de texto posteriores continuarán.  
+Aunque el `Escape Chacter` es obligatorio, puede utilizar uno de los tres que se describen más adelante dependiendo del método de expresión.  
+Puede agregar el `Estilo`, el `Color del texto` y el `Color de fondo` según sus gustos separándolos con `;`. Más adelante explicaremos las opciones que se pueden expresar, pero el orden no importa porque los números que representan cada una son únicos.  
+Y finalmente, restablezca el color y estilo del texto usando `(Carácter de escape)[0m``. A menos que se reinicie, los colores y estilos de texto posteriores continuarán.  
 ## Códigos de color y estilo
 ### 1. Personaje de escape
 El carácter de escape a continuación es el mismo que 27 en el código ASCII, y el método de expresión es el siguiente y puede usar cualquiera.  

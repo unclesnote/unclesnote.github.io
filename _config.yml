@@ -14,8 +14,8 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Uncle Sammy # the main title
-tagline: Travel with Uncle Sam # it will display as the sub-title
+title: Uncle's Note # the main title
+tagline: Uncle Sammy's IT & Dev Scribblepad # it will display as the sub-title
 
 languages: ["en"                                 , "ko"                    , "es"                                               , "zh"]
 titles:    ["Uncle's Note"                       , "엉클스 노트"             , "nota del tio"                                     , "叔叔的笔记" ]
@@ -75,7 +75,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: /assets/img/avatar.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true

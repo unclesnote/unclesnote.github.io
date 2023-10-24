@@ -8,7 +8,8 @@ categories: [우분투]
 tags: [VSCode, 단말기, 디버그콘솔, 산출, 우분투]
 description:  소프트웨어를 개발할 때 로그는 작동을 확인하고 문제의 원인을 찾는 데 도움이 됩니다. 심각한 오류 또는 경고 수준에 대한 로그에 찾기 쉬운 색상이 있으면 도움이 될 것입니다. VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을 설정할 수 있지만, IDE 없이 소프트웨어를 실행하거나 Linux 등 크로스 컴파일 환경에서 소프트웨어를 실행하는 경우 설정이 적용되지 않습니다. . 따라서 터미널 관점에서 독립적으로 텍스트 색상을 설정하는 방법을 소개하겠습니다.
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:42 +0900
@@ -54,9 +55,9 @@ VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을
 | Text(Foreground) Color  | Optional  | You can set the text background color by selecting from already defined color codes.                                                                     |
 | `(Escape Character)[0m` | Yes       | Resets the text color and style once set. If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
 
-`이스케이프 문자`는 필수이지만 표현 방법에 따라 뒤에 설명하는 세 가지 중 하나를 사용할 수 있습니다.  
+`탈출 문자`는 필수이지만 표현 방법에 따라 뒤에 설명하는 세 가지 중 하나를 사용할 수 있습니다.  
 `스타일`, `텍스트 색상`, `배경 색상`을 `;`로 구분하여 취향에 맞게 추가할 수 있습니다. 표현할 수 있는 옵션에 대해서는 나중에 설명하겠지만, 각각을 나타내는 숫자가 고유하기 때문에 순서는 중요하지 않습니다.  
-마지막으로 `(이스케이프 문자)[0m`을 사용하여 텍스트 색상과 스타일을 재설정합니다. 재설정하지 않으면 이후의 텍스트 색상과 스타일이 계속 유지됩니다.  
+마지막으로 `(Escape Character)[0m`을 사용하여 텍스트 색상과 스타일을 재설정합니다. 재설정하지 않으면 이후의 텍스트 색상과 스타일이 계속 유지됩니다.  
 ## 색상 및 스타일 코드
 ### 1. 이스케이프 문자
 아래의 이스케이프 문자는 ASCII 코드의 27과 동일하며, 표현 방법은 다음과 같으며, 아무거나 사용해도 됩니다.  

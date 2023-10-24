@@ -8,7 +8,8 @@ categories: [乌班图, 虚拟盒子]
 tags: [乌班图, 虚拟盒子]
 description:  我们将解释如何在 Oracle VM VirtualBox 的 Ubuntu(20.04) VM 中创建、附加和使用磁盘。该过程的大致轮廓如下。 #VirtualBox #GParted #fstab
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:45 +0900

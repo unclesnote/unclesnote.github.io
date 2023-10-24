@@ -8,7 +8,8 @@ categories: [ubuntu, Caja virtual]
 tags: [ubuntu, VirtualBox]
 description:  Explicaremos cómo crear, adjuntar y usar discos en la VM Ubuntu (20.04) de Oracle VM VirtualBox. Un resumen aproximado del procedimiento es el siguiente. #VirtualBox #GParted #fstab
 public: true
-toc: false
+toc: true
+toc_intl: false
 # Below is readonly values if it's decided once
 layout: post
 date: 2023-10-23 21:58:45 +0900

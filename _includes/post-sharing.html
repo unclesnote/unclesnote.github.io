@@ -1,9 +1,9 @@
 <!-- Post sharing snippet -->
-
+{% include prj_site.html %}
 <div class="share-wrapper d-flex align-items-center">
   <span class="share-label text-muted me-1">{{ site.data.locales[include.lang].post.share }}</span>
   <span class="share-icons">
-    {% capture title %}{{ page.title }} - {{ site.title }}{% endcapture %}
+    {% capture title %}{{ page.title }} - {{ prj_site_title }}{% endcapture %}
     {% assign title = title | uri_escape %}
     {% assign url = page.url | absolute_url | url_encode %}
 

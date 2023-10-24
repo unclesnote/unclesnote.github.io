@@ -1,0 +1,8 @@
+---
+title: "포트포워딩"
+layout: tag
+ro_ref: ko-tag-포트포워딩
+tag: "포트포워딩"
+tag_web: "포트포워딩"
+lang: ko
+---
