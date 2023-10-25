@@ -2,14 +2,7 @@
 layout: null
 ---
 {%- capture content -%}
-{%- assign site_title = "" %}
-{%- for index in (0..site.languages.size) -%}
-  {%- if index == site.languages.size -%}{%- break -%}{%- endif -%}
-  {%- if page.lang == site.languages[index] %}
-    {%- assign site_title = site.titles[index] -%}
-    {%- break -%}
-  {%- endif -%}
-{%- endfor %}
+{% include prj_site.html %}
 
 {%- for post in site.posts -%}
   {%- if post.lang == page.lang and post.ro_id == page.post_id -%}
@@ -18,7 +11,7 @@ layout: null
   <meta charset="utf-8">
   <title>{{ post.title }}</title>
   <meta property="og:url" content="{{ site.url }}{{ post.url }}" />
-  <meta property="og:site_name" content="{{ site_title }}" />
+  <meta property="og:site_name" content="{{ prj_site_title }}" />
   {%- if page.thumbnail %}
   <meta property="og:image" content="{{ site.url }}{{ page.thumbnail }}" />
   {%- endif %}

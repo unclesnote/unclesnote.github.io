@@ -22,7 +22,7 @@ titles:    ["Uncle's Note"                       , "엉클스 노트"           
 taglines:  ["Uncle Sammy's IT & Dev Scribblepad" , "엉클 샘의 IT & 개발 낙서장", "Libro de garabatos de TI y desarrollo del tío Sam", "山姆大叔的 IT 与开发涂鸦书" ]
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Uncle Sammy's IT & Dev Scribblepad
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "https://unclesnote.com"

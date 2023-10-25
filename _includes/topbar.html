@@ -7,7 +7,9 @@
     class="d-flex align-items-center justify-content-between px-lg-3 h-100"
   >
     <nav id="breadcrumb" aria-label="Breadcrumb">
-      {% assign paths = page.url | split: '/' %}
+      {% capture page_lang %}{{ page.lang }}/{% endcapture %}
+      {% assign page_url = page.url | replace: page_lang, '' %}
+      {% assign paths = page_url | split: '/' %}
 
       {% if paths.size == 0 or page.layout == 'home' %}
         <!-- index page -->
@@ -25,6 +27,14 @@
           {% elsif forloop.last %}
             {% if page.collection == 'tabs' %}
               <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
+            {% elsif page.layout == 'categories' %}  
+              <span>{{ site.data.locales[include.lang].tabs.categories | default: page.title }}</span>
+            {% elsif page.layout == 'tags' %}  
+              <span>{{ site.data.locales[include.lang].tabs.tags | default: page.title }}</span>
+            {% elsif page.layout == 'archives' %}  
+              <span>{{ site.data.locales[include.lang].tabs.archives | default: page.title }}</span>
+            {% elsif page.ro_ref == 'about' %}  
+              <span>{{ site.data.locales[include.lang].tabs.about | default: page.title }}</span>
             {% else %}
               <span>{{ page.title }}</span>
             {% endif %}
@@ -44,7 +54,6 @@
     <button type="button" id="sidebar-trigger" class="btn btn-link">
       <i class="fas fa-bars fa-fw"></i>
     </button>
-
     <div id="topbar-title">
       {% if page.layout == 'home' %}
         {{- site.data.locales[include.lang].title | default: prj_site_title -}}

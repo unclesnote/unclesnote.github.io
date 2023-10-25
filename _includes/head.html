@@ -1,4 +1,5 @@
 <!-- The Head -->
+{% include prj_site.html %}
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -11,45 +12,89 @@
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
   >
 
-  {% capture seo_tags %}
+  {%- capture seo_tags %}
     {% seo title=false %}
-  {% endcapture %}
+  {%- endcapture %}
 
-  {% if page.image %}
-    {% assign img = page.image.path | default: page.image %}
+  {%- if page.image %}
+    {%- assign img = page.image.path | default: page.image %}
 
-    {% unless img contains '://' %}
-      {% assign img_path = page.img_path | append: '/' | append: img | replace: '//', '/' %}
-      {% capture target %}"{{ img | absolute_url }}"{% endcapture %}
+    {%- unless img contains '://' %}
+      {%- assign img_path = page.img_path | append: '/' | append: img | replace: '//', '/' %}
+      {%- capture target %}"{{ img | absolute_url }}"{% endcapture %}
 
-      {% if site.img_cdn contains '//' %}
+      {%- if site.img_cdn contains '//' %}
         <!-- it's a cross-origin URL -->
         {% capture replacement %}"{{ site.img_cdn }}{{ img_path }}"{% endcapture %}
-      {% else %}
+      {%- else %}
         <!-- it's a local file path -->
         {%- capture replacement -%}
           "{{ site.img_cdn | append: '/' | append: img_path | replace: '//', '/' | absolute_url }}"
         {%- endcapture -%}
-      {% endif %}
+      {%- endif %}
 
-      {% assign seo_tags = seo_tags | replace: target, replacement %}
-    {% endunless %}
-  {% endif %}
-
+      {%- assign seo_tags = seo_tags | replace: target, replacement %}
+    {%- endunless %}
+  {%- endif %}
+  
+  <!-- override seo_tags -->
+  {%- assign page_title = page.title %}
+  {%- if page.ro_ref == 'categories' %}
+    {%- assign page_title = site.data.locales[page.lang].tabs.categories %}
+  {%- elsif page.ro_ref == 'tags' %}
+    {%- assign page_title = site.data.locales[page.lang].tabs.tags %}
+  {%- elsif page.ro_ref == 'archives' %}
+    {%- assign page_title = site.data.locales[page.lang].tabs.archives %}
+  {%- elsif page.ro_ref == 'about' %}
+    {%- assign page_title = site.data.locales[page.lang].tabs.about %}
+  {%- endif %}
+  
+  {%- if page.layout != "post" %}
+    {%- for index in (0..3) %}
+      {%- if index == 3 %}{%- break %}{%- endif %}
+      {%- assign from = "" %}
+      {%- assign to = "" %}
+        
+      {%- if index == 0 %}
+        {%- if page.layout == "home" % }
+          {%- assign from = page.title %}
+          {%- assign to = prj_site_title %}
+        {%- else %}
+          {%- assign from = page.title %}
+          {%- assign to = page_title %}
+        {%- endif %}        
+      {%- elsif index == 1 %}
+        {%- assign from = site.title %}
+        {%- assign to = prj_site_title %}       
+      {%- elsif index == 2 %}
+        {%- assign from = site.description %}
+        {%- assign to = prj_site_tagline %}        
+      {%- endif %}
+      
+      {%- if from != empty and from and to != empty and to %}
+        {%- assign from = from | replace: '&', '&amp;' %}
+        {%- assign from = from | replace: "'", "’" %}
+        {%- assign to = to | replace: '&', '&amp;' %}
+        {%- assign to = to | replace: "'", "’" %}
+        {%- assign seo_tags = seo_tags | replace: from, to %}
+      {%- endif %}
+    {%- endfor %}
+    
+    {%- unless seo_tags contains "og:image" %}
+    <meta property="og:image" content="{{ site.url }}/assets/img/favicons/mstile-150x150.png" />
+    <meta property="og:image:alt" content="{{ prj_site_title }}" />
+    <meta property="twitter:image" content="{{ site.url }}/assets/img/favicons/mstile-150x150.png" />
+    <meta name="twitter:image:alt" content="{{ prj_site_title }}" />
+    {%- endunless %}
+  {%- endif %}
+  
   {{ seo_tags }}
-
   <title>
     {%- unless page.layout == 'home' -%}
-      {{ page.title | append: ' | ' }}
+      {{ page_title | append: ' | ' }}
     {%- endunless -%}
 
-    {%- for index in (0..site.languages.size) -%}
-      {%- if index == site.languages.size -%}{%- break -%}{%- endif -%}
-      {%- if page.lang == site.languages[index] -%}
-        {{ site.titles[index] }}
-      {%- endif -%}
-    {%- endfor -%}
-    
+    {{ prj_site_title }}
   </title>
 
   <!-- hreflang -->
