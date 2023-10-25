@@ -33,10 +33,8 @@ To change the text color, you need to center the text you want and add the code 
 - **End** : `(Escape Character)[0m`
 
 In the end, one line with the text color changed will have the format below.  
+- `(Escape Character)[(Style Code);(Text Color);(Background Color)m`  `(text you want)`  `(Escape Character)[0m`
 
-```
-(Escape Character)[(Style Code);(Text Color);(Background Color)m    (text you want)    (Escape Character)[0m
-```
 Below is an example of the string `I am text` in bold white text on a black background.  
 For the meaning of each number, check the predefined code in the later section.  
 
