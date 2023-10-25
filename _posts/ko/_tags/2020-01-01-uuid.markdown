@@ -1,0 +1,8 @@
+---
+title: "UUID"
+layout: tag
+ro_ref: ko-tag-UUID
+tag: "UUID"
+tag_web: "uuid"
+lang: ko
+---

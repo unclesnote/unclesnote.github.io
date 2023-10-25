@@ -28,32 +28,30 @@ You can set the color of the log text in the IDE you are using, such as VS Code 
 {: .prompt-info}
 ## How to set text color
 To change the text color, you need to center the text you want and add the code below at the beginning and end.  
+- **Start** : `(Escape Character)[(Style Code);(Text Color);(Background Color)m`
+- **Text** : `(Text you want)`
+- **End** : `(Escape Character)[0m`
 
-```shell
-# Start 
-(Escape Character)[(Style Code);(Text Color);(Background Color)m
-# End
-(Escape Character)[0m
-```
 In the end, one line with the text color changed will have the format below.  
 
 ```
 (Escape Character)[(Style Code);(Text Color);(Background Color)m    (text you want)    (Escape Character)[0m
 ```
-Below is an example of the string `I am text whose color has been changed` in bold white text on a black background.  
+Below is an example of the string `I am text` in bold white text on a black background.  
+For the meaning of each number, check the predefined code in the later section.  
 
 ```
-\u001b[1;37;40mI am text whose color has been changed\u001b[0m
+\u001b[1;37;40mI am text\u001b[0m
 ```
 Let’s look at the table below first. Each element for changing the text color is listed.  
 
-| Element                 | Mandatory | Comment                                                                                                                                                  |
-| ----------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Escape Character        | Yes       | Use Unicode, octal, or hexadecimal escape characters, whichever suits you.                                                                               |
-| Style Code              | Optional  | You can select text styles such as bold, blink, dim, and underline.                                                                                      |
-| Text Color              | Optional  | You can set the text color by selecting from already defined color codes.                                                                                |
-| Text(Foreground) Color  | Optional  | You can set the text background color by selecting from already defined color codes.                                                                     |
-| `(Escape Character)[0m` | Yes       | Resets the text color and style once set. If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
+| Element                | Mandatory | Comment                                                                                                                                                     |
+| ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Escape Character       | Yes       | Use Unicode, octal, or hexadecimal escape characters, whichever suits you.                                                                                  |
+| Style Code             | Optional  | Text styles such as bold, blink, dim, and underline.                                                                                                        |
+| Text Color             | Optional  | Text color by selecting from already defined color codes.                                                                                                   |
+| Text(Foreground) Color | Optional  | Text background color by selecting from already defined color codes.                                                                                        |
+| `(Escape Character)[0m`  | Yes       | Resets the text color and style once set.<br>If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
 
 Although the `Escape Chacter` is mandatory, you can use one of the three described later depending on the expression method.  
 You can add the `Style`, `Text Color`, and `Background Color` to suit your taste by separating them with `;`. We will explain the options that can be expressed later, but the order does not matter because the numbers representing each are unique.  

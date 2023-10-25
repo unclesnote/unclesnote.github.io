@@ -28,32 +28,30 @@ lang: zh
 {: .prompt-info}
 ## 如何设置文字颜色
 要更改文本颜色，您需要将所需的文本居中，并在开头和结尾添加以下代码。  
+- **开始** : `(转义字符)[(样式代码);(文本颜色);(背景颜色)m`
+- **文本**：`（您想要的文本）`
+- **结束** : `(转义字符)[0m`
 
-```shell
-# Start 
-(Escape Character)[(Style Code);(Text Color);(Background Color)m
-# End
-(Escape Character)[0m
-```
 最后，更改文本颜色的一行将具有以下格式。  
 
 ```
 (Escape Character)[(Style Code);(Text Color);(Background Color)m    (text you want)    (Escape Character)[0m
 ```
-下面是黑色背景上粗体白色文本的字符串`我是颜色已更改的文本`的示例。  
+下面是黑色背景上粗体白色文本的字符串`I am text`的示例。  
+每个数字的含义请查看后面章节中的预定义代码。  
 
 ```
-\u001b[1;37;40mI am text whose color has been changed\u001b[0m
+\u001b[1;37;40mI am text\u001b[0m
 ```
 我们先看下表。列出了用于更改文本颜色的每个元素。  
 
-| Element                 | Mandatory | Comment                                                                                                                                                  |
-| ----------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Escape Character        | Yes       | Use Unicode, octal, or hexadecimal escape characters, whichever suits you.                                                                               |
-| Style Code              | Optional  | You can select text styles such as bold, blink, dim, and underline.                                                                                      |
-| Text Color              | Optional  | You can set the text color by selecting from already defined color codes.                                                                                |
-| Text(Foreground) Color  | Optional  | You can set the text background color by selecting from already defined color codes.                                                                     |
-| `(Escape Character)[0m` | Yes       | Resets the text color and style once set. If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
+|元素|强制的|评论
+| ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|转义字符|是的|使用适合您的 Unicode、八进制或十六进制转义字符。
+|样式代码|选修的|文本样式，例如粗体、闪烁、暗淡和下划线。
+|文字颜色|选修的|通过从已定义的颜色代码中选择文本颜色。
+|文本（前景）颜色|选修的|通过从已定义的颜色代码中选择文本背景颜色。
+|`（转义字符）[0m`|是的|设置后重置文本颜色和样式。&lt;br>如果要更改多行的颜色，可以稍后在所需位置重置文本颜色。
 
 尽管`转义字符`是强制性的，但您可以根据表达方法使用后面描述的三种字符之一。  
 您可以根据自己的喜好添加`样式`、`文本颜色`和`背景颜色`，并用`;`分隔它们。我们稍后将解释可以表达的选项，但顺序并不重要，因为代表每个选项的数字都是唯一的。  

@@ -1,0 +1,8 @@
+---
+title: "GParted"
+layout: tag
+ro_ref: ko-tag-GParted
+tag: "GParted"
+tag_web: "gparted"
+lang: ko
+---

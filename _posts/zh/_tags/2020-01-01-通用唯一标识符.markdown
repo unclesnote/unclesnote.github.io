@@ -1,0 +1,8 @@
+---
+title: "通用唯一标识符"
+layout: tag
+ro_ref: zh-tag-通用唯一标识符
+tag: "通用唯一标识符"
+tag_web: "通用唯一标识符"
+lang: zh
+---

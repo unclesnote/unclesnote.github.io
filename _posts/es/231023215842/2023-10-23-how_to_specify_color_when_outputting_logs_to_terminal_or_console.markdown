@@ -28,32 +28,30 @@ Puede configurar el color del texto del registro en el IDE que está utilizando,
 {: .prompt-info}
 ## Cómo configurar el color del texto
 Para cambiar el color del texto, debe centrar el texto que desea y agregar el código a continuación al principio y al final.  
+- **Inicio**: `(Carácter de escape)[(Código de estilo);(Color del texto);(Color de fondo)m`
+- **Texto**: `(Texto que deseas)`
+- **Fin**: `(Carácter de escape)[0m`
 
-```shell
-# Start 
-(Escape Character)[(Style Code);(Text Color);(Background Color)m
-# End
-(Escape Character)[0m
-```
 Al final, una línea con el color del texto cambiado tendrá el formato siguiente.  
 
 ```
 (Escape Character)[(Style Code);(Text Color);(Background Color)m    (text you want)    (Escape Character)[0m
 ```
-A continuación se muestra un ejemplo de la cadena "Soy texto cuyo color ha cambiado" en texto blanco en negrita sobre fondo negro.  
+A continuación se muestra un ejemplo de la cadena "Soy texto" en texto blanco en negrita sobre fondo negro.  
+Para conocer el significado de cada número, consulte el código predefinido en la sección posterior.  
 
 ```
-\u001b[1;37;40mI am text whose color has been changed\u001b[0m
+\u001b[1;37;40mI am text\u001b[0m
 ```
 Veamos primero la tabla a continuación. Se enumera cada elemento para cambiar el color del texto.  
 
-| Element                 | Mandatory | Comment                                                                                                                                                  |
-| ----------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Escape Character        | Yes       | Use Unicode, octal, or hexadecimal escape characters, whichever suits you.                                                                               |
-| Style Code              | Optional  | You can select text styles such as bold, blink, dim, and underline.                                                                                      |
-| Text Color              | Optional  | You can set the text color by selecting from already defined color codes.                                                                                |
-| Text(Foreground) Color  | Optional  | You can set the text background color by selecting from already defined color codes.                                                                     |
-| `(Escape Character)[0m` | Yes       | Resets the text color and style once set. If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
+|Elemento|Obligatorio|Comentario
+| ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|Personaje de escape|Sí|Utilice caracteres de escape Unicode, octales o hexadecimales, lo que más le convenga.
+|Código de estilo|Opcional|Estilos de texto como negrita, parpadeo, atenuado y subrayado.
+|Color de texto|Opcional|Color del texto seleccionando entre códigos de color ya definidos.
+|Color del texto (primer plano)|Opcional|Color de fondo del texto seleccionando entre códigos de color ya definidos.
+|`(Carácter de escape)[0m`|Sí|Restablece el color y estilo del texto una vez configurado.&lt;br> Si desea cambiar el color de varias líneas, puede restablecer el color del texto más tarde en la ubicación deseada.
 
 Aunque el `Escape Chacter` es obligatorio, puede utilizar uno de los tres que se describen más adelante dependiendo del método de expresión.  
 Puede agregar el `Estilo`, el `Color del texto` y el `Color de fondo` según sus gustos separándolos con `;`. Más adelante explicaremos las opciones que se pueden expresar, pero el orden no importa porque los números que representan cada una son únicos.  

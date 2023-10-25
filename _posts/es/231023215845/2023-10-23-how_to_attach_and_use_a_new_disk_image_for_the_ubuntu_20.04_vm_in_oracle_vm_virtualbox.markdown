@@ -5,8 +5,8 @@ image:
   alt: Cómo adjuntar y usar una nueva imagen de disco para la VM Ubuntu (20.04) en Oracle VM VirtualBox
 images: ["/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png", "/assets/images/231023215845/attach_disk-virtual-box-media-image.png", "/assets/images/231023215845/attach_disk-choose-disk.png", "/assets/images/231023215845/attach_disk-attached-disk-image.png", "/assets/images/231023215845/attach_disk-create-partition-table.png", "/assets/images/231023215845/attach_disk-create-partition.png", "/assets/images/231023215845/attach_disk-format-disk.png", "/assets/images/231023215845/attach_disk-disk-uuid.png"]
 categories: [ubuntu, Caja virtual]
-tags: [ubuntu, VirtualBox]
-description:  Explicaremos cómo crear, adjuntar y usar discos en la VM Ubuntu (20.04) de Oracle VM VirtualBox. Un resumen aproximado del procedimiento es el siguiente. #VirtualBox #GParted #fstab
+tags: [ubuntu, VirtualBox, Gpartido, fstab, UUID]
+description:  Explicaremos cómo crear, adjuntar y usar discos en la VM Ubuntu (20.04) de Oracle VM VirtualBox. Un resumen aproximado del procedimiento es el siguiente.
 public: true
 toc: true
 toc_intl: false
@@ -20,23 +20,34 @@ lang: es
 ---
 Explicaremos cómo crear, adjuntar y usar discos en la VM Ubuntu (20.04) de Oracle VM VirtualBox.  
 Un resumen aproximado del procedimiento es el siguiente.  
-- Cree una imagen de disco en Virtual Box Manager y adjúntela a la VM de Ubuntu
+- Cree un disco duro virtual en Virtual Box Manager y conéctelo a la máquina virtual de Ubuntu
 - Inicializar y formatear dispositivos de disco conectados en la interfaz GUI de Ubuntu
 - Haga que el dispositivo de disco esté disponible cada vez que se inicie Ubuntu.
 
-#VirtualBox #GParted #fstab  
-## 1. Cree una imagen de disco en Virtual Box y adjúntela a la VM de Ubuntu
-Estoy planeando agregar 55 GB de disco y el método es crear un archivo de imagen de tamaño completo por adelantado en "Virtual Media Manager". Hay formas de aumentar la capacidad de la imagen de forma variable según la capacidad utilizada, pero he visto en alguna parte que una vez que el tamaño del archivo de imagen aumenta, no vuelve a disminuir incluso si usa menos. Elegimos un método más confiable con un tamaño estático.  
-![Attach Disk-create-virtual-box-disk-image](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
-Después de que haya pasado un tiempo para la creación de la imagen, puede verificar la imagen creada en la lista.  
-![Attach Disk-virtual-box-media-image](/assets/images/231023215845/attach_disk-virtual-box-media-image.png)  
-Vaya a la configuración de la máquina virtual Ubuntu a la que desea adjuntar la imagen del disco creada. Seleccione el disco duro creado previamente para agregar.  
-![Attach Disk-choose-disk](/assets/images/231023215845/attach_disk-choose-disk.png)  
-Puede ver que la imagen del disco se ha agregado a la VM de Ubuntu. También puede consultar la información de Ubuntu VM en VirtualBox Manager.  
-![Attach Disk-attached-disk-image](/assets/images/231023215845/attach_disk-attached-disk-image.png)  
-## 2. Inicialice los dispositivos de disco utilizando la herramienta Gparted en la GUI de GNOME
-Ejecute la VM de Ubuntu en Virtual Box y crearemos tablas y particiones de disco y procederemos con el formateo.  
-Por supuesto, existen herramientas de consola como `fdisk` para esto, pero por conveniencia, usaremos la herramienta de partición GUI de GNOME, `GParted`.  
+## 1. Cree una imagen de disco y adjúntela a una máquina virtual Ubuntu
+Las imágenes de disco se pueden crear a través de "Virtual Media Manager" en el administrador de Virtual Box.  
+Planeo crear una imagen de 55 GB y hay dos opciones para crear una imagen de disco. La primera es una opción para ocupar la capacidad de mi disco duro tanto como la he usado, y la segunda es crear una opción para ocupar de una sola vez la capacidad planificada desde el principio. Sin embargo, para un funcionamiento estable, crearé 55 GB a la vez con la segunda opción.  
+Creé un disco duro virtual con la opción "Preasignar tamaño completo".  
+![ Oracle VM VirtualBox Manager: crear un disco duro virtual](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
+_Oracle VM VirtualBox Manager: crear un disco duro virtual_
+
+Cuando termine de crear la imagen del disco virtual, puede verificar el disco creado en la lista de discos duros una vez transcurrido el tiempo de inicialización de la imagen del disco virtual.  
+![Oracle VM VirtualBox Manager: inicialización del disco duro virtual en curso](/assets/images/231023215845/attach_disk-virtual-box-media-image.png)  
+_Oracle VM VirtualBox Manager: inicialización del disco duro virtual en curso_
+
+Ahora agregaremos el disco duro virtual creado a la VM de Ubuntu.  
+Puede agregar un disco duro usando un controlador SATA en la pestaña "Almacenamiento" de la configuración de Ubuntu VM.  
+![Oracle VM VirtualBox Manager: agregue un disco duro a Ubuntu VM](/assets/images/231023215845/attach_disk-choose-disk.png)  
+_Oracle VM VirtualBox Manager: agregue un disco duro a Ubuntu VM_
+
+Cuando selecciona el disco duro que creó, puede verificar que el disco duro esté adjunto en la sección de información.  
+![Oracle VM VirtualBox Manager: verifique los discos duros agregados a Ubuntu VM](/assets/images/231023215845/attach_disk-attached-disk-image.png)  
+_Oracle VM VirtualBox Manager: verifique los discos duros agregados a Ubuntu VM_
+
+## 2. Inicialización del disco en una VM Ubuntu
+Desde la perspectiva de la máquina virtual, el disco duro está conectado físicamente a la máquina virtual de Ubuntu.  
+Ahora vamos a formatear el disco en la VM de Ubuntu. Podemos hacer esto usando el clásico `fdisk`, pero procederemos con una herramienta GUI más intuitiva llamada `Gparted`.  
+Instalemos y ejecutemos gparted usando apt.  
 
 ```shell
 # install gparted
@@ -44,15 +55,25 @@ sudo apt-get install gparted
 # run gparted
 gparted
 ```
-Seleccione el dispositivo de disco adjunto y aplique la tabla de particiones en formato `msdos`.  
-![Attach Disk-create-partition-table](/assets/images/231023215845/attach_disk-create-partition-table.png)  
-Ahora crearemos una partición. En mi caso, creé una partición de tamaño completo como se muestra a continuación.  
-![Attach Disk-create-partition](/assets/images/231023215845/attach_disk-create-partition.png)  
-Formatéelo en formato `ext4` y haga clic en la casilla de verificación verde para aplicar todas las configuraciones anteriores.  
-![Attach Disk-format-disk](/assets/images/231023215845/attach_disk-format-disk.png)  
-Marque `UUID` en la información de la partición y cópielo. UUID es la identificación única del dispositivo. El UUID es necesario para que el disco esté disponible automáticamente cada vez que se inicia Ubuntu en la siguiente sección.  
-![Attach Disk-disk-uuid](/assets/images/231023215845/attach_disk-disk-uuid.png)  
-## 3. Haga que el disco esté disponible en cada inicio de Ubuntu.
+Después de seleccionar el disco duro creado en la esquina superior derecha de GParted, crearemos una tabla de particiones `msdos` y la formatearemos como `ext4` según la imagen a continuación.  
+Aplique la tabla de particiones `msdos` a través del menú.  
+![Ubuntu VM - GParted - crea una tabla de particiones en formato msdos](/assets/images/231023215845/attach_disk-create-partition-table.png)  
+_Ubuntu VM - GParted - crea una tabla de particiones en formato msdos_
+
+Luego, crearemos una partición. Haga clic derecho en la partición no asignada y cree una partición del sistema de archivos `ext4`. Lo configuré en tamaño completo.  
+![Ubuntu VM - GParted - Crear partición con sistema de archivos ext4](/assets/images/231023215845/attach_disk-create-partition.png)  
+_Ubuntu VM - GParted - Crear partición con sistema de archivos ext4_
+
+Formatee la partición del sistema de archivos ext4 a `etx4`.  
+Luego haga clic en la casilla de verificación verde para aplicar la configuración realizada hasta el momento.  
+![Ubuntu VM - GParted - Formatear partición a ext4](/assets/images/231023215845/attach_disk-format-disk.png)  
+_Ubuntu VM - GParted - Formatear partición a ext4_
+
+La inicialización del disco duro ahora está completa. Para montar un disco duro de modo que pueda usarse cada vez que se inicia la máquina virtual de Ubuntu, se necesita información de ID de disco única. Haga clic derecho en la partición creada, verifique el `UUID` en el menú de información y recuérdelo.  
+![Ubuntu VM - GParted - Verifique el UUID de la partición del disco](/assets/images/231023215845/attach_disk-disk-uuid.png)  
+_Ubuntu VM - GParted - Verifique el UUID de la partición del disco_
+
+## 3. Cada arranque, monte el disco.
 En el estado actual, el dispositivo de disco formateado está listo, pero no hay una ruta a través de la cual se puedan escribir archivos. Entonces, crearemos una ruta conectando mi carpeta específica al dispositivo de disco duro. Esto es "montaje".  
 El `UUID` identificado en gparted arriba representa el dispositivo de disco duro, y conectaremos este dispositivo a la carpeta `/mnt/data` para crear una ruta a través de la cual se puedan escribir archivos. Dado que el disco debe estar disponible cada vez que se inicia Ubuntu, lo describiremos en `/etc/fstab`.  
 La siguiente línea se agregará a `/etc/fstab`.  

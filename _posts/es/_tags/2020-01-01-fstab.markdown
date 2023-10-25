@@ -1,0 +1,8 @@
+---
+title: "fstab"
+layout: tag
+ro_ref: es-tag-fstab
+tag: "fstab"
+tag_web: "fstab"
+lang: es
+---
