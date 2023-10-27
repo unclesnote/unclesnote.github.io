@@ -60,6 +60,8 @@ La dirección "IP invitada" es la dirección IP confirmada en la máquina virtua
 - **Puerto de invitados**: 4000
 
 ![VirtualBox Manager - Reglas de reenvío de puertos](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
-_VirtualBox Manager - Reglas de reenvío de puertos_
+
+VirtualBox Manager - Reglas de reenvío de puertos
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 Ahora puedes probar Jekyll conectándote a `127.0.0.1:4000` en tu navegador X86 de Windows.  

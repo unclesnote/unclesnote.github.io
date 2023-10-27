@@ -1,0 +1,8 @@
+---
+title: "克里塔"
+layout: tag
+ro_ref: zh-tag-克里塔
+tag: "克里塔"
+tag_web: "克里塔"
+lang: zh
+---

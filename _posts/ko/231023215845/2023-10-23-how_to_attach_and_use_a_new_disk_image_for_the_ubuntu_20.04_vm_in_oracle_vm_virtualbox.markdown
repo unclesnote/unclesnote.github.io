@@ -29,20 +29,28 @@ Oracle VM VirtualBox의 Ubuntu(20.04) VM에서 디스크를 생성, 연결, 사�
 55GB의 이미지를 생성할 예정인데, 디스크 이미지를 생성하는 방법은 2가지가 있습니다. 첫 번째는 내가 사용한 만큼 내 하드디스크의 용량을 점유하는 옵션이고, 두 번째는 처음부터 계획한 용량을 한꺼번에 점유하는 옵션을 생성하는 것이다. 하지만 안정적인 운영을 위해 두 번째 옵션으로 한번에 55GB를 생성하겠습니다.  
 `전체 크기 사전 할당` 옵션을 사용하여 가상 하드 디스크를 만들었습니다.  
 ![ Oracle VM VirtualBox Manager - 가상 하드 디스크 생성](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
-_Oracle VM VirtualBox Manager - 가상 하드 디스크 생성_
+
+Oracle VM VirtualBox Manager - 가상 하드 디스크 생성
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 가상 디스크 이미지 생성이 완료되면 가상 디스크 이미지 초기화 시간이 지난 후 생성된 디스크를 하드디스크 목록에서 확인할 수 있습니다.  
 ![Oracle VM VirtualBox Manager - 가상 하드 디스크 초기화 진행 중](/assets/images/231023215845/attach_disk-virtual-box-media-image.png)  
-_Oracle VM VirtualBox Manager - 가상 하드 디스크 초기화 진행 중_
+
+Oracle VM VirtualBox Manager - 가상 하드 디스크 초기화 진행 중
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 이제 생성된 가상 하드 디스크를 Ubuntu VM에 추가하겠습니다.  
 Ubuntu VM 설정의 `저장` 탭에서 SATA 컨트롤러를 사용하여 하드 디스크를 추가할 수 있습니다.  
 ![Oracle VM VirtualBox Manager - Ubuntu VM에 하드 디스크 추가](/assets/images/231023215845/attach_disk-choose-disk.png)  
-_Oracle VM VirtualBox Manager - Ubuntu VM에 하드 디스크 추가_
+
+Oracle VM VirtualBox Manager - Ubuntu VM에 하드 디스크 추가
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 생성한 하드디스크를 선택하면 정보창에서 해당 하드디스크가 장착된 것을 확인할 수 있습니다.  
 ![Oracle VM VirtualBox Manager - Ubuntu VM에 추가된 하드 디스크 확인](/assets/images/231023215845/attach_disk-attached-disk-image.png)  
-_Oracle VM VirtualBox Manager - Ubuntu VM에 추가된 하드 디스크 확인_
+
+Oracle VM VirtualBox Manager - Ubuntu VM에 추가된 하드 디스크 확인
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 ## 2. Ubuntu VM에서 디스크 초기화
 가상 머신 관점에서 하드 디스크는 Ubuntu VM에 물리적으로 연결됩니다.  
@@ -58,20 +66,28 @@ gparted
 GParted 오른쪽 상단에 생성된 하드디스크를 선택한 후, 아래 그림과 같이 `msdos` 파티션 테이블을 생성하고 `ext4`로 포맷하겠습니다.  
 메뉴를 통해 파티션 `msdos` 파티션 테이블을 적용합니다.  
 ![Ubuntu VM - GParted - msdos 형식으로 파티션 테이블 생성](/assets/images/231023215845/attach_disk-create-partition-table.png)  
-_Ubuntu VM - GParted - msdos 형식으로 파티션 테이블 생성_
+
+Ubuntu VM - GParted - msdos 형식으로 파티션 테이블 생성
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 그런 다음 파티션을 생성하겠습니다. 할당되지 않은 파티션을 마우스 오른쪽 버튼으로 클릭하고 `ext4` 파일 시스템 파티션을 만듭니다. 저는 풀사이즈로 설정했어요.  
 ![Ubuntu VM - GParted - ext4 파일 시스템으로 파티션 생성](/assets/images/231023215845/attach_disk-create-partition.png)  
-_Ubuntu VM - GParted - ext4 파일 시스템으로 파티션 생성_
+
+Ubuntu VM - GParted - ext4 파일 시스템으로 파티션 생성
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 ext4 파일 시스템의 파티션을 `etx4`로 포맷합니다.  
 그런 다음 녹색 확인란을 클릭하여 지금까지 설정한 내용을 적용합니다.  
 ![Ubuntu VM - GParted - 파티션을 ext4로 포맷](/assets/images/231023215845/attach_disk-format-disk.png)  
-_Ubuntu VM - GParted - 파티션을 ext4로 포맷_
+
+Ubuntu VM - GParted - 파티션을 ext4로 포맷
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 이제 하드 디스크 초기화가 완료되었습니다. Ubuntu VM이 부팅될 때마다 사용할 수 있도록 하드 디스크를 마운트하려면 고유한 디스크 ID 정보가 필요합니다. 생성된 파티션을 마우스 오른쪽 버튼으로 클릭하고 정보 메뉴에서 `UUID`를 확인하고 기억해 두세요.  
 ![Ubuntu VM - GParted - 디스크 파티션의 UUID 확인](/assets/images/231023215845/attach_disk-disk-uuid.png)  
-_Ubuntu VM - GParted - 디스크 파티션의 UUID 확인_
+
+Ubuntu VM - GParted - 디스크 파티션의 UUID 확인
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 ## 3. 부팅할 때마다 디스크를 마운트합니다.
 현재 상태에서는 포맷된 디스크 장치가 준비되어 있으나 파일을 쓸 수 있는 경로가 없습니다. 그래서 나의 특정 폴더를 하드디스크 장치에 연결하여 경로를 생성하겠습니다. `마운트` 입니다.  

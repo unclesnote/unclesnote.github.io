@@ -60,6 +60,8 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 - **访客端口**：4000
 
 ![VirtualBox Manager - 端口转发规则](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
-_VirtualBox Manager - 端口转发规则_
+
+VirtualBox Manager - 端口转发规则
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 现在您可以通过在 X86 Windows 浏览器中连接到`127.0.0.1:4000`来测试 Jekyll。  

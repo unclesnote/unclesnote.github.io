@@ -43,13 +43,13 @@ Para conocer el significado de cada número, consulte el código predefinido en 
 ```
 Veamos primero la tabla a continuación. Se enumera cada elemento para cambiar el color del texto.  
 
-|Elemento|Obligatorio|Comentario
+|Elemento|Obligatorio|Comentario|
 | ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|Personaje de escape|Sí|Utilice caracteres de escape Unicode, octales o hexadecimales, lo que más le convenga.
-|Código de estilo|Opcional|Estilos de texto como negrita, parpadeo, atenuado y subrayado.
-|Color de texto|Opcional|Color del texto seleccionando entre códigos de color ya definidos.
-|Color del texto (primer plano)|Opcional|Color de fondo del texto seleccionando entre códigos de color ya definidos.
-|`(Carácter de escape)[0m`|Sí|Restablece el color y estilo del texto una vez configurado.<br> Si desea cambiar el color de varias líneas, puede restablecer el color del texto más tarde en la ubicación deseada.
+|Personaje de escape|Sí|Utilice caracteres de escape Unicode, octales o hexadecimales, lo que más le convenga.|
+|Código de estilo|Opcional|Estilos de texto como negrita, parpadeo, atenuado y subrayado.|
+|Color de texto|Opcional|Color del texto seleccionando entre códigos de color ya definidos.|
+|Color del texto (primer plano)|Opcional|Color de fondo del texto seleccionando entre códigos de color ya definidos.|
+|`(Carácter de escape)[0m`|Sí|Restablece el color y estilo del texto una vez configurado.<br> Si desea cambiar el color de varias líneas, puede restablecer el color del texto más tarde en la ubicación deseada.|
 
 Aunque el `Escape Chacter` es obligatorio, puede utilizar uno de los tres que se describen más adelante dependiendo del método de expresión.  
 Puede agregar el `Estilo`, el `Color del texto` y el `Color de fondo` según sus gustos separándolos con `;`. Más adelante explicaremos las opciones que se pueden expresar, pero el orden no importa porque los números que representan cada una son únicos.  

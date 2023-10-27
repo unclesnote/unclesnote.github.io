@@ -1,0 +1,8 @@
+---
+title: "크리타"
+layout: tag
+ro_ref: ko-tag-크리타
+tag: "크리타"
+tag_web: "크리타"
+lang: ko
+---

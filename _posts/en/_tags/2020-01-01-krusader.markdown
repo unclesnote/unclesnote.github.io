@@ -1,0 +1,8 @@
+---
+title: "Krusader"
+layout: tag
+ro_ref: en-tag-Krusader
+tag: "Krusader"
+tag_web: "krusader"
+lang: en
+---

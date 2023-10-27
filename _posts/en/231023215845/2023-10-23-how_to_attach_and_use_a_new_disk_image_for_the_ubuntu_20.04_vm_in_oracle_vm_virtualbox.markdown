@@ -29,20 +29,28 @@ Disk images can be created through `Virtual Media Manager` in the Virtual Box ma
 I plan to create an image of 55GB, and there are two options for creating a disk image. The first is an option to occupy the capacity of my hard disk as much as I have used, and the second is to create an option to occupy the capacity planned from the beginning all at once. However, for stable operation, I will create 55GB at a time with the second option.  
 I created a virtual hard disk with `Pre-allocate Full Size` option.  
 ![ Oracle VM VirtualBox Manager - Create Virtual Hard Disk](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
-_Oracle VM VirtualBox Manager - Create Virtual Hard Disk_
+
+Oracle VM VirtualBox Manager - Create Virtual Hard Disk
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 When you finish creating the virtual disk image, you can check the created disk in the hard disk list after the virtual disk image initialization time has passed.  
 ![Oracle VM VirtualBox Manager - Virtual hard disk initialization in progress](/assets/images/231023215845/attach_disk-virtual-box-media-image.png)  
-_Oracle VM VirtualBox Manager - Virtual hard disk initialization in progress_
+
+Oracle VM VirtualBox Manager - Virtual hard disk initialization in progress
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 Now we will add the created virtual hard disk to the Ubuntu VM.  
 You can add a hard disk using a SATA controller in the `Storage` tab of Ubuntu VM settings.  
 ![Oracle VM VirtualBox Manager - Add hard disk to Ubuntu VM](/assets/images/231023215845/attach_disk-choose-disk.png)  
-_Oracle VM VirtualBox Manager - Add hard disk to Ubuntu VM_
+
+Oracle VM VirtualBox Manager - Add hard disk to Ubuntu VM
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 When you select the hard disk you created, you can check that the hard disk is attached in the information section.  
 ![Oracle VM VirtualBox Manager - Check hard disks added to Ubuntu VM](/assets/images/231023215845/attach_disk-attached-disk-image.png)  
-_Oracle VM VirtualBox Manager - Check hard disks added to Ubuntu VM_
+
+Oracle VM VirtualBox Manager - Check hard disks added to Ubuntu VM
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 ## 2. Disk initialization in a Ubuntu VM
 From a Virtual Machine perspective, the hard disk is physically attached to the Ubuntu VM.  
@@ -58,20 +66,28 @@ gparted
 After selecting the hard disk created in the upper right corner of GParted, we will create an `msdos` partition table and format it as `ext4` according to the picture below.  
 Apply the partition `msdos` partition table through the menu.  
 ![Ubuntu VM - GParted - create partition table in msdos format](/assets/images/231023215845/attach_disk-create-partition-table.png)  
-_Ubuntu VM - GParted - create partition table in msdos format_
+
+Ubuntu VM - GParted - create partition table in msdos format
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 Then, we will create a partition. Right-click on the unallocated partition and create an `ext4` file system partition. I set it to full size.  
 ![Ubuntu VM - GParted - Create partition with ext4 file system](/assets/images/231023215845/attach_disk-create-partition.png)  
-_Ubuntu VM - GParted - Create partition with ext4 file system_
+
+Ubuntu VM - GParted - Create partition with ext4 file system
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 Format the partition of the ext4 file system to `etx4`.  
 Then click the green checkbox to apply the settings made so far.  
 ![Ubuntu VM - GParted - Format partition to ext4](/assets/images/231023215845/attach_disk-format-disk.png)  
-_Ubuntu VM - GParted - Format partition to ext4_
+
+Ubuntu VM - GParted - Format partition to ext4
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 Hard disk initialization is now complete. To mount a hard disk so that it can be used every time the Ubuntu VM boots up, unique disk ID information is needed. Right-click the created partition, check the `UUID` in the information menu, and remember it.  
 ![Ubuntu VM - GParted - Check UUID of disk partition](/assets/images/231023215845/attach_disk-disk-uuid.png)  
-_Ubuntu VM - GParted - Check UUID of disk partition_
+
+Ubuntu VM - GParted - Check UUID of disk partition
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 ## 3. Every bootup, mount the disk
 In the current state, the formatted disk device is ready, but there is no path through which files can be written. So, we will create a path by connecting my specific folder to the hard disk device. This is `mount`.  

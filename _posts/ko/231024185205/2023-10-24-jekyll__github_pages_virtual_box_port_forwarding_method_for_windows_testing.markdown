@@ -60,6 +60,8 @@ Virtual Box 관리자의 Ubuntu VM 네트워크 설정에서 다음을 입력하
 - **게스트 포트** : 4000
 
 ![VirtualBox Manager - 포트 전달 규칙](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
-_VirtualBox Manager - 포트 전달 규칙_
+
+VirtualBox Manager - 포트 전달 규칙
+{: style="color:gray; font-size: 80%; text-align: center;"}
 
 이제 X86 Windows 브라우저에서 `127.0.0.1:4000`에 연결하여 Jekyll을 테스트할 수 있습니다.  

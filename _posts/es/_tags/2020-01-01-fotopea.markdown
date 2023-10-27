@@ -1,0 +1,8 @@
+---
+title: "Fotopea"
+layout: tag
+ro_ref: es-tag-Fotopea
+tag: "Fotopea"
+tag_web: "fotopea"
+lang: es
+---
