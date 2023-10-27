@@ -26,7 +26,7 @@ Ubuntu Softwares
 
 ## File Browser
 ### Krusader
-If you have experience using [Q-Dir](http://www.q-dir.com){:target="_blank"} or [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} in a Windows environment, [Krusader](https://krusader.org){:target="_blank"} offers the experience of split windows and multi-tab file browsing.  
+If you have experience using Q-Dir or [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} in a Windows environment, [Krusader](https://krusader.org){:target="_blank"} offers the experience of split windows and multi-tab file browsing.  
 ![Krusader](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
 
 Krusader

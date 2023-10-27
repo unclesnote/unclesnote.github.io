@@ -26,7 +26,7 @@ Ubuntu 软件
 
 ## 文件浏览器
 ### 克鲁萨德
-如果您有在 Windows 环境中使用 [Q-Dir](http://www.q-dir.com){:target="_blank"} 或 [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} 的经验，[Krusader ](https://krusader.org){:target="_blank"} 提供分割窗口和多选项卡文件浏览的体验。  
+如果您有在 Windows 环境下使用 Q-Dir 或 [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} 的经验，[Krusader](https://krusader.org){:target="_blank"} 提供拆分体验窗口和多选项卡文件浏览。  
 ![克鲁萨德](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
 
 克鲁萨德

@@ -26,7 +26,7 @@ Software de Ubuntu
 
 ## Explorador de archivos
 ### Krusader
-Si tiene experiencia utilizando [Q-Dir](http://www.q-dir.com){:target="_blank"} o [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} en un entorno Windows, [Krusader ](https://krusader.org){:target="_blank"} ofrece la experiencia de ventanas divididas y exploración de archivos con varias pestañas.  
+Si tiene experiencia usando Q-Dir o [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} en un entorno Windows, [Krusader](https://krusader.org){:target="_blank"} ofrece la experiencia de dividir Windows y exploración de archivos con varias pestañas.  
 ![Krusader](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
 
 Krusader

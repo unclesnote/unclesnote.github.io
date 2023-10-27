@@ -26,7 +26,7 @@ Ubuntu OS의 특별한 장점 때문에 Ubuntu를 사용하고 있다면 Windows
 
 ## 파일 탐색기
 ### 크루세이더
-Windows 환경에서 [Q-Dir](http://www.q-dir.com){:target="_blank"} 또는 [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"}를 사용해 본 경험이 있으신 분은 [Krusader ](https://krusader.org){:target="_blank"}에서는 분할 창 및 멀티탭 파일 탐색 환경을 제공합니다.  
+Windows 환경에서 Q-Dir이나 [토탈 커맨더](https://www.ghisler.com/download.htm){:target="_blank"}를 사용해 본 경험이 있으신 분은 [Krusader](https://krusader.org){:target="_blank"}에서 분할 경험을 제공해 드립니다. 창 및 멀티탭 파일 탐색.  
 ![크루세이더](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
 
 크루세이더
