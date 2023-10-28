@@ -47,10 +47,10 @@ sudo apt install krusader
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 ただし、画像ファイルを頻繁に更新すると、GwenView リストのサムネイルの表示と実際の画像が異なる場合があります。したがって、サムネイル キャッシュの使用を無効にすることをお勧めします。  
-「設定 > Gwenview の構成 > 詳細」で、「低リソース使用モード」にチェックを入れます。  
-![GwenView - サムネイル キャッシュを無効にするために「低リソース使用モード」をチェックします](/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png)  
+`設定 > Gwenview の構成 > 詳細`で、`低リソース使用モード`にチェックを入れます。  
+![GwenView - サムネイル キャッシュを無効にするために`低リソース使用モード`をチェックします](/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png)  
 
-GwenView - サムネイル キャッシュを無効にするために「低リソース使用モード」をチェックします
+GwenView - サムネイル キャッシュを無効にするために`低リソース使用モード`をチェックします
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 GwenView は apt を使用して簡単にインストールできます。  
@@ -65,8 +65,8 @@ Photoshop に慣れている人にとって、最良の代替手段は [Photopia
 Photopea - www.photopea.com
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-Photopia に似た Web サイトはありますが、Photopia の利点は、広告ブロッカーが Web 上の広告をブロックできること、それが収益モデルであることです。 Chrome ブラウザを使用している場合は、Web ストアで「AdBlock」を検索してインストールしてください。  
-「AdBlock」を使用しなくても、右側パネルに表示される広告の量は他のサイトに比べて少ないので、あまり目立ちません。  
+Photopia に似た Web サイトはありますが、Photopia の利点は、広告ブロッカーが Web 上の広告をブロックできること、それが収益モデルであることです。 Chrome ブラウザを使用している場合は、Web ストアで`AdBlock`を検索してインストールしてください。  
+`AdBlock`を使用しなくても、右側パネルに表示される広告の量は他のサイトに比べて少ないので、あまり目立ちません。  
 ![Photopea - 右側のパネルに限定された広告と Chrome Web ブラウザの AdBlock 拡張機能](/assets/images/231028002032/basic_setting_-_general-photopea-adblock.png)  
 
 Photopea - 右側のパネルに限定された広告と Chrome Web ブラウザの AdBlock 拡張機能
@@ -97,9 +97,9 @@ chmod 777 *.appimage
 ## **生産性**
 ### イージーストロークジェスチャー(マウスジェスチャーマクロ)
 Windows 上で [Strokeit](https://www.tcbmi.com/strokeit){:target="_blank"} マウス ジェスチャ マクロ ソフトウェアを使用した経験がある場合は、`Easysteroid Gesture` が Ubuntu の最良の代替手段となります。  
-「マウスの右ボタン」によるジェスチャを描画したい場合は、以下の設定が必要です。実際、起動時に自動的に実行することは必須のオプションです。  
-Easythrough Preferences タブで、Behavior を「Button 3」に設定し、Appearance で自動的に実行されるように設定します。  
-マウスジェスチャアクションは「アクション」タブで追加できます。  
+`マウスの右ボタン`によるジェスチャを描画したい場合は、以下の設定が必要です。実際、起動時に自動的に実行することは必須のオプションです。  
+Easythrough Preferences タブで、Behavior を`Button 3`に設定し、Appearance で自動的に実行されるように設定します。  
+マウスジェスチャアクションは`アクション`タブで追加できます。  
 ![イージーストローク - 設定](/assets/images/231028002032/basic_setting_-_general-easystroke.png)  
 
 イージーストローク - 設定

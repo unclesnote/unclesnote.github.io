@@ -25,9 +25,9 @@ Oracle VM VirtualBoxのUbuntu(20.04) VMにディスクを作成、接続、使�
 - Ubuntu が起動するたびにディスク デバイスを使用できるようにします。
 
 ## 1. ディスク イメージを作成し、Ubuntu VM にアタッチします。
-ディスクイメージは、Virtual Box Manager の「Virtual Media Manager」を通じて作成できます。  
+ディスクイメージは、Virtual Box Manager の`Virtual Media Manager`を通じて作成できます。  
 55GBのイメージを作成する予定ですが、ディスクイメージの作成には2つのオプションがあります。 1つ目は、使用した分だけハードディスクの容量を占有するオプション、2つ目は、最初から予定していた容量を一気に占有するオプションを作成することです。ただし、安定した動作のために、2 番目のオプションで一度に 55GB を作成します。  
-「フルサイズを事前に割り当てる」オプションを使用して仮想ハードディスクを作成しました。  
+`フルサイズを事前に割り当てる`オプションを使用して仮想ハードディスクを作成しました。  
 ![ Oracle VM VirtualBox Manager - 仮想ハードディスクの作成](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
 
 Oracle VM VirtualBox Manager - 仮想ハードディスクの作成
@@ -40,7 +40,7 @@ Oracle VM VirtualBox Manager - 仮想ハードディスクの初期化が進行�
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 次に、作成した仮想ハー​​ドディスクを Ubuntu VM に追加します。  
-Ubuntu VM 設定の「ストレージ」タブで SATA コントローラーを使用してハードディスクを追加できます。  
+Ubuntu VM 設定の`ストレージ`タブで SATA コントローラーを使用してハードディスクを追加できます。  
 ![Oracle VM VirtualBox Manager - Ubuntu VM にハードディスクを追加する](/assets/images/231023215845/attach_disk-choose-disk.png)  
 
 Oracle VM VirtualBox Manager - Ubuntu VM にハードディスクを追加する
@@ -64,13 +64,13 @@ sudo apt-get install gparted
 gparted
 ```
 GParted の右上隅に作成されたハードディスクを選択した後、以下の図に従って `msdos` パーティション テーブルを作成し、それを `ext4` としてフォーマットします。  
-メニューからパーティション「msdos」パーティション テーブルを適用します。  
+メニューからパーティション`msdos`パーティション テーブルを適用します。  
 ![Ubuntu VM - GParted - msdos 形式でパーティション テーブルを作成する](/assets/images/231023215845/attach_disk-create-partition-table.png)  
 
 Ubuntu VM - GParted - msdos 形式でパーティション テーブルを作成する
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-次に、パーティションを作成します。未割り当てのパーティションを右クリックし、「ext4」ファイル システム パーティションを作成します。フルサイズに設定してみました。  
+次に、パーティションを作成します。未割り当てのパーティションを右クリックし、`ext4`ファイル システム パーティションを作成します。フルサイズに設定してみました。  
 ![Ubuntu VM - GParted - ext4 ファイル システムでパーティションを作成する](/assets/images/231023215845/attach_disk-create-partition.png)  
 
 Ubuntu VM - GParted - ext4 ファイル システムでパーティションを作成する
@@ -83,14 +83,14 @@ ext4 ファイル システムのパーティションを `etx4` にフォーマ
 Ubuntu VM - GParted - パーティションを ext4 にフォーマットする
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-以上でハードディスクの初期化は完了です。 Ubuntu VM が起動するたびにハードディスクを使用できるようにハードディスクをマウントするには、一意のディスク ID 情報が必要です。作成したパーティションを右クリックし、情報メニューの「UUID」を確認し、記憶しておきます。  
+以上でハードディスクの初期化は完了です。 Ubuntu VM が起動するたびにハードディスクを使用できるようにハードディスクをマウントするには、一意のディスク ID 情報が必要です。作成したパーティションを右クリックし、情報メニューの`UUID`を確認し、記憶しておきます。  
 ![Ubuntu VM - GParted - ディスク パーティションの UUID を確認する](/assets/images/231023215845/attach_disk-disk-uuid.png)  
 
 Ubuntu VM - GParted - ディスク パーティションの UUID を確認する
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 ## 3. 起動するたびに、ディスクをマウントします
-現在の状態では、フォーマットされたディスクデバイスの準備はできていますが、ファイルを書き込むためのパスがありません。そこで、特定のフォルダーをハードディスクデバイスに接続してパスを作成します。これが「マウント」です。  
+現在の状態では、フォーマットされたディスクデバイスの準備はできていますが、ファイルを書き込むためのパスがありません。そこで、特定のフォルダーをハードディスクデバイスに接続してパスを作成します。これが`マウント`です。  
 上記の gparted で特定された `UUID` はハードディスク デバイスを表しており、このデバイスを `/mnt/data` フォルダーに接続して、ファイルを書き込むことができるパスを作成します。 Ubuntu が起動するたびにディスクが使用可能になる必要があるため、これを `/etc/fstab` に記述します。  
 以下の行が `/etc/fstab` に追加されます。  
 

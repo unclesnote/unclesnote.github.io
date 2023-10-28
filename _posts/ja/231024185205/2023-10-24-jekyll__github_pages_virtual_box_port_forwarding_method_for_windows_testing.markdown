@@ -20,7 +20,7 @@ lang: ja
 ---
 私の場合、Virtual Box の Ubuntu VM 上で Jekyll をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィールとは若干異なります。そこで、X86 Windows ブラウザ上で Jekyll をテストするための Virtual Box のポート転送方法を説明したいと思います。  
 ## Ubuntu VM 上でローカルに Jekyll を実行する
-まず、Ubuntu VM の「ifconfig」を使用してネットワーク インターフェイスの IP アドレスを確認します。私の場合、IP アドレスは「10.0.2.15」です。  
+まず、Ubuntu VM の`ifconfig`を使用してネットワーク インターフェイスの IP アドレスを確認します。私の場合、IP アドレスは`10.0.2.15`です。  
 
 ```
 $ ifconfig
@@ -35,7 +35,7 @@ enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ...
 ```
-Jekyll をテストするには、Jekyll を実行し、上記で確認した IP アドレスを「--host」オプションを使用して入力します。  
+Jekyll をテストするには、Jekyll を実行し、上記で確認した IP アドレスを`--host`オプションを使用して入力します。  
 
 ```shell
 $ bundle exec jekyll serve --host 10.0.2.15
@@ -52,7 +52,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 ```
 ## Virtual Box Manager で Ubuntu VM のポート転送を設定する
 Virtual Box Manager の Ubuntu VM のネットワーク設定で、次のように入力してポート転送を追加します。  
-「ゲスト IP」アドレスは、Ubuntu VM 上で確認された IP アドレスです。  
+`ゲスト IP`アドレスは、Ubuntu VM 上で確認された IP アドレスです。  
 - **名前** : (希望の名前)
 - **プロトコル** : TCP
 - **ホストIP** : 127.0.0.1
