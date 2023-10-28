@@ -1,0 +1,8 @@
+---
+title: "ジキル"
+layout: tag
+ro_ref: ja-tag-ジキル
+tag: "ジキル"
+tag_web: "ジキル"
+lang: ja
+---

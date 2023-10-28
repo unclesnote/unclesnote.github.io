@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231023215845
+thumbnail: /assets/images/231023215845/ja-thumb-attach_disk-create-virtual-box-disk-image.png
+lang: ja
+---

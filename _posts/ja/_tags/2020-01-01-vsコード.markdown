@@ -1,0 +1,8 @@
+---
+title: "VSコード"
+layout: tag
+ro_ref: ja-tag-VSコード
+tag: "VSコード"
+tag_web: "vsコード"
+lang: ja
+---

@@ -1,0 +1,8 @@
+---
+title: "画像ビューア"
+layout: tag
+ro_ref: ja-tag-画像ビューア
+tag: "画像ビューア"
+tag_web: "画像ビューア"
+lang: ja
+---

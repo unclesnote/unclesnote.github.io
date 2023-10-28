@@ -1,0 +1,8 @@
+---
+title: "クリタ"
+layout: tag
+ro_ref: ja-tag-クリタ
+tag: "クリタ"
+tag_web: "クリタ"
+lang: ja
+---

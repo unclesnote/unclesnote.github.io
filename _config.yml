@@ -17,9 +17,9 @@ timezone: Asia/Seoul
 title: Uncle's Note # the main title
 tagline: Uncle Sammy's IT & Dev Scribblepad # it will display as the sub-title
 
-languages: ["en"                                 , "ko"                    , "es"                                               , "zh"]
-titles:    ["Uncle's Note"                       , "엉클스 노트"             , "nota del tio"                                     , "叔叔的笔记" ]
-taglines:  ["Uncle Sammy's IT & Dev Scribblepad" , "엉클 샘의 IT & 개발 낙서장", "Libro de garabatos de TI y desarrollo del tío Sam", "山姆大叔的 IT 与开发涂鸦书" ]
+languages: ["en"                                 , "ko"                    , "es"                                               , "zh"                    , "ja"]
+titles:    ["Uncle's Note"                       , "엉클스 노트"             , "nota del tio"                                     , "叔叔的笔记"              , "アンクルズノート" ]
+taglines:  ["Uncle Sammy's IT & Dev Scribblepad" , "엉클 샘의 IT & 개발 낙서장", "Libro de garabatos de TI y desarrollo del tío Sam", "山姆大叔的 IT 与开发涂鸦书", "アンクルサムのIT＆開発落書き" ]
 
 description: >- # used by seo meta and the atom feed
   Uncle Sammy's IT & Dev Scribblepad
@@ -380,7 +380,57 @@ defaults:
       toc: true # Display TOC column in posts.
       permalink: /zh/:short_year:month:day:hour:minute:second/:title
       lang: zh
-           
+  # --------------------------------------------------------------
+  # ja
+  # --------------------------------------------------------------
+  - scope:
+      path: _posts/ja/2020-01-01-index.markdown
+      type: posts
+    values:
+      layout: home
+      comments: false
+      toc: false
+      permalink: /ja/
+      lang: ja
+  - scope:
+      path: _posts/ja/_tabs
+      type: posts
+    values: # below is front matter and it will be updated to each .markdown file
+      permalink: /ja/:title
+      lang: ja
+  - scope:
+      path: _posts/ja/_pages
+      type: posts
+    values: # below is front matter and it will be updated to each .markdown file
+      permalink: /ja/pages/:title
+      lang: ja
+  - scope:
+      path: _posts/ja/_categories
+      type: posts
+    values: # below is front matter and it will be updated to each .markdown file
+      permalink: /ja/categories/:title
+      lang: ja
+  - scope:
+      path: _posts/ja/_tags
+      type: posts
+    values: # below is front matter and it will be updated to each .markdown file
+      permalink: /ja/tags/:title
+      lang: ja
+  - scope:
+      path: _posts/ja/_redirects
+    values:
+      permalink: /ja/:title/
+      lang: ja
+  - scope:
+      path: _posts/ja
+      type: posts
+    values: # below is front matter and it will be updated to each .markdown file
+      layout: post
+      comments: true # Enable comments in posts.
+      toc: true # Display TOC column in posts.
+      permalink: /ja/:short_year:month:day:hour:minute:second/:title
+      lang: ja
+                 
 sass:
   style: compressed
 

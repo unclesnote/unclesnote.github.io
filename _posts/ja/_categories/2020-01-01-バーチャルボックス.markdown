@@ -1,0 +1,8 @@
+---
+title: "バーチャルボックス"
+layout: category
+ro_ref: ja-category-バーチャルボックス
+category: "バーチャルボックス"
+category_web: "バーチャルボックス"
+lang: ja
+---

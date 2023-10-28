@@ -1,8 +1,8 @@
 ---
-title:  Software esencial para usar en el sistema operativo Ubuntu
+title:  Software alternativo esencial para Ubuntu en lugar de herramientas de Windows
 image:
   path: /assets/images/231028002032/es-thumb-basic_setting_-_general.png
-  alt: Software esencial para usar en el sistema operativo Ubuntu
+  alt: Software alternativo esencial para Ubuntu en lugar de herramientas de Windows
 images: ["/assets/images/231028002032/basic_setting_-_general.svg", "/assets/images/231028002032/basic_setting_-_general-krusader.png", "/assets/images/231028002032/basic_setting_-_general-gwenview.png", "/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png", "/assets/images/231028002032/basic_setting_-_general-photopea.png", "/assets/images/231028002032/basic_setting_-_general-photopea-adblock.png", "/assets/images/231028002032/basic_setting_-_general-krita.png", "/assets/images/231028002032/basic_setting_-_general-krita-downdlaod-appimage.png", "/assets/images/231028002032/basic_setting_-_general-easystroke.png", "/assets/images/231028002032/basic_setting_-_general-easystroke-download.png"]
 categories: [ubuntu, Herramientas]
 tags: [Krusader, GwenVer, Fotopea, crita, trazofácil, ImagenViwer, Editordeimagen, Exploradordearchivos, RatónMacro, ubuntu, Herramientas]
@@ -24,7 +24,7 @@ Si está utilizando Ubuntu debido a las ventajas específicas del sistema operat
 Software de Ubuntu
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-## Explorador de archivos
+## **Explorador de archivos**
 ### Krusader
 Si tiene experiencia usando Q-Dir o [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} en un entorno Windows, [Krusader](https://krusader.org){:target="_blank"} ofrece la experiencia de dividir Windows y exploración de archivos con varias pestañas.  
 ![Krusader](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
@@ -38,7 +38,7 @@ El método de instalación es muy sencillo. Puedes instalarlo usando apt.
 sudo apt update
 sudo apt install krusader
 ```
-## Visor/Editor de imágenes
+## **Visor/Editor de imágenes**
 ### GwenVer
 [GwenView](https://github.com/KDE/gwenview){:target="_blank"} es el mejor visor de imágenes de Ubuntu que he usado. Actualizaré si encuentro un visor de imágenes mejor.  
 ![GwenVer](/assets/images/231028002032/basic_setting_-_general-gwenview.png)  
@@ -94,7 +94,7 @@ Otorgue permiso de ejecución a la imagen de la aplicación Krita descargada y e
 cd ~/Downloads
 chmod 777 *.appimage
 ```
-## Productividad
+## **Productividad**
 ### Gesto Easystroke (Macro de gesto del mouse)
 Si tiene experiencia en el uso del software de macros de gestos del mouse [Strokeit](https://www.tcbmi.com/strokeit){:target="_blank"} en Windows, `Easystroke Gesture` es la mejor alternativa para Ubuntu.  
 Si desea dibujar un gesto con el "botón derecho del mouse", necesita la configuración a continuación. De hecho, hacer que se ejecute automáticamente al iniciar es una opción esencial.  

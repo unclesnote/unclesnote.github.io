@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231028002032
+thumbnail: /assets/images/231028002032/ja-thumb-basic_setting_-_general.svg
+lang: ja
+---

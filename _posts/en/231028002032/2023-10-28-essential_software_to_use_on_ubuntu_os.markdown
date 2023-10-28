@@ -1,8 +1,8 @@
 ---
-title:  Essential software to use on Ubuntu OS
+title:  Essential alternative software for Ubuntu instead of Windows tools
 image:
   path: /assets/images/231028002032/en-thumb-basic_setting_-_general.png
-  alt: Essential software to use on Ubuntu OS
+  alt: Essential alternative software for Ubuntu instead of Windows tools
 images: ["/assets/images/231028002032/basic_setting_-_general.svg", "/assets/images/231028002032/basic_setting_-_general-krusader.png", "/assets/images/231028002032/basic_setting_-_general-gwenview.png", "/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png", "/assets/images/231028002032/basic_setting_-_general-photopea.png", "/assets/images/231028002032/basic_setting_-_general-photopea-adblock.png", "/assets/images/231028002032/basic_setting_-_general-krita.png", "/assets/images/231028002032/basic_setting_-_general-krita-downdlaod-appimage.png", "/assets/images/231028002032/basic_setting_-_general-easystroke.png", "/assets/images/231028002032/basic_setting_-_general-easystroke-download.png"]
 categories: [Ubuntu, Tools]
 tags: [Krusader, GwenView, Photopea, Krita, Easystroke, ImageViwer, ImageEditor, FileBrowser, MouseMacro, Ubuntu, Tools]
@@ -24,7 +24,7 @@ If you are using Ubuntu because of the specific advantages of the Ubuntu OS, you
 Ubuntu Softwares
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-## File Browser
+## **File Browser**
 ### Krusader
 If you have experience using Q-Dir or [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} in a Windows environment, [Krusader](https://krusader.org){:target="_blank"} offers the experience of split windows and multi-tab file browsing.  
 ![Krusader](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
@@ -38,7 +38,7 @@ The installation method is very easy. You can install it using apt.
 sudo apt update
 sudo apt install krusader
 ```
-## Image Viewer/Editor
+## **Image Viewer/Editor**
 ### GwenView
 [GwenView](https://github.com/KDE/gwenview){:target="_blank"} is the best Ubuntu image viewer I've ever used. I will update if I find a better image viewer.  
 ![GwenView](/assets/images/231028002032/basic_setting_-_general-gwenview.png)  
@@ -94,7 +94,7 @@ Give execution permission to the downloaded Krita app image and run it.
 cd ~/Downloads
 chmod 777 *.appimage
 ```
-## Productivity
+## **Productivity**
 ### Easystroke Gesture(Mouse Gesture Macro)
 If you have experience using [Strokeit](https://www.tcbmi.com/strokeit){:target="_blank"} mouse gesture macro software on Windows, `Easystroke Gesture` is the best alternative for Ubuntu.  
 If you want to draw a gesture with the `right mouse button`, you need the settings below. In fact, having it run automatically when booting is an essential option.  

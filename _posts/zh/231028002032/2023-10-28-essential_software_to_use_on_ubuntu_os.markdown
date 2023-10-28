@@ -1,8 +1,8 @@
 ---
-title:  Ubuntu 操作系统上使用的基本软件
+title:  Ubuntu 的必备替代软件，而不是 Windows 工具
 image:
   path: /assets/images/231028002032/zh-thumb-basic_setting_-_general.png
-  alt: Ubuntu 操作系统上使用的基本软件
+  alt: Ubuntu 的必备替代软件，而不是 Windows 工具
 images: ["/assets/images/231028002032/basic_setting_-_general.svg", "/assets/images/231028002032/basic_setting_-_general-krusader.png", "/assets/images/231028002032/basic_setting_-_general-gwenview.png", "/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png", "/assets/images/231028002032/basic_setting_-_general-photopea.png", "/assets/images/231028002032/basic_setting_-_general-photopea-adblock.png", "/assets/images/231028002032/basic_setting_-_general-krita.png", "/assets/images/231028002032/basic_setting_-_general-krita-downdlaod-appimage.png", "/assets/images/231028002032/basic_setting_-_general-easystroke.png", "/assets/images/231028002032/basic_setting_-_general-easystroke-download.png"]
 categories: [乌班图, 工具]
 tags: [克鲁萨德, 格温维尤, 光豌豆, 克里塔, 易中风, 图像浏览器, 图片编辑器, 文件浏览器, 鼠标宏, 乌班图, 工具]
@@ -24,7 +24,7 @@ lang: zh
 Ubuntu 软件
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-## 文件浏览器
+## **文件浏览器**
 ### 克鲁萨德
 如果您有在 Windows 环境下使用 Q-Dir 或 [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} 的经验，[Krusader](https://krusader.org){:target="_blank"} 提供拆分体验窗口和多选项卡文件浏览。  
 ![克鲁萨德](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
@@ -38,7 +38,7 @@ Ubuntu 软件
 sudo apt update
 sudo apt install krusader
 ```
-## 图像查看器/编辑器
+## **图像查看器/编辑器**
 ### 格温维尤
 [GwenView](https://github.com/KDE/gwenview){:target="_blank"} 是我用过的最好的 Ubuntu 图像查看器。如果我找到更好的图像查看器，我会更新。  
 ![格温维尤](/assets/images/231028002032/basic_setting_-_general-gwenview.png)  
@@ -94,7 +94,7 @@ Krita - 下载 Linux AppImage
 cd ~/Downloads
 chmod 777 *.appimage
 ```
-## 生产率
+## **生产率**
 ### 轻松手势（鼠标手势宏）
 如果您有在 Windows 上使用 [Strokeit](https://www.tcbmi.com/Strokeit){:target="_blank"} 鼠标手势宏软件的经验，`Easyrinkle Gesture`是 Ubuntu 的最佳替代方案。  
 如果你想用`鼠标右键`绘制手势，则需要进行以下设置。事实上，让它在启动时自动运行是一个重要的选项。  

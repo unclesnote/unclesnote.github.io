@@ -1,0 +1,8 @@
+---
+title: "フォトピー"
+layout: tag
+ro_ref: ja-tag-フォトピー
+tag: "フォトピー"
+tag_web: "フォトピー"
+lang: ja
+---

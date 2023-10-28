@@ -1,8 +1,8 @@
 ---
-title:  Ubuntu OS에서 사용하는 필수 소프트웨어
+title:  Windows 도구 대신 Ubuntu를 위한 필수 대체 소프트웨어
 image:
   path: /assets/images/231028002032/ko-thumb-basic_setting_-_general.png
-  alt: Ubuntu OS에서 사용하는 필수 소프트웨어
+  alt: Windows 도구 대신 Ubuntu를 위한 필수 대체 소프트웨어
 images: ["/assets/images/231028002032/basic_setting_-_general.svg", "/assets/images/231028002032/basic_setting_-_general-krusader.png", "/assets/images/231028002032/basic_setting_-_general-gwenview.png", "/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png", "/assets/images/231028002032/basic_setting_-_general-photopea.png", "/assets/images/231028002032/basic_setting_-_general-photopea-adblock.png", "/assets/images/231028002032/basic_setting_-_general-krita.png", "/assets/images/231028002032/basic_setting_-_general-krita-downdlaod-appimage.png", "/assets/images/231028002032/basic_setting_-_general-easystroke.png", "/assets/images/231028002032/basic_setting_-_general-easystroke-download.png"]
 categories: [우분투, 도구]
 tags: [크루세이더, 그웬뷰, 포토피아, 크리타, 이지스트로크, 이미지뷰어, 이미지편집기, 파일탐색기, 마우스매크로, 우분투, 도구]
@@ -24,7 +24,7 @@ Ubuntu OS의 특별한 장점 때문에 Ubuntu를 사용하고 있다면 Windows
 우분투 소프트웨어
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
-## 파일 탐색기
+## **파일 탐색기**
 ### 크루세이더
 Windows 환경에서 Q-Dir이나 [토탈 커맨더](https://www.ghisler.com/download.htm){:target="_blank"}를 사용해 본 경험이 있으신 분은 [Krusader](https://krusader.org){:target="_blank"}에서 분할 경험을 제공해 드립니다. 창 및 멀티탭 파일 탐색.  
 ![크루세이더](/assets/images/231028002032/basic_setting_-_general-krusader.png)  
@@ -38,7 +38,7 @@ Windows 환경에서 Q-Dir이나 [토탈 커맨더](https://www.ghisler.com/down
 sudo apt update
 sudo apt install krusader
 ```
-## 이미지 뷰어/편집기
+## **이미지 뷰어/편집기**
 ### 그웬뷰
 [GwenView](https://github.com/KDE/gwenview){:target="_blank"}는 제가 사용해 본 최고의 Ubuntu 이미지 뷰어입니다. 더 나은 이미지 뷰어를 찾으면 업데이트하겠습니다.  
 ![그웬뷰](/assets/images/231028002032/basic_setting_-_general-gwenview.png)  
@@ -94,7 +94,7 @@ Krita - Linux AppImage 다운로드
 cd ~/Downloads
 chmod 777 *.appimage
 ```
-## 생산력
+## **생산력**
 ### EasyStroke Gesture(마우스 제스처 매크로)
 Windows에서 [Strokeit](https://www.tcbmi.com/strokeit){:target="_blank"} 마우스 제스처 매크로 소프트웨어를 사용해 본 경험이 있다면 `EasyStroke Gesture`가 Ubuntu를 위한 최고의 대안입니다.  
 `마우스 오른쪽 버튼`으로 제스처를 그리려면 아래와 같은 설정이 필요합니다. 사실 부팅 시 자동으로 실행되도록 하는 것은 필수 옵션입니다.  
