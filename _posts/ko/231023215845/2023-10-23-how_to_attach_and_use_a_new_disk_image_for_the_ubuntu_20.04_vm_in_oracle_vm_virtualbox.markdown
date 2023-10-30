@@ -1,8 +1,8 @@
 ---
-title:  Oracle VM VirtualBox에서 Ubuntu(20.04) VM에 대한 새 디스크 이미지를 연결하고 사용하는 방법
+title:  Oracle VM VirtualBox에서 Ubuntu(20.04) VM용 새 하드 디스크를 연결하고 사용하는 방법
 image:
   path: /assets/images/231023215845/ko-thumb-attach_disk-create-virtual-box-disk-image.png
-  alt: Oracle VM VirtualBox에서 Ubuntu(20.04) VM에 대한 새 디스크 이미지를 연결하고 사용하는 방법
+  alt: Oracle VM VirtualBox에서 Ubuntu(20.04) VM용 새 하드 디스크를 연결하고 사용하는 방법
 images: ["/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png", "/assets/images/231023215845/attach_disk-virtual-box-media-image.png", "/assets/images/231023215845/attach_disk-choose-disk.png", "/assets/images/231023215845/attach_disk-attached-disk-image.png", "/assets/images/231023215845/attach_disk-create-partition-table.png", "/assets/images/231023215845/attach_disk-create-partition.png", "/assets/images/231023215845/attach_disk-format-disk.png", "/assets/images/231023215845/attach_disk-disk-uuid.png"]
 categories: [우분투, 가상박스]
 tags: [우분투, 버추얼박스, GParted, fstab, UUID]

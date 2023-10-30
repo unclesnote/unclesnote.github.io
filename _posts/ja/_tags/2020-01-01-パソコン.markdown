@@ -1,0 +1,8 @@
+---
+title: "パソコン"
+layout: tag
+ro_ref: ja-tag-パソコン
+tag: "パソコン"
+tag_web: "パソコン"
+lang: ja
+---

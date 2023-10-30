@@ -1,0 +1,8 @@
+---
+title: "PC"
+layout: tag
+ro_ref: ko-tag-PC
+tag: "PC"
+tag_web: "pc"
+lang: ko
+---

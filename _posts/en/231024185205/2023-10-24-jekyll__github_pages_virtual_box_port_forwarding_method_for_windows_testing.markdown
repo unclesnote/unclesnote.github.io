@@ -1,12 +1,12 @@
 ---
-title:  Jekyll (GitHub Pages) Virtual Box port forwarding method for Windows testing
+title:  VirtualBox port forwarding method for Jekyll Windows testing
 image:
   path: /assets/images/231024185205/en-thumb-jekyll_port_forwarding-vm-port-forwarding.png
-  alt: Jekyll (GitHub Pages) Virtual Box port forwarding method for Windows testing
+  alt: VirtualBox port forwarding method for Jekyll Windows testing
 images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
 categories: [GitHub Pages]
 tags: [Jekyll, VirtualBox, PortForwarding, GitHubPages, GitHub]
-description:  In my case, I build and test Jekyll on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as Firefox in an Ubuntu VM are slightly different from the look and feel of an actual X86 Windows. So, I would like to explain the Virtual Box port forwarding method to test Jekyll on the X86 Windows browser.
+description:  In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as Firefox in an Ubuntu VM are slightly different from the look and feel of an actual X86 Windows. So, I would like to explain the Virtual Box port forwarding method to test Jekyll on the X86 Windows browser.
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,7 @@ ro_name: jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_tes
 ro_ref: 231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing
 lang: en
 ---
-In my case, I build and test Jekyll on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as Firefox in an Ubuntu VM are slightly different from the look and feel of an actual X86 Windows. So, I would like to explain the Virtual Box port forwarding method to test Jekyll on the X86 Windows browser.  
+In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as Firefox in an Ubuntu VM are slightly different from the look and feel of an actual X86 Windows. So, I would like to explain the Virtual Box port forwarding method to test Jekyll on the X86 Windows browser.  
 ## Running Jekyll locally on Ubuntu VM
 First, check the IP address of the network interface using `ifconfig` in the Ubuntu VM. In my case, the IP address is `10.0.2.15`.  
 

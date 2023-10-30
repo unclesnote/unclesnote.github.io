@@ -1,8 +1,8 @@
 ---
-title:  如何在 Oracle VM VirtualBox 中为 Ubuntu(20.04) VM 附加和使用新磁盘映像
+title:  如何在 Oracle VM VirtualBox 中为 Ubuntu (20.04) VM 连接和使用新硬盘
 image:
   path: /assets/images/231023215845/zh-thumb-attach_disk-create-virtual-box-disk-image.png
-  alt: 如何在 Oracle VM VirtualBox 中为 Ubuntu(20.04) VM 附加和使用新磁盘映像
+  alt: 如何在 Oracle VM VirtualBox 中为 Ubuntu (20.04) VM 连接和使用新硬盘
 images: ["/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png", "/assets/images/231023215845/attach_disk-virtual-box-media-image.png", "/assets/images/231023215845/attach_disk-choose-disk.png", "/assets/images/231023215845/attach_disk-attached-disk-image.png", "/assets/images/231023215845/attach_disk-create-partition-table.png", "/assets/images/231023215845/attach_disk-create-partition.png", "/assets/images/231023215845/attach_disk-format-disk.png", "/assets/images/231023215845/attach_disk-disk-uuid.png"]
 categories: [乌班图, 虚拟盒子]
 tags: [乌班图, 虚拟盒子, 格帕特, 系统表, 通用唯一标识符]

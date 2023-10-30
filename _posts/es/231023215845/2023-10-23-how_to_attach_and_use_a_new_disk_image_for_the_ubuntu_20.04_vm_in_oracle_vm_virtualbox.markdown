@@ -1,8 +1,8 @@
 ---
-title:  Cómo adjuntar y usar una nueva imagen de disco para la VM Ubuntu (20.04) en Oracle VM VirtualBox
+title:  Cómo conectar y usar un nuevo disco duro para la VM Ubuntu (20.04) en Oracle VM VirtualBox
 image:
   path: /assets/images/231023215845/es-thumb-attach_disk-create-virtual-box-disk-image.png
-  alt: Cómo adjuntar y usar una nueva imagen de disco para la VM Ubuntu (20.04) en Oracle VM VirtualBox
+  alt: Cómo conectar y usar un nuevo disco duro para la VM Ubuntu (20.04) en Oracle VM VirtualBox
 images: ["/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png", "/assets/images/231023215845/attach_disk-virtual-box-media-image.png", "/assets/images/231023215845/attach_disk-choose-disk.png", "/assets/images/231023215845/attach_disk-attached-disk-image.png", "/assets/images/231023215845/attach_disk-create-partition-table.png", "/assets/images/231023215845/attach_disk-create-partition.png", "/assets/images/231023215845/attach_disk-format-disk.png", "/assets/images/231023215845/attach_disk-disk-uuid.png"]
 categories: [ubuntu, Caja virtual]
 tags: [ubuntu, VirtualBox, Gpartido, fstab, UUID]

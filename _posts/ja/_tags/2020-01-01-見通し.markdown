@@ -1,0 +1,8 @@
+---
+title: "見通し"
+layout: tag
+ro_ref: ja-tag-見通し
+tag: "見通し"
+tag_web: "見通し"
+lang: ja
+---

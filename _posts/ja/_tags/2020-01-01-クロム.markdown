@@ -1,0 +1,8 @@
+---
+title: "クロム"
+layout: tag
+ro_ref: ja-tag-クロム
+tag: "クロム"
+tag_web: "クロム"
+lang: ja
+---

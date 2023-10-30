@@ -1,12 +1,12 @@
 ---
-title:  Jekyll (GitHub Pages) Windows测试的Virtual Box端口转发方法
+title:  Jekyll Windows测试的VirtualBox端口转发方法
 image:
   path: /assets/images/231024185205/zh-thumb-jekyll_port_forwarding-vm-port-forwarding.png
-  alt: Jekyll (GitHub Pages) Windows测试的Virtual Box端口转发方法
+  alt: Jekyll Windows测试的VirtualBox端口转发方法
 images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
 categories: [GitHub 页面]
 tags: [杰基尔, 虚拟盒子, 转发端口, GitHub页面, GitHub]
-description:  就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏览器上测试Jekyll的Virtual Box端口转发方法。
+description:  就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll(GitHub Pages)，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏览器上测试Jekyll的Virtual Box端口转发方法。
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,7 @@ ro_name: jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_tes
 ro_ref: 231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing
 lang: zh
 ---
-就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏览器上测试Jekyll的Virtual Box端口转发方法。  
+就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll(GitHub Pages)，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏览器上测试Jekyll的Virtual Box端口转发方法。  
 ## 在 Ubuntu VM 上本地运行 Jekyll
 首先，在 Ubuntu VM 中使用`ifconfig`检查网络接口的 IP 地址。在我的例子中，IP 地址是`10.0.2.15`。  
 

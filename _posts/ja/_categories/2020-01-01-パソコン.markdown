@@ -1,0 +1,8 @@
+---
+title: "パソコン"
+layout: category
+ro_ref: ja-category-パソコン
+category: "パソコン"
+category_web: "パソコン"
+lang: ja
+---
