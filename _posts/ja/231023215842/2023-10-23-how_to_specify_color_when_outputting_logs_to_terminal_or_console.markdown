@@ -1,11 +1,11 @@
 ---
 title:  ログをターミナルまたはコンソールに出力するときに色を指定する方法
 image:
-  path: /assets/images/231023215842/ja-thumb-default.png
+  path: /assets/images/231023215842/ja-thumb-terminal_text_color-thumb.png
   alt: ログをターミナルまたはコンソールに出力するときに色を指定する方法
 images: 
-categories: [Ubuntu]
-tags: [VSコード, ターミナル, デバッグコンソール, 出力, Ubuntu]
+categories: [Ubuntu, 一般]
+tags: [VSコード, ターミナル, デバッグコンソール, 出力, Ubuntu, 一般]
 description:  ソフトウェアを開発する際、ログは動作確認や問題の原因究明に役立ちます。重大なエラーまたは警告レベルのログに見つけやすい色が付いていると便利です。 VS Code や Visual Studio など、使用している IDE でログ テキストの色を設定できますが、ソフトウェアが IDE なしで実行されている場合、または Linux などのクロスコンパイル環境で実行されている場合、設定は適用されません。 。そこで、端末側から独立して文字の色を設定する方法を紹介します。
 public: true
 toc: true

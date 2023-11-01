@@ -28,7 +28,7 @@ A rough outline of the procedure is as follows.
 Disk images can be created through `Virtual Media Manager` in the Virtual Box manager.  
 I plan to create an image of 55GB, and there are two options for creating a disk image. The first is an option to occupy the capacity of my hard disk as much as I have used, and the second is to create an option to occupy the capacity planned from the beginning all at once. However, for stable operation, I will create 55GB at a time with the second option.  
 I created a virtual hard disk with `Pre-allocate Full Size` option.  
-![ Oracle VM VirtualBox Manager - Create Virtual Hard Disk](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
+![Oracle VM VirtualBox Manager - Create Virtual Hard Disk](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
 
 Oracle VM VirtualBox Manager - Create Virtual Hard Disk
 {: style="color:gray; font-size: 80%; text-align: center;"}

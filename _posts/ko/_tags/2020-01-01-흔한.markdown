@@ -1,0 +1,8 @@
+---
+title: "흔한"
+layout: tag
+ro_ref: ko-tag-흔한
+tag: "흔한"
+tag_web: "흔한"
+lang: ko
+---

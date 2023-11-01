@@ -1,10 +1,10 @@
 ---
 title:  Jekyll Windows テスト用の VirtualBox ポート転送方法
 image:
-  path: /assets/images/231024185205/ja-thumb-jekyll_port_forwarding-vm-port-forwarding.png
+  path: /assets/images/231024185205/ja-thumb-jekyll_port_forwarding-thumb.png
   alt: Jekyll Windows テスト用の VirtualBox ポート転送方法
 images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
-categories: [GitHub ページ]
+categories: [GitHub ページ, ジキル]
 tags: [ジキル, バーチャルボックス, ポートフォワーディング, GitHubページ, GitHub]
 description:  私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィールとは若干異なります。そこで、X86 Windows ブラウザ上で Jekyll をテストするための Virtual Box のポート転送方法を説明したいと思います。
 public: true

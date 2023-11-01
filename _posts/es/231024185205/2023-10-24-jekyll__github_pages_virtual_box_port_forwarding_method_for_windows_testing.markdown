@@ -1,10 +1,10 @@
 ---
 title:  Método de reenvío de puertos de VirtualBox para pruebas de Jekyll Windows
 image:
-  path: /assets/images/231024185205/es-thumb-jekyll_port_forwarding-vm-port-forwarding.png
+  path: /assets/images/231024185205/es-thumb-jekyll_port_forwarding-thumb.png
   alt: Método de reenvío de puertos de VirtualBox para pruebas de Jekyll Windows
 images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
-categories: [Páginas de GitHub]
+categories: [Páginas de GitHub, Jekyll]
 tags: [Jekyll, VirtualBox, Reenvíodepuertos, PáginasdeGitHub, GitHub]
 description:  En mi caso, construyo y pruebo Jekyll (páginas de GitHub) en una máquina virtual de Ubuntu en Virtual Box y luego lo envío a GitHub. Sin embargo, la apariencia de navegadores como Firefox en una máquina virtual Ubuntu es ligeramente diferente de la apariencia de un Windows X86 real. Entonces, me gustaría explicar el método de reenvío de puertos de Virtual Box para probar Jekyll en el navegador X86 de Windows.
 public: true

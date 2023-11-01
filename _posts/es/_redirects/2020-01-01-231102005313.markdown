@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231102005313
+thumbnail: /assets/images/231102005313/es-thumb-swapfile-system-monitor-swap.png
+lang: es
+---

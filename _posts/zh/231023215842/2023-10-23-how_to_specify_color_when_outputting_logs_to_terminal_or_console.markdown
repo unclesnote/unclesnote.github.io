@@ -1,11 +1,11 @@
 ---
 title:  输出日志到终端或控制台时如何指定颜色
 image:
-  path: /assets/images/231023215842/zh-thumb-default.png
+  path: /assets/images/231023215842/zh-thumb-terminal_text_color-thumb.png
   alt: 输出日志到终端或控制台时如何指定颜色
 images: 
-categories: [乌班图]
-tags: [VS代码, 终端, 调试控制台, 输出, 乌班图]
+categories: [乌班图, 常见的]
+tags: [VS代码, 终端, 调试控制台, 输出, 乌班图, 常见的]
 description:  在开发软件时，日志可以帮助您检查运行情况并查找问题原因。如果严重错误或警告级别的日志具有易于查找的颜色，将会很有帮助。您可以在您使用的 IDE（例如 VS Code 或 Visual Studio）中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。因此，我将介绍一种从终端角度独立设置文本颜色的方法。
 public: true
 toc: true

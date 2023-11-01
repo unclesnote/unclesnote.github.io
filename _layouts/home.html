@@ -29,7 +29,7 @@ layout: default
 {% endif %}
 
 {% if size_lang_remain_posts > 0 %}
-  {% assign prj_size_lang_total_pages = prj_size_lang_total_pages | plus: 1 %}  
+  {% assign prj_size_lang_total_pages = prj_size_lang_total_pages | plus: 1 %}
 {% endif %}
 
 {% if VERBOSE == true %}
@@ -108,17 +108,17 @@ layout: default
       </a>
     </article>
   {% endfor %}
-  
+
   <!-- prj_lang_bag  -->
   {% if VERBOSE == true %}
     {{ TAG }}page.ro_page_num = {{ page.ro_page_num }}<br>
     {{ TAG }}site.prj_paginate = {{ site.prj_paginate }}<br>
   {% endif %}
 
-  {% assign tmp_offset = page.ro_page_num | times: site.prj_paginate %}
-  {% assign tmp_offset = tmp_offset | minus: 1 %}
-  {% if page.ro_page_num == 1 and prj_lang_bag.size <= site.prj_paginate  %}
-    {% assign tmp_offset = 0 %}
+  {% assign tmp_offset = page.ro_page_num | minus: 1 %}
+  {% assign tmp_offset = tmp_offset | times: site.prj_paginate %}
+  {% if page.ro_page_num != 1 %}
+    {% assign tmp_offset = tmp_offset | plus: 1 %}
   {% endif %}
 
   {% assign tmp_post_cnt_max = page.ro_page_num | times: site.prj_paginate %}
@@ -141,6 +141,7 @@ layout: default
 
     {% if VERBOSE == true %}
       {{ TAG }}tmp_post_cnt = {{ tmp_post_cnt }}<br>
+      {{ TAG }}prj_lang_bag - post.title = {{ post.title }}<br>
     {% endif %}
 
     <article class="card-wrapper card">

@@ -1,0 +1,8 @@
+---
+title: "GitHubデスクトップ"
+layout: tag
+ro_ref: ja-tag-GitHubデスクトップ
+tag: "GitHubデスクトップ"
+tag_web: "githubデスクトップ"
+lang: ja
+---

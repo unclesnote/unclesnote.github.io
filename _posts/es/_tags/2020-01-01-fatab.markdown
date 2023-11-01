@@ -1,0 +1,8 @@
+---
+title: "fatab"
+layout: tag
+ro_ref: es-tag-fatab
+tag: "fatab"
+tag_web: "fatab"
+lang: es
+---

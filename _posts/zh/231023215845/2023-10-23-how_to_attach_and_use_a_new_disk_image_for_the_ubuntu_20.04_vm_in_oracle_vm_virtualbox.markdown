@@ -28,7 +28,7 @@ lang: zh
 可以通过 Virtual Box 管理器中的`虚拟媒体管理器`创建磁盘映像。  
 我计划创建一个55GB的镜像，创建磁盘镜像有两种选择。第一个是一个选项，占用我已经使用的硬盘容量，第二个是创建一个选项，一次性占用从一开始就计划的容量。不过，为了稳定运行，我会使用第二个选项一次创建55GB。  
 我使用`预分配完整大小`选项创建了一个虚拟硬盘。  
-![ Oracle VM VirtualBox Manager - 创建虚拟硬盘](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
+![Oracle VM VirtualBox Manager - 创建虚拟硬盘](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
 
 Oracle VM VirtualBox Manager - 创建虚拟硬盘
 {: style="color:gray; font-size: 80%; text-align: center;"}

@@ -28,7 +28,7 @@ Oracle VM VirtualBoxのUbuntu(20.04) VMにディスクを作成、接続、使�
 ディスクイメージは、Virtual Box Manager の`Virtual Media Manager`を通じて作成できます。  
 55GBのイメージを作成する予定ですが、ディスクイメージの作成には2つのオプションがあります。 1つ目は、使用した分だけハードディスクの容量を占有するオプション、2つ目は、最初から予定していた容量を一気に占有するオプションを作成することです。ただし、安定した動作のために、2 番目のオプションで一度に 55GB を作成します。  
 `フルサイズを事前に割り当てる`オプションを使用して仮想ハードディスクを作成しました。  
-![ Oracle VM VirtualBox Manager - 仮想ハードディスクの作成](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
+![Oracle VM VirtualBox Manager - 仮想ハードディスクの作成](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
 
 Oracle VM VirtualBox Manager - 仮想ハードディスクの作成
 {: style="color:gray; font-size: 80%; text-align: center;"}

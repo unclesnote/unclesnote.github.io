@@ -53,7 +53,7 @@ google_site_verification: # fill in to your verification string
 
 google_adsense:
   id: ca-pub-4780870735701245
-  
+
 google_analytics:
   id: G-NF80DWFNHD
 
@@ -126,7 +126,7 @@ pwa:
 
 # Pagination, It's like disabled by setting large value because build failure if set it to 0
 #paginate: 10000
-prj_paginate: 7    # Custome Pagination
+prj_paginate: 5    # Custome Pagination
 
 # The base URL of your site
 baseurl: ""
@@ -430,7 +430,7 @@ defaults:
       toc: true # Display TOC column in posts.
       permalink: /ja/:short_year:month:day:hour:minute:second/:title
       lang: ja
-                 
+
 sass:
   style: compressed
 

@@ -1,10 +1,10 @@
 ---
 title:  Jekyll Windows 테스트를 위한 VirtualBox 포트 전달 방법
 image:
-  path: /assets/images/231024185205/ko-thumb-jekyll_port_forwarding-vm-port-forwarding.png
+  path: /assets/images/231024185205/ko-thumb-jekyll_port_forwarding-thumb.png
   alt: Jekyll Windows 테스트를 위한 VirtualBox 포트 전달 방법
 images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
-categories: [GitHub 페이지]
+categories: [GitHub 페이지, 지킬]
 tags: [지킬, 버추얼박스, 포트포워딩, GitHub페이지, GitHub]
 description:  제 경우에는 Virtual Box의 Ubuntu VM에서 Jekyll(GitHub Pages)을 빌드하고 테스트한 후 GitHub에 푸시합니다. 그러나 Ubuntu VM의 Firefox와 같은 브라우저의 모양과 느낌은 실제 X86 Windows의 모양과 느낌과 약간 다릅니다. 그래서 X86 윈도우 브라우저에서 Jekyll을 테스트하기 위한 Virtual Box 포트포워딩 방법에 대해 설명드리고자 합니다.
 public: true

@@ -1,0 +1,8 @@
+---
+title: "swapfile"
+layout: tag
+ro_ref: en-tag-swapfile
+tag: "swapfile"
+tag_web: "swapfile"
+lang: en
+---

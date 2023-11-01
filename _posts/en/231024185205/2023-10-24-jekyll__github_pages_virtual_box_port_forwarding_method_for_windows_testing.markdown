@@ -1,10 +1,10 @@
 ---
 title:  VirtualBox port forwarding method for Jekyll Windows testing
 image:
-  path: /assets/images/231024185205/en-thumb-jekyll_port_forwarding-vm-port-forwarding.png
+  path: /assets/images/231024185205/en-thumb-jekyll_port_forwarding-thumb.png
   alt: VirtualBox port forwarding method for Jekyll Windows testing
 images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
-categories: [GitHub Pages]
+categories: [GitHub Pages, Jekyll]
 tags: [Jekyll, VirtualBox, PortForwarding, GitHubPages, GitHub]
 description:  In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as Firefox in an Ubuntu VM are slightly different from the look and feel of an actual X86 Windows. So, I would like to explain the Virtual Box port forwarding method to test Jekyll on the X86 Windows browser.
 public: true

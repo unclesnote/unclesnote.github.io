@@ -1,7 +1,7 @@
 ---
 title:  Ubuntu 的必备替代软件，而不是 Windows 工具
 image:
-  path: /assets/images/231028002032/zh-thumb-basic_setting_-_general.png
+  path: /assets/images/231028002032/zh-thumb-basic_setting_-_general-gwenview.png
   alt: Ubuntu 的必备替代软件，而不是 Windows 工具
 images: ["/assets/images/231028002032/basic_setting_-_general.svg", "/assets/images/231028002032/basic_setting_-_general-krusader.png", "/assets/images/231028002032/basic_setting_-_general-gwenview.png", "/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png", "/assets/images/231028002032/basic_setting_-_general-photopea.png", "/assets/images/231028002032/basic_setting_-_general-photopea-adblock.png", "/assets/images/231028002032/basic_setting_-_general-krita.png", "/assets/images/231028002032/basic_setting_-_general-krita-downdlaod-appimage.png", "/assets/images/231028002032/basic_setting_-_general-easystroke.png", "/assets/images/231028002032/basic_setting_-_general-easystroke-download.png"]
 categories: [乌班图, 工具]

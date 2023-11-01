@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231102005314
+thumbnail: /assets/images/231102005314/ja-thumb-ubuntu_optimization-ubuntu-appearance.png
+lang: ja
+---

@@ -1,0 +1,8 @@
+---
+title: "Jekyll"
+layout: category
+ro_ref: es-category-Jekyll
+category: "Jekyll"
+category_web: "jekyll"
+lang: es
+---

@@ -1,0 +1,8 @@
+---
+title: "파탭"
+layout: tag
+ro_ref: ko-tag-파탭
+tag: "파탭"
+tag_web: "파탭"
+lang: ko
+---

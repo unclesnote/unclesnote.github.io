@@ -1,0 +1,8 @@
+---
+title: "Común"
+layout: category
+ro_ref: es-category-Común
+category: "Común"
+category_web: "común"
+lang: es
+---

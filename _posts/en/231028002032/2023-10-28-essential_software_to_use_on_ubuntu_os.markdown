@@ -1,7 +1,7 @@
 ---
 title:  Essential alternative software for Ubuntu instead of Windows tools
 image:
-  path: /assets/images/231028002032/en-thumb-basic_setting_-_general.png
+  path: /assets/images/231028002032/en-thumb-basic_setting_-_general-gwenview.png
   alt: Essential alternative software for Ubuntu instead of Windows tools
 images: ["/assets/images/231028002032/basic_setting_-_general.svg", "/assets/images/231028002032/basic_setting_-_general-krusader.png", "/assets/images/231028002032/basic_setting_-_general-gwenview.png", "/assets/images/231028002032/basic_setting_-_general-enable-log-resource-usage-mode.png", "/assets/images/231028002032/basic_setting_-_general-photopea.png", "/assets/images/231028002032/basic_setting_-_general-photopea-adblock.png", "/assets/images/231028002032/basic_setting_-_general-krita.png", "/assets/images/231028002032/basic_setting_-_general-krita-downdlaod-appimage.png", "/assets/images/231028002032/basic_setting_-_general-easystroke.png", "/assets/images/231028002032/basic_setting_-_general-easystroke-download.png"]
 categories: [Ubuntu, Tools]

@@ -28,7 +28,7 @@ Un resumen aproximado del procedimiento es el siguiente.
 Las imágenes de disco se pueden crear a través de "Virtual Media Manager" en el administrador de Virtual Box.  
 Planeo crear una imagen de 55 GB y hay dos opciones para crear una imagen de disco. La primera es una opción para ocupar la capacidad de mi disco duro tanto como la he usado, y la segunda es crear una opción para ocupar de una sola vez la capacidad planificada desde el principio. Sin embargo, para un funcionamiento estable, crearé 55 GB a la vez con la segunda opción.  
 Creé un disco duro virtual con la opción "Preasignar tamaño completo".  
-![ Oracle VM VirtualBox Manager: crear un disco duro virtual](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
+![Oracle VM VirtualBox Manager: crear un disco duro virtual](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
 
 Oracle VM VirtualBox Manager: crear un disco duro virtual
 {: style="color:gray; font-size: 80%; text-align: center;"}

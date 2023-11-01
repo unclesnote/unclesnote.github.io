@@ -1,0 +1,8 @@
+---
+title: "スワップファイル"
+layout: tag
+ro_ref: ja-tag-スワップファイル
+tag: "スワップファイル"
+tag_web: "スワップファイル"
+lang: ja
+---

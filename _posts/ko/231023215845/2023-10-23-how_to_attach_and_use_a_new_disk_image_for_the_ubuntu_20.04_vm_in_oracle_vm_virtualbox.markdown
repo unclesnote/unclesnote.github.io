@@ -28,7 +28,7 @@ Oracle VM VirtualBox의 Ubuntu(20.04) VM에서 디스크를 생성, 연결, 사�
 디스크 이미지는 Virtual Box 관리자의 `Virtual Media Manager`를 통해 생성할 수 있습니다.  
 55GB의 이미지를 생성할 예정인데, 디스크 이미지를 생성하는 방법은 2가지가 있습니다. 첫 번째는 내가 사용한 만큼 내 하드디스크의 용량을 점유하는 옵션이고, 두 번째는 처음부터 계획한 용량을 한꺼번에 점유하는 옵션을 생성하는 것이다. 하지만 안정적인 운영을 위해 두 번째 옵션으로 한번에 55GB를 생성하겠습니다.  
 `전체 크기 사전 할당` 옵션을 사용하여 가상 하드 디스크를 만들었습니다.  
-![ Oracle VM VirtualBox Manager - 가상 하드 디스크 생성](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
+![Oracle VM VirtualBox Manager - 가상 하드 디스크 생성](/assets/images/231023215845/attach_disk-create-virtual-box-disk-image.png)  
 
 Oracle VM VirtualBox Manager - 가상 하드 디스크 생성
 {: style="color:gray; font-size: 80%; text-align: center;"}

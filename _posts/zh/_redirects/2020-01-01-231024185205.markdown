@@ -1,6 +1,6 @@
 ---
 layout: prj_redirects
 post_id: 231024185205
-thumbnail: /assets/images/231024185205/zh-thumb-jekyll_port_forwarding-vm-port-forwarding.png
+thumbnail: /assets/images/231024185205/zh-thumb-jekyll_port_forwarding-thumb.png
 lang: zh
 ---

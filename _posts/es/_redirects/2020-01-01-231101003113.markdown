@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231101003113
+thumbnail: /assets/images/231101003113/es-thumb-basic_setting_-_developer-visual-studio-code.png
+lang: es
+---

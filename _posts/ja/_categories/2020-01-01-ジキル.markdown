@@ -1,0 +1,8 @@
+---
+title: "ジキル"
+layout: category
+ro_ref: ja-category-ジキル
+category: "ジキル"
+category_web: "ジキル"
+lang: ja
+---

@@ -1,0 +1,8 @@
+---
+title: "一般"
+layout: category
+ro_ref: ja-category-一般
+category: "一般"
+category_web: "一般"
+lang: ja
+---

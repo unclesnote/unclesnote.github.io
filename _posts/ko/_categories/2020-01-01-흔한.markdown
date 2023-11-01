@@ -1,0 +1,8 @@
+---
+title: "흔한"
+layout: category
+ro_ref: ko-category-흔한
+category: "흔한"
+category_web: "흔한"
+lang: ko
+---

@@ -1,11 +1,11 @@
 ---
 title:  How to specify color when outputting logs to terminal or console
 image:
-  path: /assets/images/231023215842/en-thumb-default.png
+  path: /assets/images/231023215842/en-thumb-terminal_text_color-thumb.png
   alt: How to specify color when outputting logs to terminal or console
 images: 
-categories: [Ubuntu]
-tags: [VSCode, Terminal, DebugConsole, Output, Ubuntu]
+categories: [Ubuntu, Common]
+tags: [VSCode, Terminal, DebugConsole, Output, Ubuntu, Common]
 description:  When developing software, logs help you check operation and find the cause of problems. It would be helpful if the logs for critical error or warning levels had colors that were easy to find. You can set the color of the log text in the IDE you are using, such as VS Code or Visual Studio, but if the software is run without an IDE or in a cross-compilation environment such as Linux, the setting will not be applied. Therefore, I will introduce a method to set the color of text independently from the terminal perspective.
 public: true
 toc: true

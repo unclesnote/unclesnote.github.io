@@ -1,0 +1,8 @@
+---
+title: "GitHub데스크톱"
+layout: tag
+ro_ref: ko-tag-GitHub데스크톱
+tag: "GitHub데스크톱"
+tag_web: "github데스크톱"
+lang: ko
+---

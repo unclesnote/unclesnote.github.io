@@ -1,0 +1,8 @@
+---
+title: "ファタブ"
+layout: tag
+ro_ref: ja-tag-ファタブ
+tag: "ファタブ"
+tag_web: "ファタブ"
+lang: ja
+---

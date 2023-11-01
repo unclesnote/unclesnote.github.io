@@ -1,11 +1,11 @@
 ---
 title:  Cómo especificar el color al enviar registros a la terminal o consola
 image:
-  path: /assets/images/231023215842/es-thumb-default.png
+  path: /assets/images/231023215842/es-thumb-terminal_text_color-thumb.png
   alt: Cómo especificar el color al enviar registros a la terminal o consola
 images: 
-categories: [ubuntu]
-tags: [CódigoVS, Terminal, Consoladedepuración, Producción, ubuntu]
+categories: [ubuntu, Común]
+tags: [CódigoVS, Terminal, Consoladedepuración, Producción, ubuntu, Común]
 description:  Al desarrollar software, los registros le ayudan a comprobar el funcionamiento y encontrar la causa de los problemas. Sería útil si los registros de errores críticos o niveles de advertencia tuvieran colores que fueran fáciles de encontrar. Puede configurar el color del texto del registro en el IDE que está utilizando, como VS Code o Visual Studio, pero si el software se ejecuta sin un IDE o en un entorno de compilación cruzada como Linux, la configuración no se aplicará. . Por lo tanto, presentaré un método para configurar el color del texto independientemente de la perspectiva del terminal.
 public: true
 toc: true
