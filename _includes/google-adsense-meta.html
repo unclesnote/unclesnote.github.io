@@ -1,0 +1,6 @@
+<!-- Google Adsense - meta -->
+{%- if jekyll.environment == 'production' %}
+<meta name="google-adsense-account" content="{{ site.google_adsense.id }}">
+{%- else %}
+<!-- Google Adsense - meta - skept because it's not production, id={{ site.google_adsense.id }} -->
+{%- endif %}
