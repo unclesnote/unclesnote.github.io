@@ -1,9 +1,9 @@
 ---
 title:  Cómo aumentar el tamaño del archivo de intercambio en Ubuntu
 image:
-  path: /assets/images/231102005313/es-thumb-swapfile-system-monitor-swap.png
+  path: /assets/images/231102005313/es-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png
   alt: Cómo aumentar el tamaño del archivo de intercambio en Ubuntu
-images: ["/assets/images/231102005313/swapfile-system-monitor-swap.png"]
+images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [ubuntu, Común]
 tags: [fatab, Intercambio, archivodeintercambio, ubuntu, Común]
 description:  A veces, si la memoria física de Ubuntu es insuficiente y el sistema operativo continúa funcionando, el rendimiento puede disminuir o pueden ocurrir errores de compilación al compilar una plataforma grande o BSP. Por lo tanto, el sistema operativo basado en Linux crea un archivo de intercambio y utiliza archivos en el disco duro como memoria cuando la memoria física es insuficiente. Esto es similar a la memoria virtual en el entorno Windows. Ahora me gustaría explicar cómo crear y aplicar un archivo de intercambio en Ubuntu 20.04.
@@ -19,9 +19,11 @@ ro_ref: 231102005313/how_to_increase_swapfile_size_in_ubuntu
 lang: es
 ---
 A veces, si la memoria física de Ubuntu es insuficiente y el sistema operativo continúa funcionando, el rendimiento puede disminuir o pueden ocurrir errores de compilación al compilar una plataforma grande o BSP. Por lo tanto, el sistema operativo basado en Linux crea un archivo de intercambio y utiliza archivos en el disco duro como memoria cuando la memoria física es insuficiente. Esto es similar a la memoria virtual en el entorno Windows.  
+
 Ahora me gustaría explicar cómo crear y aplicar un archivo de intercambio en Ubuntu 20.04.  
 ## cambio de cheques
 Utilice el comando `free -m` para verificar el estado del intercambio en mi entorno Ubuntu. Y verifique si hay un "archivo de intercambio" en la "raíz" del sistema. Es común crear un archivo de intercambio en la ruta raíz.  
+
 En mi caso, estoy usando 2 GB de intercambio y el archivo de intercambio está en la ruta raíz.  
 
 ````bash
@@ -37,6 +39,7 @@ total 8388712
 ````
 ## Crear archivo de intercambio
 Eliminaré el archivo de intercambio de 2 GB existente y crearé un nuevo archivo de intercambio de 5 GB.  
+
 Primero, desactive la función de intercambio y elimine el archivo de intercambio de 2 GB que ya está en uso.  
 
 ```shell
@@ -76,6 +79,7 @@ $ sudo swapon /swapfile
 ```
 ## Registrar archivo de intercambio
 Ahora, finalmente, configuraremos Ubuntu para cargar el archivo de intercambio cada vez que arranque.  
+
 Luego, abra `/etc/fstab`.  
 
 ```shell
@@ -88,7 +92,7 @@ Y agregue la línea a continuación. Si ya está configurado, no es necesario ag
 ```
 ## Reiniciar
 Reinicie primero. Después de reiniciar, puede verificar el archivo de intercambio generado anteriormente en el monitor del sistema.  
-![Menú `Aplicaciones` > Monitor del sistema](/assets/images/231102005313/swapfile-system-monitor-swap.png)  
+![Menú `Aplicaciones` > Monitor del sistema](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)  
 
 Menú `Aplicaciones` > Monitor del sistema
 {: style="color:gray; font-size: 80%; text-align: center;"}

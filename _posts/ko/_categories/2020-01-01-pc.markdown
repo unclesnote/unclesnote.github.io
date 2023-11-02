@@ -1,8 +1,0 @@
----
-title: "PC"
-layout: category
-ro_ref: ko-category-PC
-category: "PC"
-category_web: "pc"
-lang: ko
----

@@ -1,7 +1,7 @@
 ---
 title:  输出日志到终端或控制台时如何指定颜色
 image:
-  path: /assets/images/231023215842/zh-thumb-terminal_text_color-thumb.png
+  path: /assets/images/231023215842/zh-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png
   alt: 输出日志到终端或控制台时如何指定颜色
 images: 
 categories: [乌班图, 常见的]
@@ -19,6 +19,7 @@ ro_ref: 231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_co
 lang: zh
 ---
 在开发软件时，日志可以帮助您检查运行情况并查找问题原因。如果严重错误或警告级别的日志具有易于查找的颜色，将会很有帮助。  
+
 您可以在您使用的 IDE（例如 VS Code 或 Visual Studio）中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。因此，我将介绍一种从终端角度独立设置文本颜色的方法。  
 > **如何在 Visual Studio Code 中更改输出文本颜色**  
 > 对于 VS Code，您可以通过在`Settings > User > Workbanch > Appearance > Edit in Settings.json`中的`workbench.colorCustomizations`中设置颜色值来更改调试控制台或输出窗口的颜色。  
@@ -36,6 +37,7 @@ lang: zh
 - `(转义字符)[(样式代码);(文本颜色);(背景颜色)m` `(您想要的文本)` `(转义字符)[0m`
 
 下面是黑色背景上粗体白色文本的字符串`I am text`的示例。  
+
 每个数字的含义请查看后面章节中的预定义代码。  
 
 ```
@@ -52,7 +54,9 @@ lang: zh
 |`（转义字符）[0m`|是的|设置后重置文本颜色和样式。<br>如果要更改多行的颜色，可以稍后在所需位置重置文本颜色。|
 
 尽管`转义字符`是强制性的，但您可以根据表达方法使用后面描述的三种字符之一。  
+
 您可以根据自己的喜好添加`样式`、`文本颜色`和`背景颜色`，并用`;`分隔它们。我们稍后将解释可以表达的选项，但顺序并不重要，因为代表每个选项的数字都是唯一的。  
+
 最后，使用`(转义字符)[0m`重置文本颜色和样式。除非重置，否则后续文本颜色和样式将继续。  
 ## 颜色和款式代码
 ### 1. 转义字符
@@ -93,5 +97,6 @@ lang: zh
 
 ### 5. 颜色重置
 如果您不重置文本颜色和样式，它将继续按初始设置。  
+
 通常，它以`(转义字符)[0m`的形式添加到文本末尾。  
 - `0`：将所有样式和颜色重置为默认值

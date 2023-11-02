@@ -1,8 +1,0 @@
----
-title: "PC"
-layout: category
-ro_ref: en-category-PC
-category: "PC"
-category_web: "pc"
-lang: en
----

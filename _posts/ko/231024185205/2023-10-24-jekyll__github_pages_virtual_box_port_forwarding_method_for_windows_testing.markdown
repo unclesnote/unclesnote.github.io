@@ -1,11 +1,11 @@
 ---
 title:  Jekyll Windows 테스트를 위한 VirtualBox 포트 전달 방법
 image:
-  path: /assets/images/231024185205/ko-thumb-jekyll_port_forwarding-thumb.png
+  path: /assets/images/231024185205/ko-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png
   alt: Jekyll Windows 테스트를 위한 VirtualBox 포트 전달 방법
-images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
+images: ["/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png"]
 categories: [GitHub 페이지, 지킬]
-tags: [지킬, 버추얼박스, 포트포워딩, GitHub페이지, GitHub]
+tags: [지킬, VirtualBox, 포트포워딩, GitHub페이지, GitHub]
 description:  제 경우에는 Virtual Box의 Ubuntu VM에서 Jekyll(GitHub Pages)을 빌드하고 테스트한 후 GitHub에 푸시합니다. 그러나 Ubuntu VM의 Firefox와 같은 브라우저의 모양과 느낌은 실제 X86 Windows의 모양과 느낌과 약간 다릅니다. 그래서 X86 윈도우 브라우저에서 Jekyll을 테스트하기 위한 Virtual Box 포트포워딩 방법에 대해 설명드리고자 합니다.
 public: true
 toc: true
@@ -52,6 +52,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 ```
 ## Virtual Box 관리자에서 Ubuntu VM에 대한 포트 전달 설정
 Virtual Box 관리자의 Ubuntu VM 네트워크 설정에서 다음을 입력하여 포트 전달을 추가합니다.  
+
 `Guest IP` 주소는 Ubuntu VM에서 확인된 IP 주소입니다.  
 - **이름** : (원하는 이름)
 - **프로토콜** : TCP
@@ -59,7 +60,7 @@ Virtual Box 관리자의 Ubuntu VM 네트워크 설정에서 다음을 입력하
 - **Guest IP** : 10.0.2.15 (위에서 확인한 Ubuntu VM의 IP 주소)
 - **게스트 포트** : 4000
 
-![VirtualBox Manager - 포트 전달 규칙](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
+![VirtualBox Manager - 포트 전달 규칙](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)  
 
 VirtualBox Manager - 포트 전달 규칙
 {: style="color:gray; font-size: 80%; text-align: center;"}

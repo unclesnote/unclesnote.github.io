@@ -1,11 +1,11 @@
 ---
 title:  터미널이나 콘솔에 로그를 출력할 때 색상을 지정하는 방법
 image:
-  path: /assets/images/231023215842/ko-thumb-terminal_text_color-thumb.png
+  path: /assets/images/231023215842/ko-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png
   alt: 터미널이나 콘솔에 로그를 출력할 때 색상을 지정하는 방법
 images: 
-categories: [우분투, 흔한]
-tags: [VSCode, 단말기, 디버그콘솔, 산출, 우분투, 흔한]
+categories: [우분투, 일반]
+tags: [VSCode, 단말기, 디버그콘솔, 산출, 우분투, 일반]
 description:  소프트웨어를 개발할 때 로그는 작동을 확인하고 문제의 원인을 찾는 데 도움이 됩니다. 심각한 오류 또는 경고 수준에 대한 로그에 찾기 쉬운 색상이 있으면 도움이 될 것입니다. VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을 설정할 수 있지만, IDE 없이 소프트웨어를 실행하거나 Linux 등 크로스 컴파일 환경에서 소프트웨어를 실행하는 경우 설정이 적용되지 않습니다. . 따라서 터미널 관점에서 독립적으로 텍스트 색상을 설정하는 방법을 소개하겠습니다.
 public: true
 toc: true
@@ -19,6 +19,7 @@ ro_ref: 231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_co
 lang: ko
 ---
 소프트웨어를 개발할 때 로그는 작동을 확인하고 문제의 원인을 찾는 데 도움이 됩니다. 심각한 오류 또는 경고 수준에 대한 로그에 찾기 쉬운 색상이 있으면 도움이 될 것입니다.  
+
 VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을 설정할 수 있지만, IDE 없이 소프트웨어를 실행하거나 Linux 등 크로스 컴파일 환경에서 소프트웨어를 실행하는 경우 설정이 적용되지 않습니다. . 따라서 터미널 관점에서 독립적으로 텍스트 색상을 설정하는 방법을 소개하겠습니다.  
 > **Visual Studio Code에서 출력 텍스트 색상을 변경하는 방법**  
 > VS Code의 경우 `Settings > User > Workbanch > Appearance > Edit in Settings.json`의 `workbench.colorCustomizations`에서 색상 값을 설정하여 디버그 콘솔 또는 출력 창의 색상을 변경할 수 있습니다.  
@@ -36,6 +37,7 @@ VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을
 - `(이스케이프 문자)[(스타일 코드);(텍스트 색상);(배경색)m` `(원하는 텍스트)` `(이스케이프 문자)[0m`
 
 다음은 검정색 배경에 굵은 흰색 텍스트로 표시된 `I am text` 문자열의 예입니다.  
+
 각 숫자의 의미는 이후 섹션에서 미리 정의된 코드를 확인하세요.  
 
 ```
@@ -52,7 +54,9 @@ VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을
 |`(이스케이프 문자)[0m`|예|일단 설정된 텍스트 색상과 스타일을 재설정합니다.<br> 여러 줄의 색상을 변경하려면 나중에 원하는 위치에서 텍스트 색상을 재설정하면 됩니다.|
 
 `탈출 문자`는 필수이지만 표현 방법에 따라 뒤에 설명하는 세 가지 중 하나를 사용할 수 있습니다.  
+
 `스타일`, `텍스트 색상`, `배경 색상`을 `;`로 구분하여 취향에 맞게 추가할 수 있습니다. 표현할 수 있는 옵션에 대해서는 나중에 설명하겠지만, 각각을 나타내는 숫자가 고유하기 때문에 순서는 중요하지 않습니다.  
+
 마지막으로 `(Escape Character)[0m`을 사용하여 텍스트 색상과 스타일을 재설정합니다. 재설정하지 않으면 이후의 텍스트 색상과 스타일이 계속 유지됩니다.  
 ## 색상 및 스타일 코드
 ### 1. 이스케이프 문자
@@ -93,5 +97,6 @@ VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을
 
 ### 5. 색상 재설정
 텍스트 색상과 스타일을 재설정하지 않으면 초기 설정대로 유지됩니다.  
+
 일반적으로 `(Escape Character)[0m` 형식으로 텍스트 끝에 추가됩니다.  
 - `0`: 모든 스타일과 색상을 기본값으로 재설정

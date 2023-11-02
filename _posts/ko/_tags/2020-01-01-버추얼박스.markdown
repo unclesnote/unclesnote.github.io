@@ -1,8 +1,0 @@
----
-title: "버추얼박스"
-layout: tag
-ro_ref: ko-tag-버추얼박스
-tag: "버추얼박스"
-tag_web: "버추얼박스"
-lang: ko
----

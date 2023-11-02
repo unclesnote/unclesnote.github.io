@@ -1,9 +1,9 @@
 ---
 title:  Jekyll Windows测试的VirtualBox端口转发方法
 image:
-  path: /assets/images/231024185205/zh-thumb-jekyll_port_forwarding-thumb.png
+  path: /assets/images/231024185205/zh-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png
   alt: Jekyll Windows测试的VirtualBox端口转发方法
-images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
+images: ["/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png"]
 categories: [GitHub 页面, 杰基尔]
 tags: [杰基尔, 虚拟盒子, 转发端口, GitHub页面, GitHub]
 description:  就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll(GitHub Pages)，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏览器上测试Jekyll的Virtual Box端口转发方法。
@@ -52,6 +52,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 ```
 ## 在 Virtual Box 管理器中为 Ubuntu VM 设置端口转发
 在 Virtual Box 管理器中 Ubuntu VM 的网络设置中，输入以下内容来添加端口转发。  
+
 `Guest IP`地址是在 Ubuntu VM 上确认的 IP 地址。  
 - **姓名**：（您想要的名字）
 - **协议**：TCP
@@ -59,7 +60,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 - **来宾 IP**：10.0.2.15（上面确认的 Ubuntu VM 的 IP 地址）
 - **访客端口**：4000
 
-![VirtualBox Manager - 端口转发规则](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
+![VirtualBox Manager - 端口转发规则](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)  
 
 VirtualBox Manager - 端口转发规则
 {: style="color:gray; font-size: 80%; text-align: center;"}

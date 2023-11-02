@@ -1,8 +1,0 @@
----
-title: "가상박스"
-layout: category
-ro_ref: ko-category-가상박스
-category: "가상박스"
-category_web: "가상박스"
-lang: ko
----

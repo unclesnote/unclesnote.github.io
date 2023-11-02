@@ -1,9 +1,9 @@
 ---
 title:  How to install essential Ubuntu software for software developers
 image:
-  path: /assets/images/231101003113/en-thumb-basic_setting_-_developer-visual-studio-code.png
+  path: /assets/images/231101003113/en-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png
   alt: How to install essential Ubuntu software for software developers
-images: ["/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png", "/assets/images/231101003113/basic_setting_-_developer-github-desktop.png", "/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png", "/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png"]
+images: ["/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png"]
 categories: [Ubuntu, Tools]
 tags: [VisualStudioCode, VSCode, GitHubDesktop, BeyondCompare4, SQLiteDBBrowser, MySQLWorkbench, Ubuntu, Tools]
 description:  If you are a software developer, and your development environment is Ubuntu, we will explain how to install the essential Ubuntu software you need to install.
@@ -20,12 +20,13 @@ lang: en
 ---
 If you are a software developer, and your development environment is Ubuntu, we will explain how to install the essential Ubuntu software you need to install.  
 ## Visual Studio Code
-![Visual Studio Code](/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png)  
+![Visual Studio Code](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
 
 Visual Studio Code
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"} is a widely used IDE and editor in software development.  
+
 If you are using `the Ubuntu desktop GUI (GNOME) environment`, you can download VS Code using the built-in browser and install it using the `dpkg` tool.  
 
 ```shell
@@ -51,12 +52,13 @@ You can install the extension for remote access to VS Code via SSH using the com
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub Desktop
-![GitHub Desktop](/assets/images/231101003113/basic_setting_-_developer-github-desktop.png)  
+![GitHub Desktop](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
 
 GitHub Desktop
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 GitHub desktop software is a Git client. If you're working on a GitHub project, this is definitely a good option, but even if you use a personal git server rather than a GitHub repo, it may also be a good option if you don't need complex features.  
+
 [The official GitHub desktop](https://desktop.github.com/){:target="_blank"} site only provides Windows and macOS versions. However, because GitHub Desktop is an open source project, the Ubuntu version is also distributed in a separate [repo](https://github.com/shiftkey/desktop){:target="_blank"}. Not sure if this is official. After adding the repository to apt, you can install GitHub Desktop using apt.  
 
 ```shell
@@ -65,13 +67,15 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## Beyond Compare 4
-![Beyond Compare 4](/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png)  
+![Beyond Compare 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
 
 Beyond Compare 4
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 Beyond Compare is a popular file comparison tool.  
+
 Unfortunately, the Beyond Compare 3 version does not have good file comparison performance in Ubuntu. In other words, file comparison takes a long time. However, The latest version, [Beyond Compare 4](https://www.scootersoftware.com/download){:target="_blank"} is fast and has the same performance as Windows in Ubuntu. So, I recommend choosing version 4 on Ubuntu.  
+
 You can download Beyond Compare 4 from the official website using a web browser, but we will download it using the `wget` tool.  
 
 ```shell
@@ -99,12 +103,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 If you do not have a license key, you may need to perform the reset process again when the evaluation period ends. So, I recommend saving and using the workspace and exporting the settings every time it is updated and saving it as a file.  
 ## Database
 ### DB Browser for SQLite
-![DB Browser for SQLite](/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png)  
+![DB Browser for SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
 
 DB Browser for SQLite
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 If you use SQLite DB, [SQLite DB Browser](https://sqlitebrowser.org/dl/){:target="_blank"} is essential software for querying the database or viewing table contents in a GUI environment.  
+
 You can add the `sqlitebrowser` repo to apt and install the SQLite DB browser.  
 
 ```shell

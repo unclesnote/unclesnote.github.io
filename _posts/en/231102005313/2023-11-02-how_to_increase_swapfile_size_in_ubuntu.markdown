@@ -1,9 +1,9 @@
 ---
 title:  How to increase swapfile size in Ubuntu
 image:
-  path: /assets/images/231102005313/en-thumb-swapfile-system-monitor-swap.png
+  path: /assets/images/231102005313/en-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png
   alt: How to increase swapfile size in Ubuntu
-images: ["/assets/images/231102005313/swapfile-system-monitor-swap.png"]
+images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [Ubuntu, Common]
 tags: [fatab, Swap, swapfile, Ubuntu, Common]
 description:  Sometimes, if Ubuntu's physical memory is insufficient and the OS continues to operate, performance may drop or build errors may occur when compiling a large platform or BSP. Therefore, Linux-based OS creates a swapfile and uses files on the hard disk as memory when physical memory is insufficient. This is similar to virtual memory in the Windows environment. Now, I would like to explain how to create and apply a swapfile in Ubuntu 20.04.
@@ -19,9 +19,11 @@ ro_ref: 231102005313/how_to_increase_swapfile_size_in_ubuntu
 lang: en
 ---
 Sometimes, if Ubuntu's physical memory is insufficient and the OS continues to operate, performance may drop or build errors may occur when compiling a large platform or BSP. Therefore, Linux-based OS creates a swapfile and uses files on the hard disk as memory when physical memory is insufficient. This is similar to virtual memory in the Windows environment.  
+
 Now, I would like to explain how to create and apply a swapfile in Ubuntu 20.04.  
 ## Check swap
 Use the `free -m` command to check the swap status in my Ubuntu environment. And check whether there is a `swapfile` in the system `root`. It is common to create a swap file in the root path.  
+
 In my case, I am using 2GB of swap and the swapfile is in the root path.  
 
 ````bash
@@ -37,6 +39,7 @@ total 8388712
 ````
 ## Create swapfile
 I will delete the existing 2GB swapfile and create a new 5GB swapfile.  
+
 First, turn off the swap function and delete the 2GB swap file already in use.  
 
 ```shell
@@ -76,6 +79,7 @@ $ sudo swapon /swapfile
 ```
 ## Register swapfile
 Now, finally, we will configure Ubuntu to load the swapfile every time it boots.  
+
 Then, open `/etc/fstab`.  
 
 ```shell
@@ -88,7 +92,7 @@ And add the line below. If it is already set, you do not need to add it.
 ```
 ## Reboot
 Reboot first. After rebooting, you can check the swap file generated above on the system monitor.  
-![`Applications` Menu > System Monitor](/assets/images/231102005313/swapfile-system-monitor-swap.png)  
+![`Applications` Menu > System Monitor](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)  
 
 `Applications` Menu > System Monitor
 {: style="color:gray; font-size: 80%; text-align: center;"}

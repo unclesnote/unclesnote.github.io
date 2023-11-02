@@ -1,9 +1,9 @@
 ---
 title:  Ubuntuでスワップファイルのサイズを増やす方法
 image:
-  path: /assets/images/231102005313/ja-thumb-swapfile-system-monitor-swap.png
+  path: /assets/images/231102005313/ja-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png
   alt: Ubuntuでスワップファイルのサイズを増やす方法
-images: ["/assets/images/231102005313/swapfile-system-monitor-swap.png"]
+images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [Ubuntu, 一般]
 tags: [ファタブ, スワップ, スワップファイル, Ubuntu, 一般]
 description:  Ubuntu の物理メモリが不足し、OS が動作し続けると、パフォーマンスが低下したり、大規模なプラットフォームや BSP をコンパイルするときにビルド エラーが発生したりすることがあります。そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードディスク上のファイルをメモリとして使用します。これは、Windows 環境の仮想メモリに似ています。それでは、Ubuntu 20.04でのスワップファイルの作成と適用方法を説明したいと思います。
@@ -19,9 +19,11 @@ ro_ref: 231102005313/how_to_increase_swapfile_size_in_ubuntu
 lang: ja
 ---
 Ubuntu の物理メモリが不足し、OS が動作し続けると、パフォーマンスが低下したり、大規模なプラットフォームや BSP をコンパイルするときにビルド エラーが発生したりすることがあります。そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードディスク上のファイルをメモリとして使用します。これは、Windows 環境の仮想メモリに似ています。  
+
 それでは、Ubuntu 20.04でのスワップファイルの作成と適用方法を説明したいと思います。  
 ## チェックスワップ
 私の Ubuntu 環境でのスワップ ステータスを確認するには、`free -m`コマンドを使用します。そして、システムの`root`に`swapfile`があるかどうかを確認してください。スワップ ファイルはルート パスに作成するのが一般的です。  
+
 私の場合、2 GB のスワップを使用しており、スワップファイルはルート パスにあります。  
 
 ````bash
@@ -37,6 +39,7 @@ total 8388712
 ````
 ## スワップファイルの作成
 既存の 2GB スワップファイルを削除し、新しい 5GB スワップファイルを作成します。  
+
 まず、スワップ機能をオフにして、既に使用されている 2GB のスワップ ファイルを削除します。  
 
 ```shell
@@ -76,6 +79,7 @@ $ sudo swapon /swapfile
 ```
 ## スワップファイルの登録
 さて、最後に、Ubuntu が起動するたびにスワップファイルをロードするように Ubuntu を設定します。  
+
 次に、`/etc/fstab`を開きます。  
 
 ```shell
@@ -88,7 +92,7 @@ sudo vi /etc/fstab
 ```
 ## リブート
 まず再起動してください。再起動後、上記で生成されたスワップファイルをシステムモニターで確認できます。  
-![`アプリケーション`メニュー > システムモニター](/assets/images/231102005313/swapfile-system-monitor-swap.png)  
+![`アプリケーション`メニュー > システムモニター](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)  
 
 `アプリケーション`メニュー > システムモニター
 {: style="color:gray; font-size: 80%; text-align: center;"}

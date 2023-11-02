@@ -1,6 +1,6 @@
 ---
 layout: prj_redirects
 post_id: 231024185205
-thumbnail: /assets/images/231024185205/en-thumb-jekyll_port_forwarding-thumb.png
+thumbnail: /assets/images/231024185205/en-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png
 lang: en
 ---

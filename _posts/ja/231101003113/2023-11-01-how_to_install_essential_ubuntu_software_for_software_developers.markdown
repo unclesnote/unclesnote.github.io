@@ -1,9 +1,9 @@
 ---
 title:  ソフトウェア開発者向けに必須の Ubuntu ソフトウェアをインストールする方法
 image:
-  path: /assets/images/231101003113/ja-thumb-basic_setting_-_developer-visual-studio-code.png
+  path: /assets/images/231101003113/ja-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png
   alt: ソフトウェア開発者向けに必須の Ubuntu ソフトウェアをインストールする方法
-images: ["/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png", "/assets/images/231101003113/basic_setting_-_developer-github-desktop.png", "/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png", "/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png"]
+images: ["/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png"]
 categories: [Ubuntu, ツール]
 tags: [ビジュアルスタジオコード, VSコード, GitHubデスクトップ, BeyondCompare4, SQLiteDBブラウザ, MySQLワークベンチ, Ubuntu, ツール]
 description:  あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。
@@ -20,12 +20,13 @@ lang: ja
 ---
 あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。  
 ## Visual Studioコード
-![Visual Studioコード](/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png)  
+![Visual Studioコード](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
 
 Visual Studioコード
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"} は、ソフトウェア開発で広く使用されている IDE およびエディタです。  
+
 `Ubuntu デスクトップ GUI (GNOME) 環境`を使用している場合は、組み込みブラウザを使用して VS Code をダウンロードし、`dpkg`ツールを使用してインストールできます。  
 
 ```shell
@@ -51,12 +52,13 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub デスクトップ
-![GitHub デスクトップ](/assets/images/231101003113/basic_setting_-_developer-github-desktop.png)  
+![GitHub デスクトップ](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
 
 GitHub デスクトップ
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 GitHub デスクトップ ソフトウェアは Git クライアントです。 GitHub プロジェクトに取り組んでいる場合、これは間違いなく良い選択肢ですが、GitHub リポジトリではなく個人用の Git サーバーを使用している場合でも、複雑な機能が必要ない場合は良い選択肢になる可能性があります。  
+
 [公式 GitHub デスクトップ](https://desktop.github.com/){:target="_blank"} サイトでは、Windows バージョンと macOS バージョンのみが提供されます。ただし、GitHub Desktop はオープンソース プロジェクトであるため、Ubuntu バージョンも別の [リポジトリ](https://github.com/shiftkey/desktop){:target="_blank"} で配布されます。これが公式かどうかはわかりません。リポジトリを apt に追加した後、apt を使用して GitHub Desktop をインストールできます。  
 
 ```shell
@@ -65,13 +67,15 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 比較を超えて 4
-![比較を超えて 4](/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png)  
+![比較を超えて 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
 
 比較を超えて 4
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 Beyond Compare は、人気のあるファイル比較ツールです。  
+
 残念ながら、Beyond Compare 3 バージョンは、Ubuntu でのファイル比較パフォーマンスが良好ではありません。つまり、ファイルの比較には時間がかかります。ただし、最新バージョンの [Beyond Compare 4](https://www.scootersoftware.com/download){:target="_blank"} は高速で、Ubuntu の Windows と同等のパフォーマンスを備えています。したがって、Ubuntu ではバージョン 4 を選択することをお勧めします。  
+
 Beyond Compare 4 は Web ブラウザを使用して公式 Web サイトからダウンロードできますが、ここでは`wget`ツールを使用してダウンロードします。  
 
 ```shell
@@ -99,12 +103,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 ライセンス キーをお持ちでない場合は、評価期間が終了したときに再度リセット プロセスを実行する必要がある場合があります。そのため、ワークスペースを保存して使用し、更新されるたびに設定をエクスポートしてファイルとして保存することをお勧めします。  
 ## データベース
 ### SQLite用DBブラウザ
-![SQLite用DBブラウザ](/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png)  
+![SQLite用DBブラウザ](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
 
 SQLite用DBブラウザ
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 SQLite DB を使用する場合、[SQLite DB Browser](https://sqlitebrowser.org/dl/){:target="_blank"} は、GUI 環境でデータベースのクエリやテーブルの内容の表示に必須のソフトウェアです。  
+
 `sqlitebrowser` リポジトリを apt に追加し、SQLite DB ブラウザをインストールできます。  
 
 ```shell

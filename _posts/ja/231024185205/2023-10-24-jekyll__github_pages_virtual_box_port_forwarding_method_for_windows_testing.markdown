@@ -1,9 +1,9 @@
 ---
 title:  Jekyll Windows テスト用の VirtualBox ポート転送方法
 image:
-  path: /assets/images/231024185205/ja-thumb-jekyll_port_forwarding-thumb.png
+  path: /assets/images/231024185205/ja-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png
   alt: Jekyll Windows テスト用の VirtualBox ポート転送方法
-images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
+images: ["/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png"]
 categories: [GitHub ページ, ジキル]
 tags: [ジキル, バーチャルボックス, ポートフォワーディング, GitHubページ, GitHub]
 description:  私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィールとは若干異なります。そこで、X86 Windows ブラウザ上で Jekyll をテストするための Virtual Box のポート転送方法を説明したいと思います。
@@ -52,6 +52,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 ```
 ## Virtual Box Manager で Ubuntu VM のポート転送を設定する
 Virtual Box Manager の Ubuntu VM のネットワーク設定で、次のように入力してポート転送を追加します。  
+
 `ゲスト IP`アドレスは、Ubuntu VM 上で確認された IP アドレスです。  
 - **名前** : (希望の名前)
 - **プロトコル** : TCP
@@ -59,7 +60,7 @@ Virtual Box Manager の Ubuntu VM のネットワーク設定で、次のよう�
 - **ゲスト IP** : 10.0.2.15 (上記で確認された Ubuntu VM の IP アドレス)
 - **ゲストポート** : 4000
 
-![VirtualBox Manager - ポート転送ルール](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
+![VirtualBox Manager - ポート転送ルール](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)  
 
 VirtualBox Manager - ポート転送ルール
 {: style="color:gray; font-size: 80%; text-align: center;"}

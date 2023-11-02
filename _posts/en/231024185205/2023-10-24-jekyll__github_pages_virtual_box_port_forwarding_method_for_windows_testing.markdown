@@ -1,9 +1,9 @@
 ---
 title:  VirtualBox port forwarding method for Jekyll Windows testing
 image:
-  path: /assets/images/231024185205/en-thumb-jekyll_port_forwarding-thumb.png
+  path: /assets/images/231024185205/en-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png
   alt: VirtualBox port forwarding method for Jekyll Windows testing
-images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
+images: ["/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png"]
 categories: [GitHub Pages, Jekyll]
 tags: [Jekyll, VirtualBox, PortForwarding, GitHubPages, GitHub]
 description:  In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as Firefox in an Ubuntu VM are slightly different from the look and feel of an actual X86 Windows. So, I would like to explain the Virtual Box port forwarding method to test Jekyll on the X86 Windows browser.
@@ -52,6 +52,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 ```
 ## Set up port forwarding for Ubuntu VM in Virtual Box manager
 In the network settings of the Ubuntu VM in the Virtual Box manager, add port forwarding by entering the following.  
+
 The `Guest IP` address is the IP address confirmed on the Ubuntu VM.  
 - **Name** : (Name you want)
 - **Protocol** : TCP
@@ -59,7 +60,7 @@ The `Guest IP` address is the IP address confirmed on the Ubuntu VM.
 - **Guest IP** : 10.0.2.15 (IP address of the Ubuntu VM confirmed above)
 - **Guest Port** : 4000
 
-![VirtualBox Manager - Port Forwarding Rules](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
+![VirtualBox Manager - Port Forwarding Rules](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)  
 
 VirtualBox Manager - Port Forwarding Rules
 {: style="color:gray; font-size: 80%; text-align: center;"}

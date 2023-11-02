@@ -1,9 +1,9 @@
 ---
 title:  Método de reenvío de puertos de VirtualBox para pruebas de Jekyll Windows
 image:
-  path: /assets/images/231024185205/es-thumb-jekyll_port_forwarding-thumb.png
+  path: /assets/images/231024185205/es-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png
   alt: Método de reenvío de puertos de VirtualBox para pruebas de Jekyll Windows
-images: ["/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png"]
+images: ["/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png"]
 categories: [Páginas de GitHub, Jekyll]
 tags: [Jekyll, VirtualBox, Reenvíodepuertos, PáginasdeGitHub, GitHub]
 description:  En mi caso, construyo y pruebo Jekyll (páginas de GitHub) en una máquina virtual de Ubuntu en Virtual Box y luego lo envío a GitHub. Sin embargo, la apariencia de navegadores como Firefox en una máquina virtual Ubuntu es ligeramente diferente de la apariencia de un Windows X86 real. Entonces, me gustaría explicar el método de reenvío de puertos de Virtual Box para probar Jekyll en el navegador X86 de Windows.
@@ -52,6 +52,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 ```
 ## Configure el reenvío de puertos para Ubuntu VM en el administrador de Virtual Box
 En la configuración de red de Ubuntu VM en el administrador de Virtual Box, agregue el reenvío de puertos ingresando lo siguiente.  
+
 La dirección "IP invitada" es la dirección IP confirmada en la máquina virtual de Ubuntu.  
 - **Nombre**: (Nombre que desees)
 - **Protocolo**: TCP
@@ -59,7 +60,7 @@ La dirección "IP invitada" es la dirección IP confirmada en la máquina virtua
 - **IP de invitado**: 10.0.2.15 (dirección IP de la VM de Ubuntu confirmada anteriormente)
 - **Puerto de invitados**: 4000
 
-![VirtualBox Manager - Reglas de reenvío de puertos](/assets/images/231024185205/jekyll_port_forwarding-vm-port-forwarding.png)  
+![VirtualBox Manager - Reglas de reenvío de puertos](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)  
 
 VirtualBox Manager - Reglas de reenvío de puertos
 {: style="color:gray; font-size: 80%; text-align: center;"}

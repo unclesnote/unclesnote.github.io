@@ -1,9 +1,9 @@
 ---
 title:  소프트웨어 개발자를 위한 필수 Ubuntu 소프트웨어를 설치하는 방법
 image:
-  path: /assets/images/231101003113/ko-thumb-basic_setting_-_developer-visual-studio-code.png
+  path: /assets/images/231101003113/ko-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png
   alt: 소프트웨어 개발자를 위한 필수 Ubuntu 소프트웨어를 설치하는 방법
-images: ["/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png", "/assets/images/231101003113/basic_setting_-_developer-github-desktop.png", "/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png", "/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png"]
+images: ["/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png"]
 categories: [우분투, 도구]
 tags: [VisualStudio코드, VSCode, GitHub데스크톱, 비욘드컴페어4, SQLiteDB브라우저, MySQL워크벤치, 우분투, 도구]
 description:  소프트웨어 개발자이고 개발 환경이 Ubuntu인 경우, 설치해야 하는 필수 Ubuntu 소프트웨어 설치 방법을 설명합니다.
@@ -20,12 +20,13 @@ lang: ko
 ---
 소프트웨어 개발자이고 개발 환경이 Ubuntu인 경우, 설치해야 하는 필수 Ubuntu 소프트웨어 설치 방법을 설명합니다.  
 ## 비주얼 스튜디오 코드
-![비주얼 스튜디오 코드](/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png)  
+![비주얼 스튜디오 코드](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
 
 비주얼 스튜디오 코드
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"}는 소프트웨어 개발에서 널리 사용되는 IDE 및 편집기입니다.  
+
 `Ubuntu Desktop GUI(GNOME) 환경`을 사용하는 경우 내장 브라우저를 사용하여 VS Code를 다운로드하고 `dpkg` 도구를 사용하여 설치할 수 있습니다.  
 
 ```shell
@@ -51,12 +52,13 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub 데스크탑
-![GitHub 데스크탑](/assets/images/231101003113/basic_setting_-_developer-github-desktop.png)  
+![GitHub 데스크탑](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
 
 GitHub 데스크탑
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 GitHub 데스크톱 소프트웨어는 Git 클라이언트입니다. GitHub 프로젝트를 작업 중이라면 분명 좋은 옵션이지만, GitHub repo가 ​​아닌 개인용 git 서버를 사용하더라도 복잡한 기능이 필요하지 않다면 좋은 옵션이 될 수도 있습니다.  
+
 [공식 GitHub 데스크톱](https://desktop.github.com/){:target="_blank"} 사이트에서는 Windows 및 macOS 버전만 제공합니다. 하지만 GitHub Desktop은 오픈소스 프로젝트이기 때문에 Ubuntu 버전도 별도의 [repo](https://github.com/shiftkey/desktop){:target="_blank"}로 배포됩니다. 이것이 공식적인 것인지 확실하지 않습니다. apt에 저장소를 추가한 후 apt를 사용하여 GitHub Desktop을 설치할 수 있습니다.  
 
 ```shell
@@ -65,13 +67,15 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 비욘드 컴페어 4
-![비욘드 컴페어 4](/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png)  
+![비욘드 컴페어 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
 
 비욘드 컴페어 4
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 Beyond Compare는 널리 사용되는 파일 비교 도구입니다.  
+
 안타깝게도 Beyond Compare 3 버전은 Ubuntu에서 파일 비교 성능이 좋지 않습니다. 즉, 파일 비교에 시간이 오래 걸립니다. 하지만 최신 버전인 [Beyond Compare 4](https://www.scootersoftware.com/download){:target="_blank"}는 속도가 빠르고 Ubuntu에서 Windows와 동일한 성능을 제공합니다. 따라서 Ubuntu에서는 버전 4를 선택하는 것이 좋습니다.  
+
 Beyond Compare 4는 웹브라우저를 이용하여 공식 홈페이지에서 다운로드할 수 있으나, 저희는 `wget` 툴을 이용하여 다운로드하겠습니다.  
 
 ```shell
@@ -99,12 +103,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 라이센스 키가 없는 경우 평가 기간이 종료되면 재설정 프로세스를 다시 수행해야 할 수도 있습니다. 그래서 워크스페이스를 저장해서 사용하고, 업데이트될 때마다 설정을 내보내어 파일로 저장하는 것을 추천드립니다.  
 ## 데이터 베이스
 ### SQLite용 DB 브라우저
-![SQLite용 DB 브라우저](/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png)  
+![SQLite용 DB 브라우저](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
 
 SQLite용 DB 브라우저
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 SQLite DB를 사용하신다면 [SQLite DB 브라우저](https://sqlitebrowser.org/dl/){:target="_blank"}는 GUI 환경에서 데이터베이스를 쿼리하거나 테이블 내용을 보기 위한 필수 소프트웨어입니다.  
+
 `sqlitebrowser` 저장소를 apt에 추가하고 SQLite DB 브라우저를 설치할 수 있습니다.  
 
 ```shell

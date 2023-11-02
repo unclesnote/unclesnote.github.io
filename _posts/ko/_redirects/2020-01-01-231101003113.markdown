@@ -1,6 +1,6 @@
 ---
 layout: prj_redirects
 post_id: 231101003113
-thumbnail: /assets/images/231101003113/ko-thumb-basic_setting_-_developer-visual-studio-code.png
+thumbnail: /assets/images/231101003113/ko-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png
 lang: ko
 ---

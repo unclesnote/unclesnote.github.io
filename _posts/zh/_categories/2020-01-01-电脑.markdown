@@ -1,0 +1,8 @@
+---
+title: "电脑"
+layout: category
+ro_ref: zh-category-电脑
+category: "电脑"
+category_web: "电脑"
+lang: zh
+---

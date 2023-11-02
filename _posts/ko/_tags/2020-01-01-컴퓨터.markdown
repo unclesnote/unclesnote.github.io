@@ -1,0 +1,8 @@
+---
+title: "컴퓨터"
+layout: tag
+ro_ref: ko-tag-컴퓨터
+tag: "컴퓨터"
+tag_web: "컴퓨터"
+lang: ko
+---

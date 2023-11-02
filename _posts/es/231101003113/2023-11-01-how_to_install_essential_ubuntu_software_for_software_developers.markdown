@@ -1,9 +1,9 @@
 ---
 title:  Cómo instalar software de Ubuntu esencial para desarrolladores de software
 image:
-  path: /assets/images/231101003113/es-thumb-basic_setting_-_developer-visual-studio-code.png
+  path: /assets/images/231101003113/es-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png
   alt: Cómo instalar software de Ubuntu esencial para desarrolladores de software
-images: ["/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png", "/assets/images/231101003113/basic_setting_-_developer-github-desktop.png", "/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png", "/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png"]
+images: ["/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png"]
 categories: [ubuntu, Herramientas]
 tags: [CódigoVisualStudio, CódigoVS, GitHubEscritorio, Másalládecomparar4, NavegadorSQLiteDBB, BancodetrabajoMySQL, ubuntu, Herramientas]
 description:  Si es un desarrollador de software y su entorno de desarrollo es Ubuntu, le explicaremos cómo instalar el software esencial de Ubuntu que necesita instalar.
@@ -20,12 +20,13 @@ lang: es
 ---
 Si es un desarrollador de software y su entorno de desarrollo es Ubuntu, le explicaremos cómo instalar el software esencial de Ubuntu que necesita instalar.  
 ## Código de estudio visual
-![Código de estudio visual](/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png)  
+![Código de estudio visual](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
 
 Código de estudio visual
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"} es un IDE y editor ampliamente utilizado en el desarrollo de software.  
+
 Si está utilizando "el entorno GUI de escritorio de Ubuntu (GNOME)", puede descargar VS Code usando el navegador integrado e instalarlo usando la herramienta "dpkg".  
 
 ```shell
@@ -51,12 +52,13 @@ Puede instalar la extensión para acceso remoto a VS Code a través de SSH usand
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## Escritorio GitHub
-![Escritorio GitHub](/assets/images/231101003113/basic_setting_-_developer-github-desktop.png)  
+![Escritorio GitHub](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
 
 Escritorio GitHub
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 El software de escritorio GitHub es un cliente Git. Si está trabajando en un proyecto de GitHub, esta es definitivamente una buena opción, pero incluso si usa un servidor git personal en lugar de un repositorio de GitHub, también puede ser una buena opción si no necesita funciones complejas.  
+
 El sitio [El escritorio oficial de GitHub](https://desktop.github.com/){:target="_blank"} solo proporciona versiones para Windows y macOS. Sin embargo, debido a que GitHub Desktop es un proyecto de código abierto, la versión de Ubuntu también se distribuye en un [repositorio] separado (https://github.com/shiftkey/desktop). No estoy seguro si esto es oficial. Después de agregar el repositorio a apt, puede instalar GitHub Desktop usando apt.  
 
 ```shell
@@ -65,13 +67,15 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## Más allá de comparar 4
-![Más allá de comparar 4](/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png)  
+![Más allá de comparar 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
 
 Más allá de comparar 4
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 Beyond Compare es una popular herramienta de comparación de archivos.  
+
 Desafortunadamente, la versión Beyond Compare 3 no tiene un buen rendimiento de comparación de archivos en Ubuntu. En otras palabras, la comparación de archivos lleva mucho tiempo. Sin embargo, la última versión, [Beyond Compare 4](https://www.scootersoftware.com/download){:target="_blank"} es rápida y tiene el mismo rendimiento que Windows en Ubuntu. Entonces, recomiendo elegir la versión 4 en Ubuntu.  
+
 Puede descargar Beyond Compare 4 desde el sitio web oficial usando un navegador web, pero lo descargaremos usando la herramienta `wget`.  
 
 ```shell
@@ -99,12 +103,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 Si no tiene una clave de licencia, es posible que deba realizar el proceso de restablecimiento nuevamente cuando finalice el período de evaluación. Por lo tanto, recomiendo guardar y usar el espacio de trabajo y exportar la configuración cada vez que se actualice y guardarlo como un archivo.  
 ## Base de datos
 ### Navegador de base de datos para SQLite
-![Navegador de base de datos para SQLite](/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png)  
+![Navegador de base de datos para SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
 
 Navegador de base de datos para SQLite
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 Si utiliza SQLite DB, [SQLite DB Browser](https://sqlitebrowser.org/dl/){:target="_blank"} es un software esencial para consultar la base de datos o ver el contenido de la tabla en un entorno GUI.  
+
 Puede agregar el repositorio `sqlitebrowser` para apt e instalar el navegador SQLite DB.  
 
 ```shell

@@ -1,7 +1,7 @@
 ---
 title:  How to specify color when outputting logs to terminal or console
 image:
-  path: /assets/images/231023215842/en-thumb-terminal_text_color-thumb.png
+  path: /assets/images/231023215842/en-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png
   alt: How to specify color when outputting logs to terminal or console
 images: 
 categories: [Ubuntu, Common]
@@ -19,6 +19,7 @@ ro_ref: 231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_co
 lang: en
 ---
 When developing software, logs help you check operation and find the cause of problems. It would be helpful if the logs for critical error or warning levels had colors that were easy to find.  
+
 You can set the color of the log text in the IDE you are using, such as VS Code or Visual Studio, but if the software is run without an IDE or in a cross-compilation environment such as Linux, the setting will not be applied. Therefore, I will introduce a method to set the color of text independently from the terminal perspective.  
 > **How to change output text color in Visual Studio Code**  
 > In the case of VS Code, you can change the color of the Debug Console or Output window by setting the color value in `workbench.colorCustomizations` in `Settings > User > Workbanch > Appearance > Edit in Settings.json`.  
@@ -36,6 +37,7 @@ In the end, one line with the text color changed will have the format below.
 - `(Escape Character)[(Style Code);(Text Color);(Background Color)m`  `(text you want)`  `(Escape Character)[0m`
 
 Below is an example of the string `I am text` in bold white text on a black background.  
+
 For the meaning of each number, check the predefined code in the later section.  
 
 ```
@@ -52,7 +54,9 @@ Let’s look at the table below first. Each element for changing the text color 
 | `(Escape Character)[0m`  | Yes       | Resets the text color and style once set.<br>If you want to change the color of multiple lines, you can reset the text color later at the desired location. |
 
 Although the `Escape Chacter` is mandatory, you can use one of the three described later depending on the expression method.  
+
 You can add the `Style`, `Text Color`, and `Background Color` to suit your taste by separating them with `;`. We will explain the options that can be expressed later, but the order does not matter because the numbers representing each are unique.  
+
 And finally, reset the text color and style using `(Escape Character)[0m`. Unless reset, subsequent text colors and styles will continue.  
 ## Color and Style Codes
 ### 1. Escape Character
@@ -93,5 +97,6 @@ These are codes that change the text color. Think of it as overriding the defaul
 
 ###  5. Color Reset
 If you do not reset the text color and style, it will continue as initially set.  
+
 Typically, it is added to the end of the text in the form `(Escape Character)[0m`.  
 - `0`: Reset all styles and colors to default

@@ -1,9 +1,9 @@
 ---
 title:  如何为软件开发人员安装必要的 Ubuntu 软件
 image:
-  path: /assets/images/231101003113/zh-thumb-basic_setting_-_developer-visual-studio-code.png
+  path: /assets/images/231101003113/zh-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png
   alt: 如何为软件开发人员安装必要的 Ubuntu 软件
-images: ["/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png", "/assets/images/231101003113/basic_setting_-_developer-github-desktop.png", "/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png", "/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png"]
+images: ["/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png", "/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png"]
 categories: [乌班图, 工具]
 tags: [VisualStudio代码, VS代码, GitHub桌面版, 超越比较4, SQLite数据库浏览器, MySQL工作台, 乌班图, 工具]
 description:  如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。
@@ -20,12 +20,13 @@ lang: zh
 ---
 如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。  
 ## 视觉工作室代码
-![视觉工作室代码](/assets/images/231101003113/basic_setting_-_developer-visual-studio-code.png)  
+![视觉工作室代码](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
 
 视觉工作室代码
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"} 是软件开发中广泛使用的 IDE 和编辑器。  
+
 如果您使用的是`Ubuntu桌面GUI（GNOME）环境`，您可以使用内置浏览器下载VS Code并使用`dpkg`工具安装。  
 
 ```shell
@@ -51,12 +52,13 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub 桌面版
-![GitHub 桌面版](/assets/images/231101003113/basic_setting_-_developer-github-desktop.png)  
+![GitHub 桌面版](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
 
 GitHub 桌面版
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 GitHub 桌面软件是一个 Git 客户端。如果您正在开发 GitHub 项目，这绝对是一个不错的选择，但即使您使用个人 git 服务器而不是 GitHub 存储库，如果您不需要复杂的功能，它也可能是一个不错的选择。  
+
 [官方GitHub桌面](https://desktop.github.com/){:target="_blank"}站点仅提供Windows和macOS版本。但是，由于 GitHub Desktop 是一个开源项目，因此 Ubuntu 版本也分布在单独的 [repo](https://github.com/shiftkey/desktop){:target="_blank"} 中。不确定这是否是官方的。将存储库添加到 apt 后，您可以使用 apt 安装 GitHub Desktop。  
 
 ```shell
@@ -65,13 +67,15 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 超越比较4
-![超越比较4](/assets/images/231101003113/basic_setting_-_developer-beyond-compare-4.png)  
+![超越比较4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
 
 超越比较4
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 Beyond Compare 是一款流行的文件比较工具。  
+
 不幸的是，Beyond Compare 3版本在Ubuntu中没有良好的文件比较性能。换句话说，文件比较需要很长时间。然而，最新版本 [Beyond Compare 4](https://www.scootersoftware.com/download){:target="_blank"} 速度很快，并且在 Ubuntu 中具有与 Windows 相同的性能。所以，我建议在 Ubuntu 上选择版本 4。  
+
 您可以使用网络浏览器从官方网站下载Beyond Compare 4，但我们将使用`wget`工具下载它。  
 
 ```shell
@@ -99,12 +103,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 如果您没有许可证密钥，则可能需要在评估期结束时再次执行重置过程。因此，我建议保存并使用工作区，并在每次更新时导出设置并将其保存为文件。  
 ## 数据库
 ### SQLite 数据库浏览器
-![SQLite 数据库浏览器](/assets/images/231101003113/basic_setting_-_developer-sqlite-db-browser.png)  
+![SQLite 数据库浏览器](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
 
 SQLite 数据库浏览器
 {: style="color:gray; font-size: 80%; text-align: center;"}
 
 如果您使用SQLite DB，[SQLite DB Browser](https://sqlitebrowser.org/dl/){:target="_blank"}是在GUI环境中查询数据库或查看表内容的必备软件。  
+
 您可以将`sqlitebrowser`存储库添加到 apt 并安装 SQLite DB 浏览器。  
 
 ```shell

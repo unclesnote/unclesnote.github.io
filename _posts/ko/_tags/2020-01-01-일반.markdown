@@ -1,0 +1,8 @@
+---
+title: "일반"
+layout: tag
+ro_ref: ko-tag-일반
+tag: "일반"
+tag_web: "일반"
+lang: ko
+---

@@ -1,7 +1,7 @@
 ---
 title:  Cómo especificar el color al enviar registros a la terminal o consola
 image:
-  path: /assets/images/231023215842/es-thumb-terminal_text_color-thumb.png
+  path: /assets/images/231023215842/es-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png
   alt: Cómo especificar el color al enviar registros a la terminal o consola
 images: 
 categories: [ubuntu, Común]
@@ -19,6 +19,7 @@ ro_ref: 231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_co
 lang: es
 ---
 Al desarrollar software, los registros le ayudan a comprobar el funcionamiento y encontrar la causa de los problemas. Sería útil si los registros de errores críticos o niveles de advertencia tuvieran colores que fueran fáciles de encontrar.  
+
 Puede configurar el color del texto del registro en el IDE que está utilizando, como VS Code o Visual Studio, pero si el software se ejecuta sin un IDE o en un entorno de compilación cruzada como Linux, la configuración no se aplicará. . Por lo tanto, presentaré un método para configurar el color del texto independientemente de la perspectiva del terminal.  
 > **Cómo cambiar el color del texto de salida en Visual Studio Code**  
 > En el caso de VS Code, puede cambiar el color de la consola de depuración o la ventana de salida configurando el valor del color en `workbench.colorCustomizations` en `Configuración > Usuario > Workbanch > Apariencia > Editar en Settings.json`.  
@@ -36,6 +37,7 @@ Al final, una línea con el color del texto cambiado tendrá el formato siguient
 - `(Carácter de escape)[(Código de estilo);(Color del texto);(Color de fondo)m` `(texto que desea)` `(Carácter de escape)[0m`
 
 A continuación se muestra un ejemplo de la cadena "Soy texto" en texto blanco en negrita sobre fondo negro.  
+
 Para conocer el significado de cada número, consulte el código predefinido en la sección posterior.  
 
 ```
@@ -52,7 +54,9 @@ Veamos primero la tabla a continuación. Se enumera cada elemento para cambiar e
 |`(Carácter de escape)[0m`|Sí|Restablece el color y estilo del texto una vez configurado.<br> Si desea cambiar el color de varias líneas, puede restablecer el color del texto más tarde en la ubicación deseada.|
 
 Aunque el `Escape Chacter` es obligatorio, puede utilizar uno de los tres que se describen más adelante dependiendo del método de expresión.  
+
 Puede agregar el `Estilo`, el `Color del texto` y el `Color de fondo` según sus gustos separándolos con `;`. Más adelante explicaremos las opciones que se pueden expresar, pero el orden no importa porque los números que representan cada una son únicos.  
+
 Y finalmente, restablezca el color y estilo del texto usando `(Carácter de escape)[0m``. A menos que se reinicie, los colores y estilos de texto posteriores continuarán.  
 ## Códigos de color y estilo
 ### 1. Personaje de escape
@@ -93,5 +97,6 @@ Estos son códigos que cambian el color del texto. Piense en ello como anulando 
 
 ### 5. Restablecer color
 Si no restablece el color y el estilo del texto, continuará como se configuró inicialmente.  
+
 Normalmente, se agrega al final del texto en el formato "(Carácter de escape) [0m".  
 - `0`: Restablece todos los estilos y colores a los valores predeterminados
