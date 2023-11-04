@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [Ubuntu, 一般]
 tags: [ファタブ, スワップ, スワップファイル, Ubuntu, 一般]
-description:  Ubuntu の物理メモリが不足し、OS が動作し続けると、パフォーマンスが低下したり、大規模なプラットフォームや BSP をコンパイルするときにビルド エラーが発生したりすることがあります。そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードディスク上のファイルをメモリとして使用します。これは、Windows 環境の仮想メモリに似ています。それでは、Ubuntu 20.04でのスワップファイルの作成と適用方法を説明したいと思います。
+description:  Ubuntu の物理メモリが不足し、OS が動作し続けると、パフォーマンスが低下したり、大規模なプラットフォームや BSP をコンパイルするときにビルド エラーが発生したりすることがあります。そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードディスク上のファイルをメモ
 public: true
 toc: true
 toc_intl: false

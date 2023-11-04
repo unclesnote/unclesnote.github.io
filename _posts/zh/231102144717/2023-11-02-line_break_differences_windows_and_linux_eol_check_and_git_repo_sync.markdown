@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files,_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png"]
 categories: [git]
 tags: [git, 回车换行, 如果, EOL转换, 换行符, 记事本PlusPlus, UNIX2DOS, DOS2UNIX]
-description:  如果您需要在 Linux 和 Windows 上修改并提交同一个 Git 存储库中的文件，则可能会出现这样的情况：Git 客户端在 Git 提交阶段将该文件识别为已修改文件，即使该文件的内容显然没有被修改。问题的原因在于，虽然文件内容相同，但 Windows 和 Linux 中表达换行符的基本方式不同。下图中，左边是在Windows（PC）下修改并保存的文件，右边是在Linux（UNIX）下修改并保存的文件。
+description:  如果您需要在 Linux 和 Windows 上修改并提交同一个 Git 存储库中的文件，则可能会出现这样的情况：Git 客户端在 Git 提交阶段将该文件识别为已修改文件，即使该文件的内容显然没有被修改。问题的原因在于，虽然文件内容相同，但 Windows 和 Linux 中表达换行符的基本方式不同。下图中，左边是
 public: true
 toc: true
 toc_intl: false

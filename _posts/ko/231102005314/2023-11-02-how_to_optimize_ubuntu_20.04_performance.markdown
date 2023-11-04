@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png", "/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png"]
 categories: [우분투, 일반]
 tags: [우분투애니메이션, Dock아이콘크기, 스왑파일, 스왑, 우분투, 일반]
-description:  Ubuntu OS가 설치된 PC를 메인 컴퓨터로 사용하지 않는 이상, 하드웨어 사양이 낮은 PC를 사용하거나 Oracle VM VirtualBox에 Ubuntu를 설치하게 될 가능성이 높습니다. SSH를 주로 사용하여 원격으로 접속한다면 큰 영향은 없으나, GNOME에서 UI를 자주 조작한다면 성능이 실망스러울 수 있습니다. 따라서 Ubuntu를 설치하고 구성할 때 성능을 최적화하기 위한 몇 가지 팁은 다음과 같습니다.
+description:  Ubuntu OS가 설치된 PC를 메인 컴퓨터로 사용하지 않는 이상, 하드웨어 사양이 낮은 PC를 사용하거나 Oracle VM VirtualBox에 Ubuntu를 설치하게 될 가능성이 높습니다. SSH를 주로 사용하여 원격으로 접속한다면 큰 영향은 없으나, GNOME에서 UI를 자주
 public: true
 toc: true
 toc_intl: false

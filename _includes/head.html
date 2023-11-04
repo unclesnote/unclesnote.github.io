@@ -91,10 +91,8 @@
   {{ seo_tags }}
   <title>
     {%- unless page.layout == 'home' -%}
-      {{ page_title | append: ' | ' }}
+      {{ page_title }}
     {%- endunless -%}
-
-    {{ prj_site_title }}
   </title>
 
   <!-- hreflang -->

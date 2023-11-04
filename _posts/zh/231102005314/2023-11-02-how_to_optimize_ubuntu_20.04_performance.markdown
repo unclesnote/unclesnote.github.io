@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png", "/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png"]
 categories: [乌班图, 常见的]
 tags: [Ubuntu动画, Dock图标大小, 交换文件, 交换, 乌班图, 常见的]
-description:  除非您使用安装了 Ubuntu 操作系统的 PC 作为主计算机，否则您可能会使用硬件规格较低的 PC 或在 Oracle VM VirtualBox 上安装 Ubuntu。如果你主要使用 SSH 进行远程连接，那么不会有太大影响，但如果你经常操作 GNOME 中的 UI，性能可能会令人失望。因此，这里有一些在安装和配置 Ubuntu 时优化性能的技巧。
+description:  除非您使用安装了 Ubuntu 操作系统的 PC 作为主计算机，否则您可能会使用硬件规格较低的 PC 或在 Oracle VM VirtualBox 上安装 Ubuntu。如果你主要使用 SSH 进行远程连接，那么不会有太大影响，但如果你经常操作 GNOME 中的 UI，性能可能会令人失望。因此，这里有一些在安装和配
 public: true
 toc: true
 toc_intl: false

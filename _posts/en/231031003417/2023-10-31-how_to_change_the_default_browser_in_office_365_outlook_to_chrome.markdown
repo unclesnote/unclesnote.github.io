@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png"]
 categories: [Computer, TroubleShooting]
 tags: [Outlook, DefaultBrowser, Chrome, PC, Computer, TroubleShooting]
-description:  Have you ever clicked on a web link in Office 365 Outlook and suddenly been shown in the Edge browser, which was inconvenient? In a recent update, Microsoft reset the default browser in Outlook to Edge browser. For those who love Google Chrome, let's change the web link to open on Chrome. We will check and set the Chrome browser in the Windows default app and Outlook settings.
+description:  Have you ever clicked on a web link in Office 365 Outlook and suddenly been shown in the Edge browser, which was inconvenient? In a recent update, Microsoft
 public: true
 toc: true
 toc_intl: false

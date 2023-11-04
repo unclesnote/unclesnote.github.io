@@ -6,7 +6,7 @@ image:
 images: 
 categories: [Ubuntu, Common]
 tags: [VSCode, Terminal, DebugConsole, Output, Ubuntu, Common]
-description:  When developing software, logs help you check operation and find the cause of problems. It would be helpful if the logs for critical error or warning levels had colors that were easy to find. You can set the color of the log text in the IDE you are using, such as VS Code or Visual Studio, but if the software is run without an IDE or in a cross-compilation environment such as Linux, the setting will not be applied. Therefore, I will introduce a method to set the color of text independently from the terminal perspective.
+description:  When developing software, logs help you check operation and find the cause of problems. It would be helpful if the logs for critical error or warning levels
 public: true
 toc: true
 toc_intl: false

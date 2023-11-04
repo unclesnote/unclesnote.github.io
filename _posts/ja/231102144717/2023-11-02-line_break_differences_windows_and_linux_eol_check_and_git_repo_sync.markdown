@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files,_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png"]
 categories: [ギット]
 tags: [ギット, CRLF, LF, EOL変換, 改行, メモ帳プラスプラス, unix2dos, dos2unix]
-description:  Linux と Windows の両方で 1 つの Git リポジトリ内のファイルを変更してコミットする必要がある場合、内容が明らかに変更されていない場合でも、Git クライアントがそのファイルを Git コミット段階で変更されたファイルとして認識する場合があります。問題の原因は、ファイルの内容は同じでも、WindowsとLinuxでは基本的な改行の表現方法が異なることにあります。下の図では、左が Windows (PC) で変更して保存したファイル、右が Linux (UNIX) で変更して保存したファイルです。
+description:  Linux と Windows の両方で 1 つの Git リポジトリ内のファイルを変更してコミットする必要がある場合、内容が明らかに変更されていない場合でも、Git クライアントがそのファイルを Git コミット段階で変更されたファイルとして認識する場合があります。問題の原因は、ファイルの内容は同じでも、Windo
 public: true
 toc: true
 toc_intl: false

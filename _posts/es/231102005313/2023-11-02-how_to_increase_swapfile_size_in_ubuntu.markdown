@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [ubuntu, Común]
 tags: [fatab, Intercambio, archivodeintercambio, ubuntu, Común]
-description:  A veces, si la memoria física de Ubuntu es insuficiente y el sistema operativo continúa funcionando, el rendimiento puede disminuir o pueden ocurrir errores de compilación al compilar una plataforma grande o BSP. Por lo tanto, el sistema operativo basado en Linux crea un archivo de intercambio y utiliza archivos en el disco duro como memoria cuando la memoria física es insuficiente. Esto es similar a la memoria virtual en el entorno Windows. Ahora me gustaría explicar cómo crear y aplicar un archivo de intercambio en Ubuntu 20.04.
+description:  A veces, si la memoria física de Ubuntu es insuficiente y el sistema operativo continúa funcionando, el rendimiento puede disminuir o pueden ocurrir errores de
 public: true
 toc: true
 toc_intl: false

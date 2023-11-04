@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [乌班图, 常见的]
 tags: [法塔布, 交换, 交换文件, 乌班图, 常见的]
-description:  有时，如果 Ubuntu 的物理内存不足而操作系统继续运行，则在编译大型平台或 BSP 时可能会出现性能下降或出现构建错误。因此，当物理内存不足时，基于Linux的操作系统会创建交换文件并使用硬盘上的文件作为内存。这类似于Windows环境中的虚拟内存。现在，我想解释一下如何在 Ubuntu 20.04 中创建和应用交换文件。
+description:  有时，如果 Ubuntu 的物理内存不足而操作系统继续运行，则在编译大型平台或 BSP 时可能会出现性能下降或出现构建错误。因此，当物理内存不足时，基于Linux的操作系统会创建交换文件并使用硬盘上的文件作为内存。这类似于Windows环境中的虚拟内存。现在，我想解释一下如何在 Ubuntu 20.04 中创建和应用
 public: true
 toc: true
 toc_intl: false

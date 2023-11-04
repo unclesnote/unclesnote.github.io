@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png"]
 categories: [Ubuntu, ツール]
 tags: [クルセイダー, グウェンビュー, フォトピー, クリタ, イージーストローク, 画像ビューア, 画像エディタ, ファイルブラウザ, マウスマクロ, Ubuntu, ツール]
-description:  Ubuntu OS 特有の利点を理由に Ubuntu を使用している場合は、Windows 環境で使用していたものと同様のソフトウェアを Ubuntu 環境で使用できるようにしようとします。そこで、ファイルブラウザ、画像ビューア/エディタ、生産性向上ツールなど、Ubuntuを使用する際に一般的に使用すると良いソフトウェアをいくつか紹介します。
+description:  Ubuntu OS 特有の利点を理由に Ubuntu を使用している場合は、Windows 環境で使用していたものと同様のソフトウェアを Ubuntu 環境で使用できるようにしようとします。そこで、ファイルブラウザ、画像ビューア/エディタ、生産性向上ツールなど、Ubuntuを使用する際に一般的に使用すると良いソフトウ
 public: true
 toc: true
 toc_intl: false

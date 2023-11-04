@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png"]
 categories: [コンピューター, トラブルシューティング]
 tags: [見通し, デフォルトブラウザ, クロム, パソコン, コンピューター, トラブルシューティング]
-description:  Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は、Web リンクを Chrome で開くように変更してみましょう。 Windows のデフォルト アプリと Outlook の設定で Chrome ブラウザを確認して設定します。
+description:  Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は
 public: true
 toc: true
 toc_intl: false

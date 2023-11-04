@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png", "/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png"]
 categories: [ubuntu, Común]
 tags: [UbuntuAnimaciones, Tamañodeliconodelmuelle, archivodeintercambio, intercambio, ubuntu, Común]
-description:  A menos que esté utilizando una PC con el sistema operativo Ubuntu instalado como computadora principal, es probable que esté usando una PC con especificaciones de hardware bajas o que esté instalando Ubuntu en Oracle VM VirtualBox. Si utiliza principalmente SSH para conectarse de forma remota, no tendrá mucho impacto, pero si manipula con frecuencia la interfaz de usuario en GNOME, el rendimiento puede ser decepcionante. Entonces, aquí hay algunos consejos para optimizar el rendimiento al instalar y configurar Ubuntu.
+description:  A menos que esté utilizando una PC con el sistema operativo Ubuntu instalado como computadora principal, es probable que esté usando una PC con
 public: true
 toc: true
 toc_intl: false

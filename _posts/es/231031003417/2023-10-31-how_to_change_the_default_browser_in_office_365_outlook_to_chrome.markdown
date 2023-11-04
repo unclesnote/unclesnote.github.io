@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png"]
 categories: [Computadora, Solución de problemas]
 tags: [panorama, Navegadorpordefecto, Cromo, ordenadorpersonal, Computadora, Solucióndeproblemas]
-description:  ¿Alguna vez hizo clic en un enlace web en Office 365 Outlook y de repente se le mostró en el navegador Edge, lo cual fue un inconveniente? En una actualización reciente, Microsoft restableció el navegador predeterminado en Outlook al navegador Edge. Para aquellos que aman Google Chrome, cambiemos el enlace web para abrir en Chrome. Comprobaremos y configuraremos el navegador Chrome en la aplicación predeterminada de Windows y en la configuración de Outlook.
+description:  ¿Alguna vez hizo clic en un enlace web en Office 365 Outlook y de repente se le mostró en el navegador Edge, lo cual fue un inconveniente? En una actualización
 public: true
 toc: true
 toc_intl: false

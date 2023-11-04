@@ -1,0 +1,8 @@
+---
+title: "イブサングル"
+layout: tag
+ro_ref: ja-tag-イブサングル
+tag: "イブサングル"
+tag_web: "イブサングル"
+lang: ja
+---

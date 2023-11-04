@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png", "/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png"]
 categories: [Ubuntu, 一般]
 tags: [Ubuntuアニメーション, ドックアイコンのサイズ, スワップファイル, スワップ, Ubuntu, 一般]
-description:  Ubuntu OSがインストールされたPCをメインコンピュータとして使用している場合を除き、ハードウェア仕様が低いPCを使用しているか、Oracle VM VirtualBoxにUbuntuをインストールしている可能性があります。主に SSH を使用してリモート接続する場合は大きな影響はありませんが、GNOME で UI を頻繁に操作する場合は、パフォーマンスが低下する可能性があります。そこで、Ubuntu のインストールおよび構成時にパフォーマンスを最適化するためのヒントをいくつか紹介します。
+description:  Ubuntu OSがインストールされたPCをメインコンピュータとして使用している場合を除き、ハードウェア仕様が低いPCを使用しているか、Oracle VM VirtualBoxにUbuntuをインストールしている可能性があります。主に SSH を使用してリモート接続する場合は大きな影響はありませんが、GNOME で 
 public: true
 toc: true
 toc_intl: false

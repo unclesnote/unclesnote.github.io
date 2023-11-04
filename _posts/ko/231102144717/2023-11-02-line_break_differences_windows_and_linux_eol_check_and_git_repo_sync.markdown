@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files,_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png"]
 categories: [Git]
 tags: [Git, CRLF, LF, EOL변환, 줄바꿈, 노트패드플러스플러스, unix2dos, dos2unix]
-description:  Linux와 Windows 모두에서 하나의 Git 저장소에 있는 파일을 수정하고 커밋해야 하는 경우, 콘텐츠가 명확하게 수정되지 않았음에도 Git 클라이언트가 Git 커밋 단계에서 해당 파일을 수정된 파일로 인식하는 경우가 있습니다. 문제의 원인은 파일 내용은 동일하더라도 Windows와 Linux에서 줄바꿈을 표현하는 기본 방식이 다르기 때문입니다. 아래 사진에서 왼쪽은 윈도우(PC)에서 수정하여 저장한 파일이고, 오른쪽은 리눅스(UNIX)에서 수정하여 저장한 파일이다.
+description:  Linux와 Windows 모두에서 하나의 Git 저장소에 있는 파일을 수정하고 커밋해야 하는 경우, 콘텐츠가 명확하게 수정되지 않았음에도 Git 클라이언트가 Git 커밋 단계에서 해당 파일을 수정된 파일로 인식하는 경우가 있습니다. 문제의 원인은 파일 내용은 동일하더라도
 public: true
 toc: true
 toc_intl: false

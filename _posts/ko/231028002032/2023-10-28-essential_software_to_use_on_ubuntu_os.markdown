@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png", "/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png"]
 categories: [우분투, 도구]
 tags: [크루세이더, 그웬뷰, 포토피아, 크리타, 이지스트로크, 이미지뷰어, 이미지편집기, 파일탐색기, 마우스매크로, 우분투, 도구]
-description:  Ubuntu OS의 특별한 장점 때문에 Ubuntu를 사용하고 있다면 Windows 환경에서 사용했던 것과 유사한 소프트웨어를 Ubuntu 환경에서도 사용할 수 있는지 찾아보게 될 것입니다. 그래서 파일 브라우저, 이미지 뷰어/편집기, 생산성 도구 등 우분투를 사용할 때 일반적으로 사용하기 좋은 몇 가지 소프트웨어를 소개하겠습니다.
+description:  Ubuntu OS의 특별한 장점 때문에 Ubuntu를 사용하고 있다면 Windows 환경에서 사용했던 것과 유사한 소프트웨어를 Ubuntu 환경에서도 사용할 수 있는지 찾아보게 될 것입니다. 그래서 파일 브라우저, 이미지 뷰어/편집기, 생산성 도구 등 우분투를 사용할 때 일반적으로
 public: true
 toc: true
 toc_intl: false

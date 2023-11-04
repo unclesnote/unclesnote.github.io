@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png"]
 categories: [컴퓨터, 문제 해결]
 tags: [아웃룩, 기본브라우저, 크롬, PC, 컴퓨터, 문제해결]
-description:  Office 365 Outlook에서 웹 링크를 클릭했는데 갑자기 Edge 브라우저에 표시되어 불편했던 적이 있으신가요? 최근 업데이트에서 Microsoft는 Outlook의 기본 브라우저를 Edge 브라우저로 재설정했습니다. 구글 크롬을 좋아하시는 분들을 위해 웹링크를 크롬에서 열리도록 변경해보겠습니다. Windows 기본 앱 및 Outlook 설정에서 Chrome 브라우저를 확인하고 설정하겠습니다.
+description:  Office 365 Outlook에서 웹 링크를 클릭했는데 갑자기 Edge 브라우저에 표시되어 불편했던 적이 있으신가요? 최근 업데이트에서 Microsoft는 Outlook의 기본 브라우저를 Edge 브라우저로 재설정했습니다. 구글 크롬을 좋아하시는 분들을 위해 웹링크를 크롬에서
 public: true
 toc: true
 toc_intl: false

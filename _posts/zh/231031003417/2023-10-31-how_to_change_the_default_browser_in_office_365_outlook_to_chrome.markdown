@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png", "/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png"]
 categories: [电脑, 故障排除]
 tags: [外表, 默认浏览器, 铬合金, 个人电脑, 电脑, 故障排除]
-description:  您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Windows默认应用程序和Outlook设置中检查并设置Chrome浏览器。
+description:  您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Wind
 public: true
 toc: true
 toc_intl: false

@@ -1,0 +1,8 @@
+---
+title: "伊布尚古尔"
+layout: tag
+ro_ref: zh-tag-伊布尚古尔
+tag: "伊布尚古尔"
+tag_web: "伊布尚古尔"
+lang: zh
+---

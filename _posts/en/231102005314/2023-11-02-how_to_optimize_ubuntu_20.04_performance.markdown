@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png", "/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png"]
 categories: [Ubuntu, Common]
 tags: [UbuntuAnimations, DockIconSize, swapfile, swap, Ubuntu, Common]
-description:  Unless you are using a PC with Ubuntu OS installed as your main computer, you are likely to be using a PC with low hardware specifications or installing Ubuntu on Oracle VM VirtualBox. If you mainly use SSH to connect remotely, it won't have much of an impact, but if you often manipulate the UI in GNOME, performance may be disappointing. So, here are some tips to optimize performance when installing and configuring Ubuntu.
+description:  Unless you are using a PC with Ubuntu OS installed as your main computer, you are likely to be using a PC with low hardware specifications or installing Ubuntu
 public: true
 toc: true
 toc_intl: false
