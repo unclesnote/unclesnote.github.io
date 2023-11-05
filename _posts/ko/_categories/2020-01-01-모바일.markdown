@@ -1,0 +1,8 @@
+---
+title: "모바일"
+layout: category
+ro_ref: ko-category-모바일
+category: "모바일"
+category_web: "모바일"
+lang: ko
+---

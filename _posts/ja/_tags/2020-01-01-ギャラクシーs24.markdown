@@ -1,0 +1,8 @@
+---
+title: "ギャラクシーS24"
+layout: tag
+ro_ref: ja-tag-ギャラクシーS24
+tag: "ギャラクシーS24"
+tag_web: "ギャラクシーs24"
+lang: ja
+---

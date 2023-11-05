@@ -1,0 +1,8 @@
+---
+title: "모바일"
+layout: tag
+ro_ref: ko-tag-모바일
+tag: "모바일"
+tag_web: "모바일"
+lang: ko
+---

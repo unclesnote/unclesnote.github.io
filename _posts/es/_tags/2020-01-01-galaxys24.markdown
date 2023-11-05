@@ -1,0 +1,8 @@
+---
+title: "GalaxyS24"
+layout: tag
+ro_ref: es-tag-GalaxyS24
+tag: "GalaxyS24"
+tag_web: "galaxys24"
+lang: es
+---

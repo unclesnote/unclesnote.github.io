@@ -1,0 +1,8 @@
+---
+title: "噂"
+layout: tag
+ro_ref: ja-tag-噂
+tag: "噂"
+tag_web: "噂"
+lang: ja
+---

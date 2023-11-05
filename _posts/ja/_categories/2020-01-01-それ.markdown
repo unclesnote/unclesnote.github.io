@@ -1,0 +1,8 @@
+---
+title: "それ"
+layout: category
+ro_ref: ja-category-それ
+category: "それ"
+category_web: "それ"
+lang: ja
+---

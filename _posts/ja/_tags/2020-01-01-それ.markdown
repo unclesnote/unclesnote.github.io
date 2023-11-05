@@ -1,0 +1,8 @@
+---
+title: "それ"
+layout: tag
+ro_ref: ja-tag-それ
+tag: "それ"
+tag_web: "それ"
+lang: ja
+---

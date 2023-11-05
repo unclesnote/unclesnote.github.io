@@ -3,7 +3,7 @@ title:  Diferencias de salto de línea- verificación EOL de Windows y Linux y s
 image:
   path: /assets/images/231102144717/es-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png
   alt: Diferencias de salto de línea- verificación EOL de Windows y Linux y sincronización de Git Repo
-images: ["/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files,_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png"]
+images: ["/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png"]
 categories: [git]
 tags: [git, CRLF, LF, ConversiónEOL, Saltosdelínea, BlocdenotasPlusPlus, unix2dos, dos2unix]
 description:  Si necesita modificar y confirmar archivos en un repositorio de Git tanto en Linux como en Windows, puede haber casos en los que el cliente Git reconozca el
@@ -21,7 +21,7 @@ lang: es
 Si necesita modificar y confirmar archivos en un repositorio de Git tanto en Linux como en Windows, puede haber casos en los que el cliente Git reconozca el archivo como un archivo modificado en la etapa de confirmación de Git aunque el contenido claramente no haya sido modificado.  
 
 La causa del problema es que aunque el contenido del archivo es el mismo, la forma básica de expresar saltos de línea en Windows y Linux es diferente. En la imagen de abajo, la izquierda es un archivo modificado y guardado en Windows (PC), y la derecha es un archivo modificado y guardado en Linux (UNIX).  
-![El mismo contenido de archivo pero archivos diferentes, a la izquierda está el formato de PC con Windows y a la derecha está el formato Linux UNIX](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files,_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)  
+![El mismo contenido de archivo pero archivos diferentes, a la izquierda está el formato de PC con Windows y a la derecha está el formato Linux UNIX](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)  
 
 El mismo contenido de archivo pero archivos diferentes, a la izquierda está el formato de PC con Windows y a la derecha está el formato Linux UNIX
 {: style="color:gray; font-size: 80%; text-align: center;"}

@@ -3,7 +3,7 @@ title:  Line Break Differences - Windows and Linux EOL Check and Git Repo Sync
 image:
   path: /assets/images/231102144717/en-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png
   alt: Line Break Differences - Windows and Linux EOL Check and Git Repo Sync
-images: ["/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files,_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png"]
+images: ["/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png", "/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png"]
 categories: [Git]
 tags: [Git, CRLF, LF, EOLConversion, LineBreaks, NotepadPlusPlus, unix2dos, dos2unix]
 description:  If you need to modify and commit files in one Git repo on both Linux and Windows, there may be cases where the Git client recognizes the file as a modified
@@ -21,7 +21,7 @@ lang: en
 If you need to modify and commit files in one Git repo on both Linux and Windows, there may be cases where the Git client recognizes the file as a modified file at the Git commit stage even though the content has clearly not been modified.  
 
 The cause of the problem is that although the file contents are the same, the basic way of expressing line breaks in Windows and Linux is different. In the picture below, the left is a file modified and saved in Windows (PC), and the right is a file modified and saved in Linux (UNIX).  
-![Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files,_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)  
+![Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)  
 
 Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format
 {: style="color:gray; font-size: 80%; text-align: center;"}

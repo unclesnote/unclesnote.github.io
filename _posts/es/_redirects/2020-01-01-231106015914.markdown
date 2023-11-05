@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231106015914
+thumbnail: /assets/images/231106015914/es-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png
+lang: es
+---

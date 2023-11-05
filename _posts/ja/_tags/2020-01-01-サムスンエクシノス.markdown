@@ -1,0 +1,8 @@
+---
+title: "サムスンエクシノス"
+layout: tag
+ro_ref: ja-tag-サムスンエクシノス
+tag: "サムスンエクシノス"
+tag_web: "サムスンエクシノス"
+lang: ja
+---

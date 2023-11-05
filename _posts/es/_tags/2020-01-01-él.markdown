@@ -1,0 +1,8 @@
+---
+title: "ÉL"
+layout: tag
+ro_ref: es-tag-ÉL
+tag: "ÉL"
+tag_web: "él"
+lang: es
+---

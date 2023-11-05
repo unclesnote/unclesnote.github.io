@@ -1,0 +1,8 @@
+---
+title: "谣言"
+layout: tag
+ro_ref: zh-tag-谣言
+tag: "谣言"
+tag_web: "谣言"
+lang: zh
+---

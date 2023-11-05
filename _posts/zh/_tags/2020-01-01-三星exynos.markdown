@@ -1,0 +1,8 @@
+---
+title: "三星Exynos"
+layout: tag
+ro_ref: zh-tag-三星Exynos
+tag: "三星Exynos"
+tag_web: "三星exynos"
+lang: zh
+---
