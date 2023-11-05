@@ -66,6 +66,10 @@ naver_analytics:
 naver_search_advisor:
   id: b1692675ab310e3ffe0d2827958296dc5e04a6b5
 
+microsoft_clarity:
+  id: jlsm7whuwk
+
+
 # Prefer color scheme setting.
 #
 # Note: Keep empty will follow the system prefer color by default,

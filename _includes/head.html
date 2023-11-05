@@ -141,6 +141,8 @@
 
   <!-- Google Adsense -->
   {% if site.google_adsense.id != empty and site.google_adsense.id %}
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="use-credentials">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
     {% include google-adsense-meta.html %}
     {% include google-adsense.html %}
   {% endif %}
@@ -155,8 +157,14 @@
   {% if site.naver_search_advisor.id != empty and site.naver_search_advisor.id %}
     {% include naver-search-advisor.html %}
   {% endif %}
-
-
+  
+  <!-- Microsoft Clarity -->
+  {% if site.microsoft_clarity.id != empty and site.microsoft_clarity.id %}
+    <link rel="preconnect" href="https://www.clarity.ms" crossorigin="use-credentials">
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
+    {% include microsoft-clarity.html %}
+  {% endif %}
+      
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="{{ site.data.origin[type].bootstrap.css | relative_url}}">
