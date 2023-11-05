@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [Ubuntu, Common]
 tags: [fatab, Swap, swapfile, Ubuntu, Common]
-description:  Sometimes, if Ubuntu's physical memory is insufficient and the OS continues to operate, performance may drop or build errors may occur when compiling a large
+description:  Sometimes, if you leave your Ubuntu machine running for a long time without enough physical memory, or if you compile and build a large platform or BSP,
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,9 @@ ro_name: how_to_increase_swapfile_size_in_ubuntu
 ro_ref: 231102005313/how_to_increase_swapfile_size_in_ubuntu
 lang: en
 ---
-Sometimes, if Ubuntu's physical memory is insufficient and the OS continues to operate, performance may drop or build errors may occur when compiling a large platform or BSP. Therefore, Linux-based OS creates a swapfile and uses files on the hard disk as memory when physical memory is insufficient. This is similar to virtual memory in the Windows environment.  
+Sometimes, if you leave your Ubuntu machine running for a long time without enough physical memory, or if you compile and build a large platform or BSP, performance may deteriorate or errors may occur.  
+
+Therefore, Linux-based OS creates a swapfile and uses files on the hard disk as memory when physical memory is insufficient. This is called a swap file, and is similar to virtual memory in the Windows environment.  
 
 Now, I would like to explain how to create and apply a swapfile in Ubuntu 20.04.  
 ## Check swap

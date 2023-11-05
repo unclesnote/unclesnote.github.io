@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png"]
 categories: [우분투, 일반]
 tags: [파탭, 스왑, 스왑파일, 우분투, 일반]
-description:  가끔 Ubuntu의 물리적 메모리가 부족하여 OS가 계속 동작하는 경우, 대규모 플랫폼이나 BSP를 컴파일할 때 성능이 저하되거나 빌드 오류가 발생할 수 있습니다. 따라서 Linux 기반 OS에서는 물리적 메모리가 부족할 경우 스왑 파일을 생성하여 하드디스크에 있는 파일을 메모리로
+description:  때로는 충분한 물리적 메모리 없이 Ubuntu 시스템을 오랫동안 실행한 상태로 두거나 대규모 플랫폼이나 BSP를 컴파일하고 구축하는 경우 성능이 저하되거나 오류가 발생할 수 있습니다. 따라서 Linux 기반 OS에서는 물리적 메모리가 부족할 경우 스왑 파일을 생성하여 하드디스크에 있는
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,9 @@ ro_name: how_to_increase_swapfile_size_in_ubuntu
 ro_ref: 231102005313/how_to_increase_swapfile_size_in_ubuntu
 lang: ko
 ---
-가끔 Ubuntu의 물리적 메모리가 부족하여 OS가 계속 동작하는 경우, 대규모 플랫폼이나 BSP를 컴파일할 때 성능이 저하되거나 빌드 오류가 발생할 수 있습니다. 따라서 Linux 기반 OS에서는 물리적 메모리가 부족할 경우 스왑 파일을 생성하여 하드디스크에 있는 파일을 메모리로 사용합니다. 이는 Windows 환경의 가상 메모리와 유사합니다.  
+때로는 충분한 물리적 메모리 없이 Ubuntu 시스템을 오랫동안 실행한 상태로 두거나 대규모 플랫폼이나 BSP를 컴파일하고 구축하는 경우 성능이 저하되거나 오류가 발생할 수 있습니다.  
+
+따라서 Linux 기반 OS에서는 물리적 메모리가 부족할 경우 스왑 파일을 생성하여 하드디스크에 있는 파일을 메모리로 사용합니다. 이를 스왑 파일이라고 하며, Windows 환경의 가상 메모리와 유사합니다.  
 
 이제 Ubuntu 20.04에서 스왑파일을 생성하고 적용하는 방법을 설명하겠습니다.  
 ## 스왑 확인
