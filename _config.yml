@@ -50,6 +50,7 @@ google_site_verification: # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
+theme_color: 38b97e     # put rgb color without '#' like ff0000 which is red
 
 google_adsense:
   id: ca-pub-4780870735701245

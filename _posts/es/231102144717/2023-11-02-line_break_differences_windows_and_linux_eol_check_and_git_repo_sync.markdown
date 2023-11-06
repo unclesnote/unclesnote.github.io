@@ -48,12 +48,12 @@ Por supuesto, incluso si escribe un archivo en Windows, puede crear y convertir 
 De hecho, puede resultar un poco confuso cuando se encuentra por primera vez con las diferencias en el EOL para cada sistema operativo. Por lo tanto, las palabras clave relacionadas con el contenido que se explicará en el futuro se pueden asignar a una tabla como se muestra a continuación.  
 
 |Nombre|ventanas|Ubuntu (Linux)|
-| ------------------------------------------ | -------------------------------------- | -------------- |
+| ------------------------------------------ | ---------------------------------------- | -------------- |
 |Terminología del formato de saltos de línea|CRLF (retorno de carro con avance de línea)|LF (avance de línea)|
 |caracteres de representación de saltos de línea|`\r\n`|`\n`|
-|Información de la herramienta `file` en Ubuntu|Texto ASCII, con terminadores de línea CRLF|texto ASCII|
-|Tipo EOL en la herramienta Beyond Compare|ordenador personal|UNIX|
-|Tipo EOL en Ubuntu|dos|Unix|
+|Información de la herramienta `file` en Ubuntu|ASCII text, with CRLF line terminators|ASCII text|
+|Tipo EOL en la herramienta Beyond Compare|PC|UNIX|
+|Tipo EOL en Ubuntu|dos|unix|
 |Herramienta de conversión EOL en Ubuntu|unix2dos|dos2unix|
 
 ### ventanas

@@ -66,13 +66,13 @@ the Geekbench score of the Snapdragon Gen 3-based Galaxy S24 Ultra was also disc
 
 In the single and multi-core tests, it scored `2234` and `6807` points, respectively, with the multi-core score slightly increasing compared to the model tested last July.  
 
-| Item                       | Galaxy S24+                          | Galaxy S24 Ultra                       | Galaxy S23 Ultra |
-| -------------------------- | ------------------------------------ | -------------------------------------- | ---------------- |
-| Model                      | samsung SM-926B                      | samsung SM-928U                        |                  |
-| AP                         | Exynos 2400                          | Snapdragon Gen 3                       | Snapdragon Gen 2 |
-| RAM                        | 8GB                                  | 8GB                                    | 12GB             |
-| Single Core<br>(Geekbench) | 2067<br>(Compared to S24 Ultra: -8%) | 2234<br>(Compared to S23 Ultra: +43%)  | 1560             |
-| Multi-core<br>(Geekbench)  | 6520<br>(Compared to S24 Ultra: -4%) | 6807 <br>(Compared to S23 Ultra: +36%) | 4996             |
+| Item                       | Galaxy S24+                              | Galaxy S24 Ultra                           | Galaxy S23 Ultra |
+| -------------------------- | ---------------------------------------- | ------------------------------------------ | ---------------- |
+| Model                      | samsung SM-926B                          | samsung SM-928U                            |                  |
+| AP                         | Exynos 2400                              | Snapdragon Gen 3                           | Snapdragon Gen 2 |
+| RAM                        | 8GB                                      | 8GB                                        | 12GB             |
+| Single Core<br>(Geekbench) | 2067<br>(Compared to<br> S24 Ultra: -8%) | 2234<br>(Compared to<br> S23 Ultra: +43%)  | 1560             |
+| Multi-core<br>(Geekbench)  | 6520<br>(Compared to<br> S24 Ultra: -4%) | 6807 <br>(Compared to<br> S23 Ultra: +36%) | 4996             |
 
 On October 12, 2023, benchmark results for the Galaxy S24+ were discovered on Geekbench. The model is identified as `SM-S926B`, equipped with an `Exynos 2400` chipset, 8GB of RAM, and the Android 14 operating system. It achieved a single-core score of `2067` and a multi-core score of `6520`.  
 

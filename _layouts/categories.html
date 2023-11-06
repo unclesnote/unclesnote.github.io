@@ -31,7 +31,6 @@ layout: page
 {% endif %}
 <!-- ------------- -->
 
-
 {% for category in prj_categories %}
   {% assign category_name = category %}
   {% assign posts_of_category = site.posts | where_exp: 'item', 'item.lang == page.lang and item.layout == "post" and item.hidden != true and item.categories.size > 0 and item.categories[0] == category_name' %}

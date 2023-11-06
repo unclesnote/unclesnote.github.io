@@ -48,13 +48,13 @@ Windows 以`CRLF（回车换行）`的形式表示换行符，如下所示。
 事实上，当您第一次遇到每个操作系统的 EOL 差异时，可能会有点困惑。因此，与以后要解释的内容相关的关键词可以映射到如下所示的表格中。  
 
 |姓名|视窗|乌班图（Linux）|
-| ------------------------------------------ | -------------------------------------- | -------------- |
+| ------------------------------------------ | ---------------------------------------- | -------------- |
 |换行符格式术语|CRLF（回车换行）|LF（换行）|
 |换行符表示字符|`\r\n`|`\n`|
-|来自 Ubuntu 中`file`工具的信息|ASCII 文本，带有 CRLF 行终止符|ASCII 文本|
-|Beyond Compare 工具中的 EOL 类型|个人电脑|UNIX系统|
-|Ubuntu 中的 EOL 类型|DOS|UNIX|
-|Ubuntu 上的 EOL 转换工具|UNIX2DOS|DOS2UNIX|
+|来自 Ubuntu 中`file`工具的信息|ASCII text, with CRLF line terminators|ASCII text|
+|Beyond Compare 工具中的 EOL 类型|PC|UNIX|
+|Ubuntu 中的 EOL 类型|dos|unix|
+|Ubuntu 上的 EOL 转换工具|unix2dos|dos2unix|
 
 ### 视窗
 使用 [Notepad++](https://notepad-plus-plus.org/downloads){:target="_blank"} 编辑器可以帮助您创建 EOL 的文件。  

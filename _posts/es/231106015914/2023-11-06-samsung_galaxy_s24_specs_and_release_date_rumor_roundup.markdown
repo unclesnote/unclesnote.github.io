@@ -67,12 +67,12 @@ También se descubrió la puntuación Geekbench del Galaxy S24 Ultra basado en S
 En las pruebas de uno y varios núcleos, obtuvo "2234" y "6807" puntos, respectivamente, y la puntuación de múltiples núcleos aumentó ligeramente en comparación con el modelo probado en julio pasado.  
 
 |Artículo|Galaxia S24+|Galaxia S24 Ultra|Galaxia S23 Ultra|
-| -------------------------- | ------------------------------------ | -------------------------------------- | ---------------- |
+| -------------------------- | ---------------------------------------- | ------------------------------------------ | ---------------- |
 |Modelo|Samsung SM-926B|Samsung SM-928U|
 |AP|Exynos 2400|Snapdragon generación 3|Snapdragon Generación 2|
 |RAM|8GB|8GB|12GB|
-|Núcleo simple<br> (banco geek)|2067<br> (En comparación con el S24 Ultra: -8%)|2234<br> (En comparación con el S23 Ultra: +43%)|1560|
-|multinúcleo<br> (banco geek)|6520<br> (En comparación con el S24 Ultra: -4%)|6807<br> (En comparación con el S23 Ultra: +36%)|4996|
+|Núcleo simple<br> (banco geek)|2067<br> (En comparación con<br> S24 Ultra: -8%)|2234<br> (En comparación con<br> S23 Ultra: +43%)|1560|
+|multinúcleo<br> (banco geek)|6520<br> (En comparación con<br> S24 Ultra: -4%)|6807<br> (En comparación con<br> S23 Ultra: +36%)|4996|
 
 El 12 de octubre de 2023, se descubrieron en Geekbench los resultados de las pruebas comparativas del Galaxy S24+. El modelo está identificado como `SM-S926B`, equipado con un chipset `Exynos 2400`, 8 GB de RAM y el sistema operativo Android 14. Logró una puntuación de un solo núcleo de "2067" y una puntuación de múltiples núcleos de "6520".  
 

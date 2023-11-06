@@ -3,8 +3,14 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Theme Color -->
+  {% if site.theme_color != empty and site.theme_color %}
+  <meta name="theme-color" content="#{{ site.theme_color }}">
+  {% else %}
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f7f7f7">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1b1b1e">
+  {% endif %}
+
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta

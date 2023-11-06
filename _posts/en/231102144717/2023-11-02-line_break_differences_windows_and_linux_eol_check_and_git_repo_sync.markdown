@@ -47,14 +47,14 @@ Of course, even if you write a file in Windows, you can create and convert the f
 
 In fact, it can be a little confusing when you first encounter the differences in EOL for each OS. So, keywords related to the content to be explained in the future can be mapped to a table as shown below.  
 
-| Name                                       | Windows                                | Ubuntu (Linux) |
-| ------------------------------------------ | -------------------------------------- | -------------- |
-| line breaks format terminology             | CRLF (Carriage Return with Line Feed)  | LF (Line feed) |
-| line breaks representation characters      | `\r\n`                                 | `\n`           |
-| Information from the `file` tool in Ubuntu | ASCII text, with CRLF line terminators | ASCII text     |
-| EOL type in Beyond Compare tool            | PC                                     | UNIX           |
-| EOL type in Ubuntu                         | dos                                    | unix           |
-| EOL Conversion Tool on Ubuntu              | unix2dos                               | dos2unix       |
+| Name                                       | Windows                                  | Ubuntu (Linux) |
+| ------------------------------------------ | ---------------------------------------- | -------------- |
+| line breaks format terminology             | CRLF (Carriage Return with Line Feed)    | LF (Line feed) |
+| line breaks representation characters      | `\r\n`                                   | `\n`           |
+| Information from the `file` tool in Ubuntu   | _ASCII text, with CRLF line terminators_ | _ASCII text_   |
+| EOL type in Beyond Compare tool            | _PC_                                     | _UNIX_         |
+| EOL type in Ubuntu                         | _dos_                                    | _unix_         |
+| EOL Conversion Tool on Ubuntu              | _unix2dos_                               | _dos2unix_     |
 
 ### Windows
 Using the [Notepad++](https://notepad-plus-plus.org/downloads){:target="_blank"} editor can help you create files with EOL in mind.  
