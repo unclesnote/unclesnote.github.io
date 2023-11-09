@@ -43,63 +43,11 @@
     {%- endunless %}
   {%- endif %}
 
-  <!-- override seo_tags -->
-  {%- assign page_title = page.title %}
-  {%- if page.ro_ref == 'categories' %}
-    {%- assign page_title = site.data.locales[page.lang].tabs.categories %}
-  {%- elsif page.ro_ref == 'tags' %}
-    {%- assign page_title = site.data.locales[page.lang].tabs.tags %}
-  {%- elsif page.ro_ref == 'archives' %}
-    {%- assign page_title = site.data.locales[page.lang].tabs.archives %}
-  {%- elsif page.ro_ref == 'about' %}
-    {%- assign page_title = site.data.locales[page.lang].tabs.about %}
-  {%- endif %}
-
-  {%- if page.layout != "post" %}
-    {%- for index in (0..3) %}
-      {%- if index == 3 %}{%- break %}{%- endif %}
-      {%- assign from = "" %}
-      {%- assign to = "" %}
-
-      {%- if index == 0 %}
-        {%- if page.layout == "home" %}
-          {%- assign from = page.title %}
-          {%- assign to = prj_site_title %}
-        {%- else %}
-          {%- assign from = page.title %}
-          {%- assign to = page_title %}
-        {%- endif %}
-      {%- elsif index == 1 %}
-        {%- assign from = site.title %}
-        {%- assign to = prj_site_title %}
-      {%- elsif index == 2 %}
-        {%- assign from = site.description %}
-        {%- assign to = prj_site_tagline %}
-      {%- endif %}
-
-      {%- if from != empty and from and to != empty and to %}
-        {%- assign from = from | replace: '&', '&amp;' %}
-        {%- assign from = from | replace: "'", "’" %}
-        {%- assign to = to | replace: '&', '&amp;' %}
-        {%- assign to = to | replace: "'", "’" %}
-        {%- assign seo_tags = seo_tags | replace: from, to %}
-      {%- endif %}
-    {%- endfor %}
-
-    {%- unless seo_tags contains "og:image" %}
-    <meta property="og:image" content="{{ site.url }}/assets/img/favicons/mstile-150x150.png" />
-    <meta property="og:image:alt" content="{{ prj_site_title }}" />
-    <meta property="twitter:image" content="{{ site.url }}/assets/img/favicons/mstile-150x150.png" />
-    <meta name="twitter:image:alt" content="{{ prj_site_title }}" />
-    {%- endunless %}
-  {%- endif %}
+  {% include prj_meta.html %}
 
   {{ seo_tags }}
-  <title>
-    {%- unless page.layout == 'home' -%}
-      {{ page_title }}
-    {%- endunless -%}
-  </title>
+  
+  <title>{{ page_title }}</title>
 
   <!-- hreflang -->
   {% if page.layout == "home" -%}

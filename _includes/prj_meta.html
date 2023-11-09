@@ -1,0 +1,83 @@
+<meta charset="UTF-8">
+{%- if page.layout != "page" and page.layout != "prj_redirects" %}
+​<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1, noarchive" />
+{%- endif %}
+
+{%- assign DEF_THUMB_WIDTH = 150 %}
+{%- assign DEF_THUMB_HEIGHT = 150 %}
+{%- assign THUMB_WIDTH = 1200 %}
+{%- assign THUMB_HEIGHT = 630 %}
+
+<!-- override seo_tags -->
+{%- assign page_title = page.title %}
+{%- if page.ro_ref == 'categories' %}
+  {%- assign page_title = site.data.locales[page.lang].tabs.categories %}
+{%- elsif page.ro_ref == 'tags' %}
+  {%- assign page_title = site.data.locales[page.lang].tabs.tags %}
+{%- elsif page.ro_ref == 'archives' %}
+  {%- assign page_title = site.data.locales[page.lang].tabs.archives %}
+{%- elsif page.ro_ref == 'about' %}
+  {%- assign page_title = site.data.locales[page.lang].tabs.about %}
+{%- endif %}
+
+{%- if page.layout != "post" %}
+  {%- for index in (0..3) %}
+    {%- if index == 3 %}{%- break %}{%- endif %}
+    {%- assign from = "" %}
+    {%- assign to = "" %}
+
+    {%- if index == 0 %}
+      {%- if page.layout == "home" %}
+        {%- assign from = page.title %}
+        {%- assign to = prj_site_title %}
+        
+        {%- assign page_title = prj_site_title %}
+      {%- else %}
+        {%- assign from = page.title %}
+        {%- assign to = page_title %}
+      {%- endif %}
+    {%- elsif index == 1 %}
+      {%- assign from = site.title %}
+      {%- assign to = prj_site_title %}
+    {%- elsif index == 2 %}
+      {%- assign from = site.description %}
+      {%- assign to = prj_site_tagline %}
+    {%- endif %}
+
+    {%- if from != empty and from and to != empty and to %}
+      {%- assign from = from | replace: '&', '&amp;' %}
+      {%- assign from = from | replace: "'", "’" %}
+      {%- assign to = to | replace: '&', '&amp;' %}
+      {%- assign to = to | replace: "'", "’" %}
+      {%- assign seo_tags = seo_tags | replace: from, to %}
+    {%- endif %}
+  {%- endfor %}
+
+  {%- unless seo_tags contains "og:image" %}
+    <meta property="og:image" content="{{ site.url }}/assets/img/favicons/mstile-150x150.png" />
+    <meta property="og:image:secure_url" content="{{ site.url }}/assets/img/favicons/mstile-150x150.png" />
+    <meta property="og:image:alt" content="{{ page_title }}" />    
+    <meta property="og:image:width" content="{{ DEF_THUMB_WIDTH }}" />
+    <meta property="og:image:height" content="{{ DEF_THUMB_HEIGHT }}" />
+    <meta name="twitter:image" content="{{ site.url }}/assets/img/favicons/mstile-150x150.png" />    
+    <meta name="twitter:image:alt" content="{{ page_title }}" />
+  {%- endunless %}
+{%- else %}
+  {%- if page.image and page.image.path %}
+  <meta property="og:image:secure_url" content="{{ site.url }}{{ page.image.path }}" />
+  <meta property="og:image:width" content="{{ THUMB_WIDTH }}" />
+  <meta property="og:image:height" content="{{ THUMB_HEIGHT }}" />
+  {%- endif %}
+{%- endif %}
+
+{%- if page_title != empty and page_title %}
+<meta name="twitter:title" content="{{ page_title }}" />
+{%- else %}
+<meta name="twitter:title" content="{{ prj_site_title }}" />
+{%- endif %}
+
+{%- if page.description != empty and page.description %}
+<meta name="twitter:description" content="{{ page.description }}" />
+{%- else %}
+<meta name="twitter:description" content="{{ prj_site_tagline }}" />
+{%- endif %}
