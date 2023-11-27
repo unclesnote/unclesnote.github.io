@@ -1,0 +1,8 @@
+---
+title: "옵시디언"
+layout: category
+ro_ref: ko-category-옵시디언
+category: "옵시디언"
+category_web: "옵시디언"
+lang: ko
+---

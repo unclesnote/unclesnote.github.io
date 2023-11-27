@@ -1,0 +1,8 @@
+---
+title: "黒曜石"
+layout: tag
+ro_ref: ja-tag-黒曜石
+tag: "黒曜石"
+tag_web: "黒曜石"
+lang: ja
+---

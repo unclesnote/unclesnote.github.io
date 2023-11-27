@@ -1,0 +1,6 @@
+---
+layout: prj_redirects
+post_id: 231128001800
+thumbnail: /assets/images/231128001800/ja-thumb-unclesnote-obsidian_callouts_and_quote_block.png
+lang: ja
+---

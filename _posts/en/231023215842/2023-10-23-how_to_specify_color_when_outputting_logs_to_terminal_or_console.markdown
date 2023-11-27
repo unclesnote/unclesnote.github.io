@@ -58,6 +58,12 @@ Although the `Escape Chacter` is mandatory, you can use one of the three describ
 You can add the `Style`, `Text Color`, and `Background Color` to suit your taste by separating them with `;`. We will explain the options that can be expressed later, but the order does not matter because the numbers representing each are unique.  
 
 And finally, reset the text color and style using `(Escape Character)[0m`. Unless reset, subsequent text colors and styles will continue.  
+
+If you want to change the color of text in a shell script, you must add the `-e` option to the `echo` command to allow backslash input.  
+
+```shell
+echo -e "\033[34m I Am Blue Text ! \033[0m"
+```
 ## Color and Style Codes
 ### 1. Escape Character
 The escape character below is the same as 27 in ASCII code, and the expression method is as follows, and you can use any one.  

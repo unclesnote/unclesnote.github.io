@@ -58,6 +58,12 @@ Aunque el `Escape Chacter` es obligatorio, puede utilizar uno de los tres que se
 Puede agregar el `Estilo`, el `Color del texto` y el `Color de fondo` según sus gustos separándolos con `;`. Más adelante explicaremos las opciones que se pueden expresar, pero el orden no importa porque los números que representan cada una son únicos.  
 
 Y finalmente, restablezca el color y estilo del texto usando `(Carácter de escape)[0m``. A menos que se reinicie, los colores y estilos de texto posteriores continuarán.  
+
+Si desea cambiar el color del texto en un script de shell, debe agregar la opción `-e` al comando `echo` para permitir la entrada de barra invertida.  
+
+```shell
+echo -e "\033[34m I Am Blue Text ! \033[0m"
+```
 ## Códigos de color y estilo
 ### 1. Personaje de escape
 El carácter de escape a continuación es el mismo que 27 en el código ASCII, y el método de expresión es el siguiente y puede usar cualquiera.  

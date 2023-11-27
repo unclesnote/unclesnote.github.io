@@ -1,0 +1,8 @@
+---
+title: "Quotes"
+layout: tag
+ro_ref: en-tag-Quotes
+tag: "Quotes"
+tag_web: "quotes"
+lang: en
+---

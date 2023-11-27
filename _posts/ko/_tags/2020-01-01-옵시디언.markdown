@@ -1,0 +1,8 @@
+---
+title: "옵시디언"
+layout: tag
+ro_ref: ko-tag-옵시디언
+tag: "옵시디언"
+tag_web: "옵시디언"
+lang: ko
+---

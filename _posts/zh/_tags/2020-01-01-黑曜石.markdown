@@ -1,0 +1,8 @@
+---
+title: "黑曜石"
+layout: tag
+ro_ref: zh-tag-黑曜石
+tag: "黑曜石"
+tag_web: "黑曜石"
+lang: zh
+---
