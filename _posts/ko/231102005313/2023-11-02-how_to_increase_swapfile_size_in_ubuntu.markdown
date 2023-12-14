@@ -94,8 +94,6 @@ sudo vi /etc/fstab
 ```
 ## 재부팅
 먼저 재부팅하세요. 재부팅 후 시스템 모니터에서 위에서 생성된 스왑 파일을 확인할 수 있습니다.  
-![`응용 프로그램` 메뉴 > 시스템 모니터](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)  
-
-`응용 프로그램` 메뉴 > 시스템 모니터
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![`응용 프로그램` 메뉴 > 시스템 모니터](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)
+_`응용 프로그램` 메뉴 > 시스템 모니터_
 

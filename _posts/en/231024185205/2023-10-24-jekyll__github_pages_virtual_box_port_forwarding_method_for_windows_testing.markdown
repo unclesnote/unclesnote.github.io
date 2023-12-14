@@ -60,9 +60,7 @@ The `Guest IP` address is the IP address confirmed on the Ubuntu VM.
 - **Guest IP** : 10.0.2.15 (IP address of the Ubuntu VM confirmed above)
 - **Guest Port** : 4000
 
-![VirtualBox Manager - Port Forwarding Rules](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)  
-
-VirtualBox Manager - Port Forwarding Rules
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![VirtualBox Manager - Port Forwarding Rules](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)
+_VirtualBox Manager - Port Forwarding Rules_
 
 Now you can test Jekyll by connecting to `127.0.0.1:4000` in your X86 Windows browser.  

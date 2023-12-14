@@ -20,10 +20,8 @@ lang: es
 ---
 Si es un desarrollador de software y su entorno de desarrollo es Ubuntu, le explicaremos cómo instalar el software esencial de Ubuntu que necesita instalar.  
 ## Código de estudio visual
-![Código de estudio visual](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
-
-Código de estudio visual
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Código de estudio visual](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
+_Código de estudio visual_
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"} es un IDE y editor ampliamente utilizado en el desarrollo de software.  
 
@@ -52,10 +50,8 @@ Puede instalar la extensión para acceso remoto a VS Code a través de SSH usand
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## Escritorio GitHub
-![Escritorio GitHub](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
-
-Escritorio GitHub
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Escritorio GitHub](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
+_Escritorio GitHub_
 
 El software de escritorio GitHub es un cliente Git. Si está trabajando en un proyecto de GitHub, esta es definitivamente una buena opción, pero incluso si usa un servidor git personal en lugar de un repositorio de GitHub, también puede ser una buena opción si no necesita funciones complejas.  
 
@@ -67,10 +63,8 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## Más allá de comparar 4
-![Más allá de comparar 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
-
-Más allá de comparar 4
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Más allá de comparar 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
+_Más allá de comparar 4_
 
 Beyond Compare es una popular herramienta de comparación de archivos.  
 
@@ -104,10 +98,8 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 Si no tiene una clave de licencia, es posible que deba realizar el proceso de restablecimiento nuevamente cuando finalice el período de evaluación. Por lo tanto, recomiendo guardar y usar el espacio de trabajo y exportar la configuración cada vez que se actualice y guardarlo como un archivo.  
 ## Base de datos
 ### Navegador de base de datos para SQLite
-![Navegador de base de datos para SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
-
-Navegador de base de datos para SQLite
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Navegador de base de datos para SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
+_Navegador de base de datos para SQLite_
 
 Si utiliza SQLite DB, [SQLite DB Browser](https://sqlitebrowser.org/dl/){:target="_blank"} es un software esencial para consultar la base de datos o ver el contenido de la tabla en un entorno GUI.  
 

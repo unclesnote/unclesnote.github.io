@@ -1,0 +1,8 @@
+---
+title: "Lenovo"
+layout: tag
+ro_ref: ko-tag-Lenovo
+tag: "Lenovo"
+tag_web: "lenovo"
+lang: ko
+---

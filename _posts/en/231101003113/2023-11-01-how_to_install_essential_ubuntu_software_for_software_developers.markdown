@@ -20,10 +20,8 @@ lang: en
 ---
 If you are a software developer, and your development environment is Ubuntu, we will explain how to install the essential Ubuntu software you need to install.  
 ## Visual Studio Code
-![Visual Studio Code](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
-
-Visual Studio Code
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Visual Studio Code](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
+_Visual Studio Code_
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"} is a widely used IDE and editor in software development.  
 
@@ -52,10 +50,8 @@ You can install the extension for remote access to VS Code via SSH using the com
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub Desktop
-![GitHub Desktop](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
-
-GitHub Desktop
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![GitHub Desktop](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
+_GitHub Desktop_
 
 GitHub desktop software is a Git client. If you're working on a GitHub project, this is definitely a good option, but even if you use a personal git server rather than a GitHub repo, it may also be a good option if you don't need complex features.  
 
@@ -67,10 +63,8 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## Beyond Compare 4
-![Beyond Compare 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
-
-Beyond Compare 4
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Beyond Compare 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
+_Beyond Compare 4_
 
 Beyond Compare is a popular file comparison tool.  
 
@@ -104,10 +98,8 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 If you do not have a license key, you may need to perform the reset process again when the evaluation period ends. So, I recommend saving and using the workspace and exporting the settings every time it is updated and saving it as a file.  
 ## Database
 ### DB Browser for SQLite
-![DB Browser for SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
-
-DB Browser for SQLite
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![DB Browser for SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
+_DB Browser for SQLite_
 
 If you use SQLite DB, [SQLite DB Browser](https://sqlitebrowser.org/dl/){:target="_blank"} is essential software for querying the database or viewing table contents in a GUI environment.  
 

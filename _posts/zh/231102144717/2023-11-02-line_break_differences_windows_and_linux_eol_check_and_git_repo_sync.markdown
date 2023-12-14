@@ -20,21 +20,19 @@ lang: zh
 ---
 如果您需要在 Linux 和 Windows 上修改并提交同一个 Git 存储库中的文件，则可能会出现这样的情况：Git 客户端在 Git 提交阶段将该文件识别为已修改文件，即使该文件的内容显然没有被修改。  
 
-问题的原因在于，虽然文件内容相同，但 Windows 和 Linux 中表达换行符的基本方式不同。下图中，左边是在Windows（PC）下修改并保存的文件，右边是在Linux（UNIX）下修改并保存的文件。  
-![文件内容相同但文件不同，左边是Windows PC格式，右边是Linux UNIX格式](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)  
-
-文件内容相同但文件不同，左边是Windows PC格式，右边是Linux UNIX格式
-{: style="color:gray; font-size: 80%; text-align: center;"}
+问题的原因在于，虽然文件内容相同，但 Windows 和 Linux 中表达换行符的基本方式不同。下图中，左边是在Windows(PC)下修改并保存的文件，右边是在Linux(UNIX)下修改并保存的文件。  
+![文件内容相同但文件不同，左边是Windows PC格式，右边是Linux UNIX格式](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)
+_文件内容相同但文件不同，左边是Windows PC格式，右边是Linux UNIX格式_
 
 ## Windows和Linux换行符的区别
 从 ASCII 字符的角度来看，  
 
-Windows 以`CRLF（回车换行）`的形式表示换行符，如下所示。  
+Windows 以`CRLF(回车换行)`的形式表示换行符，如下所示。  
 
 ```text
 \r\n
 ```
-在 Ubuntu 等 Linux 系统中，换行符仅表示为`LF（换行）`，如下所示。  
+在 Ubuntu 等 Linux 系统中，换行符仅表示为`LF(换行)`，如下所示。  
 
 ```text
 \n
@@ -43,7 +41,7 @@ Windows 以`CRLF（回车换行）`的形式表示换行符，如下所示。
 
 如果你在Linux上运行在Windows上编写的bash脚本，你可能会在调试过程中遇到神秘的脚本执行错误。这可能是因为 shell 脚本在 Windows 上以 CRLF 格式存储换行符，而 bash 无法解释这一点。  
 ## 检查并转换文件的 EOL（行尾）
-当然，即使您在Windows中编写文件，您也可以创建并转换UNIX（LF）格式的文件，而不是PC（CRLF）格式。相反的情况也是可能的。该转换操作通常称为`EOL（行尾）转换`。  
+当然，即使您在Windows中编写文件，您也可以创建并转换UNIX(LF)格式的文件，而不是PC(CRLF)格式。相反的情况也是可能的。该转换操作通常称为`EOL(行尾)转换`。  
 
 事实上，当您第一次遇到每个操作系统的 EOL 差异时，可能会有点困惑。因此，与以后要解释的内容相关的关键词可以映射到如下所示的表格中。  
 
@@ -60,10 +58,8 @@ Windows 以`CRLF（回车换行）`的形式表示换行符，如下所示。
 使用 [Notepad++](https://notepad-plus-plus.org/downloads){:target="_blank"} 编辑器可以帮助您创建 EOL 的文件。  
 
 如下图所示，您可以在Notepad++编辑器中查看当前`EOL Conversion`状态并进行转换。菜单位于`编辑 > EOL 转换`。  
-![Notepad++ - EOL 转换 - `编辑 > EOL 转换 > Windows (CR LF) 或 Unix (LF)`](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png)  
-
-Notepad++ - EOL 转换 - `编辑 > EOL 转换 > Windows (CR LF) 或 Unix (LF)`
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Notepad++ - EOL 转换 - `编辑 > EOL 转换 > Windows (CR LF) 或 Unix (LF)`](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png)
+_Notepad++ - EOL 转换 - `编辑 > EOL 转换 > Windows (CR LF) 或 Unix (LF)`_
 
 ### 乌班图（Linux）
 在Ubuntu环境中，您还可以检查文件的EOL状态并进行转换。  
@@ -120,8 +116,6 @@ git config --global core.autocrlf true
 换句话说，目的是将带有 LF 格式的 EOL 的文件上传到 Git 服务器。  
 
 在Windows环境下，右键单击菜单即可访问Git Bash。  
-![在 Windows 上访问 Git Bash](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png)  
-
-在 Windows 上访问 Git Bash
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![在 Windows 上访问 Git Bash](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png)
+_在 Windows 上访问 Git Bash_
 

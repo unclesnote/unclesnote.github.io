@@ -20,7 +20,7 @@ lang: zh
 ---
 在开发软件时，日志可以帮助您检查运行情况并查找问题原因。如果严重错误或警告级别的日志具有易于查找的颜色，将会很有帮助。  
 
-您可以在您使用的 IDE（例如 VS Code 或 Visual Studio）中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。因此，我将介绍一种从终端角度独立设置文本颜色的方法。  
+您可以在您使用的 IDE(例如 VS Code 或 Visual Studio)中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。因此，我将介绍一种从终端角度独立设置文本颜色的方法。  
 > **如何在 Visual Studio Code 中更改输出文本颜色**  
 > 对于 VS Code，您可以通过在`Settings > User > Workbanch > Appearance > Edit in Settings.json`中的`workbench.colorCustomizations`中设置颜色值来更改调试控制台或输出窗口的颜色。  
 > `workbench.colorCustomizations`的参数请参考下面的链接。  

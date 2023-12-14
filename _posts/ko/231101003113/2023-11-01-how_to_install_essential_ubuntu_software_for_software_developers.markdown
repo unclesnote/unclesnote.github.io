@@ -20,10 +20,8 @@ lang: ko
 ---
 소프트웨어 개발자이고 개발 환경이 Ubuntu인 경우, 설치해야 하는 필수 Ubuntu 소프트웨어 설치 방법을 설명합니다.  
 ## 비주얼 스튜디오 코드
-![비주얼 스튜디오 코드](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
-
-비주얼 스튜디오 코드
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![비주얼 스튜디오 코드](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
+_비주얼 스튜디오 코드_
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"}는 소프트웨어 개발에서 널리 사용되는 IDE 및 편집기입니다.  
 
@@ -52,10 +50,8 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub 데스크탑
-![GitHub 데스크탑](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
-
-GitHub 데스크탑
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![GitHub 데스크탑](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
+_GitHub 데스크탑_
 
 GitHub 데스크톱 소프트웨어는 Git 클라이언트입니다. GitHub 프로젝트를 작업 중이라면 분명 좋은 옵션이지만, GitHub repo가 ​​아닌 개인용 git 서버를 사용하더라도 복잡한 기능이 필요하지 않다면 좋은 옵션이 될 수도 있습니다.  
 
@@ -67,10 +63,8 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 비욘드 컴페어 4
-![비욘드 컴페어 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
-
-비욘드 컴페어 4
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![비욘드 컴페어 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
+_비욘드 컴페어 4_
 
 Beyond Compare는 널리 사용되는 파일 비교 도구입니다.  
 
@@ -104,10 +98,8 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 라이센스 키가 없는 경우 평가 기간이 종료되면 재설정 프로세스를 다시 수행해야 할 수도 있습니다. 그래서 워크스페이스를 저장해서 사용하고, 업데이트될 때마다 설정을 내보내어 파일로 저장하는 것을 추천드립니다.  
 ## 데이터 베이스
 ### SQLite용 DB 브라우저
-![SQLite용 DB 브라우저](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
-
-SQLite용 DB 브라우저
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![SQLite용 DB 브라우저](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
+_SQLite용 DB 브라우저_
 
 SQLite DB를 사용하신다면 [SQLite DB 브라우저](https://sqlitebrowser.org/dl/){:target="_blank"}는 GUI 환경에서 데이터베이스를 쿼리하거나 테이블 내용을 보기 위한 필수 소프트웨어입니다.  
 

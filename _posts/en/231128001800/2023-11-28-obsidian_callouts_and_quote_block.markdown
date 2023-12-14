@@ -22,7 +22,7 @@ The dictionary definition of callout(s) is to call out loudly, and is used to dr
 
 Let's learn about the grammar and types for expressing callouts in Obsidian.  
 ## Differences between quotation and callouts blocks
-A **quotation block** lists sentences starting with `>` on each line.  
+A **quotation block**lists sentences starting with `>` on each line.  
 
 ```
 > 
@@ -31,12 +31,10 @@ A **quotation block** lists sentences starting with `>` on each line.
 > 
 ```
 Below is the shape of the quotation block based on Obsidian's basic theme.  
-![Obsidian - Quotation Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)  
+![Obsidian - Quotation Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)
+_Obsidian - Quotation Block_
 
-Obsidian - Quotation Block
-{: style="color:gray; font-size: 80%; text-align: center;"}
-
-Like a quotation block, a **callouts block** is a set of lines that start with `>`. However, you can specify the icon shape and color by entering a callouts type in the first line, and add a title.  
+Like a quotation block, a **callouts block**is a set of lines that start with `>`. However, you can specify the icon shape and color by entering a callouts type in the first line, and add a title.  
 
 ```
 > [!tip] I'm a tip type, and here's the title.
@@ -46,10 +44,8 @@ Like a quotation block, a **callouts block** is a set of lines that start with `
 > 
 ```
 Below is a tip type callouts block in the Obsidian basic theme.  
-![Obsidian - Callouts Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)  
-
-Obsidian - Callouts Block
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Obsidian - Callouts Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)
+_Obsidian - Callouts Block_
 
 ## Callouts Block Folding Function
 Syntactically, callouts blocks are similar to quotation blocks. However, compared to quotation blocks, it has the following additional features  
@@ -62,10 +58,8 @@ Above, it was explained that the callouts block can have additional icons and ti
 Additionally, the strength of callouts is that they have a folding function. In the case of Obsidian, headings can be folded, but **the difference between this and a callouts block is that the initial value can be specified**.  
 
 Sometimes, you can express content you want to emphasize or add additional notes to in a callouts block, but if the content is long, you may want to leave it initially closed.  
-![Obsidian - Folding of Callouts Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)  
-
-Obsidian - Folding of Callouts Block
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Obsidian - Folding of Callouts Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)
+_Obsidian - Folding of Callouts Block_
 
 You can create a callouts block with an initial value of closed by adding a hyphen (-) next to the type in the first line of the callouts block.  
 
@@ -77,10 +71,8 @@ You can create a callouts block with an initial value of closed by adding a hyph
 The colors and icons of the predefined callouts blocks in Obsidian are as follows.  
 
 You can change the look of the callouts by writing the text you like in the callouts type.  
-![Obsidian - Callouts Predefined Types](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)  
-
-Obsidian - Callouts Predefined Types
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Obsidian - Callouts Predefined Types](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)
+_Obsidian - Callouts Predefined Types_
 
 This content is introduced in [Obsidian Help](https://help.obsidian.md/Editing+and+formatting/Callouts){:target="_blank"}, and you can design your own callouts block by defining CSS.  
 

@@ -32,24 +32,18 @@ sudo apt upgrade ibus-hangul
 ```
 ## Korean input settings
 First, search for the `region` keyword in the applications, then find and run the `Region & Language` setting.  
-![Search `region` and run `Region & Lanugages`](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)  
-
-Search `region` and run `Region & Lanugages`
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Search `region` and run `Region & Lanugages`](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)
+_Search `region` and run `Region & Lanugages`_
 
 Then, add `Input Source` in the `Region & Language` tab. Search for `korean` and add `Korean (Hangul)`.  
-![Add `Korean (Hangul)` Input Source](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)  
-
-Add `Korean (Hangul)` Input Source
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Add `Korean (Hangul)` Input Source](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)
+_Add `Korean (Hangul)` Input Source_
 
 Before setting the newly added input source, remove the existing `English (US)`. This is to prevent conflict with the newly added `Korea (Hangul)` input source. And the added input source already includes an English input function.  
 
 Click the gear icon on the `Korea (Hangul)` input source to open `IBusHangle Setup`.  
-![Korean-English conversion key setting](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)  
-
-Korean-English conversion key setting
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Korean-English conversion key setting](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)
+_Korean-English conversion key setting_
 
 Then, activate `Start in Hangul mode` in the `Etc` section. For reference, when you boot up Ubuntu, if you want the first input mode in the GNOME GUI to be Korean, enable it.  
 

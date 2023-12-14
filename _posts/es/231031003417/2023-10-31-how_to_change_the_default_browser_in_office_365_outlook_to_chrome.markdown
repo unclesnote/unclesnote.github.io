@@ -25,29 +25,21 @@ En una actualización reciente, Microsoft restableció el navegador predetermina
 Quizás, si eres usuario de Chrome, ya hayas configurado Google Chrome como tu navegador web predeterminado. Asegúrese de tener la configuración predeterminada del navegador para Office 365.  
 
 Abra "Configuración de Windows" usando el acceso directo "CTRL + I". Luego, ingrese la palabra clave "predeterminada" para buscar y seleccionar "Aplicaciones predeterminadas".  
-![Configuración de Windows: buscar "predeterminado"](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png)  
-
-Configuración de Windows: buscar "predeterminado"
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Configuración de Windows: buscar "predeterminado"](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png)
+_Configuración de Windows: buscar "predeterminado"_
 
 Luego, en la pestaña "Aplicaciones predeterminadas", seleccione el navegador "Google Chrome" en la sección "Navegador web".  
-![Configuración > Aplicaciones predeterminadas > Seleccione `Google Chrome` en el navegador web](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png)  
-
-Configuración > Aplicaciones predeterminadas > Seleccione `Google Chrome` en el navegador web
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Configuración > Aplicaciones predeterminadas > Seleccione `Google Chrome` en el navegador web](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png)
+_Configuración > Aplicaciones predeterminadas > Seleccione `Google Chrome` en el navegador web_
 
 ## Configurar aplicaciones para abrir hipervínculos en Office 365 Outlook
 ¿Volvemos a Office 365 Outlook?  
 
 En Outlook, use el acceso directo `ALT + F` para ver la barra de menú izquierda y seleccione `Opciones`.  
-![Office 365 Outlook - Opciones](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png)  
-
-Office 365 Outlook - Opciones
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Office 365 Outlook - Opciones](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png)
+_Office 365 Outlook - Opciones_
 
 Seleccione la pestaña "Avanzado". En la sección "Preferencias de archivos y navegador", cambie el navegador en el que desea abrir el hipervínculo a "Navegador predeterminado". Luego presione `Aceptar`. En la primera sección configuramos el navegador predeterminado de Windows en Chrome, por lo que el navegador predeterminado aquí es Chrome.  
-![Office 365 Outlook - Opciones > Avanzado > Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png)  
-
-Office 365 Outlook - Opciones > Avanzado > Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Office 365 Outlook - Opciones > Avanzado > Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png)
+_Office 365 Outlook - Opciones > Avanzado > Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador_
 

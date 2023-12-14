@@ -20,14 +20,12 @@ lang: zh
 ---
 如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。  
 ## 视觉工作室代码
-![视觉工作室代码](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)  
-
-视觉工作室代码
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![视觉工作室代码](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
+_视觉工作室代码_
 
 [Visual Studio Code](https://code.visualstudio.com){:target="_blank"} 是软件开发中广泛使用的 IDE 和编辑器。  
 
-如果您使用的是`Ubuntu桌面GUI（GNOME）环境`，您可以使用内置浏览器下载VS Code并使用`dpkg`工具安装。  
+如果您使用的是`Ubuntu桌面GUI(GNOME)环境`，您可以使用内置浏览器下载VS Code并使用`dpkg`工具安装。  
 
 ```shell
 cd ~/Downloads
@@ -52,10 +50,8 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub 桌面版
-![GitHub 桌面版](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)  
-
-GitHub 桌面版
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![GitHub 桌面版](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
+_GitHub 桌面版_
 
 GitHub 桌面软件是一个 Git 客户端。如果您正在开发 GitHub 项目，这绝对是一个不错的选择，但即使您使用个人 git 服务器而不是 GitHub 存储库，如果您不需要复杂的功能，它也可能是一个不错的选择。  
 
@@ -67,10 +63,8 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 超越比较4
-![超越比较4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)  
-
-超越比较4
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![超越比较4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
+_超越比较4_
 
 Beyond Compare 是一款流行的文件比较工具。  
 
@@ -90,7 +84,7 @@ rm bcompare-4.4.6.27483_amd64.deb
 sudo rm -rf ~/.config/bcompare 
 sudo sed -i "s/keexjEP3t4Mue23hrnuPtY4TdcsqNiJL-5174TsUdLmJSIXKfG2NGPwBL6vnRPddT7tH29qpkneX63DO9ECSPE9rzY1zhThHERg8lHM9IBFT+rVuiY823aQJuqzxCKIE1bcDqM4wgW01FH6oCBP1G4ub01xmb4BGSUG6ZrjxWHJyNLyIlGvOhoY2HAYzEtzYGwxFZn2JZ66o4RONkXjX0DF9EzsdUef3UAS+JQ+fCYReLawdjEe6tXCv88GKaaPKWxCeaUL9PejICQgRQOLGOZtZQkLgAelrOtehxz5ANOOqCaJgy2mJLQVLM5SJ9Dli909c5ybvEhVmIC0dc9dWH+/N9KmiLVlKMU7RJqnE+WXEEPI1SgglmfmLc1yVH7dqBb9ehOoKG9UE+HAE1YvH1XX2XVGeEqYUY-Tsk7YBTz0WpSpoYyPgx6Iki5KLtQ5G-aKP9eysnkuOAkrvHU8bLbGtZteGwJarev03PhfCioJL4OSqsmQGEvDbHFEbNl1qJtdwEriR+VNZts9vNNLk7UGfeNwIiqpxjk4Mn09nmSd8FhM4ifvcaIbNCRoMPGl6KU12iseSe+w+1kFsLhX+OhQM8WXcWV10cGqBzQE9OqOLUcg9n0krrR3KrohstS9smTwEx9olyLYppvC0p5i7dAx2deWvM1ZxKNs0BvcXGukR+/g" /usr/lib/beyondcompare/BCompare
 ```
-然后从 Ubuntu GUI 运行 Beyond Compare 4 并输入许可证密钥（如果有）。  
+然后从 Ubuntu GUI 运行 Beyond Compare 4 并输入许可证密钥(如果有)。  
 
 ```shell
 # Then restart BC, click "Enter License":
@@ -104,10 +98,8 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 如果您没有许可证密钥，则可能需要在评估期结束时再次执行重置过程。因此，我建议保存并使用工作区，并在每次更新时导出设置并将其保存为文件。  
 ## 数据库
 ### SQLite 数据库浏览器
-![SQLite 数据库浏览器](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)  
-
-SQLite 数据库浏览器
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![SQLite 数据库浏览器](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
+_SQLite 数据库浏览器_
 
 如果您使用SQLite DB，[SQLite DB Browser](https://sqlitebrowser.org/dl/){:target="_blank"}是在GUI环境中查询数据库或查看表内容的必备软件。  
 

@@ -32,24 +32,18 @@ sudo apt upgrade ibus-hangul
 ```
 ## 韩语输入设置
 首先，在应用程序中搜索`region`关键字，然后找到并运行`Region &amp; Language`设置。  
-![搜索`region`并运行`Region &amp; Languages`](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)  
+![搜索`region`并运行`Region &amp; Languages`](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)
+_搜索`region`并运行`Region &amp; Languages`_
 
-搜索`region`并运行`Region &amp; Languages`
-{: style="color:gray; font-size: 80%; text-align: center;"}
+然后，在`区域和语言`选项卡中添加`输入源`。搜索`韩语`并添加`韩语(韩文)`。  
+![添加`韩语（韩文）`输入源](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)
+_添加`韩语（韩文）`输入源_
 
-然后，在`区域和语言`选项卡中添加`输入源`。搜索`韩语`并添加`韩语（韩文）`。  
-![添加`韩语（韩文）`输入源](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)  
+在设置新添加的输入源之前，请删除现有的`英语(美国)`。这是为了防止与新添加的`韩国(韩文)`输入源发生冲突。并且新增的输入源已经包含英文输入功能。  
 
-添加`韩语（韩文）`输入源
-{: style="color:gray; font-size: 80%; text-align: center;"}
-
-在设置新添加的输入源之前，请删除现有的`英语（美国）`。这是为了防止与新添加的`韩国（韩文）`输入源发生冲突。并且新增的输入源已经包含英文输入功能。  
-
-单击`韩国（韩文）`输入源上的齿轮图标以打开`IBusHangle 设置`。  
-![韩英转换键设置](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)  
-
-韩英转换键设置
-{: style="color:gray; font-size: 80%; text-align: center;"}
+单击`韩国(韩文)`输入源上的齿轮图标以打开`IBusHangle 设置`。  
+![韩英转换键设置](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)
+_韩英转换键设置_
 
 然后，在`Etc`部分激活`以韩文模式启动`。作为参考，当您启动 Ubuntu 时，如果您希望 GNOME GUI 中的第一个输入模式为韩语，请启用它。  
 

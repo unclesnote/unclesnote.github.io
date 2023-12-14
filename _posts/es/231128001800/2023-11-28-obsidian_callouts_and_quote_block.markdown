@@ -22,7 +22,7 @@ La definición del diccionario de rótulos es llamar en voz alta y se utiliza pa
 
 Aprendamos sobre la gramática y los tipos para expresar llamadas en Obsidian.  
 ## Diferencias entre bloques de cotizaciones y anotaciones
-Un **bloque de comillas** enumera oraciones que comienzan con `>` en cada línea.  
+Un **bloque de comillas**enumera oraciones que comienzan con `>` en cada línea.  
 
 ```
 > 
@@ -31,12 +31,10 @@ Un **bloque de comillas** enumera oraciones que comienzan con `>` en cada línea
 > 
 ```
 A continuación se muestra la forma del bloque de citas basado en el tema básico de Obsidian.  
-![Obsidiana - Bloque de cotizaciones](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)  
+![Obsidiana - Bloque de cotizaciones](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)
+_Obsidiana - Bloque de cotizaciones_
 
-Obsidiana - Bloque de cotizaciones
-{: style="color:gray; font-size: 80%; text-align: center;"}
-
-Al igual que un bloque de comillas, un **bloque de llamadas** es un conjunto de líneas que comienzan con `>`. Sin embargo, puede especificar la forma y el color del icono ingresando un tipo de leyenda en la primera línea y agregando un título.  
+Al igual que un bloque de comillas, un **bloque de llamadas**es un conjunto de líneas que comienzan con `>`. Sin embargo, puede especificar la forma y el color del icono ingresando un tipo de leyenda en la primera línea y agregando un título.  
 
 ```
 > [!tip] I'm a tip type, and here's the title.
@@ -46,10 +44,8 @@ Al igual que un bloque de comillas, un **bloque de llamadas** es un conjunto de 
 > 
 ```
 A continuación se muestra un bloque de notas de tipo sugerencia en el tema básico Obsidian.  
-![Obsidiana - Bloque de rótulos](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)  
-
-Obsidiana - Bloque de rótulos
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Obsidiana - Bloque de rótulos](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)
+_Obsidiana - Bloque de rótulos_
 
 ## Función de plegado de bloques de llamadas
 Sintácticamente, los bloques de llamadas son similares a los bloques de comillas. Sin embargo, en comparación con los bloques de cotizaciones, tiene las siguientes características adicionales  
@@ -62,10 +58,8 @@ Arriba, se explicó que el bloque de llamadas puede tener íconos y títulos adi
 Además, el punto fuerte de los rótulos es que tienen una función de plegado. En el caso de Obsidian, los encabezados se pueden plegar, pero **la diferencia entre este y un bloque de llamadas es que se puede especificar el valor inicial**.  
 
 A veces, puedes expresar contenido que deseas enfatizar o agregar notas adicionales en un bloque de notas, pero si el contenido es largo, es posible que quieras dejarlo cerrado inicialmente.  
-![Obsidiana - Bloque plegable de llamadas](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)  
-
-Obsidiana - Bloque plegable de llamadas
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Obsidiana - Bloque plegable de llamadas](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)
+_Obsidiana - Bloque plegable de llamadas_
 
 Puede crear un bloque de llamadas con un valor inicial cerrado agregando un guión (-) al lado del tipo en la primera línea del bloque de llamadas.  
 
@@ -77,10 +71,8 @@ Puede crear un bloque de llamadas con un valor inicial cerrado agregando un gui�
 Los colores e íconos de los bloques de llamadas predefinidos en Obsidian son los siguientes.  
 
 Puede cambiar el aspecto de las llamadas escribiendo el texto que desee en el tipo de llamadas.  
-![Obsidiana - Tipos predefinidos de rótulos](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)  
-
-Obsidiana - Tipos predefinidos de rótulos
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Obsidiana - Tipos predefinidos de rótulos](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)
+_Obsidiana - Tipos predefinidos de rótulos_
 
 Este contenido se presenta en [Ayuda de Obsidian](https://help.obsidian.md/Editing+and+formatting/Callouts){:target="_blank"}, y puede diseñar su propio bloque de llamadas definiendo CSS.  
 

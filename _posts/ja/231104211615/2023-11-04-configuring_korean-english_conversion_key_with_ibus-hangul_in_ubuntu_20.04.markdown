@@ -32,24 +32,18 @@ sudo apt upgrade ibus-hangul
 ```
 ## 韓国語入力設定
 まず、アプリケーションで`地域`キーワードを検索し、`地域と言語`設定を見つけて実行します。  
-![`地域`を検索し、`地域と言語`を実行します。](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)  
-
-`地域`を検索し、`地域と言語`を実行します。
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![`地域`を検索し、`地域と言語`を実行します。](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)
+_`地域`を検索し、`地域と言語`を実行します。_
 
 次に、`地域と言語`タブに`入力ソース`を追加します。 `韓国語`を検索し、`韓国語 (ハングル)`を追加します。  
-![`韓国語（ハングル）`入力ソースを追加](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)  
+![`韓国語（ハングル）`入力ソースを追加](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)
+_`韓国語（ハングル）`入力ソースを追加_
 
-`韓国語（ハングル）`入力ソースを追加
-{: style="color:gray; font-size: 80%; text-align: center;"}
-
-新しく追加した入力ソースを設定する前に、既存の`English (US)`を削除してください。これは、新たに追加された`韓国語（ハングル）`入力ソースとの競合を防ぐためです。また、追加された入力ソースには、すでに英語入力機能が含まれています。  
+新しく追加した入力ソースを設定する前に、既存の`English (US)`を削除してください。これは、新たに追加された`韓国語(ハングル)`入力ソースとの競合を防ぐためです。また、追加された入力ソースには、すでに英語入力機能が含まれています。  
 
 `韓国語 (ハングル)`入力ソースの歯車アイコンをクリックして、`IBusHangle Setup`を開きます。  
-![韓国語-英語変換キー設定](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)  
-
-韓国語-英語変換キー設定
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![韓国語-英語変換キー設定](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)
+_韓国語-英語変換キー設定_
 
 次に、`その他`セクションの`ハングルモードで開始`を有効にします。参考までに、Ubuntu を起動するときに、GNOME GUI の最初の入力モードを韓国語にしたい場合は、それを有効にします。  
 

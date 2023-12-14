@@ -1,0 +1,8 @@
+---
+title: "Lenovo"
+layout: tag
+ro_ref: ja-tag-Lenovo
+tag: "Lenovo"
+tag_web: "lenovo"
+lang: ja
+---

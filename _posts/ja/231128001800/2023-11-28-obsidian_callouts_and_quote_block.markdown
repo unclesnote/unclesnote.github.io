@@ -22,7 +22,7 @@ lang: ja
 
 Obsidian で吹き出しを表現するための文法と種類について学びましょう。  
 ## 引用ブロックと吹き出しブロックの違い
-**引用ブロック** には、各行の `>` で始まる文がリストされます。  
+**引用ブロック**には、各行の `>` で始まる文がリストされます。  
 
 ```
 > 
@@ -31,12 +31,10 @@ Obsidian で吹き出しを表現するための文法と種類について学�
 > 
 ```
 以下は、Obsidian の基本テーマに基づいた引用ブロックの形状です。  
-![黒曜石 - 引用ブロック](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)  
+![黒曜石 - 引用ブロック](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)
+_黒曜石 - 引用ブロック_
 
-黒曜石 - 引用ブロック
-{: style="color:gray; font-size: 80%; text-align: center;"}
-
-引用ブロックと同様に、**コールアウト ブロック** は `>` で始まる一連の行です。ただし、最初の行に吹き出しの種類を入力してアイコンの形状と色を指定し、タイトルを追加することができます。  
+引用ブロックと同様に、**コールアウト ブロック**は `>` で始まる一連の行です。ただし、最初の行に吹き出しの種類を入力してアイコンの形状と色を指定し、タイトルを追加することができます。  
 
 ```
 > [!tip] I'm a tip type, and here's the title.
@@ -46,10 +44,8 @@ Obsidian で吹き出しを表現するための文法と種類について学�
 > 
 ```
 以下は、Obsidian 基本テーマのチップ タイプの吹き出しブロックです。  
-![黒曜石 - 吹き出しブロック](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)  
-
-黒曜石 - 吹き出しブロック
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![黒曜石 - 吹き出しブロック](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)
+_黒曜石 - 吹き出しブロック_
 
 ## 吹き出しブロック折りたたみ機能
 構文的には、コールアウト ブロックは引用ブロックに似ています。ただし、引用ブロックと比較して、次の追加機能があります。  
@@ -62,10 +58,8 @@ Obsidian で吹き出しを表現するための文法と種類について学�
 さらに、吹き出しの強みは折りたたみ機能があることです。 Obsidian の場合、見出しを折りたたむことができますが、**吹き出しブロックとの違いは、初期値を指定できることです**。  
 
 場合によっては、強調したいコンテンツを表現したり、吹き出しブロックに注釈を追加したりすることができますが、コンテンツが長い場合は、最初は閉じたままにしておくことができます。  
-![黒曜石 - 吹き出しブロックの折り畳み](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)  
-
-黒曜石 - 吹き出しブロックの折り畳み
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![黒曜石 - 吹き出しブロックの折り畳み](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)
+_黒曜石 - 吹き出しブロックの折り畳み_
 
 コールアウト ブロックの最初の行のタイプの横にハイフン (-) を追加すると、初期値が close のコールアウト ブロックを作成できます。  
 
@@ -77,10 +71,8 @@ Obsidian で吹き出しを表現するための文法と種類について学�
 Obsidian の事前定義された吹き出しブロックの色とアイコンは次のとおりです。  
 
 吹き出しの種類に好みのテキストを書き込むことで、吹き出しの外観を変更できます。  
-![Obsidian - コールアウトの定義済みタイプ](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)  
-
-Obsidian - コールアウトの定義済みタイプ
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Obsidian - コールアウトの定義済みタイプ](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)
+_Obsidian - コールアウトの定義済みタイプ_
 
 この内容は [Obsidian Help](https://help.obsidian.md/Editing+and+formatting/Callouts){:target="_blank"} で紹介されており、CSS を定義することで独自の吹き出しブロックをデザインできます。  
 

@@ -31,10 +31,8 @@ En la ventana de configuración de la carpeta compartida, configure la carpeta q
 - ☑ **Montaje automático**: monta automáticamente carpetas compartidas al iniciar
 - ☑ **Hacer permanente**: este elemento aparece si ingresa la configuración actual mientras se ejecuta la máquina virtual de Ubuntu. Si desea una configuración permanente, verifíquela.
 
-![Oracle VM VirtualBox: agregar carpeta compartida](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png)  
-
-Oracle VM VirtualBox: agregar carpeta compartida
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Oracle VM VirtualBox: agregar carpeta compartida](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png)
+_Oracle VM VirtualBox: agregar carpeta compartida_
 
 En mi caso, configuré `/home/pooh/_shared` como una carpeta compartida en la VM de Ubuntu. Como referencia, el nombre de mi cuenta de Ubuntu es "pooh".  
 ## Permisos de carpeta en Ubuntu VM
@@ -63,8 +61,6 @@ Lo más importante. Por último, reinicie la máquina virtual de Ubuntu.
 Una vez que se complete el reinicio de la máquina virtual de Ubuntu, realicemos una prueba.  
 
 Creemos un archivo `test.txt` usando el comando `touch` en la carpeta compartida de la VM de Ubuntu. ¿Puedes ver el archivo `test.txt` creado en la carpeta compartida de Windows?  
-![Cree un archivo `test.txt` usando el comando `touch` en Ubuntu VM y verifíquelo en Windows.](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png)  
-
-Cree un archivo `test.txt` usando el comando `touch` en Ubuntu VM y verifíquelo en Windows.
-{: style="color:gray; font-size: 80%; text-align: center;"}
+![Cree un archivo `test.txt` usando el comando `touch` en Ubuntu VM y verifíquelo en Windows.](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png)
+_Cree un archivo `test.txt` usando el comando `touch` en Ubuntu VM y verifíquelo en Windows._
 
