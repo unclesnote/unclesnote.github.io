@@ -45,7 +45,7 @@ Ventoy 소프트웨어를 USB 스틱에 버닝하면 이동식 디스크로 윈�
 
 Ventoy 기반에 윈도우 ISO파일이 복사된 USB 스틱을 준비한다.  
 
-그리고,  레노버 드라이버 사이트에서 [무선랜 드라이버](https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list/component?name=%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9%20%3A%20%EB%AC%B4%EC%84%A0%EB%9E%9C&id=E3519D23-890E-4DE1-9064-DE6E7DA2515B){:target="_blank"}를 다운로드 받아 USB 스틱에 저장한다.  
+그리고,  레노버 드라이버 사이트에서 [무선랜 드라이버](https://pcsupport.lenovo.com/kr/en/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list){:target="_blank"}를 다운로드 받아 USB 스틱에 저장한다.  
 
 윈도우11 설치의 경우, 윈도우 ISO 이미지에 무선랜 드라이버가 포함되어 있지 않기 때문에 추후 인터넷을 통한 윈도우 초기설정이 진행 불가능하다. 그래서, 미리 무선랜 드라이버를 준비 해야한다.  
 ## BIOS 설정 및 윈도우 설치

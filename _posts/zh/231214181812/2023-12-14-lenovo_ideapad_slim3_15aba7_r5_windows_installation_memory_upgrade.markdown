@@ -45,7 +45,7 @@ Lenovo驱动程序站点支持Windows 10和Windows 11的系统驱动程序，但
 
 准备一个 U 盘，其中包含复制到 Ventoy 底座的 Windows ISO 文件。  
 
-并且，在 Lenovo 驱动程序网站上，[无线 LAN 驱动程序](https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-列表/组件？名称=%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9%20%3A%20%EB%AC%B4%EC%84%A0%EB %9E 下载 %9C&amp;id=E3519D23-890E-4DE1-9064-DE6E7DA2515B){:target="_blank"} 并将其保存在 U 盘上。  
+并且，在 Lenovo 驱动程序网站上，[无线 LAN 驱动程序](https://pcsupport.lenovo.com/kr/en/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list){:target="_blank"}下载并将其保存到 U 盘。  
 
 在安装 Windows 11 的情况下，Windows ISO 映像不包含无线 LAN 驱动程序，因此以后无法通过 Internet 执行初始 Windows 设置。因此，您需要提前准备无线网卡驱动程序。  
 ## BIOS 设置和 Windows 安装

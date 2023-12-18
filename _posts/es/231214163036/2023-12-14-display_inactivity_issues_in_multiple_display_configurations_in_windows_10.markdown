@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png", "/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png"]
 categories: [Computadora, Solución de problemas]
 tags: [Computadora, Solucióndeproblemas]
-description:  Soy un usuario que lleva consigo un portátil y a veces trabajo desde casa. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el trabajo
+description:  Soy un usuario que utiliza una computadora portátil entre el trabajo y el hogar. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,7 @@ ro_name: display_inactivity_issues_in_multiple_display_configurations_in_windows
 ro_ref: 231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10
 lang: es
 ---
-Soy un usuario que lleva consigo un portátil y a veces trabajo desde casa. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el trabajo como en casa, pero a veces la computadora portátil solo reconoce algunas pantallas y se muestran como inactivas cuando entro en la configuración de pantalla.  
+Soy un usuario que utiliza una computadora portátil entre el trabajo y el hogar. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el trabajo como en casa, pero a veces la computadora portátil solo reconoce algunas pantallas y se muestran como inactivas cuando entro en la configuración de pantalla.  
 
 Supongo que Windows gestiona la configuración de pantalla adecuada para cada entorno almacenándola en el registro en forma de valor preestablecido, pero parece que este problema a veces se debe a un giro en esta configuración.  
 

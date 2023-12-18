@@ -83,7 +83,7 @@ chmod 777 *.appimage
 ```
 ## 生产率
 ### 轻松手势（鼠标手势宏）
-如果您有在 Windows 上使用 [Strokeit](https://www.tcbmi.com/Strokeit){:target="_blank"} 鼠标手势宏软件的经验，`Easyrinkle Gesture`是 Ubuntu 的最佳替代方案。  
+如果您有在 Windows 上使用 [Strokeit](https://www.tcbmi.com/strokeit){:target="_blank"} 鼠标手势宏软件的经验，`Easyrinkle Gesture`是 Ubuntu 的最佳替代方案。  
 
 如果你想用`鼠标右键`绘制手势，则需要进行以下设置。事实上，让它在启动时自动运行是一个重要的选项。  
 

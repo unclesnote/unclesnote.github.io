@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png", "/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png"]
 categories: [컴퓨터, 문제 해결]
 tags: [컴퓨터, 문제해결]
-description:  저는 노트북을 들고 다니면서 가끔 재택근무를 하는 사용자입니다. 직장과 집에서 노트북에 연결된 디스플레이를 2개 이상 사용하는데 가끔 일부 디스플레이만 노트북에서 인식되어 디스플레이 설정에 들어가면 비활성 상태로 표시되는 경우가 있습니다. 제 생각엔 Windows에서는 각 환경에 맞는
+description:  저는 직장과 집에서 노트북 한 대를 사용하는 사용자입니다. 직장과 집에서 노트북에 연결된 디스플레이를 2개 이상 사용하는데 가끔 일부 디스플레이만 노트북에서 인식되어 디스플레이 설정에 들어가면 비활성 상태로 표시되는 경우가 있습니다. 제 생각엔 Windows에서는 각 환경에 맞는
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,7 @@ ro_name: display_inactivity_issues_in_multiple_display_configurations_in_windows
 ro_ref: 231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10
 lang: ko
 ---
-저는 노트북을 들고 다니면서 가끔 재택근무를 하는 사용자입니다. 직장과 집에서 노트북에 연결된 디스플레이를 2개 이상 사용하는데 가끔 일부 디스플레이만 노트북에서 인식되어 디스플레이 설정에 들어가면 비활성 상태로 표시되는 경우가 있습니다.  
+저는 직장과 집에서 노트북 한 대를 사용하는 사용자입니다. 직장과 집에서 노트북에 연결된 디스플레이를 2개 이상 사용하는데 가끔 일부 디스플레이만 노트북에서 인식되어 디스플레이 설정에 들어가면 비활성 상태로 표시되는 경우가 있습니다.  
 
 제 생각엔 Windows에서는 각 환경에 맞는 디스플레이 구성을 프리셋 형태로 레지스트리에 저장해 관리하는 것 같은데, 가끔 이런 구성이 왜곡되어 이런 문제가 발생하는 것 같습니다.  
 

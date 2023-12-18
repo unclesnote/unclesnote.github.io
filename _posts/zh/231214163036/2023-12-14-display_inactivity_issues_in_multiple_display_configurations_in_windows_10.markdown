@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png", "/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png"]
 categories: [电脑, 故障排除]
 tags: [电脑, 故障排除]
-description:  我是一名随身携带笔记本电脑并且有时在家工作的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。我发现
+description:  我是一名在工作和家庭之间使用一台笔记本电脑的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。我发现
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,7 @@ ro_name: display_inactivity_issues_in_multiple_display_configurations_in_windows
 ro_ref: 231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10
 lang: zh
 ---
-我是一名随身携带笔记本电脑并且有时在家工作的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。  
+我是一名在工作和家庭之间使用一台笔记本电脑的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。  
 
 我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。  
 

@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png", "/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png"]
 categories: [コンピューター, トラブルシューティング]
 tags: [コンピューター, トラブルシューティング]
-description:  私はラップトップを持ち歩き、時々自宅で仕事をするユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。おそらく Windows は各環境に適したディスプ
+description:  私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。おそらく Windows は各環境に適したディ
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,7 @@ ro_name: display_inactivity_issues_in_multiple_display_configurations_in_windows
 ro_ref: 231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10
 lang: ja
 ---
-私はラップトップを持ち歩き、時々自宅で仕事をするユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。  
+私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。  
 
 おそらく Windows は各環境に適したディスプレイ設定をプリセットとしてレジストリに保存して管理しているのだと思いますが、この設定のひねりが原因でこの問題が発生する場合があるようです。  
 

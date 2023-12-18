@@ -6,7 +6,7 @@ image:
 images: ["/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png", "/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png"]
 categories: [Computer, TroubleShooting]
 tags: [Computer, TroubleShooting]
-description:  I am a user who carries a laptop around and sometimes works from home. I use two or more displays connected to my laptop both at work and at home, but
+description:  I am a user who uses one laptop between work and home. I use two or more displays connected to my laptop both at work and at home, but sometimes only some
 public: true
 toc: true
 toc_intl: false
@@ -18,7 +18,7 @@ ro_name: display_inactivity_issues_in_multiple_display_configurations_in_windows
 ro_ref: 231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10
 lang: en
 ---
-I am a user who carries a laptop around and sometimes works from home. I use two or more displays connected to my laptop both at work and at home, but sometimes only some displays are recognized by the laptop and are displayed as inactive when I go into the display settings.  
+I am a user who uses one laptop between work and home. I use two or more displays connected to my laptop both at work and at home, but sometimes only some displays are recognized by the laptop and are displayed as inactive when I go into the display settings.  
 
 My guess is that Windows manages the display configuration suitable for each environment by storing it in the registry in the form of a preset, but it seems that this problem is sometimes caused by a twist in this configuration.  
 

@@ -45,7 +45,7 @@ The Lenovo driver site supports system drivers for Windows 10 and Windows 11, bu
 
 Prepare a USB stick with the Windows ISO file copied to the Ventoy base.  
 
-And, on the Lenovo driver site, [Wireless LAN driver](https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list/ component?name=%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9%20%3A%20%EB%AC%B4%EC%84%A0%EB%9E Download %9C&amp;id=E3519D23-890E-4DE1-9064-DE6E7DA2515B){:target="_blank"} and save it on a USB stick.  
+And, on the Lenovo driver site, [Wireless LAN driver](https://pcsupport.lenovo.com/kr/en/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list){:target="_blank"} Download and save it to a USB stick.  
 
 In the case of Windows 11 installation, the Windows ISO image does not include a wireless LAN driver, so initial Windows setup via the Internet cannot be performed later. So, you need to prepare a wireless LAN driver in advance.  
 ## BIOS setup and Windows installation

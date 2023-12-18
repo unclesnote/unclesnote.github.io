@@ -45,7 +45,7 @@ El sitio de controladores de Lenovo admite controladores de sistema para Windows
 
 Prepare una memoria USB con el archivo ISO de Windows copiado en la base Ventoy.  
 
-Y, en el sitio de controladores de Lenovo, [controlador de LAN inalámbrica](https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver- lista/componente?nombre=%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%82%B9%20%3A%20%EB%AC%B4%EC%84%A0%EB %9E Descargue %9C&amp;id=E3519D23-890E-4DE1-9064-DE6E7DA2515B){:target="_blank"} y guárdelo en una memoria USB.  
+Y, en el sitio de controladores de Lenovo, [controlador de LAN inalámbrica](https://pcsupport.lenovo.com/kr/en/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list){:target="_blank"} Descárguelo y guárdelo en una memoria USB.  
 
 En el caso de la instalación de Windows 11, la imagen ISO de Windows no incluye un controlador de LAN inalámbrica, por lo que la configuración inicial de Windows a través de Internet no se puede realizar más adelante. Por lo tanto, es necesario preparar un controlador de LAN inalámbrica con antelación.  
 ## Configuración del BIOS e instalación de Windows
