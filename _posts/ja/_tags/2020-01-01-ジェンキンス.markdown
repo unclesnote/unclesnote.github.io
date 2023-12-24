@@ -1,0 +1,8 @@
+---
+title: "ジェンキンス"
+layout: tag
+ro_ref: ja-tag-ジェンキンス
+tag: "ジェンキンス"
+tag_web: "ジェンキンス"
+lang: ja
+---

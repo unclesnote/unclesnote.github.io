@@ -1,0 +1,8 @@
+---
+title: "Docker"
+layout: category
+ro_ref: en-category-Docker
+category: "Docker"
+category_web: "docker"
+lang: en
+---
