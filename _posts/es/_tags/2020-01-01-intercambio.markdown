@@ -1,8 +1,8 @@
 ---
-title: "Intercambio"
+title: "intercambio"
 layout: tag
-ro_ref: es-tag-Intercambio
-tag: "Intercambio"
+ro_ref: es-tag-intercambio
+tag: "intercambio"
 tag_web: "intercambio"
 lang: es
 ---
