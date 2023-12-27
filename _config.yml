@@ -131,7 +131,7 @@ pwa:
 
 # Pagination, It's like disabled by setting large value because build failure if set it to 0
 #paginate: 10000
-prj_paginate: 5    # Custome Pagination
+prj_paginate: 6    # Custome Pagination
 
 # The base URL of your site
 baseurl: ""
