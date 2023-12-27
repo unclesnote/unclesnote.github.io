@@ -1,0 +1,8 @@
+---
+title: "Tubería"
+layout: category
+ro_ref: es-category-Tubería
+category: "Tubería"
+category_web: "tubería"
+lang: es
+---

@@ -25,6 +25,7 @@ lang: zh
 我发现解决这个问题的方法是删除并初始化Windows显示配置注册表值。总之，您需要重新设置多显示环境。我会解释如何做。  
 ## 1.打开Windows注册表编辑器
 使用`Windows + R`通过`运行`对话框输入`regedit`，或在`开始`菜单中搜索`regedit.exe`以运行`注册表编辑器`。  
+
 ![Windows + R > 输入`regedit`](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png)
 _Windows + R > 输入`regedit`_
 
@@ -37,6 +38,7 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
 从右键菜单中删除`GraphicsDrivers`文件夹中的以下两个文件夹。  
 - Configuration
 - Connectivity
+
 
 ![注册表编辑器 - 删除`GraphicsDrivers`文件夹中的`Configuration`和`Connectivity`文件夹](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png)
 _注册表编辑器 - 删除`GraphicsDrivers`文件夹中的`Configuration`和`Connectivity`文件夹_

@@ -1,0 +1,8 @@
+---
+title: "設定"
+layout: tag
+ro_ref: ja-tag-設定
+tag: "設定"
+tag_web: "設定"
+lang: ja
+---

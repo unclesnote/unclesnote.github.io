@@ -22,6 +22,7 @@ lang: es
 
 Veamos los conceptos básicos para instalar Windows y cómo actualizar la memoria.  
 ## Especificaciones
+
 ![Lenovo Slim3 15ABA7 R5](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png)
 _Lenovo Slim3 15ABA7 R5_
 
@@ -33,6 +34,7 @@ Aunque el precio es relativamente económico, es una computadora portátil renta
 
 Además se puede actualizar un disco duro SATA y una memoria DDR4.  
 ## Preparar una memoria USB de Windows
+
 ![Ventoy - www.ventoy.net - Una nueva solución USB de arranque](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png)
 _Ventoy - www.ventoy.net - Una nueva solución USB de arranque_
 
@@ -52,6 +54,7 @@ En el caso de la instalación de Windows 11, la imagen ISO de Windows no incluye
 Abra la pantalla de Lenovo Slim3 15ABA7 R5. La computadora portátil se encenderá automáticamente. Presione `F2` repetidamente para ingresar a la pantalla de configuración del BIOS.  
 
 Al iniciar con Ventoy, se produce un error relacionado con la verificación de seguridad. Para evitar esto, cambie "Arranque seguro" a "Desactivar" en el menú "Seguridad". Inserte la memoria USB en la computadora portátil, guarde la configuración del BIOS y salga.  
+
 ![BIOS > Seguridad > Arranque seguro > Deshabilitado](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png)
 _BIOS > Seguridad > Arranque seguro > Deshabilitado_
 
@@ -62,6 +65,7 @@ _BIOS > Seguridad > Arranque seguro > Deshabilitado_
 Seleccione la ISO de Windows en el menú de inicio de Ventory e instale Windows.  
 
 **Lenovo Slim3 15ABA7 R5**no instala automáticamente el controlador de LAN inalámbrica al instalar Windows 11. Por lo tanto, ya no es posible continuar con la etapa de configuración de la "conexión de red".  
+
 ![Instalación de Windows 11: no se puede continuar con la configuración de "Conexión de red"](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png)
 _Instalación de Windows 11: no se puede continuar con la configuración de "Conexión de red"_
 
@@ -80,28 +84,34 @@ Como se muestra a continuación, **Lenovo Slim3 15ABA7 R5**está equipado con 8 
 Si hay memoria en el centro comercial con un reloj marcado como DDR4-3200 o PC4-25600, puedes comprarla.  
 ## Instalar actualización de memoria
 Coloque la computadora portátil boca abajo sobre un paño suave y desatornille todos los tornillos de la parte posterior.  
+
 ![Lenovo Slim3 15ABA7 R5 - Trasero - Quitar tornillos](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png)
 _Lenovo Slim3 15ABA7 R5 - Trasero - Quitar tornillos_
 
 Luego, inserte una tarjeta de plástico sin usar en el espacio en la esquina superior derecha para abrir el panel posterior. Luego, abre el panel trasero girándolo poco a poco, como si abrieras una lata de comida enlatada. Si inserta la tarjeta de plástico demasiado profundamente, la placa de la computadora portátil podría dañarse, así que inserte solo un poco.  
+
 ![Lenovo Slim3 15ABA7 R5 - Apertura del panel posterior](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png)
 _Lenovo Slim3 15ABA7 R5 - Apertura del panel posterior_
 
 Como se explicó anteriormente, se puede actualizar adicionalmente un disco duro SATA y una memoria DDR4.  
+
 ![Lenovo Slim3 15ABA7 R5 - Interior](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png)
 _Lenovo Slim3 15ABA7 R5 - Interior_
 
 A diferencia de otras computadoras portátiles, **Lenovo Slim3 15ABA7 R5**tiene una cubierta para la ranura de memoria. Retire una pequeña cantidad de la pegatina adherida a la cubierta y levante la cubierta para quitarla.  
+
 ![Lenovo Slim3 15ABA7 R5 - Interno - Quitar la pegatina de la tapa de la memoria](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png)
 _Lenovo Slim3 15ABA7 R5 - Interno - Quitar la pegatina de la tapa de la memoria_
 
 Si ha instalado la memoria, vuelva a instalar la cubierta de la memoria y pegue una pegatina.  
+
 ![Lenovo Slim3 15ABA7 R5 - Interno - Memoria instalada](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png)
 _Lenovo Slim3 15ABA7 R5 - Interno - Memoria instalada_
 
 Y antes de cerrar el panel posterior, asegúrese de que la computadora portátil se encienda y arranque correctamente. Si el arranque no se produce debido a un mal contacto con la memoria, se debe abrir nuevamente el panel posterior, así que verifique si el arranque es normal sin cerrar el panel posterior.  
 
 Coloque algo como una pitillera en la bisagra de la computadora portátil para evitar que el ventilador gire y luego encienda la computadora portátil. Si la memoria no se reconoce correctamente o no arranca, intente extraerla y reinstalarla.  
+
 ![Lenovo Slim3 15ABA7 R5: espacio inferior seguro para comprobar el funcionamiento de la nueva memoria](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png)
 _Lenovo Slim3 15ABA7 R5: espacio inferior seguro para comprobar el funcionamiento de la nueva memoria_
 
@@ -112,10 +122,12 @@ Instale [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html){:target="_blank"} o 
 En CPU-Z, si la memoria funciona como [Canal dual] (https://en.wikipedia.org/wiki/Multi-channel_memory_architecture), el canal generalmente se muestra como "Dual", **Lenovo Slim3 15ABA7 R5**es se muestra como `2 x 64 bits`.  
 
 No estoy seguro si esto es un error o una diferencia en la última versión de CPU-Z.  
+
 ![Lenovo Slim3 15ABA7 R5 - CPU-Z - Memoria](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png)
 _Lenovo Slim3 15ABA7 R5 - CPU-Z - Memoria_
 
 Sin embargo, en HWiNFO64, se mostraba correctamente como "Doble canal".  
+
 ![Lenovo Slim3 15ABA7 R5 - HWiNFO64 - Resumen del sistema - Memoria](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png)
 _Lenovo Slim3 15ABA7 R5 - HWiNFO64 - Resumen del sistema - Memoria_
 

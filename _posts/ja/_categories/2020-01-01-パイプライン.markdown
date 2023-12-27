@@ -1,0 +1,8 @@
+---
+title: "パイプライン"
+layout: category
+ro_ref: ja-category-パイプライン
+category: "パイプライン"
+category_web: "パイプライン"
+lang: ja
+---

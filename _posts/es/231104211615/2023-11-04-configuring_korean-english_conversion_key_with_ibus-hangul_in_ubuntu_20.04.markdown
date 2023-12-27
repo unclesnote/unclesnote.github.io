@@ -32,16 +32,19 @@ sudo apt upgrade ibus-hangul
 ```
 ## Configuración de entrada en coreano
 Primero, busque la palabra clave "región" en las aplicaciones, luego busque y ejecute la configuración "Región e idioma".  
+
 ![Busque `región` y ejecute `Región y idiomas`](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)
 _Busque `región` y ejecute `Región y idiomas`_
 
 Luego, agregue "Fuente de entrada" en la pestaña "Región e idioma". Busque "coreano" y agregue "coreano (hangul)".  
+
 ![Agregar fuente de entrada `coreano (hangul)`](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)
 _Agregar fuente de entrada `coreano (hangul)`_
 
 Antes de configurar la fuente de entrada recién agregada, elimine el "inglés (EE. UU.)" existente. Esto es para evitar conflictos con la fuente de entrada "Corea (Hangul)" recién agregada. Y la fuente de entrada agregada ya incluye una función de entrada en inglés.  
 
 Haga clic en el ícono de ajustes en la fuente de entrada "Corea (Hangul)" para abrir "IBusHangle Setup".  
+
 ![Configuración de clave de conversión coreano-inglés](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)
 _Configuración de clave de conversión coreano-inglés_
 

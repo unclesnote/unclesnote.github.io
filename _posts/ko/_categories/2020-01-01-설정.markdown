@@ -1,0 +1,8 @@
+---
+title: "설정"
+layout: category
+ro_ref: ko-category-설정
+category: "설정"
+category_web: "설정"
+lang: ko
+---

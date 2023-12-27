@@ -60,6 +60,7 @@ Virtual Box Manager の Ubuntu VM のネットワーク設定で、次のよう�
 - **ゲスト IP** : 10.0.2.15 (上記で確認された Ubuntu VM の IP アドレス)
 - **ゲストポート** : 4000
 
+
 ![VirtualBox Manager - ポート転送ルール](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)
 _VirtualBox Manager - ポート転送ルール_
 

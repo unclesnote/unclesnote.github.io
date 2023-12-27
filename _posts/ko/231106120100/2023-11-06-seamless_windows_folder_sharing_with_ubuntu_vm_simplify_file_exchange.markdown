@@ -31,6 +31,7 @@ Ubuntu VM의 설정으로 이동합니다. 그런 다음 `공유 폴더` 탭에 
 - ✓ **자동 마운트** : 부팅 시 공유 폴더를 자동으로 마운트합니다.
 - ✓ **영구화** : Ubuntu VM이 실행되는 동안 현재 설정을 입력하면 이 항목이 나타납니다. 영구적인 설정을 원하시면 체크하세요.
 
+
 ![Oracle VM VirtualBox - 공유 폴더 추가](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png)
 _Oracle VM VirtualBox - 공유 폴더 추가_
 
@@ -61,6 +62,7 @@ sudo gpasswd -a pooh vboxsf
 Ubuntu VM 재부팅이 완료되면 테스트를 수행해 보겠습니다.  
 
 Ubuntu VM의 공유 폴더에 `touch` 명령을 사용하여 `test.txt` 파일을 생성해 보겠습니다. Windows 공유 폴더에 생성된 `test.txt` 파일이 보이시나요?  
+
 ![Ubuntu VM에서 `touch` 명령을 사용하여 `test.txt` 파일을 생성하고 Windows에서 확인합니다.](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png)
 _Ubuntu VM에서 `touch` 명령을 사용하여 `test.txt` 파일을 생성하고 Windows에서 확인합니다._
 

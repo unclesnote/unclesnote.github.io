@@ -20,6 +20,7 @@ lang: ja
 ---
 あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。  
 ## Visual Studioコード
+
 ![Visual Studioコード](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
 _Visual Studioコード_
 
@@ -50,6 +51,7 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub デスクトップ
+
 ![GitHub デスクトップ](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
 _GitHub デスクトップ_
 
@@ -63,6 +65,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 比較を超えて 4
+
 ![比較を超えて 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
 _比較を超えて 4_
 
@@ -98,6 +101,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 ライセンス キーをお持ちでない場合は、評価期間が終了したときに再度リセット プロセスを実行する必要がある場合があります。そのため、ワークスペースを保存して使用し、更新されるたびに設定をエクスポートしてファイルとして保存することをお勧めします。  
 ## データベース
 ### SQLite用DBブラウザ
+
 ![SQLite用DBブラウザ](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
 _SQLite用DBブラウザ_
 

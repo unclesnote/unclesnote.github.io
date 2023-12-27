@@ -1,0 +1,8 @@
+---
+title: "Settings"
+layout: tag
+ro_ref: en-tag-Settings
+tag: "Settings"
+tag_web: "settings"
+lang: en
+---

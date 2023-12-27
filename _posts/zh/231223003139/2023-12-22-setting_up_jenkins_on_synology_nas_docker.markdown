@@ -4,8 +4,8 @@ image:
   path: /assets/images/231223003139/zh-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png
   alt: 在 Synology NAS Docker 上设置 Jenkins
 images: ["/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png", "/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png"]
-categories: [乌班图, 詹金斯]
-tags: [乌班图, 码头工人, 詹金斯]
+categories: [乌班图, 詹金斯, 设置]
+tags: [乌班图, 码头工人, 詹金斯, 设置]
 description:  CI/CD（持续集成/持续部署）工具有很多，Jenkins 是没有许可证限制且开源的有用工具之一。我想谈谈如何在 Synology NAS Docker 上安装 Jenkins。
 public: true
 toc: true
@@ -91,6 +91,7 @@ HTTP_PORT=8080
 ```
 ## 配置 Synology NAS 容器端口并运行 Jenkins
 然后，在 Synology NAS GUI 中停止 Ubuntu 容器并设置外部连接到 Jenkins 的端口。我将容器的`8080`端口映射到`48080`端口。  
+
 ![Synology NAS GUI - Docker - Jenkins 端口设置](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png)
 _Synology NAS GUI - Docker - Jenkins 端口设置_
 
@@ -102,6 +103,7 @@ service jenkins restart
 ```
 然后，使用 Web 浏览器连接到 Jenkins。在我的例子中，分配给 Synology NAS 的 IP 地址是`192.168.0.50`，端口是上面设置的`48080`。  
 - http://192.168.0.50:48080/
+
 
 ![詹金斯 - 入门](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png)
 _詹金斯 - 入门_

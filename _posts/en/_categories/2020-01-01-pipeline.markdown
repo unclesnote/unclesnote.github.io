@@ -1,0 +1,8 @@
+---
+title: "Pipeline"
+layout: category
+ro_ref: en-category-Pipeline
+category: "Pipeline"
+category_web: "pipeline"
+lang: en
+---

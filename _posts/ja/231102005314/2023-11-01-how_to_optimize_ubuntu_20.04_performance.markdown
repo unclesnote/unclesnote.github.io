@@ -42,10 +42,12 @@ true
 解像度が制限されたディスプレイを使用している場合、Dock のデフォルトのアイコン サイズでは、一度に多くのアイコンを登録したり操作したりすることが制限される可能性があります。そのため、Dock アイコンのサイズを小さく設定できます。  
 
 まず、`アプリケーションメニュー`でドックを検索し、`外観`設定を開きます。  
+
 ![ドック アイコンのサイズ - アプリケーション メニュー > `ドック`の検索 > 外観設定](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png)
 _ドック アイコンのサイズ - アプリケーション メニュー > `ドック`の検索 > 外観設定_
 
 次に、`アイコン サイズ`を小さくして、見栄えの良いサイズに設定します。  
+
 ![ドックアイコンのサイズ - [設定] > [外観] > [アイコン サイズ] のサイズ変更](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png)
 _ドックアイコンのサイズ - [設定] > [外観] > [アイコン サイズ] のサイズ変更_
 
@@ -57,16 +59,19 @@ Virtual Box にインストールされた Ubuntu を使用している場合、
 
 ## ディスク上の空き領域を確保する
 仮想マシンがインストールされた Ubuntu を使用していて、イメージ サイズが十分に大きくない場合は、次のような警告ポップアップが表示される場合があります。これは、システム内の一時ファイルまたはログ ファイルに蓄積された場合に発生する可能性があります。空き容量がゼロに収束すると、Ubuntu VM が起動しなくなる可能性があります。  
+
 ![ファイルシステムルートのディスク容量不足に関する警告ポップアップ](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png)
 _ファイルシステムルートのディスク容量不足に関する警告ポップアップ_
 
 一時ファイルやシステムログファイルは手動で削除することもできますが、[BleachBit](https://www.bleachbit.org/features){:target="_blank"} アプリケーションを使用すると、GUI 環境でより簡単に管理できます。  
 
 Ubuntu ソフトウェア アプリケーションで`bleachbit`を検索すると、簡単にインストールできます。  
+
 ![Ubuntu ソフトウェア - BleachBit](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png)
 _Ubuntu ソフトウェア - BleachBit_
 
 整理したい項目にチェックを入れて`クリーン`ボタンを押すと、不要なファイルが自動的に削除され、空き容量が確保されます。ただし、`APT`項目と`journald`項目を整理するときは注意が必要です。これにより、Ubuntu システムまたはパッケージの依存関係が壊れる可能性があります。  
+
 ![ブリーチビット](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png)
 _ブリーチビット_
 

@@ -31,20 +31,24 @@ Las imágenes de disco se pueden crear a través de "Virtual Media Manager" en e
 Planeo crear una imagen de 55 GB y hay dos opciones para crear una imagen de disco. La primera es una opción para ocupar la capacidad de mi disco duro tanto como la he usado, y la segunda es crear una opción para ocupar de una sola vez la capacidad planificada desde el principio. Sin embargo, para un funcionamiento estable, crearé 55 GB a la vez con la segunda opción.  
 
 Creé un disco duro virtual con la opción "Preasignar tamaño completo".  
+
 ![Oracle VM VirtualBox Manager: crear un disco duro virtual](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png)
 _Oracle VM VirtualBox Manager: crear un disco duro virtual_
 
 Cuando termine de crear la imagen del disco virtual, puede verificar el disco creado en la lista de discos duros una vez transcurrido el tiempo de inicialización de la imagen del disco virtual.  
+
 ![Oracle VM VirtualBox Manager: inicialización del disco duro virtual en curso](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png)
 _Oracle VM VirtualBox Manager: inicialización del disco duro virtual en curso_
 
 Ahora agregaremos el disco duro virtual creado a la VM de Ubuntu.  
 
 Puede agregar un disco duro usando un controlador SATA en la pestaña "Almacenamiento" de la configuración de Ubuntu VM.  
+
 ![Oracle VM VirtualBox Manager: agregue un disco duro a Ubuntu VM](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png)
 _Oracle VM VirtualBox Manager: agregue un disco duro a Ubuntu VM_
 
 Cuando selecciona el disco duro que creó, puede verificar que el disco duro esté adjunto en la sección de información.  
+
 ![Oracle VM VirtualBox Manager: verifique los discos duros agregados a Ubuntu VM](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png)
 _Oracle VM VirtualBox Manager: verifique los discos duros agregados a Ubuntu VM_
 
@@ -64,20 +68,24 @@ gparted
 Después de seleccionar el disco duro creado en la esquina superior derecha de GParted, crearemos una tabla de particiones `msdos` y la formatearemos como `ext4` según la imagen a continuación.  
 
 Aplique la tabla de particiones `msdos` a través del menú.  
+
 ![Ubuntu VM - GParted - crea una tabla de particiones en formato msdos](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png)
 _Ubuntu VM - GParted - crea una tabla de particiones en formato msdos_
 
 Luego, crearemos una partición. Haga clic derecho en la partición no asignada y cree una partición del sistema de archivos `ext4`. Lo configuré en tamaño completo.  
+
 ![Ubuntu VM - GParted - Crear partición con sistema de archivos ext4](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png)
 _Ubuntu VM - GParted - Crear partición con sistema de archivos ext4_
 
 Formatee la partición del sistema de archivos ext4 a `etx4`.  
 
 Luego haga clic en la casilla de verificación verde para aplicar la configuración realizada hasta el momento.  
+
 ![Ubuntu VM - GParted - Formatear partición a ext4](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png)
 _Ubuntu VM - GParted - Formatear partición a ext4_
 
 La inicialización del disco duro ahora está completa. Para montar un disco duro de modo que pueda usarse cada vez que se inicia la máquina virtual de Ubuntu, se necesita información de ID de disco única. Haga clic derecho en la partición creada, verifique el `UUID` en el menú de información y recuérdelo.  
+
 ![Ubuntu VM - GParted - Verifique el UUID de la partición del disco](/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png)
 _Ubuntu VM - GParted - Verifique el UUID de la partición del disco_
 

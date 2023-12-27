@@ -60,6 +60,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 - **来宾 IP**：10.0.2.15（上面确认的 Ubuntu VM 的 IP 地址）
 - **访客端口**：4000
 
+
 ![VirtualBox Manager - 端口转发规则](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)
 _VirtualBox Manager - 端口转发规则_
 

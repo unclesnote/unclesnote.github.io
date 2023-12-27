@@ -94,6 +94,7 @@ sudo vi /etc/fstab
 ```
 ## 重启
 首先重新启动。重新启动后，您可以在系统监视器上查看上面生成的交换文件。  
+
 ![`应用程序`菜单 > 系统监视器](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)
 _`应用程序`菜单 > 系统监视器_
 

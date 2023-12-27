@@ -20,6 +20,7 @@ lang: ko
 ---
 소프트웨어 개발자이고 개발 환경이 Ubuntu인 경우, 설치해야 하는 필수 Ubuntu 소프트웨어 설치 방법을 설명합니다.  
 ## 비주얼 스튜디오 코드
+
 ![비주얼 스튜디오 코드](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
 _비주얼 스튜디오 코드_
 
@@ -50,6 +51,7 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub 데스크탑
+
 ![GitHub 데스크탑](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
 _GitHub 데스크탑_
 
@@ -63,6 +65,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 비욘드 컴페어 4
+
 ![비욘드 컴페어 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
 _비욘드 컴페어 4_
 
@@ -98,6 +101,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 라이센스 키가 없는 경우 평가 기간이 종료되면 재설정 프로세스를 다시 수행해야 할 수도 있습니다. 그래서 워크스페이스를 저장해서 사용하고, 업데이트될 때마다 설정을 내보내어 파일로 저장하는 것을 추천드립니다.  
 ## 데이터 베이스
 ### SQLite용 DB 브라우저
+
 ![SQLite용 DB 브라우저](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
 _SQLite용 DB 브라우저_
 
