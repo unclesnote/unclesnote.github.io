@@ -1,8 +1,8 @@
 ---
-title: "Jenkins"
+title: "jenkins"
 layout: tag
-ro_ref: en-tag-Jenkins
-tag: "Jenkins"
+ro_ref: en-tag-jenkins
+tag: "jenkins"
 tag_web: "jenkins"
 lang: en
 ---

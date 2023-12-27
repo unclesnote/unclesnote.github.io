@@ -23,10 +23,10 @@ lang: ko
 ![Jenkins - 텔레그램 플러그인](/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png)
 _Jenkins - 텔레그램 플러그인_
 
-## 텔레그램 메시지 전송을 위한 Groovy 기능
+## 텔레그램 메시지 전송을 위한 Groovy 함수
 Jenkins 스크립트에서 사용할 두 개의 Groovy 함수를 만들었습니다. `func_telegram_sendMessage_message`는 간단히 문자열을 삽입하여 텔레그램 메시지를 보내는 함수입니다. 또 다른 `func_telegram_sendMessage_file`은 텍스트 파일의 내용을 텔레그램 메시지로 보내는 함수입니다.  
 
-```groovy.jenkins
+```groovy
 // -----------------------------------------------
 // func_telegram_sendMessage_message
 // -----------------------------------------------
@@ -93,25 +93,24 @@ def func_telegram_sendDocument_file(file, token, chatid) {
 }
 ```
 아직 `curl`을 통해 텔레그램 메시지를 보내는 동안 오류가 발생하지 않았지만 오류로 인해 파이프라인 프로세스가 중단되는 것을 방지하기 위해 `try-catch` 문으로 컬 문을 래핑했습니다. 저는 개인적으로 텔레그램 메시지를 보내는 것보다 파이프라인 처리가 더 우선순위가 높다고 생각합니다.  
-## `파이프라인`의 `단계` 내에서 함수 사용
+## **파이프라인**의 **단계** 내에서 함수 사용
 아래는 `파이프라인`의 `단계`에서 위에서 생성한 함수를 호출하는 방법입니다. 텔레그램 봇의 `token`과 `chatid`를 하드코딩했습니다. 나중에 필요하게 되면 Jenkins의 `Credentials` 기능을 이용해 구현해보도록 하겠습니다.  
 
-```groovy.jenkins
+```groovy
 steps {
-	script {
-		def token = g_si.TELEGRAM_TOKEN;
-		def chatid = g_si.TELEGRAM_CHATID;
-		
-		func_telegram_sendMessage_message("title", "im message", token, chatid)
-		func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
-		
-		func_telegram_sendMessage_message("im title", "im message", token, chatid)
-		def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
-		if (rst == true ) {
-			func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
-		}
-                    	
-	}
+    script {
+        def token = g_si.TELEGRAM_TOKEN;
+        def chatid = g_si.TELEGRAM_CHATID;
+        
+        func_telegram_sendMessage_message("title", "im message", token, chatid)
+        func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
+        
+        func_telegram_sendMessage_message("im title", "im message", token, chatid)
+        def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
+        if (rst == true ) {
+            func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
+        }                        
+    }
 }
 
 ```

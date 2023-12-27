@@ -26,7 +26,7 @@ _Jenkins - 電報プラグイン_
 ## Telegram メッセージを送信するための Groovy 関数
 Jenkins スクリプトで使用する 2 つの Groovy 関数を作成しました。 `func_telegram_sendMessage_message` は、文字列を挿入するだけで Telegram メッセージを送信する関数です。もう 1 つの `func_telegram_sendMessage_file` は、テキスト ファイルの内容を Telegram メッセージとして送信する関数です。  
 
-```groovy.jenkins
+```groovy
 // -----------------------------------------------
 // func_telegram_sendMessage_message
 // -----------------------------------------------
@@ -93,25 +93,24 @@ def func_telegram_sendDocument_file(file, token, chatid) {
 }
 ```
 `curl` を介して Telegram メッセージを送信するときにまだエラーが発生したことはありませんが、パイプライン プロセスがエラーによって停止するのを防ぐために、curl ステートメントを `try-catch` ステートメントでラップしました。私個人としては、Telegram メッセージの送信よりもパイプライン処理の方が優先度が高いと考えています。  
-## `パイプライン`の`ステップ`内で関数を使用する
+## **パイプライン**の**ステップ**内で関数を使用する
 以下は、`パイプライン`の`ステップ`で上で作成した関数を呼び出す方法です。 Telegram ボットの`token`と`chatid`をハードコーディングしました。後で必要になったら、Jenkins の`Credentials`機能を使用して実装してみます。  
 
-```groovy.jenkins
+```groovy
 steps {
-	script {
-		def token = g_si.TELEGRAM_TOKEN;
-		def chatid = g_si.TELEGRAM_CHATID;
-		
-		func_telegram_sendMessage_message("title", "im message", token, chatid)
-		func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
-		
-		func_telegram_sendMessage_message("im title", "im message", token, chatid)
-		def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
-		if (rst == true ) {
-			func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
-		}
-                    	
-	}
+    script {
+        def token = g_si.TELEGRAM_TOKEN;
+        def chatid = g_si.TELEGRAM_CHATID;
+        
+        func_telegram_sendMessage_message("title", "im message", token, chatid)
+        func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
+        
+        func_telegram_sendMessage_message("im title", "im message", token, chatid)
+        def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
+        if (rst == true ) {
+            func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
+        }                        
+    }
 }
 
 ```

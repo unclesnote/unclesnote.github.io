@@ -26,7 +26,7 @@ _Jenkins - Telegram 插件_
 ## 用于发送 Telegram 消息的 Groovy 函数
 我创建了两个 Groovy 函数以在 Jenkins 脚本中使用。 `func_telegram_sendMessage_message` 是一个通过简单插入字符串来发送 Telegram 消息的函数。另一个 `func_telegram_sendMessage_file` 是一个将文本文件的内容作为 Telegram 消息发送的函数。  
 
-```groovy.jenkins
+```groovy
 // -----------------------------------------------
 // func_telegram_sendMessage_message
 // -----------------------------------------------
@@ -93,25 +93,24 @@ def func_telegram_sendDocument_file(file, token, chatid) {
 }
 ```
 虽然我在通过`curl`发送 Telegram 消息时尚未遇到错误，但我用`try-catch`语句包装了curl语句，以防止管道进程因错误而停止。我个人认为管道处理比发送 Telegram 消息具有更高的优先级。  
-## 在`管道`的`步骤`中使用函数
+## 在**管道**的**步骤**内使用函数
 下面是如何在`pipeline`的`steps`中调用上面创建的函数。我对 Telegram 机器人的`token`和`chatid`进行了硬编码。如果以后有需要，我会尝试使用Jenkins的`Credentials`功能来实现。  
 
-```groovy.jenkins
+```groovy
 steps {
-	script {
-		def token = g_si.TELEGRAM_TOKEN;
-		def chatid = g_si.TELEGRAM_CHATID;
-		
-		func_telegram_sendMessage_message("title", "im message", token, chatid)
-		func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
-		
-		func_telegram_sendMessage_message("im title", "im message", token, chatid)
-		def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
-		if (rst == true ) {
-			func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
-		}
-                    	
-	}
+    script {
+        def token = g_si.TELEGRAM_TOKEN;
+        def chatid = g_si.TELEGRAM_CHATID;
+        
+        func_telegram_sendMessage_message("title", "im message", token, chatid)
+        func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
+        
+        func_telegram_sendMessage_message("im title", "im message", token, chatid)
+        def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
+        if (rst == true ) {
+            func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
+        }                        
+    }
 }
 
 ```

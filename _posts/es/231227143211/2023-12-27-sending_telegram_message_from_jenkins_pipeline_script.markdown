@@ -23,10 +23,10 @@ Por supuesto, existen complementos de Telegram para Jenkins, pero yo personalmen
 ![Jenkins - Complementos de Telegram](/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png)
 _Jenkins - Complementos de Telegram_
 
-## Función genial para enviar mensajes de Telegram
+## Funciones geniales para enviar mensajes de Telegram
 Creé dos funciones Groovy para usar en el script de Jenkins. `func_telegram_sendMessage_message` es una función que envía un mensaje de Telegram simplemente insertando una cadena. Otro `func_telegram_sendMessage_file` es una función que envía el contenido de un archivo de texto como un mensaje de Telegram.  
 
-```groovy.jenkins
+```groovy
 // -----------------------------------------------
 // func_telegram_sendMessage_message
 // -----------------------------------------------
@@ -93,25 +93,24 @@ def func_telegram_sendDocument_file(file, token, chatid) {
 }
 ```
 Aunque todavía no encontré ningún error al enviar un mensaje de Telegram a través de "curl", envolví la declaración curl con una declaración "try-catch" para evitar que el proceso de canalización se detuviera debido a un error. Personalmente, creo que el procesamiento de la canalización tiene mayor prioridad que enviar un mensaje de Telegram.  
-## Usar funciones dentro de los "pasos" de una "tubería"
+## Usar funciones dentro de **pasos** de una **tubería**
 A continuación se muestra cómo llamar a la función creada anteriormente en los "pasos" del "canalización". Codifiqué el "token" y el "chatid" del bot de Telegram. Si surge la necesidad más adelante, intentaré implementarlo usando la función "Credenciales" de Jenkins.  
 
-```groovy.jenkins
+```groovy
 steps {
-	script {
-		def token = g_si.TELEGRAM_TOKEN;
-		def chatid = g_si.TELEGRAM_CHATID;
-		
-		func_telegram_sendMessage_message("title", "im message", token, chatid)
-		func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
-		
-		func_telegram_sendMessage_message("im title", "im message", token, chatid)
-		def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
-		if (rst == true ) {
-			func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
-		}
-                    	
-	}
+    script {
+        def token = g_si.TELEGRAM_TOKEN;
+        def chatid = g_si.TELEGRAM_CHATID;
+        
+        func_telegram_sendMessage_message("title", "im message", token, chatid)
+        func_telegram_sendMessage_file("file title", "./_report/aa.txt", chatid, chatid)
+        
+        func_telegram_sendMessage_message("im title", "im message", token, chatid)
+        def rst = func_telegram_sendMessage_fileContents("im file title", "./_report/aa.txt", token, chatid)
+        if (rst == true ) {
+            func_telegram_sendMessage_file("./_report/aa.txt", token, chatid)
+        }                        
+    }
 }
 
 ```

@@ -1,8 +1,8 @@
 ---
-title: "Telegram"
+title: "telegram"
 layout: tag
-ro_ref: en-tag-Telegram
-tag: "Telegram"
+ro_ref: en-tag-telegram
+tag: "telegram"
 tag_web: "telegram"
 lang: en
 ---
