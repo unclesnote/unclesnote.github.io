@@ -1,0 +1,8 @@
+---
+title: "電報"
+layout: tag
+ro_ref: ja-tag-電報
+tag: "電報"
+tag_web: "電報"
+lang: ja
+---

@@ -1,0 +1,8 @@
+---
+title: "curl"
+layout: tag
+ro_ref: ja-tag-curl
+tag: "curl"
+tag_web: "curl"
+lang: ja
+---
