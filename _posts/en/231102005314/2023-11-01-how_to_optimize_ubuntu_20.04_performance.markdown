@@ -42,12 +42,10 @@ true
 If you're using a limited-resolution display, the Dock's default icon size may be limiting for registering and navigating many icons at once. So, you can set the Dock icon size to be small.  
 
 First, search for dock in `the Application menu` and open `Appearance` settings.  
-
 ![Dock Icon Size - Application Menu > Search `dock` > Appearance Settings](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png)
 _Dock Icon Size - Application Menu > Search `dock` > Appearance Settings_
 
 Then reduce `the Icon Size` and set it to a size that looks good to you.  
-
 ![Dock Icon Size - Settings > Appearance > Resize `Icon Size`](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png)
 _Dock Icon Size - Settings > Appearance > Resize `Icon Size`_
 
@@ -59,19 +57,16 @@ Since hard disk capacity is cheaper than memory capacity, let's increase swap. P
 
 ## Secure free space on disk
 If you are using Ubuntu with a virtual machine installed and the image size is not large enough, you may see a warning pop-up like the one below. This can occur if it accumulates in the system in temporary files or log files. If freespace converges to zero, your Ubuntu VM may not boot.  
-
 ![Warning Popup for Low Disk Space on Filessystem root](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png)
 _Warning Popup for Low Disk Space on Filessystem root_
 
 Although you can delete temporary files or system log files manually, you can manage them more easily in a GUI environment by using the [BleachBit](https://www.bleachbit.org/features){:target="_blank"} application.  
 
 You can easily install it by searching for `bleachbit` in the Ubuntu software application.  
-
 ![Ubuntu Software - BleachBit](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png)
 _Ubuntu Software - BleachBit_
 
 After checking the items you want to organize, pressing the `Clean` button automatically deletes unnecessary files to secure free space. However, you must be careful when organizing the `APT` and `journald` items. This may break your Ubuntu system or package dependencies.  
-
 ![BleachBit](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png)
 _BleachBit_
 

@@ -24,7 +24,6 @@ En resumen, el lanzamiento de la serie Galaxy S 24 está previsto para el primer
 
 Ahora echemos un vistazo más de cerca a los rumores relacionados.  
 ## Cuándo lanzar: diciembre de 2023 o enero de 2024
-
 ![Anuncio en vallas electrónicas Galaxy S23 en Times Square, Nueva York, EE.UU.](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png)
 _Anuncio en vallas electrónicas Galaxy S23 en Times Square, Nueva York, EE.UU._
 
@@ -32,7 +31,6 @@ Samsung Electronics planea lanzar nuevos teléfonos inteligentes en diciembre de
 
 Este cambio se considera una respuesta a los desafíos del mercado de teléfonos inteligentes y a la competencia de la serie iPhone 15 de Apple. Samsung confía en su división de experiencia móvil (MX) para contrarrestar la caída de las ganancias de los semiconductores, ya que registraron pérdidas significativas en la división de semiconductores (DS) durante el tercer trimestre de 2022.  
 ## Apariencia y diseño: titanio
-
 ![A la izquierda está la representación esperada del Galaxy S24 publicada por el informante de TI `OnLeaks`, y a la derecha está el iPhone 15 Pro.](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png)
 _A la izquierda está la representación esperada del Galaxy S24 publicada por el informante de TI `OnLeaks`, y a la derecha está el iPhone 15 Pro._
 
@@ -40,7 +38,6 @@ Según predicciones recientes del experto en TI Lebegnerz, se espera que toda la
 
 Además, se prevé que el diseño exterior experimente una transformación, pasando de una forma redondeada a un diseño más angular, añadiendo un toque de lujo. También se especula que la distintiva pantalla de borde del modelo Ultra será reemplazada por una pantalla plana.  
 ## Cámara - Bajar de categoría pero,
-
 ![Representaciones frontal y posterior del Galaxy S24 filtradas por OnLeaks de Smart Pix](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png)
 _Representaciones frontal y posterior del Galaxy S24 filtradas por OnLeaks de Smart Pix_
 
@@ -50,7 +47,6 @@ Sin embargo, algunos expertos, como SamMobile, sostienen que en realidad es un m
 
 Se dice que el S24 Ultra cuenta con una cámara principal de 200MP, una cámara ultra ancha de 12MP, un teleobjetivo de 10MP con zoom óptico de 3x y un teleobjetivo de 50MP con zoom óptico de 5x. El zoom de 5x se considera una mejora con una apertura más amplia y píxeles más grandes, lo que permite fotografías con zoom de alta calidad. En particular, la cámara con zoom de 5x puede capturar videos fluidos de 4K a 60 fps en todos los ángulos.  
 ## AP - Qualcomm Snapdragon Gen 3 y Exynos
-
 ![Se espera que Samsung Exynos se instale en el modelo Galaxy S24 Plus y se espera que Qualcomm Snapdragon 8 Gen 3 se instale en el modelo Galaxy S24 Ultra.](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png)
 _Se espera que Samsung Exynos se instale en el modelo Galaxy S24 Plus y se espera que Qualcomm Snapdragon 8 Gen 3 se instale en el modelo Galaxy S24 Ultra._
 

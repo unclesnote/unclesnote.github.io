@@ -1,8 +1,0 @@
----
-title: "设置"
-layout: category
-ro_ref: zh-category-设置
-category: "设置"
-category_web: "设置"
-lang: zh
----

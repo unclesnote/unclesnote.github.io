@@ -1,8 +1,0 @@
----
-title: "Pipeline"
-layout: tag
-ro_ref: ko-tag-Pipeline
-tag: "Pipeline"
-tag_web: "pipeline"
-lang: ko
----

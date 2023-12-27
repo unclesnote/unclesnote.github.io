@@ -4,8 +4,8 @@ image:
   path: /assets/images/231223003139/ja-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png
   alt: Synology NAS Docker での Jenkins のセットアップ
 images: ["/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png", "/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png"]
-categories: [Ubuntu, ジェンキンス, 設定]
-tags: [Ubuntu, ドッカー, ジェンキンス, 設定]
+categories: [Ubuntu, ジェンキンス]
+tags: [Ubuntu, ドッカー, ジェンキンス]
 description:  CI/CD(継続的インテグレーション/継続的デプロイメント) ツールは数多くありますが、Jenkins はライセンス制限がなくオープンソースで便利なツールの 1 つです。 Synology NAS Docker に Jenkins をインストールする方法について話したいと思います。
 public: true
 toc: true
@@ -91,7 +91,6 @@ HTTP_PORT=8080
 ```
 ## Synology NAS コンテナ ポートを構成し、Jenkins を実行する
 その後、Synology NAS GUI で Ubuntu コンテナを停止し、外部接続用のポートを Jenkins に設定します。コンテナの`8080`ポートを`48080`ポートにマッピングしました。  
-
 ![Synology NAS GUI - Docker - Jenkins ポート設定](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png)
 _Synology NAS GUI - Docker - Jenkins ポート設定_
 
@@ -103,7 +102,6 @@ service jenkins restart
 ```
 次に、Web ブラウザーを使用して Jenkins に接続します。私の場合、Synology NAS に割り当てられた IP アドレスは`192.168.0.50`で、ポートは上記で設定した`48080`でした。  
 - http://192.168.0.50:48080/
-
 
 ![ジェンキンス - はじめに](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png)
 _ジェンキンス - はじめに_

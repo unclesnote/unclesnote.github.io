@@ -24,7 +24,6 @@ lang: zh
 
 现在我们就来仔细看看相关的传闻。  
 ## 何时发布 - 2023 年 12 月或 2024 年 1 月
-
 ![美国纽约时代广场Galaxy S23电子广告牌广告](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png)
 _美国纽约时代广场Galaxy S23电子广告牌广告_
 
@@ -32,7 +31,6 @@ _美国纽约时代广场Galaxy S23电子广告牌广告_
 
 这一转变被视为对智能手机市场挑战和苹果 iPhone 15 系列竞争的回应。三星依靠其移动体验 (MX) 部门来抵消半导体利润下降的影响，因为他们在 2022 年第三季度的半导体 (DS) 部门出现了重大亏损。  
 ## 外观设计-钛金属
-
 ![左边是 IT 爆料者`OnLeaks`发布的 Galaxy S24 的预期渲染图，右边是 iPhone 15 Pro。](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png)
 _左边是 IT 爆料者`OnLeaks`发布的 Galaxy S24 的预期渲染图，右边是 iPhone 15 Pro。_
 
@@ -40,7 +38,6 @@ _左边是 IT 爆料者`OnLeaks`发布的 Galaxy S24 的预期渲染图，右边
 
 此外，外观设计预计将发生转变，从圆润的造型转变为更有棱角的设计，增添一丝奢华感。还有猜测称，Ultra 型号独特的边缘显示屏将完全被平面显示屏取代。  
 ## 相机 - 降级但是，
-
 ![Smart Pix 的 OnLeaks 泄露了 Galaxy S24 的正面和背面渲染图](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png)
 _Smart Pix 的 OnLeaks 泄露了 Galaxy S24 的正面和背面渲染图_
 
@@ -50,7 +47,6 @@ _Smart Pix 的 OnLeaks 泄露了 Galaxy S24 的正面和背面渲染图_
 
 据称，S24 Ultra 配备 200MP 主摄像头、12MP 超广角、3 倍光学变焦 10MP 长焦摄像头和 5 倍光学变焦 50MP 长焦摄像头。 5倍变焦被视为升级版，具有更宽的光圈和更大的像素，可以拍摄高质量的变焦照片。值得注意的是，5 倍变焦摄像头可以从各个角度拍摄流畅的 4K 60fps 视频。  
 ## AP - Qualcomm Snapdragon Gen 3 和 Exynos
-
 ![三星Exynos预计将安装在Galaxy S24 Plus机型中，高通Snapdragon 8 Gen 3预计将安装在Galaxy S24 Ultra机型中。](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png)
 _三星Exynos预计将安装在Galaxy S24 Plus机型中，高通Snapdragon 8 Gen 3预计将安装在Galaxy S24 Ultra机型中。_
 

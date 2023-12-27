@@ -32,19 +32,16 @@ sudo apt upgrade ibus-hangul
 ```
 ## 한국어 입력 설정
 먼저, 애플리케이션에서 `지역` 키워드를 검색한 후 `지역 및 언어` 설정을 찾아서 실행하세요.  
-
 ![`지역`을 검색하고 `지역 및 언어`를 실행하세요.](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png)
 _`지역`을 검색하고 `지역 및 언어`를 실행하세요._
 
 그런 다음 `지역 및 언어` 탭에 `입력 소스`를 추가하세요. `한국어`를 검색하고 `한국어(한글)`를 추가하세요.  
-
 ![`한국어(한글)` 입력 소스 추가](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png)
 _`한국어(한글)` 입력 소스 추가_
 
 새로 추가된 입력소스를 설정하기 전, 기존 `English(US)`를 제거하세요. 새로 추가된 `한국어(한글)` 입력소스와의 충돌을 방지하기 위함이다. 그리고 추가된 입력 소스에는 이미 영어 입력 기능이 포함되어 있습니다.  
 
 `한국(한글)` 입력 소스에서 톱니바퀴 아이콘을 클릭하여 `IBusHangle Setup`을 엽니다.  
-
 ![한영변환키 설정](/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png)
 _한영변환키 설정_
 

@@ -25,7 +25,6 @@ lang: ja
 この問題を解決するために私が見つけた方法は、Windows ディスプレイ構成レジストリ値を削除して初期化することです。結論から言うと、マルチディスプレイ環境を再度セットアップする必要があります。その方法を説明します。  
 ## 1. Windows レジストリ エディタを開きます
 `Windows + R`を使用して`ファイル名を指定して実行`ダイアログに`regedit`と入力するか、`スタート`メニューで`regedit.exe`を検索して`レジストリ エディタ`を実行します。  
-
 ![Windows + R > `regedit`と入力](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png)
 _Windows + R > `regedit`と入力_
 
@@ -38,7 +37,6 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
 右クリックメニューから`GraphicsDrivers`フォルダ内の以下の２つのフォルダを削除します。  
 - Configuration
 - Connectivity
-
 
 ![レジストリ エディタ - `GraphicsDrivers`フォルダ内の`Configuration`フォルダと`Connectivity`フォルダを削除します。](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png)
 _レジストリ エディタ - `GraphicsDrivers`フォルダ内の`Configuration`フォルダと`Connectivity`フォルダを削除します。_

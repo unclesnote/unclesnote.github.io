@@ -25,7 +25,6 @@ lang: ko
 이 문제를 해결하기 위해 제가 찾은 방법은 Windows 디스플레이 구성 레지스트리 값을 삭제하고 초기화하는 것입니다. 결론적으로 멀티 디스플레이 환경을 다시 설정해야 합니다. 방법을 설명하겠습니다.  
 ## 1. Windows 레지스트리 편집기를 엽니다.
 `Windows + R`을 사용하여 실행 대화 상자를 통해 `regedit`를 입력하거나 시작 메뉴에서 `regedit.exe`를 검색하여 `Registry Editor`를 실행합니다.  
-
 ![Windows + R > `regedit` 입력](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png)
 _Windows + R > `regedit` 입력_
 
@@ -38,7 +37,6 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
 마우스 오른쪽 버튼 클릭 메뉴에서 `GraphicsDrivers` 폴더에 있는 다음 두 폴더를 제거합니다.  
 - Configuration
 - Connectivity
-
 
 ![레지스트리 편집기 - `GraphicsDrivers` 폴더에서 `Configuration` 및 `Connectivity` 폴더를 제거합니다.](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png)
 _레지스트리 편집기 - `GraphicsDrivers` 폴더에서 `Configuration` 및 `Connectivity` 폴더를 제거합니다._

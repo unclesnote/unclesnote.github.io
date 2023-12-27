@@ -31,7 +31,6 @@ In the shared folder settings window, set the folder you want to share with the 
 - ☑ **Auto-mount** : Automatically mount shared folders when booting up
 - ☑ **Make Permanent** : This item appears if you enter the current settings while the Ubuntu VM is running. If you want a permanent setting, check it.
 
-
 ![Oracle VM VirtualBox - Add shared folder](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png)
 _Oracle VM VirtualBox - Add shared folder_
 
@@ -62,7 +61,6 @@ Most important. Lastly, reboot the Ubuntu VM.
 Once the reboot of the Ubuntu VM is complete, let's perform a test.  
 
 Let's create a `test.txt` file using the `touch` command in shared folder of the Ubuntu VM. Can you see the `test.txt` file created in the Windows shared folder?  
-
 ![Create a `test.txt` file using the `touch` command in Ubuntu VM and check it in Windows.](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png)
 _Create a `test.txt` file using the `touch` command in Ubuntu VM and check it in Windows._
 

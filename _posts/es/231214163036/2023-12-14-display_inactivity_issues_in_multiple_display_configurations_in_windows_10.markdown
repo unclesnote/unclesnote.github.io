@@ -25,7 +25,6 @@ Supongo que Windows gestiona la configuración de pantalla adecuada para cada en
 El método que encontré para resolver este problema es eliminar e inicializar el valor del registro de configuración de pantalla de Windows. En conclusión, debe volver a configurar el entorno de pantallas múltiples. Te explicaré cómo.  
 ## 1. Abra el Editor del Registro de Windows
 Ingrese `regedit` a través del cuadro de diálogo Ejecutar con `Windows + R` o busque `regedit.exe` en el menú Inicio para ejecutar el `Editor del Registro`.  
-
 ![Windows + R > Ingrese `regedit`](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png)
 _Windows + R > Ingrese `regedit`_
 
@@ -38,7 +37,6 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
 Elimine las siguientes dos carpetas en la carpeta `GraphicsDrivers` del menú contextual.  
 - Configuration
 - Connectivity
-
 
 ![Editor del Registro: elimine las carpetas `Configuración` y `Conectividad` en la carpeta `GraphicsDrivers`](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png)
 _Editor del Registro: elimine las carpetas `Configuración` y `Conectividad` en la carpeta `GraphicsDrivers`_

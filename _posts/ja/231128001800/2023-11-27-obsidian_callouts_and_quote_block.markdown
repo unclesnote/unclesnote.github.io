@@ -31,7 +31,6 @@ Obsidian で吹き出しを表現するための文法と種類について学�
 > 
 ```
 以下は、Obsidian の基本テーマに基づいた引用ブロックの形状です。  
-
 ![黒曜石 - 引用ブロック](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)
 _黒曜石 - 引用ブロック_
 
@@ -45,7 +44,6 @@ _黒曜石 - 引用ブロック_
 > 
 ```
 以下は、Obsidian 基本テーマのチップ タイプの吹き出しブロックです。  
-
 ![黒曜石 - 吹き出しブロック](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)
 _黒曜石 - 吹き出しブロック_
 
@@ -60,7 +58,6 @@ _黒曜石 - 吹き出しブロック_
 さらに、吹き出しの強みは折りたたみ機能があることです。 Obsidian の場合、見出しを折りたたむことができますが、**吹き出しブロックとの違いは、初期値を指定できることです**。  
 
 場合によっては、強調したいコンテンツを表現したり、吹き出しブロックに注釈を追加したりすることができますが、コンテンツが長い場合は、最初は閉じたままにしておくことができます。  
-
 ![黒曜石 - 吹き出しブロックの折り畳み](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)
 _黒曜石 - 吹き出しブロックの折り畳み_
 
@@ -74,7 +71,6 @@ _黒曜石 - 吹き出しブロックの折り畳み_
 Obsidian の事前定義された吹き出しブロックの色とアイコンは次のとおりです。  
 
 吹き出しの種類に好みのテキストを書き込むことで、吹き出しの外観を変更できます。  
-
 ![Obsidian - コールアウトの定義済みタイプ](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)
 _Obsidian - コールアウトの定義済みタイプ_
 

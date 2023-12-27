@@ -31,7 +31,6 @@ Ubuntu VM の設定に移動します。次に、`共有フォルダー`タブ�
 - ☑ **自動マウント** : 起動時に共有フォルダーを自動的にマウントします。
 - ☑ **永続化** : この項目は、Ubuntu VM の実行中に現在の設定を入力すると表示されます。永続的な設定が必要な場合は、チェックを入れます。
 
-
 ![Oracle VM VirtualBox - 共有フォルダーの追加](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png)
 _Oracle VM VirtualBox - 共有フォルダーの追加_
 
@@ -62,7 +61,6 @@ sudo gpasswd -a pooh vboxsf
 Ubuntu VM の再起動が完了したら、テストを実行してみましょう。  
 
 Ubuntu VM の共有フォルダーに`touch`コマンドを使用して`test.txt`ファイルを作成しましょう。 Windows 共有フォルダーに作成された`test.txt`ファイルが見えますか?  
-
 ![Ubuntu VM で`touch`コマンドを使用して`test.txt`ファイルを作成し、Windows で確認します。](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png)
 _Ubuntu VM で`touch`コマンドを使用して`test.txt`ファイルを作成し、Windows で確認します。_
 

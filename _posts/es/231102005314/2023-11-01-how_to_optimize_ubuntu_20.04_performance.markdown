@@ -42,12 +42,10 @@ true
 Si está utilizando una pantalla de resolución limitada, el tamaño predeterminado del ícono del Dock puede ser limitante para registrar y navegar por muchos íconos a la vez. Por lo tanto, puede configurar el tamaño del icono del Dock para que sea pequeño.  
 
 Primero, busque Dock en el "menú Aplicación" y abra la configuración de "Apariencia".  
-
 ![Tamaño del icono del Dock - Menú de aplicaciones > Buscar `dock` > Configuración de apariencia](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png)
 _Tamaño del icono del Dock - Menú de aplicaciones > Buscar `dock` > Configuración de apariencia_
 
 Luego reduzca "el tamaño del icono" y configúrelo en un tamaño que le parezca bien.  
-
 ![Tamaño del icono del Dock - Configuración > Apariencia > Cambiar tamaño "Tamaño del icono"](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png)
 _Tamaño del icono del Dock - Configuración > Apariencia > Cambiar tamaño "Tamaño del icono"_
 
@@ -59,19 +57,16 @@ Dado que la capacidad del disco duro es más barata que la capacidad de la memor
 
 ## Asegure el espacio libre en el disco
 Si está utilizando Ubuntu con una máquina virtual instalada y el tamaño de la imagen no es lo suficientemente grande, es posible que vea una ventana emergente de advertencia como la que se muestra a continuación. Esto puede ocurrir si se acumula en el sistema en archivos temporales o archivos de registro. Si el espacio libre converge a cero, es posible que su máquina virtual Ubuntu no arranque.  
-
 ![Ventana emergente de advertencia por poco espacio en disco en la raíz del sistema de archivos](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png)
 _Ventana emergente de advertencia por poco espacio en disco en la raíz del sistema de archivos_
 
 Aunque puede eliminar archivos temporales o archivos de registro del sistema manualmente, puede administrarlos más fácilmente en un entorno GUI utilizando la aplicación [BleachBit](https://www.bleachbit.org/features){:target="_blank"}.  
 
 Puede instalarlo fácilmente buscando "bleachbit" en la aplicación de software de Ubuntu.  
-
 ![Software Ubuntu-BleachBit](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png)
 _Software Ubuntu-BleachBit_
 
 Después de verificar los elementos que desea organizar, presionar el botón "Limpiar" elimina automáticamente los archivos innecesarios para asegurar espacio libre. Sin embargo, debe tener cuidado al organizar los elementos "APT" y "diario". Esto puede romper su sistema Ubuntu o las dependencias de paquetes.  
-
 ![BleachBit](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png)
 _BleachBit_
 

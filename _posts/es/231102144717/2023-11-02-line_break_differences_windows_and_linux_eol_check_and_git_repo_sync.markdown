@@ -21,7 +21,6 @@ lang: es
 Si necesita modificar y confirmar archivos en un repositorio de Git tanto en Linux como en Windows, puede haber casos en los que el cliente Git reconozca el archivo como un archivo modificado en la etapa de confirmación de Git aunque el contenido claramente no haya sido modificado.  
 
 La causa del problema es que aunque el contenido del archivo es el mismo, la forma básica de expresar saltos de línea en Windows y Linux es diferente. En la imagen de abajo, la izquierda es un archivo modificado y guardado en Windows (PC), y la derecha es un archivo modificado y guardado en Linux (UNIX).  
-
 ![El mismo contenido de archivo pero archivos diferentes, a la izquierda está el formato de PC con Windows y a la derecha está el formato Linux UNIX](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)
 _El mismo contenido de archivo pero archivos diferentes, a la izquierda está el formato de PC con Windows y a la derecha está el formato Linux UNIX_
 
@@ -59,7 +58,6 @@ De hecho, puede resultar un poco confuso cuando se encuentra por primera vez con
 Usar el editor [Notepad++](https://notepad-plus-plus.org/downloads){:target="_blank"} puede ayudarle a crear archivos teniendo en cuenta el EOL.  
 
 Como se muestra en la imagen a continuación, puede verificar el estado actual de "Conversión EOL" en el editor Notepad ++ y realizar la conversión. El menú está en "Editar> Conversión EOL".  
-
 ![Notepad++ - Conversión EOL - `Editar > Conversión EOL > Windows (CR LF) o Unix (LF)`](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png)
 _Notepad++ - Conversión EOL - `Editar > Conversión EOL > Windows (CR LF) o Unix (LF)`_
 
@@ -118,7 +116,6 @@ Dado que el comando anterior es una configuración global de Git, si desea que l
 En otras palabras, la intención es subir archivos con un EOL en formato LF al servidor Git.  
 
 En un entorno Windows, puede acceder a Git Bash desde el menú después de hacer clic derecho.  
-
 ![Accediendo a Git Bash en Windows](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png)
 _Accediendo a Git Bash en Windows_
 

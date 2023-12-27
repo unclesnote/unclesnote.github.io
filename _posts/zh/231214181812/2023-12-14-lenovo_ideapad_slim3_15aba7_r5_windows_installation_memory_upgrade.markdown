@@ -22,7 +22,6 @@ lang: zh
 
 让我们了解一下安装 Windows 以及如何升级内存的基础知识。  
 ## 规格
-
 ![联想 Slim3 15ABA7 R5](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png)
 _联想 Slim3 15ABA7 R5_
 
@@ -34,7 +33,6 @@ _联想 Slim3 15ABA7 R5_
 
 可额外升级1个SATA硬盘和1个DDR4内存。  
 ## 准备 Windows USB 记忆棒
-
 ![Ventoy - www.ventoy.net - 全新的可启动 USB 解决方案](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png)
 _Ventoy - www.ventoy.net - 全新的可启动 USB 解决方案_
 
@@ -54,7 +52,6 @@ Lenovo驱动程序站点支持Windows 10和Windows 11的系统驱动程序，但
 打开联想Slim3 15ABA7 R5的显示屏。笔记本电脑将自动开机，按几次`F2`进入 BIOS 设置屏幕。  
 
 使用 Ventoy 启动时，会出现与安全验证相关的错误。为防止这种情况，请在`Security`菜单中将`Secure Boot`更改为`Disable`。将 U 盘插入笔记本电脑，保存 BIOS 设置并退出。  
-
 ![BIOS > 安全 > 安全启动 > 已禁用](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png)
 _BIOS > 安全 > 安全启动 > 已禁用_
 
@@ -65,7 +62,6 @@ _BIOS > 安全 > 安全启动 > 已禁用_
 从 Ventory 启动菜单中选择 Windows ISO 并安装 Windows。  
 
 **Lenovo Slim3 15ABA7 R5**在安装 Windows 11 时不会自动安装无线 LAN 驱动程序。因此，无法再继续进行`网络连接`设置阶段。  
-
 ![Windows 11 安装 - 无法继续进行`网络连接`设置](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png)
 _Windows 11 安装 - 无法继续进行`网络连接`设置_
 
@@ -84,34 +80,28 @@ Windows 安装完成后，安装保存在 U 盘上的无线 LAN 驱动程序。�
 如果商场里有时钟标为DDR4-3200或PC4-25600的内存，可以购买。  
 ## 安装内存升级
 将笔记本电脑正面朝下放在软布上，然后拧下背面的所有螺钉。  
-
 ![Lenovo Slim3 15ABA7 R5 - 后部 - 卸下螺丝](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png)
 _Lenovo Slim3 15ABA7 R5 - 后部 - 卸下螺丝_
 
 然后，将未使用的塑料卡插入右上角的缝隙中以打开后面板。然后，像打开一罐罐头食品一样，一点点转动打开后面板。如果塑料卡插入太深，可能会损坏笔记本电脑主板，因此请仅插入一点。  
-
 ![Lenovo Slim3 15ABA7 R5 - 打开后面板](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png)
 _Lenovo Slim3 15ABA7 R5 - 打开后面板_
 
 如上所述，可以额外升级1个SATA硬盘和1个DDR4内存。  
-
 ![联想 Slim3 15ABA7 R5 - 内部](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png)
 _联想 Slim3 15ABA7 R5 - 内部_
 
 与其他笔记本电脑不同，**Lenovo Slim3 15ABA7 R5**有内存插槽盖。撕掉盖子上的少量贴纸，然后向上提起盖子将其取下。  
-
 ![Lenovo Slim3 15ABA7 R5 - 内部 - 撕掉内存盖上的贴纸](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png)
 _Lenovo Slim3 15ABA7 R5 - 内部 - 撕掉内存盖上的贴纸_
 
 如果您已安装内存，请重新安装内存盖并贴上贴纸。  
-
 ![Lenovo Slim3 15ABA7 R5 - 内部 - 已安装内存](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png)
 _Lenovo Slim3 15ABA7 R5 - 内部 - 已安装内存_
 
 在关闭后面板之前，请确保笔记本电脑已打开并正常启动。如果由于内存接触不良而无法开机，则必须重新打开后面板，因此在不关闭后面板的情况下检查开机是否正常。  
 
 将烟盒之类的东西放在笔记本电脑的铰链上，以防止风扇旋转，然后打开笔记本电脑。如果内存无法正确识别或无法启动，请尝试拔出内存并重新安装。  
-
 ![Lenovo Slim3 15ABA7 R5 - 安全底部空间以检查新内存操作](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png)
 _Lenovo Slim3 15ABA7 R5 - 安全底部空间以检查新内存操作_
 
@@ -122,12 +112,10 @@ _Lenovo Slim3 15ABA7 R5 - 安全底部空间以检查新内存操作_
 在CPU-Z中，如果内存运行为[双通道](https://en.wikipedia.org/wiki/Multi-channel_memory_architecture){:target="_blank"}，通道通常显示为`Dual`，**Lenovo Slim3 15ABA7 R5**为显示为`2 x 64 位`。  
 
 我不确定这是一个错误还是最新版本的 CPU-Z 的差异。  
-
 ![Lenovo Slim3 15ABA7 R5 - CPU-Z - 内存](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png)
 _Lenovo Slim3 15ABA7 R5 - CPU-Z - 内存_
 
 但是，在 HWiNFO64 中，它正确显示为`双通道`。  
-
 ![Lenovo Slim3 15ABA7 R5 - HWiNFO64 - 系统摘要 - 内存](/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png)
 _Lenovo Slim3 15ABA7 R5 - HWiNFO64 - 系统摘要 - 内存_
 

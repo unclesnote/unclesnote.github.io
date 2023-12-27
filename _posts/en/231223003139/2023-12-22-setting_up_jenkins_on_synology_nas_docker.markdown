@@ -4,8 +4,8 @@ image:
   path: /assets/images/231223003139/en-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png
   alt: Setting up Jenkins on Synology NAS Docker
 images: ["/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png", "/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png"]
-categories: [Ubuntu, Jenkins, Settings]
-tags: [Ubuntu, Docker, Jenkins, Settings]
+categories: [Ubuntu, Jenkins]
+tags: [Ubuntu, Docker, Jenkins]
 description:  There are many CI/CD(Continuous Integration/Continuous Deployment) tools, and Jenkins is one of the useful tools that does not have license restrictions and
 public: true
 toc: true
@@ -91,7 +91,6 @@ HTTP_PORT=8080
 ```
 ## Configure Synology NAS container port and run Jenkins
 Afterwards, stop the Ubuntu container in the Synology NAS GUI and set the port for external connection to Jenkins. I mapped the container's `8080` port to `48080` port.  
-
 ![Synology NAS GUI - Docker - Jenkins Port Settings](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png)
 _Synology NAS GUI - Docker - Jenkins Port Settings_
 
@@ -103,7 +102,6 @@ service jenkins restart
 ```
 Then, connect to Jenkins using a web browser. In my case, the IP address assigned to Synology NAS was `192.168.0.50` and the port was `48080` set above.  
 - http://192.168.0.50:48080/
-
 
 ![Jenkins - Getting Started](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png)
 _Jenkins - Getting Started_

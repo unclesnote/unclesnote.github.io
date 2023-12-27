@@ -94,7 +94,6 @@ And add the line below. If it is already set, you do not need to add it.
 ```
 ## Reboot
 Reboot first. After rebooting, you can check the swap file generated above on the system monitor.  
-
 ![`Applications` Menu > System Monitor](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)
 _`Applications` Menu > System Monitor_
 

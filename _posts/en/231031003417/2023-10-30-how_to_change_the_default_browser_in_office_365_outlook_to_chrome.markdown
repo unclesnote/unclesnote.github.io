@@ -25,12 +25,10 @@ In a recent update, Microsoft reset the default browser in Outlook to Edge brows
 Maybe, if you're a Chrome user, you've already set Google Chrome as your default web browser. Make sure you have the default browser settings for Office 365.  
 
 Open `Windows Settings` using the `CTRL + I` shortcut. Then, enter the `default` keyword to find and select `Default apps`.  
-
 ![Windows Settings - Search `default`](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png)
 _Windows Settings - Search `default`_
 
 Then, in `the Default apps` tab, select `Google Chrome` browser in the `Web browser` section.  
-
 ![Settings > Default apps > Select `Google Chrome` on web browser](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png)
 _Settings > Default apps > Select `Google Chrome` on web browser_
 
@@ -38,12 +36,10 @@ _Settings > Default apps > Select `Google Chrome` on web browser_
 Shall we go back to Office 365 Outlook?  
 
 In Outlook, use the `ALT + F` shortcut to view the left menu bar and select `Options`.  
-
 ![Office 365 Outlook - Options](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png)
 _Office 365 Outlook - Options_
 
 Select the `Advanced` tab. In the `File and browser preferences` section, change the browser you want to open the hyperlink to `Default Browser`. Then press `OK`. In the first section we set the Windows default browser to Chrome, so the default browser here is Chrome.  
-
 ![Office 365 Outlook - Options > Advanced > Select `Default Browser` in File and browser preferences](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png)
 _Office 365 Outlook - Options > Advanced > Select `Default Browser` in File and browser preferences_
 

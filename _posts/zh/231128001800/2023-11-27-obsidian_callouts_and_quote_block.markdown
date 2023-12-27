@@ -31,7 +31,6 @@ lang: zh
 > 
 ```
 下面是基于 Obsidian 基本主题的报价块的形状。  
-
 ![黑曜石 - 报价块](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)
 _黑曜石 - 报价块_
 
@@ -45,7 +44,6 @@ _黑曜石 - 报价块_
 > 
 ```
 下面是黑曜石基本主题中的提示类型标注块。  
-
 ![黑曜石 - 标注块](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)
 _黑曜石 - 标注块_
 
@@ -60,7 +58,6 @@ _黑曜石 - 标注块_
 此外，标注的优点在于它们具有折叠功能。对于 Obsidian，标题可以折叠，但是**这与标注块之间的区别在于可以指定初始值**。  
 
 有时，您可以在标注块中表达要强调的内容或添加附加注释，但如果内容很长，您可能希望将其最初关闭。  
-
 ![黑曜石 - 标注块的折叠](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)
 _黑曜石 - 标注块的折叠_
 
@@ -74,7 +71,6 @@ _黑曜石 - 标注块的折叠_
 Obsidian 中预定义标注块的颜色和图标如下。  
 
 您可以通过在标注类型中写入您喜欢的文本来更改标注的外观。  
-
 ![Obsidian - 标注预定义类型](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)
 _Obsidian - 标注预定义类型_
 

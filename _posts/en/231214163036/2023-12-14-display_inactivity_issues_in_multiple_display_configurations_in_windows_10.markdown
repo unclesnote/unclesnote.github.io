@@ -25,7 +25,6 @@ My guess is that Windows manages the display configuration suitable for each env
 The method I found to solve this problem is to delete and initialize the Windows display configuration registry value. In conclusion, you need to set up the multi-display environment again. I will explain how.  
 ## 1. Open Windows Registry Editor
 Enter `regedit` through the Run dialog with `Windows + R` or search for `regedit.exe` in Start menu to run `Registry Editor`.  
-
 ![Windows + R > Enter `regedit`](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png)
 _Windows + R > Enter `regedit`_
 
@@ -38,7 +37,6 @@ Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
 Remove the following two folders in the `GraphicsDrivers` folder from the right-click menu.  
 - Configuration
 - Connectivity
-
 
 ![Registry Editor - Remove the `Configuration` and `Connectivity` folders in the `GraphicsDrivers` folder](/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png)
 _Registry Editor - Remove the `Configuration` and `Connectivity` folders in the `GraphicsDrivers` folder_

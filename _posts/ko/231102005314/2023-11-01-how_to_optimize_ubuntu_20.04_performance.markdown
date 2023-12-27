@@ -42,12 +42,10 @@ true
 제한된 해상도 디스플레이를 사용하는 경우 Dock의 기본 아이콘 크기로 인해 많은 아이콘을 한 번에 등록하고 탐색하는 데 제한이 있을 수 있습니다. 따라서 Dock 아이콘 크기를 작게 설정할 수 있습니다.  
 
 먼저 `애플리케이션 메뉴`에서 도크를 검색하고 `모양` 설정을 엽니다.  
-
 ![Dock 아이콘 크기 - 애플리케이션 메뉴 > `dock` 검색 > 모양 설정](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png)
 _Dock 아이콘 크기 - 애플리케이션 메뉴 > `dock` 검색 > 모양 설정_
 
 그런 다음 `아이콘 크기`를 줄이고 자신에게 보기 좋은 크기로 설정하세요.  
-
 ![Dock 아이콘 크기 - 설정 > 모양 > `아이콘 크기` 크기 조정](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png)
 _Dock 아이콘 크기 - 설정 > 모양 > `아이콘 크기` 크기 조정_
 
@@ -59,19 +57,16 @@ Virtual Box에 설치된 Ubuntu를 사용하는 경우 Windows 컴퓨터와 공�
 
 ## 디스크 여유 공간 확보
 가상 머신이 설치된 Ubuntu를 사용 중이고 이미지 크기가 충분하지 않은 경우 아래와 같은 경고 팝업이 나타날 수 있습니다. 이는 임시 파일이나 로그 파일로 시스템에 누적되는 경우 발생할 수 있습니다. 여유 공간이 0으로 수렴되면 Ubuntu VM이 부팅되지 않을 수 있습니다.  
-
 ![파일 시스템 루트의 디스크 공간 부족에 대한 경고 팝업](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png)
 _파일 시스템 루트의 디스크 공간 부족에 대한 경고 팝업_
 
 임시 파일이나 시스템 로그 파일을 수동으로 삭제할 수도 있지만, [BleachBit](https://www.bleachbit.org/features){:target="_blank"} 애플리케이션을 이용하면 GUI 환경에서 보다 쉽게 ​​관리할 수 있습니다.  
 
 Ubuntu 소프트웨어 애플리케이션에서 `bleachbit`을 검색하여 쉽게 설치할 수 있습니다.  
-
 ![우분투 소프트웨어 - BleachBit](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png)
 _우분투 소프트웨어 - BleachBit_
 
 정리하고 싶은 항목을 체크한 후 `Clean` 버튼을 누르면 불필요한 파일이 자동으로 삭제되어 여유공간을 확보해줍니다. 그러나 `APT`와 `저널` 항목을 정리할 때는 주의해야 합니다. 이로 인해 Ubuntu 시스템이나 패키지 종속성이 손상될 수 있습니다.  
-
 ![블리치비트](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png)
 _블리치비트_
 

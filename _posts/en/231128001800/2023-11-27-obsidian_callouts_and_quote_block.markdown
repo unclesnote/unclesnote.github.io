@@ -31,7 +31,6 @@ A **quotation block**lists sentences starting with `>` on each line.
 > 
 ```
 Below is the shape of the quotation block based on Obsidian's basic theme.  
-
 ![Obsidian - Quotation Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)
 _Obsidian - Quotation Block_
 
@@ -45,7 +44,6 @@ Like a quotation block, a **callouts block**is a set of lines that start with `>
 > 
 ```
 Below is a tip type callouts block in the Obsidian basic theme.  
-
 ![Obsidian - Callouts Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)
 _Obsidian - Callouts Block_
 
@@ -60,7 +58,6 @@ Above, it was explained that the callouts block can have additional icons and ti
 Additionally, the strength of callouts is that they have a folding function. In the case of Obsidian, headings can be folded, but **the difference between this and a callouts block is that the initial value can be specified**.  
 
 Sometimes, you can express content you want to emphasize or add additional notes to in a callouts block, but if the content is long, you may want to leave it initially closed.  
-
 ![Obsidian - Folding of Callouts Block](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)
 _Obsidian - Folding of Callouts Block_
 
@@ -74,7 +71,6 @@ You can create a callouts block with an initial value of closed by adding a hyph
 The colors and icons of the predefined callouts blocks in Obsidian are as follows.  
 
 You can change the look of the callouts by writing the text you like in the callouts type.  
-
 ![Obsidian - Callouts Predefined Types](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)
 _Obsidian - Callouts Predefined Types_
 

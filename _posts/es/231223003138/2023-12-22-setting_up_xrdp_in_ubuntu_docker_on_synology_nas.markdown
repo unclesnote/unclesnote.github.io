@@ -66,18 +66,15 @@ docker run -d -it --name cond-xrdp-lubuntu -p 3389:3389 img-xrdp-lubuntu
 ```
 ### Configuración de reenvío de puertos en VirtualBox
 Si desea acceder a XRDP desde fuera de la máquina virtual al contenedor Docker de la VM de Ubuntu, debe configurar el reenvío de puertos en la VM de Ubuntu. Cuando intenta conectarse al puerto `43389` usando el protocolo RDP, esto se asigna al puerto `3389` dentro de la VM de Ubuntu.  
-
 ![Configuración de reenvío de puertos de VirtualBox para conexión XRDP](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png)
 _Configuración de reenvío de puertos de VirtualBox para conexión XRDP_
 
 ### Acceso remoto XRDP
 Luego, conéctese a la dirección `127.0.0.1:43389` a través de una conexión de escritorio remoto.  
-
 ![Conexión de escritorio remoto](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png)
 _Conexión de escritorio remoto_
 
 Luego, se abrirá la ventana de inicio de sesión de XRDP, ingrese el "nombre de usuario" y la "contraseña" a continuación.  
-
 ![Pantalla de inicio de sesión de Ubuntu XRDP](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _Pantalla de inicio de sesión de Ubuntu XRDP_
 
@@ -87,12 +84,10 @@ _Pantalla de inicio de sesión de Ubuntu XRDP_
 ## Contenedor Docker XRDP en Synology NAS
 ### Instalación del paquete Docker y configuración del puerto del contenedor
 Acceda a la GUI de Synology NAS. Luego busque `Docker` en el Centro de paquetes e instálelo.  
-
 ![GUI de Synology NAS - Centro de paquetes - Docker](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png)
 _GUI de Synology NAS - Centro de paquetes - Docker_
 
 Descargué la imagen de Docker `ubuntu:20.04` y creé un contenedor basado en esa imagen. Y en la configuración del puerto del contenedor, se abrieron el puerto `422` para ssh y el puerto `43389` para XRDP.  
-
 ![GUI de Synology NAS - Contenedor Ubuntu - Configuración de puertos](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png)
 _GUI de Synology NAS - Contenedor Ubuntu - Configuración de puertos_
 
@@ -141,12 +136,10 @@ service xrdp start
 ```
 ### Acceso remoto XRDP
 Conéctese a XRDP utilizando la dirección IP asignada a su Synology NAS y conéctese al puerto `43389` configurado anteriormente.  
-
 ![MobaXterm - Sesión RDP](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png)
 _MobaXterm - Sesión RDP_
 
 Luego, se abrirá la ventana de inicio de sesión de XRDP, ingrese el "nombre de usuario" y la "contraseña" a continuación.  
-
 ![Pantalla de inicio de sesión de Ubuntu XRDP](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _Pantalla de inicio de sesión de Ubuntu XRDP_
 

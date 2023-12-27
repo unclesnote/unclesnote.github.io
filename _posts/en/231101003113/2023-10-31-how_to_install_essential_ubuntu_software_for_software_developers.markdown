@@ -20,7 +20,6 @@ lang: en
 ---
 If you are a software developer, and your development environment is Ubuntu, we will explain how to install the essential Ubuntu software you need to install.  
 ## Visual Studio Code
-
 ![Visual Studio Code](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
 _Visual Studio Code_
 
@@ -51,7 +50,6 @@ You can install the extension for remote access to VS Code via SSH using the com
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub Desktop
-
 ![GitHub Desktop](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
 _GitHub Desktop_
 
@@ -65,7 +63,6 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## Beyond Compare 4
-
 ![Beyond Compare 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
 _Beyond Compare 4_
 
@@ -101,7 +98,6 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 If you do not have a license key, you may need to perform the reset process again when the evaluation period ends. So, I recommend saving and using the workspace and exporting the settings every time it is updated and saving it as a file.  
 ## Database
 ### DB Browser for SQLite
-
 ![DB Browser for SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
 _DB Browser for SQLite_
 

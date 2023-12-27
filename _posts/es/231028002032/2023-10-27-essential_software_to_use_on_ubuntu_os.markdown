@@ -19,14 +19,12 @@ ro_ref: 231028002032/essential_software_to_use_on_ubuntu_os
 lang: es
 ---
 Si está utilizando Ubuntu debido a las ventajas específicas del sistema operativo Ubuntu, intentará encontrar software similar disponible en el entorno Ubuntu que utilizó en el entorno Windows. Por lo tanto, presentaré algún software que generalmente es bueno para usar cuando se usa Ubuntu, como un explorador de archivos, un visor/editor de imágenes y herramientas de productividad.  
-
 ![Software de Ubuntu](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg)
 _Software de Ubuntu_
 
 ## Explorador de archivos
 ### Krusader
 Si tiene experiencia usando Q-Dir o [Total Commander](https://www.ghisler.com/download.htm){:target="_blank"} en un entorno Windows, [Krusader](https://krusader.org){:target="_blank"} ofrece la experiencia de dividir Windows y exploración de archivos con varias pestañas.  
-
 ![Krusader](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png)
 _Krusader_
 
@@ -39,14 +37,12 @@ sudo apt install krusader
 ## Visor/Editor de imágenes
 ### GwenVer
 [GwenView](https://github.com/KDE/gwenview){:target="_blank"} es el mejor visor de imágenes de Ubuntu que he usado. Actualizaré si encuentro un visor de imágenes mejor.  
-
 ![GwenVer](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png)
 _GwenVer_
 
 Sin embargo, si actualiza archivos de imagen con frecuencia, a veces la apariencia de la miniatura en la lista de GwenView y la imagen real pueden diferir. Por lo tanto, se recomienda desactivar el uso del caché de miniaturas.  
 
 En `Configuración > Configurar Gwenview > Avanzado`, marque `Modo de uso de recursos bajos`.  
-
 ![GwenView: marque `Modo de uso de recursos bajos` para deshabilitar el caché de miniaturas](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png)
 _GwenView: marque `Modo de uso de recursos bajos` para deshabilitar el caché de miniaturas_
 
@@ -57,20 +53,17 @@ sudo apt install gwenview -y
 ```
 ### Fotopea
 Para quienes estén familiarizados con Photoshop, la mejor alternativa parece ser [Photopia](https://www.photopea.com){:target="_blank"}. Photopia es una aplicación web que proporciona una interfaz muy similar a Photoshop.  
-
 ![Fotopea - www.photopea.com](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png)
 _Fotopea - www.photopea.com_
 
 Hay sitios web similares a Photopia, pero la ventaja de Photopia es que permite a los bloqueadores de anuncios bloquear anuncios en la web, que es su modelo de ingresos. Si es usuario del navegador Chrome, busque "AdBlock" en la tienda web e instálelo.  
 
 Incluso si no se utiliza "AdBlock", los anuncios se muestran en una cantidad limitada en el panel derecho en comparación con otros sitios, por lo que no es demasiado molesto.  
-
 ![Photopea: anuncios limitados en el panel derecho y extensión AdBlock en el navegador web Chrome](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png)
 _Photopea: anuncios limitados en el panel derecho y extensión AdBlock en el navegador web Chrome_
 
 ### crita
 Si buscas un editor de imágenes sin conexión que sea diferente a Photopia, Krita puede ser una alternativa. Sin embargo, los usuarios que están muy familiarizados con Photoshop pueden sentirse poco familiarizados. La interfaz GUI es similar a Photoshop, pero los accesos directos y las herramientas difieren en muchos aspectos.  
-
 ![crita](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png)
 _crita_
 
@@ -78,7 +71,6 @@ Aunque no es del todo parecido a Photoshop, si quieres editar o dibujar imágene
 
 Krita distribuye software en forma de imágenes de aplicaciones. Visite el sitio de Krita a continuación y descargue la imagen de la aplicación para Linux.  
 - [https://krita.org/en/download/krita-desktop](https://krita.org/en/download/krita-desktop)
-
 
 ![Krita - Descargar la aplicación Linux](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png)
 _Krita - Descargar la aplicación Linux_
@@ -98,12 +90,10 @@ Si desea dibujar un gesto con el "botón derecho del mouse", necesita la configu
 En la pestaña Preferencias de Easystroke, configure Comportamiento en "Botón 3" y configúrelo para que se ejecute automáticamente en Apariencia.  
 
 Las acciones de gestos del mouse se pueden agregar en la pestaña "Acciones".  
-
 ![Easystroke - Preferencias](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png)
 _Easystroke - Preferencias_
 
 Puede instalarlo fácilmente buscándolo en la aplicación de software de Ubuntu.  
-
 ![Easystroke - Descargar en software Ubuntu](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png)
 _Easystroke - Descargar en software Ubuntu_
 
@@ -121,12 +111,10 @@ A continuación se muestran algunas teclas de método abreviado que estoy usando
 [BleachBit](https://www.bleachbit.org/features){:target="_blank"} es un software útil para liberar espacio eliminando archivos innecesarios. Además de Linux, es compatible con varios sistemas operativos como Windows y Mac OS.  
 
 Puede instalarlo fácilmente buscando "bleachbit" en la aplicación de software de Ubuntu.  
-
 ![Software Ubuntu-BleachBit](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png)
 _Software Ubuntu-BleachBit_
 
 Después de verificar los elementos que desea organizar, presionar el botón "Limpiar" elimina automáticamente los archivos innecesarios para asegurar espacio libre. Sin embargo, debe tener cuidado al organizar los elementos "APT" y "diario". Esto puede romper su sistema Ubuntu o las dependencias de paquetes.  
-
 ![BleachBit](/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png)
 _BleachBit_
 

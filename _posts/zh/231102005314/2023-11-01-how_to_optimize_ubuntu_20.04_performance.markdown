@@ -42,12 +42,10 @@ true
 如果您使用的显示器分辨率有限，则 Dock 的默认图标大小可能会限制同时注册和导航多个图标。因此，您可以将 Dock 图标尺寸设置得较小。  
 
 首先，在`应用程序菜单`中搜索dock并打开`外观`设置。  
-
 ![Dock 图标大小 - 应用程序菜单 > 搜索`dock` > 外观设置](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png)
 _Dock 图标大小 - 应用程序菜单 > 搜索`dock` > 外观设置_
 
 然后减小`图标大小`并将其设置为适合您的大小。  
-
 ![Dock 图标大小 - 设置 > 外观 > 调整`图标大小`](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png)
 _Dock 图标大小 - 设置 > 外观 > 调整`图标大小`_
 
@@ -59,19 +57,16 @@ _Dock 图标大小 - 设置 > 外观 > 调整`图标大小`_
 
 ## 确保磁盘上的可用空间
 如果您使用的是安装了虚拟机的 Ubuntu，并且映像大小不够大，您可能会看到如下所示的警告弹出窗口。如果它在系统中累积在临时文件或日志文件中，则可能会发生这种情况。如果可用空间收敛为零，您的 Ubuntu VM 可能无法启动。  
-
 ![文件系统根目录上磁盘空间不足的警告弹出窗口](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png)
 _文件系统根目录上磁盘空间不足的警告弹出窗口_
 
 虽然您可以手动删除临时文件或系统日志文件，但您可以使用 [BleachBit](https://www.bleachbit.org/features){:target="_blank"} 应用程序在 GUI 环境中更轻松地管理它们。  
 
 您可以通过在 Ubuntu 软件应用程序中搜索`bleachbit`轻松安装它。  
-
 ![Ubuntu 软件 - BleachBit](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png)
 _Ubuntu 软件 - BleachBit_
 
 检查要整理的项目后，按`清理`按钮会自动删除不需要的文件以确保可用空间。但是，在组织`APT`和`journald`项目时必须小心。这可能会破坏您的 Ubuntu 系统或软件包的依赖关系。  
-
 ![漂白位](/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png)
 _漂白位_
 
