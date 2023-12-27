@@ -31,6 +31,7 @@ lang: zh
 - ☑ **自动挂载** : 开机时自动挂载共享文件夹
 - ☑ **Make Permanent**：如果您在 Ubuntu VM 运行时输入当前设置，则会出现此项目。如果您想要永久设置，请选中它。
 
+
 ![Oracle VM VirtualBox - 添加共享文件夹](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png)
 _Oracle VM VirtualBox - 添加共享文件夹_
 
@@ -61,6 +62,7 @@ sudo gpasswd -a pooh vboxsf
 Ubuntu VM 重启完成后，我们来进行测试。  
 
 让我们在 Ubuntu VM 的共享文件夹中使用`touch`命令创建一个`test.txt`文件。您可以看到 Windows 共享文件夹中创建的`test.txt`文件吗？  
+
 ![在 Ubuntu VM 中使用 `touch` 命令创建一个 `test.txt` 文件，并在 Windows 中检查它。](/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png)
 _在 Ubuntu VM 中使用 `touch` 命令创建一个 `test.txt` 文件，并在 Windows 中检查它。_
 

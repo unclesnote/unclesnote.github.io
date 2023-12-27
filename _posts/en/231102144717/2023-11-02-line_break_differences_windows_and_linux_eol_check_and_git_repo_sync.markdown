@@ -21,6 +21,7 @@ lang: en
 If you need to modify and commit files in one Git repo on both Linux and Windows, there may be cases where the Git client recognizes the file as a modified file at the Git commit stage even though the content has clearly not been modified.  
 
 The cause of the problem is that although the file contents are the same, the basic way of expressing line breaks in Windows and Linux is different. In the picture below, the left is a file modified and saved in Windows (PC), and the right is a file modified and saved in Linux (UNIX).  
+
 ![Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)
 _Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format_
 
@@ -58,6 +59,7 @@ In fact, it can be a little confusing when you first encounter the differences i
 Using the [Notepad++](https://notepad-plus-plus.org/downloads){:target="_blank"} editor can help you create files with EOL in mind.  
 
 As shown in the picture below, you can check the current `EOL Conversion` status in Notepad++ editor and convert. The menu is in `Edit > EOL Conversion`.  
+
 ![Notepad++ - EOL Conversion - `Edit > EOL Conversion > Windows (CR LF) Or Unix (LF)`](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png)
 _Notepad++ - EOL Conversion - `Edit > EOL Conversion > Windows (CR LF) Or Unix (LF)`_
 
@@ -116,6 +118,7 @@ Since the above command is a global Git setting, if you want the EOL settings to
 In other words, the intention is to upload files with an EOL in LF format to the Git server.  
 
 In a Windows environment, you can access Git Bash from the menu after right-clicking.  
+
 ![Accessing Git Bash on Windows](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png)
 _Accessing Git Bash on Windows_
 

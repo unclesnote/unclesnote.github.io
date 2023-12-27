@@ -60,6 +60,7 @@ Virtual Box 관리자의 Ubuntu VM 네트워크 설정에서 다음을 입력하
 - **Guest IP** : 10.0.2.15 (위에서 확인한 Ubuntu VM의 IP 주소)
 - **게스트 포트** : 4000
 
+
 ![VirtualBox Manager - 포트 전달 규칙](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)
 _VirtualBox Manager - 포트 전달 규칙_
 

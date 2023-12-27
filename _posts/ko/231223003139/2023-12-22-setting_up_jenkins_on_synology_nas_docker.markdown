@@ -4,8 +4,8 @@ image:
   path: /assets/images/231223003139/ko-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png
   alt: Synology NAS Docker에서 Jenkins 설정
 images: ["/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png", "/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png"]
-categories: [우분투, 젠킨스]
-tags: [우분투, 도커, 젠킨스]
+categories: [우분투, 젠킨스, 설정]
+tags: [우분투, 도커, 젠킨스, 설정]
 description:  CI/CD(지속적 통합/지속적 배포) 도구가 많이 있는데, Jenkins는 라이선스 제한이 없고 오픈 소스도 없는 유용한 도구 중 하나입니다. Synology NAS Docker에 Jenkins를 설치하는 방법에 대해 이야기하고 싶습니다.
 public: true
 toc: true
@@ -91,6 +91,7 @@ HTTP_PORT=8080
 ```
 ## Synology NAS 컨테이너 포트 구성 및 Jenkins 실행
 그런 다음 Synology NAS GUI에서 Ubuntu 컨테이너를 중지하고 외부 연결용 포트를 Jenkins로 설정합니다. 컨테이너의 `8080` 포트를 `48080` 포트에 매핑했습니다.  
+
 ![Synology NAS GUI - Docker - Jenkins 포트 설정](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png)
 _Synology NAS GUI - Docker - Jenkins 포트 설정_
 
@@ -102,6 +103,7 @@ service jenkins restart
 ```
 그런 다음 웹 브라우저를 사용하여 Jenkins에 연결합니다. 저의 경우 Synology NAS에 할당된 IP 주소는 `192.168.0.50`이고 포트는 위에서 설정한 `48080`이었습니다.  
 - http://192.168.0.50:48080/
+
 
 ![젠킨스 - 시작하기](/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png)
 _젠킨스 - 시작하기_

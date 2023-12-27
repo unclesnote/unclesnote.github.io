@@ -94,6 +94,7 @@ Y agregue la línea a continuación. Si ya está configurado, no es necesario ag
 ```
 ## Reiniciar
 Reinicie primero. Después de reiniciar, puede verificar el archivo de intercambio generado anteriormente en el monitor del sistema.  
+
 ![Menú `Aplicaciones` > Monitor del sistema](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)
 _Menú `Aplicaciones` > Monitor del sistema_
 

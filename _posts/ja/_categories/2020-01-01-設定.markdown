@@ -1,0 +1,8 @@
+---
+title: "設定"
+layout: category
+ro_ref: ja-category-設定
+category: "設定"
+category_web: "設定"
+lang: ja
+---

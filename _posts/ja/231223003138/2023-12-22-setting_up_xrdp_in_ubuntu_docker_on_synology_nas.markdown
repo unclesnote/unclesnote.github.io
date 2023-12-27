@@ -66,15 +66,18 @@ docker run -d -it --name cond-xrdp-lubuntu -p 3389:3389 img-xrdp-lubuntu
 ```
 ### VirtualBox のポート転送設定
 仮想マシンの外部から Ubuntu VM の Docker コンテナに XRDP にアクセスする場合は、Ubuntu VM でポート転送を設定する必要があります。 RDP プロトコルを使用してポート`43389`に接続しようとすると、これは Ubuntu VM 内のポート`3389`にマッピングされます。  
+
 ![XRDP 接続用の VirtualBox ポート転送設定](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png)
 _XRDP 接続用の VirtualBox ポート転送設定_
 
 ### XRDPリモートアクセス
 次に、リモート デスクトップ接続を通じてアドレス`127.0.0.1:43389`に接続します。  
+
 ![リモートデスクトップ接続](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png)
 _リモートデスクトップ接続_
 
 その後、XRDP ログイン ウィンドウが開きます。以下に`ユーザー名`と`パスワード`を入力します。  
+
 ![Ubuntu XRDP ログイン画面](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _Ubuntu XRDP ログイン画面_
 
@@ -84,10 +87,12 @@ _Ubuntu XRDP ログイン画面_
 ## Synology NAS 上の XRDP Docker コンテナ
 ### Docker パッケージのインストールとコンテナーのポート設定
 Synology NAS GUI にアクセスします。次に、パッケージ センターで`Docker`を検索し、インストールします。  
+
 ![Synology NAS GUI - パッケージ センター - Docker](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png)
 _Synology NAS GUI - パッケージ センター - Docker_
 
 `ubuntu:20.04`Docker イメージをダウンロードし、そのイメージに基づいてコンテナーを作成しました。また、コンテナのポート設定では、ssh 用のポート `422` と XRDP 用のポート `43389` が開かれました。  
+
 ![Synology NAS GUI - Ubuntu コンテナ - ポート設定](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png)
 _Synology NAS GUI - Ubuntu コンテナ - ポート設定_
 
@@ -136,10 +141,12 @@ service xrdp start
 ```
 ### XRDPリモートアクセス
 Synology NAS に割り当てられた IP アドレスを使用して XRDP に接続し、上記で設定した`43389`ポートに接続します。  
+
 ![MobaXterm - RDP セッション](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png)
 _MobaXterm - RDP セッション_
 
 その後、XRDP ログイン ウィンドウが開きます。以下に`ユーザー名`と`パスワード`を入力します。  
+
 ![Ubuntu XRDP ログイン画面](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _Ubuntu XRDP ログイン画面_
 

@@ -1,0 +1,8 @@
+---
+title: "Ajustes"
+layout: tag
+ro_ref: es-tag-Ajustes
+tag: "Ajustes"
+tag_web: "ajustes"
+lang: es
+---

@@ -25,10 +25,12 @@ Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブ�
 Chrome ユーザーであれば、すでに Google Chrome をデフォルトの Web ブラウザとして設定しているかもしれません。 Office 365 のデフォルトのブラウザー設定があることを確認してください。  
 
 `CTRL + I`ショートカットを使用して`Windows 設定`を開きます。次に、`default`キーワードを入力して`Default apps`を検索し、選択します。  
+
 ![Windows 設定 - `デフォルト`を検索](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png)
 _Windows 設定 - `デフォルト`を検索_
 
 次に、`デフォルトのアプリ`タブの`Web ブラウザ`セクションで`Google Chrome`ブラウザを選択します。  
+
 ![設定 > デフォルトのアプリ > Web ブラウザーで`Google Chrome`を選択](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png)
 _設定 > デフォルトのアプリ > Web ブラウザーで`Google Chrome`を選択_
 
@@ -36,10 +38,12 @@ _設定 > デフォルトのアプリ > Web ブラウザーで`Google Chrome`を
 Office 365 Outlook に戻りましょうか?  
 
 Outlook では、`ALT + F`ショートカットを使用して左側のメニュー バーを表示し、`オプション`を選択します。  
+
 ![Office 365 Outlook - オプション](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png)
 _Office 365 Outlook - オプション_
 
 `詳細`タブを選択します。 `ファイルとブラウザの設定`セクションで、ハイパーリンクを開くブラウザを`デフォルトのブラウザ`に変更します。次に`OK`を押します。最初のセクションでは Windows のデフォルトのブラウザを Chrome に設定したため、ここでのデフォルトのブラウザは Chrome です。  
+
 ![Office 365 Outlook - [オプション] > [詳細設定] > [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。](/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png)
 _Office 365 Outlook - [オプション] > [詳細設定] > [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。_
 

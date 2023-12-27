@@ -20,6 +20,7 @@ lang: zh
 ---
 如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。  
 ## 视觉工作室代码
+
 ![视觉工作室代码](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
 _视觉工作室代码_
 
@@ -50,6 +51,7 @@ sudo apt install code
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## GitHub 桌面版
+
 ![GitHub 桌面版](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
 _GitHub 桌面版_
 
@@ -63,6 +65,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## 超越比较4
+
 ![超越比较4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
 _超越比较4_
 
@@ -98,6 +101,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 如果您没有许可证密钥，则可能需要在评估期结束时再次执行重置过程。因此，我建议保存并使用工作区，并在每次更新时导出设置并将其保存为文件。  
 ## 数据库
 ### SQLite 数据库浏览器
+
 ![SQLite 数据库浏览器](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
 _SQLite 数据库浏览器_
 

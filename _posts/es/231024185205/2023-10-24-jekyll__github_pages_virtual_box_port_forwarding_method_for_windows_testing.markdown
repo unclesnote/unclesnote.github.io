@@ -60,6 +60,7 @@ La dirección "IP invitada" es la dirección IP confirmada en la máquina virtua
 - **IP de invitado**: 10.0.2.15 (dirección IP de la VM de Ubuntu confirmada anteriormente)
 - **Puerto de invitados**: 4000
 
+
 ![VirtualBox Manager - Reglas de reenvío de puertos](/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png)
 _VirtualBox Manager - Reglas de reenvío de puertos_
 

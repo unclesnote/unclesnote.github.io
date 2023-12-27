@@ -21,6 +21,7 @@ lang: ko
 Linux와 Windows 모두에서 하나의 Git 저장소에 있는 파일을 수정하고 커밋해야 하는 경우, 콘텐츠가 명확하게 수정되지 않았음에도 Git 클라이언트가 Git 커밋 단계에서 해당 파일을 수정된 파일로 인식하는 경우가 있습니다.  
 
 문제의 원인은 파일 내용은 동일하더라도 Windows와 Linux에서 줄바꿈을 표현하는 기본 방식이 다르기 때문입니다. 아래 사진에서 왼쪽은 윈도우(PC)에서 수정하여 저장한 파일이고, 오른쪽은 리눅스(UNIX)에서 수정하여 저장한 파일이다.  
+
 ![파일 내용은 같지만 파일이 다릅니다. 왼쪽이 Windows PC 형식, 오른쪽이 Linux UNIX 형식입니다.](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png)
 _파일 내용은 같지만 파일이 다릅니다. 왼쪽이 Windows PC 형식, 오른쪽이 Linux UNIX 형식입니다._
 
@@ -58,6 +59,7 @@ Linux에서 Windows로 작성된 bash 스크립트를 실행하면 디버깅 중
 [Notepad++](https://notepad-plus-plus.org/downloads){:target="_blank"} 편집기를 사용하면 EOL을 염두에 두고 파일을 생성하는 데 도움이 될 수 있습니다.  
 
 아래 그림과 같이 Notepad++ 편집기에서 현재 `EOL Conversion` 상태를 확인하고 변환할 수 있습니다. 메뉴는 `편집 > EOL 변환`에 있습니다.  
+
 ![Notepad++ - EOL 변환 - `편집 > EOL 변환 > Windows(CR LF) 또는 Unix(LF)`](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png)
 _Notepad++ - EOL 변환 - `편집 > EOL 변환 > Windows(CR LF) 또는 Unix(LF)`_
 
@@ -116,6 +118,7 @@ git config --global core.autocrlf true
 즉, LF 형식의 EOL이 포함된 파일을 Git 서버에 업로드하려는 의도입니다.  
 
 Windows 환경에서는 마우스 오른쪽 버튼 클릭 후 메뉴에서 Git Bash에 접근할 수 있습니다.  
+
 ![Windows에서 Git Bash에 액세스하기](/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png)
 _Windows에서 Git Bash에 액세스하기_
 

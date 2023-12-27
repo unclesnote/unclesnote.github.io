@@ -94,6 +94,7 @@ sudo vi /etc/fstab
 ```
 ## リブート
 まず再起動してください。再起動後、上記で生成されたスワップファイルをシステムモニターで確認できます。  
+
 ![`アプリケーション`メニュー > システムモニター](/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png)
 _`アプリケーション`メニュー > システムモニター_
 

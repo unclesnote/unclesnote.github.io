@@ -66,15 +66,18 @@ docker run -d -it --name cond-xrdp-lubuntu -p 3389:3389 img-xrdp-lubuntu
 ```
 ### VirtualBox의 포트 전달 설정
 가상 머신 외부에서 Ubuntu VM의 Docker 컨테이너로 XRDP에 액세스하려면 Ubuntu VM에서 포트 전달을 설정해야 합니다. RDP 프로토콜을 사용하여 `43389` 포트에 연결하려고 하면 Ubuntu VM 내부의 `3389` 포트에 매핑됩니다.  
+
 ![XRDP 연결을 위한 VirtualBox 포트 전달 설정](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png)
 _XRDP 연결을 위한 VirtualBox 포트 전달 설정_
 
 ### XRDP 원격 액세스
 그런 다음 원격 데스크톱 연결을 통해 `127.0.0.1:43389` 주소에 접속합니다.  
+
 ![원격 데스크톱 연결](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png)
 _원격 데스크톱 연결_
 
 이후 XRDP 로그인 창이 열리면 아래에 `사용자 이름`과 `비밀번호`를 입력하세요.  
+
 ![우분투 XRDP 로그인 화면](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _우분투 XRDP 로그인 화면_
 
@@ -84,10 +87,12 @@ _우분투 XRDP 로그인 화면_
 ## Synology NAS의 XRDP Docker 컨테이너
 ### Docker 패키지 설치 및 컨테이너 포트 설정
 Synology NAS GUI에 액세스합니다. 그런 다음 패키지 센터에서 `Docker`를 검색하여 설치하세요.  
+
 ![Synology NAS GUI - 패키지 센터 - Docker](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png)
 _Synology NAS GUI - 패키지 센터 - Docker_
 
 `ubuntu:20.04` Docker 이미지를 다운로드하고 해당 이미지를 기반으로 컨테이너를 만들었습니다. 그리고 컨테이너 포트 설정에서 ssh용 포트 `422`와 XRDP용 포트 `43389`가 열렸습니다.  
+
 ![Synology NAS GUI - Ubuntu 컨테이너 - 포트 설정](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png)
 _Synology NAS GUI - Ubuntu 컨테이너 - 포트 설정_
 
@@ -136,10 +141,12 @@ service xrdp start
 ```
 ### XRDP 원격 액세스
 Synology NAS에 할당된 IP 주소를 사용하여 XRDP에 연결하고 위에 설정된 `43389` 포트에 연결합니다.  
+
 ![MobaXterm - RDP 세션](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png)
 _MobaXterm - RDP 세션_
 
 이후 XRDP 로그인 창이 열리면 아래에 `사용자 이름`과 `비밀번호`를 입력하세요.  
+
 ![우분투 XRDP 로그인 화면](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _우분투 XRDP 로그인 화면_
 

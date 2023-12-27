@@ -20,6 +20,7 @@ lang: es
 ---
 Si es un desarrollador de software y su entorno de desarrollo es Ubuntu, le explicaremos cómo instalar el software esencial de Ubuntu que necesita instalar.  
 ## Código de estudio visual
+
 ![Código de estudio visual](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png)
 _Código de estudio visual_
 
@@ -50,6 +51,7 @@ Puede instalar la extensión para acceso remoto a VS Code a través de SSH usand
 code --install-extension ms-vscode-remote.remote-ssh
 ```
 ## Escritorio GitHub
+
 ![Escritorio GitHub](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png)
 _Escritorio GitHub_
 
@@ -63,6 +65,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg]
 sudo apt update && sudo apt install github-desktop
 ```
 ## Más allá de comparar 4
+
 ![Más allá de comparar 4](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png)
 _Más allá de comparar 4_
 
@@ -98,6 +101,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 Si no tiene una clave de licencia, es posible que deba realizar el proceso de restablecimiento nuevamente cuando finalice el período de evaluación. Por lo tanto, recomiendo guardar y usar el espacio de trabajo y exportar la configuración cada vez que se actualice y guardarlo como un archivo.  
 ## Base de datos
 ### Navegador de base de datos para SQLite
+
 ![Navegador de base de datos para SQLite](/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png)
 _Navegador de base de datos para SQLite_
 

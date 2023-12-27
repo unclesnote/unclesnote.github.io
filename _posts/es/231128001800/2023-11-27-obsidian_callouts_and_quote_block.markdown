@@ -31,6 +31,7 @@ Un **bloque de comillas**enumera oraciones que comienzan con `>` en cada línea.
 > 
 ```
 A continuación se muestra la forma del bloque de citas basado en el tema básico de Obsidian.  
+
 ![Obsidiana - Bloque de cotizaciones](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png)
 _Obsidiana - Bloque de cotizaciones_
 
@@ -44,6 +45,7 @@ Al igual que un bloque de comillas, un **bloque de llamadas**es un conjunto de l
 > 
 ```
 A continuación se muestra un bloque de notas de tipo sugerencia en el tema básico Obsidian.  
+
 ![Obsidiana - Bloque de rótulos](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png)
 _Obsidiana - Bloque de rótulos_
 
@@ -58,6 +60,7 @@ Arriba, se explicó que el bloque de llamadas puede tener íconos y títulos adi
 Además, el punto fuerte de los rótulos es que tienen una función de plegado. En el caso de Obsidian, los encabezados se pueden plegar, pero **la diferencia entre este y un bloque de llamadas es que se puede especificar el valor inicial**.  
 
 A veces, puedes expresar contenido que deseas enfatizar o agregar notas adicionales en un bloque de notas, pero si el contenido es largo, es posible que quieras dejarlo cerrado inicialmente.  
+
 ![Obsidiana - Bloque plegable de llamadas](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif)
 _Obsidiana - Bloque plegable de llamadas_
 
@@ -71,6 +74,7 @@ Puede crear un bloque de llamadas con un valor inicial cerrado agregando un gui�
 Los colores e íconos de los bloques de llamadas predefinidos en Obsidian son los siguientes.  
 
 Puede cambiar el aspecto de las llamadas escribiendo el texto que desee en el tipo de llamadas.  
+
 ![Obsidiana - Tipos predefinidos de rótulos](/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png)
 _Obsidiana - Tipos predefinidos de rótulos_
 

@@ -66,15 +66,18 @@ docker run -d -it --name cond-xrdp-lubuntu -p 3389:3389 img-xrdp-lubuntu
 ```
 ### VirtualBox 中的端口转发设置
 如果要从虚拟机外部访问 XRDP 到 Ubuntu VM 的 Docker 容器，则需要在 Ubuntu VM 上设置端口转发。当您尝试使用 RDP 协议连接到端口`43389`时，该端口将映射到 Ubuntu VM 内的端口`3389`。  
+
 ![XRDP 连接的 VirtualBox 端口转发设置](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png)
 _XRDP 连接的 VirtualBox 端口转发设置_
 
 ### XRDP 远程访问
 然后，通过远程桌面连接连接到地址`127.0.0.1:43389`。  
+
 ![远程桌面连接](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png)
 _远程桌面连接_
 
 之后，将打开 XRDP 登录窗口，在下面输入`用户名`和`密码`。  
+
 ![Ubuntu XRDP 登录屏幕](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _Ubuntu XRDP 登录屏幕_
 
@@ -84,10 +87,12 @@ _Ubuntu XRDP 登录屏幕_
 ## Synology NAS 上的 XRDP Docker 容器
 ### Docker包安装和容器端口设置
 访问 Synology NAS GUI。然后在套件中心搜索`Docker`并安装它。  
+
 ![Synology NAS GUI - 套件中心 - Docker](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png)
 _Synology NAS GUI - 套件中心 - Docker_
 
 我下载了 `ubuntu:20.04` Docker 映像并基于该映像创建了一个容器。并且在容器端口设置中，打开了用于 ssh 的端口`422`和用于 XRDP 的端口`43389`。  
+
 ![Synology NAS GUI - Ubuntu Container - 端口设置](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png)
 _Synology NAS GUI - Ubuntu Container - 端口设置_
 
@@ -136,10 +141,12 @@ service xrdp start
 ```
 ### XRDP 远程访问
 使用分配给 Synology NAS 的 IP 地址连接到 XRDP，并连接到上面设置的`43389`端口。  
+
 ![MobaXterm - RDP 会话](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png)
 _MobaXterm - RDP 会话_
 
 之后，将打开 XRDP 登录窗口，在下面输入`用户名`和`密码`。  
+
 ![Ubuntu XRDP 登录屏幕](/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png)
 _Ubuntu XRDP 登录屏幕_
 

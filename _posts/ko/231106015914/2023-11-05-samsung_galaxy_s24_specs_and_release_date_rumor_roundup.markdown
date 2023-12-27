@@ -24,6 +24,7 @@ lang: ko
 
 이제 관련 루머에 대해 자세히 살펴보겠습니다.  
 ## 출시 시기 - 2023년 12월 또는 2024년 1월
+
 ![미국 뉴욕 타임스퀘어 갤럭시 S23 전광판 광고](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png)
 _미국 뉴욕 타임스퀘어 갤럭시 S23 전광판 광고_
 
@@ -31,6 +32,7 @@ _미국 뉴욕 타임스퀘어 갤럭시 S23 전광판 광고_
 
 이러한 변화는 스마트폰 시장의 도전과 애플의 아이폰 15 시리즈 경쟁에 대한 대응으로 여겨집니다. 삼성은 2022년 3분기 반도체(DS) 사업부에서 상당한 손실을 기록하면서 감소하는 반도체 이익을 상쇄하기 위해 모바일 경험(MX) 사업부에 의존하고 있습니다.  
 ## 외관 및 디자인 - 티타늄
+
 ![왼쪽이 IT정보업체 `온리크스`가 출시한 갤럭시S24 예상 렌더링이고, 오른쪽이 아이폰15 프로이다.](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png)
 _왼쪽이 IT정보업체 `온리크스`가 출시한 갤럭시S24 예상 렌더링이고, 오른쪽이 아이폰15 프로이다._
 
@@ -38,6 +40,7 @@ IT 전문가 Lebegnerz의 최근 예측에 따르면 Galaxy S24 시리즈 전체
 
 또한 외관 디자인은 기존의 둥근 형태에서 좀 더 각진 디자인으로 변화해 고급스러움을 더할 것으로 예상된다. 울트라 모델의 특징적인 엣지 디스플레이가 평면 디스플레이로 완전히 교체될 것이라는 관측도 나온다.  
 ## 카메라 - 다운그레이드 하지만,
+
 ![Smart Pix의 OnLeaks에서 유출된 Galaxy S24 전면 및 후면 렌더링](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png)
 _Smart Pix의 OnLeaks에서 유출된 Galaxy S24 전면 및 후면 렌더링_
 
@@ -47,6 +50,7 @@ _Smart Pix의 OnLeaks에서 유출된 Galaxy S24 전면 및 후면 렌더링_
 
 S24 Ultra에는 200MP 메인 카메라, 12MP 초광각 카메라, 3배 광학 줌 10MP 망원 카메라, 5배 광학 줌 50MP 망원 카메라가 탑재될 것으로 알려졌습니다. 5배 줌은 더 넓은 조리개와 더 큰 픽셀을 갖춘 업그레이드로 간주되어 고품질 줌 사진을 촬영할 수 있습니다. 특히 5배 줌 카메라는 모든 각도에서 부드러운 4K 60fps 비디오를 캡처할 수 있습니다.  
 ## AP - Qualcomm Snapdragon Gen 3 및 Exynos
+
 ![갤럭시S24 플러스 모델에는 삼성 엑시노스가, 갤럭시S24 울트라 모델에는 퀄컴 스냅드래곤 8 Gen 3가 탑재될 것으로 예상된다.](/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png)
 _갤럭시S24 플러스 모델에는 삼성 엑시노스가, 갤럭시S24 울트라 모델에는 퀄컴 스냅드래곤 8 Gen 3가 탑재될 것으로 예상된다._
 
