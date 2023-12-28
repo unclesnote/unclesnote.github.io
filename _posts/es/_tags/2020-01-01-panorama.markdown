@@ -1,8 +1,0 @@
----
-title: "panorama"
-layout: tag
-ro_ref: es-tag-panorama
-tag: "panorama"
-tag_web: "panorama"
-lang: es
----

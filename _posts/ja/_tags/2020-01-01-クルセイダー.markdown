@@ -1,8 +1,0 @@
----
-title: "クルセイダー"
-layout: tag
-ro_ref: ja-tag-クルセイダー
-tag: "クルセイダー"
-tag_web: "クルセイダー"
-lang: ja
----

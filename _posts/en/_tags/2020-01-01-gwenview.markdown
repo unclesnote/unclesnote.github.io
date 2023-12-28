@@ -1,8 +1,0 @@
----
-title: "GwenView"
-layout: tag
-ro_ref: en-tag-GwenView
-tag: "GwenView"
-tag_web: "gwenview"
-lang: en
----

@@ -1,8 +1,0 @@
----
-title: "乌班图"
-layout: category
-ro_ref: zh-category-乌班图
-category: "乌班图"
-category_web: "乌班图"
-lang: zh
----

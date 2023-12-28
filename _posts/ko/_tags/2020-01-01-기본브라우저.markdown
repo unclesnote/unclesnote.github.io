@@ -1,8 +1,0 @@
----
-title: "기본브라우저"
-layout: tag
-ro_ref: ko-tag-기본브라우저
-tag: "기본브라우저"
-tag_web: "기본브라우저"
-lang: ko
----

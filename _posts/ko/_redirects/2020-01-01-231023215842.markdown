@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231023215842
-thumbnail: /assets/images/231023215842/ko-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png
-lang: ko
----

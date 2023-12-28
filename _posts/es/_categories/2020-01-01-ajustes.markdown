@@ -1,8 +1,0 @@
----
-title: "Ajustes"
-layout: category
-ro_ref: es-category-Ajustes
-category: "Ajustes"
-category_web: "ajustes"
-lang: es
----

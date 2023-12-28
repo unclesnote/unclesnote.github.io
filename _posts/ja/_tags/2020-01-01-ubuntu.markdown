@@ -1,8 +1,0 @@
----
-title: "Ubuntu"
-layout: tag
-ro_ref: ja-tag-Ubuntu
-tag: "Ubuntu"
-tag_web: "ubuntu"
-lang: ja
----

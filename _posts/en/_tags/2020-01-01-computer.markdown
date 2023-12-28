@@ -1,8 +1,0 @@
----
-title: "Computer"
-layout: tag
-ro_ref: en-tag-Computer
-tag: "Computer"
-tag_web: "computer"
-lang: en
----

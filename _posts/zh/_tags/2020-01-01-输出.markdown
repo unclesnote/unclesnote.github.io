@@ -1,8 +1,0 @@
----
-title: "输出"
-layout: tag
-ro_ref: zh-tag-输出
-tag: "输出"
-tag_web: "输出"
-lang: zh
----

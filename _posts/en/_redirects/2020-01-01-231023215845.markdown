@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231023215845
-thumbnail: /assets/images/231023215845/en-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png
-lang: en
----

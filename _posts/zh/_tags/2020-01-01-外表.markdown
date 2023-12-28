@@ -1,8 +1,0 @@
----
-title: "外表"
-layout: tag
-ro_ref: zh-tag-外表
-tag: "外表"
-tag_web: "外表"
-lang: zh
----

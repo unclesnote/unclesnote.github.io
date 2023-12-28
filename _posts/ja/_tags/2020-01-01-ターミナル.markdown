@@ -1,8 +1,0 @@
----
-title: "ターミナル"
-layout: tag
-ro_ref: ja-tag-ターミナル
-tag: "ターミナル"
-tag_web: "ターミナル"
-lang: ja
----

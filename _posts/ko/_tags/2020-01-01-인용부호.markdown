@@ -1,8 +1,0 @@
----
-title: "인용부호"
-layout: tag
-ro_ref: ko-tag-인용부호
-tag: "인용부호"
-tag_web: "인용부호"
-lang: ko
----

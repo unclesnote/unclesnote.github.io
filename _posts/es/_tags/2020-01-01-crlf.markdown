@@ -1,8 +1,0 @@
----
-title: "CRLF"
-layout: tag
-ro_ref: es-tag-CRLF
-tag: "CRLF"
-tag_web: "crlf"
-lang: es
----

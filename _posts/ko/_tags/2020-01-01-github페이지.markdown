@@ -1,8 +1,0 @@
----
-title: "GitHub페이지"
-layout: tag
-ro_ref: ko-tag-GitHub페이지
-tag: "GitHub페이지"
-tag_web: "github페이지"
-lang: ko
----

@@ -1,8 +1,0 @@
----
-title: "블리치비트"
-layout: tag
-ro_ref: ko-tag-블리치비트
-tag: "블리치비트"
-tag_web: "블리치비트"
-lang: ko
----

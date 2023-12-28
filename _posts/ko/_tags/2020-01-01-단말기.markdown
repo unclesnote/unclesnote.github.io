@@ -1,8 +1,0 @@
----
-title: "단말기"
-layout: tag
-ro_ref: ko-tag-단말기
-tag: "단말기"
-tag_web: "단말기"
-lang: ko
----

@@ -1,8 +1,0 @@
----
-title: "Photopea"
-layout: tag
-ro_ref: en-tag-Photopea
-tag: "Photopea"
-tag_web: "photopea"
-lang: en
----

@@ -1,8 +1,0 @@
----
-title: "fstab"
-layout: tag
-ro_ref: ko-tag-fstab
-tag: "fstab"
-tag_web: "fstab"
-lang: ko
----

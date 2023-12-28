@@ -1,8 +1,0 @@
----
-title: "Dock아이콘크기"
-layout: tag
-ro_ref: ko-tag-Dock아이콘크기
-tag: "Dock아이콘크기"
-tag_web: "dock아이콘크기"
-lang: ko
----

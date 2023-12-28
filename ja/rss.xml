@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+<channel>
+    
+
+    <title><![CDATA[アンクルズノート]]></title>
+    <atom:link href="https://unclesnote.com/ja/rss.xml" rel="self" type="application/rss+xml" />
+    <link>https://unclesnote.com/ja/</link>
+    <image>
+      <url>https://unclesnote.com/assets/img/site.png</url>
+      <title><![CDATA[アンクルズノート]]></title>
+      <link>https://unclesnote.com/ja/</link>
+    </image>
+    <language>ja</language>
+    <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
+    <generator>https://unclesnote.com</generator>
+    <lastBuildDate>Wed, 27 Dec 2023 19:30:10 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Telegram ボットを作成してメッセージを送信する]]></title>
+      <link>https://unclesnote.com/ja/231227193010/create_a_telegram_bot_and_send_a_message</link>
+      <guid>https://unclesnote.com/ja/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+      <category><![CDATA[Ubuntu,ジェンキンス,パイプライン]]></category>
+      <tag><![CDATA[Ubuntu,ジェンキンス,パイプライン,sendMessage,getUpdates,Telegram]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <description><![CDATA[Telegram は、比較的使いやすい API サービスを提供します。したがって、セキュリティが大きな問題ではない CI/CD システムでイベントを通知する簡単なツールとして使用できます。 Telegram を Jenkins システムに統合しようとしているのですが、Telegram ボットの基本的な作成方法を紹介し]]></description>
+      <content:encoded><![CDATA[<p>Telegram は、比較的使いやすい API サービスを提供します。したがって、セキュリティが大きな問題ではない CI/CD システムでイベントを通知する簡単なツールとして使用できます。 Telegram を Jenkins システムに統合しようとしているのですが、Telegram ボットの基本的な作成方法を紹介したいと思います。</p>
+<h2 id="概要">概要</h2>
+<p>Telegram メッセージを送信するには、Telegram ボットに一致する <code class="language-plaintext highlighter-rouge">token</code> とチャット ルームを示す <code class="language-plaintext highlighter-rouge">chatid</code> が必要です。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token</code> : Telegram でボットを作成するときにこれを確認できます。</li>
+  <li><code class="language-plaintext highlighter-rouge">chatid</code> : トークンを見つけたら、そのトークンを使用して Telegram API <code class="language-plaintext highlighter-rouge">getUpdates</code> を呼び出すことでそれを見つけることができます。</li>
+</ul>
+
+<p>結論として、<code class="language-plaintext highlighter-rouge">token</code> と <code class="language-plaintext highlighter-rouge">chatid</code> の両方が見つかった場合は、以下の URL を呼び出して Telegram チャット ルームに <code class="language-plaintext highlighter-rouge">im bot</code> メッセージを送信できます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="telegram-ボットの作成---トークン">Telegram ボットの作成 - <strong>トークン</strong></h2>
+<p>Telegram で<code class="language-plaintext highlighter-rouge">botfather</code>を見つけて、チャット ルームに入ります。 BotFather は、Telegram ボットを作成/管理できるサービス ボットです。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" alt="電報 - `BotFather`を検索" />
+<em>電報 - <code class="language-plaintext highlighter-rouge">BotFather</code>を検索</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">newbot</code>コマンドを使用して新しいボットを作成します。</p>
+
+<p>BotFather はボットの名前とユーザー名を尋ねます。実際、<code class="language-plaintext highlighter-rouge">username</code>はボットと通信するチャット ルームです。 Telegram ボットが正常に作成されると、BotFather はボットと通信するための引数である<code class="language-plaintext highlighter-rouge">トークン</code>を提供します。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" alt="電報 - `BotFather` - `newbot`" />
+<em>電報 - <code class="language-plaintext highlighter-rouge">BotFather</code> - <code class="language-plaintext highlighter-rouge">newbot</code></em></p>
+
+<p>トークンは、Telegram API を使用してボットを制御するための最も基本的な認証情報です。したがって、公開されないように慎重に書き留めてください。</p>
+<h2 id="telegram-getupdates-api-呼び出し---chatid">Telegram <strong>getUpdates</strong> API 呼び出し - <strong>chatid</strong></h2>
+<p>BotFather がボットを作成した場合は、Telegram でボットを見つけてメッセージを送信します。 <code class="language-plaintext highlighter-rouge">こんにちは</code>とメッセージを送りました。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" alt="Telegram - Bot チャット ルームに`hello`と入力してください" />
+<em>Telegram - Bot チャット ルームに<code class="language-plaintext highlighter-rouge">hello</code>と入力してください</em></p>
+
+<p>次に、Chrome や Edge などの使用する Web ブラウザーで、上記のボットの作成時に見つかったトークンと組み合わせて、以下の URL を呼び出します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/getUpdates
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/getUpdates
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>するとブラウザにはJSON形式の文字列が表示され、<code class="language-plaintext highlighter-rouge">chat</code>の<code class="language-plaintext highlighter-rouge">id</code>が<code class="language-plaintext highlighter-rouge">chatid</code>となります。 <code class="language-plaintext highlighter-rouge">chatid</code>に注目してください。 Edge ブラウザを使用すると、行揃えされた JSON 文字列が表示されます。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" alt="インターネット ブラウザ - Telegram - `getUpdates`" />
+<em>インターネット ブラウザ - Telegram - <code class="language-plaintext highlighter-rouge">getUpdates</code></em></p>
+
+<h2 id="ブラウザ経由で-telegram-メッセージを送信---sendmessage-api">ブラウザ経由で Telegram メッセージを送信 - <strong>sendMessage</strong> API</h2>
+<p>結論として、Jenkins プラグインを使用して Telegram メッセージを送信しますが、テスト目的で、<code class="language-plaintext highlighter-rouge">sendMessage</code> Telegram API を使用してメッセージをブラウザに送信します。</p>
+
+<p>API は次のとおりで、上記の手順で見つかったトークンとチャット ID を使用して Telegram メッセージを送信できます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>うまくいきましたか？以下のようにTelegram上で<code class="language-plaintext highlighter-rouge">im bot</code>というメッセージを確認することができました。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="テレグラム - `sendMessage` API" />
+<em>テレグラム - <code class="language-plaintext highlighter-rouge">sendMessage</code> API</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/ja-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Jenkins パイプライン スクリプトから Telegram メッセージを送信する]]></title>
+      <link>https://unclesnote.com/ja/231227143211/sending_telegram_message_from_jenkins_pipeline_script</link>
+      <guid>https://unclesnote.com/ja/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 14:32:11 +0900</pubDate>
+      <category><![CDATA[Ubuntu,ジェンキンス,パイプライン]]></category>
+      <tag><![CDATA[ジェンキンス,電報,curl,Ubuntu,ジェンキンス,パイプライン]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <description><![CDATA[もちろん、Jenkins 用の Telegram プラグインもありますが、個人的には試行錯誤したくありませんでした。プラグインがリリースされてから少なくとも 2 年は経過しています。 Linuxの`curl`を使って電報メッセージを送信してみます。]]></description>
+      <content:encoded><![CDATA[<p>もちろん、Jenkins 用の Telegram プラグインもありますが、個人的には試行錯誤したくありませんでした。プラグインがリリースされてから少なくとも 2 年は経過しています。 Linuxの<code class="language-plaintext highlighter-rouge">curl</code>を使って電報メッセージを送信してみます。</p>
+
+<p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - 電報プラグイン" />
+<em>Jenkins - 電報プラグイン</em></p>
+
+<h2 id="telegram-メッセージを送信するための-groovy-関数">Telegram メッセージを送信するための Groovy 関数</h2>
+<p>Jenkins スクリプトで使用する 2 つの Groovy 関数を作成しました。 <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_message</code> は、文字列を挿入するだけで Telegram メッセージを送信する関数です。もう 1 つの <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_file</code> は、テキスト ファイルの内容を Telegram メッセージとして送信する関数です。</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+</pre></td><td class="rouge-code"><pre><span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_message</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">message</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_message, title=${title}, message=${message}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -X POST \
+                -d chat_id=${chatid} \
+                -d parse_mode=HTML \
+                -d text='&lt;b&gt;${title}&lt;/b&gt;\n\n${message}' \
+                https://api.telegram.org/bot${token}/sendMessage
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_fileContents</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, title=${title}, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="kt">boolean</span> <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="kt">def</span> <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">filetext</span> <span class="o">=</span> <span class="n">sh</span><span class="o">(</span><span class="nl">script:</span> <span class="s2">"cat ${file}"</span><span class="o">,</span> <span class="nl">returnStdout:</span> <span class="kc">true</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\n${filetext}"</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\nFile does not exist"</span>
+        <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">filecontents</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+
+    <span class="k">return</span> <span class="n">isFileExist</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendDocument_file</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendDocument_file</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -k \
+        -F chat_id=${chatid} \
+        -F document=@\"${file}\" \
+                https://api.telegram.org/bot${token}/sendDocument
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">curl</code> を介して Telegram メッセージを送信するときにまだエラーが発生したことはありませんが、パイプライン プロセスがエラーによって停止するのを防ぐために、curl ステートメントを <code class="language-plaintext highlighter-rouge">try-catch</code> ステートメントでラップしました。私個人としては、Telegram メッセージの送信よりもパイプライン処理の方が優先度が高いと考えています。</p>
+<h2 id="パイプラインのステップ内で関数を使用する"><strong>パイプライン</strong>の<strong>ステップ</strong>内で関数を使用する</h2>
+<p>以下は、<code class="language-plaintext highlighter-rouge">パイプライン</code>の<code class="language-plaintext highlighter-rouge">ステップ</code>で上で作成した関数を呼び出す方法です。 Telegram ボットの<code class="language-plaintext highlighter-rouge">token</code>と<code class="language-plaintext highlighter-rouge">chatid</code>をハードコーディングしました。後で必要になったら、Jenkins の<code class="language-plaintext highlighter-rouge">Credentials</code>機能を使用して実装してみます。</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="n">steps</span> <span class="o">{</span>
+    <span class="n">script</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">token</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_TOKEN</span><span class="o">;</span>
+        <span class="kt">def</span> <span class="n">chatid</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_CHATID</span><span class="o">;</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">chatid</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"im title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="kt">def</span> <span class="n">rst</span> <span class="o">=</span> <span class="n">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="s2">"im file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">rst</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">)</span> <span class="o">{</span>
+            <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="o">}</span>                        
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/ja-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Synology NAS Docker での Jenkins のセットアップ]]></title>
+      <link>https://unclesnote.com/ja/231223003139/setting_up_jenkins_on_synology_nas_docker</link>
+      <guid>https://unclesnote.com/ja/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:39 +0900</pubDate>
+      <category><![CDATA[Ubuntu,ジェンキンス,設定]]></category>
+      <tag><![CDATA[Ubuntu,ドッカー,ジェンキンス,設定]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <description><![CDATA[CI/CD(継続的インテグレーション/継続的デプロイメント) ツールは数多くありますが、Jenkins はライセンス制限がなくオープンソースで便利なツールの 1 つです。 Synology NAS Docker に Jenkins をインストールする方法について話したいと思います。]]></description>
+      <content:encoded><![CDATA[<p><strong>CI/CD(継続的インテグレーション/継続的デプロイメント)</strong>ツールは数多くありますが、Jenkins はライセンス制限がなくオープンソースで便利なツールの 1 つです。 Synology NAS Docker に Jenkins をインストールする方法について話したいと思います。</p>
+<ul>
+  <li>https://pkg.jenkins.io/debian</li>
+</ul>
+
+<h2 id="基本環境">基本環境</h2>
+<p>Jenkins が動作するには、JDK バージョン 8 以降が必要です。 JDK バージョン 11 をインストールします。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>apt-get update
+apt-get <span class="nb">install</span> <span class="nt">-y</span> openjdk-11-jdk
+
+java <span class="nt">-version</span>
+<span class="c"># + --------------------------------------------------------</span>
+openjdk version <span class="s2">"11.0.21"</span> 2023-10-17
+OpenJDK Runtime Environment <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04<span class="o">)</span>
+OpenJDK 64-Bit Server VM <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04, mixed mode, sharing<span class="o">)</span>
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="jenkins-パッケージをインストールする">Jenkins パッケージをインストールする</h2>
+<p>APT を使用して Jenkins をインストールするには、APT にサーバー情報を追加する必要があります。 Jenkins サーバー情報を追加した後、<code class="language-plaintext highlighter-rouge">apt update</code>中にキーがないというエラーが発生します。エラーメッセージに表示されたキーを使用してキーを<code class="language-plaintext highlighter-rouge">apt-key</code>に追加します。私の場合、キーは<code class="language-plaintext highlighter-rouge">5BA31D57EF5975CA</code>でした。</p>
+
+<p>APT に重要な情報を追加したら、Jenkins をインストールします。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-q</span> <span class="nt">-O</span> - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="nb">sudo </span>apt-key add -
+<span class="nb">echo </span>deb http://pkg.jenkins.io/debian-stable binary/ | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/jenkins.list
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+...
+W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release: The following signatures couldnt be verified because the public key is not available: NO_PUBKEY 5BA31D57EF5975CA
+E: The repository <span class="s1">'http://pkg.jenkins.io/debian-stable binary/ Release'</span> is not signed.
+...
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-key adv <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+<span class="c"># + --------------------------------------------------------</span>
+Executing: /tmp/apt-key-gpghome.d7qO7VDcMV/gpg.1.sh <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+gpg: key 5BA31D57EF5975CA: public key <span class="s2">"Jenkins Project &lt;jenkinsci-board@googlegroups.com&gt;"</span> imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Get:2 https://pkg.jenkins.io/debian-stable binary/ Release <span class="o">[</span>2044 B]
+Get:3 https://pkg.jenkins.io/debian-stable binary/ Release.gpg <span class="o">[</span>833 B]
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Get:6 https://pkg.jenkins.io/debian-stable binary/ Packages <span class="o">[</span>29.6 kB]
+Hit:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:8 http://security.ubuntu.com/ubuntu focal-security InRelease
+Fetched 32.5 kB <span class="k">in </span>2s <span class="o">(</span>19.3 kB/s<span class="o">)</span>
+Reading package lists... Done
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get <span class="nb">install </span>jenkins
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Jenkins を Web に接続するためのポート番号は、<code class="language-plaintext highlighter-rouge">/etc/default/jenkins</code> ファイルの <code class="language-plaintext highlighter-rouge">HTTP_PORT</code> で定義されます。ポート番号を変更する必要がある場合は、<code class="language-plaintext highlighter-rouge">8080</code>から希望の値に変更できます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>
+vi /etc/default/jenkins
+<span class="c"># + --------------------------------------------------------</span>
+<span class="c"># port for HTTP connector (default 8080; disable with -1)</span>
+<span class="nv">HTTP_PORT</span><span class="o">=</span>8080
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="synology-nas-コンテナ-ポートを構成しjenkins-を実行する">Synology NAS コンテナ ポートを構成し、Jenkins を実行する</h2>
+<p>その後、Synology NAS GUI で Ubuntu コンテナを停止し、外部接続用のポートを Jenkins に設定します。コンテナの<code class="language-plaintext highlighter-rouge">8080</code>ポートを<code class="language-plaintext highlighter-rouge">48080</code>ポートにマッピングしました。</p>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" alt="Synology NAS GUI - Docker - Jenkins ポート設定" />
+<em>Synology NAS GUI - Docker - Jenkins ポート設定</em></p>
+
+<p>Ubuntu コンテナを起動し、Jenkins サービスを実行します。つまり、Ubuntu Docker を停止して再起動した場合は、Jenkins サービスを再度実行する必要があります。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sleep </span>10
+service jenkins restart
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>次に、Web ブラウザーを使用して Jenkins に接続します。私の場合、Synology NAS に割り当てられた IP アドレスは<code class="language-plaintext highlighter-rouge">192.168.0.50</code>で、ポートは上記で設定した<code class="language-plaintext highlighter-rouge">48080</code>でした。</p>
+<ul>
+  <li>http://192.168.0.50:48080/</li>
+</ul>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" alt="ジェンキンス - はじめに" />
+<em>ジェンキンス - はじめに</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">/var/lib/jenkins/secrets/initialAdminPassword</code> ファイルに書かれた初期パスワードを使用してログインし、Jenkins の初期インストールを続行します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">cat</span> /var/lib/jenkins/secrets/initialAdminPassword
+<span class="c"># + --------------------------------------------------------</span>
+72b349dadd5d4a83bac10060e536189e
+<span class="c"># - --------------------------------------------------------</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/ja-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Synology NAS 上の Ubuntu Docker で XRDP をセットアップする]]></title>
+      <link>https://unclesnote.com/ja/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</link>
+      <guid>https://unclesnote.com/ja/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:38 +0900</pubDate>
+      <category><![CDATA[Ubuntu,ドッカー]]></category>
+      <tag><![CDATA[Ubuntu,ドッカー]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <description><![CDATA[VMM (仮想マシン マネージャー) 機能をサポートするエントリー レベルの Synology NAS を購入した場合は、VMM に Windows または Ubuntu をインストールしてもよかったかもしれません。ただし、インストールに時間がかかり、パフォーマンスが低下することにがっかりするかもしれません。そのよう]]></description>
+      <content:encoded><![CDATA[<p>VMM (仮想マシン マネージャー) 機能をサポートするエントリー レベルの Synology NAS を購入した場合は、VMM に Windows または Ubuntu をインストールしてもよかったかもしれません。ただし、インストールに時間がかかり、パフォーマンスが低下することにがっかりするかもしれません。</p>
+
+<p>そのような人にとって、GUI インターフェイスで OS を有効にするための Ubuntu Docker に XRDP をインストールするのは最良の選択肢かもしれません。</p>
+
+<p>2つの方法を説明します。 1 つは、Ubuntu VM の Docker に XRDP をインストールすることです。もう 1 つは、Synology NAS の Docker アプリに Ubuntu コンテナを作成し、XRDP を通じて外部からアクセスできるように設定することです。</p>
+<h2 id="ubuntu-vm-上の-xrdp-docker-コンテナ">Ubuntu VM 上の XRDP Docker コンテナ</h2>
+<h3 id="dockerイメージを構築してコンテナを実行する">Dockerイメージを構築してコンテナを実行する</h3>
+<p>以下の情報をもとにDockerイメージを作成していきます。以下の内容の<code class="language-plaintext highlighter-rouge">Dockerfile</code>を作成しましょう。</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="k">FROM</span><span class="s"> ubuntu:20.04</span>
+
+<span class="k">RUN </span>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+
+<span class="k">RUN </span><span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+
+<span class="k">RUN </span>useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+<span class="k">RUN </span>usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+
+<span class="k">RUN </span>apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+<span class="k">RUN </span>adduser xrdp ssl-cert
+
+<span class="k">RUN </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "</span><span class="se">\
+</span><span class="s1">export GNOME_SHELL_SESSION_MODE=Lubuntu\n</span><span class="se">\
+</span><span class="s1">export XDG_SESSION_TYPE=x11\n</span><span class="se">\
+</span><span class="s1">export XDG_CURRENT_DESKTOP=LXQt\n</span><span class="se">\
+</span><span class="s1">export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n</span><span class="se">\
+</span><span class="s1">" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+<span class="k">EXPOSE</span><span class="s"> 3389</span>
+
+<span class="k">CMD</span><span class="s"> service xrdp start ; bash</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>次に、作成した<code class="language-plaintext highlighter-rouge">Dockerfile</code>を元にDockerイメージを構築していきます。次に、作成したイメージを使用してコンテナを作成して実行します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># change permission of docker.sock if there is permission error when docker build</span>
+<span class="nb">sudo chmod </span>666 /var/run/docker.sock<span class="p">;</span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /var/run/docker.sock
+
+<span class="c"># build docker image from Dockerfile</span>
+docker build <span class="nt">-f</span> Dockerfile <span class="nt">-t</span> img-xrdp-lubuntu <span class="nb">.</span>
+
+<span class="c"># create docker container from image </span>
+docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> cond-xrdp-lubuntu <span class="nt">-p</span> 3389:3389 img-xrdp-lubuntu
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="virtualbox-のポート転送設定">VirtualBox のポート転送設定</h3>
+<p>仮想マシンの外部から Ubuntu VM の Docker コンテナに XRDP にアクセスする場合は、Ubuntu VM でポート転送を設定する必要があります。 RDP プロトコルを使用してポート<code class="language-plaintext highlighter-rouge">43389</code>に接続しようとすると、これは Ubuntu VM 内のポート<code class="language-plaintext highlighter-rouge">3389</code>にマッピングされます。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="XRDP 接続用の VirtualBox ポート転送設定" />
+<em>XRDP 接続用の VirtualBox ポート転送設定</em></p>
+
+<h3 id="xrdpリモートアクセス">XRDPリモートアクセス</h3>
+<p>次に、リモート デスクトップ接続を通じてアドレス<code class="language-plaintext highlighter-rouge">127.0.0.1:43389</code>に接続します。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" alt="リモートデスクトップ接続" />
+<em>リモートデスクトップ接続</em></p>
+
+<p>その後、XRDP ログイン ウィンドウが開きます。以下に<code class="language-plaintext highlighter-rouge">ユーザー名</code>と<code class="language-plaintext highlighter-rouge">パスワード</code>を入力します。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP ログイン画面" />
+<em>Ubuntu XRDP ログイン画面</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<h2 id="synology-nas-上の-xrdp-docker-コンテナ">Synology NAS 上の XRDP Docker コンテナ</h2>
+<h3 id="docker-パッケージのインストールとコンテナーのポート設定">Docker パッケージのインストールとコンテナーのポート設定</h3>
+<p>Synology NAS GUI にアクセスします。次に、パッケージ センターで<code class="language-plaintext highlighter-rouge">Docker</code>を検索し、インストールします。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" alt="Synology NAS GUI - パッケージ センター - Docker" />
+<em>Synology NAS GUI - パッケージ センター - Docker</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">ubuntu:20.04</code>Docker イメージをダウンロードし、そのイメージに基づいてコンテナーを作成しました。また、コンテナのポート設定では、ssh 用のポート <code class="language-plaintext highlighter-rouge">422</code> と XRDP 用のポート <code class="language-plaintext highlighter-rouge">43389</code> が開かれました。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="Synology NAS GUI - Ubuntu コンテナ - ポート設定" />
+<em>Synology NAS GUI - Ubuntu コンテナ - ポート設定</em></p>
+
+<h3 id="ubuntu-ssh-および-xrdp-パッケージをインストールする">ubuntu SSH および XRDP パッケージをインストールする</h3>
+<p>以下のコマンドに従って<code class="language-plaintext highlighter-rouge">openssh-server</code>をインストールします。 ssh は、後で Ubuntu Docker コンテナにリモートでアクセスするときに役立ちます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>apt update
+apt <span class="nb">install </span>openssh-server
+apt <span class="nb">install</span> <span class="nt">-y</span> net-tools
+apt <span class="nb">install</span> <span class="nt">-y</span> vim
+
+vim /etc/ssh/sshd_config
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># enable `PermitRootLogin` and set it to `yes`</span>
+PermitRootLogin <span class="nb">yes</span>
+<span class="c"># ----------------------------------------------</span>
+
+passwd root 
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># it will be ssh login password, i have set it as `0000`</span>
+0000
+<span class="c"># ----------------------------------------------</span>
+
+service ssh start
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>次に、以下のコマンドに従って XRDP のパッケージをインストールします。以下のコマンドに従って XRDP をインストールするときに、おそらく多くのエラー メッセージが表示されるでしょう。これは、<code class="language-plaintext highlighter-rouge">lubuntu-desktop</code>のインストール中のサウンドやUSBなどのハードウェア依存関係に関連するエラーです。エラー メッセージを無視して続行します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+<span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+adduser xrdp ssl-cert
+
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "\
+export GNOME_SHELL_SESSION_MODE=Lubuntu\n\
+export XDG_SESSION_TYPE=x11\n\
+export XDG_CURRENT_DESKTOP=LXQt\n\
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n\
+" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+service xrdp start
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="xrdpリモートアクセス-1">XRDPリモートアクセス</h3>
+<p>Synology NAS に割り当てられた IP アドレスを使用して XRDP に接続し、上記で設定した<code class="language-plaintext highlighter-rouge">43389</code>ポートに接続します。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" alt="MobaXterm - RDP セッション" />
+<em>MobaXterm - RDP セッション</em></p>
+
+<p>その後、XRDP ログイン ウィンドウが開きます。以下に<code class="language-plaintext highlighter-rouge">ユーザー名</code>と<code class="language-plaintext highlighter-rouge">パスワード</code>を入力します。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP ログイン画面" />
+<em>Ubuntu XRDP ログイン画面</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<p>Docker コンテナを停止して再起動した場合は、ssh サービスと xrdp サービスを再度実行する必要があります。</p>
+
+<p>正確な理由はわかりませんが、xrdp サービスが開始されると、xrdp が正常に動作するには遅延後に再起動する必要がありました。そして、2回目のxrdp接続から、GUIに下部のメニューバーが表示されました。以下の内容を bash スクリプトとして保存して使用できます。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="s2">"start ssh.."</span>
+service ssh start
+
+<span class="nb">echo</span> <span class="s2">"start xrdp.."</span>
+<span class="nb">rm</span> /var/run/xrdp/xrdp-sesman.pid
+service xrdp start
+<span class="nb">echo</span> <span class="s2">"sleep 10 sec.. "</span>
+<span class="nb">sleep </span>10
+<span class="nb">echo</span> <span class="s2">"restart xrdp"</span>
+service xrdp restart
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="参照">参照</h2>
+<ul>
+  <li>https://youtu.be/0rl5145aEMk?si=aoO3eZyDLPnmCfr</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/ja-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Lenovo Ideapad Slim3 15ABA7 R5 Windowsのインストール、メモリのアップグレード]]></title>
+      <link>https://unclesnote.com/ja/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</link>
+      <guid>https://unclesnote.com/ja/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 18:18:12 +0900</pubDate>
+      <category><![CDATA[それ,パソコン]]></category>
+      <tag><![CDATA[それ,パソコン,Lenovo,ラップトップ]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <description><![CDATA[レノボSlim3 15ABA7 R5はフリーDOSが基本OSでインストールされており、別途ウィンドウをインストールする必要があります。 Windowsのインストールのための基本とメモリをアップグレードする方法を学びましょう。]]></description>
+      <content:encoded><![CDATA[<p><strong>レノボSlim3 15ABA7 R5</strong>はフリーDOSが基本OSでインストールされており、別途ウィンドウをインストールする必要があります。</p>
+
+<p>Windowsのインストールのための基本とメモリをアップグレードする方法を学びましょう。</p>
+<h2 id="スペック">スペック</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="Lenovo Slim3 15ABA7 R5" />
+<em>Lenovo Slim3 15ABA7 R5</em></p>
+
+<p><strong>レノボSlim3 15ABA7 R5</strong>はCPUでライゼン5 4世代(セザンヌ)の5625Uモデルが搭載されている。文論、コスパノートノートパソコンだけにCPUに含まれるGPUを共有して使用する内蔵グラフィックだ。</p>
+
+<p>価格が比較的安価だが使える性能のコスパノートノートパソコンではあるが、長所ならメモリとハードディスクの拡張性にある。</p>
+<ul>
+  <li><strong>保存装置</strong>：NVMe M.2 SSD 256GB基本搭載+ 2.5インチSATAハードディスク1個追加スロット</li>
+  <li><strong>メモリ</strong>：8GBオンボード（DDR4-3200）+追加1ソケット</li>
+</ul>
+
+<p>SATAハードディスク1個とDDR4メモリ1個を追加アップグレード可能。</p>
+<h2 id="windows-usbスティックの準備">Windows USBスティックの準備</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" alt="Ventoy - www.ventoy.net - A New Bootable USB Solution" />
+<em>Ventoy - www.ventoy.net - A New Bootable USB Solution</em></p>
+
+<p>一般的にウィンドウをインストールするには、USBスティックにブートが可能なウィンドウイメージバーニングしてインストールするのが一般的である。しかし、私たちは<a href="https://www.ventoy.net/en/download.html" target="_blank">Ventoy</a>というプログラムを使用します。</p>
+
+<p>VentoyソフトウェアをUSBスティックにバーニングすると、リムーバブルディスクとしてウィンドウが認識する。そして、ダウンロードされたWindows ISOファイルをコピーしてコンピュータを起動すると、USBスティックに保存されたISOファイルを選択して起動が可能です。これは、1つのUSBスティックにさまざまなISOファイルをコピーして選択的に起動してインストールできるという利点があります。</p>
+<ul>
+  <li><strong>USBスティックにVentoyをインストールする方法</strong>：https://www.ventoy.net/en/doc_start.html</li>
+</ul>
+
+<p>LenovoドライバサイトでWindows 10とWindows 11のシステムドライバをサポートしていますが、私はWindows 11をインストールしました。</p>
+
+<p>VentoyベースにWindows ISOファイルがコピーされたUSBスティックを用意する。</p>
+
+<p>そして、レノボドライバーサイトで[無線LANドライバー]をダウンロードしてUSBスティックに保存します。</p>
+
+<p>Windows 11のインストールの場合、Windows ISOイメージに無線LANドライバが含まれていないため、今後インターネットを介したWindowsの初期設定は進行できません。だから、あらかじめ無線LANドライバを準備する必要があります。</p>
+<h2 id="bios設定とwindowsのインストール">BIOS設定とWindowsのインストール</h2>
+<p>Lenovo Slim3 15ABA7 R5のディスプレイを開きます。自動的にノートパソコンに電源が入り、<code class="language-plaintext highlighter-rouge">F2</code>を連続して数回押してBIOS設定画面に入ります。</p>
+
+<p>Ventoyで起動すると、Securiy Verificationに関連したエラーが発生します。これを防ぐために、<code class="language-plaintext highlighter-rouge">Security</code>メニューの<code class="language-plaintext highlighter-rouge">Secure Boot</code>を<code class="language-plaintext highlighter-rouge">Disable</code>に変更します。 USBスティックをラップトップに取り付け、BIOS設定を保存して終了します。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" alt="BIOS &gt; Security &gt; Secure Boot &gt; Disabled" />
+<em>BIOS &gt; Security &gt; Secure Boot &gt; Disabled</em></p>
+
+<blockquote class="prompt-info">
+  <p><strong>ラップトップディスプレイを開いて自動電源オンを無効にする</strong><br />
+おそらく、レノボはラップトップディスプレイを開いたとき、自動的に電源が入るのがユーザーの利便性に良いと思ったようです。<br />
+この機能が嫌いなら、BIOSで<code class="language-plaintext highlighter-rouge">Configuration</code>メニューの<code class="language-plaintext highlighter-rouge">Flip to Boot</code>機能を<code class="language-plaintext highlighter-rouge">Disabled</code>に変更することができる。</p>
+</blockquote>
+<p>VentoryブートメニューからWindows ISOを選択してWindowsをインストールします。</p>
+
+<p><strong>レノボSlim3 15ABA7 R5</strong>はWindows11をインストールすると、自動的に無線LANドライバがインストールされません。そのため、<code class="language-plaintext highlighter-rouge">ネットワーク接続</code>の設定段階でこれ以上進行できなくなります。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" alt="Windows 11のインストール - `ネットワーク接続`設定進行不可" />
+<em>Windows 11のインストール - <code class="language-plaintext highlighter-rouge">ネットワーク接続</code>設定進行不可</em></p>
+
+<p>その画面で <code class="language-plaintext highlighter-rouge">Shift + F10</code>を押してコマンドプロンプトウィンドウを開きます。そして <code class="language-plaintext highlighter-rouge">OOBE\BYPASSNRO</code> と入力します。</p>
+
+<p>その後、自動的に再起動しますが、その後<code class="language-plaintext highlighter-rouge">ネットワーク接続</code>の設定をスキップできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>OOBE\BYPASSNRO
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Windowsのインストールが完了したら、USBスティックで保存したWiFiドライバをインストールします。そして、<a href="https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads" target="_blank">レノボドライバサイト</a>に接続してインストールできなかった残りのドライバをインストールする。</p>
+<h2 id="メモリ購入">メモリ購入</h2>
+<p>以下のように<strong>レノボSlim3 15ABA7 R5</strong>はDDR4-3200 8GBのメモリがオンボード形式で装着されている。したがって、メモリデュアルチャネル構成を作成するために、8GB容量のDDR4-3200クロックメモリを購入します。</p>
+<ul>
+  <li><strong>メモリ</strong>：8GBオンボード（DDR4-3200）+追加1ソケット</li>
+</ul>
+
+<p>ショッピングモールにDDR4-3200あるいはPC4-25600でクロックが表示された、メモリがあれば購入すればよい。</p>
+<h2 id="メモリアップグレードのインストール">メモリアップグレードのインストール</h2>
+<p>柔らかい布にラップトップをひっくり返し、背面にすべてのネジを緩めます。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" alt="Lenovo Slim3 15ABA7 R5 - リア - ネジの取り外し" />
+<em>Lenovo Slim3 15ABA7 R5 - リア - ネジの取り外し</em></p>
+
+<p>そして、使用しないプラスチックカードを右上の隙間に入れてバックプレーンを広げてくれる。そして缶詰缶をオープンするように少しずつ回して背面板を開けてくれる。あまりにも深くプラスチックカードを入れるとラップトップ基板が損傷する可能性があるので、少し入れてください。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" alt="Lenovo Slim3 15ABA7 R5 - バックプレーンを開く" />
+<em>Lenovo Slim3 15ABA7 R5 - バックプレーンを開く</em></p>
+
+<p>上で説明したように、SATAハードディスク1個とDDR4メモリ1個を追加アップグレード可能だ。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" alt="Lenovo Slim3 15ABA7 R5 - 内部" />
+<em>Lenovo Slim3 15ABA7 R5 - 内部</em></p>
+
+<p>他のラップトップとは異なり、<strong>Lenovo Slim3 15ABA7 R5</strong>にはメモリスロットカバーがあります。カバーに貼ってあるステッカーを少し外し、カバーを上に持ち上げて取り外します。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" alt="Lenovo Slim3 15ABA7 R5 - 内部 - メモリカバーのステッカーの取り外し" />
+<em>Lenovo Slim3 15ABA7 R5 - 内部 - メモリカバーのステッカーの取り外し</em></p>
+
+<p>メモリーを装着した場合は、再度メモリーカバーを装着してステッカーを貼り付けてください。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" alt="Lenovo Slim3 15ABA7 R5 - 内部 - メモリマウント" />
+<em>Lenovo Slim3 15ABA7 R5 - 内部 - メモリマウント</em></p>
+
+<p>そしてバックプレーンを閉じる前に、ラップトップが正常にオンになって起動が可能であることを確認してください。メモリの接触不良で起動しない場合は、バックプレーンを再度開く必要があるため、バックプレーンを閉じていない状態で正常に起動するかどうかを確認してください。</p>
+
+<p>ラップトップヒンジ部分にタバコケースのようなものを拾ってファンが帰るのに無理がないようにして、ラップトップ電源を入れた。メモリが正常に認識されない場合やブートにならない場合は、メモリを抽出して再装着してみてください。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" alt="Lenovo Slim3 15ABA7 R5 - 新しいメモリ動作確認のためのボトムスペースを確保" />
+<em>Lenovo Slim3 15ABA7 R5 - 新しいメモリ動作確認のためのボトムスペースを確保</em></p>
+
+<p>ラップトップが正常に動作している場合は、バックプレーンを閉じて緩めたネジを締め直してください。</p>
+<h2 id="メモリデュアルチャンネル認識確認">メモリデュアルチャンネル認識確認</h2>
+<p><a href="https://www.cpuid.com/softwares/cpu-z.html" target="_blank">CPU-Z</a>または<a href="https://www.hwinfo.com/download/" target="_blank">HWiNFO64</a>をインストールするか、ポータブルバージョンをダウンロードする。</p>
+
+<p>CPU-Zでメモリが<a href="https://en.wikipedia.org/wiki/Multi-channel_memory_architecture" target="_blank">デュアルチャンネル</a>で動作する場合、通常はChannelに<code class="language-plaintext highlighter-rouge">Dual</code>と表示されるが、<strong>レノボSlim3 15ABA7 R5</strong>は <code class="language-plaintext highlighter-rouge">2 x 64-bit</code> マークされた。</p>
+
+<p>これがエラーなのかCPU-Zの最新バージョンの違いなのかはわかりません。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - CPU-Z - メモリ" />
+<em>Lenovo Slim3 15ABA7 R5 - CPU-Z - メモリ</em></p>
+
+<p>しかし、HWiNFO64では<code class="language-plaintext highlighter-rouge">Dual-Channel</code>と正しく表示された。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - HWiNFO64 - システム概要 - メモリ" />
+<em>Lenovo Slim3 15ABA7 R5 - HWiNFO64 - システム概要 - メモリ</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/ja-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Windows 10 の複数のディスプレイ構成でディスプレイが非アクティブになる問題]]></title>
+      <link>https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
+      <guid>https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
+      <category><![CDATA[コンピューター,トラブルシューティング]]></category>
+      <tag><![CDATA[コンピューター,トラブルシューティング]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <description><![CDATA[私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。おそらく Windows は各環境に適したディ]]></description>
+      <content:encoded><![CDATA[<p>私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。</p>
+
+<p>おそらく Windows は各環境に適したディスプレイ設定をプリセットとしてレジストリに保存して管理しているのだと思いますが、この設定のひねりが原因でこの問題が発生する場合があるようです。</p>
+
+<p>この問題を解決するために私が見つけた方法は、Windows ディスプレイ構成レジストリ値を削除して初期化することです。結論から言うと、マルチディスプレイ環境を再度セットアップする必要があります。その方法を説明します。</p>
+<h2 id="1-windows-レジストリ-エディタを開きます">1. Windows レジストリ エディタを開きます</h2>
+<p><code class="language-plaintext highlighter-rouge">Windows + R</code>を使用して<code class="language-plaintext highlighter-rouge">ファイル名を指定して実行</code>ダイアログに<code class="language-plaintext highlighter-rouge">regedit</code>と入力するか、<code class="language-plaintext highlighter-rouge">スタート</code>メニューで<code class="language-plaintext highlighter-rouge">regedit.exe</code>を検索して<code class="language-plaintext highlighter-rouge">レジストリ エディタ</code>を実行します。</p>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; `regedit`と入力" />
+<em>Windows + R &gt; <code class="language-plaintext highlighter-rouge">regedit</code>と入力</em></p>
+
+<h2 id="2レジストリエディタで表示プリセット値を削除する">2.レジストリエディタで表示プリセット値を削除する</h2>
+<p>レジストリ エディターで、アドレス バーに以下のパスを入力するか、ツリー内のパスに移動します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>右クリックメニューから<code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>フォルダ内の以下の２つのフォルダを削除します。</p>
+<ul>
+  <li>Configuration</li>
+  <li>Connectivity</li>
+</ul>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="レジストリ エディタ - `GraphicsDrivers`フォルダ内の`Configuration`フォルダと`Connectivity`フォルダを削除します。" />
+<em>レジストリ エディタ - <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>フォルダ内の<code class="language-plaintext highlighter-rouge">Configuration</code>フォルダと<code class="language-plaintext highlighter-rouge">Connectivity</code>フォルダを削除します。</em></p>
+
+<h2 id="3-windowsを再起動します">3. Windowsを再起動します。</h2>
+<p>Windows を再起動します。再起動が完了すると、Windows の観点からは、ディスプレイが新しく認識されたディスプレイになります。</p>
+
+<p>そのため、ディスプレイ設定でディスプレイの位置と向きを再設定する必要があります。要するに、これは非常に迷惑です。心よりお悔やみを申し上げます。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/ja-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Obsidian のコールアウトと引用ブロック]]></title>
+      <link>https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</link>
+      <guid>https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Tue, 28 Nov 2023 00:18:00 +0900</pubDate>
+      <category><![CDATA[黒曜石]]></category>
+      <tag><![CDATA[黒曜石,コールアウト,引用]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</guid>
+      <description><![CDATA[辞書のコールアウトの定義は、大声で呼びかけることであり、読者の注意を引き、重要な情報や追加情報を知らせるために使用されます。 Obsidian で吹き出しを表現するための文法と型について学びましょう。]]></description>
+      <content:encoded><![CDATA[<p>辞書のコールアウトの定義は、大声で呼びかけることであり、読者の注意を引き、重要な情報や追加情報を知らせるために使用されます。</p>
+
+<p>Obsidian で吹き出しを表現するための文法と種類について学びましょう。</p>
+<h2 id="引用ブロックと吹き出しブロックの違い">引用ブロックと吹き出しブロックの違い</h2>
+<p><strong>引用ブロック</strong>には、各行の <code class="language-plaintext highlighter-rouge">&gt;</code> で始まる文がリストされます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>&gt; 
+&gt; I am a quote block.
+&gt; It is a set of lines starting with `&gt;`
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下は、Obsidian の基本テーマに基づいた引用ブロックの形状です。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" alt="黒曜石 - 引用ブロック" />
+<em>黒曜石 - 引用ブロック</em></p>
+
+<p>引用ブロックと同様に、<strong>コールアウト ブロック</strong>は <code class="language-plaintext highlighter-rouge">&gt;</code> で始まる一連の行です。ただし、最初の行に吹き出しの種類を入力してアイコンの形状と色を指定し、タイトルを追加することができます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>&gt; [!tip] I'm a tip type, and here's the title.
+&gt; 
+&gt; I am a callouts block. 
+&gt; It is similar to a citation block, but you can specify a type and title for the first line.
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下は、Obsidian 基本テーマのチップ タイプの吹き出しブロックです。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="黒曜石 - 吹き出しブロック" />
+<em>黒曜石 - 吹き出しブロック</em></p>
+
+<h2 id="吹き出しブロック折りたたみ機能">吹き出しブロック折りたたみ機能</h2>
+<p>構文的には、コールアウト ブロックは引用ブロックに似ています。ただし、引用ブロックと比較して、次の追加機能があります。</p>
+<ul>
+  <li>アイコンの追加</li>
+  <li>表題を加える</li>
+  <li><code class="language-plaintext highlighter-rouge">折りたたみ機能</code></li>
+</ul>
+
+<p>上で、吹き出しブロックには追加のアイコンやタイトルを引用ブロックに追加できることを説明しました。</p>
+
+<p>さらに、吹き出しの強みは折りたたみ機能があることです。 Obsidian の場合、見出しを折りたたむことができますが、<strong>吹き出しブロックとの違いは、初期値を指定できることです</strong>。</p>
+
+<p>場合によっては、強調したいコンテンツを表現したり、吹き出しブロックに注釈を追加したりすることができますが、コンテンツが長い場合は、最初は閉じたままにしておくことができます。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" alt="黒曜石 - 吹き出しブロックの折り畳み" />
+<em>黒曜石 - 吹き出しブロックの折り畳み</em></p>
+
+<p>コールアウト ブロックの最初の行のタイプの横にハイフン (-) を追加すると、初期値が close のコールアウト ブロックを作成できます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>&gt; [!success]- Callouts block - Initially folded callouts block
+&gt; I am a callouts of type success.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="吹き出しブロックのタイプ">吹き出しブロックのタイプ</h2>
+<p>Obsidian の事前定義された吹き出しブロックの色とアイコンは次のとおりです。</p>
+
+<p>吹き出しの種類に好みのテキストを書き込むことで、吹き出しの外観を変更できます。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" alt="Obsidian - コールアウトの定義済みタイプ" />
+<em>Obsidian - コールアウトの定義済みタイプ</em></p>
+
+<p>この内容は <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a> で紹介されており、CSS を定義することで独自の吹き出しブロックをデザインできます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre>&gt; [!quote] quote
+
+&gt; [!abstract] abstract, summary, tldr
+
+&gt; [!important] tip, hint, important
+
+&gt; [!note] note
+
+&gt; [!info] info
+
+&gt; [!todo] todo
+
+&gt; [!example] example
+
+&gt; [!question] question, help, fnq
+
+&gt; [!warning] warning, caution, attention
+
+&gt; [!failure] failure, fail, missing
+
+&gt; [!danger] danger, error
+
+&gt; [!bug] bug
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/ja-thumb-unclesnote-obsidian_callouts_and_quote_block.png" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[VirtualBox での Ubuntu 共有フォルダーのセットアップ - Windows ファイル共有]]></title>
+      <link>https://unclesnote.com/ja/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</link>
+      <guid>https://unclesnote.com/ja/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 12:01:00 +0900</pubDate>
+      <category><![CDATA[Ubuntu,バーチャルボックス]]></category>
+      <tag><![CDATA[バーチャルボックス,vboxsf,Ubuntu,フォルダー共有]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <description><![CDATA[私の場合、Oracle VM VirtualBox の Ubuntu VM と Windows の間で頻繁にファイル共有が行われます。もちろん、ゲスト追加機能を使用してマウスをドラッグしてファイルを共有することもできますが、それでも不便な場合があります。そこで、Ubuntu VMでWindowsフォルダーを共有する方]]></description>
+      <content:encoded><![CDATA[<p>私の場合、Oracle VM VirtualBox の Ubuntu VM と Windows の間で頻繁にファイル共有が行われます。もちろん、ゲスト追加機能を使用してマウスをドラッグしてファイルを共有することもできますが、それでも不便な場合があります。</p>
+
+<p>そこで、Ubuntu VMでWindowsフォルダーを共有する方法を説明したいと思います。</p>
+<h2 id="virtual-boxに共有フォルダーを追加する">Virtual Boxに共有フォルダーを追加する</h2>
+<p>Ubuntu VM の設定に移動します。次に、<code class="language-plaintext highlighter-rouge">共有フォルダー</code>タブに共有するフォルダーを追加します。</p>
+
+<p>共有フォルダー設定ウィンドウで、<code class="language-plaintext highlighter-rouge">フォルダー パス</code>に Ubuntu VM と共有するフォルダーを設定します。残りのフォルダと設定項目は以下の通りです。</p>
+<ul>
+  <li><strong>フォルダー パス</strong> : Ubuntu VM と共有する<code class="language-plaintext highlighter-rouge">Windows</code>フォルダー パス</li>
+  <li><strong>フォルダー名</strong> : 共有フォルダーのニックネームです。できれば<code class="language-plaintext highlighter-rouge">マウントポイント</code>のフォルダ名と同じにしてください。</li>
+  <li><strong>マウント ポイント</strong> : <code class="language-plaintext highlighter-rouge">Ubuntu VM</code>に共有フォルダーをマウントするパス</li>
+  <li>☑ <strong>自動マウント</strong> : 起動時に共有フォルダーを自動的にマウントします。</li>
+  <li>☑ <strong>永続化</strong> : この項目は、Ubuntu VM の実行中に現在の設定を入力すると表示されます。永続的な設定が必要な場合は、チェックを入れます。</li>
+</ul>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 共有フォルダーの追加" />
+<em>Oracle VM VirtualBox - 共有フォルダーの追加</em></p>
+
+<p>私の場合、Ubuntu VM の共有フォルダーとして <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code> を設定しました。参考までに、私の Ubuntu アカウント名は<code class="language-plaintext highlighter-rouge">pooh</code>です。</p>
+<h2 id="ubuntu-vm-上のフォルダーのアクセス許可">Ubuntu VM 上のフォルダーのアクセス許可</h2>
+<p>Ubuntu VM の実行中に共有フォルダーを追加した場合は、まず Ubuntu VM を再起動します。</p>
+
+<p>また、<code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code>と入力しようとすると、権限がない旨のエラーメッセージが表示されます。これは、<code class="language-plaintext highlighter-rouge">vboxsf</code>グループに含まれるユーザーのみが共有フォルダーにアクセスできるためです。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /home/pooh
+total 100
+...
+drwxrwx---  1 root vboxsf     0 11월  6 10:03 _shared
+...
+
+<span class="nv">$ </span><span class="nb">cd</span> /home/pooh
+bash: <span class="nb">cd</span>: /home/pooh: Permission denied
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">gpasswd</code>コマンドを使用して、Ubuntu アカウントを<code class="language-plaintext highlighter-rouge">vboxsf</code>グループに追加します。参考までに、私の Ubuntu アカウントの名前は<code class="language-plaintext highlighter-rouge">pooh</code>です。したがって、<code class="language-plaintext highlighter-rouge">pooh</code>を Ubuntu アカウント名に置き換えてコマンドを実行します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> pooh vboxsf
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>最も重要な。最後に、Ubuntu VM を再起動します。</p>
+<h2 id="テスト">テスト</h2>
+<p>Ubuntu VM の再起動が完了したら、テストを実行してみましょう。</p>
+
+<p>Ubuntu VM の共有フォルダーに<code class="language-plaintext highlighter-rouge">touch</code>コマンドを使用して<code class="language-plaintext highlighter-rouge">test.txt</code>ファイルを作成しましょう。 Windows 共有フォルダーに作成された<code class="language-plaintext highlighter-rouge">test.txt</code>ファイルが見えますか?</p>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="Ubuntu VM で`touch`コマンドを使用して`test.txt`ファイルを作成し、Windows で確認します。" />
+<em>Ubuntu VM で<code class="language-plaintext highlighter-rouge">touch</code>コマンドを使用して<code class="language-plaintext highlighter-rouge">test.txt</code>ファイルを作成し、Windows で確認します。</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/ja-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Samsung Galaxy S24のスペックと発売日 - 噂のまとめ]]></title>
+      <link>https://unclesnote.com/ja/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</link>
+      <guid>https://unclesnote.com/ja/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 01:59:14 +0900</pubDate>
+      <category><![CDATA[それ,携帯]]></category>
+      <tag><![CDATA[ギャラクシーS24,噂,ギークベンチ,サムスンエクシノス,クアルコムスナップドラゴン,チタン,それ,携帯]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <description><![CDATA[Samsung Galaxy S24 の発売日が近づくにつれ、レンダリング画像と予想される仕様に関する噂が浮上しています。まとめると、Galaxy S24シリーズは2024年第1四半期に発売予定で、外装はチタン製でカメラ性能はダウングレードされ、モデルによってはSamsung ExynosとQualcomm Snap]]></description>
+      <content:encoded><![CDATA[<p>Samsung Galaxy S24 の発売日が近づくにつれ、レンダリング画像と予想される仕様に関する噂が浮上しています。</p>
+
+<p>まとめると、Galaxy S24シリーズは2024年第1四半期に発売予定で、外装はチタン製でカメラ性能はダウングレードされ、モデルによってはSamsung ExynosとQualcomm Snapdragon APが搭載されると予想されています。</p>
+
+<p>それでは、関連する噂を詳しく見てみましょう。</p>
+<h2 id="リリース時期---2023-年-12-月または-2024-年-1-月">リリース時期 - 2023 年 12 月または 2024 年 1 月</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="米国ニューヨーク州タイムズスクエアのGalaxy S23電子看板広告" />
+<em>米国ニューヨーク州タイムズスクエアのGalaxy S23電子看板広告</em></p>
+
+<p>サムスン電子は半導体不振からの挽回を目指し、２０２３年１２月か２０２４年１月に新型スマートフォンを発売する計画だ。 12月にはミッドレンジの携帯電話であるGalaxy S23 FEを発売し、続いてAI機能を搭載した主力機種のGalaxy S24を通常の2月の発売より早く1月にサンフランシスコで発表する予定だ。</p>
+
+<p>この変化は、スマートフォン市場における課題とAppleのiPhone 15シリーズとの競争への対応とみられている。サムスンは2022年第3四半期に半導体(DS)部門で大幅な損失を計上したため、半導体利益の減少を補うためにモバイルエクスペリエンス(MX)部門に依存している。</p>
+<h2 id="外観とデザイン---チタン">外観とデザイン - チタン</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" alt="左側はIT予想家`OnLeaks`が公開したGalaxy S24の予想レンダリング、右側はiPhone 15 Proです。" />
+<em>左側はIT予想家<code class="language-plaintext highlighter-rouge">OnLeaks</code>が公開したGalaxy S24の予想レンダリング、右側はiPhone 15 Proです。</em></p>
+
+<p>IT専門家のLebegnerz氏による最近の予測によると、Galaxy S24シリーズ全体にチタン素材のフレームが採用され、全体的なデザインの美しさが向上すると予想されています。この動きは、AppleがiPhone 15 ProおよびPro Maxモデルにチタンフレームを導入したのと同様、より広範な戦略の一環とみられている。</p>
+
+<p>さらにエクステリアデザインも、これまでの丸みを帯びたフォルムからより角張ったデザインへと変革し、高級感をプラスする予定だ。 Ultraモデルの特徴的なエッジディスプレイが完全にフラットディスプレイに置き換えられるのではないかという憶測もある。</p>
+<h2 id="カメラ---ダウングレード-ただし">カメラ - ダウングレード ただし、</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Galaxy S24の前面と背面のレンダリングがSmart PixのOnLeaksによってリークされた" />
+<em>Galaxy S24の前面と背面のレンダリングがSmart PixのOnLeaksによってリークされた</em></p>
+
+<p>来年リリースされるGalaxy S24 Ultraは、10倍の光学ズームから5倍の光学ズームにダウングレードされると噂されており、ユーザーの間で懸念を引き起こしている。</p>
+
+<p>しかし、SamMobile のような一部の専門家は、全体的なビデオ録画の改善により、これは実際には前向きな動きであると主張しています。</p>
+
+<p>S24 Ultraには、200MPのメインカメラ、12MPのウルトラワイドカメラ、3倍光学ズームの10MP望遠カメラ、5倍光学ズームの50MP望遠カメラが搭載されていると言われています。 5 倍ズームは、より広い絞りとより大きなピクセルを備えたアップグレードとみなされ、高品質のズーム写真が可能になります。特に、5 倍ズームカメラは、あらゆる角度からスムーズな 4K 60fps ビデオを撮影できます。</p>
+<h2 id="ap---クアルコム-snapdragon-gen-3-および-exynos">AP - クアルコム Snapdragon Gen 3 および Exynos</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" alt="Galaxy S24 PlusモデルにはSamsung Exynosが、Galaxy S24 UltraモデルにはQualcomm Snapdragon 8 Gen 3が搭載される予定です。" />
+<em>Galaxy S24 PlusモデルにはSamsung Exynosが、Galaxy S24 UltraモデルにはQualcomm Snapdragon 8 Gen 3が搭載される予定です。</em></p>
+
+<p>2023年第4四半期の決算発表で、クアルコムCEOのクリスティアーノ・アモン氏が、ギャラクシーS24はまもなく発売され、オンボードコンポーネントに関してはクアルコムが過半数のシェアを獲得すると述べたため、サムスンギャラクシーS24にクアルコムステップドラゴンが搭載されることは確実である。 。</p>
+
+<p>サムスンのワイヤレス部門は、Galaxy S22までのスマートフォンでSnapdragonとExynosの両方のプロセッサを使用していました。しかし、Exynos の発熱問題のため、今年初めに発売された Galaxy S23 モデルは Qualcomm のみを搭載しました。来年初めにリリースされる予定の次期 S24 および S24 Plus モデルは、地域の考慮事項に基づいて、Snapdragon プロセッサと Exynos プロセッサの両方を採用する予定です。最高価格の Ultra モデルは、Snapdragon のみを使用することが確認されています。</p>
+
+<p>Snapdragon Gen 3ベースのGalaxy S24 UltraのGeekbenchスコアも発見されました。データベースによると、Galaxy S24 Ultraは<code class="language-plaintext highlighter-rouge">Pineapple</code>というコードネームで呼ばれる<code class="language-plaintext highlighter-rouge">Snapdragon 8 第3世代</code>チップセットを搭載しており、8GBのRAMとAndroid 14オペレーティングシステムを搭載していることが確認されている。</p>
+
+<p>シングルコアとマルチコアのテストではそれぞれ<code class="language-plaintext highlighter-rouge">2234</code>点と<code class="language-plaintext highlighter-rouge">6807</code>点を獲得し、昨年7月にテストしたモデルと比べてマルチコアのスコアがわずかに上昇した。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>アイテム</th>
+      <th>ギャラクシーS24+</th>
+      <th>ギャラクシーS24ウルトラ</th>
+      <th>ギャラクシーS23ウルトラ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>モデル</td>
+      <td>サムスン SM-926B</td>
+      <td>サムスン SM-928U</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AP</td>
+      <td>エクシノス2400</td>
+      <td>スナップドラゴン第 3 世代</td>
+      <td>スナップドラゴン第 2 世代</td>
+    </tr>
+    <tr>
+      <td>ラム</td>
+      <td>8GB</td>
+      <td>8GB</td>
+      <td>12GB</td>
+    </tr>
+    <tr>
+      <td>シングルコア<br />(ギークベンチ)</td>
+      <td>2067年<br />（に比べ<br />S24 ウルトラ: -8%)</td>
+      <td>2234<br /> （に比べ<br />S23 ウルトラ: +43%)</td>
+      <td>1560年</td>
+    </tr>
+    <tr>
+      <td>マルチコア<br />(ギークベンチ)</td>
+      <td>6520<br /> （に比べ<br />S24 ウルトラ: -4%)</td>
+      <td>6807<br /> （に比べ<br />S23 ウルトラ: +36%)</td>
+      <td>4996</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2023 年 10 月 12 日、Galaxy S24+ のベンチマーク結果が Geekbench で発見されました。このモデルは<code class="language-plaintext highlighter-rouge">SM-S926B</code>として識別され、<code class="language-plaintext highlighter-rouge">Exynos 2400</code>チップセット、8GBのRAM、およびAndroid 14オペレーティングシステムを搭載しています。シングルコアスコアは<code class="language-plaintext highlighter-rouge">2067</code>、マルチコアスコアは<code class="language-plaintext highlighter-rouge">6520</code>を達成しました。</p>
+
+<p>これらのスコアは、Snapdragon 8 第 3 世代チップセットを搭載した Galaxy S24 Ultra のスコアよりも低く、Exynos 2400 の初期テストのパフォーマンスがわずかに低い可能性があることを示しています。 Galaxy S24 Ultraは、前モデルのGalaxy S23 Ultraと比較して、シングルコアで43%、マルチコアで36%のパフォーマンス向上が見込まれています。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/ja-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Ubuntu 20.04 の ibus-hangul を使用した韓国語 - 英語変換キーの構成]]></title>
+      <link>https://unclesnote.com/ja/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</link>
+      <guid>https://unclesnote.com/ja/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Sat, 04 Nov 2023 21:16:15 +0900</pubDate>
+      <category><![CDATA[Ubuntu,一般]]></category>
+      <tag><![CDATA[イブサングル,Ubuntu,一般,キーボード]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <description><![CDATA[ソフトウェア開発目的で Ubuntu を使用する場合、ほとんどの場合英語で入力することになります。ただし、場合によっては、GNOME GUI に韓国語を入力する必要がある場合があります。そこで、デフォルト設定では英語入力しか許可されていないため、`ibus-hangul`プラグインを使用して韓国語入力を設定します。]]></description>
+      <content:encoded><![CDATA[<p>ソフトウェア開発目的で Ubuntu を使用する場合、ほとんどの場合英語で入力することになります。ただし、場合によっては、GNOME GUI に韓国語を入力する必要がある場合があります。</p>
+
+<p>そこで、デフォルト設定では英語入力しか許可されていないため、<code class="language-plaintext highlighter-rouge">ibus-hangul</code>プラグインを使用して韓国語入力を設定します。</p>
+<h2 id="ibus-ハングル">ibus-ハングル</h2>
+<p><code class="language-plaintext highlighter-rouge">ibus-hangul</code> は、Linux または Ubuntu 上でハングル入力方法をサポートするプラグインです。 <code class="language-plaintext highlighter-rouge">ibus</code>は<code class="language-plaintext highlighter-rouge">入力バス</code>の略です。 Ubuntu はすでにハングル入力をサポートしていますが、最適化されたハングル入力のためにアップグレードして<code class="language-plaintext highlighter-rouge">ibus-hangul</code>を使用します。</p>
+
+<p>apt のリポジトリを更新し、<code class="language-plaintext highlighter-rouge">ibus-hangul</code>プラグインをアップグレードします。インストールしたときのプラグインのサイズは 615 MB でした。アップグレードには時間がかかります。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade ibus-hangul
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="韓国語入力設定">韓国語入力設定</h2>
+<p>まず、アプリケーションで<code class="language-plaintext highlighter-rouge">地域</code>キーワードを検索し、<code class="language-plaintext highlighter-rouge">地域と言語</code>設定を見つけて実行します。</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" alt="`地域`を検索し、`地域と言語`を実行します。" />
+<em><code class="language-plaintext highlighter-rouge">地域</code>を検索し、<code class="language-plaintext highlighter-rouge">地域と言語</code>を実行します。</em></p>
+
+<p>次に、<code class="language-plaintext highlighter-rouge">地域と言語</code>タブに<code class="language-plaintext highlighter-rouge">入力ソース</code>を追加します。 <code class="language-plaintext highlighter-rouge">韓国語</code>を検索し、<code class="language-plaintext highlighter-rouge">韓国語 (ハングル)</code>を追加します。</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" alt="`韓国語（ハングル）`入力ソースを追加" />
+<em><code class="language-plaintext highlighter-rouge">韓国語（ハングル）</code>入力ソースを追加</em></p>
+
+<p>新しく追加した入力ソースを設定する前に、既存の<code class="language-plaintext highlighter-rouge">English (US)</code>を削除してください。これは、新たに追加された<code class="language-plaintext highlighter-rouge">韓国語(ハングル)</code>入力ソースとの競合を防ぐためです。また、追加された入力ソースには、すでに英語入力機能が含まれています。</p>
+
+<p><code class="language-plaintext highlighter-rouge">韓国語 (ハングル)</code>入力ソースの歯車アイコンをクリックして、<code class="language-plaintext highlighter-rouge">IBusHangle Setup</code>を開きます。</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" alt="韓国語-英語変換キー設定" />
+<em>韓国語-英語変換キー設定</em></p>
+
+<p>次に、<code class="language-plaintext highlighter-rouge">その他</code>セクションの<code class="language-plaintext highlighter-rouge">ハングルモードで開始</code>を有効にします。参考までに、Ubuntu を起動するときに、GNOME GUI の最初の入力モードを韓国語にしたい場合は、それを有効にします。</p>
+
+<p>そして、デフォルトで追加されている<code class="language-plaintext highlighter-rouge">ハングル切り替えキー</code>をすべて削除します。これが実際に使用しているキーボードの言語切り替えキーと一致するという保証はありません。</p>
+
+<p><code class="language-plaintext highlighter-rouge">追加</code>ボタンをクリックし、新しいウィンドウが開いたら、キーボードの言語切り替えキーを押します。私のキーボードの場合、言語変更キーとして<code class="language-plaintext highlighter-rouge">Alt_R</code>が割り当てられていました。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/ja-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[改行の違い - Windows と Linux の EOL チェックと Git リポジトリ同期]]></title>
+      <link>https://unclesnote.com/ja/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</link>
+      <guid>https://unclesnote.com/ja/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 14:47:17 +0900</pubDate>
+      <category><![CDATA[ギット]]></category>
+      <tag><![CDATA[ギット,CRLF,LF,EOL変換,改行,メモ帳プラスプラス,unix2dos,dos2unix]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <description><![CDATA[Linux と Windows の両方で 1 つの Git リポジトリ内のファイルを変更してコミットする必要がある場合、内容が明らかに変更されていない場合でも、Git クライアントがそのファイルを Git コミット段階で変更されたファイルとして認識する場合があります。問題の原因は、ファイルの内容は同じでも、Windo]]></description>
+      <content:encoded><![CDATA[<p>Linux と Windows の両方で 1 つの Git リポジトリ内のファイルを変更してコミットする必要がある場合、内容が明らかに変更されていない場合でも、Git クライアントがそのファイルを Git コミット段階で変更されたファイルとして認識する場合があります。</p>
+
+<p>問題の原因は、ファイルの内容は同じでも、WindowsとLinuxでは基本的な改行の表現方法が異なることにあります。下の図では、左が Windows (PC) で変更して保存したファイル、右が Linux (UNIX) で変更して保存したファイルです。</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="ファイル内容は同じですがファイルが異なります。左側は Windows PC 形式、右側は Linux UNIX 形式です" />
+<em>ファイル内容は同じですがファイルが異なります。左側は Windows PC 形式、右側は Linux UNIX 形式です</em></p>
+
+<h2 id="windowsとlinuxの改行の違い">WindowsとLinuxの改行の違い</h2>
+<p>ASCII 文字の観点から見ると、</p>
+
+<p>Windows では、以下のように改行を<code class="language-plaintext highlighter-rouge">CRLF (Carriage Return with Line Feed)</code>の形式で表現します。</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\r\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>UbuntuなどのLinuxシステムでは、以下のように改行は<code class="language-plaintext highlighter-rouge">LF(Line feed)</code>のみで表現されます。</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Git から LF 形式で改行を表すファイルを受け取り、Windows エディターで簡単に変更してから復元したとします。つまり、表面上は同じ内容ですが、CRLFで改行が変更されているため、Git上のファイルとは別のファイルに変換される可能性があります。</p>
+
+<p>Windows で作成された bash スクリプトを Linux 上で実行すると、デバッグ中に謎のスクリプト実行エラーが発生する可能性があります。これは、Windows および bash 上で改行を CRLF 形式で保存したシェル スクリプトがこれを解釈できなかったことが原因である可能性があります。</p>
+<h2 id="ファイルのeolend-of-lineを確認して変換する">ファイルのEOL（End Of Line）を確認して変換する</h2>
+<p>もちろん、Windows でファイルを作成した場合でも、PC (CRLF) 形式ではなく、UNIX (LF) 形式でファイルを作成および変換することができます。その逆も可能です。この変換操作は、一般に<code class="language-plaintext highlighter-rouge">ＥＯＬ(Ｅｎｄ Ｏｆ Ｌｉｎｅｓ)変換</code>と呼ばれる。</p>
+
+<p>実際、OS ごとの EOL の違いに初めて遭遇すると、少し混乱するかもしれません。そこで、今後説明する内容に関連するキーワードを以下のように表にマッピングすることができます。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>名前</th>
+      <th>ウィンドウズ</th>
+      <th>Ubuntu (Linux)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>改行フォーマットの用語</td>
+      <td>CRLF (改行付きキャリッジリターン)</td>
+      <td>LF（改行）</td>
+    </tr>
+    <tr>
+      <td>改行表現文字</td>
+      <td><code class="language-plaintext highlighter-rouge">\r\n</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\n</code></td>
+    </tr>
+    <tr>
+      <td>Ubuntuの<code class="language-plaintext highlighter-rouge">file</code>ツールからの情報</td>
+      <td>ASCII text, with CRLF line terminators</td>
+      <td>ASCII text</td>
+    </tr>
+    <tr>
+      <td>Beyond Compare ツールの EOL タイプ</td>
+      <td>PC</td>
+      <td>UNIX</td>
+    </tr>
+    <tr>
+      <td>UbuntuのEOLタイプ</td>
+      <td>dos</td>
+      <td>unix</td>
+    </tr>
+    <tr>
+      <td>Ubuntu の EOL 変換ツール</td>
+      <td>unix2dos</td>
+      <td>dos2unix</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ウィンドウズ">ウィンドウズ</h3>
+<p><a href="https://notepad-plus-plus.org/downloads" target="_blank">Notepad++</a> エディターを使用すると、EOL を念頭に置いてファイルを作成できます。</p>
+
+<p>下の図に示すように、Notepad++ エディターで現在の<code class="language-plaintext highlighter-rouge">EOL 変換</code>ステータスを確認し、変換することができます。メニューは<code class="language-plaintext highlighter-rouge">編集 &gt; EOL 変換</code>にあります。</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - EOL 変換 - `編集 &gt; EOL 変換 &gt; Windows (CR LF) または Unix (LF)`" />
+<em>Notepad++ - EOL 変換 - <code class="language-plaintext highlighter-rouge">編集 &gt; EOL 変換 &gt; Windows (CR LF) または Unix (LF)</code></em></p>
+
+<h3 id="ubuntu-linux">Ubuntu (Linux)</h3>
+<p>Ubuntu環境では、ファイルのEOLステータスを確認して変換することもできます。</p>
+
+<p>ファイルの EOL ステータスは、<code class="language-plaintext highlighter-rouge">file</code>ツールを使用して確認できます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># PC (CRLF)</span>
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="c"># Unix (LF)</span>
+<span class="nv">$ </span>file unix.txt 
+unix.txt: ASCII text
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>ファイルの EOL 変換には、<code class="language-plaintext highlighter-rouge">tofrodos</code> と <code class="language-plaintext highlighter-rouge">dos2unix</code> がインストールされている必要があります。 <code class="language-plaintext highlighter-rouge">apt</code>を使用してインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt-get <span class="nb">install </span>tofrodos
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>dos2unix
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>パッケージをインストールすると、以下のツールを使用できるようになります。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dos2unix</code> : PC (CRLF) を Unix (LF) に変換します。</li>
+  <li><code class="language-plaintext highlighter-rouge">unix2dos</code> : Unix (LF) を PC (CRLF) に変換します。</li>
+</ul>
+
+<p>以下は、PC (CRLF) を UNIX (LF) に変換する例です。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="nv">$ </span>dos2unix pc.txt 
+dos2unix: converting file pc.txt to Unix format...
+
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="os-間の-git-リポジトリ-eol-同期">OS 間の Git リポジトリ EOL 同期</h2>
+<p>1 つの Git リポジトリには、Windows および Ubuntu 環境でファイルをコミットおよびプルする際の EOL 変換の問題を防ぐ Git 設定があります。</p>
+
+<p>以下の git コマンドは、ASCII 形式のファイルをオブジェクト データベースに挿入する前に、CRLF を LF に変更します。そのため、主に<code class="language-plaintext highlighter-rouge">Windows</code>環境での Git 設定に使用されます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf input 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下の git コマンドは改行を LF として使用します。そのため、主に<code class="language-plaintext highlighter-rouge">Ubuntu (Linux)</code>環境で使用されます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf <span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>上記のコマンドはグローバル Git 設定であるため、EOL 設定を特定のクローン リポジトリにのみ適用したい場合は、関連するリポジトリ フォルダーに移動し、<code class="language-plaintext highlighter-rouge">--global</code> オプションのみを削除してコマンドを使用できます。</p>
+
+<p>つまり、LF 形式の EOL を持つファイルを Git サーバーにアップロードすることが目的です。</p>
+
+<p>Windows環境の場合は、右クリックメニューからGit Bashにアクセスできます。</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="Windows での Git Bash へのアクセス" />
+<em>Windows での Git Bash へのアクセス</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/ja-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Ubuntu 20.04のパフォーマンスを最適化する方法]]></title>
+      <link>https://unclesnote.com/ja/231102005314/how_to_optimize_ubuntu_20.04_performance</link>
+      <guid>https://unclesnote.com/ja/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:14 +0900</pubDate>
+      <category><![CDATA[Ubuntu,一般]]></category>
+      <tag><![CDATA[Ubuntuアニメーション,ドックアイコンのサイズ,スワップファイル,スワップ,Ubuntu,一般,ブリーチビット]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <description><![CDATA[Ubuntu OSがインストールされたPCをメインコンピュータとして使用している場合を除き、ハードウェア仕様が低いPCを使用しているか、Oracle VM VirtualBoxにUbuntuをインストールしている可能性があります。主に SSH を使用してリモート接続する場合は大きな影響はありませんが、GNOME で]]></description>
+      <content:encoded><![CDATA[<p>Ubuntu OSがインストールされたPCをメインコンピュータとして使用している場合を除き、ハードウェア仕様が低いPCを使用しているか、Oracle VM VirtualBoxにUbuntuをインストールしている可能性があります。</p>
+
+<p>主に SSH を使用してリモート接続する場合は大きな影響はありませんが、GNOME で UI を頻繁に操作する場合は、パフォーマンスが低下する可能性があります。そこで、Ubuntu のインストールおよび構成時にパフォーマンスを最適化するためのヒントをいくつか紹介します。</p>
+<h2 id="アニメーションをオフにする">アニメーションをオフにする</h2>
+<p>Virtual Box またはローエンド PC で Ubuntu を使用している場合、リソースが限られているため、アニメーションによって OS のパフォーマンスが低下する可能性があります。以下は、Ubuntu GNOME GUI でアニメーションをオフまたはオンにする方法です。ターミナルでコマンドを実行できます。</p>
+
+<p>以下は、Ubuntu アニメーションをオフにして設定を確認するためのターミナル コマンドです。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">false</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下は、Ubuntu アニメーションを有効にするターミナル コマンドです。違いは、コマンドの最後の引数が<code class="language-plaintext highlighter-rouge">false</code>から<code class="language-plaintext highlighter-rouge">true</code>に変更されていることです。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">true</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="ドックアイコンのサイズ">ドックアイコンのサイズ</h2>
+<p>解像度が制限されたディスプレイを使用している場合、Dock のデフォルトのアイコン サイズでは、一度に多くのアイコンを登録したり操作したりすることが制限される可能性があります。そのため、Dock アイコンのサイズを小さく設定できます。</p>
+
+<p>まず、<code class="language-plaintext highlighter-rouge">アプリケーションメニュー</code>でドックを検索し、<code class="language-plaintext highlighter-rouge">外観</code>設定を開きます。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" alt="ドック アイコンのサイズ - アプリケーション メニュー &gt; `ドック`の検索 &gt; 外観設定" />
+<em>ドック アイコンのサイズ - アプリケーション メニュー &gt; <code class="language-plaintext highlighter-rouge">ドック</code>の検索 &gt; 外観設定</em></p>
+
+<p>次に、<code class="language-plaintext highlighter-rouge">アイコン サイズ</code>を小さくして、見栄えの良いサイズに設定します。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="ドックアイコンのサイズ - [設定] &gt; [外観] &gt; [アイコン サイズ] のサイズ変更" />
+<em>ドックアイコンのサイズ - [設定] &gt; [外観] &gt; [アイコン サイズ] のサイズ変更</em></p>
+
+<h2 id="スワップサイズを増やす">スワップサイズを増やす</h2>
+<p>Virtual Box にインストールされた Ubuntu を使用している場合、仮想マシンは Windows コンピューターと共有されるため、8GB 未満のメモリが割り当てられる可能性があります。 Ubuntu をカジュアルに使用する場合は問題にならないかもしれませんが、大規模なプラットフォーム、BSP、またはソフトウェアをコンパイルしようとすると、メモリ不足がコンパイルの失敗につながる可能性があります。これは、スワップ サイズを増やすことで解決できます。</p>
+
+<p>ハードディスク容量はメモリ容量よりも安いので、スワップを増やしましょう。以下の記事をご覧ください。</p>
+<ul>
+  <li>https://unclesnote.com/en/231102005313/how_to_increase_swapfile_size_in_ubuntu</li>
+</ul>
+
+<h2 id="ディスク上の空き領域を確保する">ディスク上の空き領域を確保する</h2>
+<p>仮想マシンがインストールされた Ubuntu を使用していて、イメージ サイズが十分に大きくない場合は、次のような警告ポップアップが表示される場合があります。これは、システム内の一時ファイルまたはログ ファイルに蓄積された場合に発生する可能性があります。空き容量がゼロに収束すると、Ubuntu VM が起動しなくなる可能性があります。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" alt="ファイルシステムルートのディスク容量不足に関する警告ポップアップ" />
+<em>ファイルシステムルートのディスク容量不足に関する警告ポップアップ</em></p>
+
+<p>一時ファイルやシステムログファイルは手動で削除することもできますが、<a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a> アプリケーションを使用すると、GUI 環境でより簡単に管理できます。</p>
+
+<p>Ubuntu ソフトウェア アプリケーションで<code class="language-plaintext highlighter-rouge">bleachbit</code>を検索すると、簡単にインストールできます。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" alt="Ubuntu ソフトウェア - BleachBit" />
+<em>Ubuntu ソフトウェア - BleachBit</em></p>
+
+<p>整理したい項目にチェックを入れて<code class="language-plaintext highlighter-rouge">クリーン</code>ボタンを押すと、不要なファイルが自動的に削除され、空き容量が確保されます。ただし、<code class="language-plaintext highlighter-rouge">APT</code>項目と<code class="language-plaintext highlighter-rouge">journald</code>項目を整理するときは注意が必要です。これにより、Ubuntu システムまたはパッケージの依存関係が壊れる可能性があります。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="ブリーチビット" />
+<em>ブリーチビット</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/ja-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Ubuntuでスワップファイルのサイズを増やす方法]]></title>
+      <link>https://unclesnote.com/ja/231102005313/how_to_increase_swapfile_size_in_ubuntu</link>
+      <guid>https://unclesnote.com/ja/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:13 +0900</pubDate>
+      <category><![CDATA[Ubuntu,一般]]></category>
+      <tag><![CDATA[ファタブ,スワップ,スワップファイル,Ubuntu,一般]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <description><![CDATA[十分な物理メモリがない状態で Ubuntu マシンを長時間実行したままにしたり、大規模なプラットフォームや BSP をコンパイルして構築したりすると、パフォーマンスが低下したり、エラーが発生したりすることがあります。そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードデ]]></description>
+      <content:encoded><![CDATA[<p>十分な物理メモリがない状態で Ubuntu マシンを長時間実行したままにしたり、大規模なプラットフォームや BSP をコンパイルしてビルドしたりすると、パフォーマンスが低下したり、エラーが発生したりすることがあります。</p>
+
+<p>そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードディスク上のファイルをメモリとして使用します。これはスワップ ファイルと呼ばれ、Windows 環境の仮想メモリに似ています。</p>
+
+<p>それでは、Ubuntu 20.04でのスワップファイルの作成と適用方法を説明したいと思います。</p>
+<h2 id="チェックスワップ">チェックスワップ</h2>
+<p>私の Ubuntu 環境でのスワップ ステータスを確認するには、<code class="language-plaintext highlighter-rouge">free -m</code>コマンドを使用します。そして、システムの<code class="language-plaintext highlighter-rouge">root</code>に<code class="language-plaintext highlighter-rouge">swapfile</code>があるかどうかを確認してください。スワップ ファイルはルート パスに作成するのが一般的です。</p>
+
+<p>私の場合、2 GB のスワップを使用しており、スワップファイルはルート パスにあります。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>free <span class="nt">-m</span>
+              total        used        free      shared  buff/cache   available
+Mem:           4913        1306        2306           8        1300        3359
+Swap:          2048           0        2048
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span> /
+total 8388712
+...
+<span class="nt">-rw-------</span>   1 root root   2048934592 Jul 24 17:54 swapfile
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="スワップファイルの作成">スワップファイルの作成</h2>
+<p>既存の 2GB スワップファイルを削除し、新しい 5GB スワップファイルを作成します。</p>
+
+<p>まず、スワップ機能をオフにして、既に使用されている 2GB のスワップ ファイルを削除します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="nb">sudo rm</span> /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>次に、ルートに 5GB のスワップファイルを作成し、ファイル権限を 600 に割り当てます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nb">sudo chmod </span>600 /swapfile 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>最後に、新しく作成したファイルとのスワップを有効にします。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>mkswap /swapfile
+<span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下は、上記のコマンドを実行した方法です。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>bull: 
+swapoff /swapfile
+<span class="nv">$ </span><span class="nb">sudo rm</span> /swapfile
+<span class="nv">$ </span><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /
+total 5242976
+...
+<span class="nt">-rw-r--r--</span>   1 root root   5368709120 Aug 17 14:11 swapfile
+...
+<span class="nv">$ </span><span class="nb">sudo chmod </span>600 /swapfile 
+<span class="nv">$ </span><span class="nb">sudo </span>mkswap /swapfile
+Setting up swapspace version 1, size <span class="o">=</span> 5 GiB <span class="o">(</span>5368705024 bytes<span class="o">)</span>
+no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c-b719-e54154ad8194
+<span class="nv">$ </span><span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="スワップファイルの登録">スワップファイルの登録</h2>
+<p>さて、最後に、Ubuntu が起動するたびにスワップファイルをロードするように Ubuntu を設定します。</p>
+
+<p>次に、<code class="language-plaintext highlighter-rouge">/etc/fstab</code>を開きます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>vi /etc/fstab    
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>そして、以下の行を追加します。すでに設定されている場合は追加する必要はありません。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>/swapfile              none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="リブート">リブート</h2>
+<p>まず再起動してください。再起動後、上記で生成されたスワップファイルをシステムモニターで確認できます。</p>
+
+<p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="`アプリケーション`メニュー &gt; システムモニター" />
+<em><code class="language-plaintext highlighter-rouge">アプリケーション</code>メニュー &gt; システムモニター</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/ja-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[ソフトウェア開発者向けに必須の Ubuntu ソフトウェアをインストールする方法]]></title>
+      <link>https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</link>
+      <guid>https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Wed, 01 Nov 2023 00:31:13 +0900</pubDate>
+      <category><![CDATA[Ubuntu,ツール]]></category>
+      <tag><![CDATA[ビジュアルスタジオコード,VSコード,GitHubデスクトップ,BeyondCompare4,SQLiteDBブラウザ,MySQLワークベンチ,Ubuntu,ツール]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <description><![CDATA[あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。]]></description>
+      <content:encoded><![CDATA[<p>あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。</p>
+<h2 id="visual-studioコード">Visual Studioコード</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="Visual Studioコード" />
+<em>Visual Studioコード</em></p>
+
+<p><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> は、ソフトウェア開発で広く使用されている IDE およびエディタです。</p>
+
+<p><code class="language-plaintext highlighter-rouge">Ubuntu デスクトップ GUI (GNOME) 環境</code>を使用している場合は、組み込みブラウザを使用して VS Code をダウンロードし、<code class="language-plaintext highlighter-rouge">dpkg</code>ツールを使用してインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> code_1.83.0-1696350811_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">Ubuntu サーバー環境</code>を使用している場合、または<code class="language-plaintext highlighter-rouge">SSH アクセスのみ</code>を使用している場合、これは少し複雑です。ただし、以下のコマンドを使用して VS Code をインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># Install basic packages for installation</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget <span class="nt">-y</span>
+<span class="c"># Install the Microsoft GPG key and add the repository to apt</span>
+wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</span>
+<span class="c"># Install VS Code</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>code
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下のコマンドを使用して、SSH 経由で VS Code にリモート アクセスするための拡張機能をインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="github-デスクトップ">GitHub デスクトップ</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="GitHub デスクトップ" />
+<em>GitHub デスクトップ</em></p>
+
+<p>GitHub デスクトップ ソフトウェアは Git クライアントです。 GitHub プロジェクトに取り組んでいる場合、これは間違いなく良い選択肢ですが、GitHub リポジトリではなく個人用の Git サーバーを使用している場合でも、複雑な機能が必要ない場合は良い選択肢になる可能性があります。</p>
+
+<p><a href="https://desktop.github.com/" target="_blank">公式 GitHub デスクトップ</a> サイトでは、Windows バージョンと macOS バージョンのみが提供されます。ただし、GitHub Desktop はオープンソース プロジェクトであるため、Ubuntu バージョンも別の <a href="https://github.com/shiftkey/desktop" target="_blank">リポジトリ</a> で配布されます。これが公式かどうかはわかりません。リポジトリを apt に追加した後、apt を使用して GitHub Desktop をインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-qO</span> - https://mirror.mwt.me/shiftkey-desktop/gpgkey | gpg <span class="nt">--dearmor</span> | <span class="nb">sudo tee</span> /usr/share/keyrings/mwt-desktop.gpg <span class="o">&gt;</span> /dev/null
+<span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg] https://mirror.mwt.me/shiftkey-desktop/deb/ any main" &gt; /etc/apt/sources.list.d/mwt-desktop.list'</span>
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>github-desktop
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="比較を超えて-4">比較を超えて 4</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" alt="比較を超えて 4" />
+<em>比較を超えて 4</em></p>
+
+<p>Beyond Compare は、人気のあるファイル比較ツールです。</p>
+
+<p>残念ながら、Beyond Compare 3 バージョンは、Ubuntu でのファイル比較パフォーマンスが良好ではありません。つまり、ファイルの比較には時間がかかります。ただし、最新バージョンの <a href="https://www.scootersoftware.com/download" target="_blank">Beyond Compare 4</a> は高速で、Ubuntu の Windows と同等のパフォーマンスを備えています。したがって、Ubuntu ではバージョン 4 を選択することをお勧めします。</p>
+
+<p>Beyond Compare 4 は Web ブラウザを使用して公式 Web サイトからダウンロードできますが、ここでは<code class="language-plaintext highlighter-rouge">wget</code>ツールを使用してダウンロードします。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget https://www.scootersoftware.com/files/bcompare-4.4.6.27483_amd64.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> bcompare-4.4.6.27483_amd64.deb
+<span class="nb">rm </span>bcompare-4.4.6.27483_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>インストールが完了したら、以下のコマンドを使用して Beyond Compare 4 をリセットします。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c">#thinks bensonkb</span>
+<span class="nb">sudo rm</span> <span class="nt">-rf</span> ~/.config/bcompare 
+<span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s/keexjEP3t4Mue23hrnuPtY4TdcsqNiJL-5174TsUdLmJSIXKfG2NGPwBL6vnRPddT7tH29qpkneX63DO9ECSPE9rzY1zhThHERg8lHM9IBFT+rVuiY823aQJuqzxCKIE1bcDqM4wgW01FH6oCBP1G4ub01xmb4BGSUG6ZrjxWHJyNLyIlGvOhoY2HAYzEtzYGwxFZn2JZ66o4RONkXjX0DF9EzsdUef3UAS+JQ+fCYReLawdjEe6tXCv88GKaaPKWxCeaUL9PejICQgRQOLGOZtZQkLgAelrOtehxz5ANOOqCaJgy2mJLQVLM5SJ9Dli909c5ybvEhVmIC0dc9dWH+/N9KmiLVlKMU7RJqnE+WXEEPI1SgglmfmLc1yVH7dqBb9ehOoKG9UE+HAE1YvH1XX2XVGeEqYUY-Tsk7YBTz0WpSpoYyPgx6Iki5KLtQ5G-aKP9eysnkuOAkrvHU8bLbGtZteGwJarev03PhfCioJL4OSqsmQGEvDbHFEbNl1qJtdwEriR+VNZts9vNNLk7UGfeNwIiqpxjk4Mn09nmSd8FhM4ifvcaIbNCRoMPGl6KU12iseSe+w+1kFsLhX+OhQM8WXcWV10cGqBzQE9OqOLUcg9n0krrR3KrohstS9smTwEx9olyLYppvC0p5i7dAx2deWvM1ZxKNs0BvcXGukR+/g"</span> /usr/lib/beyondcompare/BCompare
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>次に、Ubuntu GUI から Beyond Compare 4 を実行し、ライセンス キーがある場合はそれを入力します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># Then restart BC, click "Enter License":</span>
+ayvZeJDYPBHS4J-1K6g6bDBuPoo0G-oGAq35blZtAoRqC-qQeSz28XAzX
+6nTx9laTMLRCp6nAIhHNGZ2ehkeUfbnFaxEeLvI8fJavn-XQLNbOumCLU
+qgdNbNMZiFRU03+OTQnw4V-E2YKTYi-LkgPzE6R-yIJGDNWfxH2AdpIgg
+8rlpsbrTs9Dt1zysUfvAEi0dKbmGIi3rqf7yWmwDh1AI5VyoWFIejvJwJ
+Lmlr2CjQ1VZ3DySCfBDuKcYmOCeK7jzEWPUnAw+f9360nIiiNEB0YGkwB
+kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>ライセンス キーをお持ちでない場合は、評価期間が終了したときに再度リセット プロセスを実行する必要がある場合があります。そのため、ワークスペースを保存して使用し、更新されるたびに設定をエクスポートしてファイルとして保存することをお勧めします。</p>
+<h2 id="データベース">データベース</h2>
+<h3 id="sqlite用dbブラウザ">SQLite用DBブラウザ</h3>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="SQLite用DBブラウザ" />
+<em>SQLite用DBブラウザ</em></p>
+
+<p>SQLite DB を使用する場合、<a href="https://sqlitebrowser.org/dl/" target="_blank">SQLite DB Browser</a> は、GUI 環境でデータベースのクエリやテーブルの内容の表示に必須のソフトウェアです。</p>
+
+<p><code class="language-plaintext highlighter-rouge">sqlitebrowser</code> リポジトリを apt に追加し、SQLite DB ブラウザをインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>add-apt-repository <span class="nt">-y</span> ppa:linuxgndu/sqlitebrowser
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>sqlitebrowser
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="mysql-ワークベンチ">MySQL ワークベンチ</h3>
+<p>これについては、後で MySQL Workbench を Ubuntu にインストールする必要があるときに説明します。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/ja-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Office 365 Outlook のデフォルトのブラウザを Chrome に変更する方法]]></title>
+      <link>https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
+      <guid>https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
+      <category><![CDATA[コンピューター,トラブルシューティング]]></category>
+      <tag><![CDATA[見通し,デフォルトブラウザ,クロム,パソコン,コンピューター,トラブルシューティング]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <description><![CDATA[Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は]]></description>
+      <content:encoded><![CDATA[<p>Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?</p>
+
+<p>最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は、Web リンクを Chrome で開くように変更してみましょう。 Windows のデフォルト アプリと Outlook の設定で Chrome ブラウザを確認して設定します。</p>
+<h2 id="windows-のデフォルトの-web-ブラウザ設定">Windows のデフォルトの Web ブラウザ設定</h2>
+<p>Chrome ユーザーであれば、すでに Google Chrome をデフォルトの Web ブラウザとして設定しているかもしれません。 Office 365 のデフォルトのブラウザー設定があることを確認してください。</p>
+
+<p><code class="language-plaintext highlighter-rouge">CTRL + I</code>ショートカットを使用して<code class="language-plaintext highlighter-rouge">Windows 設定</code>を開きます。次に、<code class="language-plaintext highlighter-rouge">default</code>キーワードを入力して<code class="language-plaintext highlighter-rouge">Default apps</code>を検索し、選択します。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows 設定 - `デフォルト`を検索" />
+<em>Windows 設定 - <code class="language-plaintext highlighter-rouge">デフォルト</code>を検索</em></p>
+
+<p>次に、<code class="language-plaintext highlighter-rouge">デフォルトのアプリ</code>タブの<code class="language-plaintext highlighter-rouge">Web ブラウザ</code>セクションで<code class="language-plaintext highlighter-rouge">Google Chrome</code>ブラウザを選択します。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="設定 &gt; デフォルトのアプリ &gt; Web ブラウザーで`Google Chrome`を選択" />
+<em>設定 &gt; デフォルトのアプリ &gt; Web ブラウザーで<code class="language-plaintext highlighter-rouge">Google Chrome</code>を選択</em></p>
+
+<h2 id="office-365-outlook-でハイパーリンクを開くようにアプリを設定する">Office 365 Outlook でハイパーリンクを開くようにアプリを設定する</h2>
+<p>Office 365 Outlook に戻りましょうか?</p>
+
+<p>Outlook では、<code class="language-plaintext highlighter-rouge">ALT + F</code>ショートカットを使用して左側のメニュー バーを表示し、<code class="language-plaintext highlighter-rouge">オプション</code>を選択します。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - オプション" />
+<em>Office 365 Outlook - オプション</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">詳細</code>タブを選択します。 <code class="language-plaintext highlighter-rouge">ファイルとブラウザの設定</code>セクションで、ハイパーリンクを開くブラウザを<code class="language-plaintext highlighter-rouge">デフォルトのブラウザ</code>に変更します。次に<code class="language-plaintext highlighter-rouge">OK</code>を押します。最初のセクションでは Windows のデフォルトのブラウザを Chrome に設定したため、ここでのデフォルトのブラウザは Chrome です。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。" />
+<em>Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ja-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Windows ツールの代わりに Ubuntu に不可欠な代替ソフトウェア]]></title>
+      <link>https://unclesnote.com/ja/231028002032/essential_software_to_use_on_ubuntu_os</link>
+      <guid>https://unclesnote.com/ja/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Sat, 28 Oct 2023 00:20:32 +0900</pubDate>
+      <category><![CDATA[Ubuntu,ツール]]></category>
+      <tag><![CDATA[クルセイダー,グウェンビュー,フォトピー,クリタ,イージーストローク,画像ビューア,画像エディタ,ファイルブラウザ,マウスマクロ,Ubuntu,ツール,ブリーチビット,フリースペース]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <description><![CDATA[Ubuntu OS 特有の利点を理由に Ubuntu を使用している場合は、Windows 環境で使用していたものと同様のソフトウェアを Ubuntu 環境で使用できるようにしようとします。そこで、ファイルブラウザ、画像ビューア/エディタ、生産性向上ツールなど、Ubuntuを使用する際に一般的に使用すると良いソフトウ]]></description>
+      <content:encoded><![CDATA[<p>Ubuntu OS 特有の利点を理由に Ubuntu を使用している場合は、Windows 環境で使用していたものと同様のソフトウェアを Ubuntu 環境で使用できるようにしようとします。そこで、ファイルブラウザ、画像ビューア/エディタ、生産性向上ツールなど、Ubuntuを使用する際に一般的に使用すると良いソフトウェアをいくつか紹介します。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" alt="Ubuntu ソフトウェア" />
+<em>Ubuntu ソフトウェア</em></p>
+
+<h2 id="ファイルブラウザ">ファイルブラウザ</h2>
+<h3 id="クルセイダー">クルセイダー</h3>
+<p>Windows 環境で Q-Dir または <a href="https://www.ghisler.com/download.htm" target="_blank">Total Commander</a> を使用した経験がある場合は、<a href="https://krusader.org" target="_blank">Krusader</a> で分割の経験を提供します。ウィンドウとマルチタブのファイルブラウジング。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" alt="クルセイダー" />
+<em>クルセイダー</em></p>
+
+<p>インストール方法はとても簡単です。 aptを使用してインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>krusader
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="画像ビューアエディタ">画像ビューア/エディタ</h2>
+<h3 id="グウェンビュー">グウェンビュー</h3>
+<p><a href="https://github.com/KDE/gwenview" target="_blank">GwenView</a> は、私がこれまで使用した中で最高の Ubuntu 画像ビューアです。より良い画像ビューアを見つけたら更新します。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" alt="グウェンビュー" />
+<em>グウェンビュー</em></p>
+
+<p>ただし、画像ファイルを頻繁に更新すると、GwenView リストのサムネイルの表示と実際の画像が異なる場合があります。したがって、サムネイル キャッシュの使用を無効にすることをお勧めします。</p>
+
+<p><code class="language-plaintext highlighter-rouge">設定 &gt; Gwenview の構成 &gt; 詳細</code>で、<code class="language-plaintext highlighter-rouge">低リソース使用モード</code>にチェックを入れます。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" alt="GwenView - サムネイル キャッシュを無効にするために`低リソース使用モード`をチェックします" />
+<em>GwenView - サムネイル キャッシュを無効にするために<code class="language-plaintext highlighter-rouge">低リソース使用モード</code>をチェックします</em></p>
+
+<p>GwenView は apt を使用して簡単にインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt <span class="nb">install </span>gwenview <span class="nt">-y</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="フォトピー">フォトピー</h3>
+<p>Photoshop に慣れている人にとって、最良の代替手段は <a href="https://www.photopea.com" target="_blank">Photopia</a> のようです。 Photopia は、Photoshop に最も似たインターフェイスを提供する Web アプリです。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" alt="Photopea - www.photopea.com" />
+<em>Photopea - www.photopea.com</em></p>
+
+<p>Photopia に似た Web サイトはありますが、Photopia の利点は、広告ブロッカーが Web 上の広告をブロックできること、それが収益モデルであることです。 Chrome ブラウザを使用している場合は、Web ストアで<code class="language-plaintext highlighter-rouge">AdBlock</code>を検索してインストールしてください。</p>
+
+<p><code class="language-plaintext highlighter-rouge">AdBlock</code>を使用しなくても、右側パネルに表示される広告の量は他のサイトに比べて少ないので、あまり目立ちません。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" alt="Photopea - 右側のパネルに限定された広告と Chrome Web ブラウザの AdBlock 拡張機能" />
+<em>Photopea - 右側のパネルに限定された広告と Chrome Web ブラウザの AdBlock 拡張機能</em></p>
+
+<h3 id="クリタ">クリタ</h3>
+<p>Photopia とは異なるオフライン画像エディターを探している場合は、Krita が代替となるかもしれません。ただし、Photoshop に慣れているユーザーにとっては、不慣れに感じるかもしれません。 GUI インターフェイスは Photoshop に似ていますが、ショートカットとツールは多くの点で異なります。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" alt="クリタ" />
+<em>クリタ</em></p>
+
+<p>Photoshop と完全に似ているわけではありませんが、画像を編集したり描画したりする必要があり、完全なソフトウェアを探している場合は、Krita が良い選択肢になる可能性があります。</p>
+
+<p>Krita は、ソフトウェアをアプリ イメージの形式で配布します。以下の Krita サイトにアクセスし、Linux 用のアプリ イメージをダウンロードします。</p>
+<ul>
+  <li><a href="https://krita.org/en/download/krita-desktop">https://krita.org/en/download/krita-desktop</a></li>
+</ul>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" alt="Krita - Linux AppImage をダウンロード" />
+<em>Krita - Linux AppImage をダウンロード</em></p>
+
+<p>ダウンロードしたKritaアプリイメージに実行許可を与えて実行します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">chmod </span>777 <span class="k">*</span>.appimage
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="生産性">生産性</h2>
+<h3 id="イージーストロークジェスチャーマウスジェスチャーマクロ">イージーストロークジェスチャー(マウスジェスチャーマクロ)</h3>
+<p>Windows 上で <a href="https://www.tcbmi.com/strokeit" target="_blank">Strokeit</a> マウス ジェスチャ マクロ ソフトウェアを使用した経験がある場合は、<code class="language-plaintext highlighter-rouge">Easysteroid Gesture</code> が Ubuntu の最良の代替手段となります。</p>
+
+<p><code class="language-plaintext highlighter-rouge">マウスの右ボタン</code>によるジェスチャを描画したい場合は、以下の設定が必要です。実際、起動時に自動的に実行することは必須のオプションです。</p>
+
+<p>Easythrough Preferences タブで、Behavior を<code class="language-plaintext highlighter-rouge">Button 3</code>に設定し、Appearance で自動的に実行されるように設定します。</p>
+
+<p>マウスジェスチャアクションは<code class="language-plaintext highlighter-rouge">アクション</code>タブで追加できます。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" alt="イージーストローク - 設定" />
+<em>イージーストローク - 設定</em></p>
+
+<p>Ubuntu ソフトウェア アプリで検索すると簡単にインストールできます。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" alt="Easythrough - Ubuntu ソフトウェアでダウンロード" />
+<em>Easythrough - Ubuntu ソフトウェアでダウンロード</em></p>
+
+<p>以下は、私がマウスジェスチャーにマッピングして使用しているいくつかのショートカットキーです。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>アプリ</th>
+      <th>ショートカット</th>
+      <th>説明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>一般</td>
+      <td>Ctrl + ホーム</td>
+      <td>ページの先頭に移動</td>
+    </tr>
+    <tr>
+      <td>一般</td>
+      <td>Ctrl + End</td>
+      <td>ページの一番下に移動</td>
+    </tr>
+    <tr>
+      <td>VSコード</td>
+      <td>Ctrl + Alt + -</td>
+      <td>戻る</td>
+    </tr>
+    <tr>
+      <td>VSコード</td>
+      <td>Ctrl + Shift + -</td>
+      <td>前進する</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="システム">システム</h2>
+<h3 id="bleachbitfreespace-用クリーナー">BleachBit(FreeSpace 用クリーナー)</h3>
+<p><a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a>は、不要なファイルを削除して空き容量を増やす便利なソフトウェアです。 Linuxのほか、WindowsやMac OSなどさまざまなOSに対応しています。</p>
+
+<p>Ubuntu ソフトウェア アプリケーションで<code class="language-plaintext highlighter-rouge">bleachbit</code>を検索すると、簡単にインストールできます。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" alt="Ubuntu ソフトウェア - BleachBit" />
+<em>Ubuntu ソフトウェア - BleachBit</em></p>
+
+<p>整理したい項目にチェックを入れて<code class="language-plaintext highlighter-rouge">クリーン</code>ボタンを押すと、不要なファイルが自動的に削除され、空き容量が確保されます。ただし、<code class="language-plaintext highlighter-rouge">APT</code>項目と<code class="language-plaintext highlighter-rouge">journald</code>項目を整理するときは注意が必要です。これにより、Ubuntu システムまたはパッケージの依存関係が壊れる可能性があります。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="ブリーチビット" />
+<em>ブリーチビット</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/ja-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Jekyll Windows テスト用の VirtualBox ポート転送方法]]></title>
+      <link>https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</link>
+      <guid>https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Tue, 24 Oct 2023 18:52:05 +0900</pubDate>
+      <category><![CDATA[GitHub ページ,ジキル]]></category>
+      <tag><![CDATA[ジキル,バーチャルボックス,ポートフォワーディング,GitHubページ,GitHub]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <description><![CDATA[私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィ]]></description>
+      <content:encoded><![CDATA[<p>私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィールとは若干異なります。そこで、X86 Windows ブラウザ上で Jekyll をテストするための Virtual Box のポート転送方法を説明したいと思います。</p>
+<h2 id="ubuntu-vm-上でローカルに-jekyll-を実行する">Ubuntu VM 上でローカルに Jekyll を実行する</h2>
+<p>まず、Ubuntu VM の<code class="language-plaintext highlighter-rouge">ifconfig</code>を使用してネットワーク インターフェイスの IP アドレスを確認します。私の場合、IP アドレスは<code class="language-plaintext highlighter-rouge">10.0.2.15</code>です。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>$ ifconfig
+..
+enp0s3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::e1f0:30d0:1e9b:bafc  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 08:00:27:07:7a:96  txqueuelen 1000  (Ethernet)
+        RX packets 9737  bytes 12163823 (12.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3811  bytes 1289032 (1.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Jekyll をテストするには、Jekyll を実行し、上記で確認した IP アドレスを<code class="language-plaintext highlighter-rouge">--host</code>オプションを使用して入力します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--host</span> 10.0.2.15
+Configuration file: /home/myaccount/my_jekyll_root/_config.yml
+ Theme Config file: /home/myaccount/my_jekyll_root/_config.yml
+            Source: /home/myaccount/my_jekyll_root
+       Destination: /home/myaccount/my_jekyll_root/_site
+ Incremental build: disabled. Enable with <span class="nt">--incremental</span>
+      Generating... 
+                    <span class="k">done in </span>1.483 seconds.
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">'/home/myaccount/my_jekyll_root'</span>
+    Server address: http://10.0.2.15:4000/
+  Server running... press ctrl-c to stop.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="virtual-box-manager-で-ubuntu-vm-のポート転送を設定する">Virtual Box Manager で Ubuntu VM のポート転送を設定する</h2>
+<p>Virtual Box Manager の Ubuntu VM のネットワーク設定で、次のように入力してポート転送を追加します。</p>
+
+<p><code class="language-plaintext highlighter-rouge">ゲスト IP</code>アドレスは、Ubuntu VM 上で確認された IP アドレスです。</p>
+<ul>
+  <li><strong>名前</strong> : (希望の名前)</li>
+  <li><strong>プロトコル</strong> : TCP</li>
+  <li><strong>ホストIP</strong> : 127.0.0.1</li>
+  <li><strong>ゲスト IP</strong> : 10.0.2.15 (上記で確認された Ubuntu VM の IP アドレス)</li>
+  <li><strong>ゲストポート</strong> : 4000</li>
+</ul>
+
+<p><img src="/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" alt="VirtualBox Manager - ポート転送ルール" />
+<em>VirtualBox Manager - ポート転送ルール</em></p>
+
+<p>これで、X86 Windows ブラウザで <code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code> に接続して Jekyll をテストできるようになりました。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/ja-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png" />
+      <media:content url="https://unclesnote.com/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[VirtualBox の Ubuntu (20.04) VM に新しいハードディスクを追加する]]></title>
+      <link>https://unclesnote.com/ja/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</link>
+      <guid>https://unclesnote.com/ja/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:45 +0900</pubDate>
+      <category><![CDATA[Ubuntu,バーチャルボックス]]></category>
+      <tag><![CDATA[Ubuntu,バーチャルボックス,GParted,fstab,UUID]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <description><![CDATA[Oracle VM VirtualBoxのUbuntu(20.04) VMにディスクを作成、接続、使用する方法を説明します。手順の大まかな流れは以下の通りです。]]></description>
+      <content:encoded><![CDATA[<p>Oracle VM VirtualBoxのUbuntu(20.04) VMにディスクを作成、接続、使用する方法を説明します。</p>
+
+<p>手順の大まかな流れは以下の通りです。</p>
+<ul>
+  <li>Virtual Box Manager で仮想ハードディスクを作成し、Ubuntu VM に接続します。</li>
+  <li>Ubuntu GUIインターフェイスに接続されたディスクデバイスの初期化とフォーマット</li>
+  <li>Ubuntu が起動するたびにディスク デバイスを使用できるようにします。</li>
+</ul>
+
+<h2 id="1-ディスク-イメージを作成しubuntu-vm-にアタッチします">1. ディスク イメージを作成し、Ubuntu VM にアタッチします。</h2>
+<p>ディスクイメージは、Virtual Box Manager の<code class="language-plaintext highlighter-rouge">Virtual Media Manager</code>を通じて作成できます。</p>
+
+<p>55GBのイメージを作成する予定ですが、ディスクイメージの作成には2つのオプションがあります。 1つ目は、使用した分だけハードディスクの容量を占有するオプション、2つ目は、最初から予定していた容量を一気に占有するオプションを作成することです。ただし、安定した動作のために、2 番目のオプションで一度に 55GB を作成します。</p>
+
+<p><code class="language-plaintext highlighter-rouge">フルサイズを事前に割り当てる</code>オプションを使用して仮想ハードディスクを作成しました。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" alt="Oracle VM VirtualBox Manager - 仮想ハードディスクの作成" />
+<em>Oracle VM VirtualBox Manager - 仮想ハードディスクの作成</em></p>
+
+<p>仮想ディスクイメージの作成が完了し、仮想ディスクイメージの初期化時間が経過すると、ハードディスクリストで作成したディスクを確認できます。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" alt="Oracle VM VirtualBox Manager - 仮想ハードディスクの初期化が進行中です" />
+<em>Oracle VM VirtualBox Manager - 仮想ハードディスクの初期化が進行中です</em></p>
+
+<p>次に、作成した仮想ハー​​ドディスクを Ubuntu VM に追加します。</p>
+
+<p>Ubuntu VM 設定の<code class="language-plaintext highlighter-rouge">ストレージ</code>タブで SATA コントローラーを使用してハードディスクを追加できます。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Ubuntu VM にハードディスクを追加する" />
+<em>Oracle VM VirtualBox Manager - Ubuntu VM にハードディスクを追加する</em></p>
+
+<p>作成したハードディスクを選択すると、情報欄にハードディスクが接続されていることが確認できます。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Ubuntu VM に追加されたハードディスクを確認する" />
+<em>Oracle VM VirtualBox Manager - Ubuntu VM に追加されたハードディスクを確認する</em></p>
+
+<h2 id="2-ubuntu-vm-でのディスクの初期化">2. Ubuntu VM でのディスクの初期化</h2>
+<p>仮想マシンの観点から見ると、ハードディスクは Ubuntu VM に物理的に接続されています。</p>
+
+<p>次に、Ubuntu VM でディスクをフォーマットします。これは古典的な <code class="language-plaintext highlighter-rouge">fdisk</code> を使用して行うことができますが、ここでは <code class="language-plaintext highlighter-rouge">Gparted</code> と呼ばれるより直感的な GUI ツールを使用して作業を進めます。</p>
+
+<p>apt を使用して gparted をインストールして実行しましょう。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c"># install gparted</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>gparted
+<span class="c"># run gparted</span>
+gparted
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>GParted の右上隅に作成されたハードディスクを選択した後、以下の図に従って <code class="language-plaintext highlighter-rouge">msdos</code> パーティション テーブルを作成し、それを <code class="language-plaintext highlighter-rouge">ext4</code> としてフォーマットします。</p>
+
+<p>メニューからパーティション<code class="language-plaintext highlighter-rouge">msdos</code>パーティション テーブルを適用します。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" alt="Ubuntu VM - GParted - msdos 形式でパーティション テーブルを作成する" />
+<em>Ubuntu VM - GParted - msdos 形式でパーティション テーブルを作成する</em></p>
+
+<p>次に、パーティションを作成します。未割り当てのパーティションを右クリックし、<code class="language-plaintext highlighter-rouge">ext4</code>ファイル システム パーティションを作成します。フルサイズに設定してみました。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" alt="Ubuntu VM - GParted - ext4 ファイル システムでパーティションを作成する" />
+<em>Ubuntu VM - GParted - ext4 ファイル システムでパーティションを作成する</em></p>
+
+<p>ext4 ファイル システムのパーティションを <code class="language-plaintext highlighter-rouge">etx4</code> にフォーマットします。</p>
+
+<p>次に、緑色のチェックボックスをクリックして、これまでに行った設定を適用します。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" alt="Ubuntu VM - GParted - パーティションを ext4 にフォーマットする" />
+<em>Ubuntu VM - GParted - パーティションを ext4 にフォーマットする</em></p>
+
+<p>以上でハードディスクの初期化は完了です。 Ubuntu VM が起動するたびにハードディスクを使用できるようにハードディスクをマウントするには、一意のディスク ID 情報が必要です。作成したパーティションを右クリックし、情報メニューの<code class="language-plaintext highlighter-rouge">UUID</code>を確認し、記憶しておきます。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - ディスク パーティションの UUID を確認する" />
+<em>Ubuntu VM - GParted - ディスク パーティションの UUID を確認する</em></p>
+
+<h2 id="3-起動するたびにディスクをマウントします">3. 起動するたびに、ディスクをマウントします</h2>
+<p>現在の状態では、フォーマットされたディスクデバイスの準備はできていますが、ファイルを書き込むためのパスがありません。そこで、特定のフォルダーをハードディスクデバイスに接続してパスを作成します。これが<code class="language-plaintext highlighter-rouge">マウント</code>です。</p>
+
+<p>上記の gparted で特定された <code class="language-plaintext highlighter-rouge">UUID</code> はハードディスク デバイスを表しており、このデバイスを <code class="language-plaintext highlighter-rouge">/mnt/data</code> フォルダーに接続して、ファイルを書き込むことができるパスを作成します。 Ubuntu が起動するたびにディスクが使用可能になる必要があるため、これを <code class="language-plaintext highlighter-rouge">/etc/fstab</code> に記述します。</p>
+
+<p>以下の行が <code class="language-plaintext highlighter-rouge">/etc/fstab</code> に追加されます。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c"># UUID=&lt;hard disk device UUID&gt; &lt;folder where the device will be mounted&gt; ext4    defaults          0       0 </span>
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>次に、マウントされた <code class="language-plaintext highlighter-rouge">/mnt/data</code> からホーム ディレクトリの <code class="language-plaintext highlighter-rouge">data</code> フォルダーへのシンボリック リンクを作成します。</p>
+
+<p>詳細な手順は以下の通りで、すべての手順が完了したら再起動してください。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> /mnt/data
+<span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /mnt/data
+<span class="nv">$ </span><span class="nb">cd</span> ~/
+<span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /mnt/data data
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/fstab  
+<span class="c">#-----------------------------------------------------------------------------</span>
+<span class="c"># /etc/fstab: static file system information.</span>
+<span class="c">#</span>
+<span class="c"># Use 'blkid' to print the universally unique identifier for a</span>
+<span class="c"># device; this may be used with UUID= as a more robust way to name devices</span>
+<span class="c"># that works even if disks are added and removed. See fstab(5).</span>
+<span class="c">#</span>
+<span class="c"># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;</span>
+<span class="c"># / was on /dev/sda5 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>76a80216-1031-4871-945c-4c8de2845136 /               ext4    <span class="nv">errors</span><span class="o">=</span>remount-ro 0       1
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+<span class="c"># /boot/efi was on /dev/sda1 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>A4B5-D201  /boot/efi       vfat    <span class="nb">umask</span><span class="o">=</span>0077      0       1
+/swapfile                                 none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/ja-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[ログをターミナルまたはコンソールに出力するときに色を指定する方法]]></title>
+      <link>https://unclesnote.com/ja/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</link>
+      <guid>https://unclesnote.com/ja/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:42 +0900</pubDate>
+      <category><![CDATA[Ubuntu,一般]]></category>
+      <tag><![CDATA[VSコード,ターミナル,デバッグコンソール,出力,Ubuntu,一般]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <description><![CDATA[ソフトウェアを開発する際、ログは動作確認や問題の原因究明に役立ちます。重大なエラーまたは警告レベルのログに見つけやすい色が付いていると便利です。 VS Code や Visual Studio など、使用している IDE でログ テキストの色を設定できますが、ソフトウェアが IDE なしで実行されている場合、または]]></description>
+      <content:encoded><![CDATA[<p>ソフトウェアを開発する際、ログは動作確認や問題の原因究明に役立ちます。重大なエラーまたは警告レベルのログに見つけやすい色が付いていると便利です。</p>
+
+<p>VS Code や Visual Studio など、使用している IDE でログ テキストの色を設定できますが、ソフトウェアが IDE なしで実行されている場合、または Linux などのクロスコンパイル環境で実行されている場合、設定は適用されません。 。そこで、端末側から独立して文字の色を設定する方法を紹介します。</p>
+<blockquote class="prompt-info">
+  <p><strong>Visual Studio Code で出力テキストの色を変更する方法</strong><br />
+VS Code の場合、<code class="language-plaintext highlighter-rouge">設定 &gt; ユーザー &gt; ワークバンチ &gt; 外観 &gt; Settings.json の編集</code>の<code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code>で色の値を設定することで、デバッグ コンソールまたは出力ウィンドウの色を変更できます。<br />
+<code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code>のパラメータについては、以下のリンクを参照してください。</p>
+
+  <p><a href="https://code.visualstudio.com/api/references/theme-color" target="_blank">https://code.visualstudio.com/api/references/theme-color</a></p>
+</blockquote>
+<h2 id="文字色の設定方法">文字色の設定方法</h2>
+<p>テキストの色を変更するには、必要なテキストを中央に配置し、最初と最後に以下のコードを追加する必要があります。</p>
+<ul>
+  <li><strong>開始</strong> : <code class="language-plaintext highlighter-rouge">(エスケープ文字)[(スタイルコード);(テキストの色);(背景色)m</code></li>
+  <li><strong>テキスト</strong> : <code class="language-plaintext highlighter-rouge">(希望のテキスト)</code></li>
+  <li><strong>終了</strong> : <code class="language-plaintext highlighter-rouge">(エスケープ文字)[0m</code></li>
+</ul>
+
+<p>最終的に文字色を変更した1行は以下のような形式になります。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">(エスケープ文字)[(スタイルコード);(文字色);(背景色)m</code> <code class="language-plaintext highlighter-rouge">(希望のテキスト)</code> <code class="language-plaintext highlighter-rouge">(エスケープ文字)[0m</code></li>
+</ul>
+
+<p>以下は、黒の背景に白の太字で文字列<code class="language-plaintext highlighter-rouge">I am text</code>を表示した例です。</p>
+
+<p>各番号の意味については、後のセクションの定義済みコードを確認してください。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\u001b[1;37;40mI am text\u001b[0m
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>まずは下の表を見てみましょう。文字色を変更するための各要素を列挙します。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>要素</th>
+      <th>必須</th>
+      <th>コメント</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>エスケープ文字</td>
+      <td>はい</td>
+      <td>Unicode、8 進数、または 16 進数のエスケープ文字のうち、適切なものを使用してください。</td>
+    </tr>
+    <tr>
+      <td>スタイルコード</td>
+      <td>オプション</td>
+      <td>太字、点滅、薄暗く、下線などのテキスト スタイル。</td>
+    </tr>
+    <tr>
+      <td>テキストの色</td>
+      <td>オプション</td>
+      <td>テキストの色は、すでに定義されているカラーコードから選択します。</td>
+    </tr>
+    <tr>
+      <td>テキスト(前景色)の色</td>
+      <td>オプション</td>
+      <td>テキストの背景色は、すでに定義されているカラーコードから選択します。</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">(エスケープ文字)[0m</code></td>
+      <td>はい</td>
+      <td>一度設定したテキストの色とスタイルをリセットします。<br />複数の行の色を変更する場合は、後で必要な場所でテキストの色をリセットできます。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">エスケープチャクター</code>は必須ですが、表現方法に応じて後述する3つのうちのいずれかを使用することができます。</p>
+
+<p><code class="language-plaintext highlighter-rouge">スタイル</code><code class="language-plaintext highlighter-rouge">文字色</code><code class="language-plaintext highlighter-rouge">背景色</code>を<code class="language-plaintext highlighter-rouge">;</code>で区切って好みに合わせて追加できます。表現できる選択肢については後ほど説明しますが、それぞれを表す数字は一意であるため、順序は関係ありません。</p>
+
+<p>最後に、<code class="language-plaintext highlighter-rouge">(エスケープ文字)[0m</code> を使用してテキストの色とスタイルをリセットします。リセットしない限り、以降のテキストの色とスタイルは継続されます。</p>
+
+<p>シェル スクリプト内のテキストの色を変更したい場合は、バックスラッシュ入力を許可するために <code class="language-plaintext highlighter-rouge">echo</code> コマンドに <code class="language-plaintext highlighter-rouge">-e</code> オプションを追加する必要があります。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[34m I Am Blue Text ! </span><span class="se">\0</span><span class="s2">33[0m"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="カラーコードとスタイルコード">カラーコードとスタイルコード</h2>
+<h3 id="1-エスケープ文字">1. エスケープ文字</h3>
+<p>以下のエスケープ文字はASCIIコードの27と同じで、表現方法は以下の通りで、どれでも構いません。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">\u001b</code> : Unicode エスケープ文字。これは、<code class="language-plaintext highlighter-rouge">\u</code>の後の 4 桁の 16 進 Unicode コード ポイントを使用してエスケープ文字を表します。</li>
+  <li><code class="language-plaintext highlighter-rouge">\033</code> : エスケープ文字を 8 進表記で表します。</li>
+  <li><code class="language-plaintext highlighter-rouge">\x1b</code> : エスケープ文字を16進数で表します。</li>
+</ul>
+
+<h3 id="2-スタイル">2. スタイル</h3>
+<p>テキストのスタイルを選択することもできますが、それが必要かどうかは疑問です。ログは読みやすいものでなければなりません。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1</code>: 太字 (または強烈な色)</li>
+  <li><code class="language-plaintext highlighter-rouge">2</code>: 薄暗い（またはかすかな）</li>
+  <li><code class="language-plaintext highlighter-rouge">4</code>: 下線</li>
+  <li><code class="language-plaintext highlighter-rouge">5</code>: 点滅 (テキストが速く点滅)</li>
+  <li><code class="language-plaintext highlighter-rouge">7</code>: 反転 (前景色と背景色を入れ替えます)</li>
+  <li><code class="language-plaintext highlighter-rouge">8</code>: 非表示 (非表示のテキスト)</li>
+</ul>
+
+<h3 id="3-文字前景色の色">3. 文字(前景色)の色</h3>
+<p>文字の色を変更するコードです。これは、使用している端末クライアント ソフトウェアのデフォルトを上書きするものだと考えてください。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">30</code>: 黒</li>
+  <li><code class="language-plaintext highlighter-rouge">31</code>: 赤</li>
+  <li><code class="language-plaintext highlighter-rouge">32</code>: 緑</li>
+  <li><code class="language-plaintext highlighter-rouge">33</code>: 黄色</li>
+  <li><code class="language-plaintext highlighter-rouge">34</code>: 青</li>
+  <li><code class="language-plaintext highlighter-rouge">35</code>: マゼンタ</li>
+  <li><code class="language-plaintext highlighter-rouge">36</code>: シアン</li>
+  <li><code class="language-plaintext highlighter-rouge">37</code>: ホワイト</li>
+</ul>
+
+<h3 id="4-背景色">4. 背景色</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">40</code>: 黒背景</li>
+  <li><code class="language-plaintext highlighter-rouge">41</code>: 赤背景</li>
+  <li><code class="language-plaintext highlighter-rouge">42</code>: 緑色の背景</li>
+  <li><code class="language-plaintext highlighter-rouge">43</code>: 黄色の背景</li>
+  <li><code class="language-plaintext highlighter-rouge">44</code>: 青色の背景</li>
+  <li><code class="language-plaintext highlighter-rouge">45</code>: マゼンタの背景</li>
+  <li><code class="language-plaintext highlighter-rouge">46</code>: シアンの背景</li>
+  <li><code class="language-plaintext highlighter-rouge">47</code>: 白背景</li>
+</ul>
+
+<h3 id="5-カラーリセット">5. カラーリセット</h3>
+<p>テキストの色とスタイルをリセットしない場合は、最初の設定のままになります。</p>
+
+<p>通常、これはテキストの末尾に <code class="language-plaintext highlighter-rouge">(エスケープ文字)[0m</code> の形式で追加されます。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0</code>: すべてのスタイルと色をデフォルトにリセットします。</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/ja-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png" /></item></channel>
+</rss>

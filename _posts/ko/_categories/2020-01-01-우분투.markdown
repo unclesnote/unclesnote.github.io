@@ -1,8 +1,0 @@
----
-title: "우분투"
-layout: category
-ro_ref: ko-category-우분투
-category: "우분투"
-category_web: "우분투"
-lang: ko
----

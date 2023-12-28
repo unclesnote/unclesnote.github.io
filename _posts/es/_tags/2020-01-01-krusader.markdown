@@ -1,8 +1,0 @@
----
-title: "Krusader"
-layout: tag
-ro_ref: es-tag-Krusader
-tag: "Krusader"
-tag_web: "krusader"
-lang: es
----

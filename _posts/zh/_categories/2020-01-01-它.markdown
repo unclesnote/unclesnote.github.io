@@ -1,8 +1,0 @@
----
-title: "它"
-layout: category
-ro_ref: zh-category-它
-category: "它"
-category_web: "它"
-lang: zh
----

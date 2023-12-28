@@ -1,8 +1,0 @@
----
-title: "Chrome"
-layout: tag
-ro_ref: en-tag-Chrome
-tag: "Chrome"
-tag_web: "chrome"
-lang: en
----

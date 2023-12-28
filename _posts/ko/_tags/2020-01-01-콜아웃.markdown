@@ -1,8 +1,0 @@
----
-title: "콜아웃"
-layout: tag
-ro_ref: ko-tag-콜아웃
-tag: "콜아웃"
-tag_web: "콜아웃"
-lang: ko
----

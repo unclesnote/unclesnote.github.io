@@ -1,8 +1,0 @@
----
-title: "Mobile"
-layout: tag
-ro_ref: en-tag-Mobile
-tag: "Mobile"
-tag_web: "mobile"
-lang: en
----

@@ -1,8 +1,0 @@
----
-title: "GitHub ページ"
-layout: category
-ro_ref: ja-category-GitHub ページ
-category: "GitHub ページ"
-category_web: "github-ページ"
-lang: ja
----

@@ -1,8 +1,0 @@
----
-title: "コンピューター"
-layout: category
-ro_ref: ja-category-コンピューター
-category: "コンピューター"
-category_web: "コンピューター"
-lang: ja
----

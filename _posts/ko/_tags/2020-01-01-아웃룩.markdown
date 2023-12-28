@@ -1,8 +1,0 @@
----
-title: "아웃룩"
-layout: tag
-ro_ref: ko-tag-아웃룩
-tag: "아웃룩"
-tag_web: "아웃룩"
-lang: ko
----

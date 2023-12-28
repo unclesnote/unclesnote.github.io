@@ -1,8 +1,0 @@
----
-title: "VSCode"
-layout: tag
-ro_ref: ko-tag-VSCode
-tag: "VSCode"
-tag_web: "vscode"
-lang: ko
----

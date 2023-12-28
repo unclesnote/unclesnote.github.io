@@ -1,8 +1,0 @@
----
-title: "乌班图"
-layout: tag
-ro_ref: zh-tag-乌班图
-tag: "乌班图"
-tag_web: "乌班图"
-lang: zh
----

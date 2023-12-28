@@ -1,8 +1,0 @@
----
-title: "黑曜石"
-layout: category
-ro_ref: zh-category-黑曜石
-category: "黑曜石"
-category_web: "黑曜石"
-lang: zh
----

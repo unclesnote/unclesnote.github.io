@@ -1,8 +1,0 @@
----
-title: "디버그콘솔"
-layout: tag
-ro_ref: ko-tag-디버그콘솔
-tag: "디버그콘솔"
-tag_web: "디버그콘솔"
-lang: ko
----

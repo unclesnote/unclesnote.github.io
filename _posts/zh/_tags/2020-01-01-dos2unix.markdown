@@ -1,8 +1,0 @@
----
-title: "DOS2UNIX"
-layout: tag
-ro_ref: zh-tag-DOS2UNIX
-tag: "DOS2UNIX"
-tag_web: "dos2unix"
-lang: zh
----

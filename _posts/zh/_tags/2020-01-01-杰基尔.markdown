@@ -1,8 +1,0 @@
----
-title: "杰基尔"
-layout: tag
-ro_ref: zh-tag-杰基尔
-tag: "杰基尔"
-tag_web: "杰基尔"
-lang: zh
----

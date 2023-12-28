@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231227193010
-thumbnail: /assets/images/231227193010/ja-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png
-lang: ja
----

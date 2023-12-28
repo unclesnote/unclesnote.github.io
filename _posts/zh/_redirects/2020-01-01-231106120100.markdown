@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231106120100
-thumbnail: /assets/images/231106120100/zh-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png
-lang: zh
----

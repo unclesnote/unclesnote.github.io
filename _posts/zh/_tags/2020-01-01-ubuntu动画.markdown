@@ -1,8 +1,0 @@
----
-title: "Ubuntu动画"
-layout: tag
-ro_ref: zh-tag-Ubuntu动画
-tag: "Ubuntu动画"
-tag_web: "ubuntu动画"
-lang: zh
----

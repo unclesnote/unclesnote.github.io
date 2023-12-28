@@ -1,8 +1,0 @@
----
-title: "Git"
-layout: tag
-ro_ref: ko-tag-Git
-tag: "Git"
-tag_web: "git"
-lang: ko
----

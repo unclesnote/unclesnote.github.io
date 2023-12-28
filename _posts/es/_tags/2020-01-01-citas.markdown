@@ -1,8 +1,0 @@
----
-title: "Citas"
-layout: tag
-ro_ref: es-tag-Citas
-tag: "Citas"
-tag_web: "citas"
-lang: es
----

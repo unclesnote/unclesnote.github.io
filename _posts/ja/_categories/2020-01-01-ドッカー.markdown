@@ -1,8 +1,0 @@
----
-title: "ドッカー"
-layout: category
-ro_ref: ja-category-ドッカー
-category: "ドッカー"
-category_web: "ドッカー"
-lang: ja
----

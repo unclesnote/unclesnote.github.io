@@ -1,8 +1,0 @@
----
-title: "电报"
-layout: tag
-ro_ref: zh-tag-电报
-tag: "电报"
-tag_web: "电报"
-lang: zh
----

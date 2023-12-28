@@ -1,8 +1,0 @@
----
-title: "크롬"
-layout: tag
-ro_ref: ko-tag-크롬
-tag: "크롬"
-tag_web: "크롬"
-lang: ko
----

@@ -1,8 +1,0 @@
----
-title: "法塔布"
-layout: tag
-ro_ref: zh-tag-法塔布
-tag: "法塔布"
-tag_web: "法塔布"
-lang: zh
----

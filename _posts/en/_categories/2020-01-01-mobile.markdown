@@ -1,8 +1,0 @@
----
-title: "Mobile"
-layout: category
-ro_ref: en-category-Mobile
-category: "Mobile"
-category_web: "mobile"
-lang: en
----

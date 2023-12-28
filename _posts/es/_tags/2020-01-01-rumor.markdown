@@ -1,8 +1,0 @@
----
-title: "Rumor"
-layout: tag
-ro_ref: es-tag-Rumor
-tag: "Rumor"
-tag_web: "rumor"
-lang: es
----

@@ -1,8 +1,0 @@
----
-title: "Tools"
-layout: tag
-ro_ref: en-tag-Tools
-tag: "Tools"
-tag_web: "tools"
-lang: en
----

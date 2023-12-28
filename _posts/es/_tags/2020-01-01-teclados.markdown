@@ -1,8 +1,0 @@
----
-title: "Teclados"
-layout: tag
-ro_ref: es-tag-Teclados
-tag: "Teclados"
-tag_web: "teclados"
-lang: es
----

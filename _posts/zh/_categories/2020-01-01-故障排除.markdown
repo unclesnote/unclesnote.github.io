@@ -1,8 +1,0 @@
----
-title: "故障排除"
-layout: category
-ro_ref: zh-category-故障排除
-category: "故障排除"
-category_web: "故障排除"
-lang: zh
----

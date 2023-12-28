@@ -1,8 +1,0 @@
----
-title: "ギット"
-layout: category
-ro_ref: ja-category-ギット
-category: "ギット"
-category_web: "ギット"
-lang: ja
----

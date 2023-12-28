@@ -1,8 +1,0 @@
----
-title: "ブリーチビット"
-layout: tag
-ro_ref: ja-tag-ブリーチビット
-tag: "ブリーチビット"
-tag_web: "ブリーチビット"
-lang: ja
----

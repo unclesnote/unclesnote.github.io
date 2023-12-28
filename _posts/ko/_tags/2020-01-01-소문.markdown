@@ -1,8 +1,0 @@
----
-title: "소문"
-layout: tag
-ro_ref: ko-tag-소문
-tag: "소문"
-tag_web: "소문"
-lang: ko
----

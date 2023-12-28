@@ -1,8 +1,0 @@
----
-title: "LF"
-layout: tag
-ro_ref: ko-tag-LF
-tag: "LF"
-tag_web: "lf"
-lang: ko
----

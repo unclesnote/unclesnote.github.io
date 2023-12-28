@@ -1,8 +1,0 @@
----
-title: "管道"
-layout: category
-ro_ref: zh-category-管道
-category: "管道"
-category_web: "管道"
-lang: zh
----

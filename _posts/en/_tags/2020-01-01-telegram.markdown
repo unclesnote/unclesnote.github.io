@@ -1,8 +1,0 @@
----
-title: "telegram"
-layout: tag
-ro_ref: en-tag-telegram
-tag: "telegram"
-tag_web: "telegram"
-lang: en
----

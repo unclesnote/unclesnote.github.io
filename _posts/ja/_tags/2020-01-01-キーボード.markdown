@@ -1,8 +1,0 @@
----
-title: "キーボード"
-layout: tag
-ro_ref: ja-tag-キーボード
-tag: "キーボード"
-tag_web: "キーボード"
-lang: ja
----

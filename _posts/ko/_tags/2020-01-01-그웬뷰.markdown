@@ -1,8 +1,0 @@
----
-title: "그웬뷰"
-layout: tag
-ro_ref: ko-tag-그웬뷰
-tag: "그웬뷰"
-tag_web: "그웬뷰"
-lang: ko
----

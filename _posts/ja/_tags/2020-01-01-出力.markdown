@@ -1,8 +1,0 @@
----
-title: "出力"
-layout: tag
-ro_ref: ja-tag-出力
-tag: "出力"
-tag_web: "出力"
-lang: ja
----

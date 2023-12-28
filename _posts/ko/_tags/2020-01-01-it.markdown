@@ -1,8 +1,0 @@
----
-title: "IT"
-layout: tag
-ro_ref: ko-tag-IT
-tag: "IT"
-tag_web: "it"
-lang: ko
----

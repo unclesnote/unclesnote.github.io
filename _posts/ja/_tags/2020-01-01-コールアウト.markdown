@@ -1,8 +1,0 @@
----
-title: "コールアウト"
-layout: tag
-ro_ref: ja-tag-コールアウト
-tag: "コールアウト"
-tag_web: "コールアウト"
-lang: ja
----

@@ -1,8 +1,0 @@
----
-title: "GParted"
-layout: tag
-ro_ref: en-tag-GParted
-tag: "GParted"
-tag_web: "gparted"
-lang: en
----

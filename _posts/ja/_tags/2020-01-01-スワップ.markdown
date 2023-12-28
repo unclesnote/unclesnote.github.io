@@ -1,8 +1,0 @@
----
-title: "スワップ"
-layout: tag
-ro_ref: ja-tag-スワップ
-tag: "スワップ"
-tag_web: "スワップ"
-lang: ja
----

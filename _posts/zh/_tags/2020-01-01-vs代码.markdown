@@ -1,8 +1,0 @@
----
-title: "VS代码"
-layout: tag
-ro_ref: zh-tag-VS代码
-tag: "VS代码"
-tag_web: "vs代码"
-lang: zh
----

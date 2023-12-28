@@ -1,8 +1,0 @@
----
-title: "GitHub"
-layout: tag
-ro_ref: zh-tag-GitHub
-tag: "GitHub"
-tag_web: "github"
-lang: zh
----

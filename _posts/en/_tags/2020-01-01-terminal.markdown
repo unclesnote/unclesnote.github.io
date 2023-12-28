@@ -1,8 +1,0 @@
----
-title: "Terminal"
-layout: tag
-ro_ref: en-tag-Terminal
-tag: "Terminal"
-tag_web: "terminal"
-lang: en
----

@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /norobots/
+
+User-agent: Yeti
+Allow: /ko/
+
+User-agent: Daumoa
+Allow: /ko/
+
+User-agent: DAUM
+Allow: /ko/
+
+Sitemap: https://unclesnote.com/sitemap.xml
+
+#DaumWebMasterTool:d946862ff072ce46c2779ce39d6a15c32d3179efc79b73c66f6a2fac2448a823:13VhfGNAqantGSkAnow9Ew==

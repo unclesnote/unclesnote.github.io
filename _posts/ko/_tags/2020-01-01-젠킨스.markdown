@@ -1,8 +1,0 @@
----
-title: "젠킨스"
-layout: tag
-ro_ref: ko-tag-젠킨스
-tag: "젠킨스"
-tag_web: "젠킨스"
-lang: ko
----

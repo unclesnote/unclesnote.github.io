@@ -1,8 +1,0 @@
----
-title: "Cromo"
-layout: tag
-ro_ref: es-tag-Cromo
-tag: "Cromo"
-tag_web: "cromo"
-lang: es
----

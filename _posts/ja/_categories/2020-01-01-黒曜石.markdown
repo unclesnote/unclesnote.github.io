@@ -1,8 +1,0 @@
----
-title: "黒曜石"
-layout: category
-ro_ref: ja-category-黒曜石
-category: "黒曜石"
-category_web: "黒曜石"
-lang: ja
----

@@ -1,8 +1,0 @@
----
-title: "Tools"
-layout: category
-ro_ref: en-category-Tools
-category: "Tools"
-category_web: "tools"
-lang: en
----

@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231227143211
-thumbnail: /assets/images/231227143211/es-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png
-lang: es
----

@@ -1,8 +1,0 @@
----
-title: "UUID"
-layout: tag
-ro_ref: ja-tag-UUID
-tag: "UUID"
-tag_web: "uuid"
-lang: ja
----

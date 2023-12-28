@@ -1,8 +1,0 @@
----
-title: "携帯"
-layout: tag
-ro_ref: ja-tag-携帯
-tag: "携帯"
-tag_web: "携帯"
-lang: ja
----

@@ -1,8 +1,0 @@
----
-title: "삼성엑시노스"
-layout: tag
-ro_ref: ko-tag-삼성엑시노스
-tag: "삼성엑시노스"
-tag_web: "삼성엑시노스"
-lang: ko
----

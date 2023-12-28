@@ -1,8 +1,0 @@
----
-title: "컴퓨터"
-layout: category
-ro_ref: ko-category-컴퓨터
-category: "컴퓨터"
-category_web: "컴퓨터"
-lang: ko
----

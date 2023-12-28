@@ -1,8 +1,0 @@
----
-title: "个人电脑"
-layout: tag
-ro_ref: zh-tag-个人电脑
-tag: "个人电脑"
-tag_web: "个人电脑"
-lang: zh
----

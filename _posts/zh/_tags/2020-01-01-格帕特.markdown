@@ -1,8 +1,0 @@
----
-title: "格帕特"
-layout: tag
-ro_ref: zh-tag-格帕特
-tag: "格帕特"
-tag_web: "格帕特"
-lang: zh
----

@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+<channel>
+    
+
+    <title><![CDATA[엉클스 노트]]></title>
+    <atom:link href="https://unclesnote.com/ko/rss.xml" rel="self" type="application/rss+xml" />
+    <link>https://unclesnote.com/ko/</link>
+    <image>
+      <url>https://unclesnote.com/assets/img/site.png</url>
+      <title><![CDATA[엉클스 노트]]></title>
+      <link>https://unclesnote.com/ko/</link>
+    </image>
+    <language>ko</language>
+    <description><![CDATA[엉클 샘의 IT & 개발 낙서장]]></description>
+    <generator>https://unclesnote.com</generator>
+    <lastBuildDate>Wed, 27 Dec 2023 19:30:10 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[텔레그램 봇을 생성하고 메시지 보내기]]></title>
+      <link>https://unclesnote.com/ko/231227193010/create_a_telegram_bot_and_send_a_message</link>
+      <guid>https://unclesnote.com/ko/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+      <category><![CDATA[우분투,젠킨스,Pipeline]]></category>
+      <tag><![CDATA[우분투,젠킨스,Pipeline,sendMessage,getUpdates,Telegram]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <description><![CDATA[텔레그램은 비교적 사용하기 쉬운 API 서비스를 제공합니다. 따라서 보안이 큰 문제가 되지 않는 CI/CD 시스템에서 이벤트를 알리는 쉬운 도구로 사용할 수 있습니다. 젠킨스 시스템에 텔레그램을 통합하려고 하는데, 텔레그램 봇을 만드는 기본적인 방법을 소개하려고 합니다.]]></description>
+      <content:encoded><![CDATA[<p>텔레그램은 비교적 사용하기 쉬운 API 서비스를 제공합니다. 따라서 보안이 큰 문제가 되지 않는 CI/CD 시스템에서 이벤트를 알리는 쉬운 도구로 사용할 수 있습니다. 젠킨스 시스템에 텔레그램을 통합하려고 하는데, 텔레그램 봇을 만드는 기본적인 방법을 소개하려고 합니다.</p>
+<h2 id="개요">개요</h2>
+<p>텔레그램 메시지를 보내기 위해서는 텔레그램 봇과 일치하는 <code class="language-plaintext highlighter-rouge">token</code>과 채팅방을 나타내는 <code class="language-plaintext highlighter-rouge">chatid</code>가 필요합니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token</code> : 텔레그램에서 봇을 생성할 때 볼 수 있습니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">chatid</code> : 토큰을 찾으면 해당 토큰을 사용하여 Telegram API <code class="language-plaintext highlighter-rouge">getUpdates</code>를 호출하여 찾을 수 있습니다.</li>
+</ul>
+
+<p>결론적으로 <code class="language-plaintext highlighter-rouge">token</code>과 <code class="language-plaintext highlighter-rouge">chatid</code>를 모두 찾았다면 아래 URL을 호출하여 텔레그램 채팅방에 <code class="language-plaintext highlighter-rouge">im bot</code> 메시지를 보낼 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="텔레그램-봇-만들기---토큰">텔레그램 봇 만들기 - <strong>토큰</strong></h2>
+<p>텔레그램에서 <code class="language-plaintext highlighter-rouge">botfather</code>를 찾아 채팅방에 입장하세요. BotFather는 텔레그램 봇을 생성/관리할 수 있는 서비스 봇입니다.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" alt="텔레그램 - `BotFather` 검색" />
+<em>텔레그램 - <code class="language-plaintext highlighter-rouge">BotFather</code> 검색</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">newbot</code> 명령을 사용하여 새 봇을 만듭니다.</p>
+
+<p>BotFather는 봇의 이름과 사용자 이름을 묻습니다. 실제로 <code class="language-plaintext highlighter-rouge">사용자 이름</code>은 봇과 통신할 채팅방입니다. 텔레그램 봇이 성공적으로 생성되면 BotFather는 봇과 통신하기 위한 인수인 <code class="language-plaintext highlighter-rouge">토큰</code>을 제공합니다.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" alt="텔레그램 - `BotFather` - `newbot`" />
+<em>텔레그램 - <code class="language-plaintext highlighter-rouge">BotFather</code> - <code class="language-plaintext highlighter-rouge">newbot</code></em></p>
+
+<p>토큰은 Telegram API를 사용하여 봇을 제어하기 위한 가장 기본적인 자격 증명입니다. 그러므로 공개되지 않도록 주의해서 적어 주십시오.</p>
+<h2 id="텔레그램-getupdates-api-호출---chatid">텔레그램 <strong>getUpdates</strong> API 호출 - <strong>chatid</strong></h2>
+<p>BotFather가 봇을 생성한 경우 Telegram에서 봇을 찾아 메시지를 보내세요. 안녕하세요`라고 문자를 보냈어요.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" alt="텔레그램 - 봇 채팅방에 `hello`를 입력하세요" />
+<em>텔레그램 - 봇 채팅방에 <code class="language-plaintext highlighter-rouge">hello</code>를 입력하세요</em></p>
+
+<p>그런 다음 Chrome이나 Edge 등 사용하는 웹 브라우저에서 위의 봇 생성 시 찾은 토큰과 결합하여 아래 URL을 호출합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/getUpdates
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/getUpdates
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그러면 JSON 형식의 문자열이 브라우저에 표시되고 <code class="language-plaintext highlighter-rouge">chat</code>의 <code class="language-plaintext highlighter-rouge">id</code>는 <code class="language-plaintext highlighter-rouge">chatid</code>가 됩니다. <code class="language-plaintext highlighter-rouge">chatid</code>에 주목하세요. Edge 브라우저를 사용하면 줄 정렬된 JSON 문자열을 볼 수 있습니다.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" alt="인터넷 브라우저 - 텔레그램 - `getUpdates`" />
+<em>인터넷 브라우저 - 텔레그램 - <code class="language-plaintext highlighter-rouge">getUpdates</code></em></p>
+
+<h2 id="브라우저를-통해-텔레그램-메시지-보내기---sendmessage-api">브라우저를 통해 텔레그램 메시지 보내기 - <strong>sendMessage</strong> API</h2>
+<p>결론적으로 Jenkins 플러그인을 사용하여 텔레그램 메시지를 보내지만 테스트 목적으로 <code class="language-plaintext highlighter-rouge">sendMessage</code> 텔레그램 API를 사용하여 브라우저에 메시지를 보냅니다.</p>
+
+<p>API는 다음과 같으며, 위 단계에서 찾은 토큰과 chatid를 이용하여 텔레그램 메시지를 보낼 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>잘 작동했나요? 아래와 같이 텔레그램에서 <code class="language-plaintext highlighter-rouge">im bot</code>이라는 메시지를 확인할 수 있었습니다.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="텔레그램 - `sendMessage` API" />
+<em>텔레그램 - <code class="language-plaintext highlighter-rouge">sendMessage</code> API</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/ko-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Jenkins 파이프라인 스크립트에서 텔레그램 메시지 보내기]]></title>
+      <link>https://unclesnote.com/ko/231227143211/sending_telegram_message_from_jenkins_pipeline_script</link>
+      <guid>https://unclesnote.com/ko/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 14:32:11 +0900</pubDate>
+      <category><![CDATA[우분투,젠킨스,Pipeline]]></category>
+      <tag><![CDATA[젠킨스,전보,curl,우분투,젠킨스,Pipeline]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <description><![CDATA[물론 Jenkins용 Telegram 플러그인도 있지만 개인적으로는 시행착오를 겪고 싶지 않았습니다. 플러그인이 출시된 지 최소 2년이 지났습니다. 리눅스에서 `curl`을 사용하여 텔레그램 메시지를 보내보겠습니다.]]></description>
+      <content:encoded><![CDATA[<p>물론 Jenkins용 Telegram 플러그인도 있지만 개인적으로는 시행착오를 겪고 싶지 않았습니다. 플러그인이 출시된 지 최소 2년이 지났습니다. 리눅스에서 <code class="language-plaintext highlighter-rouge">curl</code>을 사용하여 텔레그램 메시지를 보내보겠습니다.</p>
+
+<p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - 텔레그램 플러그인" />
+<em>Jenkins - 텔레그램 플러그인</em></p>
+
+<h2 id="텔레그램-메시지-전송을-위한-groovy-함수">텔레그램 메시지 전송을 위한 Groovy 함수</h2>
+<p>Jenkins 스크립트에서 사용할 두 개의 Groovy 함수를 만들었습니다. <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_message</code>는 간단히 문자열을 삽입하여 텔레그램 메시지를 보내는 함수입니다. 또 다른 <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_file</code>은 텍스트 파일의 내용을 텔레그램 메시지로 보내는 함수입니다.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+</pre></td><td class="rouge-code"><pre><span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_message</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">message</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_message, title=${title}, message=${message}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -X POST \
+                -d chat_id=${chatid} \
+                -d parse_mode=HTML \
+                -d text='&lt;b&gt;${title}&lt;/b&gt;\n\n${message}' \
+                https://api.telegram.org/bot${token}/sendMessage
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_fileContents</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, title=${title}, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="kt">boolean</span> <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="kt">def</span> <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">filetext</span> <span class="o">=</span> <span class="n">sh</span><span class="o">(</span><span class="nl">script:</span> <span class="s2">"cat ${file}"</span><span class="o">,</span> <span class="nl">returnStdout:</span> <span class="kc">true</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\n${filetext}"</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\nFile does not exist"</span>
+        <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">filecontents</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+
+    <span class="k">return</span> <span class="n">isFileExist</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendDocument_file</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendDocument_file</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -k \
+        -F chat_id=${chatid} \
+        -F document=@\"${file}\" \
+                https://api.telegram.org/bot${token}/sendDocument
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아직 <code class="language-plaintext highlighter-rouge">curl</code>을 통해 텔레그램 메시지를 보내는 동안 오류가 발생하지 않았지만 오류로 인해 파이프라인 프로세스가 중단되는 것을 방지하기 위해 <code class="language-plaintext highlighter-rouge">try-catch</code> 문으로 컬 문을 래핑했습니다. 저는 개인적으로 텔레그램 메시지를 보내는 것보다 파이프라인 처리가 더 우선순위가 높다고 생각합니다.</p>
+<h2 id="파이프라인의-단계-내에서-함수-사용"><strong>파이프라인</strong>의 <strong>단계</strong> 내에서 함수 사용</h2>
+<p>아래는 <code class="language-plaintext highlighter-rouge">파이프라인</code>의 <code class="language-plaintext highlighter-rouge">단계</code>에서 위에서 생성한 함수를 호출하는 방법입니다. 텔레그램 봇의 <code class="language-plaintext highlighter-rouge">token</code>과 <code class="language-plaintext highlighter-rouge">chatid</code>를 하드코딩했습니다. 나중에 필요하게 되면 Jenkins의 <code class="language-plaintext highlighter-rouge">Credentials</code> 기능을 이용해 구현해보도록 하겠습니다.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="n">steps</span> <span class="o">{</span>
+    <span class="n">script</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">token</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_TOKEN</span><span class="o">;</span>
+        <span class="kt">def</span> <span class="n">chatid</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_CHATID</span><span class="o">;</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">chatid</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"im title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="kt">def</span> <span class="n">rst</span> <span class="o">=</span> <span class="n">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="s2">"im file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">rst</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">)</span> <span class="o">{</span>
+            <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="o">}</span>                        
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/ko-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Synology NAS Docker에서 Jenkins 설정]]></title>
+      <link>https://unclesnote.com/ko/231223003139/setting_up_jenkins_on_synology_nas_docker</link>
+      <guid>https://unclesnote.com/ko/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:39 +0900</pubDate>
+      <category><![CDATA[우분투,젠킨스,설정]]></category>
+      <tag><![CDATA[우분투,도커,젠킨스,설정]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <description><![CDATA[CI/CD(지속적 통합/지속적 배포) 도구가 많이 있는데, Jenkins는 라이선스 제한이 없고 오픈 소스도 없는 유용한 도구 중 하나입니다. Synology NAS Docker에 Jenkins를 설치하는 방법에 대해 이야기하고 싶습니다.]]></description>
+      <content:encoded><![CDATA[<p><strong>CI/CD(지속적 통합/지속적 배포)</strong>도구가 많이 있는데, Jenkins는 라이선스 제한이 없고 오픈 소스도 없는 유용한 도구 중 하나입니다. Synology NAS Docker에 Jenkins를 설치하는 방법에 대해 이야기하고 싶습니다.</p>
+<ul>
+  <li>https://pkg.jenkins.io/debian</li>
+</ul>
+
+<h2 id="기본환경">기본환경</h2>
+<p>Jenkins가 작동하려면 JDK 버전 8 이상이 필요합니다. JDK 버전 11을 설치합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>apt-get update
+apt-get <span class="nb">install</span> <span class="nt">-y</span> openjdk-11-jdk
+
+java <span class="nt">-version</span>
+<span class="c"># + --------------------------------------------------------</span>
+openjdk version <span class="s2">"11.0.21"</span> 2023-10-17
+OpenJDK Runtime Environment <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04<span class="o">)</span>
+OpenJDK 64-Bit Server VM <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04, mixed mode, sharing<span class="o">)</span>
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="젠킨스-패키지-설치">젠킨스 패키지 설치</h2>
+<p>APT를 사용하여 Jenkins를 설치하려면 APT에 서버 정보를 추가해야 합니다. Jenkins 서버 정보를 추가한 후 <code class="language-plaintext highlighter-rouge">apt update</code> 도중 키가 없다는 오류가 발생합니다. 오류 메시지에 표시된 키를 사용하여 <code class="language-plaintext highlighter-rouge">apt-key</code>에 키를 추가하세요. 제 경우에는 키가 <code class="language-plaintext highlighter-rouge">5BA31D57EF5975CA</code>였습니다.</p>
+
+<p>APT에 주요 정보를 추가한 후 Jenkins를 설치합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-q</span> <span class="nt">-O</span> - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="nb">sudo </span>apt-key add -
+<span class="nb">echo </span>deb http://pkg.jenkins.io/debian-stable binary/ | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/jenkins.list
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+...
+W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release: The following signatures couldnt be verified because the public key is not available: NO_PUBKEY 5BA31D57EF5975CA
+E: The repository <span class="s1">'http://pkg.jenkins.io/debian-stable binary/ Release'</span> is not signed.
+...
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-key adv <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+<span class="c"># + --------------------------------------------------------</span>
+Executing: /tmp/apt-key-gpghome.d7qO7VDcMV/gpg.1.sh <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+gpg: key 5BA31D57EF5975CA: public key <span class="s2">"Jenkins Project &lt;jenkinsci-board@googlegroups.com&gt;"</span> imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Get:2 https://pkg.jenkins.io/debian-stable binary/ Release <span class="o">[</span>2044 B]
+Get:3 https://pkg.jenkins.io/debian-stable binary/ Release.gpg <span class="o">[</span>833 B]
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Get:6 https://pkg.jenkins.io/debian-stable binary/ Packages <span class="o">[</span>29.6 kB]
+Hit:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:8 http://security.ubuntu.com/ubuntu focal-security InRelease
+Fetched 32.5 kB <span class="k">in </span>2s <span class="o">(</span>19.3 kB/s<span class="o">)</span>
+Reading package lists... Done
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get <span class="nb">install </span>jenkins
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Jenkins를 웹에 연결하기 위한 포트 번호는 <code class="language-plaintext highlighter-rouge">/etc/default/jenkins</code> 파일의 <code class="language-plaintext highlighter-rouge">HTTP_PORT</code>에 정의되어 있습니다. 포트 번호를 변경해야 하는 경우 <code class="language-plaintext highlighter-rouge">8080</code>에서 원하는 값으로 변경하면 됩니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>
+vi /etc/default/jenkins
+<span class="c"># + --------------------------------------------------------</span>
+<span class="c"># port for HTTP connector (default 8080; disable with -1)</span>
+<span class="nv">HTTP_PORT</span><span class="o">=</span>8080
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="synology-nas-컨테이너-포트-구성-및-jenkins-실행">Synology NAS 컨테이너 포트 구성 및 Jenkins 실행</h2>
+<p>그런 다음 Synology NAS GUI에서 Ubuntu 컨테이너를 중지하고 외부 연결용 포트를 Jenkins로 설정합니다. 컨테이너의 <code class="language-plaintext highlighter-rouge">8080</code> 포트를 <code class="language-plaintext highlighter-rouge">48080</code> 포트에 매핑했습니다.</p>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" alt="Synology NAS GUI - Docker - Jenkins 포트 설정" />
+<em>Synology NAS GUI - Docker - Jenkins 포트 설정</em></p>
+
+<p>Ubuntu 컨테이너를 시작하고 Jenkins 서비스를 실행합니다. 즉, Ubuntu Docker를 중지했다가 다시 시작하면 Jenkins 서비스를 다시 실행해야 합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sleep </span>10
+service jenkins restart
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그런 다음 웹 브라우저를 사용하여 Jenkins에 연결합니다. 저의 경우 Synology NAS에 할당된 IP 주소는 <code class="language-plaintext highlighter-rouge">192.168.0.50</code>이고 포트는 위에서 설정한 <code class="language-plaintext highlighter-rouge">48080</code>이었습니다.</p>
+<ul>
+  <li>http://192.168.0.50:48080/</li>
+</ul>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" alt="젠킨스 - 시작하기" />
+<em>젠킨스 - 시작하기</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">/var/lib/jenkins/secrets/initialAdminPassword</code> 파일에 적힌 초기 비밀번호로 로그인하고 Jenkins 초기 설치를 진행합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">cat</span> /var/lib/jenkins/secrets/initialAdminPassword
+<span class="c"># + --------------------------------------------------------</span>
+72b349dadd5d4a83bac10060e536189e
+<span class="c"># - --------------------------------------------------------</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/ko-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Synology NAS의 Ubuntu Docker에서 XRDP 설정]]></title>
+      <link>https://unclesnote.com/ko/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</link>
+      <guid>https://unclesnote.com/ko/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:38 +0900</pubDate>
+      <category><![CDATA[우분투,도커]]></category>
+      <tag><![CDATA[우분투,도커]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <description><![CDATA[VMM(Virtual Machine Manager) 기능을 지원하는 보급형 Synology NAS를 구입한 경우 VMM에 Windows 또는 Ubuntu를 설치하면 좋을 것입니다. 하지만 설치 시간이 길고 성능이 좋지 않아 실망할 수도 있습니다. 그러한 사람들에게는 Ubuntu]]></description>
+      <content:encoded><![CDATA[<p>VMM(Virtual Machine Manager) 기능을 지원하는 보급형 Synology NAS를 구입한 경우 VMM에 Windows 또는 Ubuntu를 설치하면 좋을 것입니다. 하지만 설치 시간이 길고 성능이 좋지 않아 실망할 수도 있습니다.</p>
+
+<p>그러한 사람들에게는 Ubuntu Docker에 XRDP를 설치하는 것이 GUI 인터페이스로 OS를 활성화하는 가장 좋은 옵션일 수 있습니다.</p>
+
+<p>두 가지 방법을 설명하겠습니다. 하나는 Ubuntu VM의 Docker에 XRDP를 설치하는 것이고, 다른 하나는 Synology NAS의 Docker 앱에서 Ubuntu 컨테이너를 생성하고 XRDP를 통해 외부에서 액세스할 수 있도록 설정하는 것입니다.</p>
+<h2 id="ubuntu-vm의-xrdp-도커-컨테이너">Ubuntu VM의 XRDP 도커 컨테이너</h2>
+<h3 id="docker-이미지-빌드-및-컨테이너-실행">Docker 이미지 빌드 및 컨테이너 실행</h3>
+<p>아래 정보를 바탕으로 Docker 이미지를 생성해보겠습니다. 아래 내용으로 <code class="language-plaintext highlighter-rouge">Dockerfile</code>을 생성해 보겠습니다.</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="k">FROM</span><span class="s"> ubuntu:20.04</span>
+
+<span class="k">RUN </span>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+
+<span class="k">RUN </span><span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+
+<span class="k">RUN </span>useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+<span class="k">RUN </span>usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+
+<span class="k">RUN </span>apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+<span class="k">RUN </span>adduser xrdp ssl-cert
+
+<span class="k">RUN </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "</span><span class="se">\
+</span><span class="s1">export GNOME_SHELL_SESSION_MODE=Lubuntu\n</span><span class="se">\
+</span><span class="s1">export XDG_SESSION_TYPE=x11\n</span><span class="se">\
+</span><span class="s1">export XDG_CURRENT_DESKTOP=LXQt\n</span><span class="se">\
+</span><span class="s1">export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n</span><span class="se">\
+</span><span class="s1">" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+<span class="k">EXPOSE</span><span class="s"> 3389</span>
+
+<span class="k">CMD</span><span class="s"> service xrdp start ; bash</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그런 다음 생성된 <code class="language-plaintext highlighter-rouge">Dockerfile</code>을 기반으로 Docker 이미지를 빌드합니다. 그런 다음 생성된 이미지로 컨테이너를 생성하고 실행하겠습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># change permission of docker.sock if there is permission error when docker build</span>
+<span class="nb">sudo chmod </span>666 /var/run/docker.sock<span class="p">;</span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /var/run/docker.sock
+
+<span class="c"># build docker image from Dockerfile</span>
+docker build <span class="nt">-f</span> Dockerfile <span class="nt">-t</span> img-xrdp-lubuntu <span class="nb">.</span>
+
+<span class="c"># create docker container from image </span>
+docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> cond-xrdp-lubuntu <span class="nt">-p</span> 3389:3389 img-xrdp-lubuntu
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="virtualbox의-포트-전달-설정">VirtualBox의 포트 전달 설정</h3>
+<p>가상 머신 외부에서 Ubuntu VM의 Docker 컨테이너로 XRDP에 액세스하려면 Ubuntu VM에서 포트 전달을 설정해야 합니다. RDP 프로토콜을 사용하여 <code class="language-plaintext highlighter-rouge">43389</code> 포트에 연결하려고 하면 Ubuntu VM 내부의 <code class="language-plaintext highlighter-rouge">3389</code> 포트에 매핑됩니다.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="XRDP 연결을 위한 VirtualBox 포트 전달 설정" />
+<em>XRDP 연결을 위한 VirtualBox 포트 전달 설정</em></p>
+
+<h3 id="xrdp-원격-액세스">XRDP 원격 액세스</h3>
+<p>그런 다음 원격 데스크톱 연결을 통해 <code class="language-plaintext highlighter-rouge">127.0.0.1:43389</code> 주소에 접속합니다.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" alt="원격 데스크톱 연결" />
+<em>원격 데스크톱 연결</em></p>
+
+<p>이후 XRDP 로그인 창이 열리면 아래에 <code class="language-plaintext highlighter-rouge">사용자 이름</code>과 <code class="language-plaintext highlighter-rouge">비밀번호</code>를 입력하세요.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="우분투 XRDP 로그인 화면" />
+<em>우분투 XRDP 로그인 화면</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<h2 id="synology-nas의-xrdp-docker-컨테이너">Synology NAS의 XRDP Docker 컨테이너</h2>
+<h3 id="docker-패키지-설치-및-컨테이너-포트-설정">Docker 패키지 설치 및 컨테이너 포트 설정</h3>
+<p>Synology NAS GUI에 액세스합니다. 그런 다음 패키지 센터에서 <code class="language-plaintext highlighter-rouge">Docker</code>를 검색하여 설치하세요.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" alt="Synology NAS GUI - 패키지 센터 - Docker" />
+<em>Synology NAS GUI - 패키지 센터 - Docker</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">ubuntu:20.04</code> Docker 이미지를 다운로드하고 해당 이미지를 기반으로 컨테이너를 만들었습니다. 그리고 컨테이너 포트 설정에서 ssh용 포트 <code class="language-plaintext highlighter-rouge">422</code>와 XRDP용 포트 <code class="language-plaintext highlighter-rouge">43389</code>가 열렸습니다.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="Synology NAS GUI - Ubuntu 컨테이너 - 포트 설정" />
+<em>Synology NAS GUI - Ubuntu 컨테이너 - 포트 설정</em></p>
+
+<h3 id="우분투-ssh-및-xrdp-패키지-설치">우분투 SSH 및 XRDP 패키지 설치</h3>
+<p>아래 명령에 따라 <code class="language-plaintext highlighter-rouge">openssh-server</code>를 설치합니다. ssh는 나중에 Ubuntu docker 컨테이너에 원격으로 액세스할 때 유용합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>apt update
+apt <span class="nb">install </span>openssh-server
+apt <span class="nb">install</span> <span class="nt">-y</span> net-tools
+apt <span class="nb">install</span> <span class="nt">-y</span> vim
+
+vim /etc/ssh/sshd_config
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># enable `PermitRootLogin` and set it to `yes`</span>
+PermitRootLogin <span class="nb">yes</span>
+<span class="c"># ----------------------------------------------</span>
+
+passwd root 
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># it will be ssh login password, i have set it as `0000`</span>
+0000
+<span class="c"># ----------------------------------------------</span>
+
+service ssh start
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그런 다음 아래 명령에 따라 XRDP용 패키지를 설치합니다. 아래 명령을 수행하면 XRDP를 설치하는 동안 많은 오류 메시지가 표시될 수 있습니다. <code class="language-plaintext highlighter-rouge">lubuntu-desktop</code> 설치 중 사운드, USB 등 하드웨어 의존성과 관련된 오류입니다. 오류 메시지를 무시하고 계속 진행하세요.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+<span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+adduser xrdp ssl-cert
+
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "\
+export GNOME_SHELL_SESSION_MODE=Lubuntu\n\
+export XDG_SESSION_TYPE=x11\n\
+export XDG_CURRENT_DESKTOP=LXQt\n\
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n\
+" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+service xrdp start
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="xrdp-원격-액세스-1">XRDP 원격 액세스</h3>
+<p>Synology NAS에 할당된 IP 주소를 사용하여 XRDP에 연결하고 위에 설정된 <code class="language-plaintext highlighter-rouge">43389</code> 포트에 연결합니다.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" alt="MobaXterm - RDP 세션" />
+<em>MobaXterm - RDP 세션</em></p>
+
+<p>이후 XRDP 로그인 창이 열리면 아래에 <code class="language-plaintext highlighter-rouge">사용자 이름</code>과 <code class="language-plaintext highlighter-rouge">비밀번호</code>를 입력하세요.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="우분투 XRDP 로그인 화면" />
+<em>우분투 XRDP 로그인 화면</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<p>Docker 컨테이너가 중지되었다가 다시 시작되면 ssh 및 xrdp 서비스를 다시 실행해야 합니다.</p>
+
+<p>정확한 이유는 모르겠지만, xrdp 서비스가 한번 시작되면 xrdp가 정상적으로 작동하기 위해서는 약간의 지연 후에 다시 시작해야 했습니다. 그리고 두 번째 xrdp 연결부터는 하단 메뉴 표시줄이 GUI에 표시되었습니다. 아래 내용을 bash 스크립트로 저장하여 사용할 수 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="s2">"start ssh.."</span>
+service ssh start
+
+<span class="nb">echo</span> <span class="s2">"start xrdp.."</span>
+<span class="nb">rm</span> /var/run/xrdp/xrdp-sesman.pid
+service xrdp start
+<span class="nb">echo</span> <span class="s2">"sleep 10 sec.. "</span>
+<span class="nb">sleep </span>10
+<span class="nb">echo</span> <span class="s2">"restart xrdp"</span>
+service xrdp restart
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="참조">참조</h2>
+<ul>
+  <li>https://youtu.be/0rl5145aEMk?si=aoO3eZyDLPnmCfr</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/ko-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[레노버 Ideapad Slim3 15ABA7 R5 윈도우 설치, 메모리 업그레이드]]></title>
+      <link>https://unclesnote.com/ko/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</link>
+      <guid>https://unclesnote.com/ko/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 18:18:12 +0900</pubDate>
+      <category><![CDATA[IT,PC]]></category>
+      <tag><![CDATA[IT,PC,Lenovo,Laptop]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <description><![CDATA[레노버 Slim3 15ABA7 R5은 프리 DOS가 기본 OS로 설치되어 있어 별도로 윈도우를 설치해야 한다. 윈도우 설치를 위한 기본과 메모리를 업그레이드 하는 방법을 알아 보겠다.]]></description>
+      <content:encoded><![CDATA[<p><strong>레노버 Slim3 15ABA7 R5</strong>은 프리 DOS가 기본 OS로 설치되어 있어 별도로 윈도우를 설치해야 한다.</p>
+
+<p>윈도우 설치를 위한 기본과 메모리를 업그레이드 하는 방법을 알아 보겠다.</p>
+<h2 id="스팩">스팩</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="레노버 Slim3 15ABA7 R5" />
+<em>레노버 Slim3 15ABA7 R5</em></p>
+
+<p><strong>레노버 Slim3 15ABA7 R5</strong>은 CPU로 라이젠5 4세대(세잔)인 5625U 모델이 탑재되어 있다. 문론, 가성비 노트북인 만큼 CPU에 포함된 GPU를 공유해 사용하는 내장 그래픽이다.</p>
+
+<p>가격이 상대적으로 저렴하지만 쓸만한 성능의 가성비 노트북이긴 하지만, 장점이라면 메모리와 하드디스크의 확장성에 있다.</p>
+<ul>
+  <li><strong>저장장치</strong> : NVMe M.2 SSD 256GB 기본 탑재 + 2.5인치 SATA 하드디스크 1개 추가 슬롯</li>
+  <li><strong>메모리</strong> : 8GB 온보드(DDR4-3200) + 추가 1개 소켓</li>
+</ul>
+
+<p>SATA 하드디스크 1개와  DDR4 메모리 1개를 추가 업그레이드 가능하다.</p>
+<h2 id="윈도우-usb-스틱-준비">윈도우 USB 스틱 준비</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" alt="Ventoy - www.ventoy.net - A New Bootable USB Solution" />
+<em>Ventoy - www.ventoy.net - A New Bootable USB Solution</em></p>
+
+<p>일반적으로 윈도우를 설치하려면, USB 스틱에 부팅이 가능한 윈도우 이미지 버닝해 설치하는 것이 일반적이다.  하지만 우리는  <a href="https://www.ventoy.net/en/download.html" target="_blank">Ventoy</a>라는 프로그램을 사용할 것이다.</p>
+
+<p>Ventoy 소프트웨어를 USB 스틱에 버닝하면 이동식 디스크로 윈도우가 인식한다. 그리고, 다운로드 받은 윈도우 ISO 파일을 복사해 컴퓨터를 시동하면, USB 스틱에 저장된 ISO 파일을 선택해 부팅이 가능하다. 이것은 하나의 USB 스틱에 여러가지 ISO 파일을 복사해 선택적으로 부팅 및 설치 할 수 있는 장점이 있다.</p>
+<ul>
+  <li><strong>USB 스틱에 Ventoy를 설치하는 방법</strong> : https://www.ventoy.net/en/doc_start.html</li>
+</ul>
+
+<p>레노버 드라이버 사이트에서 윈도우10과 윈도우 11의 시스템 드라이버를 지원 하지만, 나는 윈도우11을 설치했다.</p>
+
+<p>Ventoy 기반에 윈도우 ISO파일이 복사된 USB 스틱을 준비한다.</p>
+
+<p>그리고,  레노버 드라이버 사이트에서 <a href="https://pcsupport.lenovo.com/kr/en/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list" target="_blank">무선랜 드라이버</a>를 다운로드 받아 USB 스틱에 저장한다.</p>
+
+<p>윈도우11 설치의 경우, 윈도우 ISO 이미지에 무선랜 드라이버가 포함되어 있지 않기 때문에 추후 인터넷을 통한 윈도우 초기설정이 진행 불가능하다. 그래서, 미리 무선랜 드라이버를 준비 해야한다.</p>
+<h2 id="bios-설정-및-윈도우-설치">BIOS 설정 및 윈도우 설치</h2>
+<p>Lenovo Slim3 15ABA7 R5의 디스플레이를 연다. 자동으로 노트북에 전원이 들어오게 되는데, <code class="language-plaintext highlighter-rouge">F2</code>를 지속적으로 여러번 눌러 BIOS 설정화면에 진입한다.</p>
+
+<p>Ventoy로 부팅을 하면 Securiy Verification 관련한 에러가 발생하는데, 이를 방지하기 위해 <code class="language-plaintext highlighter-rouge">Security</code> 메뉴에서 <code class="language-plaintext highlighter-rouge">Secure Boot</code>을 <code class="language-plaintext highlighter-rouge">Disable</code>로 변경한다. USB스틱을 랩탑에 장착하고 BIOS 설정을 저장하고 종료한다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" alt="BIOS &gt; Security &gt; Secure Boot &gt; Disabled" />
+<em>BIOS &gt; Security &gt; Secure Boot &gt; Disabled</em></p>
+
+<blockquote class="prompt-info">
+  <p><strong>랩탑 디스플레이 열림에 의한 자동 전원켜짐 비활성화</strong><br />
+아마도 레노버는 랩탑 디스플레이을 열었을 때, 자동으로 전원이 켜지는 것이 사용자 편의에 좋다고 생각 한 듯 싶다.<br />
+이 기능이 싫다면, BIOS에서 <code class="language-plaintext highlighter-rouge">Configuration</code> 메뉴의 <code class="language-plaintext highlighter-rouge">Flip to Boot</code> 기능을 <code class="language-plaintext highlighter-rouge">Disabled</code> 로 변경 할 수 있다.</p>
+</blockquote>
+<p>Ventory 부팅 메뉴에서 윈도우 ISO를 선택해 윈도우를 설치한다.</p>
+
+<p><strong>레노버 Slim3 15ABA7 R5</strong>는 윈도우11을 설치하면, 자동으로 무선랜 드라이버가 설치되지 않는다. 따라서 <code class="language-plaintext highlighter-rouge">네트워크 연결</code> 설정 단계에서 더 이상 진행이 불가능 하다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" alt="윈도우11 설치 - `네트워크 연결` 설정 진행불가" />
+<em>윈도우11 설치 - <code class="language-plaintext highlighter-rouge">네트워크 연결</code> 설정 진행불가</em></p>
+
+<p>해당 화면에서 <code class="language-plaintext highlighter-rouge">Shift + F10</code>을 눌러 명령 프롬프트 윈도우를 연다. 그리고 <code class="language-plaintext highlighter-rouge">OOBE\BYPASSNRO</code>를 입력한다.</p>
+
+<p>이후 자동으로 재부팅이 되는데, 이후 <code class="language-plaintext highlighter-rouge">네트워크 연결</code> 설정을 건너뛰기 할 수 있다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>OOBE\BYPASSNRO
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>윈도우 설치가 완료되면, USB 스틱 저장했던 무선랜 드라이버를 설치한다. 그리고 <a href="https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads" target="_blank">레노버 드라이버 사이트</a>에 접속해 설치 못한 나머지 드라이버 들을 설치한다.</p>
+<h2 id="메모리-구매">메모리 구매</h2>
+<p>아래와 같이 <strong>레노버 Slim3 15ABA7 R5</strong>는 DDR4-3200 8GB의 메모리가 온보드 형식으로 장착되어 있다. 따라서 메모리 듀얼채널 구성을 만들기 위해 8GB 용량의 DDR4-3200 클럭 메모리를 구매한다.</p>
+<ul>
+  <li><strong>메모리</strong> : 8GB 온보드(DDR4-3200) + 추가 1개 소켓</li>
+</ul>
+
+<p>쇼핑몰에 DDR4-3200 혹은 PC4-25600으로 클럭이 표시 된, 메모리가 있다면 구매하면 된다.</p>
+<h2 id="메모리-업그레이드-설치">메모리 업그레이드 설치</h2>
+<p>부드러운 천에 랩탑을 뒤집어 올려놓고, 후면에 모든 나사를 풀어준다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" alt="레노버 Slim3 15ABA7 R5 - 후면 - 나사 제거" />
+<em>레노버 Slim3 15ABA7 R5 - 후면 - 나사 제거</em></p>
+
+<p>그리고 사용하지 않는 플라스틱 카드를 우측 상단의 틈에 넣어 후면판을 벌려준다. 그리고 통조림 캔을 오픈 하듯이 조금씩 돌려가면서 후면판을 열어준다. 너무 깊이 플라스틱 카드를 넣으면 랩탑 기판이 손상 될 수 있으니 조금만 넣도록 한다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" alt="레노버 Slim3 15ABA7 R5 - 후면판 열기" />
+<em>레노버 Slim3 15ABA7 R5 - 후면판 열기</em></p>
+
+<p>위에서 설명 했듯이, SATA 하드디스크 1개와  DDR4 메모리 1개를 추가 업그레이드 가능하다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" alt="레노버 Slim3 15ABA7 R5 - 내부" />
+<em>레노버 Slim3 15ABA7 R5 - 내부</em></p>
+
+<p>다른 랩탑과 다르게, <strong>레노버 Slim3 15ABA7 R5</strong>는 메모리 슬롯 커버가 존재한다. 커버에 붙여있는 스티커를 조금 분리해 내고 커버를 위로 들어 제거한다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" alt="레노버 Slim3 15ABA7 R5 - 내부 - 메모리 커버의 스티커 분리" />
+<em>레노버 Slim3 15ABA7 R5 - 내부 - 메모리 커버의 스티커 분리</em></p>
+
+<p>메모리를 장착 했다면, 다시 메모리 커버를 장착하고 스티커를 붙여준다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" alt="레노버 Slim3 15ABA7 R5 - 내부 - 메모리 장착" />
+<em>레노버 Slim3 15ABA7 R5 - 내부 - 메모리 장착</em></p>
+
+<p>그리고 후면판을 닫기 전에, 랩탑이 정상적으로 켜지고 부팅이 가능한지 확인한다. 메모리 접촉 불량으로 부팅이 되지 않는다면, 후면판을 다시 열어야 하기 때문에 후면판을 닫지 않은 상태에서 정상부팅 여부를 확인한다.</p>
+
+<p>랩탑 힌지 부분에 담배 케이스 같은 것을 고여서 팬이 돌아가는데 무리가 없도록 하고, 랩탑 전원을 켠다. 메모리가 정상적으로 인식이 되지 않거나 부팅이 되지 않는다면, 메모리를 추출 했다가 다시 장착해 본다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" alt="레노버 Slim3 15ABA7 R5 - 신규 메모리 동작 확인을 위해 하단 공간 확보" />
+<em>레노버 Slim3 15ABA7 R5 - 신규 메모리 동작 확인을 위해 하단 공간 확보</em></p>
+
+<p>랩탑이 정상 동작 한다면, 후면판을 닫고 풀었던 나사들을 다시 조여준다.</p>
+<h2 id="메모리-듀얼채널-인식-확인">메모리 듀얼채널 인식 확인</h2>
+<p><a href="https://www.cpuid.com/softwares/cpu-z.html" target="_blank">CPU-Z</a> 혹은 <a href="https://www.hwinfo.com/download/" target="_blank">HWiNFO64</a>를 설치 하거나 포터블 버전을 다운로드 한다.</p>
+
+<p>CPU-Z에서 메모리가 <a href="https://en.wikipedia.org/wiki/Multi-channel_memory_architecture" target="_blank">듀얼채널</a>로 작동 할 경우  일반적으로 Channel에 <code class="language-plaintext highlighter-rouge">Dual</code>이라고 표시 되지만, <strong>레노버 Slim3 15ABA7 R5</strong>는 <code class="language-plaintext highlighter-rouge">2 x 64-bit</code> 표시 되었다.</p>
+
+<p>이것이 에러인지 CPU-Z 최신 버전의 차이점 인지 확실하지 않다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" alt="레노버 Slim3 15ABA7 R5 - CPU-Z - 메모리" />
+<em>레노버 Slim3 15ABA7 R5 - CPU-Z - 메모리</em></p>
+
+<p>하지만, HWiNFO64에서는 <code class="language-plaintext highlighter-rouge">Dual-Channel</code>로 올바르게 표시 되었다.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="레노버 Slim3 15ABA7 R5 - HWiNFO64 - 시스템 요약 - 메모리" />
+<em>레노버 Slim3 15ABA7 R5 - HWiNFO64 - 시스템 요약 - 메모리</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/ko-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Windows 10의 여러 디스플레이 구성에서 디스플레이 비활성 문제]]></title>
+      <link>https://unclesnote.com/ko/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
+      <guid>https://unclesnote.com/ko/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
+      <category><![CDATA[컴퓨터,문제 해결]]></category>
+      <tag><![CDATA[컴퓨터,문제해결]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <description><![CDATA[저는 직장과 집에서 노트북 한 대를 사용하는 사용자입니다. 직장과 집에서 노트북에 연결된 디스플레이를 2개 이상 사용하는데 가끔 일부 디스플레이만 노트북에서 인식되어 디스플레이 설정에 들어가면 비활성 상태로 표시되는 경우가 있습니다. 제 생각엔 Windows에서는 각 환경에 맞는]]></description>
+      <content:encoded><![CDATA[<p>저는 직장과 집에서 노트북 한 대를 사용하는 사용자입니다. 직장과 집에서 노트북에 연결된 디스플레이를 2개 이상 사용하는데 가끔 일부 디스플레이만 노트북에서 인식되어 디스플레이 설정에 들어가면 비활성 상태로 표시되는 경우가 있습니다.</p>
+
+<p>제 생각엔 Windows에서는 각 환경에 맞는 디스플레이 구성을 프리셋 형태로 레지스트리에 저장해 관리하는 것 같은데, 가끔 이런 구성이 왜곡되어 이런 문제가 발생하는 것 같습니다.</p>
+
+<p>이 문제를 해결하기 위해 제가 찾은 방법은 Windows 디스플레이 구성 레지스트리 값을 삭제하고 초기화하는 것입니다. 결론적으로 멀티 디스플레이 환경을 다시 설정해야 합니다. 방법을 설명하겠습니다.</p>
+<h2 id="1-windows-레지스트리-편집기를-엽니다">1. Windows 레지스트리 편집기를 엽니다.</h2>
+<p><code class="language-plaintext highlighter-rouge">Windows + R</code>을 사용하여 실행 대화 상자를 통해 <code class="language-plaintext highlighter-rouge">regedit</code>를 입력하거나 시작 메뉴에서 <code class="language-plaintext highlighter-rouge">regedit.exe</code>를 검색하여 <code class="language-plaintext highlighter-rouge">Registry Editor</code>를 실행합니다.</p>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; `regedit` 입력" />
+<em>Windows + R &gt; <code class="language-plaintext highlighter-rouge">regedit</code> 입력</em></p>
+
+<h2 id="2-레지스트리-편집기에서-표시-사전-설정-값-삭제">2. 레지스트리 편집기에서 표시 사전 설정 값 삭제</h2>
+<p>레지스트리 편집기에서 주소 표시줄에 아래 경로를 입력하거나 트리에서 경로로 이동하세요.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>마우스 오른쪽 버튼 클릭 메뉴에서 <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> 폴더에 있는 다음 두 폴더를 제거합니다.</p>
+<ul>
+  <li>Configuration</li>
+  <li>Connectivity</li>
+</ul>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="레지스트리 편집기 - `GraphicsDrivers` 폴더에서 `Configuration` 및 `Connectivity` 폴더를 제거합니다." />
+<em>레지스트리 편집기 - <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> 폴더에서 <code class="language-plaintext highlighter-rouge">Configuration</code> 및 <code class="language-plaintext highlighter-rouge">Connectivity</code> 폴더를 제거합니다.</em></p>
+
+<h2 id="3-윈도우-재부팅">3. 윈도우 재부팅</h2>
+<p>Windows를 다시 시작합니다. 재부팅이 완료되면 Windows의 관점에서 내 디스플레이가 새로 인식되는 디스플레이가 됩니다.</p>
+
+<p>따라서 디스플레이 설정에서 디스플레이의 위치와 방향을 재설정해야 합니다. 간단히 말해서, 이것은 매우 성가신 일입니다. 진심으로 위로의 말씀을 드립니다.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/ko-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[옵시디언 콜아웃 및 인용 블록]]></title>
+      <link>https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block</link>
+      <guid>https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Tue, 28 Nov 2023 00:18:00 +0900</pubDate>
+      <category><![CDATA[옵시디언]]></category>
+      <tag><![CDATA[옵시디언,콜아웃,인용부호]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block</guid>
+      <description><![CDATA[콜아웃(callout)의 사전적 정의는 큰 소리로 외치는 것이며, 독자의 주의를 끌고 중요하거나 추가 정보를 알리는 데 사용됩니다. Obsidian에서 콜아웃을 표현하는 문법과 종류에 대해 알아봅시다.]]></description>
+      <content:encoded><![CDATA[<p>콜아웃(callout)의 사전적 정의는 큰 소리로 외치는 것이며, 독자의 주의를 끌고 중요하거나 추가 정보를 알리는 데 사용됩니다.</p>
+
+<p>Obsidian에서 콜아웃을 표현하는 문법과 종류에 대해 알아봅시다.</p>
+<h2 id="인용-블록과-콜아웃-블록의-차이점">인용 블록과 콜아웃 블록의 차이점</h2>
+<p><strong>인용 블록</strong>은 각 줄에서 <code class="language-plaintext highlighter-rouge">&gt;</code>로 시작하는 문장을 나열합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>&gt; 
+&gt; I am a quote block.
+&gt; It is a set of lines starting with `&gt;`
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아래는 Obsidian의 기본 테마를 바탕으로 한 인용 블록의 형태입니다.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" alt="옵시디언 - 인용 블록" />
+<em>옵시디언 - 인용 블록</em></p>
+
+<p>인용 블록과 마찬가지로 <strong>콜아웃 블록</strong>은 <code class="language-plaintext highlighter-rouge">&gt;</code>로 시작하는 줄 집합입니다. 단, 첫 번째 줄에 콜아웃 유형을 입력하고 제목을 추가하면 아이콘 모양과 색상을 지정할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>&gt; [!tip] I'm a tip type, and here's the title.
+&gt; 
+&gt; I am a callouts block. 
+&gt; It is similar to a citation block, but you can specify a type and title for the first line.
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아래는 Obsidian 기본 테마의 팁 유형 설명 블록입니다.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="옵시디언 - 콜아웃 블록" />
+<em>옵시디언 - 콜아웃 블록</em></p>
+
+<h2 id="콜아웃-블록-접기-기능">콜아웃 블록 접기 기능</h2>
+<p>구문상 콜아웃 블록은 인용 블록과 유사합니다. 그러나 인용 블록에 비해 다음과 같은 추가 기능이 있습니다.</p>
+<ul>
+  <li>아이콘 추가</li>
+  <li>제목 추가</li>
+  <li><code class="language-plaintext highlighter-rouge">폴딩 기능</code></li>
+</ul>
+
+<p>위에서 콜아웃 블록에는 인용 블록에 추가 아이콘과 제목을 추가할 수 있다고 설명했습니다.</p>
+
+<p>게다가 콜아웃의 강점은 접기 기능이 있다는 점이다. Obsidian의 경우 제목을 접을 수 있지만 <strong>콜아웃 블록과 차이점은 초기값을 지정할 수 있다는 점</strong>입니다.</p>
+
+<p>강조하고 싶은 내용을 콜아웃 블록에 표현하거나 추가 메모를 추가할 수도 있지만, 내용이 길면 처음에는 닫아 두는 것이 좋습니다.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" alt="옵시디언 - 콜아웃 블록 접기" />
+<em>옵시디언 - 콜아웃 블록 접기</em></p>
+
+<p>콜아웃 블록의 첫 번째 줄에 있는 유형 옆에 하이픈(-)을 추가하여 초기 값이 닫힘인 콜아웃 블록을 생성할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>&gt; [!success]- Callouts block - Initially folded callouts block
+&gt; I am a callouts of type success.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="콜아웃-블록-유형">콜아웃 블록 유형</h2>
+<p>Obsidian에서 미리 정의된 콜아웃 블록의 색상과 아이콘은 다음과 같습니다.</p>
+
+<p>콜아웃 유형에 원하는 텍스트를 작성하여 콜아웃의 모양을 변경할 수 있습니다.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" alt="옵시디언 - 콜아웃 사전 정의된 유형" />
+<em>옵시디언 - 콜아웃 사전 정의된 유형</em></p>
+
+<p>해당 내용은 <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian 도움말</a>에 소개되어 있으며, CSS를 정의하여 나만의 콜아웃 블록을 디자인할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre>&gt; [!quote] quote
+
+&gt; [!abstract] abstract, summary, tldr
+
+&gt; [!important] tip, hint, important
+
+&gt; [!note] note
+
+&gt; [!info] info
+
+&gt; [!todo] todo
+
+&gt; [!example] example
+
+&gt; [!question] question, help, fnq
+
+&gt; [!warning] warning, caution, attention
+
+&gt; [!failure] failure, fail, missing
+
+&gt; [!danger] danger, error
+
+&gt; [!bug] bug
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/ko-thumb-unclesnote-obsidian_callouts_and_quote_block.png" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[VirtualBox에서 Ubuntu 공유 폴더 설정 - Windows 파일 공유]]></title>
+      <link>https://unclesnote.com/ko/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</link>
+      <guid>https://unclesnote.com/ko/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 12:01:00 +0900</pubDate>
+      <category><![CDATA[우분투,Virtual Box]]></category>
+      <tag><![CDATA[VirtualBox,vboxsf,우분투,폴더공유]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <description><![CDATA[제 경우에는 Oracle VM VirtualBox에서 Ubuntu VM과 Windows 간에 파일 공유가 자주 발생합니다. 물론 게스트 추가 기능을 이용하면 마우스 드래그만으로 파일을 공유할 수 있지만, 여전히 불편할 때가 있습니다. 그래서 Ubuntu VM과 Windows 폴더를]]></description>
+      <content:encoded><![CDATA[<p>제 경우에는 Oracle VM VirtualBox에서 Ubuntu VM과 Windows 간에 파일 공유가 자주 발생합니다. 물론 게스트 추가 기능을 이용하면 마우스 드래그만으로 파일을 공유할 수 있지만, 여전히 불편할 때가 있습니다.</p>
+
+<p>그래서 Ubuntu VM과 Windows 폴더를 공유하는 방법을 설명하고자 합니다.</p>
+<h2 id="virtual-box에-공유-폴더-추가하기">Virtual Box에 공유 폴더 추가하기</h2>
+<p>Ubuntu VM의 설정으로 이동합니다. 그런 다음 <code class="language-plaintext highlighter-rouge">공유 폴더</code> 탭에 공유할 폴더를 추가하세요.</p>
+
+<p>공유 폴더 설정 창의 <code class="language-plaintext highlighter-rouge">폴더 경로</code>에 Ubuntu VM과 공유하려는 폴더를 설정합니다. 나머지 폴더 및 설정 항목은 다음과 같습니다.</p>
+<ul>
+  <li><strong>폴더 경로</strong> : Ubuntu VM과 공유할 <code class="language-plaintext highlighter-rouge">Windows</code> 폴더 경로</li>
+  <li><strong>폴더 이름</strong> : 공유 폴더 닉네임입니다. 가능하다면 <code class="language-plaintext highlighter-rouge">Mount point</code> 폴더명과 동일하게 만드세요.</li>
+  <li><strong>마운트 지점</strong> : <code class="language-plaintext highlighter-rouge">Ubuntu VM</code>에 공유 폴더를 마운트하는 경로</li>
+  <li>✓ <strong>자동 마운트</strong> : 부팅 시 공유 폴더를 자동으로 마운트합니다.</li>
+  <li>✓ <strong>영구화</strong> : Ubuntu VM이 실행되는 동안 현재 설정을 입력하면 이 항목이 나타납니다. 영구적인 설정을 원하시면 체크하세요.</li>
+</ul>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 공유 폴더 추가" />
+<em>Oracle VM VirtualBox - 공유 폴더 추가</em></p>
+
+<p>제 경우에는 Ubuntu VM의 공유 폴더로 <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code>를 설정했습니다. 참고로 제 우분투 계정 이름은 <code class="language-plaintext highlighter-rouge">pooh</code>입니다.</p>
+<h2 id="ubuntu-vm의-폴더-권한">Ubuntu VM의 폴더 권한</h2>
+<p>Ubuntu VM이 실행되는 동안 공유 폴더를 추가한 경우 먼저 Ubuntu VM을 재부팅하세요.</p>
+
+<p>그리고, <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code>를 입력하려고 하면 권한이 없다는 오류 메시지가 출력됩니다. 이는 <code class="language-plaintext highlighter-rouge">vboxsf</code> 그룹에 포함된 사용자만 공유 폴더에 접근할 수 있기 때문입니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /home/pooh
+total 100
+...
+drwxrwx---  1 root vboxsf     0 11월  6 10:03 _shared
+...
+
+<span class="nv">$ </span><span class="nb">cd</span> /home/pooh
+bash: <span class="nb">cd</span>: /home/pooh: Permission denied
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">gpasswd</code> 명령을 사용하여 Ubuntu 계정을 <code class="language-plaintext highlighter-rouge">vboxsf</code> 그룹에 추가하세요. 참고로 제 우분투 계정 이름은 <code class="language-plaintext highlighter-rouge">pooh</code>입니다. 따라서 <code class="language-plaintext highlighter-rouge">pooh</code>를 Ubuntu 계정 이름으로 바꿔서 명령을 실행하세요.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> pooh vboxsf
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>가장 중요한. 마지막으로 Ubuntu VM을 재부팅합니다.</p>
+<h2 id="테스트">테스트</h2>
+<p>Ubuntu VM 재부팅이 완료되면 테스트를 수행해 보겠습니다.</p>
+
+<p>Ubuntu VM의 공유 폴더에 <code class="language-plaintext highlighter-rouge">touch</code> 명령을 사용하여 <code class="language-plaintext highlighter-rouge">test.txt</code> 파일을 생성해 보겠습니다. Windows 공유 폴더에 생성된 <code class="language-plaintext highlighter-rouge">test.txt</code> 파일이 보이시나요?</p>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="Ubuntu VM에서 `touch` 명령을 사용하여 `test.txt` 파일을 생성하고 Windows에서 확인합니다." />
+<em>Ubuntu VM에서 <code class="language-plaintext highlighter-rouge">touch</code> 명령을 사용하여 <code class="language-plaintext highlighter-rouge">test.txt</code> 파일을 생성하고 Windows에서 확인합니다.</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/ko-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Samsung Galaxy S24 사양 및 출시일-루머 정리]]></title>
+      <link>https://unclesnote.com/ko/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</link>
+      <guid>https://unclesnote.com/ko/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 01:59:14 +0900</pubDate>
+      <category><![CDATA[IT,모바일]]></category>
+      <tag><![CDATA[갤럭시S24,소문,긱벤치,삼성엑시노스,퀄컴스냅드래곤,티탄,IT,모바일]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <description><![CDATA[삼성전자 갤럭시S24 출시일이 다가오면서 렌더링 이미지와 예상사양에 대한 루머가 나오고 있다. 정리하면 갤럭시S24 시리즈는 2024년 1분기 출시 예정으로 티타늄 외관, 다운그레이드된 카메라 성능을 갖고 있으며, 모델에 따라 삼성 엑시노스, 퀄컴 스냅드래곤 AP를 탑재할 것으로]]></description>
+      <content:encoded><![CDATA[<p>삼성전자 갤럭시S24 출시일이 다가오면서 렌더링 이미지와 예상사양에 대한 루머가 나오고 있다.</p>
+
+<p>정리하면 갤럭시S24 시리즈는 2024년 1분기 출시 예정으로 티타늄 외관, 다운그레이드된 카메라 성능을 갖고 있으며, 모델에 따라 삼성 엑시노스, 퀄컴 스냅드래곤 AP를 탑재할 것으로 예상된다.</p>
+
+<p>이제 관련 루머에 대해 자세히 살펴보겠습니다.</p>
+<h2 id="출시-시기---2023년-12월-또는-2024년-1월">출시 시기 - 2023년 12월 또는 2024년 1월</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="미국 뉴욕 타임스퀘어 갤럭시 S23 전광판 광고" />
+<em>미국 뉴욕 타임스퀘어 갤럭시 S23 전광판 광고</em></p>
+
+<p>삼성전자는 반도체 부진 회복을 목표로 2023년 12월이나 2024년 1월 새 스마트폰을 출시할 계획이다. 12월에는 중저가형 스마트폰인 갤럭시 S23 FE를 출시할 예정이며, 이어 AI 기능을 탑재한 플래그십 갤럭시 S24가 평소 2월 출시보다 빠른 1월 샌프란시스코에서 공개될 예정이다.</p>
+
+<p>이러한 변화는 스마트폰 시장의 도전과 애플의 아이폰 15 시리즈 경쟁에 대한 대응으로 여겨집니다. 삼성은 2022년 3분기 반도체(DS) 사업부에서 상당한 손실을 기록하면서 감소하는 반도체 이익을 상쇄하기 위해 모바일 경험(MX) 사업부에 의존하고 있습니다.</p>
+<h2 id="외관-및-디자인---티타늄">외관 및 디자인 - 티타늄</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" alt="왼쪽이 IT정보업체 `온리크스`가 출시한 갤럭시S24 예상 렌더링이고, 오른쪽이 아이폰15 프로이다." />
+<em>왼쪽이 IT정보업체 <code class="language-plaintext highlighter-rouge">온리크스</code>가 출시한 갤럭시S24 예상 렌더링이고, 오른쪽이 아이폰15 프로이다.</em></p>
+
+<p>IT 전문가 Lebegnerz의 최근 예측에 따르면 Galaxy S24 시리즈 전체에는 티타늄 소재 프레임이 적용되어 전체적인 디자인 미학이 향상될 것으로 예상됩니다. 이러한 움직임은 Apple이 iPhone 15 Pro 및 Pro Max 모델에 티타늄 프레임을 도입한 것과 유사한 더 광범위한 전략의 일부로 간주됩니다.</p>
+
+<p>또한 외관 디자인은 기존의 둥근 형태에서 좀 더 각진 디자인으로 변화해 고급스러움을 더할 것으로 예상된다. 울트라 모델의 특징적인 엣지 디스플레이가 평면 디스플레이로 완전히 교체될 것이라는 관측도 나온다.</p>
+<h2 id="카메라---다운그레이드-하지만">카메라 - 다운그레이드 하지만,</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Smart Pix의 OnLeaks에서 유출된 Galaxy S24 전면 및 후면 렌더링" />
+<em>Smart Pix의 OnLeaks에서 유출된 Galaxy S24 전면 및 후면 렌더링</em></p>
+
+<p>내년 출시되는 갤럭시 S24 울트라는 10배 광학 줌에서 5배 광학 줌으로 다운그레이드된다는 소문이 돌면서 사용자들 사이에 우려를 불러일으켰습니다.</p>
+
+<p>그러나 SamMobile과 같은 일부 전문가들은 전반적인 비디오 녹화 개선으로 인해 실제로 긍정적인 움직임이라고 주장합니다.</p>
+
+<p>S24 Ultra에는 200MP 메인 카메라, 12MP 초광각 카메라, 3배 광학 줌 10MP 망원 카메라, 5배 광학 줌 50MP 망원 카메라가 탑재될 것으로 알려졌습니다. 5배 줌은 더 넓은 조리개와 더 큰 픽셀을 갖춘 업그레이드로 간주되어 고품질 줌 사진을 촬영할 수 있습니다. 특히 5배 줌 카메라는 모든 각도에서 부드러운 4K 60fps 비디오를 캡처할 수 있습니다.</p>
+<h2 id="ap---qualcomm-snapdragon-gen-3-및-exynos">AP - Qualcomm Snapdragon Gen 3 및 Exynos</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" alt="갤럭시S24 플러스 모델에는 삼성 엑시노스가, 갤럭시S24 울트라 모델에는 퀄컴 스냅드래곤 8 Gen 3가 탑재될 것으로 예상된다." />
+<em>갤럭시S24 플러스 모델에는 삼성 엑시노스가, 갤럭시S24 울트라 모델에는 퀄컴 스냅드래곤 8 Gen 3가 탑재될 것으로 예상된다.</em></p>
+
+<p>2023년 4분기 실적 발표에서 Qualcomm CEO Cristiano Amon이 Galaxy S24가 곧 출시될 것이며 Qualcomm이 온보드 부품 측면에서 대부분의 점유율을 차지할 것이라고 밝혔기 때문에 Samsung Galaxy S24에는 Qualcomm Stepdragon이 탑재될 것이 확실합니다. .</p>
+
+<p>삼성 무선 사업부는 갤럭시 S22까지 스마트폰에 스냅드래곤과 엑시노스 프로세서를 모두 사용해 왔습니다. 하지만 올해 초 출시된 갤럭시S23 모델에는 엑시노스의 발열 문제로 인해 퀄컴이 독점 탑재됐다. 내년 초에 출시될 예정인 S24 및 S24 Plus 모델은 지역적 고려 사항에 따라 Snapdragon과 Exynos 프로세서를 모두 사용할 예정입니다. 최고가 울트라 모델에는 스냅드래곤이 단독으로 사용되는 것으로 확인됐다.</p>
+
+<p>Snapdragon Gen 3 기반 Galaxy S24 Ultra의 Geekbench 점수도 발견되었습니다. 데이터베이스에 따르면 갤럭시S24 울트라는 코드명 <code class="language-plaintext highlighter-rouge">파인애플</code>이라는 <code class="language-plaintext highlighter-rouge">스냅드래곤8 3세대</code> 칩셋을 탑재했으며 8GB 램과 안드로이드 14 운영체제를 탑재한 것으로 확인됐다.</p>
+
+<p>싱글코어와 멀티코어 테스트에서는 각각 <code class="language-plaintext highlighter-rouge">2234</code>점과 <code class="language-plaintext highlighter-rouge">6807</code>점을 기록해 지난 7월 테스트한 모델에 비해 멀티코어 점수가 소폭 상승했다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>안건</th>
+      <th>갤럭시 S24+</th>
+      <th>갤럭시 S24 울트라</th>
+      <th>갤럭시 S23 울트라</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>모델</td>
+      <td>삼성 SM-926B</td>
+      <td>삼성 SM-928U</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AP</td>
+      <td>엑시노스 2400</td>
+      <td>스냅드래곤 3세대</td>
+      <td>스냅드래곤 2세대</td>
+    </tr>
+    <tr>
+      <td>램</td>
+      <td>8GB</td>
+      <td>8GB</td>
+      <td>12GB</td>
+    </tr>
+    <tr>
+      <td>단일 코어<br /> (긱벤치)</td>
+      <td>2067<br /> (비교<br /> S24 울트라: -8%)</td>
+      <td>2234<br /> (비교<br /> S23 울트라: +43%)</td>
+      <td>1560</td>
+    </tr>
+    <tr>
+      <td>멀티코어<br /> (긱벤치)</td>
+      <td>6520<br /> (비교<br /> S24 울트라: -4%)</td>
+      <td>6807<br /> (비교<br /> S23 울트라: +36%)</td>
+      <td>4996</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2023년 10월 12일 Geekbench에서 Galaxy S24+에 대한 벤치마크 결과가 발견되었습니다. 해당 모델은 <code class="language-plaintext highlighter-rouge">SM-S926B</code>로 확인되며 <code class="language-plaintext highlighter-rouge">엑시노스 2400</code> 칩셋, 8GB 램, 안드로이드 14 운영체제를 탑재했다. 싱글코어 점수는 <code class="language-plaintext highlighter-rouge">2067</code>, 멀티코어 점수는 <code class="language-plaintext highlighter-rouge">6520</code>을 달성했습니다.</p>
+
+<p>이는 스냅드래곤8 3세대 칩셋을 기반으로 한 갤럭시S24 울트라보다 낮은 점수로, 초기 테스트에서 엑시노스 2400의 성능이 다소 낮을 수 있음을 시사한다. 갤럭시S24 울트라는 이전 모델인 갤럭시S23 울트라 대비 싱글코어 43%, 멀티코어 36% 성능이 향상될 것으로 예상된다.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/ko-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Ubuntu 20.04에서 ibus-hangul을 사용하여 한-영 변환 키 구성]]></title>
+      <link>https://unclesnote.com/ko/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</link>
+      <guid>https://unclesnote.com/ko/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Sat, 04 Nov 2023 21:16:15 +0900</pubDate>
+      <category><![CDATA[우분투,일반]]></category>
+      <tag><![CDATA[ibushangul,우분투,일반,키보드]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <description><![CDATA[소프트웨어 개발 목적으로 Ubuntu를 사용하는 경우 대부분 영어로 입력하게 됩니다. 그러나 어떤 경우에는 그놈 GUI에 한국어를 입력해야 할 수도 있습니다. 그래서 기본 설정에서는 영어 입력만 허용하므로 `ibus-hangul` 플러그인을 사용하여 한국어 입력을 설정하겠습니다.]]></description>
+      <content:encoded><![CDATA[<p>소프트웨어 개발 목적으로 Ubuntu를 사용하는 경우 대부분 영어로 입력하게 됩니다. 그러나 어떤 경우에는 그놈 GUI에 한국어를 입력해야 할 수도 있습니다.</p>
+
+<p>그래서 기본 설정에서는 영어 입력만 허용하므로 <code class="language-plaintext highlighter-rouge">ibus-hangul</code> 플러그인을 사용하여 한국어 입력을 설정하겠습니다.</p>
+<h2 id="ibus-hangul">ibus-hangul</h2>
+<p><code class="language-plaintext highlighter-rouge">ibus-hangul</code>은 Linux나 Ubuntu에서 한글 입력 방식을 지원하는 플러그인입니다. <code class="language-plaintext highlighter-rouge">ibus</code>는 <code class="language-plaintext highlighter-rouge">입력 버스</code>를 의미합니다. Ubuntu는 이미 한글 입력을 지원하지만 최적화된 한글 입력을 위해 <code class="language-plaintext highlighter-rouge">ibus-hangul</code>을 업그레이드하여 사용할 예정입니다.</p>
+
+<p>apt 저장소를 업데이트하고 <code class="language-plaintext highlighter-rouge">ibus-hangul</code> 플러그인을 업그레이드하세요. 제가 설치했을 때 플러그인 크기는 615MB였습니다. 업그레이드하는데 시간이 좀 걸립니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade ibus-hangul
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="한국어-입력-설정">한국어 입력 설정</h2>
+<p>먼저, 애플리케이션에서 <code class="language-plaintext highlighter-rouge">지역</code> 키워드를 검색한 후 <code class="language-plaintext highlighter-rouge">지역 및 언어</code> 설정을 찾아서 실행하세요.</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" alt="`지역`을 검색하고 `지역 및 언어`를 실행하세요." />
+<em><code class="language-plaintext highlighter-rouge">지역</code>을 검색하고 <code class="language-plaintext highlighter-rouge">지역 및 언어</code>를 실행하세요.</em></p>
+
+<p>그런 다음 <code class="language-plaintext highlighter-rouge">지역 및 언어</code> 탭에 <code class="language-plaintext highlighter-rouge">입력 소스</code>를 추가하세요. <code class="language-plaintext highlighter-rouge">한국어</code>를 검색하고 <code class="language-plaintext highlighter-rouge">한국어(한글)</code>를 추가하세요.</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" alt="`한국어(한글)` 입력 소스 추가" />
+<em><code class="language-plaintext highlighter-rouge">한국어(한글)</code> 입력 소스 추가</em></p>
+
+<p>새로 추가된 입력소스를 설정하기 전, 기존 <code class="language-plaintext highlighter-rouge">English(US)</code>를 제거하세요. 새로 추가된 <code class="language-plaintext highlighter-rouge">한국어(한글)</code> 입력소스와의 충돌을 방지하기 위함이다. 그리고 추가된 입력 소스에는 이미 영어 입력 기능이 포함되어 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">한국(한글)</code> 입력 소스에서 톱니바퀴 아이콘을 클릭하여 <code class="language-plaintext highlighter-rouge">IBusHangle Setup</code>을 엽니다.</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" alt="한영변환키 설정" />
+<em>한영변환키 설정</em></p>
+
+<p>그런 다음 <code class="language-plaintext highlighter-rouge">Etc</code> 섹션에서 <code class="language-plaintext highlighter-rouge">한글 모드로 시작</code>을 활성화하세요. 참고로 Ubuntu를 부팅할 때 GNOME GUI의 첫 번째 입력 모드를 한국어로 설정하려면 활성화하세요.</p>
+
+<p>그리고 기본으로 추가된 <code class="language-plaintext highlighter-rouge">한글 토글키</code>를 모두 제거합니다. 이 키가 사용 중인 실제 키보드의 언어 전환 키와 일치한다는 보장은 없습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">추가</code> 버튼을 클릭하고 새 창이 열리면 키보드의 언어 전환 키를 누르세요. 제 키보드의 경우 <code class="language-plaintext highlighter-rouge">Alt_R</code>이 언어 변경 키로 지정되어 있었습니다.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/ko-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[줄 바꿈 차이점 - Windows 및 Linux EOL 확인 및 Git Repo 동기화]]></title>
+      <link>https://unclesnote.com/ko/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</link>
+      <guid>https://unclesnote.com/ko/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 14:47:17 +0900</pubDate>
+      <category><![CDATA[Git]]></category>
+      <tag><![CDATA[Git,CRLF,LF,EOL변환,줄바꿈,노트패드플러스플러스,unix2dos,dos2unix]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <description><![CDATA[Linux와 Windows 모두에서 하나의 Git 저장소에 있는 파일을 수정하고 커밋해야 하는 경우, 콘텐츠가 명확하게 수정되지 않았음에도 Git 클라이언트가 Git 커밋 단계에서 해당 파일을 수정된 파일로 인식하는 경우가 있습니다. 문제의 원인은 파일 내용은 동일하더라도]]></description>
+      <content:encoded><![CDATA[<p>Linux와 Windows 모두에서 하나의 Git 저장소에 있는 파일을 수정하고 커밋해야 하는 경우, 콘텐츠가 명확하게 수정되지 않았음에도 Git 클라이언트가 Git 커밋 단계에서 해당 파일을 수정된 파일로 인식하는 경우가 있습니다.</p>
+
+<p>문제의 원인은 파일 내용은 동일하더라도 Windows와 Linux에서 줄바꿈을 표현하는 기본 방식이 다르기 때문입니다. 아래 사진에서 왼쪽은 윈도우(PC)에서 수정하여 저장한 파일이고, 오른쪽은 리눅스(UNIX)에서 수정하여 저장한 파일이다.</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="파일 내용은 같지만 파일이 다릅니다. 왼쪽이 Windows PC 형식, 오른쪽이 Linux UNIX 형식입니다." />
+<em>파일 내용은 같지만 파일이 다릅니다. 왼쪽이 Windows PC 형식, 오른쪽이 Linux UNIX 형식입니다.</em></p>
+
+<h2 id="windows와-linux의-줄바꿈-차이점">Windows와 Linux의 줄바꿈 ​​차이점</h2>
+<p>ASCII 문자 관점에서 볼 때,</p>
+
+<p>윈도우에서는 아래와 같이 <code class="language-plaintext highlighter-rouge">CRLF(Carriage Return with Line Feed)</code> 형태로 줄바꿈을 표현한다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\r\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>우분투 등의 리눅스 시스템에서는 아래와 같이 줄바꿈을 <code class="language-plaintext highlighter-rouge">LF(Line Feed)</code>로만 표현합니다.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Git에서 LF 형식의 줄바꿈을 표현한 파일을 받고, Windows 편집기에서 간단히 수정한 후 복원했다고 가정해 보겠습니다. 즉 파일의 내용은 표면적으로는 동일하지만 줄 바꿈을 CRLF로 수정하므로 Git의 파일과 다른 파일로 변환될 가능성이 있습니다.</p>
+
+<p>Linux에서 Windows로 작성된 bash 스크립트를 실행하면 디버깅 중에 알 수 없는 스크립트 실행 오류가 발생할 수 있습니다. 이는 Windows에서 CRLF 형식으로 줄바꿈을 저장한 쉘 스크립트와 bash가 이를 해석할 수 없기 때문일 수 있습니다.</p>
+<h2 id="파일의-eolend-of-line-확인-및-변환">파일의 EOL(End Of Line) 확인 및 변환</h2>
+<p>물론, Windows에서 파일을 작성하더라도 PC(CRLF) 형식이 아닌 UNIX(LF) 형식으로 파일을 생성하고 변환할 수 있습니다. 그 반대도 가능합니다. 변환 작업을 일반적으로 <code class="language-plaintext highlighter-rouge">EOL(End Of Lines) 변환</code>이라고 합니다.</p>
+
+<p>사실, 각 OS별 EOL의 차이점을 처음 접할 때 약간 혼란스러울 수 있습니다. 따라서 앞으로 설명할 내용과 관련된 키워드를 아래와 같이 표로 매핑할 수 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>이름</th>
+      <th>윈도우</th>
+      <th>우분투(리눅스)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>줄 바꿈 형식 용어</td>
+      <td>CRLF(라인 피드를 사용한 캐리지 리턴)</td>
+      <td>LF(줄 바꿈)</td>
+    </tr>
+    <tr>
+      <td>줄 바꿈 표현 문자</td>
+      <td><code class="language-plaintext highlighter-rouge">\r\n</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\n</code></td>
+    </tr>
+    <tr>
+      <td>Ubuntu의 <code class="language-plaintext highlighter-rouge">file</code> 도구에서 제공되는 정보</td>
+      <td>ASCII text, with CRLF line terminators</td>
+      <td>ASCII text</td>
+    </tr>
+    <tr>
+      <td>Beyond Compare 도구의 EOL 유형</td>
+      <td>PC</td>
+      <td>UNIX</td>
+    </tr>
+    <tr>
+      <td>Ubuntu의 EOL 유형</td>
+      <td>dos</td>
+      <td>unix</td>
+    </tr>
+    <tr>
+      <td>Ubuntu의 EOL 변환 도구</td>
+      <td>unix2dos</td>
+      <td>dos2unix</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="윈도우">윈도우</h3>
+<p><a href="https://notepad-plus-plus.org/downloads" target="_blank">Notepad++</a> 편집기를 사용하면 EOL을 염두에 두고 파일을 생성하는 데 도움이 될 수 있습니다.</p>
+
+<p>아래 그림과 같이 Notepad++ 편집기에서 현재 <code class="language-plaintext highlighter-rouge">EOL Conversion</code> 상태를 확인하고 변환할 수 있습니다. 메뉴는 <code class="language-plaintext highlighter-rouge">편집 &gt; EOL 변환</code>에 있습니다.</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - EOL 변환 - `편집 &gt; EOL 변환 &gt; Windows(CR LF) 또는 Unix(LF)`" />
+<em>Notepad++ - EOL 변환 - <code class="language-plaintext highlighter-rouge">편집 &gt; EOL 변환 &gt; Windows(CR LF) 또는 Unix(LF)</code></em></p>
+
+<h3 id="우분투리눅스">우분투(리눅스)</h3>
+<p>Ubuntu 환경에서는 파일의 EOL 상태를 확인하고 변환할 수도 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">file</code> 도구를 사용하여 파일의 EOL 상태를 확인할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># PC (CRLF)</span>
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="c"># Unix (LF)</span>
+<span class="nv">$ </span>file unix.txt 
+unix.txt: ASCII text
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>파일의 EOL 변환을 위해서는 <code class="language-plaintext highlighter-rouge">tofrodos</code> 및 <code class="language-plaintext highlighter-rouge">dos2unix</code>가 설치되어 있어야 합니다. <code class="language-plaintext highlighter-rouge">apt</code>를 사용하여 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt-get <span class="nb">install </span>tofrodos
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>dos2unix
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>패키지를 설치하면 아래 도구를 사용할 수 있습니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dos2unix</code> : PC(CRLF)를 Unix(LF)로 변환합니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">unix2dos</code> : 유닉스(LF)를 PC(CRLF)로 변환</li>
+</ul>
+
+<p>아래는 PC(CRLF)를 UNIX(LF)로 변환하는 예입니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="nv">$ </span>dos2unix pc.txt 
+dos2unix: converting file pc.txt to Unix format...
+
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="git-repo-os-간-eol-동기화">Git repo OS 간 EOL 동기화</h2>
+<p>하나의 Git 저장소에는 Windows 및 Ubuntu 환경에서 파일을 커밋하고 가져올 때 EOL 변환 문제를 방지하는 Git 설정이 있습니다.</p>
+
+<p>아래 git 명령은 ASCII 형식 파일을 개체 데이터베이스에 삽입하기 전에 CRLF를 LF로 변경합니다. 그래서 주로 <code class="language-plaintext highlighter-rouge">Windows</code> 환경에서 Git 설정에 사용됩니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf input 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아래 git 명령은 줄 바꿈을 LF로 사용합니다. 그래서 주로 <code class="language-plaintext highlighter-rouge">Ubuntu(Linux)</code> 환경에서 사용됩니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf <span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>위 명령은 전역 Git 설정이므로 특정 복제된 Repo에만 EOL 설정을 적용하고 싶다면 해당 repo 폴더에 들어가서 <code class="language-plaintext highlighter-rouge">--global</code> 옵션만 제거하고 명령을 사용하면 됩니다.</p>
+
+<p>즉, LF 형식의 EOL이 포함된 파일을 Git 서버에 업로드하려는 의도입니다.</p>
+
+<p>Windows 환경에서는 마우스 오른쪽 버튼 클릭 후 메뉴에서 Git Bash에 접근할 수 있습니다.</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="Windows에서 Git Bash에 액세스하기" />
+<em>Windows에서 Git Bash에 액세스하기</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/ko-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Ubuntu 20.04 성능을 최적화하는 방법]]></title>
+      <link>https://unclesnote.com/ko/231102005314/how_to_optimize_ubuntu_20.04_performance</link>
+      <guid>https://unclesnote.com/ko/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:14 +0900</pubDate>
+      <category><![CDATA[우분투,일반]]></category>
+      <tag><![CDATA[우분투애니메이션,Dock아이콘크기,스왑파일,스왑,우분투,일반,블리치비트]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <description><![CDATA[Ubuntu OS가 설치된 PC를 메인 컴퓨터로 사용하지 않는 이상, 하드웨어 사양이 낮은 PC를 사용하거나 Oracle VM VirtualBox에 Ubuntu를 설치하게 될 가능성이 높습니다. SSH를 주로 사용하여 원격으로 접속한다면 큰 영향은 없으나, GNOME에서 UI를 자주]]></description>
+      <content:encoded><![CDATA[<p>Ubuntu OS가 설치된 PC를 메인 컴퓨터로 사용하지 않는 이상, 하드웨어 사양이 낮은 PC를 사용하거나 Oracle VM VirtualBox에 Ubuntu를 설치하게 될 가능성이 높습니다.</p>
+
+<p>SSH를 주로 사용하여 원격으로 접속한다면 큰 영향은 없으나, GNOME에서 UI를 자주 조작한다면 성능이 실망스러울 수 있습니다. 따라서 Ubuntu를 설치하고 구성할 때 성능을 최적화하기 위한 몇 가지 팁은 다음과 같습니다.</p>
+<h2 id="애니메이션-끄기">애니메이션 끄기</h2>
+<p>Virtual Box나 저사양 PC에서 Ubuntu를 사용하는 경우 제한된 리소스로 인해 애니메이션으로 인해 OS 성능이 저하될 수 있습니다. 다음은 Ubuntu GNOME GUI에서 애니메이션을 끄고 켜는 방법입니다. 터미널에서 명령을 실행할 수 있습니다.</p>
+
+<p>다음은 Ubuntu 애니메이션을 끄고 설정을 확인하는 터미널 명령입니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">false</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>다음은 Ubuntu 애니메이션을 켜는 터미널 명령입니다. 차이점은 명령의 마지막 인수가 <code class="language-plaintext highlighter-rouge">false</code>에서 <code class="language-plaintext highlighter-rouge">true</code>로 변경된다는 것입니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">true</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="도크-아이콘-크기">도크 아이콘 크기</h2>
+<p>제한된 해상도 디스플레이를 사용하는 경우 Dock의 기본 아이콘 크기로 인해 많은 아이콘을 한 번에 등록하고 탐색하는 데 제한이 있을 수 있습니다. 따라서 Dock 아이콘 크기를 작게 설정할 수 있습니다.</p>
+
+<p>먼저 <code class="language-plaintext highlighter-rouge">애플리케이션 메뉴</code>에서 도크를 검색하고 <code class="language-plaintext highlighter-rouge">모양</code> 설정을 엽니다.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" alt="Dock 아이콘 크기 - 애플리케이션 메뉴 &gt; `dock` 검색 &gt; 모양 설정" />
+<em>Dock 아이콘 크기 - 애플리케이션 메뉴 &gt; <code class="language-plaintext highlighter-rouge">dock</code> 검색 &gt; 모양 설정</em></p>
+
+<p>그런 다음 <code class="language-plaintext highlighter-rouge">아이콘 크기</code>를 줄이고 자신에게 보기 좋은 크기로 설정하세요.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="Dock 아이콘 크기 - 설정 &gt; 모양 &gt; `아이콘 크기` 크기 조정" />
+<em>Dock 아이콘 크기 - 설정 &gt; 모양 &gt; <code class="language-plaintext highlighter-rouge">아이콘 크기</code> 크기 조정</em></p>
+
+<h2 id="스왑-크기-늘리기">스왑 크기 늘리기</h2>
+<p>Virtual Box에 설치된 Ubuntu를 사용하는 경우 Windows 컴퓨터와 공유되기 때문에 8GB 미만의 메모리가 가상 머신에 할당될 가능성이 높습니다. Ubuntu를 가볍게 사용하는 경우에는 문제가 되지 않을 수 있지만 대규모 플랫폼, BSP 또는 소프트웨어를 컴파일하려고 할 때 메모리가 부족하면 컴파일 실패가 발생할 수 있습니다. 이 문제는 스왑 크기를 늘리면 해결될 수 있습니다.</p>
+
+<p>메모리 용량보다 하드디스크 용량이 저렴하므로 스왑을 늘리자. 아래 기사를 참조하시기 바랍니다.</p>
+<ul>
+  <li>https://unclesnote.com/en/231102005313/how_to_increase_swapfile_size_in_ubuntu</li>
+</ul>
+
+<h2 id="디스크-여유-공간-확보">디스크 여유 공간 확보</h2>
+<p>가상 머신이 설치된 Ubuntu를 사용 중이고 이미지 크기가 충분하지 않은 경우 아래와 같은 경고 팝업이 나타날 수 있습니다. 이는 임시 파일이나 로그 파일로 시스템에 누적되는 경우 발생할 수 있습니다. 여유 공간이 0으로 수렴되면 Ubuntu VM이 부팅되지 않을 수 있습니다.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" alt="파일 시스템 루트의 디스크 공간 부족에 대한 경고 팝업" />
+<em>파일 시스템 루트의 디스크 공간 부족에 대한 경고 팝업</em></p>
+
+<p>임시 파일이나 시스템 로그 파일을 수동으로 삭제할 수도 있지만, <a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a> 애플리케이션을 이용하면 GUI 환경에서 보다 쉽게 ​​관리할 수 있습니다.</p>
+
+<p>Ubuntu 소프트웨어 애플리케이션에서 <code class="language-plaintext highlighter-rouge">bleachbit</code>을 검색하여 쉽게 설치할 수 있습니다.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" alt="우분투 소프트웨어 - BleachBit" />
+<em>우분투 소프트웨어 - BleachBit</em></p>
+
+<p>정리하고 싶은 항목을 체크한 후 <code class="language-plaintext highlighter-rouge">Clean</code> 버튼을 누르면 불필요한 파일이 자동으로 삭제되어 여유공간을 확보해줍니다. 그러나 <code class="language-plaintext highlighter-rouge">APT</code>와 <code class="language-plaintext highlighter-rouge">저널</code> 항목을 정리할 때는 주의해야 합니다. 이로 인해 Ubuntu 시스템이나 패키지 종속성이 손상될 수 있습니다.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="블리치비트" />
+<em>블리치비트</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/ko-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Ubuntu에서 스왑 파일 크기를 늘리는 방법]]></title>
+      <link>https://unclesnote.com/ko/231102005313/how_to_increase_swapfile_size_in_ubuntu</link>
+      <guid>https://unclesnote.com/ko/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:13 +0900</pubDate>
+      <category><![CDATA[우분투,일반]]></category>
+      <tag><![CDATA[파탭,스왑,스왑파일,우분투,일반]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <description><![CDATA[때로는 충분한 물리적 메모리 없이 Ubuntu 시스템을 오랫동안 실행한 상태로 두거나 대규모 플랫폼이나 BSP를 컴파일하고 구축하는 경우 성능이 저하되거나 오류가 발생할 수 있습니다. 따라서 Linux 기반 OS에서는 물리적 메모리가 부족할 경우 스왑 파일을 생성하여 하드디스크에 있는]]></description>
+      <content:encoded><![CDATA[<p>때로는 충분한 물리적 메모리 없이 Ubuntu 시스템을 오랫동안 실행한 상태로 두거나 대규모 플랫폼이나 BSP를 컴파일하고 구축하는 경우 성능이 저하되거나 오류가 발생할 수 있습니다.</p>
+
+<p>따라서 Linux 기반 OS에서는 물리적 메모리가 부족할 경우 스왑 파일을 생성하여 하드디스크에 있는 파일을 메모리로 사용합니다. 이를 스왑 파일이라고 하며, Windows 환경의 가상 메모리와 유사합니다.</p>
+
+<p>이제 Ubuntu 20.04에서 스왑파일을 생성하고 적용하는 방법을 설명하겠습니다.</p>
+<h2 id="스왑-확인">스왑 확인</h2>
+<p>내 Ubuntu 환경에서 스왑 상태를 확인하려면 <code class="language-plaintext highlighter-rouge">free -m</code> 명령을 사용하세요. 그리고 <code class="language-plaintext highlighter-rouge">root</code> 시스템에 <code class="language-plaintext highlighter-rouge">swapfile</code>이 있는지 확인하세요. 루트 경로에 스왑 파일을 생성하는 것이 일반적입니다.</p>
+
+<p>제 경우에는 2GB의 스왑을 사용하고 있으며 스왑 파일은 루트 경로에 있습니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>free <span class="nt">-m</span>
+              total        used        free      shared  buff/cache   available
+Mem:           4913        1306        2306           8        1300        3359
+Swap:          2048           0        2048
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span> /
+total 8388712
+...
+<span class="nt">-rw-------</span>   1 root root   2048934592 Jul 24 17:54 swapfile
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="스왑-파일-생성">스왑 파일 생성</h2>
+<p>기존 2GB 스왑파일을 삭제하고 5GB 스왑파일을 새로 생성하겠습니다.</p>
+
+<p>먼저 스왑 기능을 끄고 이미 사용 중인 2GB 스왑 파일을 삭제합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="nb">sudo rm</span> /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그런 다음 루트에 5GB 스왑 파일을 생성하고 파일 권한을 600에 할당합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nb">sudo chmod </span>600 /swapfile 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>마지막으로 새로 생성된 파일로 스왑을 활성화합니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>mkswap /swapfile
+<span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아래는 위의 명령을 실행한 방법입니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>bull: 
+swapoff /swapfile
+<span class="nv">$ </span><span class="nb">sudo rm</span> /swapfile
+<span class="nv">$ </span><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /
+total 5242976
+...
+<span class="nt">-rw-r--r--</span>   1 root root   5368709120 Aug 17 14:11 swapfile
+...
+<span class="nv">$ </span><span class="nb">sudo chmod </span>600 /swapfile 
+<span class="nv">$ </span><span class="nb">sudo </span>mkswap /swapfile
+Setting up swapspace version 1, size <span class="o">=</span> 5 GiB <span class="o">(</span>5368705024 bytes<span class="o">)</span>
+no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c-b719-e54154ad8194
+<span class="nv">$ </span><span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="스왑파일-등록">스왑파일 등록</h2>
+<p>이제 마지막으로 부팅할 때마다 스왑 파일을 로드하도록 Ubuntu를 구성하겠습니다.</p>
+
+<p>그런 다음 <code class="language-plaintext highlighter-rouge">/etc/fstab</code>을 엽니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>vi /etc/fstab    
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그리고 아래 줄을 추가하세요. 이미 설정되어 있으면 추가할 필요가 없습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>/swapfile              none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="재부팅">재부팅</h2>
+<p>먼저 재부팅하세요. 재부팅 후 시스템 모니터에서 위에서 생성된 스왑 파일을 확인할 수 있습니다.</p>
+
+<p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="`응용 프로그램` 메뉴 &gt; 시스템 모니터" />
+<em><code class="language-plaintext highlighter-rouge">응용 프로그램</code> 메뉴 &gt; 시스템 모니터</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/ko-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[소프트웨어 개발자를 위한 필수 Ubuntu 소프트웨어를 설치하는 방법]]></title>
+      <link>https://unclesnote.com/ko/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</link>
+      <guid>https://unclesnote.com/ko/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Wed, 01 Nov 2023 00:31:13 +0900</pubDate>
+      <category><![CDATA[우분투,도구]]></category>
+      <tag><![CDATA[VisualStudio코드,VSCode,GitHub데스크톱,비욘드컴페어4,SQLiteDB브라우저,MySQL워크벤치,우분투,도구]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <description><![CDATA[소프트웨어 개발자이고 개발 환경이 Ubuntu인 경우, 설치해야 하는 필수 Ubuntu 소프트웨어 설치 방법을 설명합니다.]]></description>
+      <content:encoded><![CDATA[<p>소프트웨어 개발자이고 개발 환경이 Ubuntu인 경우, 설치해야 하는 필수 Ubuntu 소프트웨어 설치 방법을 설명합니다.</p>
+<h2 id="비주얼-스튜디오-코드">비주얼 스튜디오 코드</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="비주얼 스튜디오 코드" />
+<em>비주얼 스튜디오 코드</em></p>
+
+<p><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a>는 소프트웨어 개발에서 널리 사용되는 IDE 및 편집기입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Ubuntu Desktop GUI(GNOME) 환경</code>을 사용하는 경우 내장 브라우저를 사용하여 VS Code를 다운로드하고 <code class="language-plaintext highlighter-rouge">dpkg</code> 도구를 사용하여 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> code_1.83.0-1696350811_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">Ubuntu 서버 환경</code>을 사용하거나 <code class="language-plaintext highlighter-rouge">SSH 액세스만 가능</code>을 사용하는 경우 이는 다소 복잡합니다. 그러나 아래 명령을 사용하여 VS Code를 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># Install basic packages for installation</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget <span class="nt">-y</span>
+<span class="c"># Install the Microsoft GPG key and add the repository to apt</span>
+wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</span>
+<span class="c"># Install VS Code</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>code
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아래 명령을 사용하여 SSH를 통해 VS Code에 원격으로 액세스하기 위한 확장 프로그램을 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="github-데스크탑">GitHub 데스크탑</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="GitHub 데스크탑" />
+<em>GitHub 데스크탑</em></p>
+
+<p>GitHub 데스크톱 소프트웨어는 Git 클라이언트입니다. GitHub 프로젝트를 작업 중이라면 분명 좋은 옵션이지만, GitHub repo가 ​​아닌 개인용 git 서버를 사용하더라도 복잡한 기능이 필요하지 않다면 좋은 옵션이 될 수도 있습니다.</p>
+
+<p><a href="https://desktop.github.com/" target="_blank">공식 GitHub 데스크톱</a> 사이트에서는 Windows 및 macOS 버전만 제공합니다. 하지만 GitHub Desktop은 오픈소스 프로젝트이기 때문에 Ubuntu 버전도 별도의 <a href="https://github.com/shiftkey/desktop" target="_blank">repo</a>로 배포됩니다. 이것이 공식적인 것인지 확실하지 않습니다. apt에 저장소를 추가한 후 apt를 사용하여 GitHub Desktop을 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-qO</span> - https://mirror.mwt.me/shiftkey-desktop/gpgkey | gpg <span class="nt">--dearmor</span> | <span class="nb">sudo tee</span> /usr/share/keyrings/mwt-desktop.gpg <span class="o">&gt;</span> /dev/null
+<span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg] https://mirror.mwt.me/shiftkey-desktop/deb/ any main" &gt; /etc/apt/sources.list.d/mwt-desktop.list'</span>
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>github-desktop
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="비욘드-컴페어-4">비욘드 컴페어 4</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" alt="비욘드 컴페어 4" />
+<em>비욘드 컴페어 4</em></p>
+
+<p>Beyond Compare는 널리 사용되는 파일 비교 도구입니다.</p>
+
+<p>안타깝게도 Beyond Compare 3 버전은 Ubuntu에서 파일 비교 성능이 좋지 않습니다. 즉, 파일 비교에 시간이 오래 걸립니다. 하지만 최신 버전인 <a href="https://www.scootersoftware.com/download" target="_blank">Beyond Compare 4</a>는 속도가 빠르고 Ubuntu에서 Windows와 동일한 성능을 제공합니다. 따라서 Ubuntu에서는 버전 4를 선택하는 것이 좋습니다.</p>
+
+<p>Beyond Compare 4는 웹브라우저를 이용하여 공식 홈페이지에서 다운로드할 수 있으나, 저희는 <code class="language-plaintext highlighter-rouge">wget</code> 툴을 이용하여 다운로드하겠습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget https://www.scootersoftware.com/files/bcompare-4.4.6.27483_amd64.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> bcompare-4.4.6.27483_amd64.deb
+<span class="nb">rm </span>bcompare-4.4.6.27483_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>설치가 완료되면 아래 명령을 사용하여 Beyond Compare 4를 재설정하세요.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c">#thinks bensonkb</span>
+<span class="nb">sudo rm</span> <span class="nt">-rf</span> ~/.config/bcompare 
+<span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s/keexjEP3t4Mue23hrnuPtY4TdcsqNiJL-5174TsUdLmJSIXKfG2NGPwBL6vnRPddT7tH29qpkneX63DO9ECSPE9rzY1zhThHERg8lHM9IBFT+rVuiY823aQJuqzxCKIE1bcDqM4wgW01FH6oCBP1G4ub01xmb4BGSUG6ZrjxWHJyNLyIlGvOhoY2HAYzEtzYGwxFZn2JZ66o4RONkXjX0DF9EzsdUef3UAS+JQ+fCYReLawdjEe6tXCv88GKaaPKWxCeaUL9PejICQgRQOLGOZtZQkLgAelrOtehxz5ANOOqCaJgy2mJLQVLM5SJ9Dli909c5ybvEhVmIC0dc9dWH+/N9KmiLVlKMU7RJqnE+WXEEPI1SgglmfmLc1yVH7dqBb9ehOoKG9UE+HAE1YvH1XX2XVGeEqYUY-Tsk7YBTz0WpSpoYyPgx6Iki5KLtQ5G-aKP9eysnkuOAkrvHU8bLbGtZteGwJarev03PhfCioJL4OSqsmQGEvDbHFEbNl1qJtdwEriR+VNZts9vNNLk7UGfeNwIiqpxjk4Mn09nmSd8FhM4ifvcaIbNCRoMPGl6KU12iseSe+w+1kFsLhX+OhQM8WXcWV10cGqBzQE9OqOLUcg9n0krrR3KrohstS9smTwEx9olyLYppvC0p5i7dAx2deWvM1ZxKNs0BvcXGukR+/g"</span> /usr/lib/beyondcompare/BCompare
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그런 다음 Ubuntu GUI에서 Beyond Compare 4를 실행하고 라이센스 키가 있으면 입력하세요.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># Then restart BC, click "Enter License":</span>
+ayvZeJDYPBHS4J-1K6g6bDBuPoo0G-oGAq35blZtAoRqC-qQeSz28XAzX
+6nTx9laTMLRCp6nAIhHNGZ2ehkeUfbnFaxEeLvI8fJavn-XQLNbOumCLU
+qgdNbNMZiFRU03+OTQnw4V-E2YKTYi-LkgPzE6R-yIJGDNWfxH2AdpIgg
+8rlpsbrTs9Dt1zysUfvAEi0dKbmGIi3rqf7yWmwDh1AI5VyoWFIejvJwJ
+Lmlr2CjQ1VZ3DySCfBDuKcYmOCeK7jzEWPUnAw+f9360nIiiNEB0YGkwB
+kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>라이센스 키가 없는 경우 평가 기간이 종료되면 재설정 프로세스를 다시 수행해야 할 수도 있습니다. 그래서 워크스페이스를 저장해서 사용하고, 업데이트될 때마다 설정을 내보내어 파일로 저장하는 것을 추천드립니다.</p>
+<h2 id="데이터-베이스">데이터 베이스</h2>
+<h3 id="sqlite용-db-브라우저">SQLite용 DB 브라우저</h3>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="SQLite용 DB 브라우저" />
+<em>SQLite용 DB 브라우저</em></p>
+
+<p>SQLite DB를 사용하신다면 <a href="https://sqlitebrowser.org/dl/" target="_blank">SQLite DB 브라우저</a>는 GUI 환경에서 데이터베이스를 쿼리하거나 테이블 내용을 보기 위한 필수 소프트웨어입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">sqlitebrowser</code> 저장소를 apt에 추가하고 SQLite DB 브라우저를 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>add-apt-repository <span class="nt">-y</span> ppa:linuxgndu/sqlitebrowser
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>sqlitebrowser
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="mysql-워크벤치">MySQL 워크벤치</h3>
+<p>이에 대해서는 나중에 Ubuntu에 MySQL Workbench를 설치해야 할 때 설명하겠습니다.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/ko-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Office 365 Outlook의 기본 브라우저를 Chrome으로 변경하는 방법]]></title>
+      <link>https://unclesnote.com/ko/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
+      <guid>https://unclesnote.com/ko/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
+      <category><![CDATA[컴퓨터,문제 해결]]></category>
+      <tag><![CDATA[아웃룩,기본브라우저,크롬,PC,컴퓨터,문제해결]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <description><![CDATA[Office 365 Outlook에서 웹 링크를 클릭했는데 갑자기 Edge 브라우저에 표시되어 불편했던 적이 있으신가요? 최근 업데이트에서 Microsoft는 Outlook의 기본 브라우저를 Edge 브라우저로 재설정했습니다. 구글 크롬을 좋아하시는 분들을 위해 웹링크를 크롬에서]]></description>
+      <content:encoded><![CDATA[<p>Office 365 Outlook에서 웹 링크를 클릭했는데 갑자기 Edge 브라우저에 표시되어 불편했던 적이 있으신가요?</p>
+
+<p>최근 업데이트에서 Microsoft는 Outlook의 기본 브라우저를 Edge 브라우저로 재설정했습니다. 구글 크롬을 좋아하시는 분들을 위해 웹링크를 크롬에서 열리도록 변경해보겠습니다. Windows 기본 앱 및 Outlook 설정에서 Chrome 브라우저를 확인하고 설정하겠습니다.</p>
+<h2 id="windows의-기본-웹-브라우저-설정">Windows의 기본 웹 브라우저 설정</h2>
+<p>아마도 Chrome 사용자라면 이미 Google Chrome을 기본 웹 브라우저로 설정했을 것입니다. Office 365에 대한 기본 브라우저 설정이 있는지 확인하세요.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CTRL + I</code> 단축키를 사용하여 <code class="language-plaintext highlighter-rouge">Windows 설정</code>을 엽니다. 그런 다음 <code class="language-plaintext highlighter-rouge">default</code> 키워드를 입력하여 <code class="language-plaintext highlighter-rouge">기본 앱</code>을 찾아 선택합니다.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows 설정 - `기본값` 검색" />
+<em>Windows 설정 - <code class="language-plaintext highlighter-rouge">기본값</code> 검색</em></p>
+
+<p>그런 다음 <code class="language-plaintext highlighter-rouge">기본 앱</code> 탭의 <code class="language-plaintext highlighter-rouge">웹 브라우저</code> 섹션에서 <code class="language-plaintext highlighter-rouge">Google Chrome</code> 브라우저를 선택하세요.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="설정 &gt; 기본앱 &gt; 웹브라우저에서 `Google Chrome` 선택" />
+<em>설정 &gt; 기본앱 &gt; 웹브라우저에서 <code class="language-plaintext highlighter-rouge">Google Chrome</code> 선택</em></p>
+
+<h2 id="office-365-outlook에서-하이퍼링크를-열도록-앱-설정">Office 365 Outlook에서 하이퍼링크를 열도록 앱 설정</h2>
+<p>Office 365 Outlook으로 돌아가볼까요?</p>
+
+<p>Outlook에서는 <code class="language-plaintext highlighter-rouge">ALT + F</code> 단축키를 사용하여 왼쪽 메뉴 표시줄을 보고 <code class="language-plaintext highlighter-rouge">옵션</code>을 선택합니다.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - 옵션" />
+<em>Office 365 Outlook - 옵션</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">고급</code> 탭을 선택하세요. <code class="language-plaintext highlighter-rouge">파일 및 브라우저 기본 설정</code> 섹션에서 하이퍼링크를 열려는 브라우저를 <code class="language-plaintext highlighter-rouge">기본 브라우저</code>로 변경하세요. 그런 다음 <code class="language-plaintext highlighter-rouge">확인</code>을 누르세요. 첫 번째 섹션에서는 Windows 기본 브라우저를 Chrome으로 설정했으므로 여기서 기본 브라우저는 Chrome입니다.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - 옵션 &gt; 고급 &gt; 파일 및 브라우저 기본 설정에서 `기본 브라우저` 선택" />
+<em>Office 365 Outlook - 옵션 &gt; 고급 &gt; 파일 및 브라우저 기본 설정에서 <code class="language-plaintext highlighter-rouge">기본 브라우저</code> 선택</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ko-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Windows 도구 대신 Ubuntu를 위한 필수 대체 소프트웨어]]></title>
+      <link>https://unclesnote.com/ko/231028002032/essential_software_to_use_on_ubuntu_os</link>
+      <guid>https://unclesnote.com/ko/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Sat, 28 Oct 2023 00:20:32 +0900</pubDate>
+      <category><![CDATA[우분투,도구]]></category>
+      <tag><![CDATA[크루세이더,그웬뷰,포토피아,크리타,이지스트로크,이미지뷰어,이미지편집기,파일탐색기,마우스매크로,우분투,도구,블리치비트,자유공간]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <description><![CDATA[Ubuntu OS의 특별한 장점 때문에 Ubuntu를 사용하고 있다면 Windows 환경에서 사용했던 것과 유사한 소프트웨어를 Ubuntu 환경에서도 사용할 수 있는지 찾아보게 될 것입니다. 그래서 파일 브라우저, 이미지 뷰어/편집기, 생산성 도구 등 우분투를 사용할 때 일반적으로]]></description>
+      <content:encoded><![CDATA[<p>Ubuntu OS의 특별한 장점 때문에 Ubuntu를 사용하고 있다면 Windows 환경에서 사용했던 것과 유사한 소프트웨어를 Ubuntu 환경에서도 사용할 수 있는지 찾아보게 될 것입니다. 그래서 파일 브라우저, 이미지 뷰어/편집기, 생산성 도구 등 우분투를 사용할 때 일반적으로 사용하기 좋은 몇 가지 소프트웨어를 소개하겠습니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" alt="우분투 소프트웨어" />
+<em>우분투 소프트웨어</em></p>
+
+<h2 id="파일-탐색기">파일 탐색기</h2>
+<h3 id="크루세이더">크루세이더</h3>
+<p>Windows 환경에서 Q-Dir이나 <a href="https://www.ghisler.com/download.htm" target="_blank">토탈 커맨더</a>를 사용해 본 경험이 있으신 분은 <a href="https://krusader.org" target="_blank">Krusader</a>에서 분할 경험을 제공해 드립니다. 창 및 멀티탭 파일 탐색.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" alt="크루세이더" />
+<em>크루세이더</em></p>
+
+<p>설치 방법은 매우 쉽습니다. apt를 사용하여 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>krusader
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="이미지-뷰어편집기">이미지 뷰어/편집기</h2>
+<h3 id="그웬뷰">그웬뷰</h3>
+<p><a href="https://github.com/KDE/gwenview" target="_blank">GwenView</a>는 제가 사용해 본 최고의 Ubuntu 이미지 뷰어입니다. 더 나은 이미지 뷰어를 찾으면 업데이트하겠습니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" alt="그웬뷰" />
+<em>그웬뷰</em></p>
+
+<p>그러나 이미지 파일을 자주 업데이트하면 GwenView 목록의 썸네일 모양과 실제 이미지가 다를 수 있습니다. 따라서 썸네일 캐시 사용을 비활성화하는 것이 좋습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">설정 &gt; Gwenview 구성 &gt; 고급</code>에서 <code class="language-plaintext highlighter-rouge">낮은 리소스 사용 모드</code>를 선택하세요.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" alt="GwenView - 썸네일 캐시를 비활성화하려면 `낮은 리소스 사용 모드`를 확인하세요." />
+<em>GwenView - 썸네일 캐시를 비활성화하려면 <code class="language-plaintext highlighter-rouge">낮은 리소스 사용 모드</code>를 확인하세요.</em></p>
+
+<p>GwenView는 apt를 사용하여 쉽게 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt <span class="nb">install </span>gwenview <span class="nt">-y</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="포토피아">포토피아</h3>
+<p>포토샵에 익숙한 분들이라면 가장 좋은 대안은 <a href="https://www.photopea.com" target="_blank">포토피아</a>가 아닐까 싶습니다. Photopia는 Photoshop과 가장 유사한 인터페이스를 제공하는 웹 앱입니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" alt="포토피 - www.photopea.com" />
+<em>포토피 - www.photopea.com</em></p>
+
+<p>포토피아와 유사한 웹사이트도 있지만, 포토피아의 장점은 광고 차단기가 웹상의 광고를 차단할 수 있다는 점, 이것이 그들의 수익 모델이다. 크롬 브라우저 사용자라면 웹스토어에서 <code class="language-plaintext highlighter-rouge">AdBlock</code>을 검색하여 설치하세요.</p>
+
+<p><code class="language-plaintext highlighter-rouge">AdBlock</code>을 사용하지 않더라도 오른쪽 패널에 광고가 다른 사이트에 비해 제한적으로 표시되기 때문에 크게 거슬리지는 않습니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" alt="Photopea - 오른쪽 패널의 제한된 광고 및 Chrome 웹 브라우저의 AdBlock 확장 프로그램" />
+<em>Photopea - 오른쪽 패널의 제한된 광고 및 Chrome 웹 브라우저의 AdBlock 확장 프로그램</em></p>
+
+<h3 id="크리타">크리타</h3>
+<p>Photopia와는 다른 오프라인 이미지 편집기를 찾고 있다면 Krita가 대안이 될 수 있습니다. 하지만 포토샵에 매우 익숙한 사용자라면 낯설게 느껴질 수도 있습니다. GUI 인터페이스는 Photoshop과 유사하지만 단축키와 도구는 여러 면에서 다릅니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" alt="크리타" />
+<em>크리타</em></p>
+
+<p>Photoshop과 완전히 유사하지는 않지만, 이미지를 편집하거나 그리고 싶고 완전한 소프트웨어를 찾고 있다면 Krita가 좋은 선택이 될 수 있습니다.</p>
+
+<p>Krita는 앱 이미지 형태로 소프트웨어를 배포합니다. 아래 Krita 사이트를 방문하여 Linux용 앱 이미지를 다운로드하세요.</p>
+<ul>
+  <li><a href="https://krita.org/en/download/krita-desktop">https://krita.org/en/download/krita-desktop</a></li>
+</ul>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" alt="Krita - Linux AppImage 다운로드" />
+<em>Krita - Linux AppImage 다운로드</em></p>
+
+<p>다운로드한 Krita 앱 이미지에 실행 권한을 부여하고 실행해 보세요.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">chmod </span>777 <span class="k">*</span>.appimage
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="생산력">생산력</h2>
+<h3 id="easystroke-gesture마우스-제스처-매크로">EasyStroke Gesture(마우스 제스처 매크로)</h3>
+<p>Windows에서 <a href="https://www.tcbmi.com/strokeit" target="_blank">Strokeit</a> 마우스 제스처 매크로 소프트웨어를 사용해 본 경험이 있다면 <code class="language-plaintext highlighter-rouge">EasyStroke Gesture</code>가 Ubuntu를 위한 최고의 대안입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">마우스 오른쪽 버튼</code>으로 제스처를 그리려면 아래와 같은 설정이 필요합니다. 사실 부팅 시 자동으로 실행되도록 하는 것은 필수 옵션입니다.</p>
+
+<p>Easystrok Preferences 탭에서 Behavior를 <code class="language-plaintext highlighter-rouge">Button 3</code>으로 설정하고 Appearance에서 자동으로 실행되도록 설정하세요.</p>
+
+<p><code class="language-plaintext highlighter-rouge">액션</code> 탭에서 마우스 제스처 액션을 추가할 수 있습니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" alt="EasyStroke - 기본 설정" />
+<em>EasyStroke - 기본 설정</em></p>
+
+<p>Ubuntu Software 앱에서 검색하여 쉽게 설치할 수 있습니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" alt="Easystrok - Ubuntu 소프트웨어에서 다운로드" />
+<em>Easystrok - Ubuntu 소프트웨어에서 다운로드</em></p>
+
+<p>다음은 마우스 제스처에 매핑하여 사용하고 있는 몇 가지 단축키입니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>앱</th>
+      <th>단축키</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>일반</td>
+      <td>Ctrl + 홈</td>
+      <td>페이지 상단으로 이동</td>
+    </tr>
+    <tr>
+      <td>일반</td>
+      <td>Ctrl + 끝</td>
+      <td>페이지 하단으로 이동</td>
+    </tr>
+    <tr>
+      <td>VS 코드</td>
+      <td>Ctrl + Alt + -</td>
+      <td>돌아가기</td>
+    </tr>
+    <tr>
+      <td>VS 코드</td>
+      <td>Ctrl + Shift + -</td>
+      <td>앞으로 나아가다</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="체계">체계</h2>
+<h3 id="bleachbitfreespace용-클리너">BleachBit(FreeSpace용 클리너)</h3>
+<p><a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a>은 불필요한 파일을 삭제하여 공간을 확보하는 데 유용한 소프트웨어입니다. Linux 외에도 Windows, Mac OS 등 다양한 운영체제를 지원합니다.</p>
+
+<p>Ubuntu 소프트웨어 애플리케이션에서 <code class="language-plaintext highlighter-rouge">bleachbit</code>을 검색하여 쉽게 설치할 수 있습니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" alt="우분투 소프트웨어 - BleachBit" />
+<em>우분투 소프트웨어 - BleachBit</em></p>
+
+<p>정리하고 싶은 항목을 체크한 후 <code class="language-plaintext highlighter-rouge">Clean</code> 버튼을 누르면 불필요한 파일이 자동으로 삭제되어 여유공간을 확보해줍니다. 그러나 <code class="language-plaintext highlighter-rouge">APT</code>와 <code class="language-plaintext highlighter-rouge">저널</code> 항목을 정리할 때는 주의해야 합니다. 이로 인해 Ubuntu 시스템이나 패키지 종속성이 손상될 수 있습니다.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="블리치비트" />
+<em>블리치비트</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/ko-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Jekyll Windows 테스트를 위한 VirtualBox 포트 전달 방법]]></title>
+      <link>https://unclesnote.com/ko/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</link>
+      <guid>https://unclesnote.com/ko/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Tue, 24 Oct 2023 18:52:05 +0900</pubDate>
+      <category><![CDATA[GitHub 페이지,지킬]]></category>
+      <tag><![CDATA[지킬,VirtualBox,포트포워딩,GitHub페이지,GitHub]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <description><![CDATA[제 경우에는 Virtual Box의 Ubuntu VM에서 Jekyll(GitHub Pages)을 빌드하고 테스트한 후 GitHub에 푸시합니다. 그러나 Ubuntu VM의 Firefox와 같은 브라우저의 모양과 느낌은 실제 X86 Windows의 모양과 느낌과 약간 다릅니다. 그래서]]></description>
+      <content:encoded><![CDATA[<p>제 경우에는 Virtual Box의 Ubuntu VM에서 Jekyll(GitHub Pages)을 빌드하고 테스트한 후 GitHub에 푸시합니다. 그러나 Ubuntu VM의 Firefox와 같은 브라우저의 모양과 느낌은 실제 X86 Windows의 모양과 느낌과 약간 다릅니다. 그래서 X86 윈도우 브라우저에서 Jekyll을 테스트하기 위한 Virtual Box 포트포워딩 방법에 대해 설명드리고자 합니다.</p>
+<h2 id="ubuntu-vm에서-jekyll을-로컬로-실행하기">Ubuntu VM에서 Jekyll을 로컬로 실행하기</h2>
+<p>먼저 Ubuntu VM에서 <code class="language-plaintext highlighter-rouge">ifconfig</code>를 사용하여 네트워크 인터페이스의 IP 주소를 확인합니다. 제 경우에는 IP 주소가 <code class="language-plaintext highlighter-rouge">10.0.2.15</code> 입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>$ ifconfig
+..
+enp0s3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::e1f0:30d0:1e9b:bafc  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 08:00:27:07:7a:96  txqueuelen 1000  (Ethernet)
+        RX packets 9737  bytes 12163823 (12.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3811  bytes 1289032 (1.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Jekyll을 테스트하려면 Jekyll을 실행하고 <code class="language-plaintext highlighter-rouge">--host</code> 옵션으로 위에서 확인한 IP 주소를 입력하세요.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--host</span> 10.0.2.15
+Configuration file: /home/myaccount/my_jekyll_root/_config.yml
+ Theme Config file: /home/myaccount/my_jekyll_root/_config.yml
+            Source: /home/myaccount/my_jekyll_root
+       Destination: /home/myaccount/my_jekyll_root/_site
+ Incremental build: disabled. Enable with <span class="nt">--incremental</span>
+      Generating... 
+                    <span class="k">done in </span>1.483 seconds.
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">'/home/myaccount/my_jekyll_root'</span>
+    Server address: http://10.0.2.15:4000/
+  Server running... press ctrl-c to stop.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="virtual-box-관리자에서-ubuntu-vm에-대한-포트-전달-설정">Virtual Box 관리자에서 Ubuntu VM에 대한 포트 전달 설정</h2>
+<p>Virtual Box 관리자의 Ubuntu VM 네트워크 설정에서 다음을 입력하여 포트 전달을 추가합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Guest IP</code> 주소는 Ubuntu VM에서 확인된 IP 주소입니다.</p>
+<ul>
+  <li><strong>이름</strong> : (원하는 이름)</li>
+  <li><strong>프로토콜</strong> : TCP</li>
+  <li><strong>호스트 IP</strong> : 127.0.0.1</li>
+  <li><strong>Guest IP</strong> : 10.0.2.15 (위에서 확인한 Ubuntu VM의 IP 주소)</li>
+  <li><strong>게스트 포트</strong> : 4000</li>
+</ul>
+
+<p><img src="/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" alt="VirtualBox Manager - 포트 전달 규칙" />
+<em>VirtualBox Manager - 포트 전달 규칙</em></p>
+
+<p>이제 X86 Windows 브라우저에서 <code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code>에 연결하여 Jekyll을 테스트할 수 있습니다.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/ko-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png" />
+      <media:content url="https://unclesnote.com/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[VirtualBox의 Ubuntu(20.04) VM에 새 하드 디스크 추가]]></title>
+      <link>https://unclesnote.com/ko/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</link>
+      <guid>https://unclesnote.com/ko/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:45 +0900</pubDate>
+      <category><![CDATA[우분투,Virtual Box]]></category>
+      <tag><![CDATA[우분투,VirtualBox,GParted,fstab,UUID]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <description><![CDATA[Oracle VM VirtualBox의 Ubuntu(20.04) VM에서 디스크를 생성, 연결, 사용하는 방법을 설명하겠습니다. 대략적인 절차는 다음과 같습니다.]]></description>
+      <content:encoded><![CDATA[<p>Oracle VM VirtualBox의 Ubuntu(20.04) VM에서 디스크를 생성, 연결, 사용하는 방법을 설명하겠습니다.</p>
+
+<p>대략적인 절차는 다음과 같습니다.</p>
+<ul>
+  <li>Virtual Box Manager에서 가상 하드 디스크를 생성하고 Ubuntu VM에 연결합니다.</li>
+  <li>Ubuntu GUI 인터페이스에 연결된 디스크 장치 초기화 및 포맷</li>
+  <li>Ubuntu가 부팅될 때마다 디스크 장치를 사용할 수 있게 만드세요.</li>
+</ul>
+
+<h2 id="1-디스크-이미지를-생성하여-ubuntu-vm에-연결">1. 디스크 이미지를 생성하여 Ubuntu VM에 연결</h2>
+<p>디스크 이미지는 Virtual Box 관리자의 <code class="language-plaintext highlighter-rouge">Virtual Media Manager</code>를 통해 생성할 수 있습니다.</p>
+
+<p>55GB의 이미지를 생성할 예정인데, 디스크 이미지를 생성하는 방법은 2가지가 있습니다. 첫 번째는 내가 사용한 만큼 내 하드디스크의 용량을 점유하는 옵션이고, 두 번째는 처음부터 계획한 용량을 한꺼번에 점유하는 옵션을 생성하는 것이다. 하지만 안정적인 운영을 위해 두 번째 옵션으로 한번에 55GB를 생성하겠습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">전체 크기 사전 할당</code> 옵션을 사용하여 가상 하드 디스크를 만들었습니다.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" alt="Oracle VM VirtualBox Manager - 가상 하드 디스크 생성" />
+<em>Oracle VM VirtualBox Manager - 가상 하드 디스크 생성</em></p>
+
+<p>가상 디스크 이미지 생성이 완료되면 가상 디스크 이미지 초기화 시간이 지난 후 생성된 디스크를 하드디스크 목록에서 확인할 수 있습니다.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" alt="Oracle VM VirtualBox Manager - 가상 하드 디스크 초기화 진행 중" />
+<em>Oracle VM VirtualBox Manager - 가상 하드 디스크 초기화 진행 중</em></p>
+
+<p>이제 생성된 가상 하드 디스크를 Ubuntu VM에 추가하겠습니다.</p>
+
+<p>Ubuntu VM 설정의 <code class="language-plaintext highlighter-rouge">저장</code> 탭에서 SATA 컨트롤러를 사용하여 하드 디스크를 추가할 수 있습니다.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Ubuntu VM에 하드 디스크 추가" />
+<em>Oracle VM VirtualBox Manager - Ubuntu VM에 하드 디스크 추가</em></p>
+
+<p>생성한 하드디스크를 선택하면 정보창에서 해당 하드디스크가 장착된 것을 확인할 수 있습니다.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Ubuntu VM에 추가된 하드 디스크 확인" />
+<em>Oracle VM VirtualBox Manager - Ubuntu VM에 추가된 하드 디스크 확인</em></p>
+
+<h2 id="2-ubuntu-vm에서-디스크-초기화">2. Ubuntu VM에서 디스크 초기화</h2>
+<p>가상 머신 관점에서 하드 디스크는 Ubuntu VM에 물리적으로 연결됩니다.</p>
+
+<p>이제 Ubuntu VM에서 디스크를 포맷하겠습니다. 이 작업은 기존 <code class="language-plaintext highlighter-rouge">fdisk</code>를 사용하여 수행할 수 있지만 <code class="language-plaintext highlighter-rouge">Gparted</code>라는 보다 직관적인 GUI 도구를 사용하여 진행하겠습니다.</p>
+
+<p>apt를 사용하여 gparted를 설치하고 실행해 보겠습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c"># install gparted</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>gparted
+<span class="c"># run gparted</span>
+gparted
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>GParted 오른쪽 상단에 생성된 하드디스크를 선택한 후, 아래 그림과 같이 <code class="language-plaintext highlighter-rouge">msdos</code> 파티션 테이블을 생성하고 <code class="language-plaintext highlighter-rouge">ext4</code>로 포맷하겠습니다.</p>
+
+<p>메뉴를 통해 파티션 <code class="language-plaintext highlighter-rouge">msdos</code> 파티션 테이블을 적용합니다.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" alt="Ubuntu VM - GParted - msdos 형식으로 파티션 테이블 생성" />
+<em>Ubuntu VM - GParted - msdos 형식으로 파티션 테이블 생성</em></p>
+
+<p>그런 다음 파티션을 생성하겠습니다. 할당되지 않은 파티션을 마우스 오른쪽 버튼으로 클릭하고 <code class="language-plaintext highlighter-rouge">ext4</code> 파일 시스템 파티션을 만듭니다. 저는 풀사이즈로 설정했어요.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" alt="Ubuntu VM - GParted - ext4 파일 시스템으로 파티션 생성" />
+<em>Ubuntu VM - GParted - ext4 파일 시스템으로 파티션 생성</em></p>
+
+<p>ext4 파일 시스템의 파티션을 <code class="language-plaintext highlighter-rouge">etx4</code>로 포맷합니다.</p>
+
+<p>그런 다음 녹색 확인란을 클릭하여 지금까지 설정한 내용을 적용합니다.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" alt="Ubuntu VM - GParted - 파티션을 ext4로 포맷" />
+<em>Ubuntu VM - GParted - 파티션을 ext4로 포맷</em></p>
+
+<p>이제 하드 디스크 초기화가 완료되었습니다. Ubuntu VM이 부팅될 때마다 사용할 수 있도록 하드 디스크를 마운트하려면 고유한 디스크 ID 정보가 필요합니다. 생성된 파티션을 마우스 오른쪽 버튼으로 클릭하고 정보 메뉴에서 <code class="language-plaintext highlighter-rouge">UUID</code>를 확인하고 기억해 두세요.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - 디스크 파티션의 UUID 확인" />
+<em>Ubuntu VM - GParted - 디스크 파티션의 UUID 확인</em></p>
+
+<h2 id="3-부팅할-때마다-디스크를-마운트합니다">3. 부팅할 때마다 디스크를 마운트합니다.</h2>
+<p>현재 상태에서는 포맷된 디스크 장치가 준비되어 있으나 파일을 쓸 수 있는 경로가 없습니다. 그래서 나의 특정 폴더를 하드디스크 장치에 연결하여 경로를 생성하겠습니다. <code class="language-plaintext highlighter-rouge">마운트</code> 입니다.</p>
+
+<p>위의 gparted에서 확인된 <code class="language-plaintext highlighter-rouge">UUID</code>는 하드디스크 장치를 나타내며, 이 장치를 <code class="language-plaintext highlighter-rouge">/mnt/data</code> 폴더에 연결하여 파일을 쓸 수 있는 경로를 생성하겠습니다. Ubuntu가 부팅될 때마다 디스크를 사용할 수 있어야 하므로 <code class="language-plaintext highlighter-rouge">/etc/fstab</code>에서 이에 대해 설명하겠습니다.</p>
+
+<p>아래 줄은 <code class="language-plaintext highlighter-rouge">/etc/fstab</code>에 추가됩니다.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c"># UUID=&lt;hard disk device UUID&gt; &lt;folder where the device will be mounted&gt; ext4    defaults          0       0 </span>
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>그런 다음 마운트된 <code class="language-plaintext highlighter-rouge">/mnt/data</code>에서 홈 디렉토리의 <code class="language-plaintext highlighter-rouge">data</code> 폴더로의 심볼릭 링크를 생성합니다.</p>
+
+<p>자세한 절차는 다음과 같으며, 모든 단계를 완료하셨다면 재부팅을 해주시기 바랍니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> /mnt/data
+<span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /mnt/data
+<span class="nv">$ </span><span class="nb">cd</span> ~/
+<span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /mnt/data data
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/fstab  
+<span class="c">#-----------------------------------------------------------------------------</span>
+<span class="c"># /etc/fstab: static file system information.</span>
+<span class="c">#</span>
+<span class="c"># Use 'blkid' to print the universally unique identifier for a</span>
+<span class="c"># device; this may be used with UUID= as a more robust way to name devices</span>
+<span class="c"># that works even if disks are added and removed. See fstab(5).</span>
+<span class="c">#</span>
+<span class="c"># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;</span>
+<span class="c"># / was on /dev/sda5 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>76a80216-1031-4871-945c-4c8de2845136 /               ext4    <span class="nv">errors</span><span class="o">=</span>remount-ro 0       1
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+<span class="c"># /boot/efi was on /dev/sda1 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>A4B5-D201  /boot/efi       vfat    <span class="nb">umask</span><span class="o">=</span>0077      0       1
+/swapfile                                 none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/ko-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[터미널이나 콘솔에 로그를 출력할 때 색상을 지정하는 방법]]></title>
+      <link>https://unclesnote.com/ko/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</link>
+      <guid>https://unclesnote.com/ko/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:42 +0900</pubDate>
+      <category><![CDATA[우분투,일반]]></category>
+      <tag><![CDATA[VSCode,단말기,디버그콘솔,산출,우분투,일반]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <description><![CDATA[소프트웨어를 개발할 때 로그는 작동을 확인하고 문제의 원인을 찾는 데 도움이 됩니다. 심각한 오류 또는 경고 수준에 대한 로그에 찾기 쉬운 색상이 있으면 도움이 될 것입니다. VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을 설정할 수 있지만,]]></description>
+      <content:encoded><![CDATA[<p>소프트웨어를 개발할 때 로그는 작동을 확인하고 문제의 원인을 찾는 데 도움이 됩니다. 심각한 오류 또는 경고 수준에 대한 로그에 찾기 쉬운 색상이 있으면 도움이 될 것입니다.</p>
+
+<p>VS Code, Visual Studio 등 사용 중인 IDE에서 로그 텍스트의 색상을 설정할 수 있지만, IDE 없이 소프트웨어를 실행하거나 Linux 등 크로스 컴파일 환경에서 소프트웨어를 실행하는 경우 설정이 적용되지 않습니다. . 따라서 터미널 관점에서 독립적으로 텍스트 색상을 설정하는 방법을 소개하겠습니다.</p>
+<blockquote class="prompt-info">
+  <p><strong>Visual Studio Code에서 출력 텍스트 색상을 변경하는 방법</strong><br />
+VS Code의 경우 <code class="language-plaintext highlighter-rouge">Settings &gt; User &gt; Workbanch &gt; Appearance &gt; Edit in Settings.json</code>의 <code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code>에서 색상 값을 설정하여 디버그 콘솔 또는 출력 창의 색상을 변경할 수 있습니다.<br />
+<code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code>의 매개변수는 아래 링크를 참고하세요.</p>
+
+  <p><a href="https://code.visualstudio.com/api/references/theme-color" target="_blank">https://code.visualstudio.com/api/references/theme-color</a></p>
+</blockquote>
+<h2 id="텍스트-색상을-설정하는-방법">텍스트 색상을 설정하는 방법</h2>
+<p>텍스트 색상을 변경하려면 원하는 텍스트를 중앙에 두고 시작과 끝 부분에 아래 코드를 추가해야 합니다.</p>
+<ul>
+  <li><strong>시작</strong> : <code class="language-plaintext highlighter-rouge">(이스케이프 문자)[(스타일 코드);(텍스트 색상);(배경 색상)m</code></li>
+  <li><strong>텍스트</strong> : <code class="language-plaintext highlighter-rouge">(원하는 텍스트)</code></li>
+  <li><strong>종료</strong> : <code class="language-plaintext highlighter-rouge">(이스케이프 문자)[0m</code></li>
+</ul>
+
+<p>결국 텍스트 색상이 변경된 한 줄은 아래와 같은 형식을 갖게 됩니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">(이스케이프 문자)[(스타일 코드);(텍스트 색상);(배경색)m</code> <code class="language-plaintext highlighter-rouge">(원하는 텍스트)</code> <code class="language-plaintext highlighter-rouge">(이스케이프 문자)[0m</code></li>
+</ul>
+
+<p>다음은 검정색 배경에 굵은 흰색 텍스트로 표시된 <code class="language-plaintext highlighter-rouge">I am text</code> 문자열의 예입니다.</p>
+
+<p>각 숫자의 의미는 이후 섹션에서 미리 정의된 코드를 확인하세요.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\u001b[1;37;40mI am text\u001b[0m
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>먼저 아래 표를 살펴보겠습니다. 텍스트 색상을 변경하는 각 요소가 나열됩니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>요소</th>
+      <th>필수적인</th>
+      <th>논평</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>이스케이프 문자</td>
+      <td>예</td>
+      <td>유니코드, 8진수 또는 16진수 이스케이프 문자 중 원하는 것을 사용하세요.</td>
+    </tr>
+    <tr>
+      <td>스타일 코드</td>
+      <td>선택적인</td>
+      <td>굵게, 깜박임, 흐리게, 밑줄과 같은 텍스트 스타일입니다.</td>
+    </tr>
+    <tr>
+      <td>텍스트 색상</td>
+      <td>선택적인</td>
+      <td>이미 정의된 색상 코드에서 선택하여 텍스트 색상을 지정합니다.</td>
+    </tr>
+    <tr>
+      <td>텍스트(전경) 색상</td>
+      <td>선택적인</td>
+      <td>이미 정의된 색상 코드에서 선택하여 텍스트 배경 색상을 지정합니다.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">(이스케이프 문자)[0m</code></td>
+      <td>예</td>
+      <td>일단 설정된 텍스트 색상과 스타일을 재설정합니다.<br /> 여러 줄의 색상을 변경하려면 나중에 원하는 위치에서 텍스트 색상을 재설정하면 됩니다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">탈출 문자</code>는 필수이지만 표현 방법에 따라 뒤에 설명하는 세 가지 중 하나를 사용할 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">스타일</code>, <code class="language-plaintext highlighter-rouge">텍스트 색상</code>, <code class="language-plaintext highlighter-rouge">배경 색상</code>을 <code class="language-plaintext highlighter-rouge">;</code>로 구분하여 취향에 맞게 추가할 수 있습니다. 표현할 수 있는 옵션에 대해서는 나중에 설명하겠지만, 각각을 나타내는 숫자가 고유하기 때문에 순서는 중요하지 않습니다.</p>
+
+<p>마지막으로 <code class="language-plaintext highlighter-rouge">(Escape Character)[0m</code>을 사용하여 텍스트 색상과 스타일을 재설정합니다. 재설정하지 않으면 이후의 텍스트 색상과 스타일이 계속 유지됩니다.</p>
+
+<p>쉘 스크립트에서 텍스트 색상을 변경하려면 <code class="language-plaintext highlighter-rouge">echo</code> 명령에 <code class="language-plaintext highlighter-rouge">-e</code> 옵션을 추가하여 백슬래시 입력을 허용해야 합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[34m I Am Blue Text ! </span><span class="se">\0</span><span class="s2">33[0m"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="색상-및-스타일-코드">색상 및 스타일 코드</h2>
+<h3 id="1-이스케이프-문자">1. 이스케이프 문자</h3>
+<p>아래의 이스케이프 문자는 ASCII 코드의 27과 동일하며, 표현 방법은 다음과 같으며, 아무거나 사용해도 됩니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">\u001b</code> : 유니코드 이스케이프 문자. <code class="language-plaintext highlighter-rouge">\u</code> 뒤에 4자리 16진수 유니코드 코드 포인트를 사용하여 이스케이프 문자를 나타냅니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">\033</code> : 8진수 표기법을 사용하여 이스케이프 문자를 나타냅니다.</li>
+  <li><code class="language-plaintext highlighter-rouge">\x1b</code> : 16진수 표기법을 사용하여 이스케이프 문자를 나타냅니다.</li>
+</ul>
+
+<h3 id="2-스타일">2. 스타일</h3>
+<p>텍스트 스타일을 선택할 수 있지만 이것이 꼭 필요한지는 의심스럽습니다. 로그는 읽기 쉬워야 합니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1</code>: 굵게(또는 강렬한 색상)</li>
+  <li><code class="language-plaintext highlighter-rouge">2</code>: 흐릿함(또는 희미함)</li>
+  <li><code class="language-plaintext highlighter-rouge">4</code>: 밑줄</li>
+  <li><code class="language-plaintext highlighter-rouge">5</code>: 깜박임(빠르게 깜박이는 텍스트)</li>
+  <li><code class="language-plaintext highlighter-rouge">7</code>: 반전(전경색과 배경색 교체)</li>
+  <li><code class="language-plaintext highlighter-rouge">8</code>: 숨김(보이지 않는 텍스트)</li>
+</ul>
+
+<h3 id="3-텍스트전경-색상">3. 텍스트(전경) 색상</h3>
+<p>텍스트 색상을 변경하는 코드입니다. 사용 중인 터미널 클라이언트 소프트웨어의 기본값을 무시하는 것으로 생각하십시오.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">30</code>: 검정색</li>
+  <li><code class="language-plaintext highlighter-rouge">31</code>: 빨간색</li>
+  <li><code class="language-plaintext highlighter-rouge">32</code>: 녹색</li>
+  <li><code class="language-plaintext highlighter-rouge">33</code>: 노란색</li>
+  <li><code class="language-plaintext highlighter-rouge">34</code>: 파란색</li>
+  <li><code class="language-plaintext highlighter-rouge">35</code>: 마젠타</li>
+  <li><code class="language-plaintext highlighter-rouge">36</code>: 청록색</li>
+  <li><code class="language-plaintext highlighter-rouge">37</code>: 흰색</li>
+</ul>
+
+<h3 id="4-배경색">4. 배경색</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">40</code>: 검정색 배경</li>
+  <li><code class="language-plaintext highlighter-rouge">41</code>: 빨간색 배경</li>
+  <li><code class="language-plaintext highlighter-rouge">42</code>: 녹색 배경</li>
+  <li><code class="language-plaintext highlighter-rouge">43</code>: 노란색 배경</li>
+  <li><code class="language-plaintext highlighter-rouge">44</code>: 파란색 배경</li>
+  <li><code class="language-plaintext highlighter-rouge">45</code>: 마젠타색 배경</li>
+  <li><code class="language-plaintext highlighter-rouge">46</code>: 청록색 배경</li>
+  <li><code class="language-plaintext highlighter-rouge">47</code>: 흰색 배경</li>
+</ul>
+
+<h3 id="5-색상-재설정">5. 색상 재설정</h3>
+<p>텍스트 색상과 스타일을 재설정하지 않으면 초기 설정대로 유지됩니다.</p>
+
+<p>일반적으로 <code class="language-plaintext highlighter-rouge">(Escape Character)[0m</code> 형식으로 텍스트 끝에 추가됩니다.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0</code>: 모든 스타일과 색상을 기본값으로 재설정</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/ko-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png" /></item></channel>
+</rss>

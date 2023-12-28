@@ -1,8 +1,0 @@
----
-title: "도구"
-layout: tag
-ro_ref: ko-tag-도구
-tag: "도구"
-tag_web: "도구"
-lang: ko
----

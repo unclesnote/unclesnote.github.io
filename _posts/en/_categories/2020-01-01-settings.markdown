@@ -1,8 +1,0 @@
----
-title: "Settings"
-layout: category
-ro_ref: en-category-Settings
-category: "Settings"
-category_web: "settings"
-lang: en
----

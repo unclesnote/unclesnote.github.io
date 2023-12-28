@@ -1,8 +1,0 @@
----
-title: "Obsidian"
-layout: category
-ro_ref: en-category-Obsidian
-category: "Obsidian"
-category_web: "obsidian"
-lang: en
----

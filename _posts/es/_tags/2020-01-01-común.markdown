@@ -1,8 +1,0 @@
----
-title: "Común"
-layout: tag
-ro_ref: es-tag-Común
-tag: "Común"
-tag_web: "común"
-lang: es
----

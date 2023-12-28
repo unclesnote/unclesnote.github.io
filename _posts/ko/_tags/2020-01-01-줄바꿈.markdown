@@ -1,8 +1,0 @@
----
-title: "줄바꿈"
-layout: tag
-ro_ref: ko-tag-줄바꿈
-tag: "줄바꿈"
-tag_web: "줄바꿈"
-lang: ko
----

@@ -1,8 +1,0 @@
----
-title: "crita"
-layout: tag
-ro_ref: es-tag-crita
-tag: "crita"
-tag_web: "crita"
-lang: es
----

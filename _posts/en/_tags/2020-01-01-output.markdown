@@ -1,8 +1,0 @@
----
-title: "Output"
-layout: tag
-ro_ref: en-tag-Output
-tag: "Output"
-tag_web: "output"
-lang: en
----

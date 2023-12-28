@@ -1,8 +1,0 @@
----
-title: "스왑파일"
-layout: tag
-ro_ref: ko-tag-스왑파일
-tag: "스왑파일"
-tag_web: "스왑파일"
-lang: ko
----

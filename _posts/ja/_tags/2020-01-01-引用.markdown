@@ -1,8 +1,0 @@
----
-title: "引用"
-layout: tag
-ro_ref: ja-tag-引用
-tag: "引用"
-tag_web: "引用"
-lang: ja
----

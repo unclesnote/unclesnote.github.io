@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231031003417
-thumbnail: /assets/images/231031003417/en-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png
-lang: en
----

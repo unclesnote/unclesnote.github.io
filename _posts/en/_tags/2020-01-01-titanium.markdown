@@ -1,8 +1,0 @@
----
-title: "Titanium"
-layout: tag
-ro_ref: en-tag-Titanium
-tag: "Titanium"
-tag_web: "titanium"
-lang: en
----

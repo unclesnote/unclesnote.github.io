@@ -1,8 +1,0 @@
----
-title: "Computer"
-layout: category
-ro_ref: en-category-Computer
-category: "Computer"
-category_web: "computer"
-lang: en
----

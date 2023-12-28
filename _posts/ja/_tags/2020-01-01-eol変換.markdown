@@ -1,8 +1,0 @@
----
-title: "EOL変換"
-layout: tag
-ro_ref: ja-tag-EOL変換
-tag: "EOL変換"
-tag_web: "eol変換"
-lang: ja
----

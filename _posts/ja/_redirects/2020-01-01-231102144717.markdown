@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231102144717
-thumbnail: /assets/images/231102144717/ja-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png
-lang: ja
----

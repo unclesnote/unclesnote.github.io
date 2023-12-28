@@ -1,8 +1,0 @@
----
-title: "우분투애니메이션"
-layout: tag
-ro_ref: ko-tag-우분투애니메이션
-tag: "우분투애니메이션"
-tag_web: "우분투애니메이션"
-lang: ko
----

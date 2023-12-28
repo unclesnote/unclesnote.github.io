@@ -1,8 +1,0 @@
----
-title: "詹金斯"
-layout: category
-ro_ref: zh-category-詹金斯
-category: "詹金斯"
-category_web: "詹金斯"
-lang: zh
----

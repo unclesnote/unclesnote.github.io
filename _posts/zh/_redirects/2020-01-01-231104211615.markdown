@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231104211615
-thumbnail: /assets/images/231104211615/zh-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png
-lang: zh
----

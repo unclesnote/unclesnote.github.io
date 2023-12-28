@@ -1,8 +1,0 @@
----
-title: "PC"
-layout: tag
-ro_ref: en-tag-PC
-tag: "PC"
-tag_web: "pc"
-lang: en
----

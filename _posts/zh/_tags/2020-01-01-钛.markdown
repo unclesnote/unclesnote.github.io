@@ -1,8 +1,0 @@
----
-title: "钛"
-layout: tag
-ro_ref: zh-tag-钛
-tag: "钛"
-tag_web: "钛"
-lang: zh
----

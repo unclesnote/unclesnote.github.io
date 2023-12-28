@@ -1,8 +1,0 @@
----
-title: "Common"
-layout: category
-ro_ref: en-category-Common
-category: "Common"
-category_web: "common"
-lang: en
----

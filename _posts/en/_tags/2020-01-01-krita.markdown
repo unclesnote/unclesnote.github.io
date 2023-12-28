@@ -1,8 +1,0 @@
----
-title: "Krita"
-layout: tag
-ro_ref: en-tag-Krita
-tag: "Krita"
-tag_web: "krita"
-lang: en
----

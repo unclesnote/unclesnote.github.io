@@ -1,8 +1,0 @@
----
-title: "Pipeline"
-layout: category
-ro_ref: ko-category-Pipeline
-category: "Pipeline"
-category_web: "pipeline"
-lang: ko
----

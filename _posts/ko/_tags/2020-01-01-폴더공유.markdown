@@ -1,8 +1,0 @@
----
-title: "폴더공유"
-layout: tag
-ro_ref: ko-tag-폴더공유
-tag: "폴더공유"
-tag_web: "폴더공유"
-lang: ko
----

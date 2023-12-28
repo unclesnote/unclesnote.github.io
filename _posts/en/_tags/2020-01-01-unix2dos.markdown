@@ -1,8 +1,0 @@
----
-title: "unix2dos"
-layout: tag
-ro_ref: en-tag-unix2dos
-tag: "unix2dos"
-tag_web: "unix2dos"
-lang: en
----

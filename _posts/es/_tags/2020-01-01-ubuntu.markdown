@@ -1,8 +1,0 @@
----
-title: "ubuntu"
-layout: tag
-ro_ref: es-tag-ubuntu
-tag: "ubuntu"
-tag_web: "ubuntu"
-lang: es
----

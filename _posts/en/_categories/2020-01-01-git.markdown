@@ -1,8 +1,0 @@
----
-title: "Git"
-layout: category
-ro_ref: en-category-Git
-category: "Git"
-category_web: "git"
-lang: en
----

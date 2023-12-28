@@ -1,8 +1,0 @@
----
-title: "GitHub 页面"
-layout: category
-ro_ref: zh-category-GitHub 页面
-category: "GitHub 页面"
-category_web: "github-页面"
-lang: zh
----

@@ -1,8 +1,0 @@
----
-title: "一般"
-layout: tag
-ro_ref: ja-tag-一般
-tag: "一般"
-tag_web: "一般"
-lang: ja
----

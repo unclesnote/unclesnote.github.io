@@ -1,8 +1,0 @@
----
-title: "jenkins"
-layout: tag
-ro_ref: es-tag-jenkins
-tag: "jenkins"
-tag_web: "jenkins"
-lang: es
----

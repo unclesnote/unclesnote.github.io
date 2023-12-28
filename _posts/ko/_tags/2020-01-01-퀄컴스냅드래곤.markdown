@@ -1,8 +1,0 @@
----
-title: "퀄컴스냅드래곤"
-layout: tag
-ro_ref: ko-tag-퀄컴스냅드래곤
-tag: "퀄컴스냅드래곤"
-tag_web: "퀄컴스냅드래곤"
-lang: ko
----

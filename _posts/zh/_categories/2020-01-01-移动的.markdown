@@ -1,8 +1,0 @@
----
-title: "移动的"
-layout: category
-ro_ref: zh-category-移动的
-category: "移动的"
-category_web: "移动的"
-lang: zh
----

@@ -1,8 +1,0 @@
----
-title: "우분투"
-layout: tag
-ro_ref: ko-tag-우분투
-tag: "우분투"
-tag_web: "우분투"
-lang: ko
----

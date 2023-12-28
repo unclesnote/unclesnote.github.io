@@ -1,8 +1,0 @@
----
-title: "图片编辑器"
-layout: tag
-ro_ref: zh-tag-图片编辑器
-tag: "图片编辑器"
-tag_web: "图片编辑器"
-lang: zh
----

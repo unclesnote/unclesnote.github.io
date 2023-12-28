@@ -1,8 +1,0 @@
----
-title: "フォルダー共有"
-layout: tag
-ro_ref: ja-tag-フォルダー共有
-tag: "フォルダー共有"
-tag_web: "フォルダー共有"
-lang: ja
----

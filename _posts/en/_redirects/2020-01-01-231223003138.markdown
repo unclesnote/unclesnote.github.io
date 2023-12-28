@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231223003138
-thumbnail: /assets/images/231223003138/en-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png
-lang: en
----

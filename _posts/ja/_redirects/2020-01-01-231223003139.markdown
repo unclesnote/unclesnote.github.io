@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231223003139
-thumbnail: /assets/images/231223003139/ja-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png
-lang: ja
----

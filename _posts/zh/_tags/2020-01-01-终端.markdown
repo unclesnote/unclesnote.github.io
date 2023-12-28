@@ -1,8 +1,0 @@
----
-title: "终端"
-layout: tag
-ro_ref: zh-tag-终端
-tag: "终端"
-tag_web: "终端"
-lang: zh
----

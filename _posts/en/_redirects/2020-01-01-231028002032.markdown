@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231028002032
-thumbnail: /assets/images/231028002032/en-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png
-lang: en
----

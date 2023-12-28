@@ -1,8 +1,0 @@
----
-title: "バーチャルボックス"
-layout: tag
-ro_ref: ja-tag-バーチャルボックス
-tag: "バーチャルボックス"
-tag_web: "バーチャルボックス"
-lang: ja
----

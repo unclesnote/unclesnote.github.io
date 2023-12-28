@@ -1,8 +1,0 @@
----
-title: "Gpartido"
-layout: tag
-ro_ref: es-tag-Gpartido
-tag: "Gpartido"
-tag_web: "gpartido"
-lang: es
----

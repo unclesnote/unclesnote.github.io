@@ -1,8 +1,0 @@
----
-title: "파일탐색기"
-layout: tag
-ro_ref: ko-tag-파일탐색기
-tag: "파일탐색기"
-tag_web: "파일탐색기"
-lang: ko
----

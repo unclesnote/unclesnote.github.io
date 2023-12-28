@@ -1,8 +1,0 @@
----
-title: "자유공간"
-layout: tag
-ro_ref: ko-tag-자유공간
-tag: "자유공간"
-tag_web: "자유공간"
-lang: ko
----

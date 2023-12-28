@@ -1,8 +1,0 @@
----
-title: "ツール"
-layout: category
-ro_ref: ja-category-ツール
-category: "ツール"
-category_web: "ツール"
-lang: ja
----

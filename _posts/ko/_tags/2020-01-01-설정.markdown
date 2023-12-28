@@ -1,8 +1,0 @@
----
-title: "설정"
-layout: tag
-ro_ref: ko-tag-설정
-tag: "설정"
-tag_web: "설정"
-lang: ko
----

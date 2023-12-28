@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231214163036
-thumbnail: /assets/images/231214163036/en-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png
-lang: en
----

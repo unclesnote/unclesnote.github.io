@@ -1,8 +1,0 @@
----
-title: "GitHub"
-layout: tag
-ro_ref: ko-tag-GitHub
-tag: "GitHub"
-tag_web: "github"
-lang: ko
----

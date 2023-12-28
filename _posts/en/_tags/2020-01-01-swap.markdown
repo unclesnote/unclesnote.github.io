@@ -1,8 +1,0 @@
----
-title: "swap"
-layout: tag
-ro_ref: en-tag-swap
-tag: "swap"
-tag_web: "swap"
-lang: en
----

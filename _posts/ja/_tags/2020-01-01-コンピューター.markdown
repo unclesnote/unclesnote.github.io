@@ -1,8 +1,0 @@
----
-title: "コンピューター"
-layout: tag
-ro_ref: ja-tag-コンピューター
-tag: "コンピューター"
-tag_web: "コンピューター"
-lang: ja
----

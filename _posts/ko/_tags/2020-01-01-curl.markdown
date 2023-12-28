@@ -1,8 +1,0 @@
----
-title: "curl"
-layout: tag
-ro_ref: ko-tag-curl
-tag: "curl"
-tag_web: "curl"
-lang: ko
----

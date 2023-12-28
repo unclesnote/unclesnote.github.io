@@ -1,8 +1,0 @@
----
-title: "Móvil"
-layout: category
-ro_ref: es-category-Móvil
-category: "Móvil"
-category_web: "móvil"
-lang: es
----

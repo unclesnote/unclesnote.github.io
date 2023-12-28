@@ -1,8 +1,0 @@
----
-title: "Ubuntu"
-layout: category
-ro_ref: en-category-Ubuntu
-category: "Ubuntu"
-category_web: "ubuntu"
-lang: en
----

@@ -1,8 +1,0 @@
----
-title: "GitHub页面"
-layout: tag
-ro_ref: zh-tag-GitHub页面
-tag: "GitHub页面"
-tag_web: "github页面"
-lang: zh
----

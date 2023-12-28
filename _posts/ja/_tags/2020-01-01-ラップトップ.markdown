@@ -1,8 +1,0 @@
----
-title: "ラップトップ"
-layout: tag
-ro_ref: ja-tag-ラップトップ
-tag: "ラップトップ"
-tag_web: "ラップトップ"
-lang: ja
----

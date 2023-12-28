@@ -1,8 +1,0 @@
----
-title: "ubuntu"
-layout: category
-ro_ref: es-category-ubuntu
-category: "ubuntu"
-category_web: "ubuntu"
-lang: es
----

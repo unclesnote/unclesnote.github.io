@@ -1,8 +1,0 @@
----
-title: "Laptop"
-layout: tag
-ro_ref: ko-tag-Laptop
-tag: "Laptop"
-tag_web: "laptop"
-lang: ko
----

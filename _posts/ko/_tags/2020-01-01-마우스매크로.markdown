@@ -1,8 +1,0 @@
----
-title: "마우스매크로"
-layout: tag
-ro_ref: ko-tag-마우스매크로
-tag: "마우스매크로"
-tag_web: "마우스매크로"
-lang: ko
----

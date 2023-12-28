@@ -1,8 +1,0 @@
----
-title: "일반"
-layout: category
-ro_ref: ko-category-일반
-category: "일반"
-category_web: "일반"
-lang: ko
----

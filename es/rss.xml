@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+<channel>
+    
+
+    <title><![CDATA[nota del tio]]></title>
+    <atom:link href="https://unclesnote.com/es/rss.xml" rel="self" type="application/rss+xml" />
+    <link>https://unclesnote.com/es/</link>
+    <image>
+      <url>https://unclesnote.com/assets/img/site.png</url>
+      <title><![CDATA[nota del tio]]></title>
+      <link>https://unclesnote.com/es/</link>
+    </image>
+    <language>es</language>
+    <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
+    <generator>https://unclesnote.com</generator>
+    <lastBuildDate>Wed, 27 Dec 2023 19:30:10 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Crea un bot de Telegram y envía un mensaje]]></title>
+      <link>https://unclesnote.com/es/231227193010/create_a_telegram_bot_and_send_a_message</link>
+      <guid>https://unclesnote.com/es/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+      <category><![CDATA[ubuntu,Jenkins,Tubería]]></category>
+      <tag><![CDATA[ubuntu,Jenkins,Tubería,sendMessage,getUpdates,Telegram]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <description><![CDATA[Telegram proporciona un servicio API que es relativamente fácil de usar. Por lo tanto, se puede utilizar como una herramienta sencilla para notificar eventos]]></description>
+      <content:encoded><![CDATA[<p>Telegram proporciona un servicio API que es relativamente fácil de usar. Por lo tanto, se puede utilizar como una herramienta sencilla para notificar eventos en sistemas CI/CD donde la seguridad no es un problema importante. Estoy intentando integrar Telegram en el sistema Jenkins y me gustaría presentarles el método básico para crear un bot de Telegram.</p>
+<h2 id="descripción-general">Descripción general</h2>
+<p>Para enviar un mensaje de Telegram, se requiere un “token” que coincida con el bot de Telegram y un “chatid” que indique la sala de chat.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token</code>: Puedes ver esto al crear un bot en Telegram</li>
+  <li><code class="language-plaintext highlighter-rouge">chatid</code>: una vez que haya encontrado el token, puede encontrarlo llamando a la API de Telegram <code class="language-plaintext highlighter-rouge">getUpdates</code> usando el token.</li>
+</ul>
+
+<p>En conclusión, si ha encontrado tanto el “token” como el “chatid”, puede enviar un mensaje “im bot” a la sala de chat de Telegram llamando a la siguiente URL.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="crear-un-bot-de-telegram---token">Crear un bot de Telegram - <strong>token</strong></h2>
+<p>Encuentra “botfather” en Telegram y entra a la sala de chat. BotFather es un bot de servicio que puede crear/administrar bots de Telegram.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" alt="Telegram - Buscar `BotFather`" />
+<em>Telegram - Buscar <code class="language-plaintext highlighter-rouge">BotFather</code></em></p>
+
+<p>Crea un nuevo bot usando el comando <code class="language-plaintext highlighter-rouge">newbot</code>.</p>
+
+<p>BotFather solicita el nombre y el nombre de usuario del bot. En efecto, “nombre de usuario” es la sala de chat donde te comunicarás con el bot. Si un bot de Telegram se crea con éxito, BotFather proporciona un “token”, que es un argumento para comunicarse con el bot.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" alt="Telegrama - `BotFather` - `newbot`" />
+<em>Telegrama - <code class="language-plaintext highlighter-rouge">BotFather</code> - <code class="language-plaintext highlighter-rouge">newbot</code></em></p>
+
+<p>Token es la credencial más básica para controlar bots utilizando la API de Telegram. Por tanto, anótalo con cuidado para que no se haga público.</p>
+<h2 id="llamada-api-de-telegram-getupdates---chatid">Llamada API de Telegram <strong>getUpdates</strong> - <strong>chatid</strong></h2>
+<p>Si BotFather creó un bot, búsquelo en Telegram y envíele un mensaje. Envié un mensaje diciendo “hola”.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" alt="Telegram: ingresa &quot;hola&quot; en la sala de chat de Bot" />
+<em>Telegram: ingresa “hola” en la sala de chat de Bot</em></p>
+
+<p>Luego, en el navegador web que utiliza, como Chrome o Edge, llame a la siguiente URL combinándola con el token que se encuentra al crear el bot anterior.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/getUpdates
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/getUpdates
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Luego, se mostrará una cadena en formato JSON en el navegador, y el <code class="language-plaintext highlighter-rouge">id</code> en <code class="language-plaintext highlighter-rouge">chat</code> será el <code class="language-plaintext highlighter-rouge">chatid</code>. Tome nota del <code class="language-plaintext highlighter-rouge">chatid</code>. Si utiliza el navegador Edge, puede ver la cadena JSON alineada con líneas.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" alt="Navegador de Internet - Telegram - `getUpdates`" />
+<em>Navegador de Internet - Telegram - <code class="language-plaintext highlighter-rouge">getUpdates</code></em></p>
+
+<h2 id="enviar-un-mensaje-de-telegram-a-través-del-navegador---api-sendmessage">Enviar un mensaje de Telegram a través del navegador - API <strong>sendMessage</strong></h2>
+<p>En conclusión, usaremos el complemento Jenkins para enviar un mensaje de Telegram, pero para fines de prueba enviaremos el mensaje usando la API de Telegram <code class="language-plaintext highlighter-rouge">sendMessage</code> al navegador.</p>
+
+<p>La API es la siguiente y puede enviar un mensaje de Telegram utilizando el token y el chatid que se encuentran en los pasos anteriores.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>¿Funcionó bien? Pude verificar el mensaje “im bot” en Telegram como se muestra a continuación.</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="Telegrama - API `sendMessage`" />
+<em>Telegrama - API <code class="language-plaintext highlighter-rouge">sendMessage</code></em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/es-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Envío de mensajes de Telegram desde el script de canalización de Jenkins]]></title>
+      <link>https://unclesnote.com/es/231227143211/sending_telegram_message_from_jenkins_pipeline_script</link>
+      <guid>https://unclesnote.com/es/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 14:32:11 +0900</pubDate>
+      <category><![CDATA[ubuntu,Jenkins,Tubería]]></category>
+      <tag><![CDATA[jenkins,telegrama,curl,ubuntu,Jenkins,Tubería]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <description><![CDATA[Por supuesto, existen complementos de Telegram para Jenkins, pero yo personalmente no quería pasar por prueba y error. Han pasado al menos dos años desde que]]></description>
+      <content:encoded><![CDATA[<p>Por supuesto, existen complementos de Telegram para Jenkins, pero yo personalmente no quería pasar por prueba y error. Han pasado al menos dos años desde que se lanzaron los complementos. Enviaré un mensaje de telegrama usando <code class="language-plaintext highlighter-rouge">curl</code> en Linux.</p>
+
+<p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - Complementos de Telegram" />
+<em>Jenkins - Complementos de Telegram</em></p>
+
+<h2 id="funciones-geniales-para-enviar-mensajes-de-telegram">Funciones geniales para enviar mensajes de Telegram</h2>
+<p>Creé dos funciones Groovy para usar en el script de Jenkins. <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_message</code> es una función que envía un mensaje de Telegram simplemente insertando una cadena. Otro <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_file</code> es una función que envía el contenido de un archivo de texto como un mensaje de Telegram.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+</pre></td><td class="rouge-code"><pre><span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_message</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">message</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_message, title=${title}, message=${message}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -X POST \
+                -d chat_id=${chatid} \
+                -d parse_mode=HTML \
+                -d text='&lt;b&gt;${title}&lt;/b&gt;\n\n${message}' \
+                https://api.telegram.org/bot${token}/sendMessage
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_fileContents</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, title=${title}, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="kt">boolean</span> <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="kt">def</span> <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">filetext</span> <span class="o">=</span> <span class="n">sh</span><span class="o">(</span><span class="nl">script:</span> <span class="s2">"cat ${file}"</span><span class="o">,</span> <span class="nl">returnStdout:</span> <span class="kc">true</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\n${filetext}"</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\nFile does not exist"</span>
+        <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">filecontents</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+
+    <span class="k">return</span> <span class="n">isFileExist</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendDocument_file</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendDocument_file</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -k \
+        -F chat_id=${chatid} \
+        -F document=@\"${file}\" \
+                https://api.telegram.org/bot${token}/sendDocument
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Aunque todavía no encontré ningún error al enviar un mensaje de Telegram a través de “curl”, envolví la declaración curl con una declaración “try-catch” para evitar que el proceso de canalización se detuviera debido a un error. Personalmente, creo que el procesamiento de la canalización tiene mayor prioridad que enviar un mensaje de Telegram.</p>
+<h2 id="usar-funciones-dentro-de-pasos-de-una-tubería">Usar funciones dentro de <strong>pasos</strong> de una <strong>tubería</strong></h2>
+<p>A continuación se muestra cómo llamar a la función creada anteriormente en los “pasos” del “canalización”. Codifiqué el “token” y el “chatid” del bot de Telegram. Si surge la necesidad más adelante, intentaré implementarlo usando la función “Credenciales” de Jenkins.</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="n">steps</span> <span class="o">{</span>
+    <span class="n">script</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">token</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_TOKEN</span><span class="o">;</span>
+        <span class="kt">def</span> <span class="n">chatid</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_CHATID</span><span class="o">;</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">chatid</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"im title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="kt">def</span> <span class="n">rst</span> <span class="o">=</span> <span class="n">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="s2">"im file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">rst</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">)</span> <span class="o">{</span>
+            <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="o">}</span>                        
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/es-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Configuración de Jenkins en Synology NAS Docker]]></title>
+      <link>https://unclesnote.com/es/231223003139/setting_up_jenkins_on_synology_nas_docker</link>
+      <guid>https://unclesnote.com/es/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:39 +0900</pubDate>
+      <category><![CDATA[ubuntu,Jenkins,Ajustes]]></category>
+      <tag><![CDATA[ubuntu,Estibador,Jenkins,Ajustes]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <description><![CDATA[Hay muchas herramientas CI/CD (integración continua/implementación continua), y Jenkins es una de las herramientas útiles que no tiene restricciones de]]></description>
+      <content:encoded><![CDATA[<p>Hay muchas herramientas <strong>CI/CD (integración continua/implementación continua)</strong>, y Jenkins es una de las herramientas útiles que no tiene restricciones de licencia y es de código abierto. Me gustaría hablar sobre cómo instalar Jenkins en Synology NAS Docker.</p>
+<ul>
+  <li>https://pkg.jenkins.io/debian</li>
+</ul>
+
+<h2 id="entorno-básico">Entorno básico</h2>
+<p>Se requiere JDK versión 8 o superior para que Jenkins funcione. Instale JDK versión 11.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>apt-get update
+apt-get <span class="nb">install</span> <span class="nt">-y</span> openjdk-11-jdk
+
+java <span class="nt">-version</span>
+<span class="c"># + --------------------------------------------------------</span>
+openjdk version <span class="s2">"11.0.21"</span> 2023-10-17
+OpenJDK Runtime Environment <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04<span class="o">)</span>
+OpenJDK 64-Bit Server VM <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04, mixed mode, sharing<span class="o">)</span>
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="instalar-el-paquete-jenkins">Instalar el paquete Jenkins</h2>
+<p>Para instalar Jenkins usando APT, se debe agregar la información del servidor a APT. Después de agregar información del servidor Jenkins, se produce un error durante “apt update” que indica que no hay clave. Agregue la clave a <code class="language-plaintext highlighter-rouge">apt-key</code> usando la clave que se muestra en el mensaje de error. En mi caso la clave era <code class="language-plaintext highlighter-rouge">5BA31D57EF5975CA</code>.</p>
+
+<p>Una vez que haya agregado información clave a APT, instale Jenkins.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-q</span> <span class="nt">-O</span> - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="nb">sudo </span>apt-key add -
+<span class="nb">echo </span>deb http://pkg.jenkins.io/debian-stable binary/ | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/jenkins.list
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+...
+W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release: The following signatures couldnt be verified because the public key is not available: NO_PUBKEY 5BA31D57EF5975CA
+E: The repository <span class="s1">'http://pkg.jenkins.io/debian-stable binary/ Release'</span> is not signed.
+...
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-key adv <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+<span class="c"># + --------------------------------------------------------</span>
+Executing: /tmp/apt-key-gpghome.d7qO7VDcMV/gpg.1.sh <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+gpg: key 5BA31D57EF5975CA: public key <span class="s2">"Jenkins Project &lt;jenkinsci-board@googlegroups.com&gt;"</span> imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Get:2 https://pkg.jenkins.io/debian-stable binary/ Release <span class="o">[</span>2044 B]
+Get:3 https://pkg.jenkins.io/debian-stable binary/ Release.gpg <span class="o">[</span>833 B]
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Get:6 https://pkg.jenkins.io/debian-stable binary/ Packages <span class="o">[</span>29.6 kB]
+Hit:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:8 http://security.ubuntu.com/ubuntu focal-security InRelease
+Fetched 32.5 kB <span class="k">in </span>2s <span class="o">(</span>19.3 kB/s<span class="o">)</span>
+Reading package lists... Done
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get <span class="nb">install </span>jenkins
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>El número de puerto para conectar Jenkins a la web se define en <code class="language-plaintext highlighter-rouge">HTTP_PORT</code> en el archivo <code class="language-plaintext highlighter-rouge">/etc/default/jenkins</code>. Si necesita cambiar el número de puerto, puede cambiarlo de <code class="language-plaintext highlighter-rouge">8080</code> al valor deseado.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>
+vi /etc/default/jenkins
+<span class="c"># + --------------------------------------------------------</span>
+<span class="c"># port for HTTP connector (default 8080; disable with -1)</span>
+<span class="nv">HTTP_PORT</span><span class="o">=</span>8080
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="configure-el-puerto-del-contenedor-synology-nas-y-ejecute-jenkins">Configure el puerto del contenedor Synology NAS y ejecute Jenkins</h2>
+<p>Luego, detenga el contenedor de Ubuntu en la GUI de Synology NAS y configure el puerto para la conexión externa a Jenkins. Asigne el puerto “8080” del contenedor al puerto “48080”.</p>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" alt="GUI de Synology NAS - Docker - Configuración del puerto Jenkins" />
+<em>GUI de Synology NAS - Docker - Configuración del puerto Jenkins</em></p>
+
+<p>Inicie el contenedor de Ubuntu y ejecute el servicio Jenkins. En resumen, si Ubuntu Docker se detiene y reinicia, debe ejecutar el servicio Jenkins nuevamente.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sleep </span>10
+service jenkins restart
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Luego, conéctese a Jenkins mediante un navegador web. En mi caso, la dirección IP asignada a Synology NAS era “192.168.0.50” y el puerto era “48080” establecido anteriormente.</p>
+<ul>
+  <li>http://192.168.0.50:48080/</li>
+</ul>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" alt="Jenkins - Primeros pasos" />
+<em>Jenkins - Primeros pasos</em></p>
+
+<p>Inicie sesión con la contraseña inicial escrita en el archivo <code class="language-plaintext highlighter-rouge">/var/lib/jenkins/secrets/initialAdminPassword</code> y continúe con la instalación inicial de Jenkins.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">cat</span> /var/lib/jenkins/secrets/initialAdminPassword
+<span class="c"># + --------------------------------------------------------</span>
+72b349dadd5d4a83bac10060e536189e
+<span class="c"># - --------------------------------------------------------</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/es-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Configuración de XRDP en Ubuntu Docker en Synology NAS]]></title>
+      <link>https://unclesnote.com/es/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</link>
+      <guid>https://unclesnote.com/es/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:38 +0900</pubDate>
+      <category><![CDATA[ubuntu,Estibador]]></category>
+      <tag><![CDATA[ubuntu,Estibador]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <description><![CDATA[Si compró un Synology NAS de nivel básico que admite la función VMM (Virtual Machine Manager), es posible que le haya gustado instalar Windows o Ubuntu en el]]></description>
+      <content:encoded><![CDATA[<p>Si compró un Synology NAS de nivel básico que admite la función VMM (Virtual Machine Manager), es posible que le haya gustado instalar Windows o Ubuntu en el VMM. Sin embargo, es posible que se sienta decepcionado por el largo tiempo de instalación y el bajo rendimiento.</p>
+
+<p>Para esas personas, instalar XRDP en Ubuntu Docker puede ser la mejor opción para habilitar el sistema operativo con una interfaz GUI.</p>
+
+<p>Explicaré dos métodos. Una es instalar XRDP en Docker de la máquina virtual de Ubuntu y la otra es crear un contenedor de Ubuntu en la aplicación Docker de Synology NAS y configurarlo para que sea accesible externamente a través de XRDP.</p>
+<h2 id="contenedor-acoplable-xrdp-en-ubuntu-vm">Contenedor acoplable XRDP en Ubuntu VM</h2>
+<h3 id="cree-una-imagen-de-docker-y-ejecute-el-contenedor">Cree una imagen de Docker y ejecute el contenedor</h3>
+<p>Crearemos una imagen de Docker basada en la siguiente información. Creemos <code class="language-plaintext highlighter-rouge">Dockerfile</code> con el contenido a continuación.</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="k">FROM</span><span class="s"> ubuntu:20.04</span>
+
+<span class="k">RUN </span>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+
+<span class="k">RUN </span><span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+
+<span class="k">RUN </span>useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+<span class="k">RUN </span>usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+
+<span class="k">RUN </span>apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+<span class="k">RUN </span>adduser xrdp ssl-cert
+
+<span class="k">RUN </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "</span><span class="se">\
+</span><span class="s1">export GNOME_SHELL_SESSION_MODE=Lubuntu\n</span><span class="se">\
+</span><span class="s1">export XDG_SESSION_TYPE=x11\n</span><span class="se">\
+</span><span class="s1">export XDG_CURRENT_DESKTOP=LXQt\n</span><span class="se">\
+</span><span class="s1">export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n</span><span class="se">\
+</span><span class="s1">" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+<span class="k">EXPOSE</span><span class="s"> 3389</span>
+
+<span class="k">CMD</span><span class="s"> service xrdp start ; bash</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Luego, crearemos una imagen de Docker basada en el <code class="language-plaintext highlighter-rouge">Dockerfile</code> creado. Luego, crearemos y ejecutaremos un contenedor con la imagen creada.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># change permission of docker.sock if there is permission error when docker build</span>
+<span class="nb">sudo chmod </span>666 /var/run/docker.sock<span class="p">;</span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /var/run/docker.sock
+
+<span class="c"># build docker image from Dockerfile</span>
+docker build <span class="nt">-f</span> Dockerfile <span class="nt">-t</span> img-xrdp-lubuntu <span class="nb">.</span>
+
+<span class="c"># create docker container from image </span>
+docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> cond-xrdp-lubuntu <span class="nt">-p</span> 3389:3389 img-xrdp-lubuntu
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="configuración-de-reenvío-de-puertos-en-virtualbox">Configuración de reenvío de puertos en VirtualBox</h3>
+<p>Si desea acceder a XRDP desde fuera de la máquina virtual al contenedor Docker de la VM de Ubuntu, debe configurar el reenvío de puertos en la VM de Ubuntu. Cuando intenta conectarse al puerto <code class="language-plaintext highlighter-rouge">43389</code> usando el protocolo RDP, esto se asigna al puerto <code class="language-plaintext highlighter-rouge">3389</code> dentro de la VM de Ubuntu.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="Configuración de reenvío de puertos de VirtualBox para conexión XRDP" />
+<em>Configuración de reenvío de puertos de VirtualBox para conexión XRDP</em></p>
+
+<h3 id="acceso-remoto-xrdp">Acceso remoto XRDP</h3>
+<p>Luego, conéctese a la dirección <code class="language-plaintext highlighter-rouge">127.0.0.1:43389</code> a través de una conexión de escritorio remoto.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" alt="Conexión de escritorio remoto" />
+<em>Conexión de escritorio remoto</em></p>
+
+<p>Luego, se abrirá la ventana de inicio de sesión de XRDP, ingrese el “nombre de usuario” y la “contraseña” a continuación.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Pantalla de inicio de sesión de Ubuntu XRDP" />
+<em>Pantalla de inicio de sesión de Ubuntu XRDP</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<h2 id="contenedor-docker-xrdp-en-synology-nas">Contenedor Docker XRDP en Synology NAS</h2>
+<h3 id="instalación-del-paquete-docker-y-configuración-del-puerto-del-contenedor">Instalación del paquete Docker y configuración del puerto del contenedor</h3>
+<p>Acceda a la GUI de Synology NAS. Luego busque <code class="language-plaintext highlighter-rouge">Docker</code> en el Centro de paquetes e instálelo.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" alt="GUI de Synology NAS - Centro de paquetes - Docker" />
+<em>GUI de Synology NAS - Centro de paquetes - Docker</em></p>
+
+<p>Descargué la imagen de Docker <code class="language-plaintext highlighter-rouge">ubuntu:20.04</code> y creé un contenedor basado en esa imagen. Y en la configuración del puerto del contenedor, se abrieron el puerto <code class="language-plaintext highlighter-rouge">422</code> para ssh y el puerto <code class="language-plaintext highlighter-rouge">43389</code> para XRDP.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="GUI de Synology NAS - Contenedor Ubuntu - Configuración de puertos" />
+<em>GUI de Synology NAS - Contenedor Ubuntu - Configuración de puertos</em></p>
+
+<h3 id="instalar-paquetes-ubuntu-ssh-y-xrdp">Instalar paquetes ubuntu SSH y XRDP</h3>
+<p>Instale <code class="language-plaintext highlighter-rouge">openssh-server</code> siguiendo el siguiente comando. ssh será útil más adelante cuando acceda de forma remota al contenedor acoplable de Ubuntu.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>apt update
+apt <span class="nb">install </span>openssh-server
+apt <span class="nb">install</span> <span class="nt">-y</span> net-tools
+apt <span class="nb">install</span> <span class="nt">-y</span> vim
+
+vim /etc/ssh/sshd_config
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># enable `PermitRootLogin` and set it to `yes`</span>
+PermitRootLogin <span class="nb">yes</span>
+<span class="c"># ----------------------------------------------</span>
+
+passwd root 
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># it will be ssh login password, i have set it as `0000`</span>
+0000
+<span class="c"># ----------------------------------------------</span>
+
+service ssh start
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Luego, instale los paquetes para XRDP siguiendo el siguiente comando. Probablemente verá muchos mensajes de error al instalar XRDP siguiendo el siguiente comando. Este es un error relacionado con dependencias de hardware como sonido y USB, etc., al instalar “lubuntu-desktop”. Ignore el mensaje de error y continúe.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+<span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+adduser xrdp ssl-cert
+
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "\
+export GNOME_SHELL_SESSION_MODE=Lubuntu\n\
+export XDG_SESSION_TYPE=x11\n\
+export XDG_CURRENT_DESKTOP=LXQt\n\
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n\
+" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+service xrdp start
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="acceso-remoto-xrdp-1">Acceso remoto XRDP</h3>
+<p>Conéctese a XRDP utilizando la dirección IP asignada a su Synology NAS y conéctese al puerto <code class="language-plaintext highlighter-rouge">43389</code> configurado anteriormente.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" alt="MobaXterm - Sesión RDP" />
+<em>MobaXterm - Sesión RDP</em></p>
+
+<p>Luego, se abrirá la ventana de inicio de sesión de XRDP, ingrese el “nombre de usuario” y la “contraseña” a continuación.</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Pantalla de inicio de sesión de Ubuntu XRDP" />
+<em>Pantalla de inicio de sesión de Ubuntu XRDP</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<p>Si el contenedor Docker se detiene y reinicia, los servicios ssh y xrdp se deben ejecutar nuevamente.</p>
+
+<p>No sé el motivo exacto, pero una vez que se inició el servicio xrdp, tuvo que reiniciarse después de un retraso para que xrdp funcionara normalmente. Y desde la segunda conexión xrdp, la barra de menú inferior se mostró en la GUI. Puede guardar y utilizar el contenido siguiente como un script bash.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="s2">"start ssh.."</span>
+service ssh start
+
+<span class="nb">echo</span> <span class="s2">"start xrdp.."</span>
+<span class="nb">rm</span> /var/run/xrdp/xrdp-sesman.pid
+service xrdp start
+<span class="nb">echo</span> <span class="s2">"sleep 10 sec.. "</span>
+<span class="nb">sleep </span>10
+<span class="nb">echo</span> <span class="s2">"restart xrdp"</span>
+service xrdp restart
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="referencia">Referencia</h2>
+<ul>
+  <li>https://youtu.be/0rl5145aEMk?si=aoO3eZyDLPnmCfr</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/es-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Lenovo Ideapad Slim3 15ABA7 R5 Instalación de Windows, actualización de memoria]]></title>
+      <link>https://unclesnote.com/es/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</link>
+      <guid>https://unclesnote.com/es/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 18:18:12 +0900</pubDate>
+      <category><![CDATA[ÉL,ordenador personal]]></category>
+      <tag><![CDATA[ÉL,ordenadorpersonal,lenovo,Computadoraportátil]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <description><![CDATA[Lenovo Slim3 15ABA7 R5 tiene DOS gratuito instalado como sistema operativo predeterminado, por lo que Windows debe instalarse por separado. Veamos los]]></description>
+      <content:encoded><![CDATA[<p><strong>Lenovo Slim3 15ABA7 R5</strong>tiene DOS gratuito instalado como sistema operativo predeterminado, por lo que Windows debe instalarse por separado.</p>
+
+<p>Veamos los conceptos básicos para instalar Windows y cómo actualizar la memoria.</p>
+<h2 id="especificaciones">Especificaciones</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="Lenovo Slim3 15ABA7 R5" />
+<em>Lenovo Slim3 15ABA7 R5</em></p>
+
+<p><strong>Lenovo Slim3 15ABA7 R5</strong>está equipado con el modelo 5625U de Ryzen 5 de cuarta generación (Cezanne) como CPU. En resumen, al ser un portátil económico, tiene gráficos integrados que comparten la GPU incluida en la CPU.</p>
+
+<p>Aunque el precio es relativamente económico, es una computadora portátil rentable con un rendimiento utilizable, pero su ventaja radica en la capacidad de ampliación de la memoria y el disco duro.</p>
+<ul>
+  <li><strong>Dispositivo de almacenamiento</strong>: NVMe M.2 SSD de 256 GB instalado de serie + 1 ranura adicional para disco duro SATA de 2,5 pulgadas</li>
+  <li><strong>Memoria</strong>: 8 GB integrada (DDR4-3200) + 1 zócalo adicional</li>
+</ul>
+
+<p>Además se puede actualizar un disco duro SATA y una memoria DDR4.</p>
+<h2 id="preparar-una-memoria-usb-de-windows">Preparar una memoria USB de Windows</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" alt="Ventoy - www.ventoy.net - Una nueva solución USB de arranque" />
+<em>Ventoy - www.ventoy.net - Una nueva solución USB de arranque</em></p>
+
+<p>Generalmente, para instalar Windows, es común grabar una imagen de arranque de Windows en una memoria USB e instalarla. Sin embargo, usaremos un programa llamado <a href="https://www.ventoy.net/en/download.html" target="_blank">Ventoy</a>.</p>
+
+<p>Si graba el software Ventoy en una memoria USB, Windows lo reconocerá como un disco extraíble. Luego, si copia el archivo ISO de Windows descargado e inicia la computadora, puede seleccionar el archivo ISO guardado en la memoria USB e iniciar. Esto tiene la ventaja de permitirle iniciar e instalar selectivamente copiando varios archivos ISO en una sola memoria USB.</p>
+<ul>
+  <li><strong>Cómo instalar Ventoy en una memoria USB</strong>: https://www.ventoy.net/es/doc_start.html</li>
+</ul>
+
+<p>El sitio de controladores de Lenovo admite controladores de sistema para Windows 10 y Windows 11, pero instalé Windows 11.</p>
+
+<p>Prepare una memoria USB con el archivo ISO de Windows copiado en la base Ventoy.</p>
+
+<p>Y, en el sitio de controladores de Lenovo, <a href="https://pcsupport.lenovo.com/kr/en/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list" target="_blank">controlador de LAN inalámbrica</a> Descárguelo y guárdelo en una memoria USB.</p>
+
+<p>En el caso de la instalación de Windows 11, la imagen ISO de Windows no incluye un controlador de LAN inalámbrica, por lo que la configuración inicial de Windows a través de Internet no se puede realizar más adelante. Por lo tanto, es necesario preparar un controlador de LAN inalámbrica con antelación.</p>
+<h2 id="configuración-del-bios-e-instalación-de-windows">Configuración del BIOS e instalación de Windows</h2>
+<p>Abra la pantalla de Lenovo Slim3 15ABA7 R5. La computadora portátil se encenderá automáticamente. Presione <code class="language-plaintext highlighter-rouge">F2</code> repetidamente para ingresar a la pantalla de configuración del BIOS.</p>
+
+<p>Al iniciar con Ventoy, se produce un error relacionado con la verificación de seguridad. Para evitar esto, cambie “Arranque seguro” a “Desactivar” en el menú “Seguridad”. Inserte la memoria USB en la computadora portátil, guarde la configuración del BIOS y salga.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" alt="BIOS &gt; Seguridad &gt; Arranque seguro &gt; Deshabilitado" />
+<em>BIOS &gt; Seguridad &gt; Arranque seguro &gt; Deshabilitado</em></p>
+
+<blockquote class="prompt-info">
+  <p><strong>Desactivar el encendido automático cuando se abre la pantalla del portátil</strong><br />
+Lenovo probablemente pensó que encender la pantalla de la computadora portátil automáticamente cuando se abría la pantalla de la computadora portátil era bueno para la comodidad del usuario.<br />
+Si no le gusta esta función, puede cambiar la función “Voltear para arrancar” en el menú “Configuración” del BIOS a “Desactivada”.</p>
+</blockquote>
+<p>Seleccione la ISO de Windows en el menú de inicio de Ventory e instale Windows.</p>
+
+<p><strong>Lenovo Slim3 15ABA7 R5</strong>no instala automáticamente el controlador de LAN inalámbrica al instalar Windows 11. Por lo tanto, ya no es posible continuar con la etapa de configuración de la “conexión de red”.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" alt="Instalación de Windows 11: no se puede continuar con la configuración de &quot;Conexión de red&quot;" />
+<em>Instalación de Windows 11: no se puede continuar con la configuración de “Conexión de red”</em></p>
+
+<p>En esa pantalla, presione <code class="language-plaintext highlighter-rouge">Shift + F10</code> para abrir una ventana del símbolo del sistema. Luego ingrese <code class="language-plaintext highlighter-rouge">OOBE\BYPASSNRO</code>.</p>
+
+<p>Luego, se reiniciará automáticamente y luego podrá omitir la configuración de “conexión de red”.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>OOBE\BYPASSNRO
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Una vez que se complete la instalación de Windows, instale el controlador de LAN inalámbrica guardado en la memoria USB. Luego, visite el <a href="https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads" target="_blank">sitio de controladores de Lenovo</a> e instale los controladores restantes que podrían no instalarse, sí.</p>
+<h2 id="compra-de-memoria">compra de memoria</h2>
+<p>Como se muestra a continuación, <strong>Lenovo Slim3 15ABA7 R5</strong>está equipado con 8 GB de memoria DDR4-3200 integrada. Por lo tanto, para crear una configuración de memoria de doble canal, compre 8 GB de memoria de reloj DDR4-3200.</p>
+<ul>
+  <li><strong>Memoria</strong>: 8 GB integrada (DDR4-3200) + 1 zócalo adicional</li>
+</ul>
+
+<p>Si hay memoria en el centro comercial con un reloj marcado como DDR4-3200 o PC4-25600, puedes comprarla.</p>
+<h2 id="instalar-actualización-de-memoria">Instalar actualización de memoria</h2>
+<p>Coloque la computadora portátil boca abajo sobre un paño suave y desatornille todos los tornillos de la parte posterior.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" alt="Lenovo Slim3 15ABA7 R5 - Trasero - Quitar tornillos" />
+<em>Lenovo Slim3 15ABA7 R5 - Trasero - Quitar tornillos</em></p>
+
+<p>Luego, inserte una tarjeta de plástico sin usar en el espacio en la esquina superior derecha para abrir el panel posterior. Luego, abre el panel trasero girándolo poco a poco, como si abrieras una lata de comida enlatada. Si inserta la tarjeta de plástico demasiado profundamente, la placa de la computadora portátil podría dañarse, así que inserte solo un poco.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" alt="Lenovo Slim3 15ABA7 R5 - Apertura del panel posterior" />
+<em>Lenovo Slim3 15ABA7 R5 - Apertura del panel posterior</em></p>
+
+<p>Como se explicó anteriormente, se puede actualizar adicionalmente un disco duro SATA y una memoria DDR4.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" alt="Lenovo Slim3 15ABA7 R5 - Interior" />
+<em>Lenovo Slim3 15ABA7 R5 - Interior</em></p>
+
+<p>A diferencia de otras computadoras portátiles, <strong>Lenovo Slim3 15ABA7 R5</strong>tiene una cubierta para la ranura de memoria. Retire una pequeña cantidad de la pegatina adherida a la cubierta y levante la cubierta para quitarla.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" alt="Lenovo Slim3 15ABA7 R5 - Interno - Quitar la pegatina de la tapa de la memoria" />
+<em>Lenovo Slim3 15ABA7 R5 - Interno - Quitar la pegatina de la tapa de la memoria</em></p>
+
+<p>Si ha instalado la memoria, vuelva a instalar la cubierta de la memoria y pegue una pegatina.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" alt="Lenovo Slim3 15ABA7 R5 - Interno - Memoria instalada" />
+<em>Lenovo Slim3 15ABA7 R5 - Interno - Memoria instalada</em></p>
+
+<p>Y antes de cerrar el panel posterior, asegúrese de que la computadora portátil se encienda y arranque correctamente. Si el arranque no se produce debido a un mal contacto con la memoria, se debe abrir nuevamente el panel posterior, así que verifique si el arranque es normal sin cerrar el panel posterior.</p>
+
+<p>Coloque algo como una pitillera en la bisagra de la computadora portátil para evitar que el ventilador gire y luego encienda la computadora portátil. Si la memoria no se reconoce correctamente o no arranca, intente extraerla y reinstalarla.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" alt="Lenovo Slim3 15ABA7 R5: espacio inferior seguro para comprobar el funcionamiento de la nueva memoria" />
+<em>Lenovo Slim3 15ABA7 R5: espacio inferior seguro para comprobar el funcionamiento de la nueva memoria</em></p>
+
+<p>Si la computadora portátil funciona normalmente, cierre el panel posterior y vuelva a apretar los tornillos que se aflojaron.</p>
+<h2 id="comprobar-el-reconocimiento-de-doble-canal-de-la-memoria">Comprobar el reconocimiento de doble canal de la memoria</h2>
+<p>Instale <a href="https://www.cpuid.com/softwares/cpu-z.html" target="_blank">CPU-Z</a> o <a href="https://www.hwinfo.com/download/" target="_blank">HWiNFO64</a> o descargue la versión portátil.</p>
+
+<p>En CPU-Z, si la memoria funciona como [Canal dual] (https://en.wikipedia.org/wiki/Multi-channel_memory_architecture), el canal generalmente se muestra como “Dual”, <strong>Lenovo Slim3 15ABA7 R5</strong>es se muestra como <code class="language-plaintext highlighter-rouge">2 x 64 bits</code>.</p>
+
+<p>No estoy seguro si esto es un error o una diferencia en la última versión de CPU-Z.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - CPU-Z - Memoria" />
+<em>Lenovo Slim3 15ABA7 R5 - CPU-Z - Memoria</em></p>
+
+<p>Sin embargo, en HWiNFO64, se mostraba correctamente como “Doble canal”.</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - HWiNFO64 - Resumen del sistema - Memoria" />
+<em>Lenovo Slim3 15ABA7 R5 - HWiNFO64 - Resumen del sistema - Memoria</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/es-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Mostrar problemas de inactividad en múltiples configuraciones de pantalla en Windows 10]]></title>
+      <link>https://unclesnote.com/es/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
+      <guid>https://unclesnote.com/es/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
+      <category><![CDATA[Computadora,Solución de problemas]]></category>
+      <tag><![CDATA[Computadora,Solucióndeproblemas]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <description><![CDATA[Soy un usuario que utiliza una computadora portátil entre el trabajo y el hogar. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el]]></description>
+      <content:encoded><![CDATA[<p>Soy un usuario que utiliza una computadora portátil entre el trabajo y el hogar. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el trabajo como en casa, pero a veces la computadora portátil solo reconoce algunas pantallas y se muestran como inactivas cuando entro en la configuración de pantalla.</p>
+
+<p>Supongo que Windows gestiona la configuración de pantalla adecuada para cada entorno almacenándola en el registro en forma de valor preestablecido, pero parece que este problema a veces se debe a un giro en esta configuración.</p>
+
+<p>El método que encontré para resolver este problema es eliminar e inicializar el valor del registro de configuración de pantalla de Windows. En conclusión, debe volver a configurar el entorno de pantallas múltiples. Te explicaré cómo.</p>
+<h2 id="1-abra-el-editor-del-registro-de-windows">1. Abra el Editor del Registro de Windows</h2>
+<p>Ingrese <code class="language-plaintext highlighter-rouge">regedit</code> a través del cuadro de diálogo Ejecutar con <code class="language-plaintext highlighter-rouge">Windows + R</code> o busque <code class="language-plaintext highlighter-rouge">regedit.exe</code> en el menú Inicio para ejecutar el <code class="language-plaintext highlighter-rouge">Editor del Registro</code>.</p>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; Ingrese `regedit`" />
+<em>Windows + R &gt; Ingrese <code class="language-plaintext highlighter-rouge">regedit</code></em></p>
+
+<h2 id="2-eliminar-los-valores-preestablecidos-de-visualización-en-el-editor-del-registro">2. Eliminar los valores preestablecidos de visualización en el Editor del Registro</h2>
+<p>En el Editor del Registro, ingrese la ruta a continuación en la barra de direcciones o navegue hasta la ruta en el árbol.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Elimine las siguientes dos carpetas en la carpeta <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> del menú contextual.</p>
+<ul>
+  <li>Configuration</li>
+  <li>Connectivity</li>
+</ul>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="Editor del Registro: elimine las carpetas `Configuración` y `Conectividad` en la carpeta `GraphicsDrivers`" />
+<em>Editor del Registro: elimine las carpetas <code class="language-plaintext highlighter-rouge">Configuración</code> y <code class="language-plaintext highlighter-rouge">Conectividad</code> en la carpeta <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code></em></p>
+
+<h2 id="3-reinicie-windows">3. Reinicie Windows</h2>
+<p>Reinicie Windows. Una vez que se completa el reinicio, desde la perspectiva de Windows, mis pantallas se convierten en pantallas recién reconocidas.</p>
+
+<p>Por lo tanto, debe restablecer la posición y orientación de las pantallas en la configuración de pantalla. En resumen, esto es muy molesto. Ofrezco mi más sentido pésame.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/es-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Bloque de citas y rótulos de Obsidian]]></title>
+      <link>https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block</link>
+      <guid>https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Tue, 28 Nov 2023 00:18:00 +0900</pubDate>
+      <category><![CDATA[Obsidiana]]></category>
+      <tag><![CDATA[Obsidiana,Llamadas,Citas]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block</guid>
+      <description><![CDATA[La definición del diccionario de rótulos es llamar en voz alta y se utiliza para llamar la atención del lector e informarle sobre información importante o]]></description>
+      <content:encoded><![CDATA[<p>La definición del diccionario de rótulos es llamar en voz alta y se utiliza para llamar la atención del lector e informarle sobre información importante o adicional.</p>
+
+<p>Aprendamos sobre la gramática y los tipos para expresar llamadas en Obsidian.</p>
+<h2 id="diferencias-entre-bloques-de-cotizaciones-y-anotaciones">Diferencias entre bloques de cotizaciones y anotaciones</h2>
+<p>Un <strong>bloque de comillas</strong>enumera oraciones que comienzan con <code class="language-plaintext highlighter-rouge">&gt;</code> en cada línea.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>&gt; 
+&gt; I am a quote block.
+&gt; It is a set of lines starting with `&gt;`
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>A continuación se muestra la forma del bloque de citas basado en el tema básico de Obsidian.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" alt="Obsidiana - Bloque de cotizaciones" />
+<em>Obsidiana - Bloque de cotizaciones</em></p>
+
+<p>Al igual que un bloque de comillas, un <strong>bloque de llamadas</strong>es un conjunto de líneas que comienzan con <code class="language-plaintext highlighter-rouge">&gt;</code>. Sin embargo, puede especificar la forma y el color del icono ingresando un tipo de leyenda en la primera línea y agregando un título.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>&gt; [!tip] I'm a tip type, and here's the title.
+&gt; 
+&gt; I am a callouts block. 
+&gt; It is similar to a citation block, but you can specify a type and title for the first line.
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>A continuación se muestra un bloque de notas de tipo sugerencia en el tema básico Obsidian.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="Obsidiana - Bloque de rótulos" />
+<em>Obsidiana - Bloque de rótulos</em></p>
+
+<h2 id="función-de-plegado-de-bloques-de-llamadas">Función de plegado de bloques de llamadas</h2>
+<p>Sintácticamente, los bloques de llamadas son similares a los bloques de comillas. Sin embargo, en comparación con los bloques de cotizaciones, tiene las siguientes características adicionales</p>
+<ul>
+  <li>Agregar ícono</li>
+  <li>Añadir título</li>
+  <li><code class="language-plaintext highlighter-rouge">Función de plegado</code></li>
+</ul>
+
+<p>Arriba, se explicó que el bloque de llamadas puede tener íconos y títulos adicionales agregados al bloque de citas.</p>
+
+<p>Además, el punto fuerte de los rótulos es que tienen una función de plegado. En el caso de Obsidian, los encabezados se pueden plegar, pero <strong>la diferencia entre este y un bloque de llamadas es que se puede especificar el valor inicial</strong>.</p>
+
+<p>A veces, puedes expresar contenido que deseas enfatizar o agregar notas adicionales en un bloque de notas, pero si el contenido es largo, es posible que quieras dejarlo cerrado inicialmente.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" alt="Obsidiana - Bloque plegable de llamadas" />
+<em>Obsidiana - Bloque plegable de llamadas</em></p>
+
+<p>Puede crear un bloque de llamadas con un valor inicial cerrado agregando un guión (-) al lado del tipo en la primera línea del bloque de llamadas.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>&gt; [!success]- Callouts block - Initially folded callouts block
+&gt; I am a callouts of type success.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="tipos-de-bloques-de-llamadas">Tipos de bloques de llamadas</h2>
+<p>Los colores e íconos de los bloques de llamadas predefinidos en Obsidian son los siguientes.</p>
+
+<p>Puede cambiar el aspecto de las llamadas escribiendo el texto que desee en el tipo de llamadas.</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" alt="Obsidiana - Tipos predefinidos de rótulos" />
+<em>Obsidiana - Tipos predefinidos de rótulos</em></p>
+
+<p>Este contenido se presenta en <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Ayuda de Obsidian</a>, y puede diseñar su propio bloque de llamadas definiendo CSS.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre>&gt; [!quote] quote
+
+&gt; [!abstract] abstract, summary, tldr
+
+&gt; [!important] tip, hint, important
+
+&gt; [!note] note
+
+&gt; [!info] info
+
+&gt; [!todo] todo
+
+&gt; [!example] example
+
+&gt; [!question] question, help, fnq
+
+&gt; [!warning] warning, caution, attention
+
+&gt; [!failure] failure, fail, missing
+
+&gt; [!danger] danger, error
+
+&gt; [!bug] bug
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/es-thumb-unclesnote-obsidian_callouts_and_quote_block.png" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Configurar la carpeta compartida de Ubuntu en VirtualBox - Compartir archivos de Windows]]></title>
+      <link>https://unclesnote.com/es/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</link>
+      <guid>https://unclesnote.com/es/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 12:01:00 +0900</pubDate>
+      <category><![CDATA[ubuntu,Caja virtual]]></category>
+      <tag><![CDATA[VirtualBox,vboxsf,ubuntu,Compartircarpetas]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <description><![CDATA[En mi caso, se comparten archivos con frecuencia entre Ubuntu VM y Windows en Oracle VM VirtualBox. Por supuesto, puede utilizar la función Guest Additions]]></description>
+      <content:encoded><![CDATA[<p>En mi caso, se comparten archivos con frecuencia entre Ubuntu VM y Windows en Oracle VM VirtualBox. Por supuesto, puede utilizar la función Guest Additions para compartir archivos arrastrando el mouse, pero todavía hay ocasiones en las que resulta inconveniente.</p>
+
+<p>Entonces, me gustaría explicar cómo compartir una carpeta de Windows con una máquina virtual de Ubuntu.</p>
+<h2 id="agregar-una-carpeta-compartida-en-virtual-box">Agregar una carpeta compartida en Virtual Box</h2>
+<p>Vaya a la configuración de su máquina virtual Ubuntu. Luego, agregue la carpeta a compartir en la pestaña “Carpetas compartidas”.</p>
+
+<p>En la ventana de configuración de la carpeta compartida, configure la carpeta que desea compartir con la VM de Ubuntu en “Ruta de la carpeta”. Las carpetas restantes y los elementos de configuración son los siguientes.</p>
+<ul>
+  <li><strong>Ruta de la carpeta</strong>: ruta de la carpeta <code class="language-plaintext highlighter-rouge">Windows</code> que se compartirá con Ubuntu VM</li>
+  <li><strong>Nombre de carpeta</strong>: este es el apodo de la carpeta compartida. Si es posible, hágalo igual que el nombre de la carpeta “Punto de montaje”.</li>
+  <li><strong>Punto de montaje</strong>: Ruta para montar la carpeta compartida en su <code class="language-plaintext highlighter-rouge">Ubuntu VM</code></li>
+  <li>☑ <strong>Montaje automático</strong>: monta automáticamente carpetas compartidas al iniciar</li>
+  <li>☑ <strong>Hacer permanente</strong>: este elemento aparece si ingresa la configuración actual mientras se ejecuta la máquina virtual de Ubuntu. Si desea una configuración permanente, verifíquela.</li>
+</ul>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox: agregar carpeta compartida" />
+<em>Oracle VM VirtualBox: agregar carpeta compartida</em></p>
+
+<p>En mi caso, configuré <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code> como una carpeta compartida en la VM de Ubuntu. Como referencia, el nombre de mi cuenta de Ubuntu es “pooh”.</p>
+<h2 id="permisos-de-carpeta-en-ubuntu-vm">Permisos de carpeta en Ubuntu VM</h2>
+<p>Si agregó una carpeta compartida mientras se ejecuta la VM de Ubuntu, primero reinicie la VM de Ubuntu.</p>
+
+<p>Y, cuando intentes ingresar <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code>, se mostrará un mensaje de error indicando que no tienes permiso. Esto se debe a que sólo los usuarios incluidos en el grupo <code class="language-plaintext highlighter-rouge">vboxsf</code> pueden acceder a la carpeta compartida.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /home/pooh
+total 100
+...
+drwxrwx---  1 root vboxsf     0 11월  6 10:03 _shared
+...
+
+<span class="nv">$ </span><span class="nb">cd</span> /home/pooh
+bash: <span class="nb">cd</span>: /home/pooh: Permission denied
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Utilice el comando <code class="language-plaintext highlighter-rouge">gpasswd</code> para agregar su cuenta de Ubuntu al grupo <code class="language-plaintext highlighter-rouge">vboxsf</code>. Como referencia, el nombre de mi cuenta de Ubuntu es “pooh”. Entonces ejecute el comando, reemplazando <code class="language-plaintext highlighter-rouge">pooh</code> con el nombre de su cuenta de Ubuntu.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> pooh vboxsf
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Lo más importante. Por último, reinicie la máquina virtual de Ubuntu.</p>
+<h2 id="pruebas">Pruebas</h2>
+<p>Una vez que se complete el reinicio de la máquina virtual de Ubuntu, realicemos una prueba.</p>
+
+<p>Creemos un archivo <code class="language-plaintext highlighter-rouge">test.txt</code> usando el comando <code class="language-plaintext highlighter-rouge">touch</code> en la carpeta compartida de la VM de Ubuntu. ¿Puedes ver el archivo <code class="language-plaintext highlighter-rouge">test.txt</code> creado en la carpeta compartida de Windows?</p>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="Cree un archivo `test.txt` usando el comando `touch` en Ubuntu VM y verifíquelo en Windows." />
+<em>Cree un archivo <code class="language-plaintext highlighter-rouge">test.txt</code> usando el comando <code class="language-plaintext highlighter-rouge">touch</code> en Ubuntu VM y verifíquelo en Windows.</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/es-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Especificaciones y fecha de lanzamiento del Samsung Galaxy S24- resumen de rumores]]></title>
+      <link>https://unclesnote.com/es/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</link>
+      <guid>https://unclesnote.com/es/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 01:59:14 +0900</pubDate>
+      <category><![CDATA[ÉL,Móvil]]></category>
+      <tag><![CDATA[GalaxyS24,Rumor,bancogeek,SamsungExynos,QualcommSnapdragon,Titanio,ÉL,Móvil]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <description><![CDATA[A medida que se acerca la fecha de lanzamiento del Samsung Galaxy S24, surgen rumores sobre imágenes renderizadas y especificaciones esperadas. En resumen, el]]></description>
+      <content:encoded><![CDATA[<p>A medida que se acerca la fecha de lanzamiento del Samsung Galaxy S24, surgen rumores sobre imágenes renderizadas y especificaciones esperadas.</p>
+
+<p>En resumen, el lanzamiento de la serie Galaxy S 24 está previsto para el primer trimestre de 2024, tiene un exterior de titanio, un rendimiento de cámara degradado y se espera que esté equipado con Samsung Exynos y Qualcomm Snapdragon AP, según el modelo.</p>
+
+<p>Ahora echemos un vistazo más de cerca a los rumores relacionados.</p>
+<h2 id="cuándo-lanzar-diciembre-de-2023-o-enero-de-2024">Cuándo lanzar: diciembre de 2023 o enero de 2024</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="Anuncio en vallas electrónicas Galaxy S23 en Times Square, Nueva York, EE.UU." />
+<em>Anuncio en vallas electrónicas Galaxy S23 en Times Square, Nueva York, EE.UU.</em></p>
+
+<p>Samsung Electronics planea lanzar nuevos teléfonos inteligentes en diciembre de 2023 o enero de 2024, con el objetivo de recuperarse del bajo rendimiento de los semiconductores. En diciembre lanzarán el Galaxy S23 FE, un teléfono de gama media, seguido del buque insignia Galaxy S24, que tendrá capacidades de inteligencia artificial y se presentará en enero en San Francisco, antes del lanzamiento habitual en febrero.</p>
+
+<p>Este cambio se considera una respuesta a los desafíos del mercado de teléfonos inteligentes y a la competencia de la serie iPhone 15 de Apple. Samsung confía en su división de experiencia móvil (MX) para contrarrestar la caída de las ganancias de los semiconductores, ya que registraron pérdidas significativas en la división de semiconductores (DS) durante el tercer trimestre de 2022.</p>
+<h2 id="apariencia-y-diseño-titanio">Apariencia y diseño: titanio</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" alt="A la izquierda está la representación esperada del Galaxy S24 publicada por el informante de TI `OnLeaks`, y a la derecha está el iPhone 15 Pro." />
+<em>A la izquierda está la representación esperada del Galaxy S24 publicada por el informante de TI <code class="language-plaintext highlighter-rouge">OnLeaks</code>, y a la derecha está el iPhone 15 Pro.</em></p>
+
+<p>Según predicciones recientes del experto en TI Lebegnerz, se espera que toda la serie Galaxy S24 presente marcos de material de titanio, lo que mejora la estética general del diseño. Este movimiento se considera parte de una estrategia más amplia, similar a la introducción por parte de Apple de marcos de titanio en los modelos iPhone 15 Pro y Pro Max.</p>
+
+<p>Además, se prevé que el diseño exterior experimente una transformación, pasando de una forma redondeada a un diseño más angular, añadiendo un toque de lujo. También se especula que la distintiva pantalla de borde del modelo Ultra será reemplazada por una pantalla plana.</p>
+<h2 id="cámara---bajar-de-categoría-pero">Cámara - Bajar de categoría pero,</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Representaciones frontal y posterior del Galaxy S24 filtradas por OnLeaks de Smart Pix" />
+<em>Representaciones frontal y posterior del Galaxy S24 filtradas por OnLeaks de Smart Pix</em></p>
+
+<p>El lanzamiento del Galaxy S24 Ultra el próximo año ha generado preocupación entre los usuarios, ya que se rumorea que pasará de un zoom óptico de 10x a un zoom óptico de 5x.</p>
+
+<p>Sin embargo, algunos expertos, como SamMobile, sostienen que en realidad es un movimiento positivo debido a las mejoras generales en la grabación de vídeo.</p>
+
+<p>Se dice que el S24 Ultra cuenta con una cámara principal de 200MP, una cámara ultra ancha de 12MP, un teleobjetivo de 10MP con zoom óptico de 3x y un teleobjetivo de 50MP con zoom óptico de 5x. El zoom de 5x se considera una mejora con una apertura más amplia y píxeles más grandes, lo que permite fotografías con zoom de alta calidad. En particular, la cámara con zoom de 5x puede capturar videos fluidos de 4K a 60 fps en todos los ángulos.</p>
+<h2 id="ap---qualcomm-snapdragon-gen-3-y-exynos">AP - Qualcomm Snapdragon Gen 3 y Exynos</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" alt="Se espera que Samsung Exynos se instale en el modelo Galaxy S24 Plus y se espera que Qualcomm Snapdragon 8 Gen 3 se instale en el modelo Galaxy S24 Ultra." />
+<em>Se espera que Samsung Exynos se instale en el modelo Galaxy S24 Plus y se espera que Qualcomm Snapdragon 8 Gen 3 se instale en el modelo Galaxy S24 Ultra.</em></p>
+
+<p>Es seguro que el Samsung Galaxy S24 estará equipado con Qualcomm Stepdragon porque en el anuncio de resultados del cuarto trimestre de 2023, el director ejecutivo de Qualcomm, Cristiano Amon, dijo que el Galaxy S24 se lanzará pronto y que Qualcomm tendrá la participación mayoritaria en términos de componentes integrados. .</p>
+
+<p>La división inalámbrica de Samsung había estado utilizando procesadores Snapdragon y Exynos en sus teléfonos inteligentes hasta el Galaxy S22. Sin embargo, debido a problemas de calentamiento con Exynos, el modelo Galaxy S23, lanzado a principios de este año, contó exclusivamente con Qualcomm. Los próximos modelos S24 y S24 Plus, que se lanzarán a principios del próximo año, emplearán procesadores Snapdragon y Exynos según consideraciones regionales. Se confirma que el modelo Ultra de mayor precio utiliza exclusivamente Snapdragon.</p>
+
+<p>También se descubrió la puntuación Geekbench del Galaxy S24 Ultra basado en Snapdragon Gen 3. Según la base de datos, el Galaxy S24 Ultra funciona con el chipset “Snapdragon 8 de tercera generación” con nombre en código “Pineapple” y se confirma que está equipado con 8 GB de RAM y el sistema operativo Android 14.</p>
+
+<p>En las pruebas de uno y varios núcleos, obtuvo “2234” y “6807” puntos, respectivamente, y la puntuación de múltiples núcleos aumentó ligeramente en comparación con el modelo probado en julio pasado.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Artículo</th>
+      <th>Galaxia S24+</th>
+      <th>Galaxia S24 Ultra</th>
+      <th>Galaxia S23 Ultra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Modelo</td>
+      <td>Samsung SM-926B</td>
+      <td>Samsung SM-928U</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>AP</td>
+      <td>Exynos 2400</td>
+      <td>Snapdragon generación 3</td>
+      <td>Snapdragon Generación 2</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>8GB</td>
+      <td>8GB</td>
+      <td>12GB</td>
+    </tr>
+    <tr>
+      <td>Núcleo simple<br /> (banco geek)</td>
+      <td>2067<br /> (En comparación con<br /> S24 Ultra: -8%)</td>
+      <td>2234<br /> (En comparación con<br /> S23 Ultra: +43%)</td>
+      <td>1560</td>
+    </tr>
+    <tr>
+      <td>multinúcleo<br /> (banco geek)</td>
+      <td>6520<br /> (En comparación con<br /> S24 Ultra: -4%)</td>
+      <td>6807<br /> (En comparación con<br /> S23 Ultra: +36%)</td>
+      <td>4996</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>El 12 de octubre de 2023, se descubrieron en Geekbench los resultados de las pruebas comparativas del Galaxy S24+. El modelo está identificado como <code class="language-plaintext highlighter-rouge">SM-S926B</code>, equipado con un chipset <code class="language-plaintext highlighter-rouge">Exynos 2400</code>, 8 GB de RAM y el sistema operativo Android 14. Logró una puntuación de un solo núcleo de “2067” y una puntuación de múltiples núcleos de “6520”.</p>
+
+<p>Estos puntajes fueron más bajos que los del Galaxy S24 Ultra, que se basa en el chipset Snapdragon 8 de tercera generación, lo que indica que el Exynos 2400 podría tener un rendimiento ligeramente inferior en las pruebas iniciales. Se espera que el Galaxy S24 Ultra mejore el rendimiento en un 43% en un solo núcleo y un 36% en múltiples núcleos en comparación con el modelo anterior, el Galaxy S23 Ultra.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/es-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Configuración de la clave de conversión coreano-inglés con ibus-hangul en Ubuntu 20.04]]></title>
+      <link>https://unclesnote.com/es/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</link>
+      <guid>https://unclesnote.com/es/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Sat, 04 Nov 2023 21:16:15 +0900</pubDate>
+      <category><![CDATA[ubuntu,Común]]></category>
+      <tag><![CDATA[ibushangul,ubuntu,Común,Teclados]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <description><![CDATA[Si utiliza Ubuntu con fines de desarrollo de software, escribirá principalmente en inglés. Sin embargo, en algunos casos, puede ser necesario ingresar coreano]]></description>
+      <content:encoded><![CDATA[<p>Si utiliza Ubuntu con fines de desarrollo de software, escribirá principalmente en inglés. Sin embargo, en algunos casos, puede ser necesario ingresar coreano en la GUI de GNOME.</p>
+
+<p>Entonces, dado que la configuración predeterminada solo permite la entrada en inglés, usaremos el complemento <code class="language-plaintext highlighter-rouge">ibus-hangul</code> para configurar la entrada en coreano.</p>
+<h2 id="ibus-hangul">ibus-hangul</h2>
+<p><code class="language-plaintext highlighter-rouge">ibus-hangul</code> es un complemento que admite el método de entrada Hangul en Linux o Ubuntu. “ibus” significa “Bus de entrada”. Ubuntu ya admite la entrada Hangul, pero actualizaremos y usaremos <code class="language-plaintext highlighter-rouge">ibus-hangul</code> para la entrada Hangul optimizada.</p>
+
+<p>Actualice el repositorio de apt y actualice el complemento <code class="language-plaintext highlighter-rouge">ibus-hangul</code>. Cuando lo instalé, el tamaño del complemento era de 615 MB. Se necesita algún tiempo para actualizar.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade ibus-hangul
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="configuración-de-entrada-en-coreano">Configuración de entrada en coreano</h2>
+<p>Primero, busque la palabra clave “región” en las aplicaciones, luego busque y ejecute la configuración “Región e idioma”.</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" alt="Busque `región` y ejecute `Región y idiomas`" />
+<em>Busque <code class="language-plaintext highlighter-rouge">región</code> y ejecute <code class="language-plaintext highlighter-rouge">Región y idiomas</code></em></p>
+
+<p>Luego, agregue “Fuente de entrada” en la pestaña “Región e idioma”. Busque “coreano” y agregue “coreano (hangul)”.</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" alt="Agregar fuente de entrada `coreano (hangul)`" />
+<em>Agregar fuente de entrada <code class="language-plaintext highlighter-rouge">coreano (hangul)</code></em></p>
+
+<p>Antes de configurar la fuente de entrada recién agregada, elimine el “inglés (EE. UU.)” existente. Esto es para evitar conflictos con la fuente de entrada “Corea (Hangul)” recién agregada. Y la fuente de entrada agregada ya incluye una función de entrada en inglés.</p>
+
+<p>Haga clic en el ícono de ajustes en la fuente de entrada “Corea (Hangul)” para abrir “IBusHangle Setup”.</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" alt="Configuración de clave de conversión coreano-inglés" />
+<em>Configuración de clave de conversión coreano-inglés</em></p>
+
+<p>Luego, active <code class="language-plaintext highlighter-rouge">Iniciar en modo Hangul</code> en la sección <code class="language-plaintext highlighter-rouge">Etc</code>. Como referencia, cuando inicie Ubuntu, si desea que el primer modo de entrada en la GUI de GNOME sea coreano, habilítelo.</p>
+
+<p>Y elimine todas las “teclas de alternancia Hangul” agregadas de forma predeterminada. No hay garantía de que coincida con la tecla de cambio de idioma en el teclado real que está utilizando.</p>
+
+<p>Haga clic en el botón “Agregar” y, cuando se abra una nueva ventana, presione la tecla de cambio de idioma en su teclado. En el caso de mi teclado, se asignó “Alt_R” como tecla de cambio de idioma.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/es-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Diferencias de salto de línea- verificación EOL de Windows y Linux y sincronización de Git Repo]]></title>
+      <link>https://unclesnote.com/es/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</link>
+      <guid>https://unclesnote.com/es/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 14:47:17 +0900</pubDate>
+      <category><![CDATA[git]]></category>
+      <tag><![CDATA[git,CRLF,LF,ConversiónEOL,Saltosdelínea,BlocdenotasPlusPlus,unix2dos,dos2unix]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <description><![CDATA[Si necesita modificar y confirmar archivos en un repositorio de Git tanto en Linux como en Windows, puede haber casos en los que el cliente Git reconozca el]]></description>
+      <content:encoded><![CDATA[<p>Si necesita modificar y confirmar archivos en un repositorio de Git tanto en Linux como en Windows, puede haber casos en los que el cliente Git reconozca el archivo como un archivo modificado en la etapa de confirmación de Git aunque el contenido claramente no haya sido modificado.</p>
+
+<p>La causa del problema es que aunque el contenido del archivo es el mismo, la forma básica de expresar saltos de línea en Windows y Linux es diferente. En la imagen de abajo, la izquierda es un archivo modificado y guardado en Windows (PC), y la derecha es un archivo modificado y guardado en Linux (UNIX).</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="El mismo contenido de archivo pero archivos diferentes, a la izquierda está el formato de PC con Windows y a la derecha está el formato Linux UNIX" />
+<em>El mismo contenido de archivo pero archivos diferentes, a la izquierda está el formato de PC con Windows y a la derecha está el formato Linux UNIX</em></p>
+
+<h2 id="diferencias-de-saltos-de-línea-entre-windows-y-linux">Diferencias de saltos de línea entre Windows y Linux</h2>
+<p>Desde una perspectiva de caracteres ASCII,</p>
+
+<p>Windows expresa saltos de línea en forma de “CRLF (retorno de carro con avance de línea)” como se muestra a continuación.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\r\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>En sistemas Linux como Ubuntu, los saltos de línea se expresan solo como “LF (salto de línea)”, como se muestra a continuación.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Supongamos que recibió un archivo que expresa nuevas líneas en formato LF de Git, lo modificó brevemente en un editor de Windows y luego lo restauró. Esto significa que el archivo tiene el mismo contenido en la superficie, pero los saltos de línea se modifican con CRLF, por lo que existe la posibilidad de que se transforme en un archivo diferente al archivo en Git.</p>
+
+<p>Si ejecuta un script bash escrito en Windows en Linux, puede encontrar misteriosos errores de ejecución del script durante la depuración. Esto puede deberse a que el script de shell almacenó saltos de línea en formato CRLF en Windows y bash no pudo interpretar esto.</p>
+<h2 id="verificar-y-convertir-eol-fin-de-línea-de-un-archivo">Verificar y convertir EOL (Fin de línea) de un archivo</h2>
+<p>Por supuesto, incluso si escribe un archivo en Windows, puede crear y convertir el archivo en formato UNIX (LF), no en formato PC (CRLF). También es posible lo contrario. La operación de conversión se denomina comúnmente “Conversión EOL (Fin de líneas)”.</p>
+
+<p>De hecho, puede resultar un poco confuso cuando se encuentra por primera vez con las diferencias en el EOL para cada sistema operativo. Por lo tanto, las palabras clave relacionadas con el contenido que se explicará en el futuro se pueden asignar a una tabla como se muestra a continuación.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>ventanas</th>
+      <th>Ubuntu (Linux)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Terminología del formato de saltos de línea</td>
+      <td>CRLF (retorno de carro con avance de línea)</td>
+      <td>LF (avance de línea)</td>
+    </tr>
+    <tr>
+      <td>caracteres de representación de saltos de línea</td>
+      <td><code class="language-plaintext highlighter-rouge">\r\n</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\n</code></td>
+    </tr>
+    <tr>
+      <td>Información de la herramienta <code class="language-plaintext highlighter-rouge">file</code> en Ubuntu</td>
+      <td>ASCII text, with CRLF line terminators</td>
+      <td>ASCII text</td>
+    </tr>
+    <tr>
+      <td>Tipo EOL en la herramienta Beyond Compare</td>
+      <td>PC</td>
+      <td>UNIX</td>
+    </tr>
+    <tr>
+      <td>Tipo EOL en Ubuntu</td>
+      <td>dos</td>
+      <td>unix</td>
+    </tr>
+    <tr>
+      <td>Herramienta de conversión EOL en Ubuntu</td>
+      <td>unix2dos</td>
+      <td>dos2unix</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ventanas">ventanas</h3>
+<p>Usar el editor <a href="https://notepad-plus-plus.org/downloads" target="_blank">Notepad++</a> puede ayudarle a crear archivos teniendo en cuenta el EOL.</p>
+
+<p>Como se muestra en la imagen a continuación, puede verificar el estado actual de “Conversión EOL” en el editor Notepad ++ y realizar la conversión. El menú está en “Editar&gt; Conversión EOL”.</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - Conversión EOL - `Editar &gt; Conversión EOL &gt; Windows (CR LF) o Unix (LF)`" />
+<em>Notepad++ - Conversión EOL - <code class="language-plaintext highlighter-rouge">Editar &gt; Conversión EOL &gt; Windows (CR LF) o Unix (LF)</code></em></p>
+
+<h3 id="ubuntu-linux">Ubuntu (Linux)</h3>
+<p>En el entorno Ubuntu, también puedes comprobar el estado EOL de los archivos y convertirlos.</p>
+
+<p>Puede comprobar el estado EOL de un archivo utilizando la herramienta “archivo”.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># PC (CRLF)</span>
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="c"># Unix (LF)</span>
+<span class="nv">$ </span>file unix.txt 
+unix.txt: ASCII text
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Para la conversión EOL de archivos, se deben instalar <code class="language-plaintext highlighter-rouge">tofrodos</code> y <code class="language-plaintext highlighter-rouge">dos2unix</code>. Se puede instalar usando <code class="language-plaintext highlighter-rouge">apt</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt-get <span class="nb">install </span>tofrodos
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>dos2unix
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Una vez que instale los paquetes, puede utilizar las herramientas siguientes.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dos2unix</code>: Convertir PC (CRLF) a Unix (LF)</li>
+  <li><code class="language-plaintext highlighter-rouge">unix2dos</code>: convierte Unix (LF) a PC (CRLF)</li>
+</ul>
+
+<p>A continuación se muestra un ejemplo de conversión de PC (CRLF) a UNIX (LF).</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="nv">$ </span>dos2unix pc.txt 
+dos2unix: converting file pc.txt to Unix format...
+
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="sincronización-eol-de-git-repo-entre-sistemas-operativos">Sincronización EOL de Git Repo entre sistemas operativos</h2>
+<p>Hay una configuración de Git en un repositorio de Git que evita problemas de conversión EOL al confirmar y extraer archivos en entornos Windows y Ubuntu.</p>
+
+<p>El siguiente comando git cambia CRLF a LF antes de insertar un archivo en formato ASCII en la base de datos de objetos. Por lo tanto, se utiliza principalmente para la configuración de Git en un entorno “Windows”.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf input 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>El siguiente comando git utiliza saltos de línea como LF. Por lo tanto, se utiliza principalmente en el entorno “Ubuntu (Linux)”.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf <span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Dado que el comando anterior es una configuración global de Git, si desea que la configuración EOL se aplique solo a un repositorio clonado específico, puede ir a la carpeta del repositorio correspondiente y usar el comando eliminando solo la opción <code class="language-plaintext highlighter-rouge">--global</code>.</p>
+
+<p>En otras palabras, la intención es subir archivos con un EOL en formato LF al servidor Git.</p>
+
+<p>En un entorno Windows, puede acceder a Git Bash desde el menú después de hacer clic derecho.</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="Accediendo a Git Bash en Windows" />
+<em>Accediendo a Git Bash en Windows</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/es-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Cómo optimizar el rendimiento de Ubuntu 20.04]]></title>
+      <link>https://unclesnote.com/es/231102005314/how_to_optimize_ubuntu_20.04_performance</link>
+      <guid>https://unclesnote.com/es/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:14 +0900</pubDate>
+      <category><![CDATA[ubuntu,Común]]></category>
+      <tag><![CDATA[UbuntuAnimaciones,Tamañodeliconodelmuelle,archivodeintercambio,intercambio,ubuntu,Común,BleachBit]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <description><![CDATA[A menos que esté utilizando una PC con el sistema operativo Ubuntu instalado como computadora principal, es probable que esté usando una PC con]]></description>
+      <content:encoded><![CDATA[<p>A menos que esté utilizando una PC con el sistema operativo Ubuntu instalado como computadora principal, es probable que esté usando una PC con especificaciones de hardware bajas o que esté instalando Ubuntu en Oracle VM VirtualBox.</p>
+
+<p>Si utiliza principalmente SSH para conectarse de forma remota, no tendrá mucho impacto, pero si manipula con frecuencia la interfaz de usuario en GNOME, el rendimiento puede ser decepcionante. Entonces, aquí hay algunos consejos para optimizar el rendimiento al instalar y configurar Ubuntu.</p>
+<h2 id="desactivar-animaciones">Desactivar animaciones</h2>
+<p>Si usa Ubuntu en Virtual Box o una PC de gama baja, las animaciones pueden ralentizar el rendimiento del sistema operativo debido a los recursos limitados. A continuación se muestra cómo activar y desactivar animaciones en la GUI de Ubuntu GNOME. Puede ejecutar comandos en la terminal.</p>
+
+<p>A continuación se muestra el comando de terminal para desactivar las animaciones de Ubuntu y verificar la configuración.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">false</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>A continuación se muestra el comando de terminal para activar las animaciones de Ubuntu. La diferencia es que el último argumento del comando cambia de “falso” a “verdadero”.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">true</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="tamaño-del-icono-del-muelle">Tamaño del icono del muelle</h2>
+<p>Si está utilizando una pantalla de resolución limitada, el tamaño predeterminado del ícono del Dock puede ser limitante para registrar y navegar por muchos íconos a la vez. Por lo tanto, puede configurar el tamaño del icono del Dock para que sea pequeño.</p>
+
+<p>Primero, busque Dock en el “menú Aplicación” y abra la configuración de “Apariencia”.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" alt="Tamaño del icono del Dock - Menú de aplicaciones &gt; Buscar `dock` &gt; Configuración de apariencia" />
+<em>Tamaño del icono del Dock - Menú de aplicaciones &gt; Buscar <code class="language-plaintext highlighter-rouge">dock</code> &gt; Configuración de apariencia</em></p>
+
+<p>Luego reduzca “el tamaño del icono” y configúrelo en un tamaño que le parezca bien.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="Tamaño del icono del Dock - Configuración &gt; Apariencia &gt; Cambiar tamaño &quot;Tamaño del icono&quot;" />
+<em>Tamaño del icono del Dock - Configuración &gt; Apariencia &gt; Cambiar tamaño “Tamaño del icono”</em></p>
+
+<h2 id="aumentar-el-tamaño-del-swap">Aumentar el tamaño del swap</h2>
+<p>Si está utilizando Ubuntu instalado en Virtual Box, es probable que se asignen menos de 8 GB de memoria a la máquina virtual porque se comparte con su computadora con Windows. Puede que esto no sea un problema si usa Ubuntu de manera informal, pero cuando intenta compilar una plataforma, BSP o software grande, la memoria insuficiente puede provocar fallas en la compilación. Esto se puede solucionar aumentando el tamaño del intercambio.</p>
+
+<p>Dado que la capacidad del disco duro es más barata que la capacidad de la memoria, aumentemos el intercambio. Consulte el artículo a continuación.</p>
+<ul>
+  <li>https://unclesnote.com/en/231102005313/how_to_increase_swapfile_size_in_ubuntu</li>
+</ul>
+
+<h2 id="asegure-el-espacio-libre-en-el-disco">Asegure el espacio libre en el disco</h2>
+<p>Si está utilizando Ubuntu con una máquina virtual instalada y el tamaño de la imagen no es lo suficientemente grande, es posible que vea una ventana emergente de advertencia como la que se muestra a continuación. Esto puede ocurrir si se acumula en el sistema en archivos temporales o archivos de registro. Si el espacio libre converge a cero, es posible que su máquina virtual Ubuntu no arranque.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" alt="Ventana emergente de advertencia por poco espacio en disco en la raíz del sistema de archivos" />
+<em>Ventana emergente de advertencia por poco espacio en disco en la raíz del sistema de archivos</em></p>
+
+<p>Aunque puede eliminar archivos temporales o archivos de registro del sistema manualmente, puede administrarlos más fácilmente en un entorno GUI utilizando la aplicación <a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a>.</p>
+
+<p>Puede instalarlo fácilmente buscando “bleachbit” en la aplicación de software de Ubuntu.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" alt="Software Ubuntu-BleachBit" />
+<em>Software Ubuntu-BleachBit</em></p>
+
+<p>Después de verificar los elementos que desea organizar, presionar el botón “Limpiar” elimina automáticamente los archivos innecesarios para asegurar espacio libre. Sin embargo, debe tener cuidado al organizar los elementos “APT” y “diario”. Esto puede romper su sistema Ubuntu o las dependencias de paquetes.</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="BleachBit" />
+<em>BleachBit</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/es-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Cómo aumentar el tamaño del archivo de intercambio en Ubuntu]]></title>
+      <link>https://unclesnote.com/es/231102005313/how_to_increase_swapfile_size_in_ubuntu</link>
+      <guid>https://unclesnote.com/es/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:13 +0900</pubDate>
+      <category><![CDATA[ubuntu,Común]]></category>
+      <tag><![CDATA[fatab,Intercambio,archivodeintercambio,ubuntu,Común]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <description><![CDATA[A veces, si deja su máquina Ubuntu funcionando durante mucho tiempo sin suficiente memoria física, o si compila y construye una plataforma grande o BSP, el]]></description>
+      <content:encoded><![CDATA[<p>A veces, si deja su máquina Ubuntu funcionando durante mucho tiempo sin suficiente memoria física, o si compila y construye una plataforma grande o BSP, el rendimiento puede deteriorarse o pueden ocurrir errores.</p>
+
+<p>Por lo tanto, el sistema operativo basado en Linux crea un archivo de intercambio y utiliza archivos en el disco duro como memoria cuando la memoria física es insuficiente. Esto se denomina archivo de intercambio y es similar a la memoria virtual en el entorno de Windows.</p>
+
+<p>Ahora me gustaría explicar cómo crear y aplicar un archivo de intercambio en Ubuntu 20.04.</p>
+<h2 id="cambio-de-cheques">cambio de cheques</h2>
+<p>Utilice el comando <code class="language-plaintext highlighter-rouge">free -m</code> para verificar el estado del intercambio en mi entorno Ubuntu. Y verifique si hay un “archivo de intercambio” en la “raíz” del sistema. Es común crear un archivo de intercambio en la ruta raíz.</p>
+
+<p>En mi caso, estoy usando 2 GB de intercambio y el archivo de intercambio está en la ruta raíz.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>free <span class="nt">-m</span>
+              total        used        free      shared  buff/cache   available
+Mem:           4913        1306        2306           8        1300        3359
+Swap:          2048           0        2048
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span> /
+total 8388712
+...
+<span class="nt">-rw-------</span>   1 root root   2048934592 Jul 24 17:54 swapfile
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="crear-archivo-de-intercambio">Crear archivo de intercambio</h2>
+<p>Eliminaré el archivo de intercambio de 2 GB existente y crearé un nuevo archivo de intercambio de 5 GB.</p>
+
+<p>Primero, desactive la función de intercambio y elimine el archivo de intercambio de 2 GB que ya está en uso.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="nb">sudo rm</span> /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Luego, crearemos un archivo de intercambio de 5 GB en la raíz y asignaremos el permiso del archivo a 600.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nb">sudo chmod </span>600 /swapfile 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Y por último, active el intercambio con el archivo recién creado.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>mkswap /swapfile
+<span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>A continuación se muestra cómo ejecuté los comandos anteriores.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>bull: 
+swapoff /swapfile
+<span class="nv">$ </span><span class="nb">sudo rm</span> /swapfile
+<span class="nv">$ </span><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /
+total 5242976
+...
+<span class="nt">-rw-r--r--</span>   1 root root   5368709120 Aug 17 14:11 swapfile
+...
+<span class="nv">$ </span><span class="nb">sudo chmod </span>600 /swapfile 
+<span class="nv">$ </span><span class="nb">sudo </span>mkswap /swapfile
+Setting up swapspace version 1, size <span class="o">=</span> 5 GiB <span class="o">(</span>5368705024 bytes<span class="o">)</span>
+no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c-b719-e54154ad8194
+<span class="nv">$ </span><span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="registrar-archivo-de-intercambio">Registrar archivo de intercambio</h2>
+<p>Ahora, finalmente, configuraremos Ubuntu para cargar el archivo de intercambio cada vez que arranque.</p>
+
+<p>Luego, abra <code class="language-plaintext highlighter-rouge">/etc/fstab</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>vi /etc/fstab    
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Y agregue la línea a continuación. Si ya está configurado, no es necesario agregarlo.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>/swapfile              none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="reiniciar">Reiniciar</h2>
+<p>Reinicie primero. Después de reiniciar, puede verificar el archivo de intercambio generado anteriormente en el monitor del sistema.</p>
+
+<p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="Menú `Aplicaciones` &gt; Monitor del sistema" />
+<em>Menú <code class="language-plaintext highlighter-rouge">Aplicaciones</code> &gt; Monitor del sistema</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/es-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Cómo instalar software de Ubuntu esencial para desarrolladores de software]]></title>
+      <link>https://unclesnote.com/es/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</link>
+      <guid>https://unclesnote.com/es/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Wed, 01 Nov 2023 00:31:13 +0900</pubDate>
+      <category><![CDATA[ubuntu,Herramientas]]></category>
+      <tag><![CDATA[CódigoVisualStudio,CódigoVS,GitHubEscritorio,Másalládecomparar4,NavegadorSQLiteDBB,BancodetrabajoMySQL,ubuntu,Herramientas]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <description><![CDATA[Si es un desarrollador de software y su entorno de desarrollo es Ubuntu, le explicaremos cómo instalar el software esencial de Ubuntu que necesita instalar.]]></description>
+      <content:encoded><![CDATA[<p>Si es un desarrollador de software y su entorno de desarrollo es Ubuntu, le explicaremos cómo instalar el software esencial de Ubuntu que necesita instalar.</p>
+<h2 id="código-de-estudio-visual">Código de estudio visual</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="Código de estudio visual" />
+<em>Código de estudio visual</em></p>
+
+<p><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> es un IDE y editor ampliamente utilizado en el desarrollo de software.</p>
+
+<p>Si está utilizando “el entorno GUI de escritorio de Ubuntu (GNOME)”, puede descargar VS Code usando el navegador integrado e instalarlo usando la herramienta “dpkg”.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> code_1.83.0-1696350811_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Si está utilizando “un entorno de servidor Ubuntu” o “solo tiene acceso SSH”, esto es un poco complicado. Sin embargo, puede instalar VS Code usando los siguientes comandos.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># Install basic packages for installation</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget <span class="nt">-y</span>
+<span class="c"># Install the Microsoft GPG key and add the repository to apt</span>
+wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</span>
+<span class="c"># Install VS Code</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>code
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Puede instalar la extensión para acceso remoto a VS Code a través de SSH usando el siguiente comando.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="escritorio-github">Escritorio GitHub</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="Escritorio GitHub" />
+<em>Escritorio GitHub</em></p>
+
+<p>El software de escritorio GitHub es un cliente Git. Si está trabajando en un proyecto de GitHub, esta es definitivamente una buena opción, pero incluso si usa un servidor git personal en lugar de un repositorio de GitHub, también puede ser una buena opción si no necesita funciones complejas.</p>
+
+<p>El sitio <a href="https://desktop.github.com/" target="_blank">El escritorio oficial de GitHub</a> solo proporciona versiones para Windows y macOS. Sin embargo, debido a que GitHub Desktop es un proyecto de código abierto, la versión de Ubuntu también se distribuye en un [repositorio] separado (https://github.com/shiftkey/desktop). No estoy seguro si esto es oficial. Después de agregar el repositorio a apt, puede instalar GitHub Desktop usando apt.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-qO</span> - https://mirror.mwt.me/shiftkey-desktop/gpgkey | gpg <span class="nt">--dearmor</span> | <span class="nb">sudo tee</span> /usr/share/keyrings/mwt-desktop.gpg <span class="o">&gt;</span> /dev/null
+<span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg] https://mirror.mwt.me/shiftkey-desktop/deb/ any main" &gt; /etc/apt/sources.list.d/mwt-desktop.list'</span>
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>github-desktop
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="más-allá-de-comparar-4">Más allá de comparar 4</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" alt="Más allá de comparar 4" />
+<em>Más allá de comparar 4</em></p>
+
+<p>Beyond Compare es una popular herramienta de comparación de archivos.</p>
+
+<p>Desafortunadamente, la versión Beyond Compare 3 no tiene un buen rendimiento de comparación de archivos en Ubuntu. En otras palabras, la comparación de archivos lleva mucho tiempo. Sin embargo, la última versión, <a href="https://www.scootersoftware.com/download" target="_blank">Beyond Compare 4</a> es rápida y tiene el mismo rendimiento que Windows en Ubuntu. Entonces, recomiendo elegir la versión 4 en Ubuntu.</p>
+
+<p>Puede descargar Beyond Compare 4 desde el sitio web oficial usando un navegador web, pero lo descargaremos usando la herramienta <code class="language-plaintext highlighter-rouge">wget</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget https://www.scootersoftware.com/files/bcompare-4.4.6.27483_amd64.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> bcompare-4.4.6.27483_amd64.deb
+<span class="nb">rm </span>bcompare-4.4.6.27483_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Una vez que se complete la instalación, reinicie Beyond Compare 4 usando el siguiente comando.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c">#thinks bensonkb</span>
+<span class="nb">sudo rm</span> <span class="nt">-rf</span> ~/.config/bcompare 
+<span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s/keexjEP3t4Mue23hrnuPtY4TdcsqNiJL-5174TsUdLmJSIXKfG2NGPwBL6vnRPddT7tH29qpkneX63DO9ECSPE9rzY1zhThHERg8lHM9IBFT+rVuiY823aQJuqzxCKIE1bcDqM4wgW01FH6oCBP1G4ub01xmb4BGSUG6ZrjxWHJyNLyIlGvOhoY2HAYzEtzYGwxFZn2JZ66o4RONkXjX0DF9EzsdUef3UAS+JQ+fCYReLawdjEe6tXCv88GKaaPKWxCeaUL9PejICQgRQOLGOZtZQkLgAelrOtehxz5ANOOqCaJgy2mJLQVLM5SJ9Dli909c5ybvEhVmIC0dc9dWH+/N9KmiLVlKMU7RJqnE+WXEEPI1SgglmfmLc1yVH7dqBb9ehOoKG9UE+HAE1YvH1XX2XVGeEqYUY-Tsk7YBTz0WpSpoYyPgx6Iki5KLtQ5G-aKP9eysnkuOAkrvHU8bLbGtZteGwJarev03PhfCioJL4OSqsmQGEvDbHFEbNl1qJtdwEriR+VNZts9vNNLk7UGfeNwIiqpxjk4Mn09nmSd8FhM4ifvcaIbNCRoMPGl6KU12iseSe+w+1kFsLhX+OhQM8WXcWV10cGqBzQE9OqOLUcg9n0krrR3KrohstS9smTwEx9olyLYppvC0p5i7dAx2deWvM1ZxKNs0BvcXGukR+/g"</span> /usr/lib/beyondcompare/BCompare
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Luego ejecute Beyond Compare 4 desde la GUI de Ubuntu e ingrese la clave de licencia si la tiene.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># Then restart BC, click "Enter License":</span>
+ayvZeJDYPBHS4J-1K6g6bDBuPoo0G-oGAq35blZtAoRqC-qQeSz28XAzX
+6nTx9laTMLRCp6nAIhHNGZ2ehkeUfbnFaxEeLvI8fJavn-XQLNbOumCLU
+qgdNbNMZiFRU03+OTQnw4V-E2YKTYi-LkgPzE6R-yIJGDNWfxH2AdpIgg
+8rlpsbrTs9Dt1zysUfvAEi0dKbmGIi3rqf7yWmwDh1AI5VyoWFIejvJwJ
+Lmlr2CjQ1VZ3DySCfBDuKcYmOCeK7jzEWPUnAw+f9360nIiiNEB0YGkwB
+kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Si no tiene una clave de licencia, es posible que deba realizar el proceso de restablecimiento nuevamente cuando finalice el período de evaluación. Por lo tanto, recomiendo guardar y usar el espacio de trabajo y exportar la configuración cada vez que se actualice y guardarlo como un archivo.</p>
+<h2 id="base-de-datos">Base de datos</h2>
+<h3 id="navegador-de-base-de-datos-para-sqlite">Navegador de base de datos para SQLite</h3>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="Navegador de base de datos para SQLite" />
+<em>Navegador de base de datos para SQLite</em></p>
+
+<p>Si utiliza SQLite DB, <a href="https://sqlitebrowser.org/dl/" target="_blank">SQLite DB Browser</a> es un software esencial para consultar la base de datos o ver el contenido de la tabla en un entorno GUI.</p>
+
+<p>Puede agregar el repositorio <code class="language-plaintext highlighter-rouge">sqlitebrowser</code> para apt e instalar el navegador SQLite DB.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>add-apt-repository <span class="nt">-y</span> ppa:linuxgndu/sqlitebrowser
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>sqlitebrowser
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="banco-de-trabajo-mysql">Banco de trabajo MySQL</h3>
+<p>Describiré esto más adelante cuando necesite instalar MySQL Workbench en Ubuntu.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/es-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Cómo cambiar el navegador predeterminado en Office 365 Outlook a Chrome]]></title>
+      <link>https://unclesnote.com/es/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
+      <guid>https://unclesnote.com/es/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
+      <category><![CDATA[Computadora,Solución de problemas]]></category>
+      <tag><![CDATA[panorama,Navegadorpordefecto,Cromo,ordenadorpersonal,Computadora,Solucióndeproblemas]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <description><![CDATA[¿Alguna vez hizo clic en un enlace web en Office 365 Outlook y de repente se le mostró en el navegador Edge, lo cual fue un inconveniente? En una actualización]]></description>
+      <content:encoded><![CDATA[<p>¿Alguna vez hizo clic en un enlace web en Office 365 Outlook y de repente se le mostró en el navegador Edge, lo cual fue un inconveniente?</p>
+
+<p>En una actualización reciente, Microsoft restableció el navegador predeterminado en Outlook al navegador Edge. Para aquellos que aman Google Chrome, cambiemos el enlace web para abrir en Chrome. Comprobaremos y configuraremos el navegador Chrome en la aplicación predeterminada de Windows y en la configuración de Outlook.</p>
+<h2 id="configuración-predeterminada-del-navegador-web-en-windows">Configuración predeterminada del navegador web en Windows</h2>
+<p>Quizás, si eres usuario de Chrome, ya hayas configurado Google Chrome como tu navegador web predeterminado. Asegúrese de tener la configuración predeterminada del navegador para Office 365.</p>
+
+<p>Abra “Configuración de Windows” usando el acceso directo “CTRL + I”. Luego, ingrese la palabra clave “predeterminada” para buscar y seleccionar “Aplicaciones predeterminadas”.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Configuración de Windows: buscar &quot;predeterminado&quot;" />
+<em>Configuración de Windows: buscar “predeterminado”</em></p>
+
+<p>Luego, en la pestaña “Aplicaciones predeterminadas”, seleccione el navegador “Google Chrome” en la sección “Navegador web”.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="Configuración &gt; Aplicaciones predeterminadas &gt; Seleccione `Google Chrome` en el navegador web" />
+<em>Configuración &gt; Aplicaciones predeterminadas &gt; Seleccione <code class="language-plaintext highlighter-rouge">Google Chrome</code> en el navegador web</em></p>
+
+<h2 id="configurar-aplicaciones-para-abrir-hipervínculos-en-office-365-outlook">Configurar aplicaciones para abrir hipervínculos en Office 365 Outlook</h2>
+<p>¿Volvemos a Office 365 Outlook?</p>
+
+<p>En Outlook, use el acceso directo <code class="language-plaintext highlighter-rouge">ALT + F</code> para ver la barra de menú izquierda y seleccione <code class="language-plaintext highlighter-rouge">Opciones</code>.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - Opciones" />
+<em>Office 365 Outlook - Opciones</em></p>
+
+<p>Seleccione la pestaña “Avanzado”. En la sección “Preferencias de archivos y navegador”, cambie el navegador en el que desea abrir el hipervínculo a “Navegador predeterminado”. Luego presione <code class="language-plaintext highlighter-rouge">Aceptar</code>. En la primera sección configuramos el navegador predeterminado de Windows en Chrome, por lo que el navegador predeterminado aquí es Chrome.</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Opciones &gt; Avanzado &gt; Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador" />
+<em>Office 365 Outlook - Opciones &gt; Avanzado &gt; Seleccione <code class="language-plaintext highlighter-rouge">Navegador predeterminado</code> en Preferencias de archivo y navegador</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/es-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Software alternativo esencial para Ubuntu en lugar de herramientas de Windows]]></title>
+      <link>https://unclesnote.com/es/231028002032/essential_software_to_use_on_ubuntu_os</link>
+      <guid>https://unclesnote.com/es/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Sat, 28 Oct 2023 00:20:32 +0900</pubDate>
+      <category><![CDATA[ubuntu,Herramientas]]></category>
+      <tag><![CDATA[Krusader,GwenVer,Fotopea,crita,trazofácil,ImagenViwer,Editordeimagen,Exploradordearchivos,RatónMacro,ubuntu,Herramientas,BleachBit,Espaciolibre]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <description><![CDATA[Si está utilizando Ubuntu debido a las ventajas específicas del sistema operativo Ubuntu, intentará encontrar software similar disponible en el entorno Ubuntu]]></description>
+      <content:encoded><![CDATA[<p>Si está utilizando Ubuntu debido a las ventajas específicas del sistema operativo Ubuntu, intentará encontrar software similar disponible en el entorno Ubuntu que utilizó en el entorno Windows. Por lo tanto, presentaré algún software que generalmente es bueno para usar cuando se usa Ubuntu, como un explorador de archivos, un visor/editor de imágenes y herramientas de productividad.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" alt="Software de Ubuntu" />
+<em>Software de Ubuntu</em></p>
+
+<h2 id="explorador-de-archivos">Explorador de archivos</h2>
+<h3 id="krusader">Krusader</h3>
+<p>Si tiene experiencia usando Q-Dir o <a href="https://www.ghisler.com/download.htm" target="_blank">Total Commander</a> en un entorno Windows, <a href="https://krusader.org" target="_blank">Krusader</a> ofrece la experiencia de dividir Windows y exploración de archivos con varias pestañas.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" alt="Krusader" />
+<em>Krusader</em></p>
+
+<p>El método de instalación es muy sencillo. Puedes instalarlo usando apt.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>krusader
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="visoreditor-de-imágenes">Visor/Editor de imágenes</h2>
+<h3 id="gwenver">GwenVer</h3>
+<p><a href="https://github.com/KDE/gwenview" target="_blank">GwenView</a> es el mejor visor de imágenes de Ubuntu que he usado. Actualizaré si encuentro un visor de imágenes mejor.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" alt="GwenVer" />
+<em>GwenVer</em></p>
+
+<p>Sin embargo, si actualiza archivos de imagen con frecuencia, a veces la apariencia de la miniatura en la lista de GwenView y la imagen real pueden diferir. Por lo tanto, se recomienda desactivar el uso del caché de miniaturas.</p>
+
+<p>En <code class="language-plaintext highlighter-rouge">Configuración &gt; Configurar Gwenview &gt; Avanzado</code>, marque <code class="language-plaintext highlighter-rouge">Modo de uso de recursos bajos</code>.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" alt="GwenView: marque `Modo de uso de recursos bajos` para deshabilitar el caché de miniaturas" />
+<em>GwenView: marque <code class="language-plaintext highlighter-rouge">Modo de uso de recursos bajos</code> para deshabilitar el caché de miniaturas</em></p>
+
+<p>GwenView se puede instalar fácilmente usando apt.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt <span class="nb">install </span>gwenview <span class="nt">-y</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="fotopea">Fotopea</h3>
+<p>Para quienes estén familiarizados con Photoshop, la mejor alternativa parece ser <a href="https://www.photopea.com" target="_blank">Photopia</a>. Photopia es una aplicación web que proporciona una interfaz muy similar a Photoshop.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" alt="Fotopea - www.photopea.com" />
+<em>Fotopea - www.photopea.com</em></p>
+
+<p>Hay sitios web similares a Photopia, pero la ventaja de Photopia es que permite a los bloqueadores de anuncios bloquear anuncios en la web, que es su modelo de ingresos. Si es usuario del navegador Chrome, busque “AdBlock” en la tienda web e instálelo.</p>
+
+<p>Incluso si no se utiliza “AdBlock”, los anuncios se muestran en una cantidad limitada en el panel derecho en comparación con otros sitios, por lo que no es demasiado molesto.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" alt="Photopea: anuncios limitados en el panel derecho y extensión AdBlock en el navegador web Chrome" />
+<em>Photopea: anuncios limitados en el panel derecho y extensión AdBlock en el navegador web Chrome</em></p>
+
+<h3 id="crita">crita</h3>
+<p>Si buscas un editor de imágenes sin conexión que sea diferente a Photopia, Krita puede ser una alternativa. Sin embargo, los usuarios que están muy familiarizados con Photoshop pueden sentirse poco familiarizados. La interfaz GUI es similar a Photoshop, pero los accesos directos y las herramientas difieren en muchos aspectos.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" alt="crita" />
+<em>crita</em></p>
+
+<p>Aunque no es del todo parecido a Photoshop, si quieres editar o dibujar imágenes y buscas un software completo, Krita puede ser una buena opción.</p>
+
+<p>Krita distribuye software en forma de imágenes de aplicaciones. Visite el sitio de Krita a continuación y descargue la imagen de la aplicación para Linux.</p>
+<ul>
+  <li><a href="https://krita.org/en/download/krita-desktop">https://krita.org/en/download/krita-desktop</a></li>
+</ul>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" alt="Krita - Descargar la aplicación Linux" />
+<em>Krita - Descargar la aplicación Linux</em></p>
+
+<p>Otorgue permiso de ejecución a la imagen de la aplicación Krita descargada y ejecútela.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">chmod </span>777 <span class="k">*</span>.appimage
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="productividad">Productividad</h2>
+<h3 id="gesto-easystroke-macro-de-gesto-del-mouse">Gesto Easystroke (Macro de gesto del mouse)</h3>
+<p>Si tiene experiencia en el uso del software de macros de gestos del mouse <a href="https://www.tcbmi.com/strokeit" target="_blank">Strokeit</a> en Windows, <code class="language-plaintext highlighter-rouge">Easystroke Gesture</code> es la mejor alternativa para Ubuntu.</p>
+
+<p>Si desea dibujar un gesto con el “botón derecho del mouse”, necesita la configuración a continuación. De hecho, hacer que se ejecute automáticamente al iniciar es una opción esencial.</p>
+
+<p>En la pestaña Preferencias de Easystroke, configure Comportamiento en “Botón 3” y configúrelo para que se ejecute automáticamente en Apariencia.</p>
+
+<p>Las acciones de gestos del mouse se pueden agregar en la pestaña “Acciones”.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" alt="Easystroke - Preferencias" />
+<em>Easystroke - Preferencias</em></p>
+
+<p>Puede instalarlo fácilmente buscándolo en la aplicación de software de Ubuntu.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" alt="Easystroke - Descargar en software Ubuntu" />
+<em>Easystroke - Descargar en software Ubuntu</em></p>
+
+<p>A continuación se muestran algunas teclas de método abreviado que estoy usando al asignarlas a los gestos del mouse.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aplicación</th>
+      <th>Atajos</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Común</td>
+      <td>Ctrl + Inicio</td>
+      <td>Ir al principio de la página</td>
+    </tr>
+    <tr>
+      <td>Común</td>
+      <td>Ctrl + Fin</td>
+      <td>Ir al final de la página</td>
+    </tr>
+    <tr>
+      <td>Código VS</td>
+      <td>Ctrl+Alt+-</td>
+      <td>Regresa</td>
+    </tr>
+    <tr>
+      <td>Código VS</td>
+      <td>Ctrl + Mayús + -</td>
+      <td>Avanzar</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="sistema">Sistema</h2>
+<h3 id="bleachbit-limpiador-para-freespace">BleachBit (limpiador para FreeSpace)</h3>
+<p><a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a> es un software útil para liberar espacio eliminando archivos innecesarios. Además de Linux, es compatible con varios sistemas operativos como Windows y Mac OS.</p>
+
+<p>Puede instalarlo fácilmente buscando “bleachbit” en la aplicación de software de Ubuntu.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" alt="Software Ubuntu-BleachBit" />
+<em>Software Ubuntu-BleachBit</em></p>
+
+<p>Después de verificar los elementos que desea organizar, presionar el botón “Limpiar” elimina automáticamente los archivos innecesarios para asegurar espacio libre. Sin embargo, debe tener cuidado al organizar los elementos “APT” y “diario”. Esto puede romper su sistema Ubuntu o las dependencias de paquetes.</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="BleachBit" />
+<em>BleachBit</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/es-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Método de reenvío de puertos de VirtualBox para pruebas de Jekyll Windows]]></title>
+      <link>https://unclesnote.com/es/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</link>
+      <guid>https://unclesnote.com/es/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Tue, 24 Oct 2023 18:52:05 +0900</pubDate>
+      <category><![CDATA[Páginas de GitHub,Jekyll]]></category>
+      <tag><![CDATA[Jekyll,VirtualBox,Reenvíodepuertos,PáginasdeGitHub,GitHub]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <description><![CDATA[En mi caso, construyo y pruebo Jekyll (páginas de GitHub) en una máquina virtual de Ubuntu en Virtual Box y luego lo envío a GitHub. Sin embargo, la apariencia]]></description>
+      <content:encoded><![CDATA[<p>En mi caso, construyo y pruebo Jekyll (páginas de GitHub) en una máquina virtual de Ubuntu en Virtual Box y luego lo envío a GitHub. Sin embargo, la apariencia de navegadores como Firefox en una máquina virtual Ubuntu es ligeramente diferente de la apariencia de un Windows X86 real. Entonces, me gustaría explicar el método de reenvío de puertos de Virtual Box para probar Jekyll en el navegador X86 de Windows.</p>
+<h2 id="ejecutando-jekyll-localmente-en-ubuntu-vm">Ejecutando Jekyll localmente en Ubuntu VM</h2>
+<p>Primero, verifique la dirección IP de la interfaz de red usando <code class="language-plaintext highlighter-rouge">ifconfig</code> en la VM de Ubuntu. En mi caso, la dirección IP es <code class="language-plaintext highlighter-rouge">10.0.2.15</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>$ ifconfig
+..
+enp0s3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::e1f0:30d0:1e9b:bafc  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 08:00:27:07:7a:96  txqueuelen 1000  (Ethernet)
+        RX packets 9737  bytes 12163823 (12.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3811  bytes 1289032 (1.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Para probar Jekyll, ejecútelo e ingrese la dirección IP confirmada anteriormente con la opción <code class="language-plaintext highlighter-rouge">--host</code>.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--host</span> 10.0.2.15
+Configuration file: /home/myaccount/my_jekyll_root/_config.yml
+ Theme Config file: /home/myaccount/my_jekyll_root/_config.yml
+            Source: /home/myaccount/my_jekyll_root
+       Destination: /home/myaccount/my_jekyll_root/_site
+ Incremental build: disabled. Enable with <span class="nt">--incremental</span>
+      Generating... 
+                    <span class="k">done in </span>1.483 seconds.
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">'/home/myaccount/my_jekyll_root'</span>
+    Server address: http://10.0.2.15:4000/
+  Server running... press ctrl-c to stop.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="configure-el-reenvío-de-puertos-para-ubuntu-vm-en-el-administrador-de-virtual-box">Configure el reenvío de puertos para Ubuntu VM en el administrador de Virtual Box</h2>
+<p>En la configuración de red de Ubuntu VM en el administrador de Virtual Box, agregue el reenvío de puertos ingresando lo siguiente.</p>
+
+<p>La dirección “IP invitada” es la dirección IP confirmada en la máquina virtual de Ubuntu.</p>
+<ul>
+  <li><strong>Nombre</strong>: (Nombre que desees)</li>
+  <li><strong>Protocolo</strong>: TCP</li>
+  <li><strong>IP del host</strong>: 127.0.0.1</li>
+  <li><strong>IP de invitado</strong>: 10.0.2.15 (dirección IP de la VM de Ubuntu confirmada anteriormente)</li>
+  <li><strong>Puerto de invitados</strong>: 4000</li>
+</ul>
+
+<p><img src="/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" alt="VirtualBox Manager - Reglas de reenvío de puertos" />
+<em>VirtualBox Manager - Reglas de reenvío de puertos</em></p>
+
+<p>Ahora puedes probar Jekyll conectándote a <code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code> en tu navegador X86 de Windows.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/es-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png" />
+      <media:content url="https://unclesnote.com/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Agregar un nuevo disco duro a la máquina virtual Ubuntu (20.04) en VirtualBox]]></title>
+      <link>https://unclesnote.com/es/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</link>
+      <guid>https://unclesnote.com/es/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:45 +0900</pubDate>
+      <category><![CDATA[ubuntu,Caja virtual]]></category>
+      <tag><![CDATA[ubuntu,VirtualBox,Gpartido,fstab,UUID]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <description><![CDATA[Explicaremos cómo crear, adjuntar y usar discos en la VM Ubuntu (20.04) de Oracle VM VirtualBox. Un resumen aproximado del procedimiento es el siguiente.]]></description>
+      <content:encoded><![CDATA[<p>Explicaremos cómo crear, adjuntar y usar discos en la VM Ubuntu (20.04) de Oracle VM VirtualBox.</p>
+
+<p>Un resumen aproximado del procedimiento es el siguiente.</p>
+<ul>
+  <li>Cree un disco duro virtual en Virtual Box Manager y conéctelo a la máquina virtual de Ubuntu</li>
+  <li>Inicializar y formatear dispositivos de disco conectados en la interfaz GUI de Ubuntu</li>
+  <li>Haga que el dispositivo de disco esté disponible cada vez que se inicie Ubuntu.</li>
+</ul>
+
+<h2 id="1-cree-una-imagen-de-disco-y-adjúntela-a-una-máquina-virtual-ubuntu">1. Cree una imagen de disco y adjúntela a una máquina virtual Ubuntu</h2>
+<p>Las imágenes de disco se pueden crear a través de “Virtual Media Manager” en el administrador de Virtual Box.</p>
+
+<p>Planeo crear una imagen de 55 GB y hay dos opciones para crear una imagen de disco. La primera es una opción para ocupar la capacidad de mi disco duro tanto como la he usado, y la segunda es crear una opción para ocupar de una sola vez la capacidad planificada desde el principio. Sin embargo, para un funcionamiento estable, crearé 55 GB a la vez con la segunda opción.</p>
+
+<p>Creé un disco duro virtual con la opción “Preasignar tamaño completo”.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" alt="Oracle VM VirtualBox Manager: crear un disco duro virtual" />
+<em>Oracle VM VirtualBox Manager: crear un disco duro virtual</em></p>
+
+<p>Cuando termine de crear la imagen del disco virtual, puede verificar el disco creado en la lista de discos duros una vez transcurrido el tiempo de inicialización de la imagen del disco virtual.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" alt="Oracle VM VirtualBox Manager: inicialización del disco duro virtual en curso" />
+<em>Oracle VM VirtualBox Manager: inicialización del disco duro virtual en curso</em></p>
+
+<p>Ahora agregaremos el disco duro virtual creado a la VM de Ubuntu.</p>
+
+<p>Puede agregar un disco duro usando un controlador SATA en la pestaña “Almacenamiento” de la configuración de Ubuntu VM.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager: agregue un disco duro a Ubuntu VM" />
+<em>Oracle VM VirtualBox Manager: agregue un disco duro a Ubuntu VM</em></p>
+
+<p>Cuando selecciona el disco duro que creó, puede verificar que el disco duro esté adjunto en la sección de información.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager: verifique los discos duros agregados a Ubuntu VM" />
+<em>Oracle VM VirtualBox Manager: verifique los discos duros agregados a Ubuntu VM</em></p>
+
+<h2 id="2-inicialización-del-disco-en-una-vm-ubuntu">2. Inicialización del disco en una VM Ubuntu</h2>
+<p>Desde la perspectiva de la máquina virtual, el disco duro está conectado físicamente a la máquina virtual de Ubuntu.</p>
+
+<p>Ahora vamos a formatear el disco en la VM de Ubuntu. Podemos hacer esto usando el clásico <code class="language-plaintext highlighter-rouge">fdisk</code>, pero procederemos con una herramienta GUI más intuitiva llamada <code class="language-plaintext highlighter-rouge">Gparted</code>.</p>
+
+<p>Instalemos y ejecutemos gparted usando apt.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c"># install gparted</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>gparted
+<span class="c"># run gparted</span>
+gparted
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Después de seleccionar el disco duro creado en la esquina superior derecha de GParted, crearemos una tabla de particiones <code class="language-plaintext highlighter-rouge">msdos</code> y la formatearemos como <code class="language-plaintext highlighter-rouge">ext4</code> según la imagen a continuación.</p>
+
+<p>Aplique la tabla de particiones <code class="language-plaintext highlighter-rouge">msdos</code> a través del menú.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" alt="Ubuntu VM - GParted - crea una tabla de particiones en formato msdos" />
+<em>Ubuntu VM - GParted - crea una tabla de particiones en formato msdos</em></p>
+
+<p>Luego, crearemos una partición. Haga clic derecho en la partición no asignada y cree una partición del sistema de archivos <code class="language-plaintext highlighter-rouge">ext4</code>. Lo configuré en tamaño completo.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" alt="Ubuntu VM - GParted - Crear partición con sistema de archivos ext4" />
+<em>Ubuntu VM - GParted - Crear partición con sistema de archivos ext4</em></p>
+
+<p>Formatee la partición del sistema de archivos ext4 a <code class="language-plaintext highlighter-rouge">etx4</code>.</p>
+
+<p>Luego haga clic en la casilla de verificación verde para aplicar la configuración realizada hasta el momento.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" alt="Ubuntu VM - GParted - Formatear partición a ext4" />
+<em>Ubuntu VM - GParted - Formatear partición a ext4</em></p>
+
+<p>La inicialización del disco duro ahora está completa. Para montar un disco duro de modo que pueda usarse cada vez que se inicia la máquina virtual de Ubuntu, se necesita información de ID de disco única. Haga clic derecho en la partición creada, verifique el <code class="language-plaintext highlighter-rouge">UUID</code> en el menú de información y recuérdelo.</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - Verifique el UUID de la partición del disco" />
+<em>Ubuntu VM - GParted - Verifique el UUID de la partición del disco</em></p>
+
+<h2 id="3-cada-arranque-monte-el-disco">3. Cada arranque, monte el disco.</h2>
+<p>En el estado actual, el dispositivo de disco formateado está listo, pero no hay una ruta a través de la cual se puedan escribir archivos. Entonces, crearemos una ruta conectando mi carpeta específica al dispositivo de disco duro. Esto es “montaje”.</p>
+
+<p>El <code class="language-plaintext highlighter-rouge">UUID</code> identificado en gparted arriba representa el dispositivo de disco duro, y conectaremos este dispositivo a la carpeta <code class="language-plaintext highlighter-rouge">/mnt/data</code> para crear una ruta a través de la cual se puedan escribir archivos. Dado que el disco debe estar disponible cada vez que se inicia Ubuntu, lo describiremos en <code class="language-plaintext highlighter-rouge">/etc/fstab</code>.</p>
+
+<p>La siguiente línea se agregará a <code class="language-plaintext highlighter-rouge">/etc/fstab</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c"># UUID=&lt;hard disk device UUID&gt; &lt;folder where the device will be mounted&gt; ext4    defaults          0       0 </span>
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Luego, crearemos un enlace simbólico desde el <code class="language-plaintext highlighter-rouge">/mnt/data</code> montado a la carpeta <code class="language-plaintext highlighter-rouge">data</code> en el directorio de inicio.</p>
+
+<p>El procedimiento detallado es el siguiente y, si ha completado todos los pasos, reinicie.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> /mnt/data
+<span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /mnt/data
+<span class="nv">$ </span><span class="nb">cd</span> ~/
+<span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /mnt/data data
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/fstab  
+<span class="c">#-----------------------------------------------------------------------------</span>
+<span class="c"># /etc/fstab: static file system information.</span>
+<span class="c">#</span>
+<span class="c"># Use 'blkid' to print the universally unique identifier for a</span>
+<span class="c"># device; this may be used with UUID= as a more robust way to name devices</span>
+<span class="c"># that works even if disks are added and removed. See fstab(5).</span>
+<span class="c">#</span>
+<span class="c"># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;</span>
+<span class="c"># / was on /dev/sda5 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>76a80216-1031-4871-945c-4c8de2845136 /               ext4    <span class="nv">errors</span><span class="o">=</span>remount-ro 0       1
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+<span class="c"># /boot/efi was on /dev/sda1 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>A4B5-D201  /boot/efi       vfat    <span class="nb">umask</span><span class="o">=</span>0077      0       1
+/swapfile                                 none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/es-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" medium="image" /></item>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Cómo especificar el color al enviar registros a la terminal o consola]]></title>
+      <link>https://unclesnote.com/es/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</link>
+      <guid>https://unclesnote.com/es/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:42 +0900</pubDate>
+      <category><![CDATA[ubuntu,Común]]></category>
+      <tag><![CDATA[CódigoVS,Terminal,Consoladedepuración,Producción,ubuntu,Común]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <description><![CDATA[Al desarrollar software, los registros le ayudan a comprobar el funcionamiento y encontrar la causa de los problemas. Sería útil si los registros de errores]]></description>
+      <content:encoded><![CDATA[<p>Al desarrollar software, los registros le ayudan a comprobar el funcionamiento y encontrar la causa de los problemas. Sería útil si los registros de errores críticos o niveles de advertencia tuvieran colores que fueran fáciles de encontrar.</p>
+
+<p>Puede configurar el color del texto del registro en el IDE que está utilizando, como VS Code o Visual Studio, pero si el software se ejecuta sin un IDE o en un entorno de compilación cruzada como Linux, la configuración no se aplicará. . Por lo tanto, presentaré un método para configurar el color del texto independientemente de la perspectiva del terminal.</p>
+<blockquote class="prompt-info">
+  <p><strong>Cómo cambiar el color del texto de salida en Visual Studio Code</strong><br />
+En el caso de VS Code, puede cambiar el color de la consola de depuración o la ventana de salida configurando el valor del color en <code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code> en <code class="language-plaintext highlighter-rouge">Configuración &gt; Usuario &gt; Workbanch &gt; Apariencia &gt; Editar en Settings.json</code>.<br />
+Para conocer los parámetros de <code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code>, consulte el siguiente enlace.</p>
+
+  <p><a href="https://code.visualstudio.com/api/references/theme-color" target="_blank">https://code.visualstudio.com/api/references/theme-color</a></p>
+</blockquote>
+<h2 id="cómo-configurar-el-color-del-texto">Cómo configurar el color del texto</h2>
+<p>Para cambiar el color del texto, debe centrar el texto que desea y agregar el código a continuación al principio y al final.</p>
+<ul>
+  <li><strong>Inicio</strong>: <code class="language-plaintext highlighter-rouge">(Carácter de escape)[(Código de estilo);(Color del texto);(Color de fondo)m</code></li>
+  <li><strong>Texto</strong>: <code class="language-plaintext highlighter-rouge">(Texto que deseas)</code></li>
+  <li><strong>Fin</strong>: <code class="language-plaintext highlighter-rouge">(Carácter de escape)[0m</code></li>
+</ul>
+
+<p>Al final, una línea con el color del texto cambiado tendrá el formato siguiente.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">(Carácter de escape)[(Código de estilo);(Color del texto);(Color de fondo)m</code> <code class="language-plaintext highlighter-rouge">(texto que desea)</code> <code class="language-plaintext highlighter-rouge">(Carácter de escape)[0m</code></li>
+</ul>
+
+<p>A continuación se muestra un ejemplo de la cadena “Soy texto” en texto blanco en negrita sobre fondo negro.</p>
+
+<p>Para conocer el significado de cada número, consulte el código predefinido en la sección posterior.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\u001b[1;37;40mI am text\u001b[0m
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Veamos primero la tabla a continuación. Se enumera cada elemento para cambiar el color del texto.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Elemento</th>
+      <th>Obligatorio</th>
+      <th>Comentario</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Personaje de escape</td>
+      <td>Sí</td>
+      <td>Utilice caracteres de escape Unicode, octales o hexadecimales, lo que más le convenga.</td>
+    </tr>
+    <tr>
+      <td>Código de estilo</td>
+      <td>Opcional</td>
+      <td>Estilos de texto como negrita, parpadeo, atenuado y subrayado.</td>
+    </tr>
+    <tr>
+      <td>Color de texto</td>
+      <td>Opcional</td>
+      <td>Color del texto seleccionando entre códigos de color ya definidos.</td>
+    </tr>
+    <tr>
+      <td>Color del texto (primer plano)</td>
+      <td>Opcional</td>
+      <td>Color de fondo del texto seleccionando entre códigos de color ya definidos.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">(Carácter de escape)[0m</code></td>
+      <td>Sí</td>
+      <td>Restablece el color y estilo del texto una vez configurado.<br /> Si desea cambiar el color de varias líneas, puede restablecer el color del texto más tarde en la ubicación deseada.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Aunque el <code class="language-plaintext highlighter-rouge">Escape Chacter</code> es obligatorio, puede utilizar uno de los tres que se describen más adelante dependiendo del método de expresión.</p>
+
+<p>Puede agregar el <code class="language-plaintext highlighter-rouge">Estilo</code>, el <code class="language-plaintext highlighter-rouge">Color del texto</code> y el <code class="language-plaintext highlighter-rouge">Color de fondo</code> según sus gustos separándolos con <code class="language-plaintext highlighter-rouge">;</code>. Más adelante explicaremos las opciones que se pueden expresar, pero el orden no importa porque los números que representan cada una son únicos.</p>
+
+<p>Y finalmente, restablezca el color y estilo del texto usando <code class="language-plaintext highlighter-rouge">(Carácter de escape)[0m</code>`. A menos que se reinicie, los colores y estilos de texto posteriores continuarán.</p>
+
+<p>Si desea cambiar el color del texto en un script de shell, debe agregar la opción <code class="language-plaintext highlighter-rouge">-e</code> al comando <code class="language-plaintext highlighter-rouge">echo</code> para permitir la entrada de barra invertida.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[34m I Am Blue Text ! </span><span class="se">\0</span><span class="s2">33[0m"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="códigos-de-color-y-estilo">Códigos de color y estilo</h2>
+<h3 id="1-personaje-de-escape">1. Personaje de escape</h3>
+<p>El carácter de escape a continuación es el mismo que 27 en el código ASCII, y el método de expresión es el siguiente y puede usar cualquiera.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">\u001b</code>: Carácter de escape Unicode. Representa el carácter de escape utilizando un punto de código Unicode hexadecimal de 4 dígitos después de <code class="language-plaintext highlighter-rouge">\u</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">\033</code>: Esto representa el carácter de escape usando notación octal</li>
+  <li><code class="language-plaintext highlighter-rouge">\x1b</code>: Esto representa el carácter de escape usando notación hexadecimal.</li>
+</ul>
+
+<h3 id="2-estilo">2. Estilo</h3>
+<p>Puedes elegir un estilo de texto, pero dudo que sea necesario. Los registros deben ser fáciles de leer.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1</code>: Negrita (o color intenso)</li>
+  <li><code class="language-plaintext highlighter-rouge">2</code>: tenue (o débil)</li>
+  <li><code class="language-plaintext highlighter-rouge">4</code>: subrayado</li>
+  <li><code class="language-plaintext highlighter-rouge">5</code>: Parpadeo (texto que parpadea rápidamente)</li>
+  <li><code class="language-plaintext highlighter-rouge">7</code>: Invertir (intercambiar colores de primer plano y de fondo)</li>
+  <li><code class="language-plaintext highlighter-rouge">8</code>: Oculto (texto invisible)</li>
+</ul>
+
+<h3 id="3-color-del-texto-primer-plano">3. Color del texto (primer plano)</h3>
+<p>Estos son códigos que cambian el color del texto. Piense en ello como anulando los valores predeterminados del software de cliente de terminal que está utilizando.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">30</code>: Negro</li>
+  <li><code class="language-plaintext highlighter-rouge">31</code>: Rojo</li>
+  <li><code class="language-plaintext highlighter-rouge">32</code>: Verde</li>
+  <li><code class="language-plaintext highlighter-rouge">33</code>: Amarillo</li>
+  <li><code class="language-plaintext highlighter-rouge">34</code>: Azul</li>
+  <li><code class="language-plaintext highlighter-rouge">35</code>: Magenta</li>
+  <li><code class="language-plaintext highlighter-rouge">36</code>: cian</li>
+  <li><code class="language-plaintext highlighter-rouge">37</code>: Blanco</li>
+</ul>
+
+<h3 id="4-color-de-fondo">4. Color de fondo</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">40</code>: fondo negro</li>
+  <li><code class="language-plaintext highlighter-rouge">41</code>: fondo rojo</li>
+  <li><code class="language-plaintext highlighter-rouge">42</code>: fondo verde</li>
+  <li><code class="language-plaintext highlighter-rouge">43</code>: fondo amarillo</li>
+  <li><code class="language-plaintext highlighter-rouge">44</code>: fondo azul</li>
+  <li><code class="language-plaintext highlighter-rouge">45</code>: fondo magenta</li>
+  <li><code class="language-plaintext highlighter-rouge">46</code>: fondo cian</li>
+  <li><code class="language-plaintext highlighter-rouge">47</code>: fondo blanco</li>
+</ul>
+
+<h3 id="5-restablecer-color">5. Restablecer color</h3>
+<p>Si no restablece el color y el estilo del texto, continuará como se configuró inicialmente.</p>
+
+<p>Normalmente, se agrega al final del texto en el formato “(Carácter de escape) [0m”.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0</code>: Restablece todos los estilos y colores a los valores predeterminados</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/es-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png" /></item></channel>
+</rss>

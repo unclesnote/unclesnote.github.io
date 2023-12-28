@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231102005314
-thumbnail: /assets/images/231102005314/ko-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png
-lang: ko
----

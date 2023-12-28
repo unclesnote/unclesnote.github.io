@@ -1,8 +1,0 @@
----
-title: "문제해결"
-layout: tag
-ro_ref: ko-tag-문제해결
-tag: "문제해결"
-tag_web: "문제해결"
-lang: ko
----

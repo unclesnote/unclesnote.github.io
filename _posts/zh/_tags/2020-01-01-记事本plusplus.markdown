@@ -1,8 +1,0 @@
----
-title: "记事本PlusPlus"
-layout: tag
-ro_ref: zh-tag-记事本PlusPlus
-tag: "记事本PlusPlus"
-tag_web: "记事本plusplus"
-lang: zh
----

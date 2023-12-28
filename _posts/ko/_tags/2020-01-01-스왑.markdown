@@ -1,8 +1,0 @@
----
-title: "스왑"
-layout: tag
-ro_ref: ko-tag-스왑
-tag: "스왑"
-tag_web: "스왑"
-lang: ko
----

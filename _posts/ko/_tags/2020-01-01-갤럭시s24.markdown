@@ -1,8 +1,0 @@
----
-title: "갤럭시S24"
-layout: tag
-ro_ref: ko-tag-갤럭시S24
-tag: "갤럭시S24"
-tag_web: "갤럭시s24"
-lang: ko
----

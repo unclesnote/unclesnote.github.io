@@ -1,8 +1,0 @@
----
-title: "携帯"
-layout: category
-ro_ref: ja-category-携帯
-category: "携帯"
-category_web: "携帯"
-lang: ja
----

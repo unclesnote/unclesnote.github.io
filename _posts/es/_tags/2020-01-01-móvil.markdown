@@ -1,8 +1,0 @@
----
-title: "Móvil"
-layout: tag
-ro_ref: es-tag-Móvil
-tag: "Móvil"
-tag_web: "móvil"
-lang: es
----

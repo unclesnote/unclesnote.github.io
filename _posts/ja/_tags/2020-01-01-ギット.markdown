@@ -1,8 +1,0 @@
----
-title: "ギット"
-layout: tag
-ro_ref: ja-tag-ギット
-tag: "ギット"
-tag_web: "ギット"
-lang: ja
----

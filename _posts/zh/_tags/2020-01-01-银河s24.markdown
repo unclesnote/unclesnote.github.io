@@ -1,8 +1,0 @@
----
-title: "银河S24"
-layout: tag
-ro_ref: zh-tag-银河S24
-tag: "银河S24"
-tag_web: "银河s24"
-lang: zh
----

@@ -1,8 +1,0 @@
----
-title: "젠킨스"
-layout: category
-ro_ref: ko-category-젠킨스
-category: "젠킨스"
-category_web: "젠킨스"
-lang: ko
----

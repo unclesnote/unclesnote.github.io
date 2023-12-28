@@ -1,8 +1,0 @@
----
-title: "鼠标宏"
-layout: tag
-ro_ref: zh-tag-鼠标宏
-tag: "鼠标宏"
-tag_web: "鼠标宏"
-lang: zh
----

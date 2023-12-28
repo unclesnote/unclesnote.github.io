@@ -1,8 +1,0 @@
----
-title: "ツール"
-layout: tag
-ro_ref: ja-tag-ツール
-tag: "ツール"
-tag_web: "ツール"
-lang: ja
----

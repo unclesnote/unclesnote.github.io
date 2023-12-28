@@ -1,8 +1,0 @@
----
-title: "문제 해결"
-layout: category
-ro_ref: ko-category-문제 해결
-category: "문제 해결"
-category_web: "문제-해결"
-lang: ko
----

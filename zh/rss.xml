@@ -1,0 +1,2398 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:georss="http://www.georss.org/georss" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" xmlns:media="http://search.yahoo.com/mrss/"
+	>
+<channel>
+    
+
+    <title><![CDATA[叔叔的笔记]]></title>
+    <atom:link href="https://unclesnote.com/zh/rss.xml" rel="self" type="application/rss+xml" />
+    <link>https://unclesnote.com/zh/</link>
+    <image>
+      <url>https://unclesnote.com/assets/img/site.png</url>
+      <title><![CDATA[叔叔的笔记]]></title>
+      <link>https://unclesnote.com/zh/</link>
+    </image>
+    <language>zh</language>
+    <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
+    <generator>https://unclesnote.com</generator>
+    <lastBuildDate>Wed, 27 Dec 2023 19:30:10 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[创建 Telegram 机器人并发送消息]]></title>
+      <link>https://unclesnote.com/zh/231227193010/create_a_telegram_bot_and_send_a_message</link>
+      <guid>https://unclesnote.com/zh/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+      <category><![CDATA[乌班图,詹金斯,管道]]></category>
+      <tag><![CDATA[乌班图,詹金斯,管道,sendMessage,getUpdates,Telegram]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231227193010/create_a_telegram_bot_and_send_a_message</guid>
+      <description><![CDATA[Telegram提供了相对容易使用的API服务。因此，它可以用作通知 CI/CD 系统中的事件的简单工具，其中安全性不是主要问题。我正在尝试将 Telegram 集成到 Jenkins 系统中，我想介绍一下创建 Telegram 机器人的基本方法。]]></description>
+      <content:encoded><![CDATA[<p>Telegram提供了相对容易使用的API服务。因此，它可以用作通知 CI/CD 系统中的事件的简单工具，其中安全性不是主要问题。我正在尝试将 Telegram 集成到 Jenkins 系统中，我想介绍一下创建 Telegram 机器人的基本方法。</p>
+<h2 id="概述">概述</h2>
+<p>要发送 Telegram 消息，需要与 Telegram 机器人匹配的<code class="language-plaintext highlighter-rouge">token</code>和指示聊天室的<code class="language-plaintext highlighter-rouge">chatid</code>。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">token</code> ：您在 Telegram 中创建机器人时可以看到这个</li>
+  <li><code class="language-plaintext highlighter-rouge">chatid</code> ：找到令牌后，您可以使用令牌调用 Telegram API <code class="language-plaintext highlighter-rouge">getUpdates</code> 来找到它。</li>
+</ul>
+
+<p>总之，如果您同时找到了<code class="language-plaintext highlighter-rouge">token</code>和<code class="language-plaintext highlighter-rouge">chatid</code>，则可以通过调用以下 URL 向 Telegram 聊天室发送一条<code class="language-plaintext highlighter-rouge">im bot</code>消息。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="创建-telegram-机器人---令牌">创建 Telegram 机器人 - <strong>令牌</strong></h2>
+<p>在 Telegram 上找到<code class="language-plaintext highlighter-rouge">botfather</code>并进入聊天室。 BotFather 是一个服务机器人，可以创建/管理 Telegram 机器人。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" alt="Telegram - 搜索`BotFather`" />
+<em>Telegram - 搜索<code class="language-plaintext highlighter-rouge">BotFather</code></em></p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">newbot</code>命令创建一个新机器人。</p>
+
+<p>BotFather 询问机器人的名称和用户名。实际上，<code class="language-plaintext highlighter-rouge">用户名</code>是您与机器人进行通信的聊天室。如果成功创建 Telegram 机器人，BotFather 会提供一个<code class="language-plaintext highlighter-rouge">令牌</code>，它是与机器人通信的参数。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" alt="Telegram - `BotFather` - `newbot`" />
+<em>Telegram - <code class="language-plaintext highlighter-rouge">BotFather</code> - <code class="language-plaintext highlighter-rouge">newbot</code></em></p>
+
+<p>Token是使用Telegram API控制机器人的最基本凭证。因此，请仔细记录下来，以免被公开。</p>
+<h2 id="telegram-getupdates-api-调用---chatid">Telegram <strong>getUpdates</strong> API 调用 - <strong>chatid</strong></h2>
+<p>如果 BotFather 创建了一个机器人，请在 Telegram 中找到该机器人并向其发送消息。我发了一条消息说<code class="language-plaintext highlighter-rouge">你好</code>。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" alt="Telegram - 在 Bot 聊天室输入`hello`" />
+<em>Telegram - 在 Bot 聊天室输入<code class="language-plaintext highlighter-rouge">hello</code></em></p>
+
+<p>然后，在您使用的 Web 浏览器(例如 Chrome 或 Edge)中，通过将下面的 URL 与创建上面的机器人时找到的令牌相结合来调用下面的 URL。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/getUpdates
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/getUpdates
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后浏览器中会显示一个JSON格式的字符串，<code class="language-plaintext highlighter-rouge">chat</code>中的<code class="language-plaintext highlighter-rouge">id</code>就是<code class="language-plaintext highlighter-rouge">chatid</code>。注意<code class="language-plaintext highlighter-rouge">chatid</code>。如果您使用 Edge 浏览器，您可以看到行对齐的 JSON 字符串。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" alt="互联网浏览器 - Telegram - `getUpdates`" />
+<em>互联网浏览器 - Telegram - <code class="language-plaintext highlighter-rouge">getUpdates</code></em></p>
+
+<h2 id="通过浏览器发送-telegram-消息---sendmessage-api">通过浏览器发送 Telegram 消息 - <strong>sendMessage</strong> API</h2>
+<p>总之，我们将使用 Jenkins 插件发送 Telegram 消息，但出于测试目的，我们将使用 <code class="language-plaintext highlighter-rouge">sendMessage</code> Telegram API 将消息发送到浏览器。</p>
+
+<p>API如下，您可以使用上述步骤中找到的token和chatid发送Telegram消息。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>https://api.telegram.org/bot&lt;token&gt;/sendMessage?chat_id<span class="o">=</span>&lt;chatid&gt;&amp;text<span class="o">=</span>im bot
+
+<span class="c"># example</span>
+- token: 6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb
+- chatid : 1230000000
+
+https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendMessage?chat_id<span class="o">=</span>1230000000&amp;text<span class="o">=</span>im bot
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>效果好吗？我能够在 Telegram 上查看消息<code class="language-plaintext highlighter-rouge">im bot</code>，如下所示。</p>
+
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="Telegram - `sendMessage` API" />
+<em>Telegram - <code class="language-plaintext highlighter-rouge">sendMessage</code> API</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/zh-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-botfather-newbot.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[从 Jenkins 管道脚本发送 Telegram 消息]]></title>
+      <link>https://unclesnote.com/zh/231227143211/sending_telegram_message_from_jenkins_pipeline_script</link>
+      <guid>https://unclesnote.com/zh/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Wed, 27 Dec 2023 14:32:11 +0900</pubDate>
+      <category><![CDATA[乌班图,詹金斯,管道]]></category>
+      <tag><![CDATA[詹金斯,电报,curl,乌班图,詹金斯,管道]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231227143211/sending_telegram_message_from_jenkins_pipeline_script</guid>
+      <description><![CDATA[当然，Jenkins 有 Telegram 插件，但我个人不想经历反复试验。自从插件发布以来已经至少两年了。我将在 Linux 中使用`curl`发送电报消息。]]></description>
+      <content:encoded><![CDATA[<p>当然，Jenkins 有 Telegram 插件，但我个人不想经历反复试验。自从插件发布以来已经至少两年了。我将在 Linux 中使用<code class="language-plaintext highlighter-rouge">curl</code>发送电报消息。</p>
+
+<p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - Telegram 插件" />
+<em>Jenkins - Telegram 插件</em></p>
+
+<h2 id="用于发送-telegram-消息的-groovy-函数">用于发送 Telegram 消息的 Groovy 函数</h2>
+<p>我创建了两个 Groovy 函数以在 Jenkins 脚本中使用。 <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_message</code> 是一个通过简单插入字符串来发送 Telegram 消息的函数。另一个 <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_file</code> 是一个将文本文件的内容作为 Telegram 消息发送的函数。</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+</pre></td><td class="rouge-code"><pre><span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_message</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">message</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_message, title=${title}, message=${message}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -X POST \
+                -d chat_id=${chatid} \
+                -d parse_mode=HTML \
+                -d text='&lt;b&gt;${title}&lt;/b&gt;\n\n${message}' \
+                https://api.telegram.org/bot${token}/sendMessage
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendMessage_fileContents</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, title=${title}, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="kt">boolean</span> <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="kt">def</span> <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">filetext</span> <span class="o">=</span> <span class="n">sh</span><span class="o">(</span><span class="nl">script:</span> <span class="s2">"cat ${file}"</span><span class="o">,</span> <span class="nl">returnStdout:</span> <span class="kc">true</span><span class="o">).</span><span class="na">trim</span><span class="o">()</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\n${filetext}"</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="n">filecontents</span> <span class="o">=</span> <span class="s2">"&lt;b&gt;${file}&lt;/b&gt;\nFile does not exist"</span>
+        <span class="n">isFileExist</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="n">title</span><span class="o">,</span> <span class="n">filecontents</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+
+    <span class="k">return</span> <span class="n">isFileExist</span>
+<span class="o">}</span>
+
+<span class="c1">// -----------------------------------------------</span>
+<span class="c1">// func_telegram_sendDocument_file</span>
+<span class="c1">// -----------------------------------------------</span>
+<span class="kt">def</span> <span class="nf">func_telegram_sendDocument_file</span><span class="o">(</span><span class="n">file</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">echo</span> <span class="s2">"### func_telegram_sendMessage_file, file=${file}, token=${token}, chatid=${chatid}"</span>
+
+    <span class="k">if</span> <span class="o">(</span><span class="n">fileExists</span><span class="o">(</span><span class="s2">"${file}"</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="n">sh</span> <span class="s2">"""
+        curl -k \
+        -F chat_id=${chatid} \
+        -F document=@\"${file}\" \
+                https://api.telegram.org/bot${token}/sendDocument
+        """</span>
+    <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">currentBuild</span><span class="o">.</span><span class="na">result</span> <span class="o">=</span> <span class="s1">'SUCCESS'</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="o">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="o">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>虽然我在通过<code class="language-plaintext highlighter-rouge">curl</code>发送 Telegram 消息时尚未遇到错误，但我用<code class="language-plaintext highlighter-rouge">try-catch</code>语句包装了curl语句，以防止管道进程因错误而停止。我个人认为管道处理比发送 Telegram 消息具有更高的优先级。</p>
+<h2 id="在管道的步骤内使用函数">在<strong>管道</strong>的<strong>步骤</strong>内使用函数</h2>
+<p>下面是如何在<code class="language-plaintext highlighter-rouge">pipeline</code>的<code class="language-plaintext highlighter-rouge">steps</code>中调用上面创建的函数。我对 Telegram 机器人的<code class="language-plaintext highlighter-rouge">token</code>和<code class="language-plaintext highlighter-rouge">chatid</code>进行了硬编码。如果以后有需要，我会尝试使用Jenkins的<code class="language-plaintext highlighter-rouge">Credentials</code>功能来实现。</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre><span class="n">steps</span> <span class="o">{</span>
+    <span class="n">script</span> <span class="o">{</span>
+        <span class="kt">def</span> <span class="n">token</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_TOKEN</span><span class="o">;</span>
+        <span class="kt">def</span> <span class="n">chatid</span> <span class="o">=</span> <span class="n">g_si</span><span class="o">.</span><span class="na">TELEGRAM_CHATID</span><span class="o">;</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">chatid</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        
+        <span class="n">func_telegram_sendMessage_message</span><span class="o">(</span><span class="s2">"im title"</span><span class="o">,</span> <span class="s2">"im message"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="kt">def</span> <span class="n">rst</span> <span class="o">=</span> <span class="n">func_telegram_sendMessage_fileContents</span><span class="o">(</span><span class="s2">"im file title"</span><span class="o">,</span> <span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">rst</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">)</span> <span class="o">{</span>
+            <span class="n">func_telegram_sendMessage_file</span><span class="o">(</span><span class="s2">"./_report/aa.txt"</span><span class="o">,</span> <span class="n">token</span><span class="o">,</span> <span class="n">chatid</span><span class="o">)</span>
+        <span class="o">}</span>                        
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/zh-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png" />
+      <media:content url="https://unclesnote.com/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[在 Synology NAS Docker 上设置 Jenkins]]></title>
+      <link>https://unclesnote.com/zh/231223003139/setting_up_jenkins_on_synology_nas_docker</link>
+      <guid>https://unclesnote.com/zh/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:39 +0900</pubDate>
+      <category><![CDATA[乌班图,詹金斯,设置]]></category>
+      <tag><![CDATA[乌班图,码头工人,詹金斯,设置]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231223003139/setting_up_jenkins_on_synology_nas_docker</guid>
+      <description><![CDATA[CI/CD（持续集成/持续部署）工具有很多，Jenkins 是没有许可证限制且开源的有用工具之一。我想谈谈如何在 Synology NAS Docker 上安装 Jenkins。]]></description>
+      <content:encoded><![CDATA[<p><strong>CI/CD(持续集成/持续部署)</strong>工具有很多，Jenkins 是没有许可证限制且开源的有用工具之一。我想谈谈如何在 Synology NAS Docker 上安装 Jenkins。</p>
+<ul>
+  <li>https://pkg.jenkins.io/debian</li>
+</ul>
+
+<h2 id="基础环境">基础环境</h2>
+<p>Jenkins 需要 JDK 版本 8 或更高版本才能运行。安装 JDK 版本 11。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="rouge-code"><pre>apt-get update
+apt-get <span class="nb">install</span> <span class="nt">-y</span> openjdk-11-jdk
+
+java <span class="nt">-version</span>
+<span class="c"># + --------------------------------------------------------</span>
+openjdk version <span class="s2">"11.0.21"</span> 2023-10-17
+OpenJDK Runtime Environment <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04<span class="o">)</span>
+OpenJDK 64-Bit Server VM <span class="o">(</span>build 11.0.21+9-post-Ubuntu-0ubuntu120.04, mixed mode, sharing<span class="o">)</span>
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="安装詹金斯包">安装詹金斯包</h2>
+<p>要使用APT安装Jenkins，必须将服务器信息添加到APT中。添加Jenkins服务器信息后，apt update时出现错误，说没有key。使用错误消息中显示的密钥将密钥添加到<code class="language-plaintext highlighter-rouge">apt-key</code>。就我而言，密钥是<code class="language-plaintext highlighter-rouge">5BA31D57EF5975CA</code>。</p>
+
+<p>将关键信息添加到 APT 后，安装 Jenkins。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-q</span> <span class="nt">-O</span> - https://pkg.jenkins.io/debian/jenkins-ci.org.key | <span class="nb">sudo </span>apt-key add -
+<span class="nb">echo </span>deb http://pkg.jenkins.io/debian-stable binary/ | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/jenkins.list
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+...
+W: GPG error: https://pkg.jenkins.io/debian-stable binary/ Release: The following signatures couldnt be verified because the public key is not available: NO_PUBKEY 5BA31D57EF5975CA
+E: The repository <span class="s1">'http://pkg.jenkins.io/debian-stable binary/ Release'</span> is not signed.
+...
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-key adv <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+<span class="c"># + --------------------------------------------------------</span>
+Executing: /tmp/apt-key-gpghome.d7qO7VDcMV/gpg.1.sh <span class="nt">--keyserver</span> keyserver.ubuntu.com <span class="nt">--recv-keys</span> 5BA31D57EF5975CA
+gpg: key 5BA31D57EF5975CA: public key <span class="s2">"Jenkins Project &lt;jenkinsci-board@googlegroups.com&gt;"</span> imported
+gpg: Total number processed: 1
+gpg:               imported: 1
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get update
+<span class="c"># + --------------------------------------------------------</span>
+Ign:1 https://pkg.jenkins.io/debian-stable binary/ InRelease
+Get:2 https://pkg.jenkins.io/debian-stable binary/ Release <span class="o">[</span>2044 B]
+Get:3 https://pkg.jenkins.io/debian-stable binary/ Release.gpg <span class="o">[</span>833 B]
+Hit:4 http://archive.ubuntu.com/ubuntu focal InRelease
+Hit:5 http://archive.ubuntu.com/ubuntu focal-updates InRelease
+Get:6 https://pkg.jenkins.io/debian-stable binary/ Packages <span class="o">[</span>29.6 kB]
+Hit:7 http://archive.ubuntu.com/ubuntu focal-backports InRelease
+Hit:8 http://security.ubuntu.com/ubuntu focal-security InRelease
+Fetched 32.5 kB <span class="k">in </span>2s <span class="o">(</span>19.3 kB/s<span class="o">)</span>
+Reading package lists... Done
+<span class="c"># - --------------------------------------------------------</span>
+
+apt-get <span class="nb">install </span>jenkins
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>用于将 Jenkins 连接到 Web 的端口号在<code class="language-plaintext highlighter-rouge">/etc/default/jenkins</code>文件中的<code class="language-plaintext highlighter-rouge">HTTP_PORT</code>中定义。如果需要更改端口号，可以将其从<code class="language-plaintext highlighter-rouge">8080</code>更改为所需的值。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre>
+vi /etc/default/jenkins
+<span class="c"># + --------------------------------------------------------</span>
+<span class="c"># port for HTTP connector (default 8080; disable with -1)</span>
+<span class="nv">HTTP_PORT</span><span class="o">=</span>8080
+<span class="c"># - --------------------------------------------------------</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="配置-synology-nas-容器端口并运行-jenkins">配置 Synology NAS 容器端口并运行 Jenkins</h2>
+<p>然后，在 Synology NAS GUI 中停止 Ubuntu 容器并设置外部连接到 Jenkins 的端口。我将容器的<code class="language-plaintext highlighter-rouge">8080</code>端口映射到<code class="language-plaintext highlighter-rouge">48080</code>端口。</p>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" alt="Synology NAS GUI - Docker - Jenkins 端口设置" />
+<em>Synology NAS GUI - Docker - Jenkins 端口设置</em></p>
+
+<p>启动 Ubuntu 容器并运行 Jenkins 服务。简而言之，如果 Ubuntu Docker 停止并重新启动，则需要再次运行 Jenkins 服务。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sleep </span>10
+service jenkins restart
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后，使用 Web 浏览器连接到 Jenkins。在我的例子中，分配给 Synology NAS 的 IP 地址是<code class="language-plaintext highlighter-rouge">192.168.0.50</code>，端口是上面设置的<code class="language-plaintext highlighter-rouge">48080</code>。</p>
+<ul>
+  <li>http://192.168.0.50:48080/</li>
+</ul>
+
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" alt="詹金斯 - 入门" />
+<em>詹金斯 - 入门</em></p>
+
+<p>使用 /var/lib/jenkins/secrets/initialAdminPassword 文件中写入的初始密码登录，然后继续初始 Jenkins 安装。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">cat</span> /var/lib/jenkins/secrets/initialAdminPassword
+<span class="c"># + --------------------------------------------------------</span>
+72b349dadd5d4a83bac10060e536189e
+<span class="c"># - --------------------------------------------------------</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/zh-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[在 Synology NAS 上的 Ubuntu Docker 中设置 XRDP]]></title>
+      <link>https://unclesnote.com/zh/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</link>
+      <guid>https://unclesnote.com/zh/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Sat, 23 Dec 2023 00:31:38 +0900</pubDate>
+      <category><![CDATA[乌班图,码头工人]]></category>
+      <tag><![CDATA[乌班图,码头工人]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</guid>
+      <description><![CDATA[如果您购买了支持 VMM（虚拟机管理器）功能的入门级 Synology NAS，您可能会很乐意在 VMM 上安装 Windows 或 Ubuntu。然而，您可能会对较长的安装时间和较差的性能感到失望。对于这些人来说，在 Ubuntu Docker 上安装 XRDP 可能是启用具有 GUI 界面的操作系统的最佳选择。我]]></description>
+      <content:encoded><![CDATA[<p>如果您购买了支持 VMM(虚拟机管理器)功能的入门级 Synology NAS，您可能会很乐意在 VMM 上安装 Windows 或 Ubuntu。然而，您可能会对较长的安装时间和较差的性能感到失望。</p>
+
+<p>对于这些人来说，在 Ubuntu Docker 上安装 XRDP 可能是启用具有 GUI 界面的操作系统的最佳选择。</p>
+
+<p>我将解释两种方法。一种是在 Ubuntu VM 的 Docker 中安装 XRDP，另一种是在 Synology NAS 的 Docker 应用程序中创建 Ubuntu 容器，并将其设置为可通过 XRDP 从外部访问。</p>
+<h2 id="ubuntu-vm-上的-xrdp-docker-容器">Ubuntu VM 上的 XRDP docker 容器</h2>
+<h3 id="构建-docker-镜像并运行容器">构建 Docker 镜像并运行容器</h3>
+<p>我们将根据以下信息创建 Docker 镜像。让我们使用以下内容创建<code class="language-plaintext highlighter-rouge">Dockerfile</code>。</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="k">FROM</span><span class="s"> ubuntu:20.04</span>
+
+<span class="k">RUN </span>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+
+<span class="k">RUN </span><span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+
+<span class="k">RUN </span>useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+<span class="k">RUN </span>usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+
+<span class="k">RUN </span>apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+<span class="k">RUN </span>adduser xrdp ssl-cert
+
+<span class="k">RUN </span><span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "</span><span class="se">\
+</span><span class="s1">export GNOME_SHELL_SESSION_MODE=Lubuntu\n</span><span class="se">\
+</span><span class="s1">export XDG_SESSION_TYPE=x11\n</span><span class="se">\
+</span><span class="s1">export XDG_CURRENT_DESKTOP=LXQt\n</span><span class="se">\
+</span><span class="s1">export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n</span><span class="se">\
+</span><span class="s1">" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+<span class="k">EXPOSE</span><span class="s"> 3389</span>
+
+<span class="k">CMD</span><span class="s"> service xrdp start ; bash</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后，我们将根据创建的<code class="language-plaintext highlighter-rouge">Dockerfile</code>构建一个 Docker 镜像。然后，我们将使用创建的映像创建并运行一个容器。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># change permission of docker.sock if there is permission error when docker build</span>
+<span class="nb">sudo chmod </span>666 /var/run/docker.sock<span class="p">;</span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /var/run/docker.sock
+
+<span class="c"># build docker image from Dockerfile</span>
+docker build <span class="nt">-f</span> Dockerfile <span class="nt">-t</span> img-xrdp-lubuntu <span class="nb">.</span>
+
+<span class="c"># create docker container from image </span>
+docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> cond-xrdp-lubuntu <span class="nt">-p</span> 3389:3389 img-xrdp-lubuntu
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="virtualbox-中的端口转发设置">VirtualBox 中的端口转发设置</h3>
+<p>如果要从虚拟机外部访问 XRDP 到 Ubuntu VM 的 Docker 容器，则需要在 Ubuntu VM 上设置端口转发。当您尝试使用 RDP 协议连接到端口<code class="language-plaintext highlighter-rouge">43389</code>时，该端口将映射到 Ubuntu VM 内的端口<code class="language-plaintext highlighter-rouge">3389</code>。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="XRDP 连接的 VirtualBox 端口转发设置" />
+<em>XRDP 连接的 VirtualBox 端口转发设置</em></p>
+
+<h3 id="xrdp-远程访问">XRDP 远程访问</h3>
+<p>然后，通过远程桌面连接连接到地址<code class="language-plaintext highlighter-rouge">127.0.0.1:43389</code>。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" alt="远程桌面连接" />
+<em>远程桌面连接</em></p>
+
+<p>之后，将打开 XRDP 登录窗口，在下面输入<code class="language-plaintext highlighter-rouge">用户名</code>和<code class="language-plaintext highlighter-rouge">密码</code>。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP 登录屏幕" />
+<em>Ubuntu XRDP 登录屏幕</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<h2 id="synology-nas-上的-xrdp-docker-容器">Synology NAS 上的 XRDP Docker 容器</h2>
+<h3 id="docker包安装和容器端口设置">Docker包安装和容器端口设置</h3>
+<p>访问 Synology NAS GUI。然后在套件中心搜索<code class="language-plaintext highlighter-rouge">Docker</code>并安装它。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" alt="Synology NAS GUI - 套件中心 - Docker" />
+<em>Synology NAS GUI - 套件中心 - Docker</em></p>
+
+<p>我下载了 <code class="language-plaintext highlighter-rouge">ubuntu:20.04</code> Docker 映像并基于该映像创建了一个容器。并且在容器端口设置中，打开了用于 ssh 的端口<code class="language-plaintext highlighter-rouge">422</code>和用于 XRDP 的端口<code class="language-plaintext highlighter-rouge">43389</code>。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="Synology NAS GUI - Ubuntu Container - 端口设置" />
+<em>Synology NAS GUI - Ubuntu Container - 端口设置</em></p>
+
+<h3 id="安装-ubuntu-ssh-和-xrdp-软件包">安装 ubuntu SSH 和 XRDP 软件包</h3>
+<p>按照以下命令安装<code class="language-plaintext highlighter-rouge">openssh-server</code>。稍后远程访问 Ubuntu docker 容器时，ssh 将很有用。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+</pre></td><td class="rouge-code"><pre>apt update
+apt <span class="nb">install </span>openssh-server
+apt <span class="nb">install</span> <span class="nt">-y</span> net-tools
+apt <span class="nb">install</span> <span class="nt">-y</span> vim
+
+vim /etc/ssh/sshd_config
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># enable `PermitRootLogin` and set it to `yes`</span>
+PermitRootLogin <span class="nb">yes</span>
+<span class="c"># ----------------------------------------------</span>
+
+passwd root 
+<span class="c"># ----------------------------------------------</span>
+<span class="c"># it will be ssh login password, i have set it as `0000`</span>
+0000
+<span class="c"># ----------------------------------------------</span>
+
+service ssh start
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后，按照以下命令安装 XRDP 软件包。按照以下命令安装 XRDP 时，您可能会看到许多错误消息。这是安装<code class="language-plaintext highlighter-rouge">lubuntu-desktop</code>时与声音、USB 等硬件依赖相关的错误。忽略错误消息并继续。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="rouge-code"><pre>apt update <span class="o">&amp;&amp;</span> <span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive apt <span class="nb">install</span> <span class="nt">-y</span> lubuntu-desktop
+<span class="nb">rm</span> /run/reboot-required<span class="k">*</span>
+useradd <span class="nt">-m</span> testuser <span class="nt">-p</span> <span class="si">$(</span>openssl passwd 1234<span class="si">)</span>
+usermod <span class="nt">-aG</span> <span class="nb">sudo </span>testuser
+apt <span class="nb">install</span> <span class="nt">-y</span> xrdp
+adduser xrdp ssl-cert
+
+<span class="nb">sed</span> <span class="nt">-i</span> <span class="s1">'3 a echo "\
+export GNOME_SHELL_SESSION_MODE=Lubuntu\n\
+export XDG_SESSION_TYPE=x11\n\
+export XDG_CURRENT_DESKTOP=LXQt\n\
+export XDG_CONFIG_DIRS=/etc/xdg/xdg-Lubuntu:/etc/xdg\n\
+" &gt; ~/.xsessionrc'</span> /etc/xrdp/startwm.sh
+
+service xrdp start
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="xrdp-远程访问-1">XRDP 远程访问</h3>
+<p>使用分配给 Synology NAS 的 IP 地址连接到 XRDP，并连接到上面设置的<code class="language-plaintext highlighter-rouge">43389</code>端口。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" alt="MobaXterm - RDP 会话" />
+<em>MobaXterm - RDP 会话</em></p>
+
+<p>之后，将打开 XRDP 登录窗口，在下面输入<code class="language-plaintext highlighter-rouge">用户名</code>和<code class="language-plaintext highlighter-rouge">密码</code>。</p>
+
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP 登录屏幕" />
+<em>Ubuntu XRDP 登录屏幕</em></p>
+
+<ul>
+  <li><strong>username</strong> : testuser</li>
+  <li><strong>password</strong> : 1234</li>
+</ul>
+
+<p>如果 Docker 容器停止并重新启动，则必须重新运行 ssh 和 xrdp 服务。</p>
+
+<p>我不知道确切的原因，但是一旦xrdp服务启动，必须​​在延迟后重新启动xrdp才能正常运行。从第二个 xrdp 连接开始，底部菜单栏显示在 GUI 中。您可以将以下内容保存并用作 bash 脚本。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="s2">"start ssh.."</span>
+service ssh start
+
+<span class="nb">echo</span> <span class="s2">"start xrdp.."</span>
+<span class="nb">rm</span> /var/run/xrdp/xrdp-sesman.pid
+service xrdp start
+<span class="nb">echo</span> <span class="s2">"sleep 10 sec.. "</span>
+<span class="nb">sleep </span>10
+<span class="nb">echo</span> <span class="s2">"restart xrdp"</span>
+service xrdp restart
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="参考">参考</h2>
+<ul>
+  <li>https://youtu.be/0rl5145aEMk?si=aoO3eZyDLPnmCfr</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/zh-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-remote_desktop_connection.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[联想Ideapad Slim3 15ABA7 R5 Windows安装、内存升级]]></title>
+      <link>https://unclesnote.com/zh/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</link>
+      <guid>https://unclesnote.com/zh/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 18:18:12 +0900</pubDate>
+      <category><![CDATA[它,个人电脑]]></category>
+      <tag><![CDATA[它,个人电脑,联想,笔记本电脑]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
+      <description><![CDATA[Lenovo Slim3 15ABA7 R5 安装了 Free DOS 作为默认操作系统，因此必须单独安装 Windows。让我们了解一下安装 Windows 以及如何升级内存的基础知识。]]></description>
+      <content:encoded><![CDATA[<p><strong>Lenovo Slim3 15ABA7 R5</strong>安装了 Free DOS 作为默认操作系统，因此必须单独安装 Windows。</p>
+
+<p>让我们了解一下安装 Windows 以及如何升级内存的基础知识。</p>
+<h2 id="规格">规格</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="联想 Slim3 15ABA7 R5" />
+<em>联想 Slim3 15ABA7 R5</em></p>
+
+<p><strong>Lenovo Slim3 15ABA7 R5</strong>搭载的是Ryzen 5第四代(塞尚)5625U型号作为CPU。简而言之，由于它是一款高性价比笔记本电脑，因此它具有内置显卡，共享CPU中包含的GPU。</p>
+
+<p>虽然价格相对较低，但它是一款性能可用的高性价比笔记本电脑，但其优势在于内存和硬盘的可扩展性。</p>
+<ul>
+  <li><strong>存储设备</strong>：标配NVMe M.2 SSD 256GB + 1个额外2.5英寸SATA硬盘插槽</li>
+  <li><strong>内存</strong>：板载 8GB (DDR4-3200) + 1 个附加插槽</li>
+</ul>
+
+<p>可额外升级1个SATA硬盘和1个DDR4内存。</p>
+<h2 id="准备-windows-usb-记忆棒">准备 Windows USB 记忆棒</h2>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" alt="Ventoy - www.ventoy.net - 全新的可启动 USB 解决方案" />
+<em>Ventoy - www.ventoy.net - 全新的可启动 USB 解决方案</em></p>
+
+<p>一般来说，要安装 Windows，通常会将可启动的 Windows 映像刻录到 U 盘上并进行安装。但是，我们将使用一个名为 <a href="https://www.ventoy.net/en/download.html" target="_blank">Ventoy</a> 的程序。</p>
+
+<p>如果您将 Ventoy 软件刻录到 U 盘，Windows 会将其识别为可移动磁盘。然后，如果您复制下载的 Windows ISO 文件并启动计算机，则可以选择 USB 记忆棒上保存的 ISO 文件并启动。这样做的优点是允许您通过将多个 ISO 文件复制到单个 USB 记忆棒来选择性地启动和安装。</p>
+<ul>
+  <li><strong>如何在 U 盘上安装 Ventoy</strong>：https://www.ventoy.net/en/doc_start.html</li>
+</ul>
+
+<p>Lenovo驱动程序站点支持Windows 10和Windows 11的系统驱动程序，但我安装了Windows 11。</p>
+
+<p>准备一个 U 盘，其中包含复制到 Ventoy 底座的 Windows ISO 文件。</p>
+
+<p>并且，在 Lenovo 驱动程序网站上，<a href="https://pcsupport.lenovo.com/kr/en/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads/driver-list" target="_blank">无线 LAN 驱动程序</a>下载并将其保存到 U 盘。</p>
+
+<p>在安装 Windows 11 的情况下，Windows ISO 映像不包含无线 LAN 驱动程序，因此以后无法通过 Internet 执行初始 Windows 设置。因此，您需要提前准备无线网卡驱动程序。</p>
+<h2 id="bios-设置和-windows-安装">BIOS 设置和 Windows 安装</h2>
+<p>打开联想Slim3 15ABA7 R5的显示屏。笔记本电脑将自动开机，按几次<code class="language-plaintext highlighter-rouge">F2</code>进入 BIOS 设置屏幕。</p>
+
+<p>使用 Ventoy 启动时，会出现与安全验证相关的错误。为防止这种情况，请在<code class="language-plaintext highlighter-rouge">Security</code>菜单中将<code class="language-plaintext highlighter-rouge">Secure Boot</code>更改为<code class="language-plaintext highlighter-rouge">Disable</code>。将 U 盘插入笔记本电脑，保存 BIOS 设置并退出。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" alt="BIOS &gt; 安全 &gt; 安全启动 &gt; 已禁用" />
+<em>BIOS &gt; 安全 &gt; 安全启动 &gt; 已禁用</em></p>
+
+<blockquote class="prompt-info">
+  <p><strong>打开笔记本电脑显示屏时禁用自动开机</strong><br />
+联想可能认为在笔记本电脑显示屏打开时自动打开笔记本电脑显示屏有利于用户的方便。<br />
+如果您不喜欢此功能，可以将 BIOS 中<code class="language-plaintext highlighter-rouge">Configuration</code>菜单中的<code class="language-plaintext highlighter-rouge">Flip to Boot</code>功能更改为<code class="language-plaintext highlighter-rouge">Disabled</code>。</p>
+</blockquote>
+<p>从 Ventory 启动菜单中选择 Windows ISO 并安装 Windows。</p>
+
+<p><strong>Lenovo Slim3 15ABA7 R5</strong>在安装 Windows 11 时不会自动安装无线 LAN 驱动程序。因此，无法再继续进行<code class="language-plaintext highlighter-rouge">网络连接</code>设置阶段。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" alt="Windows 11 安装 - 无法继续进行`网络连接`设置" />
+<em>Windows 11 安装 - 无法继续进行<code class="language-plaintext highlighter-rouge">网络连接</code>设置</em></p>
+
+<p>在该屏幕上，按<code class="language-plaintext highlighter-rouge">Shift + F10</code>打开命令提示符窗口。然后输入<code class="language-plaintext highlighter-rouge">OOBE\BYPASSNRO</code>。</p>
+
+<p>之后，它会自动重新启动，之后您可以跳过<code class="language-plaintext highlighter-rouge">网络连接</code>设置。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>OOBE\BYPASSNRO
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Windows 安装完成后，安装保存在 U 盘上的无线 LAN 驱动程序。然后，访问 <a href="https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads" target="_blank">Lenovo 驱动程序站点</a> 并安装剩余的驱动程序不能安装。</p>
+<h2 id="内存购买">内存购买</h2>
+<p>如下图所示，<strong>Lenovo Slim3 15ABA7 R5</strong>板载8GB DDR4-3200内存。因此，要创建双通道内存配置，请购买 8GB DDR4-3200 时钟内存。</p>
+<ul>
+  <li><strong>内存</strong>：板载 8GB (DDR4-3200) + 1 个附加插槽</li>
+</ul>
+
+<p>如果商场里有时钟标为DDR4-3200或PC4-25600的内存，可以购买。</p>
+<h2 id="安装内存升级">安装内存升级</h2>
+<p>将笔记本电脑正面朝下放在软布上，然后拧下背面的所有螺钉。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" alt="Lenovo Slim3 15ABA7 R5 - 后部 - 卸下螺丝" />
+<em>Lenovo Slim3 15ABA7 R5 - 后部 - 卸下螺丝</em></p>
+
+<p>然后，将未使用的塑料卡插入右上角的缝隙中以打开后面板。然后，像打开一罐罐头食品一样，一点点转动打开后面板。如果塑料卡插入太深，可能会损坏笔记本电脑主板，因此请仅插入一点。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" alt="Lenovo Slim3 15ABA7 R5 - 打开后面板" />
+<em>Lenovo Slim3 15ABA7 R5 - 打开后面板</em></p>
+
+<p>如上所述，可以额外升级1个SATA硬盘和1个DDR4内存。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" alt="联想 Slim3 15ABA7 R5 - 内部" />
+<em>联想 Slim3 15ABA7 R5 - 内部</em></p>
+
+<p>与其他笔记本电脑不同，<strong>Lenovo Slim3 15ABA7 R5</strong>有内存插槽盖。撕掉盖子上的少量贴纸，然后向上提起盖子将其取下。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" alt="Lenovo Slim3 15ABA7 R5 - 内部 - 撕掉内存盖上的贴纸" />
+<em>Lenovo Slim3 15ABA7 R5 - 内部 - 撕掉内存盖上的贴纸</em></p>
+
+<p>如果您已安装内存，请重新安装内存盖并贴上贴纸。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" alt="Lenovo Slim3 15ABA7 R5 - 内部 - 已安装内存" />
+<em>Lenovo Slim3 15ABA7 R5 - 内部 - 已安装内存</em></p>
+
+<p>在关闭后面板之前，请确保笔记本电脑已打开并正常启动。如果由于内存接触不良而无法开机，则必须重新打开后面板，因此在不关闭后面板的情况下检查开机是否正常。</p>
+
+<p>将烟盒之类的东西放在笔记本电脑的铰链上，以防止风扇旋转，然后打开笔记本电脑。如果内存无法正确识别或无法启动，请尝试拔出内存并重新安装。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" alt="Lenovo Slim3 15ABA7 R5 - 安全底部空间以检查新内存操作" />
+<em>Lenovo Slim3 15ABA7 R5 - 安全底部空间以检查新内存操作</em></p>
+
+<p>如果笔记本电脑运行正常，请关闭后面板并重新拧紧松动的螺钉。</p>
+<h2 id="检查内存双通道识别">检查内存双通道识别</h2>
+<p>安装<a href="https://www.cpuid.com/softwares/cpu-z.html" target="_blank">CPU-Z</a>或<a href="https://www.hwinfo.com/download/" target="_blank">HWiNFO64</a>或下载便携式版本。 .</p>
+
+<p>在CPU-Z中，如果内存运行为<a href="https://en.wikipedia.org/wiki/Multi-channel_memory_architecture" target="_blank">双通道</a>，通道通常显示为<code class="language-plaintext highlighter-rouge">Dual</code>，<strong>Lenovo Slim3 15ABA7 R5</strong>为显示为<code class="language-plaintext highlighter-rouge">2 x 64 位</code>。</p>
+
+<p>我不确定这是一个错误还是最新版本的 CPU-Z 的差异。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - CPU-Z - 内存" />
+<em>Lenovo Slim3 15ABA7 R5 - CPU-Z - 内存</em></p>
+
+<p>但是，在 HWiNFO64 中，它正确显示为<code class="language-plaintext highlighter-rouge">双通道</code>。</p>
+
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - HWiNFO64 - 系统摘要 - 内存" />
+<em>Lenovo Slim3 15ABA7 R5 - HWiNFO64 - 系统摘要 - 内存</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/zh-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-ventoy-www.ventoy.net-a_new_bootable_usb_solution.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면판_열기.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-cpu-z-메모리.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[Windows 10 中多个显示配置中的显示不活动问题]]></title>
+      <link>https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
+      <guid>https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
+      <category><![CDATA[电脑,故障排除]]></category>
+      <tag><![CDATA[电脑,故障排除]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
+      <description><![CDATA[我是一名在工作和家庭之间使用一台笔记本电脑的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。我发现]]></description>
+      <content:encoded><![CDATA[<p>我是一名在工作和家庭之间使用一台笔记本电脑的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。</p>
+
+<p>我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。</p>
+
+<p>我发现解决这个问题的方法是删除并初始化Windows显示配置注册表值。总之，您需要重新设置多显示环境。我会解释如何做。</p>
+<h2 id="1打开windows注册表编辑器">1.打开Windows注册表编辑器</h2>
+<p>使用<code class="language-plaintext highlighter-rouge">Windows + R</code>通过<code class="language-plaintext highlighter-rouge">运行</code>对话框输入<code class="language-plaintext highlighter-rouge">regedit</code>，或在<code class="language-plaintext highlighter-rouge">开始</code>菜单中搜索<code class="language-plaintext highlighter-rouge">regedit.exe</code>以运行<code class="language-plaintext highlighter-rouge">注册表编辑器</code>。</p>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; 输入`regedit`" />
+<em>Windows + R &gt; 输入<code class="language-plaintext highlighter-rouge">regedit</code></em></p>
+
+<h2 id="2删除注册表编辑器中的显示预设值">2.删除注册表编辑器中的显示预设值</h2>
+<p>在注册表编辑器中，在地址栏中输入下面的路径或导航到树中的路径。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>从右键菜单中删除<code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>文件夹中的以下两个文件夹。</p>
+<ul>
+  <li>Configuration</li>
+  <li>Connectivity</li>
+</ul>
+
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="注册表编辑器 - 删除`GraphicsDrivers`文件夹中的`Configuration`和`Connectivity`文件夹" />
+<em>注册表编辑器 - 删除<code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>文件夹中的<code class="language-plaintext highlighter-rouge">Configuration</code>和<code class="language-plaintext highlighter-rouge">Connectivity</code>文件夹</em></p>
+
+<h2 id="3-重新启动windows">3. 重新启动Windows</h2>
+<p>重新启动 Windows。重新启动完成后，从 Windows 的角度来看，我的显示器将成为新识别的显示器。</p>
+
+<p>因此，您需要在显示设置中重置显示的位置和方向。简而言之，这很烦人。我谨致以诚挚的哀悼。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/zh-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[黑曜石的标注和报价块]]></title>
+      <link>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</link>
+      <guid>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Tue, 28 Nov 2023 00:18:00 +0900</pubDate>
+      <category><![CDATA[黑曜石]]></category>
+      <tag><![CDATA[黑曜石,标注,引号]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</guid>
+      <description><![CDATA[字典中标注的定义是大声喊出，用于引起读者的注意并告知他们重要或附加信息。让我们了解一下 Obsidian 中表达标注的语法和类型。]]></description>
+      <content:encoded><![CDATA[<p>字典中标注的定义是大声喊出，用于引起读者的注意并告知他们重要或附加信息。</p>
+
+<p>让我们了解一下 Obsidian 中表达标注的语法和类型。</p>
+<h2 id="引用块和标注块之间的差异">引用块和标注块之间的差异</h2>
+<p><strong>引用块</strong>列出每行以<code class="language-plaintext highlighter-rouge">&gt;</code>开头的句子。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre>&gt; 
+&gt; I am a quote block.
+&gt; It is a set of lines starting with `&gt;`
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>下面是基于 Obsidian 基本主题的报价块的形状。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" alt="黑曜石 - 报价块" />
+<em>黑曜石 - 报价块</em></p>
+
+<p>与引用块一样，<strong>标注块</strong>是一组以<code class="language-plaintext highlighter-rouge">&gt;</code>开头的行。但是，您可以通过在第一行中输入标注类型来指定图标形状和颜色，并添加标题。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>&gt; [!tip] I'm a tip type, and here's the title.
+&gt; 
+&gt; I am a callouts block. 
+&gt; It is similar to a citation block, but you can specify a type and title for the first line.
+&gt; 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>下面是黑曜石基本主题中的提示类型标注块。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="黑曜石 - 标注块" />
+<em>黑曜石 - 标注块</em></p>
+
+<h2 id="标注块折叠功能">标注块折叠功能</h2>
+<p>从语法上讲，标注块与引用块类似。然而，与报价块相比，它具有以下附加功能</p>
+<ul>
+  <li>添加图标</li>
+  <li>添加标题</li>
+  <li><code class="language-plaintext highlighter-rouge">折叠功能</code></li>
+</ul>
+
+<p>上面解释了标注块可以将附加图标和标题添加到引用块中。</p>
+
+<p>此外，标注的优点在于它们具有折叠功能。对于 Obsidian，标题可以折叠，但是<strong>这与标注块之间的区别在于可以指定初始值</strong>。</p>
+
+<p>有时，您可以在标注块中表达要强调的内容或添加附加注释，但如果内容很长，您可能希望将其最初关闭。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" alt="黑曜石 - 标注块的折叠" />
+<em>黑曜石 - 标注块的折叠</em></p>
+
+<p>您可以通过在标注块第一行的类型旁边添加连字符 (-) 来创建初始值为 close 的标注块。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>&gt; [!success]- Callouts block - Initially folded callouts block
+&gt; I am a callouts of type success.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="标注块类型">标注块类型</h2>
+<p>Obsidian 中预定义标注块的颜色和图标如下。</p>
+
+<p>您可以通过在标注类型中写入您喜欢的文本来更改标注的外观。</p>
+
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" alt="Obsidian - 标注预定义类型" />
+<em>Obsidian - 标注预定义类型</em></p>
+
+<p>此内容在<a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>中有介绍，您可以通过定义CSS来设计自己的callouts块。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+</pre></td><td class="rouge-code"><pre>&gt; [!quote] quote
+
+&gt; [!abstract] abstract, summary, tldr
+
+&gt; [!important] tip, hint, important
+
+&gt; [!note] note
+
+&gt; [!info] info
+
+&gt; [!todo] todo
+
+&gt; [!example] example
+
+&gt; [!question] question, help, fnq
+
+&gt; [!warning] warning, caution, attention
+
+&gt; [!failure] failure, fail, missing
+
+&gt; [!danger] danger, error
+
+&gt; [!bug] bug
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/zh-thumb-unclesnote-obsidian_callouts_and_quote_block.png" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[在 VirtualBox 中设置 Ubuntu 共享文件夹 - Windows 文件共享]]></title>
+      <link>https://unclesnote.com/zh/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</link>
+      <guid>https://unclesnote.com/zh/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 12:01:00 +0900</pubDate>
+      <category><![CDATA[乌班图,虚拟盒子]]></category>
+      <tag><![CDATA[虚拟盒子,vboxsf,乌班图,文件夹共享]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</guid>
+      <description><![CDATA[就我而言，Oracle VM VirtualBox 中的 Ubuntu VM 和 Windows 之间存在频繁的文件共享。当然，您可以使用Guest Additions功能通过拖动鼠标来共享文件，但仍然有不方便的时候。因此，我想解释一下如何与 Ubuntu VM 共享 Windows 文件夹。]]></description>
+      <content:encoded><![CDATA[<p>就我而言，Oracle VM VirtualBox 中的 Ubuntu VM 和 Windows 之间存在频繁的文件共享。当然，您可以使用Guest Additions功能通过拖动鼠标来共享文件，但仍然有不方便的时候。</p>
+
+<p>因此，我想解释一下如何与 Ubuntu VM 共享 Windows 文件夹。</p>
+<h2 id="在-virtual-box-上添加共享文件夹">在 Virtual Box 上添加共享文件夹</h2>
+<p>转到 Ubuntu VM 的设置。然后，在<code class="language-plaintext highlighter-rouge">共享文件夹</code>选项卡中添加要共享的文件夹。</p>
+
+<p>在共享文件夹设置窗口中，在<code class="language-plaintext highlighter-rouge">文件夹路径</code>中设置要与 Ubuntu 虚拟机共享的文件夹。其余文件夹及设置项目如下。</p>
+<ul>
+  <li><strong>文件夹路径</strong>：与 Ubuntu VM 共享的<code class="language-plaintext highlighter-rouge">Windows</code>文件夹路径</li>
+  <li><strong>文件夹名称</strong>：这是共享文件夹的昵称。如果可能，请使其与<code class="language-plaintext highlighter-rouge">挂载点</code>的文件夹名称相同。</li>
+  <li><strong>挂载点</strong>：在<code class="language-plaintext highlighter-rouge">Ubuntu VM</code>上挂载共享文件夹的路径</li>
+  <li>☑ <strong>自动挂载</strong> : 开机时自动挂载共享文件夹</li>
+  <li>☑ <strong>Make Permanent</strong>：如果您在 Ubuntu VM 运行时输入当前设置，则会出现此项目。如果您想要永久设置，请选中它。</li>
+</ul>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 添加共享文件夹" />
+<em>Oracle VM VirtualBox - 添加共享文件夹</em></p>
+
+<p>就我而言，我将 <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code> 设置为 Ubuntu VM 中的共享文件夹。作为参考，我的 Ubuntu 帐户名称是<code class="language-plaintext highlighter-rouge">pooh</code>。</p>
+<h2 id="ubuntu-vm-上的文件夹权限">Ubuntu VM 上的文件夹权限</h2>
+<p>如果您在 Ubuntu VM 运行时添加了共享文件夹，请首先重新启动 Ubuntu VM。</p>
+
+<p>并且，当您尝试输入 <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code> 时，会显示一条错误消息，指示您没有权限。这是因为只有<code class="language-plaintext highlighter-rouge">vboxsf</code>组中的用户才能访问共享文件夹。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /home/pooh
+total 100
+...
+drwxrwx---  1 root vboxsf     0 11월  6 10:03 _shared
+...
+
+<span class="nv">$ </span><span class="nb">cd</span> /home/pooh
+bash: <span class="nb">cd</span>: /home/pooh: Permission denied
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>使用<code class="language-plaintext highlighter-rouge">gpasswd</code>命令将您的 Ubuntu 帐户添加到<code class="language-plaintext highlighter-rouge">vboxsf</code>组。作为参考，我的 Ubuntu 帐户的名称是<code class="language-plaintext highlighter-rouge">pooh</code>。因此，运行命令，将 <code class="language-plaintext highlighter-rouge">pooh</code> 替换为您的 Ubuntu 帐户名。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> pooh vboxsf
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>最重要的。最后，重新启动 Ubuntu 虚拟机。</p>
+<h2 id="测试">测试</h2>
+<p>Ubuntu VM 重启完成后，我们来进行测试。</p>
+
+<p>让我们在 Ubuntu VM 的共享文件夹中使用<code class="language-plaintext highlighter-rouge">touch</code>命令创建一个<code class="language-plaintext highlighter-rouge">test.txt</code>文件。您可以看到 Windows 共享文件夹中创建的<code class="language-plaintext highlighter-rouge">test.txt</code>文件吗？</p>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="在 Ubuntu VM 中使用 `touch` 命令创建一个 `test.txt` 文件，并在 Windows 中检查它。" />
+<em>在 Ubuntu VM 中使用 <code class="language-plaintext highlighter-rouge">touch</code> 命令创建一个 <code class="language-plaintext highlighter-rouge">test.txt</code> 文件，并在 Windows 中检查它。</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/zh-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[三星 Galaxy S24 规格和发布日期 - 谣言综述]]></title>
+      <link>https://unclesnote.com/zh/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</link>
+      <guid>https://unclesnote.com/zh/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 06 Nov 2023 01:59:14 +0900</pubDate>
+      <category><![CDATA[它,移动的]]></category>
+      <tag><![CDATA[银河S24,谣言,极客跑分,三星Exynos,高通Snapdragon,钛,它,移动的]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
+      <description><![CDATA[随着三星 Galaxy S24 发布日期的临近，有关渲染图像和预期规格的传言不断出现。综上所述，Galaxy S 24系列计划于2024年第一季度发布，拥有钛金属外观，降级相机性能，预计根据型号配备三星Exynos和高通Snapdragon AP。现在我们就来仔细看看相关的传闻。]]></description>
+      <content:encoded><![CDATA[<p>随着三星 Galaxy S24 发布日期的临近，有关渲染图像和预期规格的传言不断出现。</p>
+
+<p>综上所述，Galaxy S 24系列计划于2024年第一季度发布，拥有钛金属外观，降级相机性能，预计根据型号配备三星Exynos和高通Snapdragon AP。</p>
+
+<p>现在我们就来仔细看看相关的传闻。</p>
+<h2 id="何时发布---2023-年-12-月或-2024-年-1-月">何时发布 - 2023 年 12 月或 2024 年 1 月</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="美国纽约时代广场Galaxy S23电子广告牌广告" />
+<em>美国纽约时代广场Galaxy S23电子广告牌广告</em></p>
+
+<p>三星电子计划于 2023 年 12 月或 2024 年 1 月发布新款智能手机，旨在从半导体表现不佳的情况中恢复过来。 12 月，他们将推出中端手机 Galaxy S23 FE，随后将推出具有 AI 功能的旗舰手机 Galaxy S24，并将于 1 月在旧金山发布，比通常的 2 月发布时间要早。</p>
+
+<p>这一转变被视为对智能手机市场挑战和苹果 iPhone 15 系列竞争的回应。三星依靠其移动体验 (MX) 部门来抵消半导体利润下降的影响，因为他们在 2022 年第三季度的半导体 (DS) 部门出现了重大亏损。</p>
+<h2 id="外观设计-钛金属">外观设计-钛金属</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" alt="左边是 IT 爆料者`OnLeaks`发布的 Galaxy S24 的预期渲染图，右边是 iPhone 15 Pro。" />
+<em>左边是 IT 爆料者<code class="language-plaintext highlighter-rouge">OnLeaks</code>发布的 Galaxy S24 的预期渲染图，右边是 iPhone 15 Pro。</em></p>
+
+<p>据IT专家Lebegnerz近期预测，Galaxy S24全系列有望采用钛材质边框，提升整体设计美感。此举被视为更广泛战略的一部分，类似于苹果在 iPhone 15 Pro 和 Pro Max 机型中引入钛金属框架。</p>
+
+<p>此外，外观设计预计将发生转变，从圆润的造型转变为更有棱角的设计，增添一丝奢华感。还有猜测称，Ultra 型号独特的边缘显示屏将完全被平面显示屏取代。</p>
+<h2 id="相机---降级但是">相机 - 降级但是，</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Smart Pix 的 OnLeaks 泄露了 Galaxy S24 的正面和背面渲染图" />
+<em>Smart Pix 的 OnLeaks 泄露了 Galaxy S24 的正面和背面渲染图</em></p>
+
+<p>明年发布的 Galaxy S24 Ultra 引起了用户的担忧，因为有传言称其将从 10 倍光学变焦降级为 5 倍光学变焦。</p>
+
+<p>然而，SamMobile 等一些专家认为，由于整体视频录制的改进，这实际上是一个积极的举措。</p>
+
+<p>据称，S24 Ultra 配备 200MP 主摄像头、12MP 超广角、3 倍光学变焦 10MP 长焦摄像头和 5 倍光学变焦 50MP 长焦摄像头。 5倍变焦被视为升级版，具有更宽的光圈和更大的像素，可以拍摄高质量的变焦照片。值得注意的是，5 倍变焦摄像头可以从各个角度拍摄流畅的 4K 60fps 视频。</p>
+<h2 id="ap---qualcomm-snapdragon-gen-3-和-exynos">AP - Qualcomm Snapdragon Gen 3 和 Exynos</h2>
+
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" alt="三星Exynos预计将安装在Galaxy S24 Plus机型中，高通Snapdragon 8 Gen 3预计将安装在Galaxy S24 Ultra机型中。" />
+<em>三星Exynos预计将安装在Galaxy S24 Plus机型中，高通Snapdragon 8 Gen 3预计将安装在Galaxy S24 Ultra机型中。</em></p>
+
+<p>三星Galaxy S24将搭载高通Stepdragon是肯定的，因为在2023年第四季度财报公布时，高通首席执行官克里斯蒂亚诺·阿蒙表示，Galaxy S24即将发布，并且高通将在板载组件方面占据多数份额。</p>
+
+<p>三星无线部门一直在其智能手机中使用 Snapdragon 和 Exynos 处理器，直至 Galaxy S22。然而，由于 Exynos 的发热问题，今年早些时候发布的 Galaxy S23 机型仅采用高通芯片。即将于明年初发布的 S24 和 S24 Plus 机型将根据地区考虑同时采用 Snapdragon 和 Exynos 处理器。价格最高的 Ultra 型号已确认专门使用 Snapdragon。</p>
+
+<p>基于 Snapdragon Gen 3 的 Galaxy S24 Ultra 的 Geekbench 分数也被发现。数据库显示，Galaxy S24 Ultra搭载代号为<code class="language-plaintext highlighter-rouge">Pineapple</code>的<code class="language-plaintext highlighter-rouge">Snapdragon 8第三代</code>芯片组，并确认配备8GB RAM和Android 14操作系统。</p>
+
+<p>在单核和多核测试中，其得分分别为<code class="language-plaintext highlighter-rouge">2234</code>和<code class="language-plaintext highlighter-rouge">6807</code>，多核得分较去年7月测试的机型略有上升。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>物品</th>
+      <th>银河S24+</th>
+      <th>银河 S24 Ultra</th>
+      <th>银河 S23 Ultra</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>模型</td>
+      <td>三星 SM-926B</td>
+      <td>三星 SM-928U</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>美联社</td>
+      <td>Exynos 2400</td>
+      <td>骁龙第三代</td>
+      <td>骁龙第二代</td>
+    </tr>
+    <tr>
+      <td>内存</td>
+      <td>8GB</td>
+      <td>8GB</td>
+      <td>12GB</td>
+    </tr>
+    <tr>
+      <td>单核<br />（Geekbench）</td>
+      <td>2067<br /> （相比<br />S24 超：-8%)</td>
+      <td>2234<br /> （相比<br />S23 Ultra：+43%)</td>
+      <td>1560</td>
+    </tr>
+    <tr>
+      <td>多核<br />（Geekbench）</td>
+      <td>6520<br /> （相比<br />S24 超：-4%)</td>
+      <td>6807<br /> （相比<br />S23 Ultra：+36%)</td>
+      <td>4996</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>2023 年 10 月 12 日，Geekbench 上发现了 Galaxy S24+ 的基准测试结果。该型号被确定为<code class="language-plaintext highlighter-rouge">SM-S926B</code>，配备<code class="language-plaintext highlighter-rouge">Exynos 2400</code>芯片组、8GB RAM和Android 14操作系统。它取得了单核分数<code class="language-plaintext highlighter-rouge">2067</code>和多核分数<code class="language-plaintext highlighter-rouge">6520</code>。</p>
+
+<p>这些分数低于基于 Snapdragon 8 第三代芯片组的 Galaxy S24 Ultra，这表明 Exynos 2400 在初始测试中的性能可能略低。与之前的型号 Galaxy S23 Ultra 相比，Galaxy S24 Ultra 预计单核性能将提高 43%，多核性能将提高 36%。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/zh-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[在 Ubuntu 20.04 中使用 ibus-hangul 配置韩语-英语转换密钥]]></title>
+      <link>https://unclesnote.com/zh/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</link>
+      <guid>https://unclesnote.com/zh/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Sat, 04 Nov 2023 21:16:15 +0900</pubDate>
+      <category><![CDATA[乌班图,常见的]]></category>
+      <tag><![CDATA[伊布尚古尔,乌班图,常见的,键盘]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</guid>
+      <description><![CDATA[如果您使用 Ubuntu 进行软件开发，您将主要使用英文输入。然而，在某些情况下，可能需要在 GNOME GUI 中输入韩语。因此，由于默认设置仅允许英语输入，因此我们将使用`ibus-hangul`插件来设置韩语输入。]]></description>
+      <content:encoded><![CDATA[<p>如果您使用 Ubuntu 进行软件开发，您将主要使用英文输入。然而，在某些情况下，可能需要在 GNOME GUI 中输入韩语。</p>
+
+<p>因此，由于默认设置仅允许英语输入，因此我们将使用<code class="language-plaintext highlighter-rouge">ibus-hangul</code>插件来设置韩语输入。</p>
+<h2 id="伊布韩文">伊布韩文</h2>
+<p><code class="language-plaintext highlighter-rouge">ibus-hangul</code> 是一个在 Linux 或 Ubuntu 上支持朝鲜文输入法的插件。 <code class="language-plaintext highlighter-rouge">ibus</code>代表<code class="language-plaintext highlighter-rouge">输入总线</code>。 Ubuntu 已经支持韩文输入，但我们将升级并使用<code class="language-plaintext highlighter-rouge">ibus-hangul</code>来优化韩文输入。</p>
+
+<p>更新 apt 的存储库并升级 <code class="language-plaintext highlighter-rouge">ibus-hangul</code> 插件。当我安装它时，插件大小为 615 MB。升级需要一些时间。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt upgrade ibus-hangul
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="韩语输入设置">韩语输入设置</h2>
+<p>首先，在应用程序中搜索<code class="language-plaintext highlighter-rouge">region</code>关键字，然后找到并运行<code class="language-plaintext highlighter-rouge">Region &amp;amp; Language</code>设置。</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" alt="搜索`region`并运行`Region &amp; Languages`" />
+<em>搜索<code class="language-plaintext highlighter-rouge">region</code>并运行<code class="language-plaintext highlighter-rouge">Region &amp;amp; Languages</code></em></p>
+
+<p>然后，在<code class="language-plaintext highlighter-rouge">区域和语言</code>选项卡中添加<code class="language-plaintext highlighter-rouge">输入源</code>。搜索<code class="language-plaintext highlighter-rouge">韩语</code>并添加<code class="language-plaintext highlighter-rouge">韩语(韩文)</code>。</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" alt="添加`韩语（韩文）`输入源" />
+<em>添加<code class="language-plaintext highlighter-rouge">韩语（韩文）</code>输入源</em></p>
+
+<p>在设置新添加的输入源之前，请删除现有的<code class="language-plaintext highlighter-rouge">英语(美国)</code>。这是为了防止与新添加的<code class="language-plaintext highlighter-rouge">韩国(韩文)</code>输入源发生冲突。并且新增的输入源已经包含英文输入功能。</p>
+
+<p>单击<code class="language-plaintext highlighter-rouge">韩国(韩文)</code>输入源上的齿轮图标以打开<code class="language-plaintext highlighter-rouge">IBusHangle 设置</code>。</p>
+
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" alt="韩英转换键设置" />
+<em>韩英转换键设置</em></p>
+
+<p>然后，在<code class="language-plaintext highlighter-rouge">Etc</code>部分激活<code class="language-plaintext highlighter-rouge">以韩文模式启动</code>。作为参考，当您启动 Ubuntu 时，如果您希望 GNOME GUI 中的第一个输入模式为韩语，请启用它。</p>
+
+<p>并且，删除默认添加的所有<code class="language-plaintext highlighter-rouge">Hangul Toggle Key</code>。无法保证这与您使用的实际键盘上的语言切换键相匹配。</p>
+
+<p>单击<code class="language-plaintext highlighter-rouge">添加</code>按钮，当新窗口打开时，按键盘上的语言切换键。就我的键盘而言，<code class="language-plaintext highlighter-rouge">Alt_R</code>被指定为语言更改键。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/zh-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[换行符差异 - Windows 和 Linux EOL 检查和 Git Repo 同步]]></title>
+      <link>https://unclesnote.com/zh/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</link>
+      <guid>https://unclesnote.com/zh/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 14:47:17 +0900</pubDate>
+      <category><![CDATA[git]]></category>
+      <tag><![CDATA[git,回车换行,如果,EOL转换,换行符,记事本PlusPlus,UNIX2DOS,DOS2UNIX]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</guid>
+      <description><![CDATA[如果您需要在 Linux 和 Windows 上修改并提交同一个 Git 存储库中的文件，则可能会出现这样的情况：Git 客户端在 Git 提交阶段将该文件识别为已修改文件，即使该文件的内容显然没有被修改。问题的原因在于，虽然文件内容相同，但 Windows 和 Linux 中表达换行符的基本方式不同。下图中，左边是]]></description>
+      <content:encoded><![CDATA[<p>如果您需要在 Linux 和 Windows 上修改并提交同一个 Git 存储库中的文件，则可能会出现这样的情况：Git 客户端在 Git 提交阶段将该文件识别为已修改文件，即使该文件的内容显然没有被修改。</p>
+
+<p>问题的原因在于，虽然文件内容相同，但 Windows 和 Linux 中表达换行符的基本方式不同。下图中，左边是在Windows(PC)下修改并保存的文件，右边是在Linux(UNIX)下修改并保存的文件。</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="文件内容相同但文件不同，左边是Windows PC格式，右边是Linux UNIX格式" />
+<em>文件内容相同但文件不同，左边是Windows PC格式，右边是Linux UNIX格式</em></p>
+
+<h2 id="windows和linux换行符的区别">Windows和Linux换行符的区别</h2>
+<p>从 ASCII 字符的角度来看，</p>
+
+<p>Windows 以<code class="language-plaintext highlighter-rouge">CRLF(回车换行)</code>的形式表示换行符，如下所示。</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\r\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>在 Ubuntu 等 Linux 系统中，换行符仅表示为<code class="language-plaintext highlighter-rouge">LF(换行)</code>，如下所示。</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\n
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>假设您从 Git 收到一个以 LF 格式表示换行符的文件，在 Windows 编辑器中对其进行了简短修改，然后将其恢复。这意味着该文件表面上内容相同，但换行符被CRLF修改，因此有可能会转化为与Git中的文件不同的文件。</p>
+
+<p>如果你在Linux上运行在Windows上编写的bash脚本，你可能会在调试过程中遇到神秘的脚本执行错误。这可能是因为 shell 脚本在 Windows 上以 CRLF 格式存储换行符，而 bash 无法解释这一点。</p>
+<h2 id="检查并转换文件的-eol行尾">检查并转换文件的 EOL（行尾）</h2>
+<p>当然，即使您在Windows中编写文件，您也可以创建并转换UNIX(LF)格式的文件，而不是PC(CRLF)格式。相反的情况也是可能的。该转换操作通常称为<code class="language-plaintext highlighter-rouge">EOL(行尾)转换</code>。</p>
+
+<p>事实上，当您第一次遇到每个操作系统的 EOL 差异时，可能会有点困惑。因此，与以后要解释的内容相关的关键词可以映射到如下所示的表格中。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>姓名</th>
+      <th>视窗</th>
+      <th>乌班图（Linux）</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>换行符格式术语</td>
+      <td>CRLF（回车换行）</td>
+      <td>LF（换行）</td>
+    </tr>
+    <tr>
+      <td>换行符表示字符</td>
+      <td><code class="language-plaintext highlighter-rouge">\r\n</code></td>
+      <td><code class="language-plaintext highlighter-rouge">\n</code></td>
+    </tr>
+    <tr>
+      <td>来自 Ubuntu 中<code class="language-plaintext highlighter-rouge">file</code>工具的信息</td>
+      <td>ASCII text, with CRLF line terminators</td>
+      <td>ASCII text</td>
+    </tr>
+    <tr>
+      <td>Beyond Compare 工具中的 EOL 类型</td>
+      <td>PC</td>
+      <td>UNIX</td>
+    </tr>
+    <tr>
+      <td>Ubuntu 中的 EOL 类型</td>
+      <td>dos</td>
+      <td>unix</td>
+    </tr>
+    <tr>
+      <td>Ubuntu 上的 EOL 转换工具</td>
+      <td>unix2dos</td>
+      <td>dos2unix</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="视窗">视窗</h3>
+<p>使用 <a href="https://notepad-plus-plus.org/downloads" target="_blank">Notepad++</a> 编辑器可以帮助您创建 EOL 的文件。</p>
+
+<p>如下图所示，您可以在Notepad++编辑器中查看当前<code class="language-plaintext highlighter-rouge">EOL Conversion</code>状态并进行转换。菜单位于<code class="language-plaintext highlighter-rouge">编辑 &gt; EOL 转换</code>。</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - EOL 转换 - `编辑 &gt; EOL 转换 &gt; Windows (CR LF) 或 Unix (LF)`" />
+<em>Notepad++ - EOL 转换 - <code class="language-plaintext highlighter-rouge">编辑 &gt; EOL 转换 &gt; Windows (CR LF) 或 Unix (LF)</code></em></p>
+
+<h3 id="乌班图linux">乌班图（Linux）</h3>
+<p>在Ubuntu环境中，您还可以检查文件的EOL状态并进行转换。</p>
+
+<p>您可以使用<code class="language-plaintext highlighter-rouge">file</code>工具检查文件的 EOL 状态。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># PC (CRLF)</span>
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="c"># Unix (LF)</span>
+<span class="nv">$ </span>file unix.txt 
+unix.txt: ASCII text
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>对于文件的 EOL 转换，必须安装 <code class="language-plaintext highlighter-rouge">tofrodos</code> 和 <code class="language-plaintext highlighter-rouge">dos2unix</code>。可以使用<code class="language-plaintext highlighter-rouge">apt</code>安装它。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt-get <span class="nb">install </span>tofrodos
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>dos2unix
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>安装软件包后，您可以使用以下工具。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dos2unix</code> : 将 PC (CRLF) 转换为 Unix (LF)</li>
+  <li><code class="language-plaintext highlighter-rouge">unix2dos</code> : 将 Unix (LF) 转换为 PC (CRLF)</li>
+</ul>
+
+<p>下面是将 PC (CRLF) 转换为 UNIX (LF) 的示例。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text, with CRLF line terminators
+
+<span class="nv">$ </span>dos2unix pc.txt 
+dos2unix: converting file pc.txt to Unix format...
+
+<span class="nv">$ </span>file pc.txt 
+pc.txt: ASCII text
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="操作系统之间的-git-存储库-eol-同步">操作系统之间的 Git 存储库 EOL 同步</h2>
+<p>Git 存储库中有一项 Git 设置，可防止在 Windows 和 Ubuntu 环境中提交和拉取文件时出现 EOL 转换问题。</p>
+
+<p>下面的 git 命令在将 ASCII 格式文件插入对象数据库之前将 CRLF 更改为 LF。所以主要用于<code class="language-plaintext highlighter-rouge">Windows</code>环境下的Git设置。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf input 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>下面的 git 命令使用换行符作为 LF。所以主要用于<code class="language-plaintext highlighter-rouge">Ubuntu(Linux)</code>环境。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>git config <span class="nt">--global</span> core.autocrlf <span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>由于上述命令是全局 Git 设置，因此如果您希望 EOL 设置仅应用于特定的克隆存储库，则可以进入相关存储库文件夹并使用仅删除<code class="language-plaintext highlighter-rouge">--global</code>选项的命令。</p>
+
+<p>换句话说，目的是将带有 LF 格式的 EOL 的文件上传到 Git 服务器。</p>
+
+<p>在Windows环境下，右键单击菜单即可访问Git Bash。</p>
+
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="在 Windows 上访问 Git Bash" />
+<em>在 Windows 上访问 Git Bash</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/zh-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[如何优化 Ubuntu 20.04 性能]]></title>
+      <link>https://unclesnote.com/zh/231102005314/how_to_optimize_ubuntu_20.04_performance</link>
+      <guid>https://unclesnote.com/zh/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:14 +0900</pubDate>
+      <category><![CDATA[乌班图,常见的]]></category>
+      <tag><![CDATA[Ubuntu动画,Dock图标大小,交换文件,交换,乌班图,常见的,漂白位]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
+      <description><![CDATA[除非您使用安装了 Ubuntu 操作系统的 PC 作为主计算机，否则您可能会使用硬件规格较低的 PC 或在 Oracle VM VirtualBox 上安装 Ubuntu。如果你主要使用 SSH 进行远程连接，那么不会有太大影响，但如果你经常操作 GNOME 中的 UI，性能可能会令人失望。因此，这里有一些在安装和配]]></description>
+      <content:encoded><![CDATA[<p>除非您使用安装了 Ubuntu 操作系统的 PC 作为主计算机，否则您可能会使用硬件规格较低的 PC 或在 Oracle VM VirtualBox 上安装 Ubuntu。</p>
+
+<p>如果你主要使用 SSH 进行远程连接，那么不会有太大影响，但如果你经常操作 GNOME 中的 UI，性能可能会令人失望。因此，这里有一些在安装和配置 Ubuntu 时优化性能的技巧。</p>
+<h2 id="关闭动画">关闭动画</h2>
+<p>如果您在 Virtual Box 或低端 PC 上使用 Ubuntu，由于资源有限，动画可能会降低操作系统的性能。以下是如何在 Ubuntu GNOME GUI 中关闭和打开动画。您可以在终端中运行命令。</p>
+
+<p>下面是关闭 Ubuntu 动画并检查设置的终端命令。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">false</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">false</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>下面是打开 Ubuntu 动画的终端命令。不同之处在于命令的最后一个参数从<code class="language-plaintext highlighter-rouge">false</code>更改为<code class="language-plaintext highlighter-rouge">true</code>。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>gsettings <span class="nb">set </span>org.gnome.desktop.interface enable-animations <span class="nb">true</span>
+<span class="nv">$ </span>gsettings get org.gnome.desktop.interface enable-animations
+<span class="nb">true</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="dock-图标大小">Dock 图标大小</h2>
+<p>如果您使用的显示器分辨率有限，则 Dock 的默认图标大小可能会限制同时注册和导航多个图标。因此，您可以将 Dock 图标尺寸设置得较小。</p>
+
+<p>首先，在<code class="language-plaintext highlighter-rouge">应用程序菜单</code>中搜索dock并打开<code class="language-plaintext highlighter-rouge">外观</code>设置。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" alt="Dock 图标大小 - 应用程序菜单 &gt; 搜索`dock` &gt; 外观设置" />
+<em>Dock 图标大小 - 应用程序菜单 &gt; 搜索<code class="language-plaintext highlighter-rouge">dock</code> &gt; 外观设置</em></p>
+
+<p>然后减小<code class="language-plaintext highlighter-rouge">图标大小</code>并将其设置为适合您的大小。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="Dock 图标大小 - 设置 &gt; 外观 &gt; 调整`图标大小`" />
+<em>Dock 图标大小 - 设置 &gt; 外观 &gt; 调整<code class="language-plaintext highlighter-rouge">图标大小</code></em></p>
+
+<h2 id="增加交换大小">增加交换大小</h2>
+<p>如果您使用的是安装在 Virtual Box 中的 Ubuntu，则分配给虚拟机的内存可能会少于 8GB，因为它与您的 Windows 计算机共享。如果你随便使用Ubuntu，这可能不是问题，但当尝试编译大型平台、BSP或软件时，内存不足可能会导致编译失败。这可以通过增加交换大小来解决。</p>
+
+<p>由于硬盘容量比内存容量便宜，所以我们增加交换空间。请看下面的文章。</p>
+<ul>
+  <li>https://unclesnote.com/en/231102005313/how_to_increase_swapfile_size_in_ubuntu</li>
+</ul>
+
+<h2 id="确保磁盘上的可用空间">确保磁盘上的可用空间</h2>
+<p>如果您使用的是安装了虚拟机的 Ubuntu，并且映像大小不够大，您可能会看到如下所示的警告弹出窗口。如果它在系统中累积在临时文件或日志文件中，则可能会发生这种情况。如果可用空间收敛为零，您的 Ubuntu VM 可能无法启动。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" alt="文件系统根目录上磁盘空间不足的警告弹出窗口" />
+<em>文件系统根目录上磁盘空间不足的警告弹出窗口</em></p>
+
+<p>虽然您可以手动删除临时文件或系统日志文件，但您可以使用 <a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a> 应用程序在 GUI 环境中更轻松地管理它们。</p>
+
+<p>您可以通过在 Ubuntu 软件应用程序中搜索<code class="language-plaintext highlighter-rouge">bleachbit</code>轻松安装它。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" alt="Ubuntu 软件 - BleachBit" />
+<em>Ubuntu 软件 - BleachBit</em></p>
+
+<p>检查要整理的项目后，按<code class="language-plaintext highlighter-rouge">清理</code>按钮会自动删除不需要的文件以确保可用空间。但是，在组织<code class="language-plaintext highlighter-rouge">APT</code>和<code class="language-plaintext highlighter-rouge">journald</code>项目时必须小心。这可能会破坏您的 Ubuntu 系统或软件包的依赖关系。</p>
+
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="漂白位" />
+<em>漂白位</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/zh-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-warning_popup_for_low_disk_space_on_filessystem_root.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[如何增加 Ubuntu 中的交换文件大小]]></title>
+      <link>https://unclesnote.com/zh/231102005313/how_to_increase_swapfile_size_in_ubuntu</link>
+      <guid>https://unclesnote.com/zh/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Thu, 02 Nov 2023 00:53:13 +0900</pubDate>
+      <category><![CDATA[乌班图,常见的]]></category>
+      <tag><![CDATA[法塔布,交换,交换文件,乌班图,常见的]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231102005313/how_to_increase_swapfile_size_in_ubuntu</guid>
+      <description><![CDATA[有时，如果您让 Ubuntu 机器长时间运行而没有足够的物理内存，或者如果您编译和构建大型平台或 BSP，性能可能会下降或可能出现错误。因此，当物理内存不足时，基于Linux的操作系统会创建交换文件并使用硬盘上的文件作为内存。这称为交换文件，类似于 Windows 环境中的虚拟内存。现在，我想解释一下如何在 Ubun]]></description>
+      <content:encoded><![CDATA[<p>有时，如果您让 Ubuntu 机器长时间运行而没有足够的物理内存，或者如果您编译和构建大型平台或 BSP，性能可能会下降或可能出现错误。</p>
+
+<p>因此，当物理内存不足时，基于Linux的操作系统会创建交换文件并使用硬盘上的文件作为内存。这称为交换文件，类似于 Windows 环境中的虚拟内存。</p>
+
+<p>现在，我想解释一下如何在 Ubuntu 20.04 中创建和应用交换文件。</p>
+<h2 id="检查掉期">检查掉期</h2>
+<p>使用 <code class="language-plaintext highlighter-rouge">free -m</code> 命令检查我的 Ubuntu 环境中的交换状态。并检查系统<code class="language-plaintext highlighter-rouge">root</code>中是否存在<code class="language-plaintext highlighter-rouge">swapfile</code>。在根路径中创建交换文件是很常见的。</p>
+
+<p>就我而言，我使用 2GB 交换空间，交换文件位于根路径中。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>free <span class="nt">-m</span>
+              total        used        free      shared  buff/cache   available
+Mem:           4913        1306        2306           8        1300        3359
+Swap:          2048           0        2048
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-la</span> /
+total 8388712
+...
+<span class="nt">-rw-------</span>   1 root root   2048934592 Jul 24 17:54 swapfile
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="创建交换文件">创建交换文件</h2>
+<p>我将删除现有的 2GB 交换文件并创建一个新的 5GB 交换文件。</p>
+
+<p>首先，关闭交换功能并删除已经使用的2GB交换文件。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="nb">sudo rm</span> /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后，我们将在根目录中创建一个5GB的交换文件，并将文件权限分配为600。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nb">sudo chmod </span>600 /swapfile 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>最后，用新创建的文件激活交换。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>mkswap /swapfile
+<span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下是我执行上述命令的方法。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">sudo </span>swapoff <span class="nt">-v</span> /swapfile
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>bull: 
+swapoff /swapfile
+<span class="nv">$ </span><span class="nb">sudo rm</span> /swapfile
+<span class="nv">$ </span><span class="nb">sudo </span>fallocate <span class="nt">-l</span> 5G /swapfile
+<span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-l</span> /
+total 5242976
+...
+<span class="nt">-rw-r--r--</span>   1 root root   5368709120 Aug 17 14:11 swapfile
+...
+<span class="nv">$ </span><span class="nb">sudo chmod </span>600 /swapfile 
+<span class="nv">$ </span><span class="nb">sudo </span>mkswap /swapfile
+Setting up swapspace version 1, size <span class="o">=</span> 5 GiB <span class="o">(</span>5368705024 bytes<span class="o">)</span>
+no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c-b719-e54154ad8194
+<span class="nv">$ </span><span class="nb">sudo </span>swapon /swapfile
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="注册交换文件">注册交换文件</h2>
+<p>现在，最后，我们将配置 Ubuntu 在每次启动时加载交换文件。</p>
+
+<p>然后，打开<code class="language-plaintext highlighter-rouge">/etc/fstab</code>。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>vi /etc/fstab    
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>并添加下面的行。如果已经设置，则无需添加。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>/swapfile              none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="重启">重启</h2>
+<p>首先重新启动。重新启动后，您可以在系统监视器上查看上面生成的交换文件。</p>
+
+<p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="`应用程序`菜单 &gt; 系统监视器" />
+<em><code class="language-plaintext highlighter-rouge">应用程序</code>菜单 &gt; 系统监视器</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/zh-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png" />
+      <media:content url="https://unclesnote.com/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[如何为软件开发人员安装必要的 Ubuntu 软件]]></title>
+      <link>https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</link>
+      <guid>https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Wed, 01 Nov 2023 00:31:13 +0900</pubDate>
+      <category><![CDATA[乌班图,工具]]></category>
+      <tag><![CDATA[VisualStudio代码,VS代码,GitHub桌面版,超越比较4,SQLite数据库浏览器,MySQL工作台,乌班图,工具]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
+      <description><![CDATA[如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。]]></description>
+      <content:encoded><![CDATA[<p>如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。</p>
+<h2 id="视觉工作室代码">视觉工作室代码</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="视觉工作室代码" />
+<em>视觉工作室代码</em></p>
+
+<p><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> 是软件开发中广泛使用的 IDE 和编辑器。</p>
+
+<p>如果您使用的是<code class="language-plaintext highlighter-rouge">Ubuntu桌面GUI(GNOME)环境</code>，您可以使用内置浏览器下载VS Code并使用<code class="language-plaintext highlighter-rouge">dpkg</code>工具安装。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> code_1.83.0-1696350811_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>如果您使用<code class="language-plaintext highlighter-rouge">Ubuntu 服务器环境</code>或<code class="language-plaintext highlighter-rouge">仅具有 SSH 访问权限</code>，这有点复杂。但是，您可以使用以下命令安装 VS Code。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># Install basic packages for installation</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget <span class="nt">-y</span>
+<span class="c"># Install the Microsoft GPG key and add the repository to apt</span>
+wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
+<span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</span>
+<span class="c"># Install VS Code</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>code
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>您可以使用以下命令安装扩展以通过 SSH 远程访问 VS Code。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="github-桌面版">GitHub 桌面版</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="GitHub 桌面版" />
+<em>GitHub 桌面版</em></p>
+
+<p>GitHub 桌面软件是一个 Git 客户端。如果您正在开发 GitHub 项目，这绝对是一个不错的选择，但即使您使用个人 git 服务器而不是 GitHub 存储库，如果您不需要复杂的功能，它也可能是一个不错的选择。</p>
+
+<p><a href="https://desktop.github.com/" target="_blank">官方GitHub桌面</a>站点仅提供Windows和macOS版本。但是，由于 GitHub Desktop 是一个开源项目，因此 Ubuntu 版本也分布在单独的 <a href="https://github.com/shiftkey/desktop" target="_blank">repo</a> 中。不确定这是否是官方的。将存储库添加到 apt 后，您可以使用 apt 安装 GitHub Desktop。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget <span class="nt">-qO</span> - https://mirror.mwt.me/shiftkey-desktop/gpgkey | gpg <span class="nt">--dearmor</span> | <span class="nb">sudo tee</span> /usr/share/keyrings/mwt-desktop.gpg <span class="o">&gt;</span> /dev/null
+<span class="nb">sudo </span>sh <span class="nt">-c</span> <span class="s1">'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/mwt-desktop.gpg] https://mirror.mwt.me/shiftkey-desktop/deb/ any main" &gt; /etc/apt/sources.list.d/mwt-desktop.list'</span>
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>github-desktop
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="超越比较4">超越比较4</h2>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" alt="超越比较4" />
+<em>超越比较4</em></p>
+
+<p>Beyond Compare 是一款流行的文件比较工具。</p>
+
+<p>不幸的是，Beyond Compare 3版本在Ubuntu中没有良好的文件比较性能。换句话说，文件比较需要很长时间。然而，最新版本 <a href="https://www.scootersoftware.com/download" target="_blank">Beyond Compare 4</a> 速度很快，并且在 Ubuntu 中具有与 Windows 相同的性能。所以，我建议在 Ubuntu 上选择版本 4。</p>
+
+<p>您可以使用网络浏览器从官方网站下载Beyond Compare 4，但我们将使用<code class="language-plaintext highlighter-rouge">wget</code>工具下载它。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget https://www.scootersoftware.com/files/bcompare-4.4.6.27483_amd64.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> bcompare-4.4.6.27483_amd64.deb
+<span class="nb">rm </span>bcompare-4.4.6.27483_amd64.deb
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>安装完成后，使用以下命令重置 Beyond Compare 4。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="c">#thinks bensonkb</span>
+<span class="nb">sudo rm</span> <span class="nt">-rf</span> ~/.config/bcompare 
+<span class="nb">sudo sed</span> <span class="nt">-i</span> <span class="s2">"s/keexjEP3t4Mue23hrnuPtY4TdcsqNiJL-5174TsUdLmJSIXKfG2NGPwBL6vnRPddT7tH29qpkneX63DO9ECSPE9rzY1zhThHERg8lHM9IBFT+rVuiY823aQJuqzxCKIE1bcDqM4wgW01FH6oCBP1G4ub01xmb4BGSUG6ZrjxWHJyNLyIlGvOhoY2HAYzEtzYGwxFZn2JZ66o4RONkXjX0DF9EzsdUef3UAS+JQ+fCYReLawdjEe6tXCv88GKaaPKWxCeaUL9PejICQgRQOLGOZtZQkLgAelrOtehxz5ANOOqCaJgy2mJLQVLM5SJ9Dli909c5ybvEhVmIC0dc9dWH+/N9KmiLVlKMU7RJqnE+WXEEPI1SgglmfmLc1yVH7dqBb9ehOoKG9UE+HAE1YvH1XX2XVGeEqYUY-Tsk7YBTz0WpSpoYyPgx6Iki5KLtQ5G-aKP9eysnkuOAkrvHU8bLbGtZteGwJarev03PhfCioJL4OSqsmQGEvDbHFEbNl1qJtdwEriR+VNZts9vNNLk7UGfeNwIiqpxjk4Mn09nmSd8FhM4ifvcaIbNCRoMPGl6KU12iseSe+w+1kFsLhX+OhQM8WXcWV10cGqBzQE9OqOLUcg9n0krrR3KrohstS9smTwEx9olyLYppvC0p5i7dAx2deWvM1ZxKNs0BvcXGukR+/g"</span> /usr/lib/beyondcompare/BCompare
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后从 Ubuntu GUI 运行 Beyond Compare 4 并输入许可证密钥(如果有)。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="c"># Then restart BC, click "Enter License":</span>
+ayvZeJDYPBHS4J-1K6g6bDBuPoo0G-oGAq35blZtAoRqC-qQeSz28XAzX
+6nTx9laTMLRCp6nAIhHNGZ2ehkeUfbnFaxEeLvI8fJavn-XQLNbOumCLU
+qgdNbNMZiFRU03+OTQnw4V-E2YKTYi-LkgPzE6R-yIJGDNWfxH2AdpIgg
+8rlpsbrTs9Dt1zysUfvAEi0dKbmGIi3rqf7yWmwDh1AI5VyoWFIejvJwJ
+Lmlr2CjQ1VZ3DySCfBDuKcYmOCeK7jzEWPUnAw+f9360nIiiNEB0YGkwB
+kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>如果您没有许可证密钥，则可能需要在评估期结束时再次执行重置过程。因此，我建议保存并使用工作区，并在每次更新时导出设置并将其保存为文件。</p>
+<h2 id="数据库">数据库</h2>
+<h3 id="sqlite-数据库浏览器">SQLite 数据库浏览器</h3>
+
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="SQLite 数据库浏览器" />
+<em>SQLite 数据库浏览器</em></p>
+
+<p>如果您使用SQLite DB，<a href="https://sqlitebrowser.org/dl/" target="_blank">SQLite DB Browser</a>是在GUI环境中查询数据库或查看表内容的必备软件。</p>
+
+<p>您可以将<code class="language-plaintext highlighter-rouge">sqlitebrowser</code>存储库添加到 apt 并安装 SQLite DB 浏览器。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>add-apt-repository <span class="nt">-y</span> ppa:linuxgndu/sqlitebrowser
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>sqlitebrowser
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="mysql工作台">MySQL工作台</h3>
+<p>稍后我需要在 Ubuntu 上安装 MySQL Workbench 时会对此进行描述。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/zh-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[如何将 Office 365 Outlook 中的默认浏览器更改为 Chrome]]></title>
+      <link>https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
+      <guid>https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
+      <category><![CDATA[电脑,故障排除]]></category>
+      <tag><![CDATA[外表,默认浏览器,铬合金,个人电脑,电脑,故障排除]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
+      <description><![CDATA[您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Wind]]></description>
+      <content:encoded><![CDATA[<p>您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？</p>
+
+<p>在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Windows默认应用程序和Outlook设置中检查并设置Chrome浏览器。</p>
+<h2 id="windows-上的默认-web-浏览器设置">Windows 上的默认 Web 浏览器设置</h2>
+<p>如果您是 Chrome 用户，也许您已经将 Google Chrome 设置为默认网络浏览器。确保您具有 Office 365 的默认浏览器设置。</p>
+
+<p>使用<code class="language-plaintext highlighter-rouge">CTRL + I</code>快捷键打开<code class="language-plaintext highlighter-rouge">Windows 设置</code>。然后，输入<code class="language-plaintext highlighter-rouge">default</code>关键字查找并选择<code class="language-plaintext highlighter-rouge">默认应用程序</code>。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows 设置 - 搜索`默认`" />
+<em>Windows 设置 - 搜索<code class="language-plaintext highlighter-rouge">默认</code></em></p>
+
+<p>然后，在<code class="language-plaintext highlighter-rouge">默认应用程序</code>选项卡中，选择<code class="language-plaintext highlighter-rouge">Web 浏览器</code>部分中的<code class="language-plaintext highlighter-rouge">Google Chrome</code>浏览器。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="设置 &gt; 默认应用 &gt; 在网络浏览器上选择`Google Chrome`" />
+<em>设置 &gt; 默认应用 &gt; 在网络浏览器上选择<code class="language-plaintext highlighter-rouge">Google Chrome</code></em></p>
+
+<h2 id="设置应用程序以打开-office-365-outlook-中的超链接">设置应用程序以打开 Office 365 Outlook 中的超链接</h2>
+<p>我们要返回 Office 365 Outlook 吗？</p>
+
+<p>在 Outlook 中，使用<code class="language-plaintext highlighter-rouge">ALT + F</code>快捷键查看左侧菜单栏并选择<code class="language-plaintext highlighter-rouge">选项</code>。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - 选项" />
+<em>Office 365 Outlook - 选项</em></p>
+
+<p>选择<code class="language-plaintext highlighter-rouge">高级</code>选项卡。在<code class="language-plaintext highlighter-rouge">文件和浏览器首选项</code>部分中，将要打开超链接的浏览器更改为<code class="language-plaintext highlighter-rouge">默认浏览器</code>。然后按<code class="language-plaintext highlighter-rouge">确定</code>。在第一节中我们将Windows默认浏览器设置为Chrome，所以这里的默认浏览器是Chrome。</p>
+
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - 选项 &gt; 高级 &gt; 在文件和浏览器首选项中选择`默认浏览器`" />
+<em>Office 365 Outlook - 选项 &gt; 高级 &gt; 在文件和浏览器首选项中选择<code class="language-plaintext highlighter-rouge">默认浏览器</code></em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/zh-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[Ubuntu 的必备替代软件，而不是 Windows 工具]]></title>
+      <link>https://unclesnote.com/zh/231028002032/essential_software_to_use_on_ubuntu_os</link>
+      <guid>https://unclesnote.com/zh/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Sat, 28 Oct 2023 00:20:32 +0900</pubDate>
+      <category><![CDATA[乌班图,工具]]></category>
+      <tag><![CDATA[克鲁萨德,格温维尤,光豌豆,克里塔,易中风,图像浏览器,图片编辑器,文件浏览器,鼠标宏,乌班图,工具,漂白位,可用空间]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231028002032/essential_software_to_use_on_ubuntu_os</guid>
+      <description><![CDATA[如果您因为 Ubuntu 操作系统的特定优势而使用 Ubuntu，您会尝试在 Ubuntu 环境中找到与您在 Windows 环境中使用的类似软​​件。因此，我将介绍一些在使用 Ubuntu 时通常很好用的软件，例如文件浏览器、图像查看/编辑器和生产力工具。]]></description>
+      <content:encoded><![CDATA[<p>如果您因为 Ubuntu 操作系统的特定优势而使用 Ubuntu，您会尝试在 Ubuntu 环境中找到与您在 Windows 环境中使用的类似软​​件。因此，我将介绍一些在使用 Ubuntu 时通常很好用的软件，例如文件浏览器、图像查看/编辑器和生产力工具。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" alt="Ubuntu 软件" />
+<em>Ubuntu 软件</em></p>
+
+<h2 id="文件浏览器">文件浏览器</h2>
+<h3 id="克鲁萨德">克鲁萨德</h3>
+<p>如果您有在 Windows 环境下使用 Q-Dir 或 <a href="https://www.ghisler.com/download.htm" target="_blank">Total Commander</a> 的经验，<a href="https://krusader.org" target="_blank">Krusader</a> 提供拆分体验窗口和多选项卡文件浏览。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" alt="克鲁萨德" />
+<em>克鲁萨德</em></p>
+
+<p>安装方法非常简单。您可以使用 apt 安装它。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>krusader
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="图像查看器编辑器">图像查看器/编辑器</h2>
+<h3 id="格温维尤">格温维尤</h3>
+<p><a href="https://github.com/KDE/gwenview" target="_blank">GwenView</a> 是我用过的最好的 Ubuntu 图像查看器。如果我找到更好的图像查看器，我会更新。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" alt="格温维尤" />
+<em>格温维尤</em></p>
+
+<p>但是，如果您经常更新图像文件，有时 GwenView 列表中的缩略图的外观与实际图像可能会有所不同。因此，建议禁用缩略图缓存的使用。</p>
+
+<p>在<code class="language-plaintext highlighter-rouge">设置 &gt; 配置 Gwenview &gt; 高级</code>中，选中<code class="language-plaintext highlighter-rouge">低资源使用模式</code>。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" alt="GwenView - 检查`低资源使用模式`以禁用缩略图缓存" />
+<em>GwenView - 检查<code class="language-plaintext highlighter-rouge">低资源使用模式</code>以禁用缩略图缓存</em></p>
+
+<p>GwenView 可以使用 apt 轻松安装。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt <span class="nb">install </span>gwenview <span class="nt">-y</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="光豌豆">光豌豆</h3>
+<p>对于熟悉 Photoshop 的人来说，最好的选择似乎是 <a href="https://www.photopea.com" target="_blank">Photopia</a>。 Photopia 是一款网络应用程序，提供与 Photoshop 最相似的界面。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" alt="Photopea - www.photopea.com" />
+<em>Photopea - www.photopea.com</em></p>
+
+<p>有类似Photopia的网站，但Photopia的优势在于它允许广告拦截器拦截网络上的广告，这就是他们的收入模式。如果您是 Chrome 浏览器用户，请在网上商店中搜索<code class="language-plaintext highlighter-rouge">AdBlock</code>并安装它。</p>
+
+<p>即使不使用<code class="language-plaintext highlighter-rouge">AdBlock</code>，与其他网站相比，右侧面板上显示的广告数量也有限，因此并不太烦人。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" alt="Photopea - 右侧面板上的有限广告和 Chrome 网络浏览器上的 AdBlock 扩展" />
+<em>Photopea - 右侧面板上的有限广告和 Chrome 网络浏览器上的 AdBlock 扩展</em></p>
+
+<h3 id="克里塔">克里塔</h3>
+<p>如果您正在寻找与 Photopia 不同的离线图像编辑器，Krita 可能是一个选择。然而，对于非常熟悉Photoshop的用户来说，可能会感到陌生。 GUI 界面与 Photoshop 类似，但快捷方式和工具在很多方面有所不同。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" alt="克里塔" />
+<em>克里塔</em></p>
+
+<p>虽然它并不完全类似于 Photoshop，但如果您想要编辑或绘制图像并正在寻找一个完整的软件，Krita 可能是一个不错的选择。</p>
+
+<p>Krita 以应用程序映像的形式分发软件。访问下面的 Krita 站点并下载适用于 Linux 的应用程序映像。</p>
+<ul>
+  <li><a href="https://krita.org/en/download/krita-desktop">https://krita.org/en/download/krita-desktop</a></li>
+</ul>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" alt="Krita - 下载 Linux AppImage" />
+<em>Krita - 下载 Linux AppImage</em></p>
+
+<p>为下载的 Krita 应用程序映像授予执行权限并运行它。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
+<span class="nb">chmod </span>777 <span class="k">*</span>.appimage
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="生产率">生产率</h2>
+<h3 id="轻松手势鼠标手势宏">轻松手势（鼠标手势宏）</h3>
+<p>如果您有在 Windows 上使用 <a href="https://www.tcbmi.com/strokeit" target="_blank">Strokeit</a> 鼠标手势宏软件的经验，<code class="language-plaintext highlighter-rouge">Easyrinkle Gesture</code>是 Ubuntu 的最佳替代方案。</p>
+
+<p>如果你想用<code class="language-plaintext highlighter-rouge">鼠标右键</code>绘制手势，则需要进行以下设置。事实上，让它在启动时自动运行是一个重要的选项。</p>
+
+<p>在 Easyrinkle Preferences 选项卡中，将 Behaviour 设置为<code class="language-plaintext highlighter-rouge">Button 3</code>，并在 Appearance 中将其设置为自动运行。</p>
+
+<p>可以在<code class="language-plaintext highlighter-rouge">操作</code>选项卡中添加鼠标手势操作。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" alt="EasyStrike - 偏好设置" />
+<em>EasyStrike - 偏好设置</em></p>
+
+<p>您可以通过在 Ubuntu Software 应用程序中搜索它来轻松安装它。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" alt="EasyStrike - 在 Ubuntu 软件中下载" />
+<em>EasyStrike - 在 Ubuntu 软件中下载</em></p>
+
+<p>以下是我通过将它们映射到鼠标手势来使用的一些快捷键。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>应用程序</th>
+      <th>快捷方式</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>常见的</td>
+      <td>Ctrl + 主页</td>
+      <td>转到页面顶部</td>
+    </tr>
+    <tr>
+      <td>常见的</td>
+      <td>Ctrl + 结束</td>
+      <td>转到页面底部</td>
+    </tr>
+    <tr>
+      <td>VS代码</td>
+      <td>Ctrl + Alt + -</td>
+      <td>回去</td>
+    </tr>
+    <tr>
+      <td>VS代码</td>
+      <td>Ctrl + Shift + -</td>
+      <td>前进</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="系统">系统</h2>
+<h3 id="bleachbit自由空间清理器">BleachBit（自由空间清理器）</h3>
+<p><a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a> 是一款通过删除不必要的文件来释放空间的有用软件。除了Linux之外，它还支持Windows、Mac OS等多种操作系统。</p>
+
+<p>您可以通过在 Ubuntu 软件应用程序中搜索<code class="language-plaintext highlighter-rouge">bleachbit</code>轻松安装它。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" alt="Ubuntu 软件 - BleachBit" />
+<em>Ubuntu 软件 - BleachBit</em></p>
+
+<p>检查要整理的项目后，按<code class="language-plaintext highlighter-rouge">清理</code>按钮会自动删除不需要的文件以确保可用空间。但是，在组织<code class="language-plaintext highlighter-rouge">APT</code>和<code class="language-plaintext highlighter-rouge">journald</code>项目时必须小心。这可能会破坏您的 Ubuntu 系统或软件包的依赖关系。</p>
+
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="漂白位" />
+<em>漂白位</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/zh-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[Jekyll Windows测试的VirtualBox端口转发方法]]></title>
+      <link>https://unclesnote.com/zh/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</link>
+      <guid>https://unclesnote.com/zh/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Tue, 24 Oct 2023 18:52:05 +0900</pubDate>
+      <category><![CDATA[GitHub 页面,杰基尔]]></category>
+      <tag><![CDATA[杰基尔,虚拟盒子,转发端口,GitHub页面,GitHub]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
+      <description><![CDATA[就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll(GitHub Pages)，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏]]></description>
+      <content:encoded><![CDATA[<p>就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll(GitHub Pages)，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏览器上测试Jekyll的Virtual Box端口转发方法。</p>
+<h2 id="在-ubuntu-vm-上本地运行-jekyll">在 Ubuntu VM 上本地运行 Jekyll</h2>
+<p>首先，在 Ubuntu VM 中使用<code class="language-plaintext highlighter-rouge">ifconfig</code>检查网络接口的 IP 地址。在我的例子中，IP 地址是<code class="language-plaintext highlighter-rouge">10.0.2.15</code>。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>$ ifconfig
+..
+enp0s3: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::e1f0:30d0:1e9b:bafc  prefixlen 64  scopeid 0x20&lt;link&gt;
+        ether 08:00:27:07:7a:96  txqueuelen 1000  (Ethernet)
+        RX packets 9737  bytes 12163823 (12.1 MB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3811  bytes 1289032 (1.2 MB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+...
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>要测试 Jekyll，请运行它并使用<code class="language-plaintext highlighter-rouge">--host</code>选项输入上面确认的 IP 地址。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--host</span> 10.0.2.15
+Configuration file: /home/myaccount/my_jekyll_root/_config.yml
+ Theme Config file: /home/myaccount/my_jekyll_root/_config.yml
+            Source: /home/myaccount/my_jekyll_root
+       Destination: /home/myaccount/my_jekyll_root/_site
+ Incremental build: disabled. Enable with <span class="nt">--incremental</span>
+      Generating... 
+                    <span class="k">done in </span>1.483 seconds.
+ Auto-regeneration: enabled <span class="k">for</span> <span class="s1">'/home/myaccount/my_jekyll_root'</span>
+    Server address: http://10.0.2.15:4000/
+  Server running... press ctrl-c to stop.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="在-virtual-box-管理器中为-ubuntu-vm-设置端口转发">在 Virtual Box 管理器中为 Ubuntu VM 设置端口转发</h2>
+<p>在 Virtual Box 管理器中 Ubuntu VM 的网络设置中，输入以下内容来添加端口转发。</p>
+
+<p><code class="language-plaintext highlighter-rouge">Guest IP</code>地址是在 Ubuntu VM 上确认的 IP 地址。</p>
+<ul>
+  <li><strong>姓名</strong>：（您想要的名字）</li>
+  <li><strong>协议</strong>：TCP</li>
+  <li><strong>主机IP</strong>：127.0.0.1</li>
+  <li><strong>来宾 IP</strong>：10.0.2.15（上面确认的 Ubuntu VM 的 IP 地址）</li>
+  <li><strong>访客端口</strong>：4000</li>
+</ul>
+
+<p><img src="/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" alt="VirtualBox Manager - 端口转发规则" />
+<em>VirtualBox Manager - 端口转发规则</em></p>
+
+<p>现在您可以通过在 X86 Windows 浏览器中连接到<code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code>来测试 Jekyll。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/zh-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png" />
+      <media:content url="https://unclesnote.com/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[在 VirtualBox 中向 Ubuntu (20.04) VM 添加新硬盘]]></title>
+      <link>https://unclesnote.com/zh/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</link>
+      <guid>https://unclesnote.com/zh/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:45 +0900</pubDate>
+      <category><![CDATA[乌班图,虚拟盒子]]></category>
+      <tag><![CDATA[乌班图,虚拟盒子,格帕特,系统表,通用唯一标识符]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</guid>
+      <description><![CDATA[我们将解释如何在 Oracle VM VirtualBox 的 Ubuntu(20.04) VM 中创建、附加和使用磁盘。该过程的大致轮廓如下。]]></description>
+      <content:encoded><![CDATA[<p>我们将解释如何在 Oracle VM VirtualBox 的 Ubuntu(20.04) VM 中创建、附加和使用磁盘。</p>
+
+<p>该过程的大致轮廓如下。</p>
+<ul>
+  <li>在 Virtual Box Manager 中创建虚拟硬盘并将其附加到 Ubuntu VM</li>
+  <li>初始化并格式化Ubuntu GUI界面上附加的磁盘设备</li>
+  <li>使磁盘设备在每次 Ubuntu 启动时可用。</li>
+</ul>
+
+<h2 id="1-创建磁盘映像并将其附加到-ubuntu-vm">1. 创建磁盘映像并将其附加到 Ubuntu VM</h2>
+<p>可以通过 Virtual Box 管理器中的<code class="language-plaintext highlighter-rouge">虚拟媒体管理器</code>创建磁盘映像。</p>
+
+<p>我计划创建一个55GB的镜像，创建磁盘镜像有两种选择。第一个是一个选项，占用我已经使用的硬盘容量，第二个是创建一个选项，一次性占用从一开始就计划的容量。不过，为了稳定运行，我会使用第二个选项一次创建55GB。</p>
+
+<p>我使用<code class="language-plaintext highlighter-rouge">预分配完整大小</code>选项创建了一个虚拟硬盘。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" alt="Oracle VM VirtualBox Manager - 创建虚拟硬盘" />
+<em>Oracle VM VirtualBox Manager - 创建虚拟硬盘</em></p>
+
+<p>创建虚拟磁盘映像后，经过虚拟磁盘映像初始化时间后，您可以在硬盘列表中查看创建的磁盘。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" alt="Oracle VM VirtualBox Manager - 正在进行虚拟硬盘初始化" />
+<em>Oracle VM VirtualBox Manager - 正在进行虚拟硬盘初始化</em></p>
+
+<p>现在我们将创建的虚拟硬盘添加到Ubuntu VM中。</p>
+
+<p>您可以在 Ubuntu VM 设置的<code class="language-plaintext highlighter-rouge">存储</code>选项卡中使用 SATA 控制器添加硬盘。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - 将硬盘添加到 Ubuntu VM" />
+<em>Oracle VM VirtualBox Manager - 将硬盘添加到 Ubuntu VM</em></p>
+
+<p>当您选择您创建的硬盘时，您可以在信息部分检查该硬盘是否已连接。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - 检查添加到 Ubuntu VM 的硬盘" />
+<em>Oracle VM VirtualBox Manager - 检查添加到 Ubuntu VM 的硬盘</em></p>
+
+<h2 id="2-ubuntu-vm-中的磁盘初始化">2. Ubuntu VM 中的磁盘初始化</h2>
+<p>从虚拟机的角度来看，硬盘物理连接到 Ubuntu VM。</p>
+
+<p>现在我们要在 Ubuntu VM 中格式化磁盘。我们可以使用经典的<code class="language-plaintext highlighter-rouge">fdisk</code>来完成此操作，但我们将继续使用一个更直观的 GUI 工具，称为<code class="language-plaintext highlighter-rouge">Gparted</code>。</p>
+
+<p>让我们使用 apt 安装并运行 gparted。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="c"># install gparted</span>
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>gparted
+<span class="c"># run gparted</span>
+gparted
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>选择GParted右上角创建的硬盘后，我们将创建一个<code class="language-plaintext highlighter-rouge">msdos</code>分区表，并按照下图将其格式化为<code class="language-plaintext highlighter-rouge">ext4</code>。</p>
+
+<p>通过菜单应用分区<code class="language-plaintext highlighter-rouge">msdos</code>分区表。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" alt="Ubuntu VM - GParted - 以 msdos 格式创建分区表" />
+<em>Ubuntu VM - GParted - 以 msdos 格式创建分区表</em></p>
+
+<p>然后，我们将创建一个分区。右键单击未分配的分区并创建一个<code class="language-plaintext highlighter-rouge">ext4</code>文件系统分区。我把它设置为全尺寸。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" alt="Ubuntu VM - GParted - 使用 ext4 文件系统创建分区" />
+<em>Ubuntu VM - GParted - 使用 ext4 文件系统创建分区</em></p>
+
+<p>将 ext4 文件系统的分区格式化为<code class="language-plaintext highlighter-rouge">etx4</code>。</p>
+
+<p>然后单击绿色复选框以应用到目前为止所做的设置。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" alt="Ubuntu VM - GParted - 将分区格式化为 ext4" />
+<em>Ubuntu VM - GParted - 将分区格式化为 ext4</em></p>
+
+<p>至此硬盘初始化完成。要挂载硬盘以便每次 Ubuntu VM 启动时都可以使用它，需要唯一的磁盘 ID 信息。右键单击创建的分区，在信息菜单中查看<code class="language-plaintext highlighter-rouge">UUID</code>，并记住它。</p>
+
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - 检查磁盘分区的 UUID" />
+<em>Ubuntu VM - GParted - 检查磁盘分区的 UUID</em></p>
+
+<h2 id="3每次启动挂载磁盘">3.每次启动，挂载磁盘</h2>
+<p>当前状态下，格式化的磁盘设备已就绪，但没有可写入文件的路径。因此，我们将通过将我的特定文件夹连接到硬盘设备来创建一条路径。这是<code class="language-plaintext highlighter-rouge">挂载</code>。</p>
+
+<p>上面gparted中标识的<code class="language-plaintext highlighter-rouge">UUID</code>代表硬盘设备，我们将这个设备连接到<code class="language-plaintext highlighter-rouge">/mnt/data</code>文件夹，创建一个可以写入文件的路径。由于每次 Ubuntu 启动时磁盘都需要可用，因此我们将在<code class="language-plaintext highlighter-rouge">/etc/fstab</code>中对此进行描述。</p>
+
+<p>下面的行将添加到 <code class="language-plaintext highlighter-rouge">/etc/fstab</code> 中。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="c"># UUID=&lt;hard disk device UUID&gt; &lt;folder where the device will be mounted&gt; ext4    defaults          0       0 </span>
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>然后，我们将创建一个从挂载的<code class="language-plaintext highlighter-rouge">/mnt/data</code>到主目录中<code class="language-plaintext highlighter-rouge">data</code>文件夹的符号链接。</p>
+
+<p>详细过程如下，如果完成所有步骤，请重新启动。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">mkdir</span> <span class="nt">-p</span> /mnt/data
+<span class="nv">$ </span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /mnt/data
+<span class="nv">$ </span><span class="nb">cd</span> ~/
+<span class="nv">$ </span><span class="nb">sudo ln</span> <span class="nt">-s</span> /mnt/data data
+<span class="nv">$ </span><span class="nb">sudo </span>vi /etc/fstab  
+<span class="c">#-----------------------------------------------------------------------------</span>
+<span class="c"># /etc/fstab: static file system information.</span>
+<span class="c">#</span>
+<span class="c"># Use 'blkid' to print the universally unique identifier for a</span>
+<span class="c"># device; this may be used with UUID= as a more robust way to name devices</span>
+<span class="c"># that works even if disks are added and removed. See fstab(5).</span>
+<span class="c">#</span>
+<span class="c"># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;       &lt;dump&gt;  &lt;pass&gt;</span>
+<span class="c"># / was on /dev/sda5 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>76a80216-1031-4871-945c-4c8de2845136 /               ext4    <span class="nv">errors</span><span class="o">=</span>remount-ro 0       1
+<span class="nv">UUID</span><span class="o">=</span>e47277b0-04dd-44f1-a4c0-861654b4d226 /mnt/data       ext4    defaults          0       0 
+<span class="c"># /boot/efi was on /dev/sda1 during installation</span>
+<span class="nv">UUID</span><span class="o">=</span>A4B5-D201  /boot/efi       vfat    <span class="nb">umask</span><span class="o">=</span>0077      0       1
+/swapfile                                 none            swap    sw              0       0
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/zh-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[输出日志到终端或控制台时如何指定颜色]]></title>
+      <link>https://unclesnote.com/zh/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</link>
+      <guid>https://unclesnote.com/zh/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 23 Oct 2023 21:58:42 +0900</pubDate>
+      <category><![CDATA[乌班图,常见的]]></category>
+      <tag><![CDATA[VS代码,终端,调试控制台,输出,乌班图,常见的]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</guid>
+      <description><![CDATA[在开发软件时，日志可以帮助您检查运行情况并查找问题原因。如果严重错误或警告级别的日志具有易于查找的颜色，将会很有帮助。您可以在您使用的 IDE（例如 VS Code 或 Visual Studio）中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。]]></description>
+      <content:encoded><![CDATA[<p>在开发软件时，日志可以帮助您检查运行情况并查找问题原因。如果严重错误或警告级别的日志具有易于查找的颜色，将会很有帮助。</p>
+
+<p>您可以在您使用的 IDE(例如 VS Code 或 Visual Studio)中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。因此，我将介绍一种从终端角度独立设置文本颜色的方法。</p>
+<blockquote class="prompt-info">
+  <p><strong>如何在 Visual Studio Code 中更改输出文本颜色</strong><br />
+对于 VS Code，您可以通过在<code class="language-plaintext highlighter-rouge">Settings &gt; User &gt; Workbanch &gt; Appearance &gt; Edit in Settings.json</code>中的<code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code>中设置颜色值来更改调试控制台或输出窗口的颜色。<br />
+<code class="language-plaintext highlighter-rouge">workbench.colorCustomizations</code>的参数请参考下面的链接。</p>
+
+  <p><a href="https://code.visualstudio.com/api/references/theme-color" target="_blank">https://code.visualstudio.com/api/references/theme-color</a></p>
+</blockquote>
+<h2 id="如何设置文字颜色">如何设置文字颜色</h2>
+<p>要更改文本颜色，您需要将所需的文本居中，并在开头和结尾添加以下代码。</p>
+<ul>
+  <li><strong>开始</strong> : <code class="language-plaintext highlighter-rouge">(转义字符)[(样式代码);(文本颜色);(背景颜色)m</code></li>
+  <li><strong>文本</strong>：<code class="language-plaintext highlighter-rouge">（您想要的文本）</code></li>
+  <li><strong>结束</strong> : <code class="language-plaintext highlighter-rouge">(转义字符)[0m</code></li>
+</ul>
+
+<p>最后，更改文本颜色的一行将具有以下格式。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">(转义字符)[(样式代码);(文本颜色);(背景颜色)m</code> <code class="language-plaintext highlighter-rouge">(您想要的文本)</code> <code class="language-plaintext highlighter-rouge">(转义字符)[0m</code></li>
+</ul>
+
+<p>下面是黑色背景上粗体白色文本的字符串<code class="language-plaintext highlighter-rouge">I am text</code>的示例。</p>
+
+<p>每个数字的含义请查看后面章节中的预定义代码。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>\u001b[1;37;40mI am text\u001b[0m
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>我们先看下表。列出了用于更改文本颜色的每个元素。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>元素</th>
+      <th>强制的</th>
+      <th>评论</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>转义字符</td>
+      <td>是的</td>
+      <td>使用适合您的 Unicode、八进制或十六进制转义字符。</td>
+    </tr>
+    <tr>
+      <td>样式代码</td>
+      <td>选修的</td>
+      <td>文本样式，例如粗体、闪烁、暗淡和下划线。</td>
+    </tr>
+    <tr>
+      <td>文字颜色</td>
+      <td>选修的</td>
+      <td>通过从已定义的颜色代码中选择文本颜色。</td>
+    </tr>
+    <tr>
+      <td>文本（前景）颜色</td>
+      <td>选修的</td>
+      <td>通过从已定义的颜色代码中选择文本背景颜色。</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">（转义字符）[0m</code></td>
+      <td>是的</td>
+      <td>设置后重置文本颜色和样式。<br />如果要更改多行的颜色，可以稍后在所需位置重置文本颜色。</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>尽管<code class="language-plaintext highlighter-rouge">转义字符</code>是强制性的，但您可以根据表达方法使用后面描述的三种字符之一。</p>
+
+<p>您可以根据自己的喜好添加<code class="language-plaintext highlighter-rouge">样式</code>、<code class="language-plaintext highlighter-rouge">文本颜色</code>和<code class="language-plaintext highlighter-rouge">背景颜色</code>，并用<code class="language-plaintext highlighter-rouge">;</code>分隔它们。我们稍后将解释可以表达的选项，但顺序并不重要，因为代表每个选项的数字都是唯一的。</p>
+
+<p>最后，使用<code class="language-plaintext highlighter-rouge">(转义字符)[0m</code>重置文本颜色和样式。除非重置，否则后续文本颜色和样式将继续。</p>
+
+<p>如果要更改 shell 脚本中文本的颜色，必须将<code class="language-plaintext highlighter-rouge">-e</code>选项添加到<code class="language-plaintext highlighter-rouge">echo</code>命令中以允许反斜杠输入。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="se">\0</span><span class="s2">33[34m I Am Blue Text ! </span><span class="se">\0</span><span class="s2">33[0m"</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="颜色和款式代码">颜色和款式代码</h2>
+<h3 id="1-转义字符">1. 转义字符</h3>
+<p>下面的转义字符与ASCII码中的27相同，表达方法如下，可以使用任意一种。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">\u001b</code>：Unicode 转义字符。它在<code class="language-plaintext highlighter-rouge">\u</code>之后使用 4 位十六进制 Unicode 代码点表示转义字符。</li>
+  <li><code class="language-plaintext highlighter-rouge">\033</code> ：这表示使用八进制表示法的转义字符</li>
+  <li><code class="language-plaintext highlighter-rouge">\x1b</code> ：这表示使用十六进制表示法的转义字符</li>
+</ul>
+
+<h3 id="2-风格">2. 风格</h3>
+<p>您可以选择文本样式，但我怀疑这是必要的。日志应该易于阅读。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">1</code>：粗体（或浓烈的颜色）</li>
+  <li><code class="language-plaintext highlighter-rouge">2</code>：暗淡（或微弱）</li>
+  <li><code class="language-plaintext highlighter-rouge">4</code>：下划线</li>
+  <li><code class="language-plaintext highlighter-rouge">5</code>：闪烁（快速闪烁文本）</li>
+  <li><code class="language-plaintext highlighter-rouge">7</code>：反转（交换前景色和背景色）</li>
+  <li><code class="language-plaintext highlighter-rouge">8</code>：隐藏（不可见文本）</li>
+</ul>
+
+<h3 id="3-文字前景颜色">3. 文字（前景）颜色</h3>
+<p>这些是更改文本颜色的代码。将其视为覆盖您正在使用的终端客户端软件的默认设置。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">30</code>：黑色</li>
+  <li><code class="language-plaintext highlighter-rouge">31</code>：红色</li>
+  <li><code class="language-plaintext highlighter-rouge">32</code>：绿色</li>
+  <li><code class="language-plaintext highlighter-rouge">33</code>：黄色</li>
+  <li><code class="language-plaintext highlighter-rouge">34</code>：蓝色</li>
+  <li><code class="language-plaintext highlighter-rouge">35</code>：洋红色</li>
+  <li><code class="language-plaintext highlighter-rouge">36</code>：青色</li>
+  <li><code class="language-plaintext highlighter-rouge">37</code>：白色</li>
+</ul>
+
+<h3 id="4-背景颜色">4. 背景颜色</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">40</code>：黑色背景</li>
+  <li><code class="language-plaintext highlighter-rouge">41</code>：红色背景</li>
+  <li><code class="language-plaintext highlighter-rouge">42</code>：绿色背景</li>
+  <li><code class="language-plaintext highlighter-rouge">43</code>：黄色背景</li>
+  <li><code class="language-plaintext highlighter-rouge">44</code>：蓝色背景</li>
+  <li><code class="language-plaintext highlighter-rouge">45</code>：洋红色背景</li>
+  <li><code class="language-plaintext highlighter-rouge">46</code>：青色背景</li>
+  <li><code class="language-plaintext highlighter-rouge">47</code>：白色背景</li>
+</ul>
+
+<h3 id="5-颜色重置">5. 颜色重置</h3>
+<p>如果您不重置文本颜色和样式，它将继续按初始设置。</p>
+
+<p>通常，它以<code class="language-plaintext highlighter-rouge">(转义字符)[0m</code>的形式添加到文本末尾。</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">0</code>：将所有样式和颜色重置为默认值</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/zh-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png" /></item></channel>
+</rss>

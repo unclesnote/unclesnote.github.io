@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231102005313
-thumbnail: /assets/images/231102005313/ko-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png
-lang: ko
----

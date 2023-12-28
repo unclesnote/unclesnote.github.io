@@ -1,6 +1,0 @@
----
-layout: prj_redirects
-post_id: 231214181812
-thumbnail: /assets/images/231214181812/ko-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png
-lang: ko
----

@@ -1,8 +1,0 @@
----
-title: "긱벤치"
-layout: tag
-ro_ref: ko-tag-긱벤치
-tag: "긱벤치"
-tag_web: "긱벤치"
-lang: ko
----

@@ -1,8 +1,0 @@
----
-title: "fatab"
-layout: tag
-ro_ref: en-tag-fatab
-tag: "fatab"
-tag_web: "fatab"
-lang: en
----

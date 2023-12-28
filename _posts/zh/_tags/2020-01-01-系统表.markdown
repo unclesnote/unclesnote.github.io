@@ -1,8 +1,0 @@
----
-title: "系统表"
-layout: tag
-ro_ref: zh-tag-系统表
-tag: "系统表"
-tag_web: "系统表"
-lang: zh
----

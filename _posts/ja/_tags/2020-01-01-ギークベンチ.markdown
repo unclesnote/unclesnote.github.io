@@ -1,8 +1,0 @@
----
-title: "ギークベンチ"
-layout: tag
-ro_ref: ja-tag-ギークベンチ
-tag: "ギークベンチ"
-tag_web: "ギークベンチ"
-lang: ja
----

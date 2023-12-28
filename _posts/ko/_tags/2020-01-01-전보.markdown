@@ -1,8 +1,0 @@
----
-title: "전보"
-layout: tag
-ro_ref: ko-tag-전보
-tag: "전보"
-tag_web: "전보"
-lang: ko
----

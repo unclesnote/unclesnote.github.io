@@ -1,8 +1,0 @@
----
-title: "Callouts"
-layout: tag
-ro_ref: en-tag-Callouts
-tag: "Callouts"
-tag_web: "callouts"
-lang: en
----
