@@ -21,8 +21,107 @@
     <language>ko</language>
     <description><![CDATA[엉클 샘의 IT & 개발 낙서장]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 15:14:33 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[Obsidian에 YouTube 비디오 삽입 - iframe, ReadItLater]]></title>
+      <link>https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</link>
+      <guid>https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+      <category><![CDATA[옵시디언]]></category>
+      <tag><![CDATA[옵시디언]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <description><![CDATA[Obsidian으로 기사를 작성할 때 YouTube 동영상을 삽입하거나 스크랩해야 하는 경우가 있습니다. YouTube 동영상을 삽입하는 방법에는 크게 두 가지가 있습니다.]]></description>
+      <content:encoded><![CDATA[<p>Obsidian으로 기사를 작성할 때 YouTube 동영상을 삽입하거나 스크랩해야 하는 경우가 있습니다. YouTube 동영상을 삽입하는 방법에는 크게 두 가지가 있습니다.</p>
+<ul>
+  <li>iframe 태그를 이용하여 직접 붙여넣기</li>
+  <li>ReadItLater 커뮤니티 플러그인을 사용하여 붙여넣기</li>
+</ul>
+
+<h2 id="아이프레임">아이프레임</h2>
+<p>Obsidian은 웹 기반으로 개발되었습니다. 따라서 HTML 태그를 사용할 수 있습니다. 따라서 <code class="language-plaintext highlighter-rouge">iframe</code> HTML 태그를 사용하여 동영상을 삽입할 수 있습니다.</p>
+
+<p>다행히 유튜브에는 공유 기능을 통해 쉽게 iframe 태그를 얻을 수 있는 기능이 있습니다. 유튜브 영상 재생 화면에서 <code class="language-plaintext highlighter-rouge">공유</code> 버튼을 누르면 열리는 팝업에서 <code class="language-plaintext highlighter-rouge">삽입</code> 버튼을 클릭하세요.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" alt="YouTube - `공유` - `삽입`" width="972" height="605" />
+<em>YouTube - <code class="language-plaintext highlighter-rouge">공유</code> - <code class="language-plaintext highlighter-rouge">삽입</code></em></p>
+
+<p>그런 다음 <code class="language-plaintext highlighter-rouge">복사</code> 버튼을 클릭하여 YouTube에서 동영상 공유를 위해 생성한 <code class="language-plaintext highlighter-rouge">iframe</code> 태그를 복사합니다.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" alt="YouTube - `공유` - `삽입` - `복사`" width="972" height="680" />
+<em>YouTube - <code class="language-plaintext highlighter-rouge">공유</code> - <code class="language-plaintext highlighter-rouge">삽입</code> - <code class="language-plaintext highlighter-rouge">복사</code></em></p>
+
+<p>그리고 복사한 iframe 태그를 Obsidian에 붙여넣으면 재생 및 제어가 가능한 유튜브 영상이 표시됩니다.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - Obsidian의 `iframe` HTML 태그 붙여넣기" width="972" height="575" />
+<em>Obsidian - Obsidian의 <code class="language-plaintext highlighter-rouge">iframe</code> HTML 태그 붙여넣기</em></p>
+
+<p>이 방법을 사용하면 별도의 플러그인을 설치하지 않고도 Obsidian에 동영상을 빠르게 삽입할 수 있습니다.</p>
+
+<p><strong>좋은 지적</strong></p>
+<ul>
+  <li>별도의 플러그인 설치 없이 간편하게 동영상 삽입</li>
+</ul>
+
+<p><strong>나쁜 일</strong></p>
+<ul>
+  <li>필요한 경우 동영상 제목, 채널 이름 등과 같은 동영상 메타데이터를 수동으로 붙여넣어야 합니다.</li>
+  <li>YouTube에서 iframe 태그를 검색하려면 사이트에서 몇 가지 단계를 거쳐야 합니다.</li>
+</ul>
+
+<h2 id="obsidian-readitlater-커뮤니티-플러그인">Obsidian <strong>ReadItLater</strong> 커뮤니티 플러그인</h2>
+<p>위에서 설명한 유튜브의 iframe 태그를 가져와서 Obsidian에 붙여넣는 방법은 영상 제목, 날짜, 채널명 등의 메타데이터 없이 단순히 영상만 보여주는 기능이었습니다. 하지만 YouTube, Vimeo, Bilibili, Twitter, TikTok, 웹사이트 URL 등 다양한 콘텐츠를 Obsidian에 삽입하려면 <a href="https://github.com/DominikPieper/obsidian-ReadItLater" target="_blank">ReadItLater</a> 플러그인은 좋은 옵션이 될 수 있습니다. 사실 이 플러그인은 일종의 스크래퍼 플러그인입니다.</p>
+
+<p>대상 플랫폼의 콘텐츠 URL을 복사해 플러그인을 통해 붙여넣으면 새로운 노트가 생성되고 해당 콘텐츠가 원하는 콘텐츠의 메타데이터 정보와 함께 삽입되는 것이 기본 원칙이다.</p>
+
+<p><strong>좋은 지적</strong></p>
+<ul>
+  <li>YouTube, Vimeo, Bilibili, Twitter, TikTok, 웹사이트 URL 등 다양한 플랫폼 및 콘텐츠 삽입 가능</li>
+  <li>YouTube를 예로 들면, 동영상의 iframe 태그를 복사하려면 YouTube 메뉴에서 여러 단계를 거쳐야 하는데, 플러그인은 웹 브라우저에서 주소만 알면 자동으로 iframe 태그를 생성합니다.</li>
+  <li>영상과 함께 원하는 메타데이터를 Obsidian에 붙여넣을 수 있습니다.</li>
+  <li>일반 웹페이지 게시물을 플러그인을 통해 붙여넣으면 크롤링 수준에서 마크다운 형식으로 붙여넣을 수 있습니다.</li>
+</ul>
+
+<p><strong>나쁜 일</strong></p>
+<ul>
+  <li>플러그인의 기본 개념은 URL을 Obsidian에 붙여넣어 새로운 노트를 생성하는 것이므로, 작성 중인 글에 내용을 붙여넣기 위해서는 새로운 노트에서 다시 글에 붙여넣어야 합니다.</li>
+</ul>
+
+<h3 id="설치-및-사용-방법">설치 및 사용 방법</h3>
+<p>Obsidian 커뮤니티 플러그인 메뉴에서 <code class="language-plaintext highlighter-rouge">readitlater</code>를 검색하여 설치하고 활성화하세요.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" alt="Obsidian - 커뮤니티 플러그인 - `ReadItLater`" width="972" height="350" />
+<em>Obsidian - 커뮤니티 플러그인 - <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
+
+<p>웹 브라우저에 표시된 URL을 클릭하거나 YouTube의 공유 버튼을 클릭하면 해당 URL이 클립보드에 복사됩니다.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" alt="유튜브 - `공유` - `복사`" width="972" height="571" />
+<em>유튜브 - <code class="language-plaintext highlighter-rouge">공유</code> - <code class="language-plaintext highlighter-rouge">복사</code></em></p>
+
+<p>그런 다음 Obsidian에서 <code class="language-plaintext highlighter-rouge">Ctrl + P</code> 단축키를 누르고 <code class="language-plaintext highlighter-rouge">readitlater</code>를 검색한 후 아래 메뉴를 선택하세요.</p>
+<ul>
+  <li>ReadItLater: Save clipboard</li>
+</ul>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="흑요석 - `Ctrl + P` - `readitlater` 검색 - `ReadItLater: 클립보드 저장` 선택" width="972" height="471" />
+<em>흑요석 - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - <code class="language-plaintext highlighter-rouge">readitlater</code> 검색 - <code class="language-plaintext highlighter-rouge">ReadItLater: 클립보드 저장</code> 선택</em></p>
+
+<p>그러면 새 노트가 자동으로 생성되고 메타데이터와 비디오가 노트에 포함됩니다.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" alt="흑요석 - `ReadItLater` 플러그인에 의해 생성된 메모" width="972" height="610" />
+<em>흑요석 - <code class="language-plaintext highlighter-rouge">ReadItLater</code> 플러그인에 의해 생성된 메모</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/ko-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[한국의 겨울 길거리 음식 - 붕어빵]]></title>
@@ -30,8 +129,8 @@
       <guid>https://unclesnote.com/ko/231230151433/korean_winter_street_food_bungeobbang</guid>
       <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
-      <category><![CDATA[Korea,Food]]></category>
-      <tag><![CDATA[Korea,Food]]></tag>
+      <category><![CDATA[Korea,Foods]]></category>
+      <tag><![CDATA[Korea,FishBread,Foods,StreetFoods]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ko/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[붕어빵은 비교적 가격인 저렴하고 따듯한 음식이라서 한국에 겨울에만 주로 판매가 되는 길거리 음식 중에 하나 입니다. 그리고 붕어빵은 붕어와 빵의 단어의 합성어 입니다.]]></description>
       <content:encoded><![CDATA[<p>붕어빵은 비교적 가격인 저렴하고 따듯한 음식이라서 한국에 겨울에만 주로 판매가 되는 길거리 음식 중에 하나 입니다. 그리고 붕어빵은 붕어와 빵의 단어의 합성어 입니다.</p>
@@ -40,7 +139,9 @@
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="왼쪽 - 붕어빵, 오른쪽 - 잉어빵" width="972" height="598" />
 <em>왼쪽 - 붕어빵, 오른쪽 - 잉어빵</em></p>
 
-<p>붕어빵은 길거리 노점상에서 파는 붕어 모양의 간식 풀빵입니다. 생김새가 붕어빵과 유사하지만, 밀가루 대신 찹쌀로 만든 것을 잉어빵이라고 부릅니다. 잉어빵은 찹쌀로 만들었기 때문에 붕어빵 보다 더 얇고 식감이 쫀득하고 고소합니다. 붕어빵은 철로 된 붕어모양의 틀에 밀가루 반죽과 토핑을 넣어 굽는 방식으로 조리됩니다.</p>
+<p>붕어빵은 길거리 노점상에서 파는 붕어 모양의 간식 풀빵입니다. 생김새가 붕어빵과 유사하지만, 밀가루 대신 찹쌀로 만든 것을 잉어빵이라고 부릅니다. 잉어빵은 찹쌀로 만들었기 때문에 붕어빵 보다 더 얇고 식감이 쫀득하고 고소합니다.</p>
+
+<p>붕어빵은 철로 된 붕어모양의 틀에 밀가루 반죽과 토핑을 넣어 굽는 방식으로 조리됩니다.</p>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵-조리방법-틀에_반죽을_넣어_굽기.png" alt="붕어빵 - 조리방법 - 틀에 반죽을 넣어 굽기" width="972" height="547" />
 <em>붕어빵 - 조리방법 - 틀에 반죽을 넣어 굽기</em></p>

@@ -21,8 +21,107 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 15:14:33 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Embed YouTube video into Obsidian - iframe, ReadItLater]]></title>
+      <link>https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</link>
+      <guid>https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+      <category><![CDATA[Obsidian]]></category>
+      <tag><![CDATA[Obsidian]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <description><![CDATA[When writing articles in Obsidian, you may sometimes need to embed or scrap YouTube videos. There are two main ways to embed YouTube videos.]]></description>
+      <content:encoded><![CDATA[<p>When writing articles in Obsidian, you may sometimes need to embed or scrap YouTube videos. There are two main ways to embed YouTube videos.</p>
+<ul>
+  <li>Directly pasting using the iframe tag</li>
+  <li>Pasting using the ReadItLater community plugin</li>
+</ul>
+
+<h2 id="iframe">iframe</h2>
+<p>Obsidian was developed web-based. Therefore, you can use HTML tags. So, you can embed a video using the <code class="language-plaintext highlighter-rouge">iframe</code> HTML tag.</p>
+
+<p>Fortunately, YouTube provides a function that allows you to easily obtain iframe tags through the sharing function. When you press the ‘Share’ button on the YouTube video playback screen, click the ‘Embed’ button in the pop-up that opens.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" alt="Youtube - `Share` - `Embed`" width="972" height="605" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">Share</code> - <code class="language-plaintext highlighter-rouge">Embed</code></em></p>
+
+<p>Then, click the <code class="language-plaintext highlighter-rouge">Copy</code> button to copy the <code class="language-plaintext highlighter-rouge">iframe</code> tag created by YouTube for video sharing.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" alt="Youtube - `Share` - `Embed` - `Copy`" width="972" height="680" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">Share</code> - <code class="language-plaintext highlighter-rouge">Embed</code> - <code class="language-plaintext highlighter-rouge">Copy</code></em></p>
+
+<p>And, if you paste the copied iframe tag into Obsidian, a YouTube video that can be played and controlled will be displayed.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - Paste `iframe` HTML tag from Obsidian" width="972" height="575" />
+<em>Obsidian - Paste <code class="language-plaintext highlighter-rouge">iframe</code> HTML tag from Obsidian</em></p>
+
+<p>This method allows you to quickly embed a video into Obsidian without installing a separate plugin.</p>
+
+<p><strong>Good point</strong></p>
+<ul>
+  <li>Easily embed videos without installing a separate plug-in</li>
+</ul>
+
+<p><strong>Bad thing</strong></p>
+<ul>
+  <li>Video metadata, such as video title, channel name, etc., must be pasted manually if necessary.</li>
+  <li>In order to retrieve the iframe tag from YouTube, several steps are required on the site.</li>
+</ul>
+
+<h2 id="obsidian-readitlater-community-plugin">Obsidian <strong>ReadItLater</strong> Community Plugin</h2>
+<p>The method described above of taking an iframe tag from YouTube and pasting it into Obsidian was a function that simply showed the video without metadata such as the video title, date, and channel name. However, if you want to embed various content into your Obsidian, such as YouTube, Vimeo, Bilibili, Twitter, TikTok, Website URL, etc., the <a href="https://github.com/DominikPieper/obsidian-ReadItLater" target="_blank">ReadItLater</a> plugin can be a good option. Actually, this plugin is a kind of scraper plugin.</p>
+
+<p>The basic principle is that if you copy the content URL of the target platform and paste it through the plugin, a new note is created and the content is embedded along with the metadata information of the desired content.</p>
+
+<p><strong>Good point</strong></p>
+<ul>
+  <li>Capable of embedding content from various platforms and contents Such as  YouTube, Vimeo, Bilibili, Twitter, TikTok, Website URL, etc.</li>
+  <li>Taking YouTube as an example, several steps are required in the YouTube menu to copy the iframe tag of a video, but the plug-in automatically creates the iframe tag just by knowing the address on the web browser.</li>
+  <li>Can paste desired metadata along with the video into Obsidian.</li>
+  <li>If you paste a general web page post through a plugin, you can paste it in Markdown format at a crawling level.</li>
+</ul>
+
+<p><strong>Bad thing</strong></p>
+<ul>
+  <li>Since the basic concept of the plugin is to create a new note by pasting the URL into Obsidian, in order to paste the content into the article you are writing, you must paste it from the new note again to your article.</li>
+</ul>
+
+<h3 id="how-to-install-and-use">How to install and use</h3>
+<p>Search for <code class="language-plaintext highlighter-rouge">readitlater</code> in Obsidian’s community plugin menu, install and activate it.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" alt="Obsidian - Community Plugins - `ReadItLater`" width="972" height="350" />
+<em>Obsidian - Community Plugins - <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
+
+<p>Click the URL displayed in the web browser or the share button on YouTube to copy the URL to the clipboard.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" alt="Youtube - `Share` - `Copy`" width="972" height="571" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">Share</code> - <code class="language-plaintext highlighter-rouge">Copy</code></em></p>
+
+<p>Then, press the <code class="language-plaintext highlighter-rouge">Ctrl + P</code> shortcuts in Obsidian, search for <code class="language-plaintext highlighter-rouge">readitlater</code>, and select the menu below.</p>
+<ul>
+  <li>ReadItLater: Save clipboard</li>
+</ul>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - Search `readitlater` - Select `ReadItLater: Save clipboard`" width="972" height="471" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - Search <code class="language-plaintext highlighter-rouge">readitlater</code> - Select <code class="language-plaintext highlighter-rouge">ReadItLater: Save clipboard</code></em></p>
+
+<p>Then, a new note is automatically created, and metadata and video are embedded in the note.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian - Notes generated by the `ReadItLater` plugin" width="972" height="610" />
+<em>Obsidian - Notes generated by the <code class="language-plaintext highlighter-rouge">ReadItLater</code> plugin</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/en-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Korean winter street food - Bungeobbang]]></title>
@@ -30,8 +129,8 @@
       <guid>https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang</guid>
       <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
-      <category><![CDATA[Korea,Food]]></category>
-      <tag><![CDATA[Korea,Food]]></tag>
+      <category><![CDATA[Korea,Foods]]></category>
+      <tag><![CDATA[Korea,FishBread,Foods,StreetFoods]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[Bungeobbang is a relatively cheap and warm food, so it is one of the street foods that is mainly sold in Korea in the winter. And Bungeobbang is a compound]]></description>
       <content:encoded><![CDATA[<p>Bungeobbang is a relatively cheap and warm food, so it is one of the street foods that is mainly sold in Korea in the winter. And Bungeobbang is a compound word of the words carp and bread.</p>
@@ -40,7 +139,9 @@
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="Left - Bungeoppang, Right - Carp Bread" width="972" height="598" />
 <em>Left - Bungeoppang, Right - Carp Bread</em></p>
 
-<p>Bungeoppang is a snack shaped like a carp sold at street vendors. It looks similar to bungeoppang, but it is made with glutinous rice instead of flour and is called carp bread. Because carp bread is made from glutinous rice, it is thinner than bungeoppang and has a chewy and savory texture. Bungeobbang is cooked by placing flour dough and toppings in a mold shaped like an iron carp and baking it.</p>
+<p>Bungeoppang is a snack shaped like a carp sold at street vendors. It looks similar to bungeoppang, but it is made with glutinous rice instead of flour and is called carp bread. Because carp bread is made from glutinous rice, it is thinner than bungeoppang and has a chewy and savory texture.</p>
+
+<p>Bungeobbang is cooked by placing flour dough and toppings in a mold shaped like an iron carp and baking it.</p>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵-조리방법-틀에_반죽을_넣어_굽기.png" alt="Bungeobbang - Cooking method - Put the dough in a mold and bake" width="972" height="547" />
 <em>Bungeobbang - Cooking method - Put the dough in a mold and bake</em></p>

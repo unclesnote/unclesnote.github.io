@@ -21,8 +21,105 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 15:14:33 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[YouTube ビデオを Obsidian に埋め込む - iframe、ReadItLater]]></title>
+      <link>https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</link>
+      <guid>https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+      <category><![CDATA[黒曜石]]></category>
+      <tag><![CDATA[黒曜石]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <description><![CDATA[Obsidian で記事を書くとき、場合によっては YouTube ビデオを埋め込んだりスクラップしたりする必要があるかもしれません。 YouTube 動画を埋め込むには主に 2 つの方法があります。]]></description>
+      <content:encoded><![CDATA[<p>Obsidian で記事を書くとき、場合によっては YouTube ビデオを埋め込んだりスクラップしたりする必要があるかもしれません。 YouTube 動画を埋め込むには主に 2 つの方法があります。</p>
+<ul>
+  <li>iframeタグを使用して直接貼り付ける</li>
+  <li>ReadItLater コミュニティ プラグインを使用して貼り付ける</li>
+</ul>
+
+<h2 id="iframe">iframe</h2>
+<p>Obsidian は Web ベースで開発されました。したがって、HTML タグを使用できます。したがって、<code class="language-plaintext highlighter-rouge">iframe</code> HTML タグを使用してビデオを埋め込むことができます。</p>
+
+<p>幸いなことに、YouTubeでは共有機能を通じてiframeタグを簡単に取得できる機能が提供されています。 YouTube動画の再生画面で<code class="language-plaintext highlighter-rouge">共有</code>ボタンを押すと、ポップアップが開いて<code class="language-plaintext highlighter-rouge">埋め込み</code>ボタンをクリックします。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" alt="Youtube - `共有` - `埋め込み`" width="972" height="605" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">共有</code> - <code class="language-plaintext highlighter-rouge">埋め込み</code></em></p>
+
+<p>次に、<code class="language-plaintext highlighter-rouge">コピー</code>ボタンをクリックして、YouTube がビデオ共有用に作成した<code class="language-plaintext highlighter-rouge">iframe</code>タグをコピーします。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" alt="Youtube - `共有` - `埋め込み` - `コピー`" width="972" height="680" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">共有</code> - <code class="language-plaintext highlighter-rouge">埋め込み</code> - <code class="language-plaintext highlighter-rouge">コピー</code></em></p>
+
+<p>そして、コピーしたiframeタグをObsidianに貼り付けると、再生・操作可能なYouTube動画が表示されます。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - Obsidian から `iframe` HTML タグを貼り付けます" width="972" height="575" />
+<em>Obsidian - Obsidian から <code class="language-plaintext highlighter-rouge">iframe</code> HTML タグを貼り付けます</em></p>
+
+<p>この方法を使用すると、別のプラグインをインストールせずに、ビデオを Obsidian にすばやく埋め込むことができます。</p>
+
+<p><strong>いい視点ね</strong></p>
+<ul>
+  <li>別のプラグインをインストールせずにビデオを簡単に埋め込みます</li>
+</ul>
+
+<p><strong>悪いこと</strong></p>
+<ul>
+  <li>必要に応じて、ビデオ タイトル、チャンネル名などのビデオ メタデータを手動で貼り付ける必要があります。
+・YouTubeからiframeタグを取得するには、サイト側でいくつかの手順が必要です。</li>
+</ul>
+
+<h2 id="obsidian-readitlater-コミュニティ-プラグイン">Obsidian <strong>ReadItLater</strong> コミュニティ プラグイン</h2>
+<p>上で説明した YouTube から iframe タグを取得して Obsidian に貼り付ける方法は、動画のタイトルや日付、チャンネル名などのメタデータを持たずに、単純に動画を表示する機能でした。ただし、YouTube、Vimeo、Bilibili、Twitter、TikTok、Web サイト URL などのさまざまなコンテンツを Obsidian に埋め込みたい場合は、<a href="https://github.com/DominikPieper/obsidian-ReadItLater" target="_blank">ReadItLater</a>プラグインは良い選択肢になるかもしれません。実はこのプラグインはスクレイパープラグインの一種です。</p>
+
+<p>基本原理は、ターゲット プラットフォームのコンテンツ URL をコピーし、プラグインを介して貼り付けると、新しいノートが作成され、コンテンツが目的のコンテンツのメタデータ情報とともに埋め込まれることです。</p>
+
+<p><strong>いい視点ね</strong></p>
+<ul>
+  <li>YouTube、Vimeo、Bilibili、Twitter、TikTok、WebサイトのURLなど、さまざまなプラットフォームやコンテンツからコンテンツを埋め込むことができます。</li>
+  <li>YouTube を例に挙げると、動画の iframe タグをコピーするには YouTube メニューでいくつかの手順が必要ですが、Web ブラウザ上のアドレスを知るだけで、プラグインは自動的に iframe タグを作成します。</li>
+  <li>ビデオと一緒に必要なメタデータを Obsidian に貼り付けることができます。</li>
+  <li>プラグインを介して一般的な Web ページの投稿を貼り付ける場合、クローリング レベルでマークダウン形式で貼り付けることができます。</li>
+</ul>
+
+<p><strong>悪いこと</strong> 
+・プラグインの基本コンセプトはObsidianにURLを貼り付けて新規ノートを作成するため、作成中の記事に内容を貼り付けるには新規ノートから再度記事に貼り付ける必要があります。</p>
+
+<h3 id="インストール方法と使用方法">インストール方法と使用方法</h3>
+<p>Obsidian のコミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">readitlater</code>を検索し、インストールして有効化します。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" alt="Obsidian - コミュニティ プラグイン - `ReadItLater`" width="972" height="350" />
+<em>Obsidian - コミュニティ プラグイン - <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
+
+<p>Webブラウザに表示されたURL、またはYouTubeの共有ボタンをクリックしてURLをクリップボードにコピーします。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" alt="Youtube - `共有` - `コピー`" width="972" height="571" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">共有</code> - <code class="language-plaintext highlighter-rouge">コピー</code></em></p>
+
+<p>次に、Obsidian で<code class="language-plaintext highlighter-rouge">Ctrl + P</code>ショートカットを押し、<code class="language-plaintext highlighter-rouge">readitlater</code>を検索して、下のメニューを選択します。</p>
+<ul>
+  <li>ReadItLater: Save clipboard</li>
+</ul>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - `readitlater` を検索 - `ReadItLater: クリップボードを保存` を選択します" width="972" height="471" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - <code class="language-plaintext highlighter-rouge">readitlater</code> を検索 - <code class="language-plaintext highlighter-rouge">ReadItLater: クリップボードを保存</code> を選択します</em></p>
+
+<p>すると、新しいノートが自動的に作成され、そのノートにメタデータとビデオが埋め込まれます。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian - `ReadItLater` プラグインによって生成されたメモ" width="972" height="610" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">ReadItLater</code> プラグインによって生成されたメモ</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/ja-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[韓国の冬のストリートフード - パン]]></title>
@@ -30,8 +127,8 @@
       <guid>https://unclesnote.com/ja/231230151433/korean_winter_street_food_bungeobbang</guid>
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
-      <category><![CDATA[韓国,Food]]></category>
-      <tag><![CDATA[韓国,Food]]></tag>
+      <category><![CDATA[韓国,Foods]]></category>
+      <tag><![CDATA[韓国,FishBread,Foods,StreetFoods]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ja/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[焼きパンは比較的価格の安くて暖かい食べ物なので、韓国で冬に主に販売される路上料理の一つです。そして、パンはパンとパンの単語の合成語です。]]></description>
       <content:encoded><![CDATA[<p>焼きパンは比較的価格の安くて暖かい食べ物なので、韓国で冬に主に販売される路上料理の一つです。そして、パンはパンとパンの単語の合成語です。</p>
@@ -40,7 +137,9 @@
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="左 - パンパン、右 - 鯉パン" width="972" height="598" />
 <em>左 - パンパン、右 - 鯉パン</em></p>
 
-<p>フナパンは、路上の露店で売っているフナ形のスナックフルパンです。生麺が焼きパンに似ていますが、小麦粉の代わりにもち米で作ったものを鯉パンと呼びます。鯉パンはもち米で作ったので、焼きパンよりも薄く、食感がしっかりと香ばしいです。焼きたてのパンは、鉄のフナの形に小麦粉生地とトッピングを入れて焼く方法で調理されます。</p>
+<p>フナパンは、路上の露店で売っているフナ形のスナックフルパンです。生麺が焼きパンに似ていますが、小麦粉の代わりにもち米で作ったものを鯉パンと呼びます。鯉パンはもち米で作ったので、焼きパンよりも薄く、食感がしっかりと香ばしいです。</p>
+
+<p>焼きたてのパンは、鉄のフナの形に小麦粉生地とトッピングを入れて焼く方法で調理されます。</p>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵-조리방법-틀에_반죽을_넣어_굽기.png" alt="焼きパン - 調理方法 - 型に生地を入れて焼く" width="972" height="547" />
 <em>焼きパン - 調理方法 - 型に生地を入れて焼く</em></p>

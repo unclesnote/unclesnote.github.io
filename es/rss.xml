@@ -21,8 +21,107 @@
     <language>es</language>
     <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 15:14:33 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Incrustar vídeo de YouTube en Obsidian - iframe, ReadItLater]]></title>
+      <link>https://unclesnote.com/es/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</link>
+      <guid>https://unclesnote.com/es/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+      <category><![CDATA[Obsidiana]]></category>
+      <tag><![CDATA[Obsidiana]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <description><![CDATA[Al escribir artículos en Obsidian, es posible que en ocasiones necesites incrustar o eliminar vídeos de YouTube. Hay dos formas principales de insertar vídeos]]></description>
+      <content:encoded><![CDATA[<p>Al escribir artículos en Obsidian, es posible que en ocasiones necesites incrustar o eliminar vídeos de YouTube. Hay dos formas principales de insertar vídeos de YouTube.</p>
+<ul>
+  <li>Pegar directamente usando la etiqueta iframe</li>
+  <li>Pegar usando el complemento de la comunidad ReadItLater</li>
+</ul>
+
+<h2 id="marco-flotante">marco flotante</h2>
+<p>Obsidian se desarrolló en línea. Por lo tanto, puede utilizar etiquetas HTML. Entonces, puedes incrustar un video usando la etiqueta HTML <code class="language-plaintext highlighter-rouge">iframe</code>.</p>
+
+<p>Afortunadamente, YouTube proporciona una función que le permite obtener fácilmente etiquetas iframe a través de la función para compartir. Cuando presione el botón “Compartir” en la pantalla de reproducción de video de YouTube, haga clic en el botón “Incrustar” en la ventana emergente que se abre.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" alt="Youtube - `Compartir` - `Incrustar`" width="972" height="605" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">Compartir</code> - <code class="language-plaintext highlighter-rouge">Incrustar</code></em></p>
+
+<p>Luego, haga clic en el botón “Copiar” para copiar la etiqueta “iframe” creada por YouTube para compartir videos.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" alt="Youtube - `Compartir` - `Incrustar` - `Copiar`" width="972" height="680" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">Compartir</code> - <code class="language-plaintext highlighter-rouge">Incrustar</code> - <code class="language-plaintext highlighter-rouge">Copiar</code></em></p>
+
+<p>Y, si pega la etiqueta iframe copiada en Obsidian, se mostrará un vídeo de YouTube que podrá reproducirse y controlarse.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian: pegue la etiqueta HTML `iframe` de Obsidian" width="972" height="575" />
+<em>Obsidian: pegue la etiqueta HTML <code class="language-plaintext highlighter-rouge">iframe</code> de Obsidian</em></p>
+
+<p>Este método le permite incrustar rápidamente un video en Obsidian sin instalar un complemento por separado.</p>
+
+<p><strong>Buen punto</strong></p>
+<ul>
+  <li>Incruste vídeos fácilmente sin instalar un complemento independiente</li>
+</ul>
+
+<p><strong>Cosa mala</strong></p>
+<ul>
+  <li>Los metadatos del vídeo, como el título del vídeo, el nombre del canal, etc., deben pegarse manualmente si es necesario.</li>
+  <li>Para recuperar la etiqueta iframe de YouTube, se requieren varios pasos en el sitio.</li>
+</ul>
+
+<h2 id="complemento-comunitario-obsidian-readitlater">Complemento comunitario Obsidian <strong>ReadItLater</strong></h2>
+<p>El método descrito anteriormente de tomar una etiqueta iframe de YouTube y pegarla en Obsidian era una función que simplemente mostraba el video sin metadatos como el título del video, la fecha y el nombre del canal. Sin embargo, si desea insertar varios contenidos en su Obsidian, como YouTube, Vimeo, Bilibili, Twitter, TikTok, URL del sitio web, etc., <a href="https://github.com/DominikPieper/obsidian-ReadItLater" target="_blank">ReadItLater</a> El complemento puede ser una buena opción. En realidad, este complemento es una especie de complemento raspador.</p>
+
+<p>El principio básico es que si copia la URL del contenido de la plataforma de destino y la pega a través del complemento, se crea una nueva nota y el contenido se incrusta junto con la información de metadatos del contenido deseado.</p>
+
+<p><strong>Buen punto</strong></p>
+<ul>
+  <li>Capaz de incrustar contenido de diversas plataformas y contenidos como YouTube, Vimeo, Bilibili, Twitter, TikTok, URL del sitio web, etc.</li>
+  <li>Tomando YouTube como ejemplo, se requieren varios pasos en el menú de YouTube para copiar la etiqueta iframe de un video, pero el complemento crea automáticamente la etiqueta iframe con solo conocer la dirección en el navegador web.</li>
+  <li>Puede pegar los metadatos deseados junto con el video en Obsidian.</li>
+  <li>Si pega una publicación de una página web general a través de un complemento, puede pegarla en formato Markdown en un nivel de rastreo.</li>
+</ul>
+
+<p><strong>Cosa mala</strong></p>
+<ul>
+  <li>Dado que el concepto básico del complemento es crear una nueva nota pegando la URL en Obsidian, para pegar el contenido en el artículo que estás escribiendo, debes pegarlo desde la nueva nota nuevamente en tu artículo.</li>
+</ul>
+
+<h3 id="cómo-instalar-y-usar">Cómo instalar y usar</h3>
+<p>Busque <code class="language-plaintext highlighter-rouge">readitlater</code> en el menú de complementos de la comunidad de Obsidian, instálelo y actívelo.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" alt="Obsidian - Complementos de la comunidad - `ReadItLater`" width="972" height="350" />
+<em>Obsidian - Complementos de la comunidad - <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
+
+<p>Haga clic en la URL que se muestra en el navegador web o en el botón de compartir en YouTube para copiar la URL al portapapeles.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" alt="Youtube - `Compartir` - `Copiar`" width="972" height="571" />
+<em>Youtube - <code class="language-plaintext highlighter-rouge">Compartir</code> - <code class="language-plaintext highlighter-rouge">Copiar</code></em></p>
+
+<p>Luego, presione los atajos <code class="language-plaintext highlighter-rouge">Ctrl + P</code> en Obsidian, busque <code class="language-plaintext highlighter-rouge">readitlater</code> y seleccione el menú a continuación.</p>
+<ul>
+  <li>ReadItLater: Save clipboard</li>
+</ul>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - Buscar `readitlater` - Seleccione `ReadItLater: Guardar portapapeles`" width="972" height="471" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - Buscar <code class="language-plaintext highlighter-rouge">readitlater</code> - Seleccione <code class="language-plaintext highlighter-rouge">ReadItLater: Guardar portapapeles</code></em></p>
+
+<p>Luego, se crea automáticamente una nueva nota y los metadatos y el video se incrustan en la nota.</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian: notas generadas por el complemento `ReadItLater`" width="972" height="610" />
+<em>Obsidian: notas generadas por el complemento <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/es-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Comida callejera coreana de invierno - Bungeobbang]]></title>
@@ -30,8 +129,8 @@
       <guid>https://unclesnote.com/es/231230151433/korean_winter_street_food_bungeobbang</guid>
       <dc:creator><![CDATA[nota del tio]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
-      <category><![CDATA[Corea,Alimento]]></category>
-      <tag><![CDATA[Corea,Alimento]]></tag>
+      <category><![CDATA[Corea,Alimentos]]></category>
+      <tag><![CDATA[Corea,PescadoPan,Alimentos,Comidascallejeras]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/es/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[El bungeobbang es una comida relativamente barata y cálida, por lo que es una de las comidas callejeras que se vende principalmente en Corea durante el]]></description>
       <content:encoded><![CDATA[<p>El bungeobbang es una comida relativamente barata y cálida, por lo que es una de las comidas callejeras que se vende principalmente en Corea durante el invierno. Y Bungeobbang es una palabra compuesta de las palabras carpa y pan.</p>
@@ -40,7 +139,9 @@
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="Izquierda - Bungeoppang, Derecha - Pan de carpa" width="972" height="598" />
 <em>Izquierda - Bungeoppang, Derecha - Pan de carpa</em></p>
 
-<p>Bungeoppang es un bocadillo con forma de carpa que se vende en los vendedores ambulantes. Se parece al bungeoppang, pero está hecho con arroz glutinoso en lugar de harina y se llama pan de carpa. Como el pan de carpa está hecho de arroz glutinoso, es más fino que el bungeoppang y tiene una textura masticable y sabrosa. El bungeobbang se cocina colocando masa de harina y aderezos en un molde con forma de carpa de hierro y horneándolo.</p>
+<p>Bungeoppang es un bocadillo con forma de carpa que se vende en los vendedores ambulantes. Se parece al bungeoppang, pero está hecho con arroz glutinoso en lugar de harina y se llama pan de carpa. Como el pan de carpa está hecho de arroz glutinoso, es más fino que el bungeoppang y tiene una textura masticable y sabrosa.</p>
+
+<p>El bungeobbang se cocina colocando masa de harina y aderezos en un molde con forma de carpa de hierro y horneándolo.</p>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵-조리방법-틀에_반죽을_넣어_굽기.png" alt="Bungeobbang - Método de cocción - Poner la masa en un molde y hornear" width="972" height="547" />
 <em>Bungeobbang - Método de cocción - Poner la masa en un molde y hornear</em></p>

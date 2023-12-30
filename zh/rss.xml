@@ -21,8 +21,107 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 15:14:33 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[将 YouTube 视频嵌入 Obsidian - iframe、ReadItLater]]></title>
+      <link>https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</link>
+      <guid>https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+      <category><![CDATA[黑曜石]]></category>
+      <tag><![CDATA[黑曜石]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</guid>
+      <description><![CDATA[在 Obsidian 中撰写文章时，您有时可能需要嵌入或剪贴 YouTube 视频。嵌入 YouTube 视频有两种主要方法。]]></description>
+      <content:encoded><![CDATA[<p>在 Obsidian 中撰写文章时，您有时可能需要嵌入或剪贴 YouTube 视频。嵌入 YouTube 视频有两种主要方法。</p>
+<ul>
+  <li>使用 iframe 标签直接粘贴</li>
+  <li>使用 ReadItLater 社区插件粘贴</li>
+</ul>
+
+<h2 id="内嵌框架">内嵌框架</h2>
+<p>Obsidian 是基于网络开发的。因此，您可以使用 HTML 标签。因此，您可以使用<code class="language-plaintext highlighter-rouge">iframe</code> HTML 标签嵌入视频。</p>
+
+<p>幸运的是，YouTube提供了一个功能，可以让你通过分享功能轻松获取iframe标签。当您按 YouTube 视频播放屏幕上的<code class="language-plaintext highlighter-rouge">共享</code>按钮时，请在打开的弹出窗口中单击<code class="language-plaintext highlighter-rouge">嵌入</code>按钮。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" alt="YouTube -`分享`-`嵌入`" width="972" height="605" />
+<em>YouTube -<code class="language-plaintext highlighter-rouge">分享</code>-<code class="language-plaintext highlighter-rouge">嵌入</code></em></p>
+
+<p>然后，单击<code class="language-plaintext highlighter-rouge">复制</code>按钮复制 YouTube 创建的用于视频共享的<code class="language-plaintext highlighter-rouge">iframe</code>标签。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" alt="YouTube -`分享`-`嵌入`-`复制`" width="972" height="680" />
+<em>YouTube -<code class="language-plaintext highlighter-rouge">分享</code>-<code class="language-plaintext highlighter-rouge">嵌入</code>-<code class="language-plaintext highlighter-rouge">复制</code></em></p>
+
+<p>并且，如果将复制的 iframe 标签粘贴到 Obsidian 中，将会显示一个可以播放和控制的 YouTube 视频。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - 从 Obsidian 粘贴`iframe` HTML 标记" width="972" height="575" />
+<em>Obsidian - 从 Obsidian 粘贴<code class="language-plaintext highlighter-rouge">iframe</code> HTML 标记</em></p>
+
+<p>此方法允许您快速将视频嵌入到 Obsidian 中，而无需安装单独的插件。</p>
+
+<p><strong>好点子</strong></p>
+<ul>
+  <li>轻松嵌入视频，无需安装单独的插件</li>
+</ul>
+
+<p><strong>坏事</strong></p>
+<ul>
+  <li>如有必要，必须手动粘贴视频元数据，例如视频标题、频道名称等。</li>
+  <li>为了从 YouTube 检索 iframe 标签，网站上需要执行几个步骤。</li>
+</ul>
+
+<h2 id="obsidian-readitlater-社区插件">Obsidian <strong>ReadItLater</strong> 社区插件</h2>
+<p>上面描述的从 YouTube 获取 iframe 标签并将其粘贴到 Obsidian 中的方法是一种简单显示视频的功能，没有视频标题、日期和频道名称等元数据。但是，如果您想在 Obsidian 中嵌入各种内容，例如 YouTube、Vimeo、Bilibili、Twitter、TikTok、网站 URL 等，则 <a href="https://github.com/DominikPieper/obsidian-ReadItLater" target="_blank">ReadItLater</a>插件可能是一个不错的选择。实际上，这个插件是一种爬虫插件。</p>
+
+<p>基本原理是，如果您复制目标平台的内容 URL 并通过插件粘贴，则会创建一个新注释，并将内容与所需内容的元数据信息一起嵌入。</p>
+
+<p><strong>好点子</strong></p>
+<ul>
+  <li>能够嵌入来自各种平台和内容的内容，例如 YouTube、Vimeo、Bilibili、Twitter、TikTok、网站 URL 等。</li>
+  <li>以 YouTube 为例，在 YouTube 菜单中需要执行几个步骤才能复制视频的 iframe 标签，但插件只需知道网络浏览器上的地址即可自动创建 iframe 标签。</li>
+  <li>可以将所需的元数据与视频一起粘贴到 Obsidian 中。</li>
+  <li>如果您通过插件粘贴一般网页帖子，则可以以爬行级别粘贴为 Markdown 格式。</li>
+</ul>
+
+<p><strong>坏事</strong></p>
+<ul>
+  <li>由于该插件的基本概念是通过将 URL 粘贴到 Obsidian 中来创建新注释，因此为了将内容粘贴到您正在编写的文章中，您必须将其从新注释再次粘贴到您的文章中。</li>
+</ul>
+
+<h3 id="如何安装和使用">如何安装和使用</h3>
+<p>在 Obsidian 的社区插件菜单中搜索<code class="language-plaintext highlighter-rouge">readitlater</code>，安装并激活它。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" alt="Obsidian - 社区插件 - `ReadItLater`" width="972" height="350" />
+<em>Obsidian - 社区插件 - <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
+
+<p>单击网络浏览器中显示的 URL 或 YouTube 上的共享按钮，将 URL 复制到剪贴板。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" alt="YouTube -`分享`-`复制`" width="972" height="571" />
+<em>YouTube -<code class="language-plaintext highlighter-rouge">分享</code>-<code class="language-plaintext highlighter-rouge">复制</code></em></p>
+
+<p>然后，在 Obsidian 中按<code class="language-plaintext highlighter-rouge">Ctrl + P</code>快捷键，搜索<code class="language-plaintext highlighter-rouge">readitlater</code>，然后选择下面的菜单。</p>
+<ul>
+  <li>ReadItLater: Save clipboard</li>
+</ul>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - 搜索`readitlater` - 选择`ReadItLater：保存剪贴板`" width="972" height="471" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - 搜索<code class="language-plaintext highlighter-rouge">readitlater</code> - 选择<code class="language-plaintext highlighter-rouge">ReadItLater：保存剪贴板</code></em></p>
+
+<p>然后，会自动创建一个新笔记，并将元数据和视频嵌入到该笔记中。</p>
+
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian - 由 `ReadItLater` 插件生成的注释" width="972" height="610" />
+<em>Obsidian - 由 <code class="language-plaintext highlighter-rouge">ReadItLater</code> 插件生成的注释</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/zh-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[韩国冬季街头小吃 - Bungeobbang]]></title>
@@ -30,8 +129,8 @@
       <guid>https://unclesnote.com/zh/231230151433/korean_winter_street_food_bungeobbang</guid>
       <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
-      <category><![CDATA[韩国,食物]]></category>
-      <tag><![CDATA[韩国,食物]]></tag>
+      <category><![CDATA[韩国,食品]]></category>
+      <tag><![CDATA[韩国,鱼面包,食品,街头食品]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/zh/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[Bungeobbang是一种相对便宜且温暖的食物，因此是韩国冬季主要销售的街头食品之一。 Bungeobbang是鲤鱼和面包的复合词。]]></description>
       <content:encoded><![CDATA[<p>Bungeobbang是一种相对便宜且温暖的食物，因此是韩国冬季主要销售的街头食品之一。 Bungeobbang是鲤鱼和面包的复合词。</p>
@@ -40,7 +139,9 @@
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="左-Bungeoppang，右-鲤鱼面包" width="972" height="598" />
 <em>左-Bungeoppang，右-鲤鱼面包</em></p>
 
-<p>Bungeoppan是一种形状像鲤鱼的小吃，在街头小贩中出售。它看起来与bungeoppang类似，但它是用糯米代替面粉制成的，被称​​为鲤鱼面包。由于鲤鱼面包是用糯米制成的，因此它比鲫鱼面包薄，而且口感有嚼劲，味道鲜美。鲫鱼棒是将面团和配料放入鲫鱼形状的模具中烘烤而成的。</p>
+<p>Bungeoppan是一种形状像鲤鱼的小吃，在街头小贩中出售。它看起来与bungeoppang类似，但它是用糯米代替面粉制成的，被称​​为鲤鱼面包。由于鲤鱼面包是用糯米制成的，因此它比鲫鱼面包薄，而且口感有嚼劲，味道鲜美。</p>
+
+<p>鲫鱼棒是将面团和配料放入鲫鱼形状的模具中烘烤而成的。</p>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵-조리방법-틀에_반죽을_넣어_굽기.png" alt="Bungeobbang - 烹饪方法 - 将面团放入模具中烘烤" width="972" height="547" />
 <em>Bungeobbang - 烹饪方法 - 将面团放入模具中烘烤</em></p>
