@@ -21,8 +21,56 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 27 Dec 2023 19:30:10 +0900</lastBuildDate>
-    <pubDate>Wed, 27 Dec 2023 19:30:10 +0900</pubDate>
+    <lastBuildDate>Sat, 30 Dec 2023 15:14:33 +0900</lastBuildDate>
+    <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Korean winter street food - Bungeobbang]]></title>
+      <link>https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang</link>
+      <guid>https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
+      <category><![CDATA[Korea,Food]]></category>
+      <tag><![CDATA[Korea,Food]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang</guid>
+      <description><![CDATA[Bungeobbang is a relatively cheap and warm food, so it is one of the street foods that is mainly sold in Korea in the winter. And Bungeobbang is a compound]]></description>
+      <content:encoded><![CDATA[<p>Bungeobbang is a relatively cheap and warm food, so it is one of the street foods that is mainly sold in Korea in the winter. And Bungeobbang is a compound word of the words carp and bread.</p>
+<h2 id="type">type</h2>
+
+<p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="Left - Bungeoppang, Right - Carp Bread" width="972" height="598" />
+<em>Left - Bungeoppang, Right - Carp Bread</em></p>
+
+<p>Bungeoppang is a snack shaped like a carp sold at street vendors. It looks similar to bungeoppang, but it is made with glutinous rice instead of flour and is called carp bread. Because carp bread is made from glutinous rice, it is thinner than bungeoppang and has a chewy and savory texture. Bungeobbang is cooked by placing flour dough and toppings in a mold shaped like an iron carp and baking it.</p>
+
+<p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵-조리방법-틀에_반죽을_넣어_굽기.png" alt="Bungeobbang - Cooking method - Put the dough in a mold and bake" width="972" height="547" />
+<em>Bungeobbang - Cooking method - Put the dough in a mold and bake</em></p>
+
+<p>Bungeobbang is shaped like a fish and has carp or carp in its name, but it does not contain fish. Pizza toppings, sweet potato mousse, cream puffs, etc. are sometimes added to flour or glutinous rice dough. Among these, sweet red bean bungeobbang is the basic and most popular. The second popular flavor is cream puff.</p>
+
+<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/O2EJmma1sXE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h2 id="price">price</h2>
+<p>As of December 2023, the value of 1 US dollar is approximately 1,300 won in Korean won. The basic unit for purchasing bungeoppang is usually 1,000 won and several pieces, so let`s assume it is 1 dollar.</p>
+
+<p>Before the pandemic in 2021, it was common to buy 3 to 4 bungeoppang for 1 dollar, but now, due to the impact of inflation, you can buy 2 to 3 bungeoppang for 1 dollar. This is based on bungeoppang with sweet red beans inside, and bungeoppang with cream puffs or pizza toppings is a bit more expensive.</p>
+
+<p>You can usually buy bungeoppang at traditional markets or on the side of the road, and sellers prefer cash rather than credit cards as a payment method. Sometimes, the seller may ask for cash deposit into a bank account.</p>
+<h2 id="psychological-test">psychological test</h2>
+
+<p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵.png" alt="fish bread" />
+<em>fish bread</em></p>
+
+<p>There is a test to find out your psychology depending on where you start eating Bungeoppang.</p>
+<ul>
+  <li>People who eat bungeoppang from the head have an optimistic and open personality and are stubborn. And they are more popular among friends of the opposite sex than those of the same sex.</li>
+  <li>People who eat from the tail are cautious, delicate, and thoughtful people. You are the type of person who is surprisingly insensitive and cannot easily notice even if someone has a crush on you.</li>
+  <li>People who eat bungeoppang by ‘splitting it in half’ have a strong competitive spirit and have the personality to accomplish whatever they set their mind to. Because of my inner timidity, I have difficulty turning down requests from friends and acquaintances.</li>
+</ul>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/231230151433/en-thumb-unclesnote-korean_winter_street_food_bungeobbang.png" />
+      <media:content url="https://unclesnote.com/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵-조리방법-틀에_반죽을_넣어_굽기.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Create a Telegram bot and send a message]]></title>
@@ -62,7 +110,7 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 <h2 id="create-a-telegram-bot---token">Create a Telegram bot - <strong>token</strong></h2>
 <p>Find <code class="language-plaintext highlighter-rouge">botfather</code> on Telegram and enter the chat room. BotFather is a service bot that can create/manage Telegram bots.</p>
 
-<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" alt="Telegram - Search `BotFather`" />
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-search_botfather.png" alt="Telegram - Search `BotFather`" width="972" height="500" />
 <em>Telegram - Search <code class="language-plaintext highlighter-rouge">BotFather</code></em></p>
 
 <p>Create a new bot using the <code class="language-plaintext highlighter-rouge">newbot</code> command.</p>
@@ -76,7 +124,7 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 <h2 id="telegram-getupdates-api-call---chatid">Telegram <strong>getUpdates</strong> API call - <strong>chatid</strong></h2>
 <p>If BotFather created a bot, find the bot in Telegram and send it a message. I sent a message saying <code class="language-plaintext highlighter-rouge">hello</code>.</p>
 
-<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" alt="Telegram - Enter `hello` on Bot' Chat Room" />
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-enter_hello_on_bot_chat_room.png" alt="Telegram - Enter `hello` on Bot' Chat Room" width="972" height="671" />
 <em>Telegram - Enter <code class="language-plaintext highlighter-rouge">hello</code> on Bot’ Chat Room</em></p>
 
 <p>Then, in the web browser you use, such as Chrome or Edge, call the URL below by combining it with the token found when creating the bot above.</p>
@@ -98,7 +146,7 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/getUp
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>Then, a string in JSON format will be displayed in the browser, and the <code class="language-plaintext highlighter-rouge">id</code> in <code class="language-plaintext highlighter-rouge">chat</code> will be the <code class="language-plaintext highlighter-rouge">chatid</code>. Take note of the <code class="language-plaintext highlighter-rouge">chatid</code>. If you use the Edge browser, you can see the line-aligned JSON string.</p>
 
-<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" alt="Internet Browser - Telegram - `getUpdates`" />
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-internet_browser-telegram-getupdates.png" alt="Internet Browser - Telegram - `getUpdates`" width="972" height="543" />
 <em>Internet Browser - Telegram - <code class="language-plaintext highlighter-rouge">getUpdates</code></em></p>
 
 <h2 id="send-a-telegram-message-via-browser---sendmessage-api">Send a Telegram message via browser - <strong>sendMessage</strong> API</h2>
@@ -123,7 +171,7 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>Did it work well? I was able to check the message <code class="language-plaintext highlighter-rouge">im bot</code> on Telegram as shown below.</p>
 
-<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="Telegram - `sendMessage` API" />
+<p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="Telegram - `sendMessage` API" width="972" height="762" />
 <em>Telegram - <code class="language-plaintext highlighter-rouge">sendMessage</code> API</em></p>
 
 ]]></content:encoded>
@@ -146,7 +194,7 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
       <description><![CDATA[Of course, there are Telegram plugins for Jenkins, but I personally didn't want to go through trial and error. It has been at least two years since the plugins]]></description>
       <content:encoded><![CDATA[<p>Of course, there are Telegram plugins for Jenkins, but I personally didn’t want to go through trial and error. It has been at least two years since the plugins were released. I will send a telegram message using <code class="language-plaintext highlighter-rouge">curl</code> in linux.</p>
 
-<p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - Telegram Plugins" />
+<p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - Telegram Plugins" width="972" height="681" />
 <em>Jenkins - Telegram Plugins</em></p>
 
 <h2 id="groovy-functions-for-sending-telegram-messages">Groovy functions for sending Telegram messages</h2>
@@ -457,7 +505,7 @@ vi /etc/default/jenkins
 <h2 id="configure-synology-nas-container-port-and-run-jenkins">Configure Synology NAS container port and run Jenkins</h2>
 <p>Afterwards, stop the Ubuntu container in the Synology NAS GUI and set the port for external connection to Jenkins. I mapped the container’s <code class="language-plaintext highlighter-rouge">8080</code> port to <code class="language-plaintext highlighter-rouge">48080</code> port.</p>
 
-<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" alt="Synology NAS GUI - Docker - Jenkins Port Settings" />
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" alt="Synology NAS GUI - Docker - Jenkins Port Settings" width="972" height="645" />
 <em>Synology NAS GUI - Docker - Jenkins Port Settings</em></p>
 
 <p>Start the Ubuntu container and run the Jenkins service. In short, if Ubuntu Docker is stopped and restarted, you need to run the Jenkins service again.</p>
@@ -472,7 +520,7 @@ service jenkins restart
   <li>http://192.168.0.50:48080/</li>
 </ul>
 
-<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" alt="Jenkins - Getting Started" />
+<p><img src="/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-jenkins-getting_started.png" alt="Jenkins - Getting Started" width="972" height="490" />
 <em>Jenkins - Getting Started</em></p>
 
 <p>Log in with the initial password written in the <code class="language-plaintext highlighter-rouge">/var/lib/jenkins/secrets/initialAdminPassword</code> file and proceed with the initial Jenkins installation.</p>
@@ -579,7 +627,7 @@ docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="n
 <h3 id="port-forwarding-settings-in-virtualbox">Port forwarding settings in VirtualBox</h3>
 <p>If you want to access XRDP from outside the virtual machine to the Ubuntu VM’s Docker container, you need to set up port forwarding on the Ubuntu VM. When you try to connect to port <code class="language-plaintext highlighter-rouge">43389</code> using the RDP protocol, this is mapped to port <code class="language-plaintext highlighter-rouge">3389</code> inside the Ubuntu VM.</p>
 
-<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="VirtualBox port forwarding settings for XRDP connection" />
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="VirtualBox port forwarding settings for XRDP connection" width="972" height="445" />
 <em>VirtualBox port forwarding settings for XRDP connection</em></p>
 
 <h3 id="xrdp-remote-access">XRDP remote access</h3>
@@ -590,7 +638,7 @@ docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="n
 
 <p>Afterwards, the XRDP login window will open, enter the <code class="language-plaintext highlighter-rouge">username</code> and <code class="language-plaintext highlighter-rouge">password</code> below.</p>
 
-<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP login screen" />
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP login screen" width="972" height="535" />
 <em>Ubuntu XRDP login screen</em></p>
 
 <ul>
@@ -602,12 +650,12 @@ docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="n
 <h3 id="docker-package-installation-and-container-port-settings">Docker package installation and container port settings</h3>
 <p>Access the Synology NAS GUI. Then search for <code class="language-plaintext highlighter-rouge">Docker</code> in Package Center and install it.</p>
 
-<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" alt="Synology NAS GUI - Package Center - Docker" />
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-package_center-docker.png" alt="Synology NAS GUI - Package Center - Docker" width="972" height="501" />
 <em>Synology NAS GUI - Package Center - Docker</em></p>
 
 <p>I downloaded the <code class="language-plaintext highlighter-rouge">ubuntu:20.04</code> Docker image and created a container based on that image. And in the container port settings, port <code class="language-plaintext highlighter-rouge">422</code> for ssh and port <code class="language-plaintext highlighter-rouge">43389</code> for XRDP were opened.</p>
 
-<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="Synology NAS GUI - Ubuntu Container - Port Settings" />
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="Synology NAS GUI - Ubuntu Container - Port Settings" width="972" height="694" />
 <em>Synology NAS GUI - Ubuntu Container - Port Settings</em></p>
 
 <h3 id="install-ubuntu-ssh-and-xrdp-packages">Install ubuntu SSH and XRDP packages</h3>
@@ -688,12 +736,12 @@ service xrdp start
 <h3 id="xrdp-remote-access-1">XRDP remote access</h3>
 <p>Connect to XRDP using the IP address assigned to your Synology NAS and connect to the <code class="language-plaintext highlighter-rouge">43389</code> port set above.</p>
 
-<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" alt="MobaXterm - RDP Session" />
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-mobaxterm-rdp_session.png" alt="MobaXterm - RDP Session" width="972" height="653" />
 <em>MobaXterm - RDP Session</em></p>
 
 <p>Afterwards, the XRDP login window will open, enter the <code class="language-plaintext highlighter-rouge">username</code> and <code class="language-plaintext highlighter-rouge">password</code> below.</p>
 
-<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP login screen" />
+<p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-ubuntu_xrdp_login_screen.png" alt="Ubuntu XRDP login screen" width="972" height="535" />
 <em>Ubuntu XRDP login screen</em></p>
 
 <ul>
@@ -756,7 +804,7 @@ service xrdp restart
 <p>Let`s look at the basics for installing Windows and how to upgrade memory.</p>
 <h2 id="spec">spec</h2>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="Lenovo Slim3 15ABA7 R5" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="Lenovo Slim3 15ABA7 R5" width="972" height="875" />
 <em>Lenovo Slim3 15ABA7 R5</em></p>
 
 <p><strong>Lenovo Slim3 15ABA7 R5</strong>is equipped with the 5625U model of Ryzen 5 4th generation (Cezanne) as the CPU. In short, since it is a cost-effective laptop, it has built-in graphics that share the GPU included in the CPU.</p>
@@ -792,7 +840,7 @@ service xrdp restart
 
 <p>When booting with Ventoy, an error related to Securiy Verification occurs. To prevent this, change <code class="language-plaintext highlighter-rouge">Secure Boot</code> to <code class="language-plaintext highlighter-rouge">Disable</code> in the <code class="language-plaintext highlighter-rouge">Security</code> menu. Insert the USB stick into the laptop, save the BIOS settings and exit.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" alt="BIOS &gt; Security &gt; Secure Boot &gt; Disabled" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-bios_security_secure_boot_disabled.png" alt="BIOS &gt; Security &gt; Secure Boot &gt; Disabled" width="972" height="484" />
 <em>BIOS &gt; Security &gt; Secure Boot &gt; Disabled</em></p>
 
 <blockquote class="prompt-info">
@@ -804,7 +852,7 @@ If you do not like this feature, you can change the <code class="language-plaint
 
 <p><strong>Lenovo Slim3 15ABA7 R5</strong>does not automatically install the wireless LAN driver when installing Windows 11. Therefore, it is no longer possible to proceed at the ‘network connection’ setup stage.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" alt="Windows 11 installation - Cannot proceed with ‘Network Connection’ settings" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-윈도우11_설치-네트워크_연결_설정_진행불가.png" alt="Windows 11 installation - Cannot proceed with ‘Network Connection’ settings" width="972" height="695" />
 <em>Windows 11 installation - Cannot proceed with ‘Network Connection’ settings</em></p>
 
 <p>On that screen, press <code class="language-plaintext highlighter-rouge">Shift + F10</code> to open a Command Prompt window. Then enter <code class="language-plaintext highlighter-rouge">OOBE\BYPASSNRO</code>.</p>
@@ -825,7 +873,7 @@ If you do not like this feature, you can change the <code class="language-plaint
 <h2 id="install-memory-upgrade">Install memory upgrade</h2>
 <p>Place the laptop face down on a soft cloth and unscrew all the screws on the back.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" alt="Lenovo Slim3 15ABA7 R5 - Rear - Remove screws" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-후면-나사_제거.png" alt="Lenovo Slim3 15ABA7 R5 - Rear - Remove screws" width="972" height="625" />
 <em>Lenovo Slim3 15ABA7 R5 - Rear - Remove screws</em></p>
 
 <p>Then, insert an unused plastic card into the gap in the upper right corner to open the back panel. Then, open the back panel by turning it little by little, as if opening a can of canned food. If you insert the plastic card too deeply, the laptop board may be damaged, so insert only a little.</p>
@@ -835,24 +883,24 @@ If you do not like this feature, you can change the <code class="language-plaint
 
 <p>As explained above, one SATA hard disk and one DDR4 memory can be additionally upgraded.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" alt="Lenovo Slim3 15ABA7 R5 - Inside" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부.png" alt="Lenovo Slim3 15ABA7 R5 - Inside" width="972" height="621" />
 <em>Lenovo Slim3 15ABA7 R5 - Inside</em></p>
 
 <p>Unlike other laptops, <strong>Lenovo Slim3 15ABA7 R5</strong>has a memory slot cover. Remove a small amount of the sticker attached to the cover and lift the cover upward to remove it.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" alt="Lenovo Slim3 15ABA7 R5 - Internal - Removing the sticker on the memory cover" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_커버의_스티커_분리.png" alt="Lenovo Slim3 15ABA7 R5 - Internal - Removing the sticker on the memory cover" width="972" height="623" />
 <em>Lenovo Slim3 15ABA7 R5 - Internal - Removing the sticker on the memory cover</em></p>
 
 <p>If you have installed the memory, reinstall the memory cover and attach a sticker.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" alt="Lenovo Slim3 15ABA7 R5 - Internal - Memory installed" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-내부-메모리_장착.png" alt="Lenovo Slim3 15ABA7 R5 - Internal - Memory installed" width="972" height="530" />
 <em>Lenovo Slim3 15ABA7 R5 - Internal - Memory installed</em></p>
 
 <p>And before closing the back panel, make sure the laptop turns on and boots properly. If booting does not occur due to poor memory contact, the back panel must be opened again, so check whether the boot is normal without closing the back panel.</p>
 
 <p>Place something like a cigarette case on the hinge of the laptop to prevent the fan from spinning, then turn on the laptop. If the memory is not recognized properly or does not boot, try extracting the memory and reinstalling it.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" alt="Lenovo Slim3 15ABA7 R5 - Secure bottom space to check new memory operation" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-신규_메모리_동작_확인을_위해_하단_공간_확보.png" alt="Lenovo Slim3 15ABA7 R5 - Secure bottom space to check new memory operation" width="972" height="583" />
 <em>Lenovo Slim3 15ABA7 R5 - Secure bottom space to check new memory operation</em></p>
 
 <p>If the laptop operates normally, close the back panel and retighten the screws that were loosened.</p>
@@ -868,7 +916,7 @@ If you do not like this feature, you can change the <code class="language-plaint
 
 <p>However, in HWiNFO64, it was displayed correctly as <code class="language-plaintext highlighter-rouge">Dual-Channel</code>.</p>
 
-<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - HWiNFO64 - System Summary - Memory" />
+<p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - HWiNFO64 - System Summary - Memory" width="972" height="416" />
 <em>Lenovo Slim3 15ABA7 R5 - HWiNFO64 - System Summary - Memory</em></p>
 
 ]]></content:encoded>
@@ -919,7 +967,7 @@ If you do not like this feature, you can change the <code class="language-plaint
   <li>Connectivity</li>
 </ul>
 
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="Registry Editor - Remove the `Configuration` and `Connectivity` folders in the `GraphicsDrivers` folder" />
+<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="Registry Editor - Remove the `Configuration` and `Connectivity` folders in the `GraphicsDrivers` folder" width="972" height="662" />
 <em>Registry Editor - Remove the <code class="language-plaintext highlighter-rouge">Configuration</code> and <code class="language-plaintext highlighter-rouge">Connectivity</code> folders in the <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> folder</em></p>
 
 <h2 id="3-reboot-the-windows">3. Reboot the Windows</h2>
@@ -976,7 +1024,7 @@ If you do not like this feature, you can change the <code class="language-plaint
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>Below is a tip type callouts block in the Obsidian basic theme.</p>
 
-<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="Obsidian - Callouts Block" />
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="Obsidian - Callouts Block" width="972" height="210" />
 <em>Obsidian - Callouts Block</em></p>
 
 <h2 id="callouts-block-folding-function">Callouts Block Folding Function</h2>
@@ -1092,7 +1140,7 @@ If you do not like this feature, you can change the <code class="language-plaint
   <li>☑ <strong>Make Permanent</strong> : This item appears if you enter the current settings while the Ubuntu VM is running. If you want a permanent setting, check it.</li>
 </ul>
 
-<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - Add shared folder" />
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - Add shared folder" width="972" height="760" />
 <em>Oracle VM VirtualBox - Add shared folder</em></p>
 
 <p>In my case, I set <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code> as a shared folder in the Ubuntu VM.  For reference, my Ubuntu account name is <code class="language-plaintext highlighter-rouge">pooh</code>.</p>
@@ -1131,7 +1179,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p>Let’s create a <code class="language-plaintext highlighter-rouge">test.txt</code> file using the <code class="language-plaintext highlighter-rouge">touch</code> command in shared folder of the Ubuntu VM. Can you see the <code class="language-plaintext highlighter-rouge">test.txt</code> file created in the Windows shared folder?</p>
 
-<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="Create a `test.txt` file using the `touch` command in Ubuntu VM and check it in Windows." />
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="Create a `test.txt` file using the `touch` command in Ubuntu VM and check it in Windows." width="972" height="562" />
 <em>Create a <code class="language-plaintext highlighter-rouge">test.txt</code> file using the <code class="language-plaintext highlighter-rouge">touch</code> command in Ubuntu VM and check it in Windows.</em></p>
 
 ]]></content:encoded>
@@ -1156,7 +1204,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>Now let’s take a closer look at the related rumors.</p>
 <h2 id="when-to-release---december-2023-or-january-2024">When To Release - December 2023 or January 2024</h2>
 
-<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="Galaxy S23 electronic billboard advertisement in Times Square, New York, USA" />
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="Galaxy S23 electronic billboard advertisement in Times Square, New York, USA" width="972" height="556" />
 <em>Galaxy S23 electronic billboard advertisement in Times Square, New York, USA</em></p>
 
 <p>Samsung Electronics plans to release new smartphones in December 2023 or January 2024, aiming to recover from semiconductor underperformance. In December, they will launch the Galaxy S23 FE, a mid-range phone, followed by the flagship Galaxy S24, which will have AI capabilities and will be unveiled in January in San Francisco, earlier than the usual February release.</p>
@@ -1164,7 +1212,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>This shift is seen as a response to challenges in the smartphone market and competition from Apple’s iPhone 15 series. Samsung is relying on its mobile experience (MX) division to counterbalance declining semiconductor profits, as they posted significant losses in the semiconductor (DS) division during Q3 2022.</p>
 <h2 id="appearance-and-design---titanium">Appearance and Design - Titanium</h2>
 
-<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" alt="On the left is the expected render of the Galaxy S24 released by IT tipster ‘OnLeaks’, and on the right is the iPhone 15 Pro." />
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" alt="On the left is the expected render of the Galaxy S24 released by IT tipster ‘OnLeaks’, and on the right is the iPhone 15 Pro." width="972" height="550" />
 <em>On the left is the expected render of the Galaxy S24 released by IT tipster ‘OnLeaks’, and on the right is the iPhone 15 Pro.</em></p>
 
 <p>According to recent predictions by IT expert Lebegnerz, the entire Galaxy S24 series is expected to feature titanium material frames, enhancing the overall design aesthetics. This move is seen as part of a broader strategy, similar to Apple’s introduction of titanium frames in the iPhone 15 Pro and Pro Max models.</p>
@@ -1172,7 +1220,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>Furthermore, the exterior design is anticipated to undergo a transformation, shifting from a rounded form to a more angular design, adding a touch of luxury. There are also speculations that the distinctive edge display of the Ultra model will be completely replaced with a flat display.</p>
 <h2 id="camera---downgrade-but">Camera - Downgrade But,</h2>
 
-<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Galaxy S24 front and back renders leaked by Smart Pix's OnLeaks" />
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Galaxy S24 front and back renders leaked by Smart Pix's OnLeaks" width="972" height="642" />
 <em>Galaxy S24 front and back renders leaked by Smart Pix’s OnLeaks</em></p>
 
 <p>Next year’s release of the Galaxy S24 Ultra has created concerns among users as it’s rumored to downgrade from a 10x optical zoom to 5x optical zoom.</p>
@@ -1182,7 +1230,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>The S24 Ultra is said to feature a 200MP main camera, 12MP ultrawide, 3x optical zoom 10MP telephoto, and 5x optical zoom 50MP telephoto cameras. The 5x zoom is seen as an upgrade with a wider aperture and larger pixels, allowing for high-quality zoom photos. Notably, the 5x zoom camera can capture smooth 4K 60fps videos across all angles.</p>
 <h2 id="ap---qualcomm-snapdragon-gen-3-and-exynos">AP - Qualcomm Snapdragon Gen 3 and Exynos</h2>
 
-<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" alt="Samsung Exynos is expected to be installed in the Galaxy S24 Plus model and Qualcomm Snapdragon 8 Gen 3 is expected to be installed in the Galaxy S24 Ultra model." />
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" alt="Samsung Exynos is expected to be installed in the Galaxy S24 Plus model and Qualcomm Snapdragon 8 Gen 3 is expected to be installed in the Galaxy S24 Ultra model." width="972" height="542" />
 <em>Samsung Exynos is expected to be installed in the Galaxy S24 Plus model and Qualcomm Snapdragon 8 Gen 3 is expected to be installed in the Galaxy S24 Ultra model.</em></p>
 
 <p>It is certain that the Samsung Galaxy S24 will be equipped with Qualcomm Stepdragon because in the fourth quarter of 2023 earnings announcement, Qualcomm CEO Cristiano Amon said that the Galaxy S24 will be released soon and that Qualcomm will take the majority share in terms of onboard components.</p>
@@ -1272,19 +1320,19 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <h2 id="korean-input-settings">Korean input settings</h2>
 <p>First, search for the <code class="language-plaintext highlighter-rouge">region</code> keyword in the applications, then find and run the <code class="language-plaintext highlighter-rouge">Region &amp; Language</code> setting.</p>
 
-<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" alt="Search `region` and run `Region &amp; Lanugages`" />
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" alt="Search `region` and run `Region &amp; Lanugages`" width="972" height="536" />
 <em>Search <code class="language-plaintext highlighter-rouge">region</code> and run <code class="language-plaintext highlighter-rouge">Region &amp; Lanugages</code></em></p>
 
 <p>Then, add <code class="language-plaintext highlighter-rouge">Input Source</code> in the <code class="language-plaintext highlighter-rouge">Region &amp; Language</code> tab. Search for <code class="language-plaintext highlighter-rouge">korean</code> and add <code class="language-plaintext highlighter-rouge">Korean (Hangul)</code>.</p>
 
-<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" alt="Add `Korean (Hangul)` Input Source" />
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-add_korean_hangul_input_source.png" alt="Add `Korean (Hangul)` Input Source" width="972" height="1209" />
 <em>Add <code class="language-plaintext highlighter-rouge">Korean (Hangul)</code> Input Source</em></p>
 
 <p>Before setting the newly added input source, remove the existing <code class="language-plaintext highlighter-rouge">English (US)</code>. This is to prevent conflict with the newly added <code class="language-plaintext highlighter-rouge">Korea (Hangul)</code> input source. And the added input source already includes an English input function.</p>
 
 <p>Click the gear icon on the <code class="language-plaintext highlighter-rouge">Korea (Hangul)</code> input source to open <code class="language-plaintext highlighter-rouge">IBusHangle Setup</code>.</p>
 
-<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" alt="Korean-English conversion key setting" />
+<p><img src="/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-korean-english_conversion_key_setting.png" alt="Korean-English conversion key setting" width="972" height="1551" />
 <em>Korean-English conversion key setting</em></p>
 
 <p>Then, activate <code class="language-plaintext highlighter-rouge">Start in Hangul mode</code> in the <code class="language-plaintext highlighter-rouge">Etc</code> section. For reference, when you boot up Ubuntu, if you want the first input mode in the GNOME GUI to be Korean, enable it.</p>
@@ -1312,7 +1360,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p>The cause of the problem is that although the file contents are the same, the basic way of expressing line breaks in Windows and Linux is different. In the picture below, the left is a file modified and saved in Windows (PC), and the right is a file modified and saved in Linux (UNIX).</p>
 
-<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format" />
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format" width="972" height="456" />
 <em>Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format</em></p>
 
 <h2 id="differences-of-line-breaks-between-windows-and-linux">Differences of line breaks between Windows and Linux</h2>
@@ -1383,7 +1431,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p>As shown in the picture below, you can check the current <code class="language-plaintext highlighter-rouge">EOL Conversion</code> status in Notepad++ editor and convert. The menu is in <code class="language-plaintext highlighter-rouge">Edit &gt; EOL Conversion</code>.</p>
 
-<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - EOL Conversion - `Edit &gt; EOL Conversion &gt; Windows (CR LF) Or Unix (LF)`" />
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - EOL Conversion - `Edit &gt; EOL Conversion &gt; Windows (CR LF) Or Unix (LF)`" width="972" height="614" />
 <em>Notepad++ - EOL Conversion - <code class="language-plaintext highlighter-rouge">Edit &gt; EOL Conversion &gt; Windows (CR LF) Or Unix (LF)</code></em></p>
 
 <h3 id="ubuntu-linux">Ubuntu (Linux)</h3>
@@ -1459,7 +1507,7 @@ pc.txt: ASCII text
 
 <p>In a Windows environment, you can access Git Bash from the menu after right-clicking.</p>
 
-<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="Accessing Git Bash on Windows" />
+<p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="Accessing Git Bash on Windows" width="972" height="579" />
 <em>Accessing Git Bash on Windows</em></p>
 
 ]]></content:encoded>
@@ -1507,12 +1555,12 @@ pc.txt: ASCII text
 
 <p>First, search for dock in <code class="language-plaintext highlighter-rouge">the Application menu</code> and open <code class="language-plaintext highlighter-rouge">Appearance</code> settings.</p>
 
-<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" alt="Dock Icon Size - Application Menu &gt; Search `dock` &gt; Appearance Settings" />
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-application_menu_search_dock_appearance_settings.png" alt="Dock Icon Size - Application Menu &gt; Search `dock` &gt; Appearance Settings" width="972" height="616" />
 <em>Dock Icon Size - Application Menu &gt; Search <code class="language-plaintext highlighter-rouge">dock</code> &gt; Appearance Settings</em></p>
 
 <p>Then reduce <code class="language-plaintext highlighter-rouge">the Icon Size</code> and set it to a size that looks good to you.</p>
 
-<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="Dock Icon Size - Settings &gt; Appearance &gt; Resize `Icon Size`" />
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="Dock Icon Size - Settings &gt; Appearance &gt; Resize `Icon Size`" width="972" height="616" />
 <em>Dock Icon Size - Settings &gt; Appearance &gt; Resize <code class="language-plaintext highlighter-rouge">Icon Size</code></em></p>
 
 <h2 id="increase-swap-size">Increase swap size</h2>
@@ -1533,12 +1581,12 @@ pc.txt: ASCII text
 
 <p>You can easily install it by searching for <code class="language-plaintext highlighter-rouge">bleachbit</code> in the Ubuntu software application.</p>
 
-<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" alt="Ubuntu Software - BleachBit" />
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-ubuntu_software-bleachbit.png" alt="Ubuntu Software - BleachBit" width="972" height="513" />
 <em>Ubuntu Software - BleachBit</em></p>
 
 <p>After checking the items you want to organize, pressing the <code class="language-plaintext highlighter-rouge">Clean</code> button automatically deletes unnecessary files to secure free space. However, you must be careful when organizing the <code class="language-plaintext highlighter-rouge">APT</code> and <code class="language-plaintext highlighter-rouge">journald</code> items. This may break your Ubuntu system or package dependencies.</p>
 
-<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="BleachBit" />
+<p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="BleachBit" width="972" height="646" />
 <em>BleachBit</em></p>
 
 ]]></content:encoded>
@@ -1661,7 +1709,7 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
 <h2 id="reboot">Reboot</h2>
 <p>Reboot first. After rebooting, you can check the swap file generated above on the system monitor.</p>
 
-<p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="`Applications` Menu &gt; System Monitor" />
+<p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="`Applications` Menu &gt; System Monitor" width="972" height="833" />
 <em><code class="language-plaintext highlighter-rouge">Applications</code> Menu &gt; System Monitor</em></p>
 
 ]]></content:encoded>
@@ -1681,7 +1729,7 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <content:encoded><![CDATA[<p>If you are a software developer, and your development environment is Ubuntu, we will explain how to install the essential Ubuntu software you need to install.</p>
 <h2 id="visual-studio-code">Visual Studio Code</h2>
 
-<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="Visual Studio Code" />
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="Visual Studio Code" width="972" height="565" />
 <em>Visual Studio Code</em></p>
 
 <p><a href="https://code.visualstudio.com" target="_blank">Visual Studio Code</a> is a widely used IDE and editor in software development.</p>
@@ -1721,7 +1769,7 @@ wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.as
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="github-desktop">GitHub Desktop</h2>
 
-<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="GitHub Desktop" />
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="GitHub Desktop" width="972" height="531" />
 <em>GitHub Desktop</em></p>
 
 <p>GitHub desktop software is a Git client. If you’re working on a GitHub project, this is definitely a good option, but even if you use a personal git server rather than a GitHub repo, it may also be a good option if you don’t need complex features.</p>
@@ -1737,7 +1785,7 @@ wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.as
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="beyond-compare-4">Beyond Compare 4</h2>
 
-<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" alt="Beyond Compare 4" />
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" alt="Beyond Compare 4" width="972" height="529" />
 <em>Beyond Compare 4</em></p>
 
 <p>Beyond Compare is a popular file comparison tool.</p>
@@ -1783,7 +1831,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h2 id="database">Database</h2>
 <h3 id="db-browser-for-sqlite">DB Browser for SQLite</h3>
 
-<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="DB Browser for SQLite" />
+<p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="DB Browser for SQLite" width="972" height="527" />
 <em>DB Browser for SQLite</em></p>
 
 <p>If you use SQLite DB, <a href="https://sqlitebrowser.org/dl/" target="_blank">SQLite DB Browser</a> is essential software for querying the database or viewing table contents in a GUI environment.</p>
@@ -1824,12 +1872,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>Open <code class="language-plaintext highlighter-rouge">Windows Settings</code> using the <code class="language-plaintext highlighter-rouge">CTRL + I</code> shortcut. Then, enter the <code class="language-plaintext highlighter-rouge">default</code> keyword to find and select <code class="language-plaintext highlighter-rouge">Default apps</code>.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows Settings - Search `default`" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows Settings - Search `default`" width="972" height="515" />
 <em>Windows Settings - Search <code class="language-plaintext highlighter-rouge">default</code></em></p>
 
 <p>Then, in <code class="language-plaintext highlighter-rouge">the Default apps</code> tab, select <code class="language-plaintext highlighter-rouge">Google Chrome</code> browser in the <code class="language-plaintext highlighter-rouge">Web browser</code> section.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="Settings &gt; Default apps &gt; Select `Google Chrome` on web browser" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="Settings &gt; Default apps &gt; Select `Google Chrome` on web browser" width="972" height="599" />
 <em>Settings &gt; Default apps &gt; Select <code class="language-plaintext highlighter-rouge">Google Chrome</code> on web browser</em></p>
 
 <h2 id="set-up-apps-to-open-hyperlinks-in-office-365-outlook">Set up apps to open hyperlinks in Office 365 Outlook</h2>
@@ -1837,12 +1885,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>In Outlook, use the <code class="language-plaintext highlighter-rouge">ALT + F</code> shortcut to view the left menu bar and select <code class="language-plaintext highlighter-rouge">Options</code>.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - Options" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - Options" width="972" height="335" />
 <em>Office 365 Outlook - Options</em></p>
 
 <p>Select the <code class="language-plaintext highlighter-rouge">Advanced</code> tab. In the <code class="language-plaintext highlighter-rouge">File and browser preferences</code> section, change the browser you want to open the hyperlink to <code class="language-plaintext highlighter-rouge">Default Browser</code>. Then press <code class="language-plaintext highlighter-rouge">OK</code>. In the first section we set the Windows default browser to Chrome, so the default browser here is Chrome.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Options &gt; Advanced &gt; Select `Default Browser` in File and browser preferences" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Options &gt; Advanced &gt; Select `Default Browser` in File and browser preferences" width="972" height="792" />
 <em>Office 365 Outlook - Options &gt; Advanced &gt; Select <code class="language-plaintext highlighter-rouge">Default Browser</code> in File and browser preferences</em></p>
 
 ]]></content:encoded>
@@ -1871,7 +1919,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h3 id="krusader">Krusader</h3>
 <p>If you have experience using Q-Dir or <a href="https://www.ghisler.com/download.htm" target="_blank">Total Commander</a> in a Windows environment, <a href="https://krusader.org" target="_blank">Krusader</a> offers the experience of split windows and multi-tab file browsing.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" alt="Krusader" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krusader.png" alt="Krusader" width="972" height="700" />
 <em>Krusader</em></p>
 
 <p>The installation method is very easy. You can install it using apt.</p>
@@ -1885,14 +1933,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h3 id="gwenview">GwenView</h3>
 <p><a href="https://github.com/KDE/gwenview" target="_blank">GwenView</a> is the best Ubuntu image viewer I’ve ever used. I will update if I find a better image viewer.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" alt="GwenView" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview.png" alt="GwenView" width="972" height="680" />
 <em>GwenView</em></p>
 
 <p>However, if you frequently update image files, sometimes the appearance of the thumbnail in the GwenView list and the actual image may differ. Therefore, it is recommended to disable the use of thumbnail cache.</p>
 
 <p>In <code class="language-plaintext highlighter-rouge">Settings &gt; Configure Gwenview &gt; Advanced</code>, check <code class="language-plaintext highlighter-rouge">Low resource usage mode</code>.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" alt="GwenView - Check `Low resource usage mode` for disabling thumbnail cache" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-gwenview-check_low_resource_usage_mode_for_disabling_thumbnail_cache.png" alt="GwenView - Check `Low resource usage mode` for disabling thumbnail cache" width="972" height="702" />
 <em>GwenView - Check <code class="language-plaintext highlighter-rouge">Low resource usage mode</code> for disabling thumbnail cache</em></p>
 
 <p>GwenView can be easily installed using apt.</p>
@@ -1903,20 +1951,20 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h3 id="photopea">Photopea</h3>
 <p>For those familiar with Photoshop, the best alternative seems to be <a href="https://www.photopea.com" target="_blank">Photopia</a>. Photopia is a web app that provides an interface most similar to Photoshop.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" alt="Photopea - www.photopea.com" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-www.photopea.com.png" alt="Photopea - www.photopea.com" width="972" height="546" />
 <em>Photopea - www.photopea.com</em></p>
 
 <p>There are websites similar to Photopia, but Photopia’s advantage is that it allows ad blockers to block advertisements on the web, which is their revenue model. If you are a Chrome browser user, search for <code class="language-plaintext highlighter-rouge">AdBlock</code> in the web store and install it.</p>
 
 <p>Even if <code class="language-plaintext highlighter-rouge">AdBlock</code> is not used, ads are displayed in a limited amount on the right panel compared to other sites, so it is not too annoying.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" alt="Photopea - Limited ads on right panel and AdBlock extension on the Chrome web browser" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-photopea-limited_ads_on_right_panel_and_adblock_extension_on_the_chrome_web_browser.png" alt="Photopea - Limited ads on right panel and AdBlock extension on the Chrome web browser" width="972" height="546" />
 <em>Photopea - Limited ads on right panel and AdBlock extension on the Chrome web browser</em></p>
 
 <h3 id="krita">Krita</h3>
 <p>If you’re looking for an offline image editor that’s different from Photopia, Krita may be an alternative. However, users who are very familiar with Photoshop may feel unfamiliar. The GUI interface is similar to Photoshop, but the shortcuts and tools differ in many ways.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" alt="Krita" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita.png" alt="Krita" width="972" height="617" />
 <em>Krita</em></p>
 
 <p>Although it is not completely similar to Photoshop, if you want to edit or draw images and are looking for a complete software, Krita may be a good option.</p>
@@ -1926,7 +1974,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
   <li><a href="https://krita.org/en/download/krita-desktop">https://krita.org/en/download/krita-desktop</a></li>
 </ul>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" alt="Krita - Download Linux AppImage" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-krita-download_linux_appimage.png" alt="Krita - Download Linux AppImage" width="972" height="475" />
 <em>Krita - Download Linux AppImage</em></p>
 
 <p>Give execution permission to the downloaded Krita app image and run it.</p>
@@ -1946,12 +1994,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>Mouse gesture actions can be added in the <code class="language-plaintext highlighter-rouge">Actions</code> tab.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" alt="Easystroke - Preferences" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-preferences.png" alt="Easystroke - Preferences" width="972" height="645" />
 <em>Easystroke - Preferences</em></p>
 
 <p>You can easily install it by searching for it in Ubuntu Software app.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" alt="Easystroke - Download in Ubuntu Software" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-easystroke-download_in_ubuntu_software.png" alt="Easystroke - Download in Ubuntu Software" width="972" height="455" />
 <em>Easystroke - Download in Ubuntu Software</em></p>
 
 <p>Below are some shortcut keys that I am using by mapping them to mouse gestures.</p>
@@ -1994,12 +2042,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>You can easily install it by searching for <code class="language-plaintext highlighter-rouge">bleachbit</code> in the Ubuntu software application.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" alt="Ubuntu Software - BleachBit" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_software-bleachbit.png" alt="Ubuntu Software - BleachBit" width="972" height="513" />
 <em>Ubuntu Software - BleachBit</em></p>
 
 <p>After checking the items you want to organize, pressing the <code class="language-plaintext highlighter-rouge">Clean</code> button automatically deletes unnecessary files to secure free space. However, you must be careful when organizing the <code class="language-plaintext highlighter-rouge">APT</code> and <code class="language-plaintext highlighter-rouge">journald</code> items. This may break your Ubuntu system or package dependencies.</p>
 
-<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="BleachBit" />
+<p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="BleachBit" width="972" height="646" />
 <em>BleachBit</em></p>
 
 ]]></content:encoded>
@@ -2091,7 +2139,7 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
   <li><strong>Guest Port</strong> : 4000</li>
 </ul>
 
-<p><img src="/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" alt="VirtualBox Manager - Port Forwarding Rules" />
+<p><img src="/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" alt="VirtualBox Manager - Port Forwarding Rules" width="972" height="946" />
 <em>VirtualBox Manager - Port Forwarding Rules</em></p>
 
 <p>Now you can test Jekyll by connecting to <code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code> in your X86 Windows browser.</p>
@@ -2125,24 +2173,24 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 
 <p>I created a virtual hard disk with <code class="language-plaintext highlighter-rouge">Pre-allocate Full Size</code> option.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" alt="Oracle VM VirtualBox Manager - Create Virtual Hard Disk" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" alt="Oracle VM VirtualBox Manager - Create Virtual Hard Disk" width="972" height="1253" />
 <em>Oracle VM VirtualBox Manager - Create Virtual Hard Disk</em></p>
 
 <p>When you finish creating the virtual disk image, you can check the created disk in the hard disk list after the virtual disk image initialization time has passed.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" alt="Oracle VM VirtualBox Manager - Virtual hard disk initialization in progress" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-virtual_hard_disk_initialization_in_progress.png" alt="Oracle VM VirtualBox Manager - Virtual hard disk initialization in progress" width="972" height="609" />
 <em>Oracle VM VirtualBox Manager - Virtual hard disk initialization in progress</em></p>
 
 <p>Now we will add the created virtual hard disk to the Ubuntu VM.</p>
 
 <p>You can add a hard disk using a SATA controller in the <code class="language-plaintext highlighter-rouge">Storage</code> tab of Ubuntu VM settings.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Add hard disk to Ubuntu VM" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-add_hard_disk_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Add hard disk to Ubuntu VM" width="972" height="934" />
 <em>Oracle VM VirtualBox Manager - Add hard disk to Ubuntu VM</em></p>
 
 <p>When you select the hard disk you created, you can check that the hard disk is attached in the information section.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Check hard disks added to Ubuntu VM" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-check_hard_disks_added_to_ubuntu_vm.png" alt="Oracle VM VirtualBox Manager - Check hard disks added to Ubuntu VM" width="972" height="1019" />
 <em>Oracle VM VirtualBox Manager - Check hard disks added to Ubuntu VM</em></p>
 
 <h2 id="2-disk-initialization-in-a-ubuntu-vm">2. Disk initialization in a Ubuntu VM</h2>
@@ -2165,24 +2213,24 @@ gparted
 
 <p>Apply the partition <code class="language-plaintext highlighter-rouge">msdos</code> partition table through the menu.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" alt="Ubuntu VM - GParted - create partition table in msdos format" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_table_in_msdos_format.png" alt="Ubuntu VM - GParted - create partition table in msdos format" width="972" height="712" />
 <em>Ubuntu VM - GParted - create partition table in msdos format</em></p>
 
 <p>Then, we will create a partition. Right-click on the unallocated partition and create an <code class="language-plaintext highlighter-rouge">ext4</code> file system partition. I set it to full size.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" alt="Ubuntu VM - GParted - Create partition with ext4 file system" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-create_partition_with_ext4_file_system.png" alt="Ubuntu VM - GParted - Create partition with ext4 file system" width="972" height="758" />
 <em>Ubuntu VM - GParted - Create partition with ext4 file system</em></p>
 
 <p>Format the partition of the ext4 file system to <code class="language-plaintext highlighter-rouge">etx4</code>.</p>
 
 <p>Then click the green checkbox to apply the settings made so far.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" alt="Ubuntu VM - GParted - Format partition to ext4" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-format_partition_to_ext4.png" alt="Ubuntu VM - GParted - Format partition to ext4" width="972" height="584" />
 <em>Ubuntu VM - GParted - Format partition to ext4</em></p>
 
 <p>Hard disk initialization is now complete. To mount a hard disk so that it can be used every time the Ubuntu VM boots up, unique disk ID information is needed. Right-click the created partition, check the <code class="language-plaintext highlighter-rouge">UUID</code> in the information menu, and remember it.</p>
 
-<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - Check UUID of disk partition" />
+<p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - Check UUID of disk partition" width="972" height="711" />
 <em>Ubuntu VM - GParted - Check UUID of disk partition</em></p>
 
 <h2 id="3-every-bootup-mount-the-disk">3. Every bootup, mount the disk</h2>
