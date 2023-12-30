@@ -887,51 +887,6 @@ If you do not like this feature, you can change the <code class="language-plaint
       <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
-      <title><![CDATA[Display inactivity issues in multiple display configurations in Windows 10]]></title>
-      <link>https://unclesnote.com/en/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
-      <guid>https://unclesnote.com/en/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
-      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
-      <category><![CDATA[Computer,TroubleShooting]]></category>
-      <tag><![CDATA[Computer,TroubleShooting]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/en/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <description><![CDATA[I am a user who uses one laptop between work and home. I use two or more displays connected to my laptop both at work and at home, but sometimes only some]]></description>
-      <content:encoded><![CDATA[<p>I am a user who uses one laptop between work and home. I use two or more displays connected to my laptop both at work and at home, but sometimes only some displays are recognized by the laptop and are displayed as inactive when I go into the display settings.</p>
-
-<p>My guess is that Windows manages the display configuration suitable for each environment by storing it in the registry in the form of a preset, but it seems that this problem is sometimes caused by a twist in this configuration.</p>
-
-<p>The method I found to solve this problem is to delete and initialize the Windows display configuration registry value. In conclusion, you need to set up the multi-display environment again. I will explain how.</p>
-<h2 id="1-open-windows-registry-editor">1. Open Windows Registry Editor</h2>
-<p>Enter <code class="language-plaintext highlighter-rouge">regedit</code> through the Run dialog with <code class="language-plaintext highlighter-rouge">Windows + R</code> or search for <code class="language-plaintext highlighter-rouge">regedit.exe</code> in Start menu to run <code class="language-plaintext highlighter-rouge">Registry Editor</code>.</p>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; Enter `regedit`" />
-<em>Windows + R &gt; Enter <code class="language-plaintext highlighter-rouge">regedit</code></em></p>
-
-<h2 id="2-delete-display-preset-values-in-registry-editor">2. Delete display preset values in Registry Editor</h2>
-<p>In Registry Editor, enter the path below in the address bar or navigate to the path in the tree.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>Remove the following two folders in the <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> folder from the right-click menu.</p>
-<ul>
-  <li>Configuration</li>
-  <li>Connectivity</li>
-</ul>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="Registry Editor - Remove the `Configuration` and `Connectivity` folders in the `GraphicsDrivers` folder" />
-<em>Registry Editor - Remove the <code class="language-plaintext highlighter-rouge">Configuration</code> and <code class="language-plaintext highlighter-rouge">Connectivity</code> folders in the <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> folder</em></p>
-
-<h2 id="3-reboot-the-windows">3. Reboot the Windows</h2>
-<p>Restart Windows. Once the reboot is complete, from Windows’ perspective, my displays become newly recognized displays.</p>
-
-<p>Therefore, you need to reset the position and orientation of the displays in the display settings. In short, this is very annoying. I offer my sincere condolences.</p>
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/en-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
-    <item>
-      <author>Uncle's Note</author>
       <title><![CDATA[Obsidian's Callouts And Quotation Block]]></title>
       <link>https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block</link>
       <guid>https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block</guid>
@@ -1805,52 +1760,6 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
-    <item>
-      <author>Uncle's Note</author>
-      <title><![CDATA[How to change the default browser in Office 365 Outlook to Chrome]]></title>
-      <link>https://unclesnote.com/en/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
-      <guid>https://unclesnote.com/en/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
-      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
-      <category><![CDATA[Computer,TroubleShooting]]></category>
-      <tag><![CDATA[Outlook,DefaultBrowser,Chrome,PC,Computer,TroubleShooting]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/en/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <description><![CDATA[Have you ever clicked on a web link in Office 365 Outlook and suddenly been shown in the Edge browser, which was inconvenient? In a recent update, Microsoft]]></description>
-      <content:encoded><![CDATA[<p>Have you ever clicked on a web link in Office 365 Outlook and suddenly been shown in the Edge browser, which was inconvenient?</p>
-
-<p>In a recent update, Microsoft reset the default browser in Outlook to Edge browser. For those who love Google Chrome, let’s change the web link to open on Chrome. We will check and set the Chrome browser in the Windows default app and Outlook settings.</p>
-<h2 id="default-web-browser-settings-on-windows">Default Web Browser Settings on Windows</h2>
-<p>Maybe, if you’re a Chrome user, you’ve already set Google Chrome as your default web browser. Make sure you have the default browser settings for Office 365.</p>
-
-<p>Open <code class="language-plaintext highlighter-rouge">Windows Settings</code> using the <code class="language-plaintext highlighter-rouge">CTRL + I</code> shortcut. Then, enter the <code class="language-plaintext highlighter-rouge">default</code> keyword to find and select <code class="language-plaintext highlighter-rouge">Default apps</code>.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows Settings - Search `default`" />
-<em>Windows Settings - Search <code class="language-plaintext highlighter-rouge">default</code></em></p>
-
-<p>Then, in <code class="language-plaintext highlighter-rouge">the Default apps</code> tab, select <code class="language-plaintext highlighter-rouge">Google Chrome</code> browser in the <code class="language-plaintext highlighter-rouge">Web browser</code> section.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="Settings &gt; Default apps &gt; Select `Google Chrome` on web browser" />
-<em>Settings &gt; Default apps &gt; Select <code class="language-plaintext highlighter-rouge">Google Chrome</code> on web browser</em></p>
-
-<h2 id="set-up-apps-to-open-hyperlinks-in-office-365-outlook">Set up apps to open hyperlinks in Office 365 Outlook</h2>
-<p>Shall we go back to Office 365 Outlook?</p>
-
-<p>In Outlook, use the <code class="language-plaintext highlighter-rouge">ALT + F</code> shortcut to view the left menu bar and select <code class="language-plaintext highlighter-rouge">Options</code>.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - Options" />
-<em>Office 365 Outlook - Options</em></p>
-
-<p>Select the <code class="language-plaintext highlighter-rouge">Advanced</code> tab. In the <code class="language-plaintext highlighter-rouge">File and browser preferences</code> section, change the browser you want to open the hyperlink to <code class="language-plaintext highlighter-rouge">Default Browser</code>. Then press <code class="language-plaintext highlighter-rouge">OK</code>. In the first section we set the Windows default browser to Chrome, so the default browser here is Chrome.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Options &gt; Advanced &gt; Select `Default Browser` in File and browser preferences" />
-<em>Office 365 Outlook - Options &gt; Advanced &gt; Select <code class="language-plaintext highlighter-rouge">Default Browser</code> in File and browser preferences</em></p>
-
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/en-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Essential alternative software for Ubuntu instead of Windows tools]]></title>

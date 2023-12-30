@@ -887,51 +887,6 @@ service xrdp restart
       <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
-      <title><![CDATA[Windows 10 中多个显示配置中的显示不活动问题]]></title>
-      <link>https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
-      <guid>https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
-      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
-      <category><![CDATA[电脑,故障排除]]></category>
-      <tag><![CDATA[电脑,故障排除]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <description><![CDATA[我是一名在工作和家庭之间使用一台笔记本电脑的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。我发现]]></description>
-      <content:encoded><![CDATA[<p>我是一名在工作和家庭之间使用一台笔记本电脑的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。</p>
-
-<p>我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。</p>
-
-<p>我发现解决这个问题的方法是删除并初始化Windows显示配置注册表值。总之，您需要重新设置多显示环境。我会解释如何做。</p>
-<h2 id="1打开windows注册表编辑器">1.打开Windows注册表编辑器</h2>
-<p>使用<code class="language-plaintext highlighter-rouge">Windows + R</code>通过<code class="language-plaintext highlighter-rouge">运行</code>对话框输入<code class="language-plaintext highlighter-rouge">regedit</code>，或在<code class="language-plaintext highlighter-rouge">开始</code>菜单中搜索<code class="language-plaintext highlighter-rouge">regedit.exe</code>以运行<code class="language-plaintext highlighter-rouge">注册表编辑器</code>。</p>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; 输入`regedit`" />
-<em>Windows + R &gt; 输入<code class="language-plaintext highlighter-rouge">regedit</code></em></p>
-
-<h2 id="2删除注册表编辑器中的显示预设值">2.删除注册表编辑器中的显示预设值</h2>
-<p>在注册表编辑器中，在地址栏中输入下面的路径或导航到树中的路径。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>从右键菜单中删除<code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>文件夹中的以下两个文件夹。</p>
-<ul>
-  <li>Configuration</li>
-  <li>Connectivity</li>
-</ul>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="注册表编辑器 - 删除`GraphicsDrivers`文件夹中的`Configuration`和`Connectivity`文件夹" />
-<em>注册表编辑器 - 删除<code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>文件夹中的<code class="language-plaintext highlighter-rouge">Configuration</code>和<code class="language-plaintext highlighter-rouge">Connectivity</code>文件夹</em></p>
-
-<h2 id="3-重新启动windows">3. 重新启动Windows</h2>
-<p>重新启动 Windows。重新启动完成后，从 Windows 的角度来看，我的显示器将成为新识别的显示器。</p>
-
-<p>因此，您需要在显示设置中重置显示的位置和方向。简而言之，这很烦人。我谨致以诚挚的哀悼。</p>
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/zh-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
-    <item>
-      <author>叔叔的笔记</author>
       <title><![CDATA[黑曜石的标注和报价块]]></title>
       <link>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</link>
       <guid>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</guid>
@@ -1805,52 +1760,6 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
-    <item>
-      <author>叔叔的笔记</author>
-      <title><![CDATA[如何将 Office 365 Outlook 中的默认浏览器更改为 Chrome]]></title>
-      <link>https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
-      <guid>https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
-      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
-      <category><![CDATA[电脑,故障排除]]></category>
-      <tag><![CDATA[外表,默认浏览器,铬合金,个人电脑,电脑,故障排除]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <description><![CDATA[您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Wind]]></description>
-      <content:encoded><![CDATA[<p>您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？</p>
-
-<p>在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Windows默认应用程序和Outlook设置中检查并设置Chrome浏览器。</p>
-<h2 id="windows-上的默认-web-浏览器设置">Windows 上的默认 Web 浏览器设置</h2>
-<p>如果您是 Chrome 用户，也许您已经将 Google Chrome 设置为默认网络浏览器。确保您具有 Office 365 的默认浏览器设置。</p>
-
-<p>使用<code class="language-plaintext highlighter-rouge">CTRL + I</code>快捷键打开<code class="language-plaintext highlighter-rouge">Windows 设置</code>。然后，输入<code class="language-plaintext highlighter-rouge">default</code>关键字查找并选择<code class="language-plaintext highlighter-rouge">默认应用程序</code>。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows 设置 - 搜索`默认`" />
-<em>Windows 设置 - 搜索<code class="language-plaintext highlighter-rouge">默认</code></em></p>
-
-<p>然后，在<code class="language-plaintext highlighter-rouge">默认应用程序</code>选项卡中，选择<code class="language-plaintext highlighter-rouge">Web 浏览器</code>部分中的<code class="language-plaintext highlighter-rouge">Google Chrome</code>浏览器。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="设置 &gt; 默认应用 &gt; 在网络浏览器上选择`Google Chrome`" />
-<em>设置 &gt; 默认应用 &gt; 在网络浏览器上选择<code class="language-plaintext highlighter-rouge">Google Chrome</code></em></p>
-
-<h2 id="设置应用程序以打开-office-365-outlook-中的超链接">设置应用程序以打开 Office 365 Outlook 中的超链接</h2>
-<p>我们要返回 Office 365 Outlook 吗？</p>
-
-<p>在 Outlook 中，使用<code class="language-plaintext highlighter-rouge">ALT + F</code>快捷键查看左侧菜单栏并选择<code class="language-plaintext highlighter-rouge">选项</code>。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - 选项" />
-<em>Office 365 Outlook - 选项</em></p>
-
-<p>选择<code class="language-plaintext highlighter-rouge">高级</code>选项卡。在<code class="language-plaintext highlighter-rouge">文件和浏览器首选项</code>部分中，将要打开超链接的浏览器更改为<code class="language-plaintext highlighter-rouge">默认浏览器</code>。然后按<code class="language-plaintext highlighter-rouge">确定</code>。在第一节中我们将Windows默认浏览器设置为Chrome，所以这里的默认浏览器是Chrome。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - 选项 &gt; 高级 &gt; 在文件和浏览器首选项中选择`默认浏览器`" />
-<em>Office 365 Outlook - 选项 &gt; 高级 &gt; 在文件和浏览器首选项中选择<code class="language-plaintext highlighter-rouge">默认浏览器</code></em></p>
-
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/zh-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[Ubuntu 的必备替代软件，而不是 Windows 工具]]></title>

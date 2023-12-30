@@ -887,51 +887,6 @@ service xrdp restart
       <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
-      <title><![CDATA[Windows 10 の複数のディスプレイ構成でディスプレイが非アクティブになる問題]]></title>
-      <link>https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
-      <guid>https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
-      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
-      <category><![CDATA[コンピューター,トラブルシューティング]]></category>
-      <tag><![CDATA[コンピューター,トラブルシューティング]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <description><![CDATA[私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。おそらく Windows は各環境に適したディ]]></description>
-      <content:encoded><![CDATA[<p>私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。</p>
-
-<p>おそらく Windows は各環境に適したディスプレイ設定をプリセットとしてレジストリに保存して管理しているのだと思いますが、この設定のひねりが原因でこの問題が発生する場合があるようです。</p>
-
-<p>この問題を解決するために私が見つけた方法は、Windows ディスプレイ構成レジストリ値を削除して初期化することです。結論から言うと、マルチディスプレイ環境を再度セットアップする必要があります。その方法を説明します。</p>
-<h2 id="1-windows-レジストリ-エディタを開きます">1. Windows レジストリ エディタを開きます</h2>
-<p><code class="language-plaintext highlighter-rouge">Windows + R</code>を使用して<code class="language-plaintext highlighter-rouge">ファイル名を指定して実行</code>ダイアログに<code class="language-plaintext highlighter-rouge">regedit</code>と入力するか、<code class="language-plaintext highlighter-rouge">スタート</code>メニューで<code class="language-plaintext highlighter-rouge">regedit.exe</code>を検索して<code class="language-plaintext highlighter-rouge">レジストリ エディタ</code>を実行します。</p>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; `regedit`と入力" />
-<em>Windows + R &gt; <code class="language-plaintext highlighter-rouge">regedit</code>と入力</em></p>
-
-<h2 id="2レジストリエディタで表示プリセット値を削除する">2.レジストリエディタで表示プリセット値を削除する</h2>
-<p>レジストリ エディターで、アドレス バーに以下のパスを入力するか、ツリー内のパスに移動します。</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>右クリックメニューから<code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>フォルダ内の以下の２つのフォルダを削除します。</p>
-<ul>
-  <li>Configuration</li>
-  <li>Connectivity</li>
-</ul>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="レジストリ エディタ - `GraphicsDrivers`フォルダ内の`Configuration`フォルダと`Connectivity`フォルダを削除します。" />
-<em>レジストリ エディタ - <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>フォルダ内の<code class="language-plaintext highlighter-rouge">Configuration</code>フォルダと<code class="language-plaintext highlighter-rouge">Connectivity</code>フォルダを削除します。</em></p>
-
-<h2 id="3-windowsを再起動します">3. Windowsを再起動します。</h2>
-<p>Windows を再起動します。再起動が完了すると、Windows の観点からは、ディスプレイが新しく認識されたディスプレイになります。</p>
-
-<p>そのため、ディスプレイ設定でディスプレイの位置と向きを再設定する必要があります。要するに、これは非常に迷惑です。心よりお悔やみを申し上げます。</p>
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/ja-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
-    <item>
-      <author>アンクルズノート</author>
       <title><![CDATA[Obsidian のコールアウトと引用ブロック]]></title>
       <link>https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</link>
       <guid>https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</guid>
@@ -1805,52 +1760,6 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
-    <item>
-      <author>アンクルズノート</author>
-      <title><![CDATA[Office 365 Outlook のデフォルトのブラウザを Chrome に変更する方法]]></title>
-      <link>https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
-      <guid>https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
-      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
-      <category><![CDATA[コンピューター,トラブルシューティング]]></category>
-      <tag><![CDATA[見通し,デフォルトブラウザ,クロム,パソコン,コンピューター,トラブルシューティング]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <description><![CDATA[Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は]]></description>
-      <content:encoded><![CDATA[<p>Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?</p>
-
-<p>最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は、Web リンクを Chrome で開くように変更してみましょう。 Windows のデフォルト アプリと Outlook の設定で Chrome ブラウザを確認して設定します。</p>
-<h2 id="windows-のデフォルトの-web-ブラウザ設定">Windows のデフォルトの Web ブラウザ設定</h2>
-<p>Chrome ユーザーであれば、すでに Google Chrome をデフォルトの Web ブラウザとして設定しているかもしれません。 Office 365 のデフォルトのブラウザー設定があることを確認してください。</p>
-
-<p><code class="language-plaintext highlighter-rouge">CTRL + I</code>ショートカットを使用して<code class="language-plaintext highlighter-rouge">Windows 設定</code>を開きます。次に、<code class="language-plaintext highlighter-rouge">default</code>キーワードを入力して<code class="language-plaintext highlighter-rouge">Default apps</code>を検索し、選択します。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows 設定 - `デフォルト`を検索" />
-<em>Windows 設定 - <code class="language-plaintext highlighter-rouge">デフォルト</code>を検索</em></p>
-
-<p>次に、<code class="language-plaintext highlighter-rouge">デフォルトのアプリ</code>タブの<code class="language-plaintext highlighter-rouge">Web ブラウザ</code>セクションで<code class="language-plaintext highlighter-rouge">Google Chrome</code>ブラウザを選択します。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="設定 &gt; デフォルトのアプリ &gt; Web ブラウザーで`Google Chrome`を選択" />
-<em>設定 &gt; デフォルトのアプリ &gt; Web ブラウザーで<code class="language-plaintext highlighter-rouge">Google Chrome</code>を選択</em></p>
-
-<h2 id="office-365-outlook-でハイパーリンクを開くようにアプリを設定する">Office 365 Outlook でハイパーリンクを開くようにアプリを設定する</h2>
-<p>Office 365 Outlook に戻りましょうか?</p>
-
-<p>Outlook では、<code class="language-plaintext highlighter-rouge">ALT + F</code>ショートカットを使用して左側のメニュー バーを表示し、<code class="language-plaintext highlighter-rouge">オプション</code>を選択します。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - オプション" />
-<em>Office 365 Outlook - オプション</em></p>
-
-<p><code class="language-plaintext highlighter-rouge">詳細</code>タブを選択します。 <code class="language-plaintext highlighter-rouge">ファイルとブラウザの設定</code>セクションで、ハイパーリンクを開くブラウザを<code class="language-plaintext highlighter-rouge">デフォルトのブラウザ</code>に変更します。次に<code class="language-plaintext highlighter-rouge">OK</code>を押します。最初のセクションでは Windows のデフォルトのブラウザを Chrome に設定したため、ここでのデフォルトのブラウザは Chrome です。</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。" />
-<em>Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。</em></p>
-
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ja-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Windows ツールの代わりに Ubuntu に不可欠な代替ソフトウェア]]></title>

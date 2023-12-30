@@ -887,51 +887,6 @@ Si no le gusta esta función, puede cambiar la función “Voltear para arrancar
       <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
-      <title><![CDATA[Mostrar problemas de inactividad en múltiples configuraciones de pantalla en Windows 10]]></title>
-      <link>https://unclesnote.com/es/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</link>
-      <guid>https://unclesnote.com/es/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <dc:creator><![CDATA[nota del tio]]></dc:creator>
-      <pubDate>Thu, 14 Dec 2023 16:30:36 +0900</pubDate>
-      <category><![CDATA[Computadora,Solución de problemas]]></category>
-      <tag><![CDATA[Computadora,Solucióndeproblemas]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/es/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</guid>
-      <description><![CDATA[Soy un usuario que utiliza una computadora portátil entre el trabajo y el hogar. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el]]></description>
-      <content:encoded><![CDATA[<p>Soy un usuario que utiliza una computadora portátil entre el trabajo y el hogar. Utilizo dos o más pantallas conectadas a mi computadora portátil tanto en el trabajo como en casa, pero a veces la computadora portátil solo reconoce algunas pantallas y se muestran como inactivas cuando entro en la configuración de pantalla.</p>
-
-<p>Supongo que Windows gestiona la configuración de pantalla adecuada para cada entorno almacenándola en el registro en forma de valor preestablecido, pero parece que este problema a veces se debe a un giro en esta configuración.</p>
-
-<p>El método que encontré para resolver este problema es eliminar e inicializar el valor del registro de configuración de pantalla de Windows. En conclusión, debe volver a configurar el entorno de pantallas múltiples. Te explicaré cómo.</p>
-<h2 id="1-abra-el-editor-del-registro-de-windows">1. Abra el Editor del Registro de Windows</h2>
-<p>Ingrese <code class="language-plaintext highlighter-rouge">regedit</code> a través del cuadro de diálogo Ejecutar con <code class="language-plaintext highlighter-rouge">Windows + R</code> o busque <code class="language-plaintext highlighter-rouge">regedit.exe</code> en el menú Inicio para ejecutar el <code class="language-plaintext highlighter-rouge">Editor del Registro</code>.</p>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" alt="Windows + R &gt; Ingrese `regedit`" />
-<em>Windows + R &gt; Ingrese <code class="language-plaintext highlighter-rouge">regedit</code></em></p>
-
-<h2 id="2-eliminar-los-valores-preestablecidos-de-visualización-en-el-editor-del-registro">2. Eliminar los valores preestablecidos de visualización en el Editor del Registro</h2>
-<p>En el Editor del Registro, ingrese la ruta a continuación en la barra de direcciones o navegue hasta la ruta en el árbol.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers
-</pre></td></tr></tbody></table></code></pre></div></div>
-<p>Elimine las siguientes dos carpetas en la carpeta <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> del menú contextual.</p>
-<ul>
-  <li>Configuration</li>
-  <li>Connectivity</li>
-</ul>
-
-<p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="Editor del Registro: elimine las carpetas `Configuración` y `Conectividad` en la carpeta `GraphicsDrivers`" />
-<em>Editor del Registro: elimine las carpetas <code class="language-plaintext highlighter-rouge">Configuración</code> y <code class="language-plaintext highlighter-rouge">Conectividad</code> en la carpeta <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code></em></p>
-
-<h2 id="3-reinicie-windows">3. Reinicie Windows</h2>
-<p>Reinicie Windows. Una vez que se completa el reinicio, desde la perspectiva de Windows, mis pantallas se convierten en pantallas recién reconocidas.</p>
-
-<p>Por lo tanto, debe restablecer la posición y orientación de las pantallas en la configuración de pantalla. En resumen, esto es muy molesto. Ofrezco mi más sentido pésame.</p>
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/es-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" medium="image" /></item>
-    <item>
-      <author>nota del tio</author>
       <title><![CDATA[Bloque de citas y rótulos de Obsidian]]></title>
       <link>https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block</link>
       <guid>https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block</guid>
@@ -1805,52 +1760,6 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-beyond_compare_4.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" medium="image" /></item>
-    <item>
-      <author>nota del tio</author>
-      <title><![CDATA[Cómo cambiar el navegador predeterminado en Office 365 Outlook a Chrome]]></title>
-      <link>https://unclesnote.com/es/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</link>
-      <guid>https://unclesnote.com/es/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <dc:creator><![CDATA[nota del tio]]></dc:creator>
-      <pubDate>Tue, 31 Oct 2023 00:34:17 +0900</pubDate>
-      <category><![CDATA[Computadora,Solución de problemas]]></category>
-      <tag><![CDATA[panorama,Navegadorpordefecto,Cromo,ordenadorpersonal,Computadora,Solucióndeproblemas]]></tag>
-      <guid isPermaLink="true">https://unclesnote.com/es/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</guid>
-      <description><![CDATA[¿Alguna vez hizo clic en un enlace web en Office 365 Outlook y de repente se le mostró en el navegador Edge, lo cual fue un inconveniente? En una actualización]]></description>
-      <content:encoded><![CDATA[<p>¿Alguna vez hizo clic en un enlace web en Office 365 Outlook y de repente se le mostró en el navegador Edge, lo cual fue un inconveniente?</p>
-
-<p>En una actualización reciente, Microsoft restableció el navegador predeterminado en Outlook al navegador Edge. Para aquellos que aman Google Chrome, cambiemos el enlace web para abrir en Chrome. Comprobaremos y configuraremos el navegador Chrome en la aplicación predeterminada de Windows y en la configuración de Outlook.</p>
-<h2 id="configuración-predeterminada-del-navegador-web-en-windows">Configuración predeterminada del navegador web en Windows</h2>
-<p>Quizás, si eres usuario de Chrome, ya hayas configurado Google Chrome como tu navegador web predeterminado. Asegúrese de tener la configuración predeterminada del navegador para Office 365.</p>
-
-<p>Abra “Configuración de Windows” usando el acceso directo “CTRL + I”. Luego, ingrese la palabra clave “predeterminada” para buscar y seleccionar “Aplicaciones predeterminadas”.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Configuración de Windows: buscar &quot;predeterminado&quot;" />
-<em>Configuración de Windows: buscar “predeterminado”</em></p>
-
-<p>Luego, en la pestaña “Aplicaciones predeterminadas”, seleccione el navegador “Google Chrome” en la sección “Navegador web”.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="Configuración &gt; Aplicaciones predeterminadas &gt; Seleccione `Google Chrome` en el navegador web" />
-<em>Configuración &gt; Aplicaciones predeterminadas &gt; Seleccione <code class="language-plaintext highlighter-rouge">Google Chrome</code> en el navegador web</em></p>
-
-<h2 id="configurar-aplicaciones-para-abrir-hipervínculos-en-office-365-outlook">Configurar aplicaciones para abrir hipervínculos en Office 365 Outlook</h2>
-<p>¿Volvemos a Office 365 Outlook?</p>
-
-<p>En Outlook, use el acceso directo <code class="language-plaintext highlighter-rouge">ALT + F</code> para ver la barra de menú izquierda y seleccione <code class="language-plaintext highlighter-rouge">Opciones</code>.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - Opciones" />
-<em>Office 365 Outlook - Opciones</em></p>
-
-<p>Seleccione la pestaña “Avanzado”. En la sección “Preferencias de archivos y navegador”, cambie el navegador en el que desea abrir el hipervínculo a “Navegador predeterminado”. Luego presione <code class="language-plaintext highlighter-rouge">Aceptar</code>. En la primera sección configuramos el navegador predeterminado de Windows en Chrome, por lo que el navegador predeterminado aquí es Chrome.</p>
-
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Opciones &gt; Avanzado &gt; Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador" />
-<em>Office 365 Outlook - Opciones &gt; Avanzado &gt; Seleccione <code class="language-plaintext highlighter-rouge">Navegador predeterminado</code> en Preferencias de archivo y navegador</em></p>
-
-]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/es-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Software alternativo esencial para Ubuntu en lugar de herramientas de Windows]]></title>
