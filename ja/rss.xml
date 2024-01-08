@@ -21,8 +21,183 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <lastBuildDate>Mon, 08 Jan 2024 11:11:21 +0900</lastBuildDate>
+    <pubDate>Mon, 08 Jan 2024 11:11:21 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[複数の Obsidian 保管庫のショートカット アイコンを作成する - URI]]></title>
+      <link>https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</link>
+      <guid>https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 08 Jan 2024 11:11:21 +0900</pubDate>
+      <category><![CDATA[黒曜石]]></category>
+      <tag><![CDATA[黒曜石]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</guid>
+      <description><![CDATA[場合によっては、カテゴリごとに複数のボールトを作成して投稿を整理するユーザーもいるかもしれません。 Obsidian の Vault を開くたびに開くのは面倒かもしれません。そこで、Windows環境で保管庫ごとにObsidianを開くことができるショートカットアイコンを作成する方法を紹介したいと思います。原理を説明]]></description>
+      <content:encoded><![CDATA[<p>場合によっては、カテゴリごとに複数のボールトを作成して投稿を整理するユーザーもいるかもしれません。 Obsidian の Vault を開くたびに開くのは面倒かもしれません。そこで、Windows環境で保管庫ごとにObsidianを開くことができるショートカットアイコンを作成する方法を紹介したいと思います。</p>
+
+<p>原理を説明すると、ショートカット アイコンで<code class="language-plaintext highlighter-rouge">obsidian.exe</code>を実行するときに、最初に開くボールトを Obsidian に指示するパラメータを引数値として追加します。 Obsidian はこれを <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a> と呼びます。</p>
+<h2 id="事前に知っておくべきこと">事前に知っておくべきこと</h2>
+<p>Obsidian Vault のショートカット アイコンを作成する前に、<code class="language-plaintext highlighter-rouge">obsidian.exe</code>へのパスと<code class="language-plaintext highlighter-rouge">自分の Vault</code>へのパスを知っておく必要があります。結論から言うと、以下のフォームのコマンドラインをショートカットアイコンに設定します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&lt;Path Of Obsidian.exe&gt; obsidian://open?path<span class="o">=</span>&lt;Path Of Vault&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下の例を見ると、Target コマンド ラインを簡単に理解できます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c"># Example </span>
+&lt;Path of Obsidian.exe&gt;
+    C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\O</span>bsidian<span class="se">\O</span>bsidian.exe
+    
+&lt;Path Of Vault&gt;
+    C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+    obsidian://open?path<span class="o">=</span>C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+
+<span class="c"># Target </span>
+C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\O</span>bsidian<span class="se">\O</span>bsidian.exe obsidian://open?path<span class="o">=</span>C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="黒曜石のショートカット-アイコンを作成する">黒曜石のショートカット アイコンを作成する</h2>
+<p>Obsidian Vault のショートカット アイコンを作成する場所を右クリックし、[ショートカット] ボタンを押します。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" alt="黒曜石のショートカットアイコン作成プロセス - ショートカットの作成" width="972" height="530" />
+<em>黒曜石のショートカットアイコン作成プロセス - ショートカットの作成</em></p>
+
+<p>次に、obsidian.exe へのフルパスを入力します。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" alt="Obsidian ショートカット アイコン作成プロセス - obsidian.exe パス" width="972" height="710" />
+<em>Obsidian ショートカット アイコン作成プロセス - obsidian.exe パス</em></p>
+
+<p>次に、ショートカットアイコンの名前を入力します。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" alt="黒曜石のショートカットアイコン作成手順 - アイコン名" width="972" height="710" />
+<em>黒曜石のショートカットアイコン作成手順 - アイコン名</em></p>
+
+<p>すると、入力した名前のObsidianショートカットアイコンが作成されます。そして、アイコンを右クリックして、<code class="language-plaintext highlighter-rouge">プロパティ</code>メニューを選択します。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="作成したObsidianショートカットアイコンのプロパティメニュー" width="972" height="504" />
+<em>作成したObsidianショートカットアイコンのプロパティメニュー</em></p>
+
+<p>Obsidian.exe パスの後にスペースを 1 つ追加し、上で作成した Obsidian Vault パスを追加します。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="黒曜石のショートカット アイコンのプロパティ" />
+<em>黒曜石のショートカット アイコンのプロパティ</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/ja-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[黒曜石 md を docx、pptx に変換する - Pandoc]]></title>
+      <link>https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</link>
+      <guid>https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 08 Jan 2024 11:11:19 +0900</pubDate>
+      <category><![CDATA[黒曜石]]></category>
+      <tag><![CDATA[黒曜石]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
+      <description><![CDATA[Obsidian を使用してよく整理された記事がある場合は、同僚や友人と共有する必要がある場合があります。 Obsidian 自体は PDF ファイルとしてエクスポートする機能を提供しますが、変更可能な Word (docx) または PowerPoint (pptx) ファイルの形式で共有したい場合は、多数の新しい]]></description>
+      <content:encoded><![CDATA[<p>Obsidian を使用してよく整理された記事がある場合は、同僚や友人と共有する必要がある場合があります。 Obsidian 自体は PDF ファイルとしてエクスポートする機能を提供しますが、変更可能な Word (docx) または PowerPoint (pptx) ファイルの形式で共有したい場合は、多数の新しいファイルをコピーして貼り付ける必要があります。面倒。</p>
+
+<p>そこで、この作業を簡単にしてくれる Obsidian コミュニティ プラグインである Pandoc を紹介したいと思います。</p>
+<h2 id="パンドックとは何ですか"><strong>パンドック</strong>とは何ですか?</h2>
+<p><a href="https://pandoc.org/" target="_blank">Pandoc</a> は、1 つのマークアップ形式から PDF、MS Word、PowerPoint、さらに Markdown、HTML、LaTeX に変換するためのライブラリです。基本的に、これは Windows Powershell または Linux ターミナルでコマンドとして使用できる <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a> ツールです。</p>
+
+<p>しかし、コマンドによる文書変換は煩雑であるため、GUI環境で簡単にPandocを利用できるようにプラグイン形式で提供されています。 Obsidian のコミュニティ プラグイン メニューを検索すると、2 つのプラグインが見つかります。この記事では、最初の<code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code>について説明します。実は2回目に検索した<code class="language-plaintext highlighter-rouge">黒曜石強化エクスポート</code>を使ってみたのですが、うまくいきませんでした。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" alt="Obsidian - `コミュニティ プラグイン` - `Pandoc プラグイン`" width="972" height="612" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">コミュニティ プラグイン</code> - <code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code></em></p>
+
+<h2 id="pandoc-をインストールする">Pandoc をインストールする</h2>
+<p>Pandoc プラグインは単独では機能しません。このプラグインは、公式の Pandoc ライブラリを使用してドキュメントを変換します。</p>
+
+<p>したがって、Pandoc 公式サイトにアクセスし、Pandoc ライブラリをダウンロードしてインストールする必要があります。</p>
+<ul>
+  <li><a href="https://pandoc.org/">Pandoc - ユニバーサルドキュメントコンバータ</a></li>
+</ul>
+
+<p>Pandoc サイトにアクセスします。 Pandoc は、Windows、macOS、Linux などのさまざまな種類の OS インストール パッケージをサポートしています。ダウンロードとインストール。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" alt="Pandoc 公式サイト - ダウンロード" width="972" height="546" />
+<em>Pandoc 公式サイト - ダウンロード</em></p>
+
+<p>Windows ユーザーの場合は、msi 形式のインストール パッケージをお勧めします。ポータブル版を zip 形式で使用したい場合は、大きな問題はありません。とにかく、適切な場所にダウンロードしてインストールまたは解凍します。</p>
+<h2 id="obsidian-に-pandoc-プラグイン-をインストールして構成する">Obsidian に <strong>Pandoc プラグイン</strong> をインストールして構成する</h2>
+<p>Obsidian の設定でコミュニティ プラグインの使用を許可し、コミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code>を検索してインストールします。そしてそれをアクティブ化します。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" alt="Obsidian - 設定 - コミュニティ プラグイン - Pandoc プラグイン" width="972" height="524" />
+<em>Obsidian - 設定 - コミュニティ プラグイン - Pandoc プラグイン</em></p>
+
+<p>プラグインをインストールしてアクティブ化したら、次のステップはプラグインをセットアップすることです。設定にPandoc Pluginの項目が追加されていることがわかります。ここで設定する必要がある部分は<code class="language-plaintext highlighter-rouge">エクスポートフォルダー</code>と<code class="language-plaintext highlighter-rouge">Pandocパス</code>です。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" alt="Obsidian - 設定 - コミュニティ プラグイン - `Pandoc プラグイン` 設定" width="972" height="416" />
+<em>Obsidian - 設定 - コミュニティ プラグイン - <code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code> 設定</em></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">エクスポートフォルダー</code> : Obsidian Markdown を希望のファイル形式に変換するときにファイルが保存されるフォルダーです。</li>
+  <li><code class="language-plaintext highlighter-rouge">Pandoc path</code> : 上記でダウンロードしてインストールした Pandoc ライブラリの実行可能ファイルのパスです。</li>
+  <li>Windows msi または Linux deb を使用して Pandoc をインストールした場合は、設定する必要はありません。 Pandoc ライブラリをインストールすると、環境変数に実行ファイルのパスが登録されるため、Obsidian は自動的に Pandoc のパスを認識します。</li>
+  <li>ただし、ポータブル形式の zip ファイルをダウンロードして解凍した場合は、<code class="language-plaintext highlighter-rouge">pandoc.exe</code> への完全な絶対パス、または <code class="language-plaintext highlighter-rouge">pandoc</code> の実行可能ファイル パスを追加する必要があります。 Windows 環境を使用していると仮定すると、適切な例は <code class="language-plaintext highlighter-rouge">C:\Data\pandoc-3.1.11.1-windows-x86_64\pandoc-3.1.11.1\pandoc.exe</code> になります。</li>
+</ul>
+
+<p>すべてが完了したら、Obsidian を再起動します。</p>
+<h2 id="pandoc-プラグインの使用法"><code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code>の使用法</h2>
+<p>Obsidian Markdown を希望のファイル形式に変換するには、<code class="language-plaintext highlighter-rouge">Ctrl + P</code>を押してクイック パレットを開きます。次に、<code class="language-plaintext highlighter-rouge">pandoc plugin</code>を検索して目的のファイル形式を選択すると、上で設定したエクスポートフォルダーにファイルが作成されます。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - 記事 - `Ctrl + P` - `pandoc plugin` を検索 - 変換したい形式を選択" width="972" height="657" />
+<em>Obsidian - 記事 - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - <code class="language-plaintext highlighter-rouge">pandoc plugin</code> を検索 - 変換したい形式を選択</em></p>
+
+<p><strong>投稿に画像が含まれていない場合は問題ありませんが、画像が含まれている場合は、画像ファイルが見つからないというエラーが表示されます</strong></p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" alt="Obsidian - Pandoc プラグイン - 画像ファイルを添付して投稿 - Word ドキュメント (docx) としてエクスポート" width="972" height="585" />
+<em>Obsidian - Pandoc プラグイン - 画像ファイルを添付して投稿 - Word ドキュメント (docx) としてエクスポート</em></p>
+
+<h2 id="pandoc-によるファイル変換エラーの解決策"><strong>Pandoc</strong> によるファイル変換エラーの解決策</h2>
+<p>この問題の原因は、プラグインがマークダウン ファイルの場所に基づいて投稿に添付された画像ファイルを見つけられないことです。プラグインは、Obsidian Vault ルートでイメージ ファイルを検索しようとします。そのため、画像ファイルが存在しないというエラーが発生します。</p>
+
+<p>この問題を解決するために、プラグイン設定の<code class="language-plaintext highlighter-rouge">追加の Pandoc 引数</code>に<code class="language-plaintext highlighter-rouge">--resource-path</code>オプションを設定しようとしましたが、機能しませんでした。残念ながら、このバグは修正できません。プラグインは 1 年以上更新されておらず、メンテナンスされていないためです。しかし、ウォークアラウンドは存在します。</p>
+
+<p>解決策は、エクスポート専用の新しいボールトを作成し、ドキュメント形式の変換が必要な場合にそれを使用することです。 md ファイルとイメージ ファイルを Vault ルートにコピーし、変換します。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="輸出専用の新しい黒曜石保管庫" width="972" height="521" />
+<em>輸出専用の新しい黒曜石保管庫</em></p>
+
+<p>以下はPandocでmdをword(docx)に変換した結果です。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="Pandoc によって作成された **Word** ファイル" width="972" height="563" />
+<em>Pandoc によって作成された <strong>Word</strong> ファイル</em></p>
+
+<p>以下は、Pandoc を使用して md を PowerPoint (pptx) に変換した結果です。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" alt="**PowerPoint ファイル** Pandoc によって作成されました" width="972" height="562" />
+<em><strong>PowerPoint ファイル</strong> Pandoc によって作成されました</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/ja-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[YouTube ビデオを Obsidian に埋め込む - iframe、ReadItLater]]></title>

@@ -21,8 +21,183 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <lastBuildDate>Mon, 08 Jan 2024 11:11:21 +0900</lastBuildDate>
+    <pubDate>Mon, 08 Jan 2024 11:11:21 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[为多个黑曜石保险库创建快捷方式图标 - URI]]></title>
+      <link>https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</link>
+      <guid>https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 08 Jan 2024 11:11:21 +0900</pubDate>
+      <category><![CDATA[黑曜石]]></category>
+      <tag><![CDATA[黑曜石]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</guid>
+      <description><![CDATA[在某些情况下，可能有用户通过根据类别创建多个保管库来组织帖子。每次在 Obsidian 中打开 Vault 时都会很烦人。所以，我想介绍一种在Windows环境下为每个Vault创建一个可以打开Obsidian的快捷方式图标的方法。为了解释原理，当通过快捷方式图标运行`obsidian.exe`时，您添加参数作为参数]]></description>
+      <content:encoded><![CDATA[<p>在某些情况下，可能有用户通过根据类别创建多个保管库来组织帖子。每次在 Obsidian 中打开 Vault 时都会很烦人。所以，我想介绍一种在Windows环境下为每个Vault创建一个可以打开Obsidian的快捷方式图标的方法。</p>
+
+<p>为了解释原理，当通过快捷方式图标运行<code class="language-plaintext highlighter-rouge">obsidian.exe</code>时，您添加参数作为参数值来告诉 Obsidian 首先打开哪个保管库。 Obsidian 将此称为 <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a>。</p>
+<h2 id="您需要提前了解什么">您需要提前了解什么</h2>
+<p>在创建 Obsidian Vault 快捷方式图标之前，您需要知道<code class="language-plaintext highlighter-rouge">obsidian.exe</code>的路径和<code class="language-plaintext highlighter-rouge">your Vault</code>的路径。总之，我们将如下形式的命令行设置为快捷方式图标。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&lt;Path Of Obsidian.exe&gt; obsidian://open?path<span class="o">=</span>&lt;Path Of Vault&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>如果您查看下面的示例，您可以轻松找出 Target 命令行。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c"># Example </span>
+&lt;Path of Obsidian.exe&gt;
+    C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\O</span>bsidian<span class="se">\O</span>bsidian.exe
+    
+&lt;Path Of Vault&gt;
+    C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+    obsidian://open?path<span class="o">=</span>C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+
+<span class="c"># Target </span>
+C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\O</span>bsidian<span class="se">\O</span>bsidian.exe obsidian://open?path<span class="o">=</span>C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="创建黑曜石快捷方式图标">创建黑曜石快捷方式图标</h2>
+<p>右键单击要创建黑曜石保管库快捷方式图标的位置，然后按快捷方式按钮。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" alt="黑曜石快捷方式图标创建流程-快捷方式创建" width="972" height="530" />
+<em>黑曜石快捷方式图标创建流程-快捷方式创建</em></p>
+
+<p>然后输入 obsidian.exe 的完整路径。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" alt="黑曜石快捷图标创建过程-obsidian.exe路径" width="972" height="710" />
+<em>黑曜石快捷图标创建过程-obsidian.exe路径</em></p>
+
+<p>然后，输入快捷方式图标的名称。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" alt="黑曜石快捷图标创建过程-图标名称" width="972" height="710" />
+<em>黑曜石快捷图标创建过程-图标名称</em></p>
+
+<p>然后，将创建一个带有您输入的名称的黑曜石快捷方式图标。右键单击该图标并选择<code class="language-plaintext highlighter-rouge">属性</code>菜单。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="创建的Obsidian快捷图标的属性菜单" width="972" height="504" />
+<em>创建的Obsidian快捷图标的属性菜单</em></p>
+
+<p>在 Obsidian.exe 路径后添加一个空格，并添加上面创建的 Obsidian Vault 路径。</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="黑曜石快捷方式图标的属性" />
+<em>黑曜石快捷方式图标的属性</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/zh-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[将 Obsidian md 转换为 docx、pptx - Pandoc]]></title>
+      <link>https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</link>
+      <guid>https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 08 Jan 2024 11:11:19 +0900</pubDate>
+      <category><![CDATA[黑曜石]]></category>
+      <tag><![CDATA[黑曜石]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
+      <description><![CDATA[如果您有一篇使用 Obsidian 组织良好的文章，您可能偶尔需要与同事或朋友分享。 Obsidian 本身提供了导出为 PDF 文件的功能，但如果您想以可修改的 Word(docx) 或 Power Point(pptx) 文件的形式共享，复制和粘贴大量新文件是一个麻烦的事情麻烦。所以，我想介绍一下 Pandoc，]]></description>
+      <content:encoded><![CDATA[<p>如果您有一篇使用 Obsidian 组织良好的文章，您可能偶尔需要与同事或朋友分享。 Obsidian 本身提供了导出为 PDF 文件的功能，但如果你想以可修改的 Word(docx) 或 Power Point(pptx) 文件的形式共享，复制和粘贴大量新文件是一个麻烦的事情。麻烦。</p>
+
+<p>所以，我想介绍一下 Pandoc，一个 Obsidian 社区插件，可以让这个任务变得更容易。</p>
+<h2 id="什么是-pandoc">什么是 <strong>Pandoc</strong>？</h2>
+<p><a href="https://pandoc.org/" target="_blank">Pandoc</a> 是一个用于从一种标记格式转换为 PDF、MS Word 和 PowerPoint 以及 Markdown、HTML 和 LaTeX 的库。基本上，它是一个 <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a> 工具，可以在 Windows Powershell 或 Linux 终端中用作命令。</p>
+
+<p>不过，由于使用命令进行文档转换比较复杂，因此 Pandoc 以插件的形式提供，以便您可以在 GUI 环境中轻松使用 Pandoc。如果您在 Obsidian 的社区插件菜单中搜索，会找到两个插件。在这篇文章中，我们将讨论第一个<code class="language-plaintext highlighter-rouge">Pandoc 插件</code>。其实我尝试过使用《Obsidian Enhancing Export》，第二次搜索的时候，效果并不好。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" alt="Obsidian - `社区插件` - `Pandoc 插件`" width="972" height="612" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">社区插件</code> - <code class="language-plaintext highlighter-rouge">Pandoc 插件</code></em></p>
+
+<h2 id="安装潘多克">安装潘多克</h2>
+<p>Pandoc 插件本身不能工作。该插件使用官方的 Pandoc 库来转换文档。</p>
+
+<p>因此，您需要访问Pandoc官网并下载并安装Pandoc库。</p>
+<ul>
+  <li><a href="https://pandoc.org/">Pandoc - 通用文档转换器</a></li>
+</ul>
+
+<p>访问 Pandoc 网站。 Pandoc支持Windows、macOS、Linux等多种操作系统安装包。下载并安装。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" alt="Pandoc 官方网站 - 下载" width="972" height="546" />
+<em>Pandoc 官方网站 - 下载</em></p>
+
+<p>如果您是Windows用户，我推荐msi格式的安装包。如果你想使用zip格式的便携版本，这不是一个大问题。无论如何，下载并安装或解压缩到合适的位置。</p>
+<h2 id="在-obsidian-中安装和配置-pandoc-插件">在 Obsidian 中安装和配置 <strong>Pandoc 插件</strong></h2>
+<p>在 Obsidian 的设置中允许使用社区插件，并在社区插件菜单中搜索并安装<code class="language-plaintext highlighter-rouge">Pandoc 插件</code>。并激活它。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" alt="Obsidian - 设置 - 社区插件 - Pandoc 插件" width="972" height="524" />
+<em>Obsidian - 设置 - 社区插件 - Pandoc 插件</em></p>
+
+<p>安装并激活插件后，下一步是设置插件。可以看到设置中已经添加了Pandoc Plugin项。这里需要设置的部分是<code class="language-plaintext highlighter-rouge">导出文件夹</code>和<code class="language-plaintext highlighter-rouge">Pandoc路径</code>。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" alt="Obsidian - 设置 - 社区插件 - `Pandoc 插件`设置" width="972" height="416" />
+<em>Obsidian - 设置 - 社区插件 - <code class="language-plaintext highlighter-rouge">Pandoc 插件</code>设置</em></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">导出文件夹</code> ：将 Obsidian Markdown 转换为您想要的文件格式时保存文件的文件夹。</li>
+  <li><code class="language-plaintext highlighter-rouge">Pandoc path</code> : 这是上面下载并安装的 Pandoc 库的可执行文件路径。</li>
+  <li>如果您使用 Windows msi 或 Linux deb 安装 Pandoc，则无需配置它。安装 Pandoc 库时，可执行文件路径会注册到环境变量中，因此 Obsidian 会自动识别 Pandoc 路径。</li>
+  <li>但是，如果您下载并解压了可移植格式的 zip 文件，则必须添加<code class="language-plaintext highlighter-rouge">pandoc.exe</code>的完整绝对路径或<code class="language-plaintext highlighter-rouge">pandoc</code>的可执行文件路径。假设您处于 Windows 环境中，合适的示例是<code class="language-plaintext highlighter-rouge">C:\Data\pandoc-3.1.11.1-windows-x86_64\pandoc-3.1.11.1\pandoc.exe</code>。</li>
+</ul>
+
+<p>一切完成后，重新启动 Obsidian。</p>
+<h2 id="pandoc-插件的用法"><code class="language-plaintext highlighter-rouge">Pandoc 插件</code>的用法</h2>
+<p>要将 Obsidian Markdown 转换为您想要的文件格式，请按<code class="language-plaintext highlighter-rouge">Ctrl + P</code>打开快速调色板。然后，如果您搜索<code class="language-plaintext highlighter-rouge">pandocplugin</code>并选择所需的文件格式，则会在上面设置的导出文件夹中创建一个文件。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - 文章 - `Ctrl + P` - 搜索 `pandoc 插件` - 选择您想要转换的格式" width="972" height="657" />
+<em>Obsidian - 文章 - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - 搜索 <code class="language-plaintext highlighter-rouge">pandoc 插件</code> - 选择您想要转换的格式</em></p>
+
+<p><strong>如果您的帖子没有任何图片，不会有问题，但如果包含图片，您会收到错误消息，提示找不到图片文件</strong></p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" alt="Obsidian - Pandoc 插件 - 发布附加图像文件 - 导出为 Word 文档 (docx)" width="972" height="585" />
+<em>Obsidian - Pandoc 插件 - 发布附加图像文件 - 导出为 Word 文档 (docx)</em></p>
+
+<h2 id="pandoc-文件转换错误解决方案"><strong>Pandoc</strong> 文件转换错误解决方案</h2>
+<p>问题的原因是插件没有根据markdown文件的位置找到帖子附加的图像文件。该插件将尝试在 Obsidian Vault 根目录中查找图像文件。所以会出现错误，说没有图像文件。</p>
+
+<p>为了解决这个问题，我尝试在插件设置中的<code class="language-plaintext highlighter-rouge">Extra Pandoc arguments</code>中设置<code class="language-plaintext highlighter-rouge">--resource-path</code>选项，但它不起作用。不幸的是这个错误无法修复。因为该插件已经一年多没有更新并且不再维护了。但绕行确实存在！</p>
+
+<p>解决方案是创建一个仅用于导出目的的新保管库，并在需要文档格式转换时使用它。将 md 和图像文件复制到 Vault 根目录并进行转换。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="仅限出口目的的新黑曜石库" width="972" height="521" />
+<em>仅限出口目的的新黑曜石库</em></p>
+
+<p>下面是用Pandoc将md转换为word(docx)的结果。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="Pandoc 创建的 **Word** 文件" width="972" height="563" />
+<em>Pandoc 创建的 <strong>Word</strong> 文件</em></p>
+
+<p>下面是使用 Pandoc 将 md 转换为 PowerPoint (pptx) 的结果。</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" alt="**PowerPoint 文件** 由 Pandoc 创建" width="972" height="562" />
+<em><strong>PowerPoint 文件</strong> 由 Pandoc 创建</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/zh-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[将 YouTube 视频嵌入 Obsidian - iframe、ReadItLater]]></title>

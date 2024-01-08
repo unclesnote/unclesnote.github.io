@@ -21,8 +21,183 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sat, 30 Dec 2023 17:12:41 +0900</lastBuildDate>
-    <pubDate>Sat, 30 Dec 2023 17:12:41 +0900</pubDate>
+    <lastBuildDate>Mon, 08 Jan 2024 11:11:21 +0900</lastBuildDate>
+    <pubDate>Mon, 08 Jan 2024 11:11:21 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Create shortcut icons for multiple Obsidian vaults - URI]]></title>
+      <link>https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</link>
+      <guid>https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Mon, 08 Jan 2024 11:11:21 +0900</pubDate>
+      <category><![CDATA[Obsidian]]></category>
+      <tag><![CDATA[Obsidian]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</guid>
+      <description><![CDATA[In some cases, there may be users who organize their posts by creating multiple vaults according to categories. It can be annoying to open the Vault in]]></description>
+      <content:encoded><![CDATA[<p>In some cases, there may be users who organize their posts by creating multiple vaults according to categories. It can be annoying to open the Vault in Obsidian every time you open it. So, I would like to introduce a method of creating a shortcut icon that can open Obsidian for each vault in a Windows environment.</p>
+
+<p>To explain the principle, when running <code class="language-plaintext highlighter-rouge">obsidian.exe</code> by shortcut icon, you add parameters as argument values to tell Obsidian which vault to open first. Obsidian calls this <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a>.</p>
+<h2 id="what-you-need-to-know-in-advance">What you need to know in advance</h2>
+<p>Before creating the Obsidian Vault shortcut icon, you need to know the path to <code class="language-plaintext highlighter-rouge">obsidian.exe</code> and the path to <code class="language-plaintext highlighter-rouge">your vault</code>. In conclusion, we will set the command line in the form below to the shortcut icon.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>&lt;Path Of Obsidian.exe&gt; obsidian://open?path<span class="o">=</span>&lt;Path Of Vault&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>If you look at the example below, you can easily figure out the Target command line.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="c"># Example </span>
+&lt;Path of Obsidian.exe&gt;
+    C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\O</span>bsidian<span class="se">\O</span>bsidian.exe
+    
+&lt;Path Of Vault&gt;
+    C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+    obsidian://open?path<span class="o">=</span>C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+
+<span class="c"># Target </span>
+C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\O</span>bsidian<span class="se">\O</span>bsidian.exe obsidian://open?path<span class="o">=</span>C:<span class="se">\D</span>ata<span class="se">\V</span>aultExport
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="create-obsidian-shortcut-icon">Create Obsidian shortcut icon</h2>
+<p>Right-click the location where you want to create an Obsidian Vault shortcut icon and press the Shortcut button.</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" alt="Obsidian shortcut icon creation process - Shortcut creation" width="972" height="530" />
+<em>Obsidian shortcut icon creation process - Shortcut creation</em></p>
+
+<p>Then enter the full path to obsidian.exe.</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" alt="Obsidian shortcut icon creation process - obsidian.exe path" width="972" height="710" />
+<em>Obsidian shortcut icon creation process - obsidian.exe path</em></p>
+
+<p>Then, enter the name of the shortcut icon.</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" alt="Obsidian shortcut icon creation process - Icon name" width="972" height="710" />
+<em>Obsidian shortcut icon creation process - Icon name</em></p>
+
+<p>Then, an Obsidian shortcut icon with the name you entered will be created. And Right-click on the icon and select the Properties menu.</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="Property menu of the created Obsidian shortcut icon" width="972" height="504" />
+<em>Property menu of the created Obsidian shortcut icon</em></p>
+
+<p>Add one space after the Obsidian.exe path and add the Obsidian Vault path created above.</p>
+
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="Properties of Obsidian shortcut icon" />
+<em>Properties of Obsidian shortcut icon</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/en-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Convert Obsidian md to docx, pptx - Pandoc]]></title>
+      <link>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</link>
+      <guid>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Mon, 08 Jan 2024 11:11:19 +0900</pubDate>
+      <category><![CDATA[Obsidian]]></category>
+      <tag><![CDATA[Obsidian]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
+      <description><![CDATA[If you have a well-organized article using Obsidian, you may occasionally need to share it with a colleague or friend. Obsidian itself provides the ability to]]></description>
+      <content:encoded><![CDATA[<p>If you have a well-organized article using Obsidian, you may occasionally need to share it with a colleague or friend. Obsidian itself provides the ability to export as a PDF file, but if you want to share it in the form of a Word(docx) or Power Point(pptx) file that can be modified, copying and pasting a lot of new files is a hassle.</p>
+
+<p>So, I would like to introduce Pandoc, an Obsidian community plugin that can make this task easier.</p>
+<h2 id="what-is-the-pandoc">What is the <strong>Pandoc</strong>?</h2>
+<p>The <a href="https://pandoc.org/" target="_blank">Pandoc</a> is a library for converting from one markup format to PDF, MS Word, and PowerPoint as well as Markdown, HTML, and LaTeX. Basically, it is a <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a> tool that can be used as a command in Windows Powershell or Linux terminal.</p>
+
+<p>However, because document conversion using commands is complicated, Pandoc is provided in the form of a plug-in so that you can easily use Pandoc in a GUI environment. If you search in the community plugin menu in Obsidian, two plugins are found. In this article, we will talk about the first <code class="language-plaintext highlighter-rouge">Pandoc plugin</code>. Actually, I tried using <code class="language-plaintext highlighter-rouge">Obsidian Enhancing Export</code>, which was searched for the second time, but it didn’t work well.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" alt="Obsidian - `Community Plugins` - `Pandoc Plugin`" width="972" height="612" />
+<em>Obsidian - <code class="language-plaintext highlighter-rouge">Community Plugins</code> - <code class="language-plaintext highlighter-rouge">Pandoc Plugin</code></em></p>
+
+<h2 id="install-pandoc">Install Pandoc</h2>
+<p>The Pandoc plugin does not work by itself. The plugin uses the official Pandoc library to convert documents.</p>
+
+<p>Therefore, you need to visit the Pandoc official site and download and install the Pandoc library.</p>
+<ul>
+  <li><a href="https://pandoc.org/">Pandoc - a universal document converter</a></li>
+</ul>
+
+<p>Visit the Pandoc site. Pandoc supports various types of OS installation packages such as Windows, macOS, and Linux. Download and install.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" alt="Pandoc Official Site - Download" width="972" height="546" />
+<em>Pandoc Official Site - Download</em></p>
+
+<p>If you are a Windows user, I recommend the installation package in msi format. If you want to use the portable version in zip format, it’s not a big problem. Anyway, download and install or unzip it to a suitable location.</p>
+<h2 id="install-and-configure-pandoc-plugin-in-obsidian">Install and configure <strong>Pandoc Plugin</strong> in Obsidian</h2>
+<p>Allow the use of the Community plugin in Obsidian’s Settings, and search for and install the <code class="language-plaintext highlighter-rouge">Pandoc plugin</code> in the Community plugin menu. And activate it.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" alt="Obsidian - Settings - Community Plugins - Pandoc Plugin" width="972" height="524" />
+<em>Obsidian - Settings - Community Plugins - Pandoc Plugin</em></p>
+
+<p>Once the plugin has been installed and activated, the next step is to set up the plugin. You can see that the Pandoc Plugin item has been added to the settings. The parts that need to be set here are the <code class="language-plaintext highlighter-rouge">Export folder</code> and <code class="language-plaintext highlighter-rouge">Pandoc path</code>.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" alt="Obsidian - Settings - Community Plugin - `Pandoc Plugin` Settings" width="972" height="416" />
+<em>Obsidian - Settings - Community Plugin - <code class="language-plaintext highlighter-rouge">Pandoc Plugin</code> Settings</em></p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Export folder</code> : Folder where files are saved when converting Obsidian Markdown to the file format you want.</li>
+  <li><code class="language-plaintext highlighter-rouge">Pandoc path</code> : This is the executable file path of the Pandoc library downloaded and installed above.</li>
+  <li>If you installed Pandoc using a Windows msi or a Linux deb, you don’t need to configure it. When the Pandoc library is installed, the executable file path is registered in the environment variable, so Obsidian will automatically recognize the Pandoc path.</li>
+  <li>However, if you downloaded and unzipped the portable format of the zip file, you must add the full absolute path to <code class="language-plaintext highlighter-rouge">pandoc.exe</code> or the executable file path of <code class="language-plaintext highlighter-rouge">pandoc</code>. Assuming you are in a Windows environment, a suitable example would be <code class="language-plaintext highlighter-rouge">C:\Data\pandoc-3.1.11.1-windows-x86_64\pandoc-3.1.11.1\pandoc.exe</code>.</li>
+</ul>
+
+<p>When everything is completed, restart Obsidian.</p>
+<h2 id="usage-of-the-pandoc-plugin">Usage Of <code class="language-plaintext highlighter-rouge">The Pandoc Plugin</code></h2>
+<p>To convert Obsidian Markdown to the file format you want, press <code class="language-plaintext highlighter-rouge">Ctrl + P</code> to open the Quick Palette. Then, if you search for <code class="language-plaintext highlighter-rouge">pandoc plugin</code> and select the desired file format, a file will be created in the Export folder set above.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - Article - `Ctrl + P` - Search `pandoc plugin` - Select Format You Want To Convert it" width="972" height="657" />
+<em>Obsidian - Article - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - Search <code class="language-plaintext highlighter-rouge">pandoc plugin</code> - Select Format You Want To Convert it</em></p>
+
+<p><strong>If your post doesn’t have any images, there won’t be a problem, but if it contains images, you’ll get an error saying the image file can’t be found</strong></p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" alt="Obsidian - Pandoc plugin - Post with attached image file - Export as Word Document (docx)" width="972" height="585" />
+<em>Obsidian - Pandoc plugin - Post with attached image file - Export as Word Document (docx)</em></p>
+
+<h2 id="file-conversion-error-solution-by-pandoc">File conversion error solution by <strong>Pandoc</strong></h2>
+<p>The cause of the problem is that the plugin does not find the image file attached to the post based on the location of the markdown file. The plugin will attempt to find the image file in the Obsidian Vault root. So an error occurs saying there is no image file.</p>
+
+<p>To solve this problem, I tried setting the <code class="language-plaintext highlighter-rouge">--resource-path</code> option in <code class="language-plaintext highlighter-rouge">Extra Pandoc arguments</code> in the plugin settings, but it did not work. Unfortunately this bug cannot be fixed. Because the plugin has not been updated and is no longer maintained for over a year.  But walkarounds do exist !</p>
+
+<p>The solution is to create a new vault for export purposes only and use it when document format conversion is needed. copy the md and image files to the vault root and convert them.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="New Obsidian Vault for Export Purposes Only" width="972" height="521" />
+<em>New Obsidian Vault for Export Purposes Only</em></p>
+
+<p>Below is the result of converting md to word (docx) with Pandoc.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="**Word** file created by Pandoc" width="972" height="563" />
+<em><strong>Word</strong> file created by Pandoc</em></p>
+
+<p>Below is the result of converting md to PowerPoint (pptx) using Pandoc.</p>
+
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" alt="**PowerPoint file** created by Pandoc" width="972" height="562" />
+<em><strong>PowerPoint file</strong> created by Pandoc</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/en-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Embed YouTube video into Obsidian - iframe, ReadItLater]]></title>
