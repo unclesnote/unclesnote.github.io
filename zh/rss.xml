@@ -89,7 +89,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="创建的Obsidian快捷图标的属性菜单" width="972" height="504" />
 <em>创建的Obsidian快捷图标的属性菜单</em></p>
 
-<p>在 Obsidian.exe 路径后添加一个空格，并添加上面创建的 Obsidian Vault 路径。</p>
+<p>在obsidian.exe路径后添加一个空格，并添加上面创建的Obsidian Vault路径。</p>
 
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="黑曜石快捷方式图标的属性" />
 <em>黑曜石快捷方式图标的属性</em></p>
@@ -156,7 +156,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 </ul>
 
 <p>一切完成后，重新启动 Obsidian。</p>
-<h2 id="pandoc-插件的用法"><code class="language-plaintext highlighter-rouge">Pandoc 插件</code>的用法</h2>
+<h2 id="pandoc-插件的使用"><strong>Pandoc 插件的使用</strong></h2>
 <p>要将 Obsidian Markdown 转换为您想要的文件格式，请按<code class="language-plaintext highlighter-rouge">Ctrl + P</code>打开快速调色板。然后，如果您搜索<code class="language-plaintext highlighter-rouge">pandocplugin</code>并选择所需的文件格式，则会在上面设置的导出文件夹中创建一个文件。</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - 文章 - `Ctrl + P` - 搜索 `pandoc 插件` - 选择您想要转换的格式" width="972" height="657" />

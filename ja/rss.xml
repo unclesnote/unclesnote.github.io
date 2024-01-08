@@ -89,7 +89,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="作成したObsidianショートカットアイコンのプロパティメニュー" width="972" height="504" />
 <em>作成したObsidianショートカットアイコンのプロパティメニュー</em></p>
 
-<p>Obsidian.exe パスの後にスペースを 1 つ追加し、上で作成した Obsidian Vault パスを追加します。</p>
+<p>obsidian.exe パスの後にスペースを 1 つ追加し、上で作成した Obsidian Vault パスを追加します。</p>
 
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="黒曜石のショートカット アイコンのプロパティ" />
 <em>黒曜石のショートカット アイコンのプロパティ</em></p>
@@ -156,7 +156,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 </ul>
 
 <p>すべてが完了したら、Obsidian を再起動します。</p>
-<h2 id="pandoc-プラグインの使用法"><code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code>の使用法</h2>
+<h2 id="pandoc-プラグインの使用法"><strong>Pandoc プラグイン</strong>の使用法</h2>
 <p>Obsidian Markdown を希望のファイル形式に変換するには、<code class="language-plaintext highlighter-rouge">Ctrl + P</code>を押してクイック パレットを開きます。次に、<code class="language-plaintext highlighter-rouge">pandoc plugin</code>を検索して目的のファイル形式を選択すると、上で設定したエクスポートフォルダーにファイルが作成されます。</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - 記事 - `Ctrl + P` - `pandoc plugin` を検索 - 変換したい形式を選択" width="972" height="657" />

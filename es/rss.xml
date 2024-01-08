@@ -89,7 +89,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="Menú de propiedades del icono de acceso directo de Obsidian creado" width="972" height="504" />
 <em>Menú de propiedades del icono de acceso directo de Obsidian creado</em></p>
 
-<p>Agregue un espacio después de la ruta Obsidian.exe y agregue la ruta Obsidian Vault creada anteriormente.</p>
+<p>Agregue un espacio después de la ruta obsidian.exe y agregue la ruta Obsidian Vault creada anteriormente.</p>
 
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="Propiedades del icono de acceso directo de Obsidiana" />
 <em>Propiedades del icono de acceso directo de Obsidiana</em></p>
@@ -156,7 +156,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 </ul>
 
 <p>Cuando todo esté completo, reinicie Obsidian.</p>
-<h2 id="uso-del-complemento-pandoc">Uso del “complemento Pandoc”</h2>
+<h2 id="uso-del-complemento-pandoc">Uso del <strong>complemento Pandoc</strong></h2>
 <p>Para convertir Obsidian Markdown al formato de archivo que desee, presione <code class="language-plaintext highlighter-rouge">Ctrl + P</code> para abrir la Paleta rápida. Luego, si busca “complemento pandoc” y selecciona el formato de archivo deseado, se creará un archivo en la carpeta Exportar configurada anteriormente.</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - Artículo - `Ctrl + P` - Busque `complemento pandoc` - Seleccione el formato en el que desea convertirlo" width="972" height="657" />

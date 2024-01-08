@@ -89,7 +89,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="Property menu of the created Obsidian shortcut icon" width="972" height="504" />
 <em>Property menu of the created Obsidian shortcut icon</em></p>
 
-<p>Add one space after the Obsidian.exe path and add the Obsidian Vault path created above.</p>
+<p>Add one space after the obsidian.exe path and add the Obsidian Vault path created above.</p>
 
 <p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="Properties of Obsidian shortcut icon" />
 <em>Properties of Obsidian shortcut icon</em></p>
@@ -156,7 +156,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 </ul>
 
 <p>When everything is completed, restart Obsidian.</p>
-<h2 id="usage-of-the-pandoc-plugin">Usage Of <code class="language-plaintext highlighter-rouge">The Pandoc Plugin</code></h2>
+<h2 id="usage-of-the-pandoc-plugin">Usage Of The <strong>Pandoc Plugin</strong></h2>
 <p>To convert Obsidian Markdown to the file format you want, press <code class="language-plaintext highlighter-rouge">Ctrl + P</code> to open the Quick Palette. Then, if you search for <code class="language-plaintext highlighter-rouge">pandoc plugin</code> and select the desired file format, a file will be created in the Export folder set above.</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - Article - `Ctrl + P` - Search `pandoc plugin` - Select Format You Want To Convert it" width="972" height="657" />
