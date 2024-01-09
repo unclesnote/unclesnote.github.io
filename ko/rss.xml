@@ -38,7 +38,7 @@
 
 <p>원리를 설명하자면, 바로가기 아이콘으로 <code class="language-plaintext highlighter-rouge">obsidian.exe</code>를 실행할 때 매개변수를 인수 값으로 추가하여 옵시디언에게 먼저 열 볼트를 알려줍니다. 옵시디언은 이것을 <a href="https://help.obsidian.md/Concepts/옵시디언+URI" target="_blank">URI</a>라고 부릅니다.</p>
 <h2 id="미리-알아야-할-사항">미리 알아야 할 사항</h2>
-<p>옵시디언 보관소 바로가기 아이콘을 만들기 전에 <code class="language-plaintext highlighter-rouge">obsidian.exe</code> 경로와 <code class="language-plaintext highlighter-rouge">your 보관소</code> 경로를 알아야 합니다. 결론적으로 아래 형태의 명령줄을 바로가기 아이콘으로 설정해보겠습니다.</p>
+<p>옵시디언 보관소 바로가기 아이콘을 만들기 전에 <code class="language-plaintext highlighter-rouge">obsidian.exe</code> 경로와 <code class="language-plaintext highlighter-rouge">보관소</code> 경로를 알아야 합니다. 결론적으로 아래 형태의 명령줄을 바로가기 아이콘으로 설정해보겠습니다.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>&lt;Path Of Obsidian.exe&gt; obsidian://open?path<span class="o">=</span>&lt;Path Of Vault&gt;
@@ -177,7 +177,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="수출 전용의 새로운 옵시디언 금고" width="972" height="521" />
 <em>수출 전용의 새로운 옵시디언 금고</em></p>
 
-<p>아래는 Pandoc을 이용하여 md를 word(docx)로 변환한 결과입니다.</p>
+<p>물론, 파일을 변환할 때마다 내보내기 목적으로 md 파일과 이미지 파일을 볼트에 복사하는 것은 번거롭지만, 변환된 파일의 품질을 고려하면 그만한 가치가 있는 번거로움이 있을 수 있습니다. 아래는 Pandoc을 이용하여 md를 word(docx)로 변환한 결과입니다.</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="Pandoc에서 만든 **Word** 파일" width="972" height="563" />
 <em>Pandoc에서 만든 <strong>Word</strong> 파일</em></p>
@@ -1464,7 +1464,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
       <media:content url="https://unclesnote.com/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
-      <title><![CDATA[Samsung Galaxy S24 사양 및 출시일-루머 정리]]></title>
+      <title><![CDATA[삼성 갤럭시 S24 사양 및 출시일-루머 정리]]></title>
       <link>https://unclesnote.com/ko/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</link>
       <guid>https://unclesnote.com/ko/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</guid>
       <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
@@ -1491,13 +1491,13 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-on_the_left_is_the_expected_render_of_the_galaxy_s24_released_by_it_tipster_onleaks_and_on_the_right_is_the_iphone_15_pro.png" alt="왼쪽이 IT정보업체 `온리크스`가 출시한 갤럭시S24 예상 렌더링이고, 오른쪽이 아이폰15 프로이다." width="972" height="550" />
 <em>왼쪽이 IT정보업체 <code class="language-plaintext highlighter-rouge">온리크스</code>가 출시한 갤럭시S24 예상 렌더링이고, 오른쪽이 아이폰15 프로이다.</em></p>
 
-<p>IT 전문가 Lebegnerz의 최근 예측에 따르면 Galaxy S24 시리즈 전체에는 티타늄 소재 프레임이 적용되어 전체적인 디자인 미학이 향상될 것으로 예상됩니다. 이러한 움직임은 Apple이 iPhone 15 Pro 및 Pro Max 모델에 티타늄 프레임을 도입한 것과 유사한 더 광범위한 전략의 일부로 간주됩니다.</p>
+<p>IT 전문가 Lebegnerz의 최근 예측에 따르면 갤럭시 S24 시리즈 전체에는 티타늄 소재 프레임이 적용되어 전체적인 디자인 미학이 향상될 것으로 예상됩니다. 이러한 움직임은 Apple이 iPhone 15 Pro 및 Pro Max 모델에 티타늄 프레임을 도입한 것과 유사한 더 광범위한 전략의 일부로 간주됩니다.</p>
 
 <p>또한 외관 디자인은 기존의 둥근 형태에서 좀 더 각진 디자인으로 변화해 고급스러움을 더할 것으로 예상된다. 울트라 모델의 특징적인 엣지 디스플레이가 평면 디스플레이로 완전히 교체될 것이라는 관측도 나온다.</p>
 <h2 id="카메라---다운그레이드-하지만">카메라 - 다운그레이드 하지만,</h2>
 
-<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Smart Pix의 OnLeaks에서 유출된 Galaxy S24 전면 및 후면 렌더링" width="972" height="642" />
-<em>Smart Pix의 OnLeaks에서 유출된 Galaxy S24 전면 및 후면 렌더링</em></p>
+<p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Smart Pix의 OnLeaks에서 유출된 갤럭시 S24 전면 및 후면 렌더링" width="972" height="642" />
+<em>Smart Pix의 OnLeaks에서 유출된 갤럭시 S24 전면 및 후면 렌더링</em></p>
 
 <p>내년 출시되는 갤럭시 S24 울트라는 10배 광학 줌에서 5배 광학 줌으로 다운그레이드된다는 소문이 돌면서 사용자들 사이에 우려를 불러일으켰습니다.</p>
 
@@ -1509,11 +1509,11 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-samsung_exynos_is_expected_to_be_installed_in_the_galaxy_s24_plus_model_and_qualcomm_snapdragon_8_gen_3_is_expected_to_be_installed_in_the_galaxy_s24_ultra_model.png" alt="갤럭시S24 플러스 모델에는 삼성 엑시노스가, 갤럭시S24 울트라 모델에는 퀄컴 스냅드래곤 8 Gen 3가 탑재될 것으로 예상된다." width="972" height="542" />
 <em>갤럭시S24 플러스 모델에는 삼성 엑시노스가, 갤럭시S24 울트라 모델에는 퀄컴 스냅드래곤 8 Gen 3가 탑재될 것으로 예상된다.</em></p>
 
-<p>2023년 4분기 실적 발표에서 Qualcomm CEO Cristiano Amon이 Galaxy S24가 곧 출시될 것이며 Qualcomm이 온보드 부품 측면에서 대부분의 점유율을 차지할 것이라고 밝혔기 때문에 Samsung Galaxy S24에는 Qualcomm Stepdragon이 탑재될 것이 확실합니다. .</p>
+<p>2023년 4분기 실적 발표에서 Qualcomm CEO Cristiano Amon이 갤럭시 S24가 곧 출시될 것이며 Qualcomm이 온보드 부품 측면에서 대부분의 점유율을 차지할 것이라고 밝혔기 때문에 삼성 갤럭시 S24에는 Qualcomm Stepdragon이 탑재될 것이 확실합니다. .</p>
 
 <p>삼성 무선 사업부는 갤럭시 S22까지 스마트폰에 스냅드래곤과 엑시노스 프로세서를 모두 사용해 왔습니다. 하지만 올해 초 출시된 갤럭시S23 모델에는 엑시노스의 발열 문제로 인해 퀄컴이 독점 탑재됐다. 내년 초에 출시될 예정인 S24 및 S24 Plus 모델은 지역적 고려 사항에 따라 Snapdragon과 Exynos 프로세서를 모두 사용할 예정입니다. 최고가 울트라 모델에는 스냅드래곤이 단독으로 사용되는 것으로 확인됐다.</p>
 
-<p>Snapdragon Gen 3 기반 Galaxy S24 Ultra의 Geekbench 점수도 발견되었습니다. 데이터베이스에 따르면 갤럭시S24 울트라는 코드명 <code class="language-plaintext highlighter-rouge">파인애플</code>이라는 <code class="language-plaintext highlighter-rouge">스냅드래곤8 3세대</code> 칩셋을 탑재했으며 8GB 램과 안드로이드 14 운영체제를 탑재한 것으로 확인됐다.</p>
+<p>Snapdragon Gen 3 기반 갤럭시 S24 Ultra의 Geekbench 점수도 발견되었습니다. 데이터베이스에 따르면 갤럭시S24 울트라는 코드명 <code class="language-plaintext highlighter-rouge">파인애플</code>이라는 <code class="language-plaintext highlighter-rouge">스냅드래곤8 3세대</code> 칩셋을 탑재했으며 8GB 램과 안드로이드 14 운영체제를 탑재한 것으로 확인됐다.</p>
 
 <p>싱글코어와 멀티코어 테스트에서는 각각 <code class="language-plaintext highlighter-rouge">2234</code>점과 <code class="language-plaintext highlighter-rouge">6807</code>점을 기록해 지난 7월 테스트한 모델에 비해 멀티코어 점수가 소폭 상승했다.</p>
 
@@ -1560,7 +1560,7 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
   </tbody>
 </table>
 
-<p>2023년 10월 12일 Geekbench에서 Galaxy S24+에 대한 벤치마크 결과가 발견되었습니다. 해당 모델은 <code class="language-plaintext highlighter-rouge">SM-S926B</code>로 확인되며 <code class="language-plaintext highlighter-rouge">엑시노스 2400</code> 칩셋, 8GB 램, 안드로이드 14 운영체제를 탑재했다. 싱글코어 점수는 <code class="language-plaintext highlighter-rouge">2067</code>, 멀티코어 점수는 <code class="language-plaintext highlighter-rouge">6520</code>을 달성했습니다.</p>
+<p>2023년 10월 12일 Geekbench에서 갤럭시 S24+에 대한 벤치마크 결과가 발견되었습니다. 해당 모델은 <code class="language-plaintext highlighter-rouge">SM-S926B</code>로 확인되며 <code class="language-plaintext highlighter-rouge">엑시노스 2400</code> 칩셋, 8GB 램, 안드로이드 14 운영체제를 탑재했다. 싱글코어 점수는 <code class="language-plaintext highlighter-rouge">2067</code>, 멀티코어 점수는 <code class="language-plaintext highlighter-rouge">6520</code>을 달성했습니다.</p>
 
 <p>이는 스냅드래곤8 3세대 칩셋을 기반으로 한 갤럭시S24 울트라보다 낮은 점수로, 초기 테스트에서 엑시노스 2400의 성능이 다소 낮을 수 있음을 시사한다. 갤럭시S24 울트라는 이전 모델인 갤럭시S23 울트라 대비 싱글코어 43%, 멀티코어 36% 성능이 향상될 것으로 예상된다.</p>
 ]]></content:encoded>

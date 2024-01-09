@@ -38,7 +38,7 @@
 
 <p>To explain the principle, when running <code class="language-plaintext highlighter-rouge">obsidian.exe</code> by shortcut icon, you add parameters as argument values to tell Obsidian which vault to open first. Obsidian calls this <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a>.</p>
 <h2 id="what-you-need-to-know-in-advance">What you need to know in advance</h2>
-<p>Before creating the Obsidian Vault shortcut icon, you need to know the path to <code class="language-plaintext highlighter-rouge">obsidian.exe</code> and the path to <code class="language-plaintext highlighter-rouge">your vault</code>. In conclusion, we will set the command line in the form below to the shortcut icon.</p>
+<p>Before creating the Obsidian Vault shortcut icon, you need to know the path to <code class="language-plaintext highlighter-rouge">obsidian.exe</code> and the path to your <code class="language-plaintext highlighter-rouge">Vault</code>. In conclusion, we will set the command line in the form below to the shortcut icon.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>&lt;Path Of Obsidian.exe&gt; obsidian://open?path<span class="o">=</span>&lt;Path Of Vault&gt;
@@ -177,7 +177,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="New Obsidian Vault for Export Purposes Only" width="972" height="521" />
 <em>New Obsidian Vault for Export Purposes Only</em></p>
 
-<p>Below is the result of converting md to word (docx) with Pandoc.</p>
+<p>Of course, copying md files and image files to the vault for export purposes every time you convert a file is a hassle, but considering the quality of the converted files, it may be a worthwhile hassle. Below is the result of converting md to word (docx) with Pandoc.</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="**Word** file created by Pandoc" width="972" height="563" />
 <em><strong>Word</strong> file created by Pandoc</em></p>

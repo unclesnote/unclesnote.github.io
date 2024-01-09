@@ -38,7 +38,7 @@
 
 <p>为了解释原理，当通过快捷方式图标运行<code class="language-plaintext highlighter-rouge">obsidian.exe</code>时，您添加参数作为参数值来告诉 Obsidian 首先打开哪个保管库。 Obsidian 将此称为 <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a>。</p>
 <h2 id="您需要提前了解什么">您需要提前了解什么</h2>
-<p>在创建 Obsidian Vault 快捷方式图标之前，您需要知道<code class="language-plaintext highlighter-rouge">obsidian.exe</code>的路径和<code class="language-plaintext highlighter-rouge">your Vault</code>的路径。总之，我们将如下形式的命令行设置为快捷方式图标。</p>
+<p>在创建 Obsidian Vault 快捷方式图标之前，您需要知道<code class="language-plaintext highlighter-rouge">obsidian.exe</code>的路径和<code class="language-plaintext highlighter-rouge">Vault</code>的路径。总之，我们将如下形式的命令行设置为快捷方式图标。</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>&lt;Path Of Obsidian.exe&gt; obsidian://open?path<span class="o">=</span>&lt;Path Of Vault&gt;
@@ -177,7 +177,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="仅限出口目的的新黑曜石库" width="972" height="521" />
 <em>仅限出口目的的新黑曜石库</em></p>
 
-<p>下面是用Pandoc将md转换为word(docx)的结果。</p>
+<p>当然，每次转换文件时将 md 文件和图像文件复制到 Vault 以便导出是很麻烦，但考虑到转换后文件的质量，这可能是值得的麻烦。下面是用Pandoc将md转换为word(docx)的结果。</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="Pandoc 创建的 **Word** 文件" width="972" height="563" />
 <em>Pandoc 创建的 <strong>Word</strong> 文件</em></p>

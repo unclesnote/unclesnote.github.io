@@ -3196,9 +3196,6 @@
   <xhtml:link rel="alternate" hreflang="ja" href="https://unclesnote.com/ja" />
 </url>
 <url>
-  <loc>https://unclesnote.com/ja/tags/%E9%BB%92%E6%9B%9C%E7%9F%B3</loc>
-</url>
-<url>
   <loc>https://unclesnote.com/ja/tags/%E9%9F%93%E5%9B%BD</loc>
 </url>
 <url>
@@ -3388,6 +3385,9 @@
   <loc>https://unclesnote.com/ja/tags/sendmessage</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/ja/tags/obsidian</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/ja/tags/mysql%E3%83%AF%E3%83%BC%E3%82%AF%E3%83%99%E3%83%B3%E3%83%81</loc>
 </url>
 <url>
@@ -3436,9 +3436,6 @@
   <loc>https://unclesnote.com/ja/tags/beyondcompare4</loc>
 </url>
 <url>
-  <loc>https://unclesnote.com/ja/categories/%E9%BB%92%E6%9B%9C%E7%9F%B3</loc>
-</url>
-<url>
   <loc>https://unclesnote.com/ja/categories/%E9%9F%93%E5%9B%BD</loc>
 </url>
 <url>
@@ -3485,6 +3482,9 @@
 </url>
 <url>
   <loc>https://unclesnote.com/ja/categories/ubuntu</loc>
+</url>
+<url>
+  <loc>https://unclesnote.com/ja/categories/obsidian</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/ja/categories/github-%E3%83%9A%E3%83%BC%E3%82%B8</loc>

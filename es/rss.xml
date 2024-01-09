@@ -38,7 +38,7 @@
 
 <p>Para explicar el principio, cuando ejecuta <code class="language-plaintext highlighter-rouge">obsidian.exe</code> mediante el icono de acceso directo, agrega parámetros como valores de argumento para indicarle a Obsidian qué bóveda abrir primero. Obsidian llama a esto <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a>.</p>
 <h2 id="lo-que-necesitas-saber-de-antemano">Lo que necesitas saber de antemano</h2>
-<p>Antes de crear el icono de acceso directo de Obsidian Vault, necesita conocer la ruta a <code class="language-plaintext highlighter-rouge">obsidian.exe</code> y la ruta a <code class="language-plaintext highlighter-rouge">su bóveda</code>. En conclusión, configuraremos la línea de comando en el siguiente formulario en el ícono de acceso directo.</p>
+<p>Antes de crear el icono de acceso directo de Obsidian Vault, necesita conocer la ruta a <code class="language-plaintext highlighter-rouge">obsidian.exe</code> y la ruta a su <code class="language-plaintext highlighter-rouge">Vault</code>. En conclusión, configuraremos la línea de comando en el siguiente formulario en el ícono de acceso directo.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>&lt;Path Of Obsidian.exe&gt; obsidian://open?path<span class="o">=</span>&lt;Path Of Vault&gt;
@@ -177,7 +177,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="Nueva bóveda de obsidiana únicamente para fines de exportación" width="972" height="521" />
 <em>Nueva bóveda de obsidiana únicamente para fines de exportación</em></p>
 
-<p>A continuación se muestra el resultado de convertir md a word (docx) con Pandoc.</p>
+<p>Por supuesto, copiar archivos md y archivos de imagen a la bóveda para exportarlos cada vez que convierte un archivo es una molestia, pero considerando la calidad de los archivos convertidos, puede ser una molestia que valga la pena. A continuación se muestra el resultado de convertir md a word (docx) con Pandoc.</p>
 
 <p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="Archivo **Word** creado por Pandoc" width="972" height="563" />
 <em>Archivo <strong>Word</strong> creado por Pandoc</em></p>
