@@ -21,8 +21,315 @@
     <language>ko</language>
     <description><![CDATA[엉클 샘의 IT & 개발 낙서장]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 10 Jan 2024 01:05:03 +0900</lastBuildDate>
-    <pubDate>Wed, 10 Jan 2024 01:05:03 +0900</pubDate>
+    <lastBuildDate>Fri, 19 Jan 2024 02:52:14 +0900</lastBuildDate>
+    <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[우분투 22.04 설치 시 발생할 수 있는 문제]]></title>
+      <link>https://unclesnote.com/ko/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</link>
+      <guid>https://unclesnote.com/ko/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+      <category><![CDATA[우분투,일반]]></category>
+      <tag><![CDATA[우분투,일반]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</guid>
+      <description><![CDATA[나는 오랫동안 우분투 20.04를 사용해 왔습니다. 우분투 22.04도 [LTS](https://en.wikipedia.org/wiki/Long-term_support) 버전이 되었다는 소식을 듣고 새 노트북에 윈도우를 설치하면서 우분투 22.04를 사용해 볼 예정입니다. 이에 우분투]]></description>
+      <content:encoded><![CDATA[<p>나는 오랫동안 우분투 20.04를 사용해 왔습니다. 우분투 22.04도 <a href="https://en.wikipedia.org/wiki/Long-term_support" target="_blank">LTS</a> 버전이 되었다는 소식을 듣고 새 노트북에 윈도우를 설치하면서 우분투 22.04를 사용해 볼 예정입니다.</p>
+
+<p>이에 우분투 20.04 사용자로서 겪어보지 못한 새로운 문제점들을 정리해 보고자 합니다.</p>
+<h2 id="터미널이-열리지-않습니다">터미널이 열리지 않습니다</h2>
+<p>우분투를 처음 설치하는 경우 터미널이 열리지 않는 문제가 발생할 수 있습니다. 이는 VirtualBox 사용자이고 윈도우 언어가 영어가 아니거나 시간대의 국가가 영어권 국가가 아닌 경우 발생할 수 있습니다. 이유는 잘 모르겠지만 문제를 해결하는 방법은 알고 있습니다.</p>
+
+<p><img src="/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" alt="설정 &gt; 지역 및 언어" width="972" height="592" />
+<em>설정 &gt; 지역 및 언어</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">설정 &gt; 지역 및 언어</code>에서 <code class="language-plaintext highlighter-rouge">언어</code>를 <code class="language-plaintext highlighter-rouge">영어(미국)</code>에서 <code class="language-plaintext highlighter-rouge">영어(영국)</code>로 변경하세요. 이후에는 다시 로그인하거나 재부팅해야 합니다. 그러면 문제가 해결될 수 있습니다.</p>
+
+<p>이는 우분투의 언어 설정을 다시 각인하는 것입니다. 문제가 해결되면 언어를 다시 영어(미국)로 변경할 수 있습니다.</p>
+<h2 id="귀하의-계정이-sudoers-파일에-없습니다"><em>귀하의 계정이 sudoers 파일에 없습니다</em></h2>
+<p>이것은 우분투 22.04 버전을 설치할 때 직면한 첫 번째 문제입니다. Virtual Box를 통해 기존 우분투 20.04를 우분투 VM으로 설치하는 경우 해당 계정에는 기본적으로 sudo 권한이 있습니다. 그러나 우분투 22.04에서는 계정에 sudoer 권한을 추가로 부여해야 합니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">sudo </span>apt update
+youraccount is not <span class="k">in </span>the sudoers file.  This incident will be reported.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>먼저 루트로 로그인합니다. 또한 기본적으로 읽기 전용 권한이 있는 <code class="language-plaintext highlighter-rouge">/etc/sudoers</code>에 계정을 추가해야 합니다. 따라서 파일에 쓰기 권한을 부여하고 계정에 대한 정보를 추가하십시오.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>su root
+<span class="nv">$ </span>apt <span class="nb">install </span>vim
+
+<span class="nv">$ </span><span class="nb">chmod</span> +w /etc/sudoers
+<span class="nv">$ </span>vim /etc/sudoers
+<span class="c"># add it below and save it</span>
+youraccount   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/ko-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png" />
+      <media:content url="https://unclesnote.com/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" medium="image" /></item>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[우분투의 Visual Studio Code의 C# 개발 환경]]></title>
+      <link>https://unclesnote.com/ko/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</link>
+      <guid>https://unclesnote.com/ko/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Fri, 19 Jan 2024 02:52:12 +0900</pubDate>
+      <category><![CDATA[C 샤프,우분투]]></category>
+      <tag><![CDATA[CSharp,우분투]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
+      <description><![CDATA[C# 소프트웨어는 일반적으로 윈도우의 Visual Studio에서 개발할 수 있습니다. 그러나 우분투 환경에서도 개발이 가능합니다. 잘 알려진 IDE로는 Mono 프로젝트에서 제공하는 MonoDevelop이 있습니다. 하지만 이보다 더 많은 것을 사용하는 VS Code C# 소프트웨어]]></description>
+      <content:encoded><![CDATA[<p>C# 소프트웨어는 일반적으로 윈도우의 Visual Studio에서 개발할 수 있습니다. 그러나 우분투 환경에서도 개발이 가능합니다. 잘 알려진 IDE로는 Mono 프로젝트에서 제공하는 MonoDevelop이 있습니다. 하지만 이보다 더 많은 것을 사용하는 VS Code C# 소프트웨어 개발 환경을 만들어 보겠습니다. 우분투 20.04 기준입니다.</p>
+<h2 id="net-제품군-설치">.NET 제품군 설치</h2>
+<p>먼저 .net이 포함된 저장소를 추가하겠습니다. 그리고 아래 3개를 설치해 보도록 하겠습니다. 나머지 3개는 .NET SDK 설치만으로 함께 설치되었습니다. 확인을 위해 나머지 두 개를 살펴보시기 바랍니다.</p>
+<ul>
+  <li>.NET SDK</li>
+  <li>.NET 코어</li>
+  <li>ASP.NET 코어</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb <span class="nt">-O</span> packages-microsoft-prod.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
+
+<span class="nb">sudo </span>apt update
+
+<span class="c"># .NET SDK</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0
+
+<span class="c"># .NET Core</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-runtime-6.0
+
+<span class="c"># ASP.NET Core</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> aspnetcore-runtime-6.0
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>모두 설치했는지 확인해 보겠습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>dotnet <span class="nt">--info</span>
+.NET SDK <span class="o">(</span>reflecting any global.json<span class="o">)</span>:
+ Version:   6.0.413
+ Commit:    10710f7d8e
+
+Runtime Environment:
+ OS Name:     ubuntu
+ OS Version:  20.04
+ OS Platform: Linux
+ RID:         ubuntu.20.04-x64
+ Base Path:   /usr/share/dotnet/sdk/6.0.413/
+
+global.json file:
+  Not found
+
+Host:
+  Version:      6.0.21
+  Architecture: x64
+  Commit:       e40b3abf1b
+
+.NET SDKs installed:
+  6.0.413 <span class="o">[</span>/usr/share/dotnet/sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 6.0.21 <span class="o">[</span>/usr/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 6.0.21 <span class="o">[</span>/usr/share/dotnet/shared/Microsoft.NETCore.App]
+
+Download .NET:
+  https://aka.ms/dotnet-download
+
+Learn about .NET Runtimes and SDKs:
+  https://aka.ms/dotnet/runtimes-sdk-info
+  
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="vs-code의-c-개발-환경">VS Code의 C# 개발 환경</h2>
+<p>키워드로 <code class="language-plaintext highlighter-rouge">c#</code>을 검색하고, 기타 <code class="language-plaintext highlighter-rouge">C# Dev Kit</code>를 포함하여 설치합니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>확대</th>
+      <th>논평</th>
+      <th>참조</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C# Dev Kit</td>
+      <td>C# 개발을 위한 기본 환경</td>
+      <td>https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit</td>
+    </tr>
+    <tr>
+      <td>Visual Nuget</td>
+      <td>너겟 패키지 관리</td>
+      <td>https://marketplace.visualstudio.com/items?itemName=FullStackSpider.visual-nuget</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">C# Dev Kit</code> 확장을 설치하면 C# 개발에 필요한 기본 개발 환경을 구축할 수 있습니다.</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" alt="Visual Studio Code - 확장 - `C# 개발 키트`" width="972" height="381" />
+<em>Visual Studio Code - 확장 - <code class="language-plaintext highlighter-rouge">C# 개발 키트</code></em></p>
+
+<p><code class="language-plaintext highlighter-rouge">Visual NuGet</code> 확장은 윈도우 Visual Studio IDE의 Nuget Package GUI 환경을 VS Code로 가져옵니다.</p>
+
+<p>프로젝트 파일(.csproj)을 마우스 오른쪽 버튼으로 클릭하면 <code class="language-plaintext highlighter-rouge">Visual Nuget: Manage Packages</code>를 찾을 수 있습니다.</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-visual_nuget.png" alt="Visual Studio 코드 - 확장 - `Visual Nuget`" width="972" height="413" />
+<em>Visual Studio 코드 - 확장 - <code class="language-plaintext highlighter-rouge">Visual Nuget</code></em></p>
+
+<h2 id="hello-world-샘플-프로젝트"><strong>Hello World</strong> 샘플 프로젝트</h2>
+<p><code class="language-plaintext highlighter-rouge">보기 &gt; 터미널</code>을 엽니다. 그리고 내 프로젝트 폴더를 만들고 콘솔 프로젝트를 만듭니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> &lt;my workspace&gt;/my_csharp
+<span class="nb">cd</span> &lt;my workspace&gt;/my_csharp
+dotnet new console
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>아래 템플릿을 기반으로 <code class="language-plaintext highlighter-rouge">Program.cs</code>의 내용을 작성합니다.</p>
+
+<p><a href="https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/top-level-templates" target="_blank">https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/top-level-templates</a></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>  
+
+<span class="k">namespace</span> <span class="nn">MyApp</span> <span class="c1">// Note: actual namespace depends on the project name.</span>
+<span class="p">{</span>
+    <span class="k">internal</span> <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>    
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>    
+        <span class="p">{</span>        
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>        
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="빌드-및-디버그를-위한-자산-생성">빌드 및 디버그를 위한 자산 생성</h2>
+<p><code class="language-plaintext highlighter-rouge">명령 팔레트...</code>에서 자산을 생성할 수 있습니다.</p>
+
+<p>즉, 솔루션(.sln) 파일 등 기본 Asset 등의 빌드 환경을 생성합니다.</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-command_palette.._ctrl_+_shift_+_p.net_generate_assets_for_build_and_debug.png" alt="Visual Studio Code - 명령 팔레트...(Ctrl + Shift + P) - .NET: 빌드 및 디버그를 위한 자산 생성" width="972" height="445" />
+<em>Visual Studio Code - 명령 팔레트…(Ctrl + Shift + P) - .NET: 빌드 및 디버그를 위한 자산 생성</em></p>
+
+<h2 id="vs-code의-단축키">VS Code의 단축키</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>단축키</th>
+      <th>내용물</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + Shift + B</td>
+      <td>Build</td>
+    </tr>
+    <tr>
+      <td>F5</td>
+      <td>Start Debugging</td>
+    </tr>
+    <tr>
+      <td>Ctrl + .</td>
+      <td>Quick Actions and Refactorings</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ctrl + Shift + -</td>
+      <td><em>앞으로</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ctrl + Alt + -</td>
+      <td>Go Back</td>
+    </tr>
+  </tbody>
+</table>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/ko-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-visual_nuget.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-command_palette.._ctrl_+_shift_+_p.net_generate_assets_for_build_and_debug.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[외국인들이 한국에서 로또 6/45 티켓을 구매하는 방법]]></title>
@@ -67,7 +374,7 @@
       <td>6,446,969</td>
     </tr>
     <tr>
-      <td>삼</td>
+      <td>3</td>
       <td>1,667,160</td>
       <td>1,263</td>
       <td>182,016</td>
@@ -136,7 +443,7 @@
   <li><strong>토요일</strong>: 06:00 - 20:00 (추첨일)</li>
 </ul>
 
-<p><code class="language-plaintext highlighter-rouge">드로잉</code>은 <code class="language-plaintext highlighter-rouge">토요일 오후 8시 35분</code> MBC에서 방송된다.</p>
+<p><code class="language-plaintext highlighter-rouge">추첨</code>은 <code class="language-plaintext highlighter-rouge">토요일 오후 8시 35분</code> MBC에서 방송됩니다.</p>
 
 <p>당첨번호를 확인하시려면 아래 링크를 이용해주세요. 페이지가 한국어로 되어 있다고 해도 아마도 당첨번호를 가장 빠르게 알 수 있는 방법 중 하나일 것입니다. 이것은 복권을 판매하는 회사의 공식 웹사이트입니다.</p>
 <ul>
@@ -491,7 +798,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
       <category><![CDATA[Korea,Foods]]></category>
-      <tag><![CDATA[Korea,FishBread,Foods,StreetFoods]]></tag>
+      <tag><![CDATA[FishBread,StreetFoods,Korea,Foods]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ko/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[붕어빵은 비교적 가격인 저렴하고 따듯한 음식이라서 한국에 겨울에만 주로 판매가 되는 길거리 음식 중에 하나 입니다. 그리고 붕어빵은 붕어와 빵의 단어의 합성어 입니다.]]></description>
       <content:encoded><![CDATA[<p>붕어빵은 비교적 가격인 저렴하고 따듯한 음식이라서 한국에 겨울에만 주로 판매가 되는 길거리 음식 중에 하나 입니다. 그리고 붕어빵은 붕어와 빵의 단어의 합성어 입니다.</p>
@@ -1594,6 +1901,10 @@ service xrdp restart
 <p>우분투 VM의 설정으로 이동합니다. 그런 다음 <code class="language-plaintext highlighter-rouge">공유 폴더</code> 탭에 공유할 폴더를 추가하세요.</p>
 
 <p>공유 폴더 설정 창의 <code class="language-plaintext highlighter-rouge">폴더 경로</code>에 우분투 VM과 공유하려는 폴더를 설정합니다. 나머지 폴더 및 설정 항목은 다음과 같습니다.</p>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 공유 폴더 추가" width="972" height="760" />
+<em>Oracle VM VirtualBox - 공유 폴더 추가</em></p>
+
 <ul>
   <li><strong>폴더 경로</strong> : 우분투 VM과 공유할 <code class="language-plaintext highlighter-rouge">윈도우</code> 폴더 경로</li>
   <li><strong>폴더 이름</strong> : 공유 폴더 닉네임입니다. 가능하다면 <code class="language-plaintext highlighter-rouge">Mount point</code> 폴더명과 동일하게 만드세요.</li>
@@ -1601,9 +1912,6 @@ service xrdp restart
   <li>✓ <strong>자동 마운트</strong> : 부팅 시 공유 폴더를 자동으로 마운트합니다.</li>
   <li>✓ <strong>영구화</strong> : 우분투 VM이 실행되는 동안 현재 설정을 입력하면 이 항목이 나타납니다. 영구적인 설정을 원하시면 체크하세요.</li>
 </ul>
-
-<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 공유 폴더 추가" width="972" height="760" />
-<em>Oracle VM VirtualBox - 공유 폴더 추가</em></p>
 
 <p>제 경우에는 우분투 VM의 공유 폴더로 <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code>를 설정했습니다. 참고로 제 우분투 계정 이름은 <code class="language-plaintext highlighter-rouge">pooh</code>입니다.</p>
 <h2 id="우분투-vm의-폴더-권한">우분투 VM의 폴더 권한</h2>
@@ -1979,7 +2287,7 @@ pc.txt: ASCII text
       <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
-      <title><![CDATA[우분투 20.04 성능을 최적화하는 방법]]></title>
+      <title><![CDATA[우분투 20.04 성능 최적화]]></title>
       <link>https://unclesnote.com/ko/231102005314/how_to_optimize_ubuntu_20.04_performance</link>
       <guid>https://unclesnote.com/ko/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
       <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
@@ -2179,7 +2487,7 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <media:content url="https://unclesnote.com/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
-      <title><![CDATA[소프트웨어 개발자를 위한 필수 우분투 소프트웨어를 설치하는 방법]]></title>
+      <title><![CDATA[SW 개발자를 위한 필수 우분투 소프트웨어]]></title>
       <link>https://unclesnote.com/ko/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</link>
       <guid>https://unclesnote.com/ko/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
       <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
@@ -2187,8 +2495,46 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <category><![CDATA[우분투,도구]]></category>
       <tag><![CDATA[VisualStudio코드,VSCode,GitHub데스크톱,비욘드컴페어4,SQLiteDB브라우저,MySQL워크벤치,우분투,도구]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ko/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
-      <description><![CDATA[소프트웨어 개발자이고 개발 환경이 우분투인 경우, 설치해야 하는 필수 우분투 소프트웨어 설치 방법을 설명합니다.]]></description>
+      <description><![CDATA[소프트웨어 개발자이고 개발 환경이 우분투인 경우, 설치해야 하는 필수 우분투 소프트웨어 설치 방법을 설명합니다. 사실 이 글은 새로운 우분투 환경을 구성할 때 참고자료에 더 가깝습니다.]]></description>
       <content:encoded><![CDATA[<p>소프트웨어 개발자이고 개발 환경이 우분투인 경우, 설치해야 하는 필수 우분투 소프트웨어 설치 방법을 설명합니다.</p>
+
+<p>사실 이 글은 새로운 우분투 환경을 구성할 때 참고자료에 더 가깝습니다.</p>
+
+<h2 id="기본-패키지">기본 패키지</h2>
+<p>다음은 편의를 위한 기본 패키지이며, 소스 코드 컴파일을 위해 필요하면 설치할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> vim
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> net-tools
+
+<span class="c"># -------------------------</span>
+<span class="c"># all in a line</span>
+<span class="nb">sudo </span>apt update<span class="p">;</span><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> vim net-tools
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="도커">도커</h2>
+<p>이전에 Docker를 사용해 본 적이 없다면 할 말이 많지 않지만, 사용해 본 적이 있다면 Docker의 팬일 가능성이 높습니다. 아래는 Docker를 설치하는 방법입니다. <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">Docker 공식 문서</a>를 참고했습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> curl 
+curl <span class="nt">-fsSL</span> https://get.docker.com <span class="nt">-o</span> get-docker.sh
+<span class="nb">sudo </span>sh get-docker.sh
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>설치 후 Docker 명령을 사용하려고 하면 <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code>에서 권한 거부 오류가 발생합니다. 아래 명령을 사용하면 일반 계정에 Docker 명령을 사용할 수 있는 권한을 부여할 수 있습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo chmod </span>666 /var/run/docker.sock<span class="p">;</span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /var/run/docker.sock
+</pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="비주얼-스튜디오-코드">비주얼 스튜디오 코드</h2>
 
 <p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="비주얼 스튜디오 코드" width="972" height="565" />
@@ -2214,12 +2560,16 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
 7
 8
 9
+10
+11
 </pre></td><td class="rouge-code"><pre><span class="c"># Install basic packages for installation</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget <span class="nt">-y</span>
+
 <span class="c"># Install the Microsoft GPG key and add the repository to apt</span>
 wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
 <span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</span>
+
 <span class="c"># Install VS Code</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>code
@@ -2227,7 +2577,15 @@ wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.as
 <p>아래 명령을 사용하여 SSH를 통해 VS Code에 원격으로 액세스하기 위한 확장 프로그램을 설치할 수 있습니다.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c">## install openssh-server</span>
+<span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> openssh-server
+
+<span class="c">## install vscode remote extension which based on above openssh-server </span>
+code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="github-데스크탑">GitHub 데스크탑</h2>
 
@@ -2309,6 +2667,17 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h3 id="mysql-워크벤치">MySQL 워크벤치</h3>
 <p>이에 대해서는 나중에 우분투에 MySQL Workbench를 설치해야 할 때 설명하겠습니다.</p>
+<h2 id="개발-언어에-따라-다름">개발 언어에 따라 다름</h2>
+<h3 id="c-샤프">C 샤프</h3>
+<p>저는 C++ 및 Java에 대한 오랜 경험을 가진 개발자입니다. C Sharp 언어는 Java와 유사한 구문 및 생리학을 갖고 있고, 많은 공개 라이브러리를 갖고 있으며, 크로스 플랫폼을 지원하기 때문에 흥미롭고 재미있는 소프트웨어 개발 언어입니다. 우분투도 지원됩니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb <span class="nt">-O</span> packages-microsoft-prod.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0 dotnet-runtime-6.0 aspnetcore-runtime-6.0
+</pre></td></tr></tbody></table></code></pre></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/ko-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
@@ -2363,7 +2732,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
-      <title><![CDATA[윈도우 도구 대신 우분투를 위한 필수 대체 소프트웨어]]></title>
+      <title><![CDATA[윈도우 도구 대신 필수 우분투 소프트웨어]]></title>
       <link>https://unclesnote.com/ko/231028002032/essential_software_to_use_on_ubuntu_os</link>
       <guid>https://unclesnote.com/ko/231028002032/essential_software_to_use_on_ubuntu_os</guid>
       <dc:creator><![CDATA[엉클스 노트]]></dc:creator>

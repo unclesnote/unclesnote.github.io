@@ -1,0 +1,329 @@
+<feed version="0.3"
+		xmlns="http://purl.org/atom/ns#"
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+		xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:media="http://search.yahoo.com/mrss/"
+		xmlns:activity="http://activitystrea.ms/spec/1.0/" >
+
+  
+
+  <title><![CDATA[アンクルズノート]]></title>
+  <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/" />
+  <author><name><![CDATA[アンクルズノート]]></name></author>
+  <id>https://unclesnote.com/ja/rss.xml</id>
+  <info><![CDATA[]]></info>
+  <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+  <entry>
+    <title><![CDATA[Ubuntu 22.04 のインストール時に発生する可能性のある問題]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04"/>
+    <id>https://unclesnote.com/ja/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Fri, 19 Jan 2024 02:52:14 +0900</issued>
+		<created>Fri, 19 Jan 2024 02:52:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[私は長い間Ubuntu 20.04を使用しています。 Ubuntu 22.04 も [LTS](https://en.wikipedia.org/wiki/Long-term_support) バージョンになっていることがわかり、新しいラップトップに Windows をインストールする際に Ubuntu 22.04]]></summary>
+    <category><![CDATA[Ubuntu,一般]]></category>
+    <tag><![CDATA[Ubuntu,一般]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/ja-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 上の Visual Studio Code での C# 開発環境]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu"/>
+    <id>https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</id>    
+    <modified>Fri, 19 Jan 2024 02:52:12 +0900</modified>
+    <issued>Fri, 19 Jan 2024 02:52:12 +0900</issued>
+		<created>Fri, 19 Jan 2024 02:52:12 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[C# ソフトウェアは、一般に Windows 上の Visual Studio で開発できます。ただし、Ubuntu 環境でも開発できます。有名な IDE は、Mono プロジェクトによって提供される MonoDevelop です。ただし、これ以上のものを使用する VS Code C# ソフトウェア開発環境を作成して]]></summary>
+    <category><![CDATA[Cシャープ,Ubuntu]]></category>
+    <tag><![CDATA[Cシャープ,Ubuntu]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/ja-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[外国人が韓国でロト6/45チケットを購入する方法]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea"/>
+    <id>https://unclesnote.com/ja/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Wed, 10 Jan 2024 01:05:03 +0900</issued>
+		<created>Wed, 10 Jan 2024 01:05:03 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[あなたは韓国に住んでいないが、韓国への旅行や出張中に宝くじの購入を考えていますか?韓国で宝くじをどこで、どのように、いつ買えるのかを紹介したいと思います。]]></summary>
+    <category><![CDATA[韓国,人生]]></category>
+    <tag><![CDATA[韓国,人生]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240110010503/ja-thumb-unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[複数の Obsidian 保管庫のショートカット アイコンを作成する - URI]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri"/>
+    <id>https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</id>    
+    <modified>Mon, 08 Jan 2024 11:11:21 +0900</modified>
+    <issued>Mon, 08 Jan 2024 11:11:21 +0900</issued>
+		<created>Mon, 08 Jan 2024 11:11:21 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[場合によっては、カテゴリごとに複数のボールトを作成して投稿を整理するユーザーもいるかもしれません。 Obsidian の Vault を開くたびに開くのは面倒かもしれません。そこで、Windows環境で保管庫ごとにObsidianを開くことができるショートカットアイコンを作成する方法を紹介したいと思います。原理を説明]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/ja-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Obsidian md を docx、pptx に変換する - Pandoc]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
+    <id>https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
+    <modified>Mon, 08 Jan 2024 11:11:19 +0900</modified>
+    <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
+		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Obsidian を使用してよく整理された記事がある場合は、同僚や友人と共有する必要がある場合があります。 Obsidian 自体は PDF ファイルとしてエクスポートする機能を提供しますが、変更可能な Word (docx) または PowerPoint (pptx) ファイルの形式で共有したい場合は、多数の新しい]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/ja-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[YouTube ビデオを Obsidian に埋め込む - iframe、ReadItLater]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater"/>
+    <id>https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</id>    
+    <modified>Sat, 30 Dec 2023 17:12:41 +0900</modified>
+    <issued>Sat, 30 Dec 2023 17:12:41 +0900</issued>
+		<created>Sat, 30 Dec 2023 17:12:41 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Obsidian で記事を書くとき、場合によっては YouTube ビデオを埋め込んだりスクラップしたりする必要があるかもしれません。 YouTube 動画を埋め込むには主に 2 つの方法があります。]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/ja-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[韓国の冬のストリートフード - パン]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231230151433/korean_winter_street_food_bungeobbang"/>
+    <id>https://unclesnote.com/ja/231230151433/korean_winter_street_food_bungeobbang</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Sat, 30 Dec 2023 15:14:33 +0900</issued>
+		<created>Sat, 30 Dec 2023 15:14:33 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[焼きパンは比較的価格の安くて暖かい食べ物なので、韓国で冬に主に販売される路上料理の一つです。そして、パンはパンとパンの単語の合成語です。]]></summary>
+    <category><![CDATA[韓国,Foods]]></category>
+    <tag><![CDATA[FishBread,StreetFoods,韓国,Foods]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231230151433/ja-thumb-unclesnote-korean_winter_street_food_bungeobbang.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Telegram ボットを作成してメッセージを送信する]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231227193010/create_a_telegram_bot_and_send_a_message"/>
+    <id>https://unclesnote.com/ja/231227193010/create_a_telegram_bot_and_send_a_message</id>    
+    <modified>Wed, 27 Dec 2023 19:30:10 +0900</modified>
+    <issued>Wed, 27 Dec 2023 19:30:10 +0900</issued>
+		<created>Wed, 27 Dec 2023 19:30:10 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Telegram は、比較的使いやすい API サービスを提供します。したがって、セキュリティが大きな問題ではない CI/CD システムでイベントを通知する簡単なツールとして使用できます。 Telegram を Jenkins システムに統合しようとしているのですが、Telegram ボットの基本的な作成方法を紹介し]]></summary>
+    <category><![CDATA[Ubuntu,ジェンキンス,パイプライン]]></category>
+    <tag><![CDATA[Ubuntu,ジェンキンス,パイプライン,sendMessage,getUpdates,Telegram]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/ja-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Jenkins パイプライン スクリプトから Telegram メッセージを送信する]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231227143211/sending_telegram_message_from_jenkins_pipeline_script"/>
+    <id>https://unclesnote.com/ja/231227143211/sending_telegram_message_from_jenkins_pipeline_script</id>    
+    <modified>Wed, 27 Dec 2023 14:32:11 +0900</modified>
+    <issued>Wed, 27 Dec 2023 14:32:11 +0900</issued>
+		<created>Wed, 27 Dec 2023 14:32:11 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[もちろん、Jenkins 用の Telegram プラグインもありますが、個人的には試行錯誤したくありませんでした。プラグインがリリースされてから少なくとも 2 年は経過しています。 Linuxの`curl`を使って電報メッセージを送信してみます。]]></summary>
+    <category><![CDATA[Ubuntu,ジェンキンス,パイプライン]]></category>
+    <tag><![CDATA[ジェンキンス,電報,curl,Ubuntu,ジェンキンス,パイプライン]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/ja-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Synology NAS Docker での Jenkins のセットアップ]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231223003139/setting_up_jenkins_on_synology_nas_docker"/>
+    <id>https://unclesnote.com/ja/231223003139/setting_up_jenkins_on_synology_nas_docker</id>    
+    <modified>Sat, 23 Dec 2023 00:31:39 +0900</modified>
+    <issued>Sat, 23 Dec 2023 00:31:39 +0900</issued>
+		<created>Sat, 23 Dec 2023 00:31:39 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[CI/CD(継続的インテグレーション/継続的デプロイメント) ツールは数多くありますが、Jenkins はライセンス制限がなくオープンソースで便利なツールの 1 つです。 Synology NAS Docker に Jenkins をインストールする方法について話したいと思います。]]></summary>
+    <category><![CDATA[Ubuntu,ジェンキンス,設定]]></category>
+    <tag><![CDATA[Ubuntu,ドッカー,ジェンキンス,設定]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/ja-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Synology NAS 上の Ubuntu Docker で XRDP をセットアップする]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas"/>
+    <id>https://unclesnote.com/ja/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</id>    
+    <modified>Sat, 23 Dec 2023 00:31:38 +0900</modified>
+    <issued>Sat, 23 Dec 2023 00:31:38 +0900</issued>
+		<created>Sat, 23 Dec 2023 00:31:38 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[VMM (仮想マシン マネージャー) 機能をサポートするエントリー レベルの Synology NAS を購入した場合は、VMM に Windows または Ubuntu をインストールしてもよかったかもしれません。ただし、インストールに時間がかかり、パフォーマンスが低下することにがっかりするかもしれません。そのよう]]></summary>
+    <category><![CDATA[Ubuntu,ドッカー]]></category>
+    <tag><![CDATA[Ubuntu,ドッカー]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/ja-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Lenovo Ideapad Slim3 15ABA7 R5 Windowsのインストール、メモリのアップグレード]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade"/>
+    <id>https://unclesnote.com/ja/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</id>    
+    <modified>Thu, 14 Dec 2023 18:18:12 +0900</modified>
+    <issued>Thu, 14 Dec 2023 18:18:12 +0900</issued>
+		<created>Thu, 14 Dec 2023 18:18:12 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[レノボSlim3 15ABA7 R5はフリーDOSが基本OSでインストールされており、別途ウィンドウをインストールする必要があります。 Windowsのインストールのための基本とメモリをアップグレードする方法を学びましょう。]]></summary>
+    <category><![CDATA[それ,パソコン]]></category>
+    <tag><![CDATA[それ,パソコン,Lenovo,ラップトップ]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/ja-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows 10 の複数のディスプレイ構成でディスプレイが非アクティブになる問題]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10"/>
+    <id>https://unclesnote.com/ja/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</id>    
+    <modified>Thu, 14 Dec 2023 16:30:36 +0900</modified>
+    <issued>Thu, 14 Dec 2023 16:30:36 +0900</issued>
+		<created>Thu, 14 Dec 2023 16:30:36 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。おそらく Windows は各環境に適したディ]]></summary>
+    <category><![CDATA[コンピューター,トラブルシューティング]]></category>
+    <tag><![CDATA[コンピューター,トラブルシューティング]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/ja-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Obsidian のコールアウトと引用ブロック]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block"/>
+    <id>https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
+		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[辞書のコールアウトの定義は、大声で呼びかけることであり、読者の注意を引き、重要な情報や追加情報を知らせるために使用されます。 Obsidian で吹き出しを表現するための文法と型について学びましょう。]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian,コールアウト,引用]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/ja-thumb-unclesnote-obsidian_callouts_and_quote_block.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[VirtualBox での Ubuntu 共有フォルダーのセットアップ - Windows ファイル共有]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange"/>
+    <id>https://unclesnote.com/ja/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</id>    
+    <modified>Fri, 19 Jan 2024 02:52:16 +0900</modified>
+    <issued>Mon, 06 Nov 2023 12:01:00 +0900</issued>
+		<created>Mon, 06 Nov 2023 12:01:00 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[私の場合、Oracle VM VirtualBox の Ubuntu VM と Windows の間で頻繁にファイル共有が行われます。もちろん、ゲスト追加機能を使用してマウスをドラッグしてファイルを共有することもできますが、それでも不便な場合があります。そこで、Ubuntu VMでWindowsフォルダーを共有する方]]></summary>
+    <category><![CDATA[Ubuntu,バーチャルボックス]]></category>
+    <tag><![CDATA[バーチャルボックス,vboxsf,Ubuntu,フォルダー共有]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/ja-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Samsung Galaxy S24のスペックと発売日 - 噂のまとめ]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup"/>
+    <id>https://unclesnote.com/ja/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</id>    
+    <modified>Mon, 06 Nov 2023 01:59:14 +0900</modified>
+    <issued>Mon, 06 Nov 2023 01:59:14 +0900</issued>
+		<created>Mon, 06 Nov 2023 01:59:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Samsung Galaxy S24 の発売日が近づくにつれ、レンダリング画像と予想される仕様に関する噂が浮上しています。まとめると、Galaxy S24シリーズは2024年第1四半期に発売予定で、外装はチタン製でカメラ性能はダウングレードされ、モデルによってはSamsung ExynosとQualcomm Snap]]></summary>
+    <category><![CDATA[それ,携帯]]></category>
+    <tag><![CDATA[ギャラクシーS24,噂,ギークベンチ,サムスンエクシノス,クアルコムスナップドラゴン,チタン,それ,携帯]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/ja-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 20.04 の ibus-hangul を使用した韓国語 - 英語変換キーの構成]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04"/>
+    <id>https://unclesnote.com/ja/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</id>    
+    <modified>Sat, 04 Nov 2023 21:16:15 +0900</modified>
+    <issued>Sat, 04 Nov 2023 21:16:15 +0900</issued>
+		<created>Sat, 04 Nov 2023 21:16:15 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[ソフトウェア開発目的で Ubuntu を使用する場合、ほとんどの場合英語で入力することになります。ただし、場合によっては、GNOME GUI に韓国語を入力する必要がある場合があります。そこで、デフォルト設定では英語入力しか許可されていないため、`ibus-hangul`プラグインを使用して韓国語入力を設定します。]]></summary>
+    <category><![CDATA[Ubuntu,一般]]></category>
+    <tag><![CDATA[イブサングル,Ubuntu,一般,キーボード]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/ja-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[改行の違い - Windows と Linux の EOL チェックと Git リポジトリ同期]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync"/>
+    <id>https://unclesnote.com/ja/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</id>    
+    <modified>Thu, 02 Nov 2023 14:47:17 +0900</modified>
+    <issued>Thu, 02 Nov 2023 14:47:17 +0900</issued>
+		<created>Thu, 02 Nov 2023 14:47:17 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Linux と Windows の両方で 1 つの Git リポジトリ内のファイルを変更してコミットする必要がある場合、内容が明らかに変更されていない場合でも、Git クライアントがそのファイルを Git コミット段階で変更されたファイルとして認識する場合があります。問題の原因は、ファイルの内容は同じでも、Windo]]></summary>
+    <category><![CDATA[ギット]]></category>
+    <tag><![CDATA[ギット,CRLF,LF,EOL変換,改行,メモ帳プラスプラス,unix2dos,dos2unix]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/ja-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 20.04 のパフォーマンスの最適化]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231102005314/how_to_optimize_ubuntu_20.04_performance"/>
+    <id>https://unclesnote.com/ja/231102005314/how_to_optimize_ubuntu_20.04_performance</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Thu, 02 Nov 2023 00:53:14 +0900</issued>
+		<created>Thu, 02 Nov 2023 00:53:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Ubuntu OSがインストールされたPCをメインコンピュータとして使用している場合を除き、ハードウェア仕様が低いPCを使用しているか、Oracle VM VirtualBoxにUbuntuをインストールしている可能性があります。主に SSH を使用してリモート接続する場合は大きな影響はありませんが、GNOME で]]></summary>
+    <category><![CDATA[Ubuntu,一般]]></category>
+    <tag><![CDATA[Ubuntuアニメーション,ドックアイコンのサイズ,スワップファイル,スワップ,Ubuntu,一般,ブリーチビット]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/ja-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntuでスワップファイルのサイズを増やす方法]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231102005313/how_to_increase_swapfile_size_in_ubuntu"/>
+    <id>https://unclesnote.com/ja/231102005313/how_to_increase_swapfile_size_in_ubuntu</id>    
+    <modified>Thu, 02 Nov 2023 00:53:13 +0900</modified>
+    <issued>Thu, 02 Nov 2023 00:53:13 +0900</issued>
+		<created>Thu, 02 Nov 2023 00:53:13 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[十分な物理メモリがない状態で Ubuntu マシンを長時間実行したままにしたり、大規模なプラットフォームや BSP をコンパイルして構築したりすると、パフォーマンスが低下したり、エラーが発生したりすることがあります。そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードデ]]></summary>
+    <category><![CDATA[Ubuntu,一般]]></category>
+    <tag><![CDATA[ファタブ,スワップ,スワップファイル,Ubuntu,一般]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/ja-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[ソフトウェア開発者にとって必須の Ubuntu ソフトウェア]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers"/>
+    <id>https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Wed, 01 Nov 2023 00:31:13 +0900</issued>
+		<created>Wed, 01 Nov 2023 00:31:13 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。実際、この記事は、新しい Ubuntu 環境を構成する際の参考になります。]]></summary>
+    <category><![CDATA[Ubuntu,ツール]]></category>
+    <tag><![CDATA[ビジュアルスタジオコード,VSコード,GitHubデスクトップ,BeyondCompare4,SQLiteDBブラウザ,MySQLワークベンチ,Ubuntu,ツール]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/ja-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Office 365 Outlook のデフォルトのブラウザを Chrome に変更する方法]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome"/>
+    <id>https://unclesnote.com/ja/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</id>    
+    <modified>Tue, 31 Oct 2023 00:34:17 +0900</modified>
+    <issued>Tue, 31 Oct 2023 00:34:17 +0900</issued>
+		<created>Tue, 31 Oct 2023 00:34:17 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は]]></summary>
+    <category><![CDATA[コンピューター,トラブルシューティング]]></category>
+    <tag><![CDATA[見通し,デフォルトブラウザ,クロム,パソコン,コンピューター,トラブルシューティング]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ja-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows ツールの代わりに必須の Ubuntu ソフトウェア]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231028002032/essential_software_to_use_on_ubuntu_os"/>
+    <id>https://unclesnote.com/ja/231028002032/essential_software_to_use_on_ubuntu_os</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Sat, 28 Oct 2023 00:20:32 +0900</issued>
+		<created>Sat, 28 Oct 2023 00:20:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Ubuntu OS 特有の利点を理由に Ubuntu を使用している場合は、Windows 環境で使用していたものと同様のソフトウェアを Ubuntu 環境で使用できるようにしようとします。そこで、ファイルブラウザ、画像ビューア/エディタ、生産性向上ツールなど、Ubuntuを使用する際に一般的に使用すると良いソフトウ]]></summary>
+    <category><![CDATA[Ubuntu,ツール]]></category>
+    <tag><![CDATA[クルセイダー,グウェンビュー,フォトピー,クリタ,イージーストローク,画像ビューア,画像エディタ,ファイルブラウザ,マウスマクロ,Ubuntu,ツール,ブリーチビット,フリースペース]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/ja-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Jekyll Windows テスト用の VirtualBox ポート転送方法]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing"/>
+    <id>https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</id>    
+    <modified>Tue, 24 Oct 2023 18:52:05 +0900</modified>
+    <issued>Tue, 24 Oct 2023 18:52:05 +0900</issued>
+		<created>Tue, 24 Oct 2023 18:52:05 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィ]]></summary>
+    <category><![CDATA[GitHub ページ,ジキル]]></category>
+    <tag><![CDATA[ジキル,バーチャルボックス,ポートフォワーディング,GitHubページ,GitHub]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/ja-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[VirtualBox の Ubuntu (20.04) VM に新しいハードディスクを追加する]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox"/>
+    <id>https://unclesnote.com/ja/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</id>    
+    <modified>Mon, 23 Oct 2023 21:58:45 +0900</modified>
+    <issued>Mon, 23 Oct 2023 21:58:45 +0900</issued>
+		<created>Mon, 23 Oct 2023 21:58:45 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Oracle VM VirtualBoxのUbuntu(20.04) VMにディスクを作成、接続、使用する方法を説明します。手順の大まかな流れは以下の通りです。]]></summary>
+    <category><![CDATA[Ubuntu,バーチャルボックス]]></category>
+    <tag><![CDATA[Ubuntu,バーチャルボックス,GParted,fstab,UUID]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/ja-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[ログをターミナルまたはコンソールに出力するときに色を指定する方法]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console"/>
+    <id>https://unclesnote.com/ja/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</id>    
+    <modified>Mon, 23 Oct 2023 21:58:42 +0900</modified>
+    <issued>Mon, 23 Oct 2023 21:58:42 +0900</issued>
+		<created>Mon, 23 Oct 2023 21:58:42 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[ソフトウェアを開発する際、ログは動作確認や問題の原因究明に役立ちます。重大なエラーまたは警告レベルのログに見つけやすい色が付いていると便利です。 VS Code や Visual Studio など、使用している IDE でログ テキストの色を設定できますが、ソフトウェアが IDE なしで実行されている場合、または]]></summary>
+    <category><![CDATA[Ubuntu,一般]]></category>
+    <tag><![CDATA[VSコード,ターミナル,デバッグコンソール,出力,Ubuntu,一般]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/ja-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png"/>
+  </entry></feed>

@@ -1,0 +1,329 @@
+<feed version="0.3"
+		xmlns="http://purl.org/atom/ns#"
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+		xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:media="http://search.yahoo.com/mrss/"
+		xmlns:activity="http://activitystrea.ms/spec/1.0/" >
+
+  
+
+  <title><![CDATA[叔叔的笔记]]></title>
+  <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/" />
+  <author><name><![CDATA[叔叔的笔记]]></name></author>
+  <id>https://unclesnote.com/zh/rss.xml</id>
+  <info><![CDATA[]]></info>
+  <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+  <entry>
+    <title><![CDATA[安装 Ubuntu 22.04 时可能遇到的问题]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04"/>
+    <id>https://unclesnote.com/zh/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Fri, 19 Jan 2024 02:52:14 +0900</issued>
+		<created>Fri, 19 Jan 2024 02:52:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[我已经使用 Ubuntu 20.04 很长时间了。我发现 Ubuntu 22.04 也成为了 [LTS](https://en.wikipedia.org/wiki/Long-term_support) 版本，我计划在我的新笔记本电脑上安装 Windows 时尝试 Ubuntu 22.04。因此，我想总结一下我作为]]></summary>
+    <category><![CDATA[乌班图,常见的]]></category>
+    <tag><![CDATA[乌班图,常见的]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/zh-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 上 Visual Studio Code 中的 C# 开发环境]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu"/>
+    <id>https://unclesnote.com/zh/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</id>    
+    <modified>Fri, 19 Jan 2024 02:52:12 +0900</modified>
+    <issued>Fri, 19 Jan 2024 02:52:12 +0900</issued>
+		<created>Fri, 19 Jan 2024 02:52:12 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[C#软件一般可以在Windows上的Visual Studio中开发。不过，它也可以在Ubuntu环境中开发。一个著名的IDE是Mono项目提供的MonoDevelop。然而，让我们创建一个使用的不仅仅是这个的 VS Code C# 软件开发环境。基于Ubuntu 20.04。]]></summary>
+    <category><![CDATA[C夏普,乌班图]]></category>
+    <tag><![CDATA[夏普,乌班图]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/zh-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[外国人如何在韩国购买 Lotto 6/45 彩票]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea"/>
+    <id>https://unclesnote.com/zh/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Wed, 10 Jan 2024 01:05:03 +0900</issued>
+		<created>Wed, 10 Jan 2024 01:05:03 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[您是不住在韩国但正在考虑在韩国旅行或出差时购买彩票的人吗？我想介绍一下在韩国哪里、如何以及何时可以购买乐透彩票。]]></summary>
+    <category><![CDATA[韩国,生活]]></category>
+    <tag><![CDATA[韩国,生活]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240110010503/zh-thumb-unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[为多个黑曜石保险库创建快捷方式图标 - URI]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri"/>
+    <id>https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</id>    
+    <modified>Mon, 08 Jan 2024 11:11:21 +0900</modified>
+    <issued>Mon, 08 Jan 2024 11:11:21 +0900</issued>
+		<created>Mon, 08 Jan 2024 11:11:21 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[在某些情况下，可能有用户通过根据类别创建多个保管库来组织帖子。每次在 Obsidian 中打开 Vault 时都会很烦人。所以，我想介绍一种在Windows环境下为每个Vault创建一个可以打开Obsidian的快捷方式图标的方法。为了解释原理，当通过快捷方式图标运行`obsidian.exe`时，您添加参数作为参数]]></summary>
+    <category><![CDATA[黑曜石]]></category>
+    <tag><![CDATA[黑曜石]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/zh-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[将 Obsidian md 转换为 docx、pptx - Pandoc]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
+    <id>https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
+    <modified>Mon, 08 Jan 2024 11:11:19 +0900</modified>
+    <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
+		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您有一篇使用 Obsidian 组织良好的文章，您可能偶尔需要与同事或朋友分享。 Obsidian 本身提供了导出为 PDF 文件的功能，但如果您想以可修改的 Word(docx) 或 Power Point(pptx) 文件的形式共享，复制和粘贴大量新文件是一个麻烦的事情麻烦。所以，我想介绍一下 Pandoc，]]></summary>
+    <category><![CDATA[黑曜石]]></category>
+    <tag><![CDATA[黑曜石]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/zh-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[将 YouTube 视频嵌入 Obsidian - iframe、ReadItLater]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater"/>
+    <id>https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</id>    
+    <modified>Sat, 30 Dec 2023 17:12:41 +0900</modified>
+    <issued>Sat, 30 Dec 2023 17:12:41 +0900</issued>
+		<created>Sat, 30 Dec 2023 17:12:41 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[在 Obsidian 中撰写文章时，您有时可能需要嵌入或剪贴 YouTube 视频。嵌入 YouTube 视频有两种主要方法。]]></summary>
+    <category><![CDATA[黑曜石]]></category>
+    <tag><![CDATA[黑曜石]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/zh-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[韩国冬季街头小吃 - Bungeobbang]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231230151433/korean_winter_street_food_bungeobbang"/>
+    <id>https://unclesnote.com/zh/231230151433/korean_winter_street_food_bungeobbang</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Sat, 30 Dec 2023 15:14:33 +0900</issued>
+		<created>Sat, 30 Dec 2023 15:14:33 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Bungeobbang是一种相对便宜且温暖的食物，因此是韩国冬季主要销售的街头食品之一。 Bungeobbang是鲤鱼和面包的复合词。]]></summary>
+    <category><![CDATA[韩国,食品]]></category>
+    <tag><![CDATA[鱼面包,街头食品,韩国,食品]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231230151433/zh-thumb-unclesnote-korean_winter_street_food_bungeobbang.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[创建 Telegram 机器人并发送消息]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231227193010/create_a_telegram_bot_and_send_a_message"/>
+    <id>https://unclesnote.com/zh/231227193010/create_a_telegram_bot_and_send_a_message</id>    
+    <modified>Wed, 27 Dec 2023 19:30:10 +0900</modified>
+    <issued>Wed, 27 Dec 2023 19:30:10 +0900</issued>
+		<created>Wed, 27 Dec 2023 19:30:10 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Telegram提供了相对容易使用的API服务。因此，它可以用作通知 CI/CD 系统中的事件的简单工具，其中安全性不是主要问题。我正在尝试将 Telegram 集成到 Jenkins 系统中，我想介绍一下创建 Telegram 机器人的基本方法。]]></summary>
+    <category><![CDATA[乌班图,詹金斯,管道]]></category>
+    <tag><![CDATA[乌班图,詹金斯,管道,sendMessage,getUpdates,Telegram]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/zh-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[从 Jenkins 管道脚本发送 Telegram 消息]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231227143211/sending_telegram_message_from_jenkins_pipeline_script"/>
+    <id>https://unclesnote.com/zh/231227143211/sending_telegram_message_from_jenkins_pipeline_script</id>    
+    <modified>Wed, 27 Dec 2023 14:32:11 +0900</modified>
+    <issued>Wed, 27 Dec 2023 14:32:11 +0900</issued>
+		<created>Wed, 27 Dec 2023 14:32:11 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[当然，Jenkins 有 Telegram 插件，但我个人不想经历反复试验。自从插件发布以来已经至少两年了。我将在 Linux 中使用`curl`发送电报消息。]]></summary>
+    <category><![CDATA[乌班图,詹金斯,管道]]></category>
+    <tag><![CDATA[詹金斯,电报,curl,乌班图,詹金斯,管道]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/zh-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[在 Synology NAS Docker 上设置 Jenkins]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231223003139/setting_up_jenkins_on_synology_nas_docker"/>
+    <id>https://unclesnote.com/zh/231223003139/setting_up_jenkins_on_synology_nas_docker</id>    
+    <modified>Sat, 23 Dec 2023 00:31:39 +0900</modified>
+    <issued>Sat, 23 Dec 2023 00:31:39 +0900</issued>
+		<created>Sat, 23 Dec 2023 00:31:39 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[CI/CD（持续集成/持续部署）工具有很多，Jenkins 是没有许可证限制且开源的有用工具之一。我想谈谈如何在 Synology NAS Docker 上安装 Jenkins。]]></summary>
+    <category><![CDATA[乌班图,詹金斯,设置]]></category>
+    <tag><![CDATA[乌班图,码头工人,詹金斯,设置]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/zh-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[在 Synology NAS 上的 Ubuntu Docker 中设置 XRDP]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas"/>
+    <id>https://unclesnote.com/zh/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</id>    
+    <modified>Sat, 23 Dec 2023 00:31:38 +0900</modified>
+    <issued>Sat, 23 Dec 2023 00:31:38 +0900</issued>
+		<created>Sat, 23 Dec 2023 00:31:38 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您购买了支持 VMM（虚拟机管理器）功能的入门级 Synology NAS，您可能会很乐意在 VMM 上安装 Windows 或 Ubuntu。然而，您可能会对较长的安装时间和较差的性能感到失望。对于这些人来说，在 Ubuntu Docker 上安装 XRDP 可能是启用具有 GUI 界面的操作系统的最佳选择。我]]></summary>
+    <category><![CDATA[乌班图,码头工人]]></category>
+    <tag><![CDATA[乌班图,码头工人]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/zh-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[联想Ideapad Slim3 15ABA7 R5 Windows安装、内存升级]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade"/>
+    <id>https://unclesnote.com/zh/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</id>    
+    <modified>Thu, 14 Dec 2023 18:18:12 +0900</modified>
+    <issued>Thu, 14 Dec 2023 18:18:12 +0900</issued>
+		<created>Thu, 14 Dec 2023 18:18:12 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Lenovo Slim3 15ABA7 R5 安装了 Free DOS 作为默认操作系统，因此必须单独安装 Windows。让我们了解一下安装 Windows 以及如何升级内存的基础知识。]]></summary>
+    <category><![CDATA[它,个人电脑]]></category>
+    <tag><![CDATA[它,个人电脑,联想,笔记本电脑]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/zh-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows 10 中多个显示配置中的显示不活动问题]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10"/>
+    <id>https://unclesnote.com/zh/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</id>    
+    <modified>Thu, 14 Dec 2023 16:30:36 +0900</modified>
+    <issued>Thu, 14 Dec 2023 16:30:36 +0900</issued>
+		<created>Thu, 14 Dec 2023 16:30:36 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[我是一名在工作和家庭之间使用一台笔记本电脑的用户。我在工作和家里使用连接到笔记本电脑的两个或多个显示器，但有时笔记本电脑只能识别某些显示器，并且当我进入显示设置时显示为非活动状态。我的猜测是Windows通过将其以预设的形式存储在注册表中来管理适合每个环境的显示配置，但似乎这个问题有时是由于此配置的扭曲引起的。我发现]]></summary>
+    <category><![CDATA[电脑,故障排除]]></category>
+    <tag><![CDATA[电脑,故障排除]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/zh-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[黑曜石的标注和报价块]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block"/>
+    <id>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
+		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[字典中标注的定义是大声喊出，用于引起读者的注意并告知他们重要或附加信息。让我们了解一下 Obsidian 中表达标注的语法和类型。]]></summary>
+    <category><![CDATA[黑曜石]]></category>
+    <tag><![CDATA[黑曜石,标注,引号]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/zh-thumb-unclesnote-obsidian_callouts_and_quote_block.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[在 VirtualBox 中设置 Ubuntu 共享文件夹 - Windows 文件共享]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange"/>
+    <id>https://unclesnote.com/zh/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</id>    
+    <modified>Fri, 19 Jan 2024 02:52:16 +0900</modified>
+    <issued>Mon, 06 Nov 2023 12:01:00 +0900</issued>
+		<created>Mon, 06 Nov 2023 12:01:00 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[就我而言，Oracle VM VirtualBox 中的 Ubuntu VM 和 Windows 之间存在频繁的文件共享。当然，您可以使用Guest Additions功能通过拖动鼠标来共享文件，但仍然有不方便的时候。因此，我想解释一下如何与 Ubuntu VM 共享 Windows 文件夹。]]></summary>
+    <category><![CDATA[乌班图,虚拟盒子]]></category>
+    <tag><![CDATA[虚拟盒子,vboxsf,乌班图,文件夹共享]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/zh-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[三星 Galaxy S24 规格和发布日期 - 谣言综述]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup"/>
+    <id>https://unclesnote.com/zh/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</id>    
+    <modified>Mon, 06 Nov 2023 01:59:14 +0900</modified>
+    <issued>Mon, 06 Nov 2023 01:59:14 +0900</issued>
+		<created>Mon, 06 Nov 2023 01:59:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[随着三星 Galaxy S24 发布日期的临近，有关渲染图像和预期规格的传言不断出现。综上所述，Galaxy S 24系列计划于2024年第一季度发布，拥有钛金属外观，降级相机性能，预计根据型号配备三星Exynos和高通Snapdragon AP。现在我们就来仔细看看相关的传闻。]]></summary>
+    <category><![CDATA[它,移动的]]></category>
+    <tag><![CDATA[银河S24,谣言,极客跑分,三星Exynos,高通Snapdragon,钛,它,移动的]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/zh-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[在 Ubuntu 20.04 中使用 ibus-hangul 配置韩语-英语转换密钥]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04"/>
+    <id>https://unclesnote.com/zh/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</id>    
+    <modified>Sat, 04 Nov 2023 21:16:15 +0900</modified>
+    <issued>Sat, 04 Nov 2023 21:16:15 +0900</issued>
+		<created>Sat, 04 Nov 2023 21:16:15 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您使用 Ubuntu 进行软件开发，您将主要使用英文输入。然而，在某些情况下，可能需要在 GNOME GUI 中输入韩语。因此，由于默认设置仅允许英语输入，因此我们将使用`ibus-hangul`插件来设置韩语输入。]]></summary>
+    <category><![CDATA[乌班图,常见的]]></category>
+    <tag><![CDATA[伊布尚古尔,乌班图,常见的,键盘]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/zh-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[换行符差异 - Windows 和 Linux EOL 检查和 Git Repo 同步]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync"/>
+    <id>https://unclesnote.com/zh/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</id>    
+    <modified>Thu, 02 Nov 2023 14:47:17 +0900</modified>
+    <issued>Thu, 02 Nov 2023 14:47:17 +0900</issued>
+		<created>Thu, 02 Nov 2023 14:47:17 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您需要在 Linux 和 Windows 上修改并提交同一个 Git 存储库中的文件，则可能会出现这样的情况：Git 客户端在 Git 提交阶段将该文件识别为已修改文件，即使该文件的内容显然没有被修改。问题的原因在于，虽然文件内容相同，但 Windows 和 Linux 中表达换行符的基本方式不同。下图中，左边是]]></summary>
+    <category><![CDATA[git]]></category>
+    <tag><![CDATA[git,回车换行,如果,EOL转换,换行符,记事本PlusPlus,UNIX2DOS,DOS2UNIX]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/zh-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 20.04性能优化]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231102005314/how_to_optimize_ubuntu_20.04_performance"/>
+    <id>https://unclesnote.com/zh/231102005314/how_to_optimize_ubuntu_20.04_performance</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Thu, 02 Nov 2023 00:53:14 +0900</issued>
+		<created>Thu, 02 Nov 2023 00:53:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[除非您使用安装了 Ubuntu 操作系统的 PC 作为主计算机，否则您可能会使用硬件规格较低的 PC 或在 Oracle VM VirtualBox 上安装 Ubuntu。如果你主要使用 SSH 进行远程连接，那么不会有太大影响，但如果你经常操作 GNOME 中的 UI，性能可能会令人失望。因此，这里有一些在安装和配]]></summary>
+    <category><![CDATA[乌班图,常见的]]></category>
+    <tag><![CDATA[Ubuntu动画,Dock图标大小,交换文件,交换,乌班图,常见的,漂白位]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/zh-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[如何增加 Ubuntu 中的交换文件大小]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231102005313/how_to_increase_swapfile_size_in_ubuntu"/>
+    <id>https://unclesnote.com/zh/231102005313/how_to_increase_swapfile_size_in_ubuntu</id>    
+    <modified>Thu, 02 Nov 2023 00:53:13 +0900</modified>
+    <issued>Thu, 02 Nov 2023 00:53:13 +0900</issued>
+		<created>Thu, 02 Nov 2023 00:53:13 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[有时，如果您让 Ubuntu 机器长时间运行而没有足够的物理内存，或者如果您编译和构建大型平台或 BSP，性能可能会下降或可能出现错误。因此，当物理内存不足时，基于Linux的操作系统会创建交换文件并使用硬盘上的文件作为内存。这称为交换文件，类似于 Windows 环境中的虚拟内存。现在，我想解释一下如何在 Ubun]]></summary>
+    <category><![CDATA[乌班图,常见的]]></category>
+    <tag><![CDATA[法塔布,交换,交换文件,乌班图,常见的]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/zh-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[软件开发人员必备的 Ubuntu 软件]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers"/>
+    <id>https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Wed, 01 Nov 2023 00:31:13 +0900</issued>
+		<created>Wed, 01 Nov 2023 00:31:13 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。其实这篇文章更多是我在配置新的Ubuntu环境时的一个参考。]]></summary>
+    <category><![CDATA[乌班图,工具]]></category>
+    <tag><![CDATA[VisualStudio代码,VS代码,GitHub桌面版,超越比较4,SQLite数据库浏览器,MySQL工作台,乌班图,工具]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/zh-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[如何将 Office 365 Outlook 中的默认浏览器更改为 Chrome]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome"/>
+    <id>https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</id>    
+    <modified>Tue, 31 Oct 2023 00:34:17 +0900</modified>
+    <issued>Tue, 31 Oct 2023 00:34:17 +0900</issued>
+		<created>Tue, 31 Oct 2023 00:34:17 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Wind]]></summary>
+    <category><![CDATA[电脑,故障排除]]></category>
+    <tag><![CDATA[外表,默认浏览器,铬合金,个人电脑,电脑,故障排除]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/zh-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[替代 Windows 工具的必备 Ubuntu 软件]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231028002032/essential_software_to_use_on_ubuntu_os"/>
+    <id>https://unclesnote.com/zh/231028002032/essential_software_to_use_on_ubuntu_os</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Sat, 28 Oct 2023 00:20:32 +0900</issued>
+		<created>Sat, 28 Oct 2023 00:20:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您因为 Ubuntu 操作系统的特定优势而使用 Ubuntu，您会尝试在 Ubuntu 环境中找到与您在 Windows 环境中使用的类似软​​件。因此，我将介绍一些在使用 Ubuntu 时通常很好用的软件，例如文件浏览器、图像查看/编辑器和生产力工具。]]></summary>
+    <category><![CDATA[乌班图,工具]]></category>
+    <tag><![CDATA[克鲁萨德,格温维尤,光豌豆,克里塔,易中风,图像浏览器,图片编辑器,文件浏览器,鼠标宏,乌班图,工具,漂白位,可用空间]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/zh-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Jekyll Windows测试的VirtualBox端口转发方法]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing"/>
+    <id>https://unclesnote.com/zh/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</id>    
+    <modified>Tue, 24 Oct 2023 18:52:05 +0900</modified>
+    <issued>Tue, 24 Oct 2023 18:52:05 +0900</issued>
+		<created>Tue, 24 Oct 2023 18:52:05 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[就我而言，我在 Virtual Box 中的 Ubuntu VM 上构建并测试 Jekyll(GitHub Pages)，然后将其推送到 GitHub。然而，Ubuntu VM 中的 Firefox 等浏览器的外观和感觉与实际 X86 Windows 的外观和感觉略有不同。所以，我想解释一下在X86 Windows浏]]></summary>
+    <category><![CDATA[GitHub 页面,杰基尔]]></category>
+    <tag><![CDATA[杰基尔,虚拟盒子,转发端口,GitHub页面,GitHub]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/zh-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[在 VirtualBox 中向 Ubuntu (20.04) VM 添加新硬盘]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox"/>
+    <id>https://unclesnote.com/zh/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</id>    
+    <modified>Mon, 23 Oct 2023 21:58:45 +0900</modified>
+    <issued>Mon, 23 Oct 2023 21:58:45 +0900</issued>
+		<created>Mon, 23 Oct 2023 21:58:45 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[我们将解释如何在 Oracle VM VirtualBox 的 Ubuntu(20.04) VM 中创建、附加和使用磁盘。该过程的大致轮廓如下。]]></summary>
+    <category><![CDATA[乌班图,虚拟盒子]]></category>
+    <tag><![CDATA[乌班图,虚拟盒子,格帕特,系统表,通用唯一标识符]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/zh-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[输出日志到终端或控制台时如何指定颜色]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console"/>
+    <id>https://unclesnote.com/zh/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</id>    
+    <modified>Mon, 23 Oct 2023 21:58:42 +0900</modified>
+    <issued>Mon, 23 Oct 2023 21:58:42 +0900</issued>
+		<created>Mon, 23 Oct 2023 21:58:42 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[在开发软件时，日志可以帮助您检查运行情况并查找问题原因。如果严重错误或警告级别的日志具有易于查找的颜色，将会很有帮助。您可以在您使用的 IDE（例如 VS Code 或 Visual Studio）中设置日志文本的颜色，但如果软件在没有 IDE 的情况下运行或在 Linux 等交叉编译环境中运行，则该设置将不会应用。]]></summary>
+    <category><![CDATA[乌班图,常见的]]></category>
+    <tag><![CDATA[VS代码,终端,调试控制台,输出,乌班图,常见的]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/zh-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png"/>
+  </entry></feed>

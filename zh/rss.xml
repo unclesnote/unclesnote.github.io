@@ -21,8 +21,315 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 10 Jan 2024 01:05:03 +0900</lastBuildDate>
-    <pubDate>Wed, 10 Jan 2024 01:05:03 +0900</pubDate>
+    <lastBuildDate>Fri, 19 Jan 2024 02:52:14 +0900</lastBuildDate>
+    <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[安装 Ubuntu 22.04 时可能遇到的问题]]></title>
+      <link>https://unclesnote.com/zh/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</link>
+      <guid>https://unclesnote.com/zh/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+      <category><![CDATA[乌班图,常见的]]></category>
+      <tag><![CDATA[乌班图,常见的]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</guid>
+      <description><![CDATA[我已经使用 Ubuntu 20.04 很长时间了。我发现 Ubuntu 22.04 也成为了 [LTS](https://en.wikipedia.org/wiki/Long-term_support) 版本，我计划在我的新笔记本电脑上安装 Windows 时尝试 Ubuntu 22.04。因此，我想总结一下我作为]]></description>
+      <content:encoded><![CDATA[<p>我已经使用 Ubuntu 20.04 很长时间了。我发现 Ubuntu 22.04 也成为了 <a href="https://en.wikipedia.org/wiki/Long-term_support" target="_blank">LTS</a> 版本，我计划在我的新笔记本电脑上安装 Windows 时尝试 Ubuntu 22.04。</p>
+
+<p>因此，我想总结一下我作为 Ubuntu 20.04 用户没有遇到的新问题。</p>
+<h2 id="终端打不开">终端打不开</h2>
+<p>如果您是第一次安装 Ubuntu，您可能会遇到终端打不开的问题。如果您是 VirtualBox 用户并且您的 Windows 语言不是英语或者您所在时区的国家/地区不是英语国家，则可能会发生这种情况。我不知道为什么，但我知道如何解决这个问题。</p>
+
+<p><img src="/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" alt="设置 &gt; 区域和语言" width="972" height="592" />
+<em>设置 &gt; 区域和语言</em></p>
+
+<p>在<code class="language-plaintext highlighter-rouge">设置 &gt; 区域和语言</code>中，将<code class="language-plaintext highlighter-rouge">语言</code>从<code class="language-plaintext highlighter-rouge">英语(美国)</code>更改为<code class="language-plaintext highlighter-rouge">英语(英国)</code>。之后，您将需要重新登录或重新启动。那么，问题或许就可以解决。</p>
+
+<p>这是为了重新印记 Ubuntu 的语言设置。如果问题得到解决，您可以将语言更改回英语(美国)。</p>
+<h2 id="您的帐户不在-sudoers-文件中"><em>您的帐户不在 sudoers 文件中</em></h2>
+<p>这是我安装Ubuntu 22.04版本时遇到的第一个问题。通过 Virtual Box 将现有 Ubuntu 20.04 安装为 Ubuntu VM 时，该帐户默认具有 sudo 权限。但是，Ubuntu 22.04 要求您另外向您的帐户授予 sudoer 权限。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">sudo </span>apt update
+youraccount is not <span class="k">in </span>the sudoers file.  This incident will be reported.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>首先，以 root 身份登录。您还需要将您的帐户添加到<code class="language-plaintext highlighter-rouge">/etc/sudoers</code>，默认情况下具有只读权限。因此，请授予该文件写入权限并添加有关您帐户的信息。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>su root
+<span class="nv">$ </span>apt <span class="nb">install </span>vim
+
+<span class="nv">$ </span><span class="nb">chmod</span> +w /etc/sudoers
+<span class="nv">$ </span>vim /etc/sudoers
+<span class="c"># add it below and save it</span>
+youraccount   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/zh-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png" />
+      <media:content url="https://unclesnote.com/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" medium="image" /></item>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[Ubuntu 上 Visual Studio Code 中的 C# 开发环境]]></title>
+      <link>https://unclesnote.com/zh/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</link>
+      <guid>https://unclesnote.com/zh/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Fri, 19 Jan 2024 02:52:12 +0900</pubDate>
+      <category><![CDATA[C夏普,乌班图]]></category>
+      <tag><![CDATA[夏普,乌班图]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
+      <description><![CDATA[C#软件一般可以在Windows上的Visual Studio中开发。不过，它也可以在Ubuntu环境中开发。一个著名的IDE是Mono项目提供的MonoDevelop。然而，让我们创建一个使用的不仅仅是这个的 VS Code C# 软件开发环境。基于Ubuntu 20.04。]]></description>
+      <content:encoded><![CDATA[<p>C#软件一般可以在Windows上的Visual Studio中开发。不过，它也可以在Ubuntu环境中开发。一个著名的IDE是Mono项目提供的MonoDevelop。然而，让我们创建一个使用的不仅仅是这个的 VS Code C# 软件开发环境。基于Ubuntu 20.04。</p>
+<h2 id="安装net家族">安装.NET家族</h2>
+<p>首先，我们将添加一个包含 .net 的存储库。我们将安装下面的三个，其他三个只是通过安装 .NET SDK 来安装的。请查看其他两个以进行确认。</p>
+<ul>
+  <li>.NET SDK</li>
+  <li>.NET核心</li>
+  <li>ASP.NET 核心</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb <span class="nt">-O</span> packages-microsoft-prod.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
+
+<span class="nb">sudo </span>apt update
+
+<span class="c"># .NET SDK</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0
+
+<span class="c"># .NET Core</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-runtime-6.0
+
+<span class="c"># ASP.NET Core</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> aspnetcore-runtime-6.0
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>让我们检查一下您是否已安装所有这些。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>dotnet <span class="nt">--info</span>
+.NET SDK <span class="o">(</span>reflecting any global.json<span class="o">)</span>:
+ Version:   6.0.413
+ Commit:    10710f7d8e
+
+Runtime Environment:
+ OS Name:     ubuntu
+ OS Version:  20.04
+ OS Platform: Linux
+ RID:         ubuntu.20.04-x64
+ Base Path:   /usr/share/dotnet/sdk/6.0.413/
+
+global.json file:
+  Not found
+
+Host:
+  Version:      6.0.21
+  Architecture: x64
+  Commit:       e40b3abf1b
+
+.NET SDKs installed:
+  6.0.413 <span class="o">[</span>/usr/share/dotnet/sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 6.0.21 <span class="o">[</span>/usr/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 6.0.21 <span class="o">[</span>/usr/share/dotnet/shared/Microsoft.NETCore.App]
+
+Download .NET:
+  https://aka.ms/dotnet-download
+
+Learn about .NET Runtimes and SDKs:
+  https://aka.ms/dotnet/runtimes-sdk-info
+  
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="vs-code-上的-c-开发环境">VS Code 上的 C# 开发环境</h2>
+<p>搜索<code class="language-plaintext highlighter-rouge">c#</code>作为关键字，然后安装<code class="language-plaintext highlighter-rouge">C# Dev Kit</code>(包括其他)。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>扩大</th>
+      <th>评论</th>
+      <th>参考</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C# Dev Kit</td>
+      <td>C#基础开发环境</td>
+      <td>https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit</td>
+    </tr>
+    <tr>
+      <td>Visual Nuget</td>
+      <td>管理掘金包</td>
+      <td>https://marketplace.visualstudio.com/items?itemName=FullStackSpider.visual-nuget</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>通过安装<code class="language-plaintext highlighter-rouge">C# Dev Kit</code>扩展，您可以创建C#开发所需的基本开发环境。</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" alt="Visual Studio Code - 扩展 - `C# 开发工具包`" width="972" height="381" />
+<em>Visual Studio Code - 扩展 - <code class="language-plaintext highlighter-rouge">C# 开发工具包</code></em></p>
+
+<p><code class="language-plaintext highlighter-rouge">Visual NuGet</code>扩展将 Windows Visual Studio IDE 的 Nuget 包 GUI 体验引入 VS Code。</p>
+
+<p>右键单击项目文件 (.csproj) 时，您可以找到<code class="language-plaintext highlighter-rouge">Visual Nuget：管理包</code>。</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-visual_nuget.png" alt="Visual Studio Code - 扩展 - `Visual Nuget`" width="972" height="413" />
+<em>Visual Studio Code - 扩展 - <code class="language-plaintext highlighter-rouge">Visual Nuget</code></em></p>
+
+<h2 id="hello-world-示例项目"><strong>Hello World</strong> 示例项目</h2>
+<p>打开<code class="language-plaintext highlighter-rouge">视图 &gt; 终端</code>。并创建我的项目文件夹并创建控制台项目。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> &lt;my workspace&gt;/my_csharp
+<span class="nb">cd</span> &lt;my workspace&gt;/my_csharp
+dotnet new console
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>根据下面的模板编写<code class="language-plaintext highlighter-rouge">Program.cs</code>的内容。</p>
+
+<p><a href="https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/top-level-templates" target="_blank">https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/top-level-templates</a></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>  
+
+<span class="k">namespace</span> <span class="nn">MyApp</span> <span class="c1">// Note: actual namespace depends on the project name.</span>
+<span class="p">{</span>
+    <span class="k">internal</span> <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>    
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>    
+        <span class="p">{</span>        
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>        
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="生成用于构建和调试的资产">生成用于构建和调试的资产</h2>
+<p>您可以从<code class="language-plaintext highlighter-rouge">命令面板...</code>创建资产。</p>
+
+<p>换句话说，这将创建一个构建环境，例如解决方案 (.sln) 文件等基本资产。</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-command_palette.._ctrl_+_shift_+_p.net_generate_assets_for_build_and_debug.png" alt="Visual Studio Code - 命令面板...(Ctrl + Shift + P) - .NET：生成用于构建和调试的资源" width="972" height="445" />
+<em>Visual Studio Code - 命令面板…(Ctrl + Shift + P) - .NET：生成用于构建和调试的资源</em></p>
+
+<h2 id="vs-code-中的快捷键">VS Code 中的快捷键</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>快捷方式</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + Shift + B</td>
+      <td>Build</td>
+    </tr>
+    <tr>
+      <td>F5</td>
+      <td>Start Debugging</td>
+    </tr>
+    <tr>
+      <td>Ctrl + .</td>
+      <td>Quick Actions and Refactorings</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ctrl + Shift + -</td>
+      <td><em>前进</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ctrl + Alt + -</td>
+      <td>Go Back</td>
+    </tr>
+  </tbody>
+</table>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/zh-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-visual_nuget.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-command_palette.._ctrl_+_shift_+_p.net_generate_assets_for_build_and_debug.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[外国人如何在韩国购买 Lotto 6/45 彩票]]></title>
@@ -487,7 +794,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
       <category><![CDATA[韩国,食品]]></category>
-      <tag><![CDATA[韩国,鱼面包,食品,街头食品]]></tag>
+      <tag><![CDATA[鱼面包,街头食品,韩国,食品]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/zh/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[Bungeobbang是一种相对便宜且温暖的食物，因此是韩国冬季主要销售的街头食品之一。 Bungeobbang是鲤鱼和面包的复合词。]]></description>
       <content:encoded><![CDATA[<p>Bungeobbang是一种相对便宜且温暖的食物，因此是韩国冬季主要销售的街头食品之一。 Bungeobbang是鲤鱼和面包的复合词。</p>
@@ -1590,6 +1897,10 @@ service xrdp restart
 <p>转到 Ubuntu VM 的设置。然后，在<code class="language-plaintext highlighter-rouge">共享文件夹</code>选项卡中添加要共享的文件夹。</p>
 
 <p>在共享文件夹设置窗口中，在<code class="language-plaintext highlighter-rouge">文件夹路径</code>中设置要与 Ubuntu 虚拟机共享的文件夹。其余文件夹及设置项目如下。</p>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 添加共享文件夹" width="972" height="760" />
+<em>Oracle VM VirtualBox - 添加共享文件夹</em></p>
+
 <ul>
   <li><strong>文件夹路径</strong>：与 Ubuntu VM 共享的<code class="language-plaintext highlighter-rouge">Windows</code>文件夹路径</li>
   <li><strong>文件夹名称</strong>：这是共享文件夹的昵称。如果可能，请使其与<code class="language-plaintext highlighter-rouge">挂载点</code>的文件夹名称相同。</li>
@@ -1597,9 +1908,6 @@ service xrdp restart
   <li>☑ <strong>自动挂载</strong> : 开机时自动挂载共享文件夹</li>
   <li>☑ <strong>Make Permanent</strong>：如果您在 Ubuntu VM 运行时输入当前设置，则会出现此项目。如果您想要永久设置，请选中它。</li>
 </ul>
-
-<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 添加共享文件夹" width="972" height="760" />
-<em>Oracle VM VirtualBox - 添加共享文件夹</em></p>
 
 <p>就我而言，我将 <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code> 设置为 Ubuntu VM 中的共享文件夹。作为参考，我的 Ubuntu 帐户名称是<code class="language-plaintext highlighter-rouge">pooh</code>。</p>
 <h2 id="ubuntu-vm-上的文件夹权限">Ubuntu VM 上的文件夹权限</h2>
@@ -1975,7 +2283,7 @@ pc.txt: ASCII text
       <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
-      <title><![CDATA[如何优化 Ubuntu 20.04 性能]]></title>
+      <title><![CDATA[Ubuntu 20.04性能优化]]></title>
       <link>https://unclesnote.com/zh/231102005314/how_to_optimize_ubuntu_20.04_performance</link>
       <guid>https://unclesnote.com/zh/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
       <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
@@ -2175,7 +2483,7 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <media:content url="https://unclesnote.com/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
-      <title><![CDATA[如何为软件开发人员安装必要的 Ubuntu 软件]]></title>
+      <title><![CDATA[软件开发人员必备的 Ubuntu 软件]]></title>
       <link>https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</link>
       <guid>https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
       <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
@@ -2183,8 +2491,46 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <category><![CDATA[乌班图,工具]]></category>
       <tag><![CDATA[VisualStudio代码,VS代码,GitHub桌面版,超越比较4,SQLite数据库浏览器,MySQL工作台,乌班图,工具]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/zh/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
-      <description><![CDATA[如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。]]></description>
+      <description><![CDATA[如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。其实这篇文章更多是我在配置新的Ubuntu环境时的一个参考。]]></description>
       <content:encoded><![CDATA[<p>如果您是软件开发人员，并且您的开发环境是 Ubuntu，我们将解释如何安装您需要安装的必备 Ubuntu 软件。</p>
+
+<p>其实这篇文章更多是我在配置新的Ubuntu环境时的一个参考。</p>
+
+<h2 id="基本套餐">基本套餐</h2>
+<p>下面是为了方便和源码编译而提供的基本包，有需要的可以安装。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> vim
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> net-tools
+
+<span class="c"># -------------------------</span>
+<span class="c"># all in a line</span>
+<span class="nb">sudo </span>apt update<span class="p">;</span><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> vim net-tools
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="码头工人">码头工人</h2>
+<p>如果您以前从未使用过 Docker，那么没什么可说的，但如果您使用过，那么您很有可能是 Docker 的粉丝。下面介绍如何安装 Docker。我参考了<a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">Docker官方文档</a>。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> curl 
+curl <span class="nt">-fsSL</span> https://get.docker.com <span class="nt">-o</span> get-docker.sh
+<span class="nb">sudo </span>sh get-docker.sh
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>如果您在安装后尝试使用 Docker 命令，则会在<code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code>中出现权限被拒绝错误。您可以使用以下命令授予普通帐户使用 Docker 命令的权限。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo chmod </span>666 /var/run/docker.sock<span class="p">;</span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /var/run/docker.sock
+</pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="视觉工作室代码">视觉工作室代码</h2>
 
 <p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="视觉工作室代码" width="972" height="565" />
@@ -2210,12 +2556,16 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
 7
 8
 9
+10
+11
 </pre></td><td class="rouge-code"><pre><span class="c"># Install basic packages for installation</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget <span class="nt">-y</span>
+
 <span class="c"># Install the Microsoft GPG key and add the repository to apt</span>
 wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
 <span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</span>
+
 <span class="c"># Install VS Code</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>code
@@ -2223,7 +2573,15 @@ wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.as
 <p>您可以使用以下命令安装扩展以通过 SSH 远程访问 VS Code。</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c">## install openssh-server</span>
+<span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> openssh-server
+
+<span class="c">## install vscode remote extension which based on above openssh-server </span>
+code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="github-桌面版">GitHub 桌面版</h2>
 
@@ -2305,6 +2663,17 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h3 id="mysql工作台">MySQL工作台</h3>
 <p>稍后我需要在 Ubuntu 上安装 MySQL Workbench 时会对此进行描述。</p>
+<h2 id="依赖于开发语言">依赖于开发语言</h2>
+<h3 id="c夏普">C夏普</h3>
+<p>我是一名在 C++ 和 Java 方面拥有丰富经验的开发人员。 C Sharp语言是一种有趣好玩的软件开发语言，因为它与Java有相似的语法和生理学，有很多公共库，并且支持跨平台。 Ubuntu 也受支持。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb <span class="nt">-O</span> packages-microsoft-prod.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0 dotnet-runtime-6.0 aspnetcore-runtime-6.0
+</pre></td></tr></tbody></table></code></pre></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/zh-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
@@ -2359,7 +2728,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
-      <title><![CDATA[Ubuntu 的必备替代软件，而不是 Windows 工具]]></title>
+      <title><![CDATA[替代 Windows 工具的必备 Ubuntu 软件]]></title>
       <link>https://unclesnote.com/zh/231028002032/essential_software_to_use_on_ubuntu_os</link>
       <guid>https://unclesnote.com/zh/231028002032/essential_software_to_use_on_ubuntu_os</guid>
       <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>

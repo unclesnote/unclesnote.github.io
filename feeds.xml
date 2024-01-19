@@ -1,0 +1,329 @@
+<feed version="0.3"
+		xmlns="http://purl.org/atom/ns#"
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/"
+		xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+    xmlns:media="http://search.yahoo.com/mrss/"
+		xmlns:activity="http://activitystrea.ms/spec/1.0/" >
+
+  
+
+  <title><![CDATA[Uncle's Note]]></title>
+  <link rel="alternate" type="text/html" href="https://unclesnote.com/en/" />
+  <author><name><![CDATA[Uncle's Note]]></name></author>
+  <id>https://unclesnote.com/en/rss.xml</id>
+  <info><![CDATA[]]></info>
+  <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+  <entry>
+    <title><![CDATA[Issues you may meet when installing Ubuntu 22.04]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04"/>
+    <id>https://unclesnote.com/en/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Fri, 19 Jan 2024 02:52:14 +0900</issued>
+		<created>Fri, 19 Jan 2024 02:52:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[I have been using Ubuntu 20.04 for a long time. I found out that Ubuntu 22.04 has also become an [LTS](https://en.wikipedia.org/wiki/Long-term_support)]]></summary>
+    <category><![CDATA[Ubuntu,Common]]></category>
+    <tag><![CDATA[Ubuntu,Common]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/en-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[C# development environment in Visual Studio Code on Ubuntu]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu"/>
+    <id>https://unclesnote.com/en/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</id>    
+    <modified>Fri, 19 Jan 2024 02:52:12 +0900</modified>
+    <issued>Fri, 19 Jan 2024 02:52:12 +0900</issued>
+		<created>Fri, 19 Jan 2024 02:52:12 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[C# software can be developed in Visual Studio on Windows in general. However, it can also be developed in Ubuntu environments. A well-known IDE is MonoDevelop]]></summary>
+    <category><![CDATA[C Sharp,Ubuntu]]></category>
+    <tag><![CDATA[CSharp,Ubuntu]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/en-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[How foreigners buy Lotto 6/45 tickets in Korea]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea"/>
+    <id>https://unclesnote.com/en/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Wed, 10 Jan 2024 01:05:03 +0900</issued>
+		<created>Wed, 10 Jan 2024 01:05:03 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Are you a person who does not live in Korea and are thinking about buying a lottery ticket while traveling or on a business trip to Korea? I would like to]]></summary>
+    <category><![CDATA[Korea,Life]]></category>
+    <tag><![CDATA[Korea,Life]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240110010503/en-thumb-unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Create shortcut icons for multiple Obsidian vaults - URI]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri"/>
+    <id>https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</id>    
+    <modified>Mon, 08 Jan 2024 11:11:21 +0900</modified>
+    <issued>Mon, 08 Jan 2024 11:11:21 +0900</issued>
+		<created>Mon, 08 Jan 2024 11:11:21 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[In some cases, there may be users who organize their posts by creating multiple vaults according to categories. It can be annoying to open the Vault in]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/en-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Convert Obsidian md to docx, pptx - Pandoc]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
+    <id>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
+    <modified>Mon, 08 Jan 2024 11:11:19 +0900</modified>
+    <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
+		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you have a well-organized article using Obsidian, you may occasionally need to share it with a colleague or friend. Obsidian itself provides the ability to]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/en-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Embed YouTube video into Obsidian - iframe, ReadItLater]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater"/>
+    <id>https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</id>    
+    <modified>Sat, 30 Dec 2023 17:12:41 +0900</modified>
+    <issued>Sat, 30 Dec 2023 17:12:41 +0900</issued>
+		<created>Sat, 30 Dec 2023 17:12:41 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[When writing articles in Obsidian, you may sometimes need to embed or scrap YouTube videos. There are two main ways to embed YouTube videos.]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/en-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Korean winter street food - Bungeobbang]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang"/>
+    <id>https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Sat, 30 Dec 2023 15:14:33 +0900</issued>
+		<created>Sat, 30 Dec 2023 15:14:33 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Bungeobbang is a relatively cheap and warm food, so it is one of the street foods that is mainly sold in Korea in the winter. And Bungeobbang is a compound]]></summary>
+    <category><![CDATA[Korea,Foods]]></category>
+    <tag><![CDATA[FishBread,StreetFoods,Korea,Foods]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231230151433/en-thumb-unclesnote-korean_winter_street_food_bungeobbang.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Create a Telegram bot and send a message]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231227193010/create_a_telegram_bot_and_send_a_message"/>
+    <id>https://unclesnote.com/en/231227193010/create_a_telegram_bot_and_send_a_message</id>    
+    <modified>Wed, 27 Dec 2023 19:30:10 +0900</modified>
+    <issued>Wed, 27 Dec 2023 19:30:10 +0900</issued>
+		<created>Wed, 27 Dec 2023 19:30:10 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Telegram provides an API service that is relatively easy to use. Therefore, it can be used as an easy tool to notify events in CI/CD systems where security is]]></summary>
+    <category><![CDATA[Ubuntu,Jenkins,Pipeline]]></category>
+    <tag><![CDATA[Ubuntu,Jenkins,Pipeline,sendMessage,getUpdates,Telegram]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/en-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Sending Telegram message from Jenkins pipeline script]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231227143211/sending_telegram_message_from_jenkins_pipeline_script"/>
+    <id>https://unclesnote.com/en/231227143211/sending_telegram_message_from_jenkins_pipeline_script</id>    
+    <modified>Wed, 27 Dec 2023 14:32:11 +0900</modified>
+    <issued>Wed, 27 Dec 2023 14:32:11 +0900</issued>
+		<created>Wed, 27 Dec 2023 14:32:11 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Of course, there are Telegram plugins for Jenkins, but I personally didn't want to go through trial and error. It has been at least two years since the plugins]]></summary>
+    <category><![CDATA[Ubuntu,Jenkins,Pipeline]]></category>
+    <tag><![CDATA[jenkins,telegram,curl,Ubuntu,Jenkins,Pipeline]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/en-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Setting up Jenkins on Synology NAS Docker]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231223003139/setting_up_jenkins_on_synology_nas_docker"/>
+    <id>https://unclesnote.com/en/231223003139/setting_up_jenkins_on_synology_nas_docker</id>    
+    <modified>Sat, 23 Dec 2023 00:31:39 +0900</modified>
+    <issued>Sat, 23 Dec 2023 00:31:39 +0900</issued>
+		<created>Sat, 23 Dec 2023 00:31:39 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[There are many CI/CD(Continuous Integration/Continuous Deployment) tools, and Jenkins is one of the useful tools that does not have license restrictions and]]></summary>
+    <category><![CDATA[Ubuntu,Jenkins,Settings]]></category>
+    <tag><![CDATA[Ubuntu,Docker,Jenkins,Settings]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/en-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Setting up XRDP in Ubuntu Docker on Synology NAS]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas"/>
+    <id>https://unclesnote.com/en/231223003138/setting_up_xrdp_in_ubuntu_docker_on_synology_nas</id>    
+    <modified>Sat, 23 Dec 2023 00:31:38 +0900</modified>
+    <issued>Sat, 23 Dec 2023 00:31:38 +0900</issued>
+		<created>Sat, 23 Dec 2023 00:31:38 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you purchased an entry-level Synology NAS that supports the VMM (Virtual Machine Manager) function, you may have been happy to install Windows or Ubuntu on]]></summary>
+    <category><![CDATA[Ubuntu,Docker]]></category>
+    <tag><![CDATA[Ubuntu,Docker]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/en-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Lenovo Ideapad Slim3 15ABA7 R5 Windows installation, memory upgrade]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade"/>
+    <id>https://unclesnote.com/en/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</id>    
+    <modified>Thu, 14 Dec 2023 18:18:12 +0900</modified>
+    <issued>Thu, 14 Dec 2023 18:18:12 +0900</issued>
+		<created>Thu, 14 Dec 2023 18:18:12 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Lenovo Slim3 15ABA7 R5 has Free DOS installed as the default OS, so Windows must be installed separately. Let`s look at the basics for installing Windows and]]></summary>
+    <category><![CDATA[IT,PC]]></category>
+    <tag><![CDATA[IT,PC,Lenovo,Laptop]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/en-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Display inactivity issues in multiple display configurations in Windows 10]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10"/>
+    <id>https://unclesnote.com/en/231214163036/display_inactivity_issues_in_multiple_display_configurations_in_windows_10</id>    
+    <modified>Thu, 14 Dec 2023 16:30:36 +0900</modified>
+    <issued>Thu, 14 Dec 2023 16:30:36 +0900</issued>
+		<created>Thu, 14 Dec 2023 16:30:36 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[I am a user who uses one laptop between work and home. I use two or more displays connected to my laptop both at work and at home, but sometimes only some]]></summary>
+    <category><![CDATA[Computer,TroubleShooting]]></category>
+    <tag><![CDATA[Computer,TroubleShooting]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/en-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Obsidian's Callouts And Quotation Block]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block"/>
+    <id>https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block</id>    
+    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
+		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[The dictionary definition of callout(s) is to call out loudly, and is used to draw the reader's attention and inform them of important or additional]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian,Callouts,Quotes]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/en-thumb-unclesnote-obsidian_callouts_and_quote_block.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Setting up Ubuntu shared folder in VirtualBox- Windows File Sharing]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange"/>
+    <id>https://unclesnote.com/en/231106120100/seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange</id>    
+    <modified>Fri, 19 Jan 2024 02:52:16 +0900</modified>
+    <issued>Mon, 06 Nov 2023 12:01:00 +0900</issued>
+		<created>Mon, 06 Nov 2023 12:01:00 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[In my case, there is frequent file sharing between Ubuntu VM and Windows in Oracle VM VirtualBox. Of course, you can use the Guest Additions feature to share]]></summary>
+    <category><![CDATA[Ubuntu,Virtual Box]]></category>
+    <tag><![CDATA[VirtualBox,vboxsf,Ubuntu,FolderSharing]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/en-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Samsung Galaxy S24 Specs and Release Date- Rumor Roundup]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup"/>
+    <id>https://unclesnote.com/en/231106015914/samsung_galaxy_s24_specs_and_release_date_rumor_roundup</id>    
+    <modified>Mon, 06 Nov 2023 01:59:14 +0900</modified>
+    <issued>Mon, 06 Nov 2023 01:59:14 +0900</issued>
+		<created>Mon, 06 Nov 2023 01:59:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[As the release date of the Samsung Galaxy S24 approaches, rumors are emerging about rendered images and expected specifications. In summary, the Galaxy S 24]]></summary>
+    <category><![CDATA[IT,Mobile]]></category>
+    <tag><![CDATA[GalaxyS24,Rumor,Geekbench,SamsungExynos,QualcommSnapdragon,Titanium,IT,Mobile]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/en-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Configuring Korean-English Conversion Key with ibus-hangul in Ubuntu 20.04]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04"/>
+    <id>https://unclesnote.com/en/231104211615/configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04</id>    
+    <modified>Sat, 04 Nov 2023 21:16:15 +0900</modified>
+    <issued>Sat, 04 Nov 2023 21:16:15 +0900</issued>
+		<created>Sat, 04 Nov 2023 21:16:15 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you use Ubuntu for software development purposes, you will mostly type in English. However, in some cases, it may be necessary to input Korean into the]]></summary>
+    <category><![CDATA[Ubuntu,Common]]></category>
+    <tag><![CDATA[ibushangul,Ubuntu,Common,Keyboards]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/en-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Line Break Differences - Windows and Linux EOL Check and Git Repo Sync]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync"/>
+    <id>https://unclesnote.com/en/231102144717/line_break_differences_windows_and_linux_eol_check_and_git_repo_sync</id>    
+    <modified>Thu, 02 Nov 2023 14:47:17 +0900</modified>
+    <issued>Thu, 02 Nov 2023 14:47:17 +0900</issued>
+		<created>Thu, 02 Nov 2023 14:47:17 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you need to modify and commit files in one Git repo on both Linux and Windows, there may be cases where the Git client recognizes the file as a modified]]></summary>
+    <category><![CDATA[Git]]></category>
+    <tag><![CDATA[Git,CRLF,LF,EOLConversion,LineBreaks,NotepadPlusPlus,unix2dos,dos2unix]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/en-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 20.04 performance optimization]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231102005314/how_to_optimize_ubuntu_20.04_performance"/>
+    <id>https://unclesnote.com/en/231102005314/how_to_optimize_ubuntu_20.04_performance</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Thu, 02 Nov 2023 00:53:14 +0900</issued>
+		<created>Thu, 02 Nov 2023 00:53:14 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Unless you are using a PC with Ubuntu OS installed as your main computer, you are likely to be using a PC with low hardware specifications or installing Ubuntu]]></summary>
+    <category><![CDATA[Ubuntu,Common]]></category>
+    <tag><![CDATA[UbuntuAnimations,DockIconSize,swapfile,swap,Ubuntu,Common,BleachBit]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/en-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[How to increase swapfile size in Ubuntu]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231102005313/how_to_increase_swapfile_size_in_ubuntu"/>
+    <id>https://unclesnote.com/en/231102005313/how_to_increase_swapfile_size_in_ubuntu</id>    
+    <modified>Thu, 02 Nov 2023 00:53:13 +0900</modified>
+    <issued>Thu, 02 Nov 2023 00:53:13 +0900</issued>
+		<created>Thu, 02 Nov 2023 00:53:13 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Sometimes, if you leave your Ubuntu machine running for a long time without enough physical memory, or if you compile and build a large platform or BSP,]]></summary>
+    <category><![CDATA[Ubuntu,Common]]></category>
+    <tag><![CDATA[fatab,Swap,swapfile,Ubuntu,Common]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/en-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Essential Ubuntu software for SW developers]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231101003113/how_to_install_essential_ubuntu_software_for_software_developers"/>
+    <id>https://unclesnote.com/en/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Wed, 01 Nov 2023 00:31:13 +0900</issued>
+		<created>Wed, 01 Nov 2023 00:31:13 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you are a software developer, and your development environment is Ubuntu, we will explain how to install the essential Ubuntu software you need to install.]]></summary>
+    <category><![CDATA[Ubuntu,Tools]]></category>
+    <tag><![CDATA[VisualStudioCode,VSCode,GitHubDesktop,BeyondCompare4,SQLiteDBBrowser,MySQLWorkbench,Ubuntu,Tools]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/en-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[How to change the default browser in Office 365 Outlook to Chrome]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome"/>
+    <id>https://unclesnote.com/en/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</id>    
+    <modified>Tue, 31 Oct 2023 00:34:17 +0900</modified>
+    <issued>Tue, 31 Oct 2023 00:34:17 +0900</issued>
+		<created>Tue, 31 Oct 2023 00:34:17 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Have you ever clicked on a web link in Office 365 Outlook and suddenly been shown in the Edge browser, which was inconvenient? In a recent update, Microsoft]]></summary>
+    <category><![CDATA[Computer,TroubleShooting]]></category>
+    <tag><![CDATA[Outlook,DefaultBrowser,Chrome,PC,Computer,TroubleShooting]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/en-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Essential Ubuntu software instead of Windows tools]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231028002032/essential_software_to_use_on_ubuntu_os"/>
+    <id>https://unclesnote.com/en/231028002032/essential_software_to_use_on_ubuntu_os</id>    
+    <modified>Fri, 19 Jan 2024 02:52:15 +0900</modified>
+    <issued>Sat, 28 Oct 2023 00:20:32 +0900</issued>
+		<created>Sat, 28 Oct 2023 00:20:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you are using Ubuntu because of the specific advantages of the Ubuntu OS, you will try to find similar software available in the Ubuntu environment that you]]></summary>
+    <category><![CDATA[Ubuntu,Tools]]></category>
+    <tag><![CDATA[Krusader,GwenView,Photopea,Krita,Easystroke,ImageViwer,ImageEditor,FileBrowser,MouseMacro,Ubuntu,Tools,BleachBit,FreeSpace]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/en-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[VirtualBox port forwarding method for Jekyll Windows testing]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing"/>
+    <id>https://unclesnote.com/en/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</id>    
+    <modified>Tue, 24 Oct 2023 18:52:05 +0900</modified>
+    <issued>Tue, 24 Oct 2023 18:52:05 +0900</issued>
+		<created>Tue, 24 Oct 2023 18:52:05 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as]]></summary>
+    <category><![CDATA[GitHub Pages,Jekyll]]></category>
+    <tag><![CDATA[Jekyll,VirtualBox,PortForwarding,GitHubPages,GitHub]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/en-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[Adding a New Hard Disk to Ubuntu (20.04) VM in VirtualBox]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox"/>
+    <id>https://unclesnote.com/en/231023215845/how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox</id>    
+    <modified>Mon, 23 Oct 2023 21:58:45 +0900</modified>
+    <issued>Mon, 23 Oct 2023 21:58:45 +0900</issued>
+		<created>Mon, 23 Oct 2023 21:58:45 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[We will explain how to create, attach, and use disks in the Ubuntu(20.04) VM of Oracle VM VirtualBox. A rough outline of the procedure is as follows.]]></summary>
+    <category><![CDATA[Ubuntu,Virtual Box]]></category>
+    <tag><![CDATA[Ubuntu,VirtualBox,GParted,fstab,UUID]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/en-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png"/>
+  </entry>
+  <entry>
+    <title><![CDATA[How to specify color when outputting logs to terminal or console]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console"/>
+    <id>https://unclesnote.com/en/231023215842/how_to_specify_color_when_outputting_logs_to_terminal_or_console</id>    
+    <modified>Mon, 23 Oct 2023 21:58:42 +0900</modified>
+    <issued>Mon, 23 Oct 2023 21:58:42 +0900</issued>
+		<created>Mon, 23 Oct 2023 21:58:42 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[When developing software, logs help you check operation and find the cause of problems. It would be helpful if the logs for critical error or warning levels]]></summary>
+    <category><![CDATA[Ubuntu,Common]]></category>
+    <tag><![CDATA[VSCode,Terminal,DebugConsole,Output,Ubuntu,Common]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/en-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png"/>
+  </entry></feed>

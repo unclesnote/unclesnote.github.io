@@ -21,8 +21,315 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 10 Jan 2024 01:05:03 +0900</lastBuildDate>
-    <pubDate>Wed, 10 Jan 2024 01:05:03 +0900</pubDate>
+    <lastBuildDate>Fri, 19 Jan 2024 02:52:14 +0900</lastBuildDate>
+    <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Ubuntu 22.04 のインストール時に発生する可能性のある問題]]></title>
+      <link>https://unclesnote.com/ja/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</link>
+      <guid>https://unclesnote.com/ja/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+      <category><![CDATA[Ubuntu,一般]]></category>
+      <tag><![CDATA[Ubuntu,一般]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04</guid>
+      <description><![CDATA[私は長い間Ubuntu 20.04を使用しています。 Ubuntu 22.04 も [LTS](https://en.wikipedia.org/wiki/Long-term_support) バージョンになっていることがわかり、新しいラップトップに Windows をインストールする際に Ubuntu 22.04]]></description>
+      <content:encoded><![CDATA[<p>私は長い間Ubuntu 20.04を使用しています。 Ubuntu 22.04 も <a href="https://en.wikipedia.org/wiki/Long-term_support" target="_blank">LTS</a> バージョンになっていることがわかり、新しいラップトップに Windows をインストールする際に Ubuntu 22.04 を試してみようと考えています。</p>
+
+<p>そこで、Ubuntu 20.04 ユーザーとして遭遇したことのない新たな問題をまとめたいと思います。</p>
+<h2 id="端末が開かない">端末が開かない</h2>
+<p>初めて Ubuntu をインストールする場合、ターミナルが開かないという問題が発生する可能性があります。これは、VirtualBox ユーザーで、Windows の言語が英語でない場合、またはタイムゾーンの国が英語圏ではない場合に発生することがあります。理由はわかりませんが、問題の解決方法はわかっています。</p>
+
+<p><img src="/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" alt="設定 &gt; 地域と言語" width="972" height="592" />
+<em>設定 &gt; 地域と言語</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">設定 &gt; 地域と言語</code>で、<code class="language-plaintext highlighter-rouge">言語</code>を<code class="language-plaintext highlighter-rouge">英語 (米国)</code>から<code class="language-plaintext highlighter-rouge">英語 (英国)</code>に変更します。その後、再ログインまたは再起動する必要があります。そうすれば問題は解決するかもしれない。</p>
+
+<p>これは、Ubuntu の言語設定を再刻印するためです。問題が解決した場合は、言語を英語 (米国) に戻すことができます。</p>
+<h2 id="youraccount-は-sudoers-ファイルにありません"><em>youraccount は sudoers ファイルにありません</em></h2>
+<p>これは、Ubuntu 22.04 バージョンをインストールするときに遭遇した最初の問題です。 Virtual Box を介して既存の Ubuntu 20.04 を Ubuntu VM としてインストールする場合、アカウントにはデフォルトで sudo 権限が与えられます。ただし、Ubuntu 22.04 では、アカウントに sudoer 権限を追加で付与する必要があります。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span><span class="nb">sudo </span>apt update
+youraccount is not <span class="k">in </span>the sudoers file.  This incident will be reported.
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>まず、root としてログインします。また、アカウントを<code class="language-plaintext highlighter-rouge">/etc/sudoers</code>に追加する必要があります。これにはデフォルトで読み取り専用のアクセス許可が与えられます。したがって、ファイルへの書き込み権限を与え、アカウントに関する情報を追加します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>su root
+<span class="nv">$ </span>apt <span class="nb">install </span>vim
+
+<span class="nv">$ </span><span class="nb">chmod</span> +w /etc/sudoers
+<span class="nv">$ </span>vim /etc/sudoers
+<span class="c"># add it below and save it</span>
+youraccount   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/ja-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png" />
+      <media:content url="https://unclesnote.com/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" medium="image" /></item>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Ubuntu 上の Visual Studio Code での C# 開発環境]]></title>
+      <link>https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</link>
+      <guid>https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Fri, 19 Jan 2024 02:52:12 +0900</pubDate>
+      <category><![CDATA[Cシャープ,Ubuntu]]></category>
+      <tag><![CDATA[Cシャープ,Ubuntu]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
+      <description><![CDATA[C# ソフトウェアは、一般に Windows 上の Visual Studio で開発できます。ただし、Ubuntu 環境でも開発できます。有名な IDE は、Mono プロジェクトによって提供される MonoDevelop です。ただし、これ以上のものを使用する VS Code C# ソフトウェア開発環境を作成して]]></description>
+      <content:encoded><![CDATA[<p>C# ソフトウェアは、一般に Windows 上の Visual Studio で開発できます。ただし、Ubuntu 環境でも開発できます。有名な IDE は、Mono プロジェクトによって提供される MonoDevelop です。ただし、これ以上のものを使用する VS Code C# ソフトウェア開発環境を作成してみましょう。 Ubuntu 20.04 に基づいています。</p>
+<h2 id="net-ファミリをインストールする">.NET ファミリをインストールする</h2>
+<p>まず、.net を含むリポジトリを追加します。そして以下の 3 つをインストールしますが、他の 3 つは .NET SDK をインストールするだけで一緒にインストールされました。確認のために残りの 2 つをご覧ください。</p>
+<ul>
+  <li>.NET SDK</li>
+  <li>.NETコア</li>
+  <li>ASP.NETコア</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/
+wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb <span class="nt">-O</span> packages-microsoft-prod.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
+
+<span class="nb">sudo </span>apt update
+
+<span class="c"># .NET SDK</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0
+
+<span class="c"># .NET Core</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-runtime-6.0
+
+<span class="c"># ASP.NET Core</span>
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> aspnetcore-runtime-6.0
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>すべてインストールされているか確認してみましょう。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>dotnet <span class="nt">--info</span>
+.NET SDK <span class="o">(</span>reflecting any global.json<span class="o">)</span>:
+ Version:   6.0.413
+ Commit:    10710f7d8e
+
+Runtime Environment:
+ OS Name:     ubuntu
+ OS Version:  20.04
+ OS Platform: Linux
+ RID:         ubuntu.20.04-x64
+ Base Path:   /usr/share/dotnet/sdk/6.0.413/
+
+global.json file:
+  Not found
+
+Host:
+  Version:      6.0.21
+  Architecture: x64
+  Commit:       e40b3abf1b
+
+.NET SDKs installed:
+  6.0.413 <span class="o">[</span>/usr/share/dotnet/sdk]
+
+.NET runtimes installed:
+  Microsoft.AspNetCore.App 6.0.21 <span class="o">[</span>/usr/share/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 6.0.21 <span class="o">[</span>/usr/share/dotnet/shared/Microsoft.NETCore.App]
+
+Download .NET:
+  https://aka.ms/dotnet-download
+
+Learn about .NET Runtimes and SDKs:
+  https://aka.ms/dotnet/runtimes-sdk-info
+  
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="vs-code-上の-c-開発環境">VS Code 上の C# 開発環境</h2>
+<p>キーワードとして<code class="language-plaintext highlighter-rouge">c#</code>を検索し、他も含めて<code class="language-plaintext highlighter-rouge">C# Dev Kit</code>をインストールします。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>拡大</th>
+      <th>コメント</th>
+      <th>参照</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C# Dev Kit</td>
+      <td>C#の基本的な開発環境</td>
+      <td>https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit</td>
+    </tr>
+    <tr>
+      <td>Visual Nuget</td>
+      <td>ナゲットパッケージの管理</td>
+      <td>https://marketplace.visualstudio.com/items?itemName=FullStackSpider.visual-nuget</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">C# Dev Kit</code>拡張機能をインストールすることで、C#開発に必要な基本的な開発環境を構築できます。</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" alt="Visual Studio Code - 拡張機能 - `C# 開発キット`" width="972" height="381" />
+<em>Visual Studio Code - 拡張機能 - <code class="language-plaintext highlighter-rouge">C# 開発キット</code></em></p>
+
+<p><code class="language-plaintext highlighter-rouge">Visual NuGet</code> 拡張機能は、Windows Visual Studio IDE の Nuget パッケージ GUI エクスペリエンスを VS Code にもたらします。</p>
+
+<p>プロジェクト ファイル (.csproj) を右クリックすると、<code class="language-plaintext highlighter-rouge">Visual Nuget: パッケージの管理</code>が表示されます。</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-visual_nuget.png" alt="Visual Studio コード - 拡張機能 - `Visual Nuget`" width="972" height="413" />
+<em>Visual Studio コード - 拡張機能 - <code class="language-plaintext highlighter-rouge">Visual Nuget</code></em></p>
+
+<h2 id="hello-world-サンプル-プロジェクト"><strong>Hello World</strong> サンプル プロジェクト</h2>
+<p><code class="language-plaintext highlighter-rouge">表示 &gt; ターミナル</code>を開きます。そして、プロジェクトフォルダーを作成し、コンソールプロジェクトを作成します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="nb">mkdir</span> &lt;my workspace&gt;/my_csharp
+<span class="nb">cd</span> &lt;my workspace&gt;/my_csharp
+dotnet new console
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下のテンプレートを元に<code class="language-plaintext highlighter-rouge">Program.cs</code>の内容を記述します。</p>
+
+<p><a href="https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/top-level-templates" target="_blank">https://learn.microsoft.com/ko-kr/dotnet/core/tutorials/top-level-templates</a></p>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="rouge-code"><pre><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>  
+
+<span class="k">namespace</span> <span class="nn">MyApp</span> <span class="c1">// Note: actual namespace depends on the project name.</span>
+<span class="p">{</span>
+    <span class="k">internal</span> <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>    
+        <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>    
+        <span class="p">{</span>        
+            <span class="n">Console</span><span class="p">.</span><span class="nf">WriteLine</span><span class="p">(</span><span class="s">"Hello World!"</span><span class="p">);</span>        
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="ビルドとデバッグ用のアセットを生成する">ビルドとデバッグ用のアセットを生成する</h2>
+<p><code class="language-plaintext highlighter-rouge">コマンド パレット...</code>からアセットを作成できます。</p>
+
+<p>つまり、ソリューション (.sln) ファイルなどの基本的なアセットなどのビルド環境が作成されます。</p>
+
+<p><img src="/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-command_palette.._ctrl_+_shift_+_p.net_generate_assets_for_build_and_debug.png" alt="Visual Studio Code - コマンド パレット...(Ctrl + Shift + P) - .NET: ビルドおよびデバッグ用のアセットの生成" width="972" height="445" />
+<em>Visual Studio Code - コマンド パレット…(Ctrl + Shift + P) - .NET: ビルドおよびデバッグ用のアセットの生成</em></p>
+
+<h2 id="vs-code-のショートカット-キー">VS Code のショートカット キー</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ショートカット</th>
+      <th>コンテンツ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + Shift + B</td>
+      <td>Build</td>
+    </tr>
+    <tr>
+      <td>F5</td>
+      <td>Start Debugging</td>
+    </tr>
+    <tr>
+      <td>Ctrl + .</td>
+      <td>Quick Actions and Refactorings</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ctrl + Shift + -</td>
+      <td><em>前進</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Ctrl + Alt + -</td>
+      <td>Go Back</td>
+    </tr>
+  </tbody>
+</table>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/ja-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-visual_nuget.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-command_palette.._ctrl_+_shift_+_p.net_generate_assets_for_build_and_debug.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[外国人が韓国でロト6/45チケットを購入する方法]]></title>
@@ -489,7 +796,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
       <pubDate>Sat, 30 Dec 2023 15:14:33 +0900</pubDate>
       <category><![CDATA[韓国,Foods]]></category>
-      <tag><![CDATA[韓国,FishBread,Foods,StreetFoods]]></tag>
+      <tag><![CDATA[FishBread,StreetFoods,韓国,Foods]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ja/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[焼きパンは比較的価格の安くて暖かい食べ物なので、韓国で冬に主に販売される路上料理の一つです。そして、パンはパンとパンの単語の合成語です。]]></description>
       <content:encoded><![CDATA[<p>焼きパンは比較的価格の安くて暖かい食べ物なので、韓国で冬に主に販売される路上料理の一つです。そして、パンはパンとパンの単語の合成語です。</p>
@@ -1592,6 +1899,10 @@ service xrdp restart
 <p>Ubuntu VM の設定に移動します。次に、<code class="language-plaintext highlighter-rouge">共有フォルダー</code>タブに共有するフォルダーを追加します。</p>
 
 <p>共有フォルダー設定ウィンドウで、<code class="language-plaintext highlighter-rouge">フォルダー パス</code>に Ubuntu VM と共有するフォルダーを設定します。残りのフォルダと設定項目は以下の通りです。</p>
+
+<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 共有フォルダーの追加" width="972" height="760" />
+<em>Oracle VM VirtualBox - 共有フォルダーの追加</em></p>
+
 <ul>
   <li><strong>フォルダー パス</strong> : Ubuntu VM と共有する<code class="language-plaintext highlighter-rouge">Windows</code>フォルダー パス</li>
   <li><strong>フォルダー名</strong> : 共有フォルダーのニックネームです。できれば<code class="language-plaintext highlighter-rouge">マウントポイント</code>のフォルダ名と同じにしてください。</li>
@@ -1599,9 +1910,6 @@ service xrdp restart
   <li>☑ <strong>自動マウント</strong> : 起動時に共有フォルダーを自動的にマウントします。</li>
   <li>☑ <strong>永続化</strong> : この項目は、Ubuntu VM の実行中に現在の設定を入力すると表示されます。永続的な設定が必要な場合は、チェックを入れます。</li>
 </ul>
-
-<p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-oracle_vm_virtualbox-add_shared_folder.png" alt="Oracle VM VirtualBox - 共有フォルダーの追加" width="972" height="760" />
-<em>Oracle VM VirtualBox - 共有フォルダーの追加</em></p>
 
 <p>私の場合、Ubuntu VM の共有フォルダーとして <code class="language-plaintext highlighter-rouge">/home/pooh/_shared</code> を設定しました。参考までに、私の Ubuntu アカウント名は<code class="language-plaintext highlighter-rouge">pooh</code>です。</p>
 <h2 id="ubuntu-vm-上のフォルダーのアクセス許可">Ubuntu VM 上のフォルダーのアクセス許可</h2>
@@ -1977,7 +2285,7 @@ pc.txt: ASCII text
       <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
-      <title><![CDATA[Ubuntu 20.04のパフォーマンスを最適化する方法]]></title>
+      <title><![CDATA[Ubuntu 20.04 のパフォーマンスの最適化]]></title>
       <link>https://unclesnote.com/ja/231102005314/how_to_optimize_ubuntu_20.04_performance</link>
       <guid>https://unclesnote.com/ja/231102005314/how_to_optimize_ubuntu_20.04_performance</guid>
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
@@ -2177,7 +2485,7 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <media:content url="https://unclesnote.com/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
-      <title><![CDATA[ソフトウェア開発者向けに必須の Ubuntu ソフトウェアをインストールする方法]]></title>
+      <title><![CDATA[ソフトウェア開発者にとって必須の Ubuntu ソフトウェア]]></title>
       <link>https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</link>
       <guid>https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
@@ -2185,8 +2493,46 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <category><![CDATA[Ubuntu,ツール]]></category>
       <tag><![CDATA[ビジュアルスタジオコード,VSコード,GitHubデスクトップ,BeyondCompare4,SQLiteDBブラウザ,MySQLワークベンチ,Ubuntu,ツール]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ja/231101003113/how_to_install_essential_ubuntu_software_for_software_developers</guid>
-      <description><![CDATA[あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。]]></description>
+      <description><![CDATA[あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。実際、この記事は、新しい Ubuntu 環境を構成する際の参考になります。]]></description>
       <content:encoded><![CDATA[<p>あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。</p>
+
+<p>実際、この記事は、新しい Ubuntu 環境を構成する際の参考になります。</p>
+
+<h2 id="基本パッケージ">基本パッケージ</h2>
+<p>以下は便宜上、またソース コードのコンパイルに使用するための基本パッケージです。必要に応じてインストールできます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> vim
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> net-tools
+
+<span class="c"># -------------------------</span>
+<span class="c"># all in a line</span>
+<span class="nb">sudo </span>apt update<span class="p">;</span><span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> vim net-tools
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="ドッカー">ドッカー</h2>
+<p>これまでに Docker を使用したことがない場合は、特に言うことはありませんが、使用したことがある場合は、Docker のファンである可能性が高くなります。以下にDockerのインストール方法を記載します。 <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank">Docker公式ドキュメント</a>を参照しました。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> curl 
+curl <span class="nt">-fsSL</span> https://get.docker.com <span class="nt">-o</span> get-docker.sh
+<span class="nb">sudo </span>sh get-docker.sh
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>インストール後に Docker コマンドを使用しようとすると、<code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code> で権限拒否エラーが発生します。以下のコマンドを使用して、一般アカウントに Docker コマンドを使用する権限を付与できます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo chmod </span>666 /var/run/docker.sock<span class="p">;</span><span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="k">${</span><span class="nv">USER</span><span class="k">}</span>:users /var/run/docker.sock
+</pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="visual-studioコード">Visual Studioコード</h2>
 
 <p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" alt="Visual Studioコード" width="972" height="565" />
@@ -2212,12 +2558,16 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
 7
 8
 9
+10
+11
 </pre></td><td class="rouge-code"><pre><span class="c"># Install basic packages for installation</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>software-properties-common apt-transport-https wget <span class="nt">-y</span>
+
 <span class="c"># Install the Microsoft GPG key and add the repository to apt</span>
 wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.asc <span class="nt">-O-</span> | <span class="nb">sudo </span>apt-key add -
 <span class="nb">sudo </span>add-apt-repository <span class="s2">"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"</span>
+
 <span class="c"># Install VS Code</span>
 <span class="nb">sudo </span>apt update
 <span class="nb">sudo </span>apt <span class="nb">install </span>code
@@ -2225,7 +2575,15 @@ wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.as
 <p>以下のコマンドを使用して、SSH 経由で VS Code にリモート アクセスするための拡張機能をインストールできます。</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c">## install openssh-server</span>
+<span class="nb">sudo </span>apt update<span class="p">;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> openssh-server
+
+<span class="c">## install vscode remote extension which based on above openssh-server </span>
+code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="github-デスクトップ">GitHub デスクトップ</h2>
 
@@ -2307,6 +2665,17 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h3 id="mysql-ワークベンチ">MySQL ワークベンチ</h3>
 <p>これについては、後で MySQL Workbench を Ubuntu にインストールする必要があるときに説明します。</p>
+<h2 id="開発言語に依存">開発言語に依存</h2>
+<h3 id="cシャープ">Cシャープ</h3>
+<p>私は C++ と Java で長い経験を持つ開発者です。 C Sharp 言語は、Java と同様の構文と生理機能を持ち、多くのパブリック ライブラリがあり、クロスプラットフォームをサポートしているため、興味深く楽しいソフトウェア開発言語です。 Ubuntuもサポートされています。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb <span class="nt">-O</span> packages-microsoft-prod.deb
+<span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
+<span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0 dotnet-runtime-6.0 aspnetcore-runtime-6.0
+</pre></td></tr></tbody></table></code></pre></div></div>
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/ja-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
@@ -2361,7 +2730,7 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
-      <title><![CDATA[Windows ツールの代わりに Ubuntu に不可欠な代替ソフトウェア]]></title>
+      <title><![CDATA[Windows ツールの代わりに必須の Ubuntu ソフトウェア]]></title>
       <link>https://unclesnote.com/ja/231028002032/essential_software_to_use_on_ubuntu_os</link>
       <guid>https://unclesnote.com/ja/231028002032/essential_software_to_use_on_ubuntu_os</guid>
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
