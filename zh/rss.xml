@@ -21,8 +21,245 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Mon, 22 Jan 2024 04:10:31 +0900</lastBuildDate>
-    <pubDate>Mon, 22 Jan 2024 04:10:31 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 05:05:20 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[从 iPhone 14 到 iPhone 15 的外观]]></title>
+      <link>https://unclesnote.com/zh/240122050520/appearance_of_iphone_15_from_iphone_14</link>
+      <guid>https://unclesnote.com/zh/240122050520/appearance_of_iphone_15_from_iphone_14</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+      <category><![CDATA[它,移动的]]></category>
+      <tag><![CDATA[它,移动的]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240122050520/appearance_of_iphone_15_from_iphone_14</guid>
+      <description><![CDATA[常规 iPhone 系列和 Pro 系列在价格和规格方面存在许多差异。其中，我想谈谈常规型号和专业型号的外观。下面的表格仅列出了所有 iPhone 15 系列之间的差异。]]></description>
+      <content:encoded><![CDATA[<p>常规 iPhone 系列和 Pro 系列在价格和规格方面存在许多差异。其中，我想谈谈常规型号和专业型号的外观。</p>
+
+<p>下面的表格仅列出了所有 iPhone 15 系列之间的差异。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>物品</th>
+      <th>iPhone 15</th>
+      <th>iPhone 15 Plus</th>
+      <th>iPhone 15 专业版</th>
+      <th>iPhone 15 Pro 最大</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>起始价</td>
+      <td>799 美元</td>
+      <td>899 美元</td>
+      <td>999 美元</td>
+      <td>1199 美元</td>
+    </tr>
+    <tr>
+      <td>展示 -<br />尺寸</td>
+      <td>6.1寸</td>
+      <td>6.7寸</td>
+      <td>6.1寸</td>
+      <td>6.7寸</td>
+    </tr>
+    <tr>
+      <td>展示 -<br />解决</td>
+      <td>2556×1179<br /> 460像素/英寸</td>
+      <td>2796×1290<br /> 460像素/英寸</td>
+      <td>2556×1179<br /> 460像素/英寸</td>
+      <td>2796×1290<br /> 460像素/英寸</td>
+    </tr>
+    <tr>
+      <td>展示 -<br />刷新率</td>
+      <td>高达 120Hz</td>
+      <td>高达 120Hz</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>展示 -<br /> ETC</td>
+      <td>常亮显示</td>
+      <td>常亮显示</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>外貌 -<br />材料</td>
+      <td>铝<br />响铃/静音开关</td>
+      <td>铝<br />响铃/静音开关</td>
+      <td>钛<br />动作按钮</td>
+      <td>钛<br />动作按钮</td>
+    </tr>
+    <tr>
+      <td>外貌 -<br />颜色</td>
+      <td>粉色的<br />黄色的<br />绿色的<br />蓝色的<br />黑色的</td>
+      <td>粉色的<br />黄色的<br />绿色的<br />蓝色的<br />黑色的</td>
+      <td>自然的<br />蓝色的<br />白色的<br />黑色的</td>
+      <td>自然的<br />蓝色的<br />白色的<br />黑色的</td>
+    </tr>
+    <tr>
+      <td>相机 -<br />光学变焦选项</td>
+      <td>.5倍<br />1x<br /> 2x</td>
+      <td>.5倍<br />1x<br /> 2x</td>
+      <td>.5倍<br />1x<br /> 2x<br /> 3x</td>
+      <td>.5倍<br />1x<br /> 2x<br /> 5x</td>
+    </tr>
+    <tr>
+      <td>中央处理器</td>
+      <td>A16仿生<br />6核CPU<br /> 5核GPU</td>
+      <td>A16仿生<br />6核CPU<br /> 5核GPU</td>
+      <td>A17专业版<br />6核CPU<br /> 6核GPU</td>
+      <td>A17专业版<br />6核CPU<br /> 6核GPU</td>
+    </tr>
+    <tr>
+      <td>视频播放时间</td>
+      <td>长达 20 小时</td>
+      <td>长达 26 小时</td>
+      <td>长达 23 小时</td>
+      <td>长达 29 小时</td>
+    </tr>
+    <tr>
+      <td>USB</td>
+      <td>USB-C<br /> USB 2.0</td>
+      <td>USB-C<br /> USB 2.0</td>
+      <td>USB-C<br /> USB 3</td>
+      <td>USB-C<br /> USB 3</td>
+    </tr>
+    <tr>
+      <td>容量</td>
+      <td>128GB<br /> 256GB<br /> 512GB</td>
+      <td>128GB<br /> 256GB<br /> 512GB</td>
+      <td>128GB<br /> 256GB<br /> 512GB<br /> 1TB</td>
+      <td>256GB<br /> 512GB<br /> 1TB</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="钛金属---仅适用于-pro-型号">钛金属 - 仅适用于 Pro 型号</h2>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" alt="iPhone 15 - Plus 位于左侧，Pro Max 位于右侧" width="972" height="546" />
+<em>iPhone 15 - Plus 位于左侧，Pro Max 位于右侧</em></p>
+
+<p>外观材质方面，普通版iPhone 15为<code class="language-plaintext highlighter-rouge">铝</code>，Pro为<code class="language-plaintext highlighter-rouge">钛</code>。</p>
+
+<p>一般来说，钛比铝重但强度更高，因此广泛应用于机场材料和航空航天工业。不过，由于铝的导热率比钛更高，因此普通 iPhone 15 在热量控制方面可能会更好。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>系列</th>
+      <th>材料</th>
+      <th>颜色</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>iPhone 15</td>
+      <td>铝<br />响铃/静音开关</td>
+      <td>粉色的<br />黄色的<br />绿色的<br />蓝色的<br />黑色的</td>
+    </tr>
+    <tr>
+      <td>iPhone 15 Plus</td>
+      <td>铝<br />响铃/静音开关</td>
+      <td>粉色的<br />黄色的<br />绿色的<br />蓝色的<br />黑色的</td>
+    </tr>
+    <tr>
+      <td>iPhone 15 专业版</td>
+      <td>钛<br />动作按钮</td>
+      <td>自然的<br />蓝色的<br />白色的<br />黑色的</td>
+    </tr>
+    <tr>
+      <td>iPhone 15 Pro 最大</td>
+      <td>钛<br />动作按钮</td>
+      <td>自然的<br />蓝色的<br />白色的<br />黑色的</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="颜色---普通款更漂亮">颜色 - 普通款更漂亮</h2>
+<p><code class="language-plaintext highlighter-rouge">普通版 iPhone 15</code>提供五种颜色，比 Pro 系列更多。粉色、黄色、绿色、蓝色和黑色。各种颜色似乎是针对一般客户的。</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-regular.png" alt="iPhone 15 - 常规" width="972" height="544" />
+<em>iPhone 15 - 常规</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">iPhone 15 Pro</code>有自然色(钛金属的自然色)以及蓝色、白色和黑色可供选择。 iPhone 15 Pro 的颜色似乎是针对专业人士或高端客户，因为它比普通型号重。</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_14-pro.png" alt="iPhone 14 - 专业版" width="972" height="545" />
+<em>iPhone 14 - 专业版</em></p>
+
+<h2 id="操作按钮---更简单的可能会更好">操作按钮 - 更简单的可能会更好</h2>
+<p><code class="language-plaintext highlighter-rouge">iPhone 15 Pro</code>支持机身侧面的操作按钮，可以分配用户想要的功能。可分配的功能包括静音模式、手电筒、快捷方式、启动语音备忘录、辅助功能、启动相机和对焦模式。</p>
+
+<p><code class="language-plaintext highlighter-rouge">普通 iPhone 15</code>仅配备响铃/静音开关。当然，如果有一个可配置的按钮，使用的可能性有很多，但如果你追求 iPhone 早期乔布斯式的简洁，那么只有一个 Ring/Slient 开关可能是个不错的选择。</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-side_button-pro_on_the_left_regular_on_the_right.png" alt="iPhone 15 - 侧边按钮 - Pro 版在左侧，常规版在右侧" width="972" height="583" />
+<em>iPhone 15 - 侧边按钮 - Pro 版在左侧，常规版在右侧</em></p>
+
+<h2 id="显示---太差了无法区分等级">显示 - 太差了，无法区分等级</h2>
+<p><code class="language-plaintext highlighter-rouge">显示屏</code>尺寸与之前的 iPhone 14 相同。<code class="language-plaintext highlighter-rouge">iPhone 15 普通版和 Pro</code>为 6.1 英寸，<code class="language-plaintext highlighter-rouge">Plus 和 Pro Max</code>为 6.7 英寸。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>物品</th>
+      <th>尺寸</th>
+      <th>解决</th>
+      <th>ETC</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>iPhone 15</td>
+      <td>6.1寸</td>
+      <td>2556×1179<br /> 460像素/英寸</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>iPhone 15 Plus</td>
+      <td>6.7寸</td>
+      <td>2796×1290<br /> 460像素/英寸</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>iPhone 15 专业版</td>
+      <td>6.1寸</td>
+      <td>2556×1179<br /> 460像素/英寸</td>
+      <td>刷新率高达 120Hz<br />常亮显示</td>
+    </tr>
+    <tr>
+      <td>iPhone 15 Pro 最大</td>
+      <td>6.7寸</td>
+      <td>2796×1290<br /> 460像素/英寸</td>
+      <td>高达 120Hz<br />常亮显示</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>不过，与 iPhone 14 相比，<code class="language-plaintext highlighter-rouge">分辨率</code>略有提高。Regular 和 Pro 的尺寸和分辨率相同，Plus 和 Pro Max 的尺寸相同。</p>
+
+<p>苹果在型号之间划分等级的策略仍然存在。仅<code class="language-plaintext highlighter-rouge">Pro和Pro Max</code>支持<code class="language-plaintext highlighter-rouge">120Hz自适应刷新率</code>和<code class="language-plaintext highlighter-rouge">常亮显示</code>。 <code class="language-plaintext highlighter-rouge">常亮显示</code>是一种即使在屏幕关闭时也能在屏幕上显示日期、时间、剩余电池电量、通知等的功能。 <code class="language-plaintext highlighter-rouge">自适应刷新率120Hz</code>将每秒屏幕绘制次数从60次提升至120次，提供更流畅的屏幕播放。</p>
+
+<p>常规型号缺乏 120Hz 支持是可以理解的。不过，不支持Always-On显示功能似乎是一个过于严厉的分类，因为连三星Galaxy的入门机型都支持它。</p>
+<h2 id="动态岛---最后还支持常规模型">动态岛 - 最后还支持常规模型</h2>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-dynamic_island.png" alt="iPhone 15 - 动感岛" width="972" height="506" />
+<em>iPhone 15 - 动感岛</em></p>
+
+<p>就普通型号而言，现有的 iPhone 14 型号采用凹口形式，显示屏上有一个摄像头孔。然而，<code class="language-plaintext highlighter-rouge">iPhone 15 的常规型号</code>有一个<code class="language-plaintext highlighter-rouge">打孔</code>，显示屏之间有一个摄像头孔。</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-camera_hole_design-between_iphone_14_regular_and_iphone_15_regular.png" alt="摄像头孔设计 - iPhone 14 Regular 和 iPhone 15 Regular 之间" width="972" height="541" />
+<em>摄像头孔设计 - iPhone 14 Regular 和 iPhone 15 Regular 之间</em></p>
+
+<p>最后，普通型号用户可以感受到与 Pro 型号用户相同的<code class="language-plaintext highlighter-rouge">动态岛</code>感受。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122050520/zh-thumb-unclesnote-appearance_of_iphone_15_from_iphone_14.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-regular.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_14-pro.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-side_button-pro_on_the_left_regular_on_the_right.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-dynamic_island.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-camera_hole_design-between_iphone_14_regular_and_iphone_15_regular.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[应该从 S20+ 还是 S21+ 购买三星 Galaxy S24+？]]></title>
@@ -129,7 +366,7 @@
 
 <p><strong>圈圈搜索</strong></p>
 
-<p>如果您圈出使用 Galaxy S24 相机拍摄的屏幕或照片，您的 Galaxy 可能只能裁剪图像。之后，由现有的 Google Lands 提供图像搜索。还可以实时翻译文学图像，并找到相似的图像和链接。</p>
+<p>如果您圈出使用 Galaxy S24 相机拍摄的屏幕或照片，您的 Galaxy 可能只能裁剪图像。之后，由现有的 Google Lens 提供图像搜索。还可以实时翻译文学图像，并找到相似的图像和链接。</p>
 
 <iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/5u-GJssF6u8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
@@ -211,7 +448,7 @@
 <h2 id="结论---礼物">结论 - 礼物</h2>
 <p>与Galaxy S24+相比，S23+有70%的性能，S21+有50%的性能，S20+有40%的性能。对于 S21+ 和 S20+ 用户来说，这可能是一个合理的诱惑，让他们愿意掏出钱包来升级他们已经使用了两年多的设备。</p>
 
-<p>如上所述，三星的人工智能功能是存在替代品的服务，例如 Google Lands 应用程序或 Google Translate 应用程序。因此，如果你仅仅因为它的AI功能而购买新手机，它可能不是一个合理的选择。而且，S21+和S20+的性能并不缺乏享受基本的数字生活。</p>
+<p>如上所述，三星的人工智能功能是存在替代品的服务，例如 Google Lens 应用程序或 Google Translate 应用程序。因此，如果你仅仅因为它的AI功能而购买新手机，它可能不是一个合理的选择。而且，S21+和S20+的性能并不缺乏享受基本的数字生活。</p>
 
 <p>然而，如果您两年多来一直努力工作并抵制购买新设备的诱惑，那么给自己一份礼物可能是一个不错的选择。</p>
 ]]></content:encoded>

@@ -21,8 +21,245 @@
     <language>ko</language>
     <description><![CDATA[엉클 샘의 IT & 개발 낙서장]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Mon, 22 Jan 2024 04:10:31 +0900</lastBuildDate>
-    <pubDate>Mon, 22 Jan 2024 04:10:31 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 05:05:20 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[iPhone 14에서 iPhone 15의 모습]]></title>
+      <link>https://unclesnote.com/ko/240122050520/appearance_of_iphone_15_from_iphone_14</link>
+      <guid>https://unclesnote.com/ko/240122050520/appearance_of_iphone_15_from_iphone_14</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+      <category><![CDATA[IT,모바일]]></category>
+      <tag><![CDATA[IT,모바일]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/240122050520/appearance_of_iphone_15_from_iphone_14</guid>
+      <description><![CDATA[일반 아이폰 라인업과 프로 라인업은 가격과 사양 면에서 많은 차이가 있다. 그중에서도 정규모델의 등장과 프로 라인업에 대해 이야기해볼까 합니다. 아래 표에는 모든 iPhone 15 시리즈 간의 차이점만 나열되어 있습니다.]]></description>
+      <content:encoded><![CDATA[<p>일반 아이폰 라인업과 프로 라인업은 가격과 사양 면에서 많은 차이가 있다. 그중에서도 정규모델의 등장과 프로 라인업에 대해 이야기해볼까 합니다.</p>
+
+<p>아래 표에는 모든 iPhone 15 시리즈 간의 차이점만 나열되어 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>안건</th>
+      <th>아이폰 15</th>
+      <th>아이폰 15 플러스</th>
+      <th>아이폰 15 프로</th>
+      <th>아이폰 15 프로 맥스</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>시작 가격</td>
+      <td>$799</td>
+      <td>$899</td>
+      <td>$999</td>
+      <td>$1199</td>
+    </tr>
+    <tr>
+      <td>표시하다 -<br /> 크기</td>
+      <td>6.1인치</td>
+      <td>6.7인치</td>
+      <td>6.1인치</td>
+      <td>6.7인치</td>
+    </tr>
+    <tr>
+      <td>표시하다 -<br /> 해결</td>
+      <td>2556x1179<br /> 460ppi</td>
+      <td>2796x1290<br /> 460ppi</td>
+      <td>2556x1179<br /> 460ppi</td>
+      <td>2796x1290<br /> 460ppi</td>
+    </tr>
+    <tr>
+      <td>표시하다 -<br /> 재생률</td>
+      <td>최대 120Hz</td>
+      <td>최대 120Hz</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>표시하다 -<br /> 등</td>
+      <td>올웨이즈 온 디스플레이</td>
+      <td>올웨이즈 온 디스플레이</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>모습 -<br /> 재료</td>
+      <td>알류미늄<br /> 벨소리/무음 스위치</td>
+      <td>알류미늄<br /> 벨소리/무음 스위치</td>
+      <td>티타늄<br /> 액션 버튼</td>
+      <td>티타늄<br /> 액션 버튼</td>
+    </tr>
+    <tr>
+      <td>모습 -<br /> 색상</td>
+      <td>분홍색<br /> 노란색<br /> 녹색<br /> 파란색<br /> 검은색</td>
+      <td>분홍색<br /> 노란색<br /> 녹색<br /> 파란색<br /> 검은색</td>
+      <td>자연스러운<br /> 파란색<br /> 하얀색<br /> 검은색</td>
+      <td>자연스러운<br /> 파란색<br /> 하얀색<br /> 검은색</td>
+    </tr>
+    <tr>
+      <td>카메라 -<br /> 광학 줌 옵션</td>
+      <td>0.5배<br /> 1x<br /> 2배</td>
+      <td>0.5배<br /> 1x<br /> 2배</td>
+      <td>0.5배<br /> 1x<br /> 2배<br /> 3배</td>
+      <td>0.5배<br /> 1x<br /> 2배<br /> 5배</td>
+    </tr>
+    <tr>
+      <td>CPU</td>
+      <td>A16 바이오닉<br /> 6코어 CPU<br /> 5코어 GPU</td>
+      <td>A16 바이오닉<br /> 6코어 CPU<br /> 5코어 GPU</td>
+      <td>A17 프로<br /> 6코어 CPU<br /> 6코어 GPU</td>
+      <td>A17 프로<br /> 6코어 CPU<br /> 6코어 GPU</td>
+    </tr>
+    <tr>
+      <td>영상 재생 시간</td>
+      <td>최대 20시간</td>
+      <td>최대 26시간</td>
+      <td>최대 23시간</td>
+      <td>최대 29시간</td>
+    </tr>
+    <tr>
+      <td>USB</td>
+      <td>USB-C<br /> USB 2</td>
+      <td>USB-C<br /> USB 2</td>
+      <td>USB-C<br /> USB 3</td>
+      <td>USB-C<br /> USB 3</td>
+    </tr>
+    <tr>
+      <td>용량</td>
+      <td>128GB<br /> 256GB<br /> 512GB</td>
+      <td>128GB<br /> 256GB<br /> 512GB</td>
+      <td>128GB<br /> 256GB<br /> 512GB<br /> 1TB</td>
+      <td>256GB<br /> 512GB<br /> 1TB</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="티타늄---pro-모델-전용">티타늄 - Pro 모델 전용</h2>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" alt="iPhone 15 - 왼쪽이 Plus, 오른쪽이 Pro Max" width="972" height="546" />
+<em>iPhone 15 - 왼쪽이 Plus, 오른쪽이 Pro Max</em></p>
+
+<p>외장재만 보면 일반 아이폰15는 <code class="language-plaintext highlighter-rouge">알루미늄</code>, 프로는 <code class="language-plaintext highlighter-rouge">티타늄</code>이다.</p>
+
+<p>일반적으로 티타늄은 알루미늄보다 무겁지만 강도가 높아 공항자재, 항공우주산업 등에 널리 사용된다. 하지만 알루미늄은 티타늄보다 열전도율이 높기 때문에 발열 제어 측면에서는 일반 아이폰15가 더 나을 수도 있다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>시리즈</th>
+      <th>재료</th>
+      <th>색상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>아이폰 15</td>
+      <td>알류미늄<br /> 벨소리/무음 스위치</td>
+      <td>분홍색<br /> 노란색<br /> 녹색<br /> 파란색<br /> 검은색</td>
+    </tr>
+    <tr>
+      <td>아이폰 15 플러스</td>
+      <td>알류미늄<br /> 벨소리/무음 스위치</td>
+      <td>분홍색<br /> 노란색<br /> 녹색<br /> 파란색<br /> 검은색</td>
+    </tr>
+    <tr>
+      <td>아이폰 15 프로</td>
+      <td>티타늄<br /> 액션 버튼</td>
+      <td>자연스러운<br /> 파란색<br /> 하얀색<br /> 검은색</td>
+    </tr>
+    <tr>
+      <td>아이폰 15 프로 맥스</td>
+      <td>티타늄<br /> 액션 버튼</td>
+      <td>자연스러운<br /> 파란색<br /> 하얀색<br /> 검은색</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="색상---일반-모델이-더-예뻐요">색상 - 일반 모델이 더 예뻐요</h2>
+<p><code class="language-plaintext highlighter-rouge">일반 아이폰15</code>는 프로 라인업보다 더 많은 5가지 색상을 제공한다. 핑크, 옐로우, 그린, 블루, 블랙. 다양한 색상은 일반 고객을 겨냥한 것으로 보인다.</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-regular.png" alt="아이폰 15 - 일반" width="972" height="544" />
+<em>아이폰 15 - 일반</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">아이폰15 프로</code>는 티타늄의 자연스러운 색상인 내추럴(Natural) 외에 블루, 화이트, 블랙 색상도 출시된다. 아이폰15 프로의 색상은 일반 모델보다 무겁기 때문에 전문가나 고급 고객을 겨냥한 것으로 보인다.</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_14-pro.png" alt="아이폰 14 - 프로" width="972" height="545" />
+<em>아이폰 14 - 프로</em></p>
+
+<h2 id="작업-버튼---더-간단한-것이-더-나을-수도-있습니다">작업 버튼 - 더 간단한 것이 더 나을 수도 있습니다.</h2>
+<p><code class="language-plaintext highlighter-rouge">아이폰15 프로</code>는 본체 측면에 액션 버튼을 지원해 사용자가 원하는 기능에 할당할 수 있다. 할당 가능한 기능에는 무음 모드, 손전등, 바로가기, 음성 메모 시작, 접근성, 카메라 실행, 초점 모드가 포함됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">일반 iPhone 15</code>에는 벨소리/무음 스위치만 제공됩니다. 물론, 설정 가능한 버튼이 있다면 활용 가능성은 많지만, 아이폰 초창기 스티브 잡스의 단순함을 지향한다면 링/슬라이언트 스위치만 두는 것도 나쁘지 않은 선택이 될 수 있다.</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-side_button-pro_on_the_left_regular_on_the_right.png" alt="iPhone 15 - 측면 버튼 - 왼쪽이 Pro, 오른쪽이 일반" width="972" height="583" />
+<em>iPhone 15 - 측면 버튼 - 왼쪽이 Pro, 오른쪽이 일반</em></p>
+
+<h2 id="디스플레이---등급-구분이-너무-안-좋음">디스플레이 - 등급 구분이 너무 안 좋음</h2>
+<p><code class="language-plaintext highlighter-rouge">디스플레이</code> 크기는 전작 아이폰14와 동일하다. <code class="language-plaintext highlighter-rouge">아이폰15 레귤러와 프로</code>는 6.1인치, <code class="language-plaintext highlighter-rouge">플러스와 프로 맥스</code>는 6.7인치다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>안건</th>
+      <th>크기</th>
+      <th>해결</th>
+      <th>등</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>아이폰 15</td>
+      <td>6.1인치</td>
+      <td>2556x1179<br /> 460ppi</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>아이폰 15 플러스</td>
+      <td>6.7인치</td>
+      <td>2796x1290<br /> 460ppi</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td>아이폰 15 프로</td>
+      <td>6.1인치</td>
+      <td>2556x1179<br /> 460ppi</td>
+      <td>최대 120Hz의 재생률<br /> 올웨이즈 온 디스플레이</td>
+    </tr>
+    <tr>
+      <td>아이폰 15 프로 맥스</td>
+      <td>6.7인치</td>
+      <td>2796x1290<br /> 460ppi</td>
+      <td>최대 120Hz<br /> 올웨이즈 온 디스플레이</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>다만 <code class="language-plaintext highlighter-rouge">해상도</code>는 아이폰14에 비해 소폭 높아졌다. 레귤러와 프로는 크기와 해상도가 같고, 플러스와 프로맥스는 크기가 같다.</p>
+
+<p>모델별로 등급을 나누는 애플의 전략은 여전히 ​​남아 있다. <code class="language-plaintext highlighter-rouge">Pro와 Pro Max</code>만이 <code class="language-plaintext highlighter-rouge">120Hz 적응형 주사율</code>과 <code class="language-plaintext highlighter-rouge">Always-On 디스플레이</code>를 지원합니다. <code class="language-plaintext highlighter-rouge">Always-On Display</code>는 화면이 꺼진 상태에서도 날짜, 시간, 배터리 잔량, 알림 등을 화면에 표시하는 기능이다. <code class="language-plaintext highlighter-rouge">적응형 새로 고침 빈도 120Hz</code>는 초당 화면 그리기 수를 60에서 120으로 높여 보다 부드러운 화면 재생을 제공합니다.</p>
+
+<p>일반 모델에 120Hz 지원이 부족한 것은 충분히 이해할 수 있습니다. 하지만 올웨이즈온 디스플레이 기능을 지원하지 않는다는 것은 삼성 갤럭시의 보급형 모델에서도 지원하는 만큼, 너무 가혹한 분류가 아닌 것 같습니다.</p>
+<h2 id="dynamic-island---드디어-일반-모델도-지원됩니다">Dynamic Island - 드디어 일반 모델도 지원됩니다.</h2>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-dynamic_island.png" alt="iPhone 15 - 다이나믹 아일랜드" width="972" height="506" />
+<em>iPhone 15 - 다이나믹 아일랜드</em></p>
+
+<p>일반 모델의 경우 기존 아이폰14 모델은 디스플레이에 카메라 홀이 부착된 노치 형태였다. 하지만 <code class="language-plaintext highlighter-rouge">아이폰15 일반 모델</code>에는 디스플레이 사이에 카메라 구멍이 있는 <code class="language-plaintext highlighter-rouge">펀치홀</code>이 존재한다.</p>
+
+<p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-camera_hole_design-between_iphone_14_regular_and_iphone_15_regular.png" alt="카메라 홀 디자인 - 아이폰 14 레귤러와 아이폰 15 레귤러 사이" width="972" height="541" />
+<em>카메라 홀 디자인 - 아이폰 14 레귤러와 아이폰 15 레귤러 사이</em></p>
+
+<p>마지막으로 일반 모델 사용자도 프로 모델 사용자와 동일한 <code class="language-plaintext highlighter-rouge">다이내믹 아일랜드</code> 감성을 느낄 수 있다.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122050520/ko-thumb-unclesnote-appearance_of_iphone_15_from_iphone_14.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-regular.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_14-pro.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-side_button-pro_on_the_left_regular_on_the_right.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-dynamic_island.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-camera_hole_design-between_iphone_14_regular_and_iphone_15_regular.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[S20+ 또는 S21+에서 삼성 갤럭시 S24+를 구매해야 합니까?]]></title>
@@ -129,7 +366,7 @@
 
 <p><strong>검색하려면 동그라미</strong></p>
 
-<p>갤럭시 S24 카메라로 촬영 중인 화면이나 사진에 동그라미를 치는 경우 갤럭시에서는 이미지만 자르는 것이 가능할 수도 있습니다. 이후에는 이미 기존 구글랜드에서 이미지 검색을 제공하고 있습니다. 문학적 이미지의 실시간 번역도 가능하며, 유사한 이미지와 링크도 찾아볼 수 있습니다.</p>
+<p>갤럭시 S24 카메라로 촬영 중인 화면이나 사진에 동그라미를 치는 경우 갤럭시에서는 이미지만 자르는 것이 가능할 수도 있습니다. 이후에는 기존의 Google Lens에서 이미지 검색이 제공됩니다. 문학적 이미지의 실시간 번역도 가능하며, 유사한 이미지와 링크도 찾아볼 수 있습니다.</p>
 
 <iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/5u-GJssF6u8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
@@ -211,7 +448,7 @@
 <h2 id="결론---선물">결론 - 선물</h2>
 <p>갤럭시 S24+와 비교하면 S23+는 70%, S21+는 50%, S20+는 40%의 성능을 보인다. 이는 S21+ 및 S20+ 사용자가 2년 이상 사용해 온 기기를 업그레이드하기 위해 지갑을 열고 싶은 합리적인 유혹일 수 있습니다.</p>
 
-<p>앞서 언급한 것처럼 삼성의 AI 기능은 구글 랜드 앱이나 구글 번역 앱 등 대안이 존재하는 서비스다. 그러므로 단지 AI 기능 때문에 휴대폰을 새로 구입한다면 그것은 합리적인 선택이 아닐 수도 있습니다. 그리고 S21+와 S20+의 성능은 기본적인 디지털 라이프를 즐기기에 부족함이 없다.</p>
+<p>앞서 언급한 것처럼 삼성의 AI 기능은 구글 렌즈 앱이나 구글 번역 앱 등 대안이 존재하는 서비스다. 그러므로 단지 AI 기능 때문에 휴대폰을 새로 구입한다면 그것은 합리적인 선택이 아닐 수도 있습니다. 그리고 S21+와 S20+의 성능은 기본적인 디지털 라이프를 즐기기에 부족함이 없다.</p>
 
 <p>하지만 2년 넘게 열심히 일하고 새 기기를 사고 싶은 유혹을 참아왔다면 자신에게 선물을 주는 것도 좋은 선택이 될 수 있습니다.</p>
 ]]></content:encoded>
