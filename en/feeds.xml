@@ -14,12 +14,24 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <entry>
+    <title><![CDATA[Obsidian Image Block - captions, resizing, plugins]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins"/>
+    <id>https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins</id>    
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+    <issued>Mon, 22 Jan 2024 10:12:10 +0900</issued>
+		<created>Mon, 22 Jan 2024 10:12:10 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you're reading this, I don't think you're reading because you don't know how to paste and add image files to Obsidian. I think you're probably reading this]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/en-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Appearance of iPhone 15 from iPhone 14]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240122050520/appearance_of_iphone_15_from_iphone_14"/>
     <id>https://unclesnote.com/en/240122050520/appearance_of_iphone_15_from_iphone_14</id>    
-    <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 05:05:20 +0900</issued>
 		<created>Mon, 22 Jan 2024 05:05:20 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[There are many differences between the regular iPhone lineup and the Pro lineup in terms of price and specifications. Among them, I would like to talk about]]></summary>
@@ -31,7 +43,7 @@
     <title><![CDATA[Should buy the Samsung Galaxy S24+ from S20+ or S21+?]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+"/>
     <id>https://unclesnote.com/en/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 04:10:31 +0900</issued>
 		<created>Mon, 22 Jan 2024 04:10:31 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[On January 17, 2024, Samsung unpacked its new Galaxy S24 series under the name of `Galaxy AI` on its [YouTube channel](https://www.youtube.com/@Samsung). There]]></summary>
@@ -88,10 +100,10 @@
     <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/en-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png"/>
   </entry>
   <entry>
-    <title><![CDATA[Convert Obsidian md to docx, pptx - Pandoc]]></title>
+    <title><![CDATA[Convert Obsidian Markdowns to MS Word, Power Point - Pandoc]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
     <id>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
-    <modified>Mon, 08 Jan 2024 11:11:19 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[If you have a well-organized article using Obsidian, you may occasionally need to share it with a colleague or friend. Obsidian itself provides the ability to]]></summary>
@@ -199,7 +211,7 @@
     <title><![CDATA[Obsidian's Callouts And Quotation Block]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[The dictionary definition of callout(s) is to call out loudly, and is used to draw the reader's attention and inform them of important or additional]]></summary>

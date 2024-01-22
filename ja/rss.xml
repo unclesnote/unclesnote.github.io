@@ -21,8 +21,116 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Mon, 22 Jan 2024 05:05:20 +0900</lastBuildDate>
-    <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 10:12:10 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Obsidian 画像ブロック - キャプション、サイズ変更、プラグイン]]></title>
+      <link>https://unclesnote.com/ja/240122101210/obsidian_image_block_captions_resizing_plugins</link>
+      <guid>https://unclesnote.com/ja/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+      <category><![CDATA[Obsidian]]></category>
+      <tag><![CDATA[Obsidian]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <description><![CDATA[これを読んでいるということは、Obsidian に画像ファイルを貼り付けて追加する方法がわからないので読んでいないと思います。 Obsidian は一般的な Web ベースのブログとは異なり、ライターが管理する必要がある画像ファイルを作成/保存するため、画像ファイルを適切に管理する方法について疑問に思ってこれを読んで]]></description>
+      <content:encoded><![CDATA[<p>これを読んでいるということは、Obsidian に画像ファイルを貼り付けて追加する方法がわからないので読んでいないと思います。 Obsidian は一般的な Web ベースのブログとは異なり、ライターが管理する必要がある画像ファイルを作成/保存するため、画像ファイルを適切に管理する方法について疑問に思ってこれを読んでいると思います。</p>
+<h2 id="画像管理--私のアプローチは気に入りましたか">画像管理 – 私のアプローチは気に入りましたか?</h2>
+<p>実際、Obsidian で画像ファイルを管理するには、どのコミュニティ プラグインを組み合わせて使用​​するかに応じて、いくつかの方法があります。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" alt="画像管理 – 私のアプローチは気に入りましたか?" />
+<em>画像管理 – 私のアプローチは気に入りましたか?</em></p>
+
+<p>画像ファイルの管理方法は以下の通りです。</p>
+
+<ol>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">Win + Shift + S</code>ショートカット キーを使用して、目的の部分を選択してキャプチャします (クリップボードに保存します)。</p>
+  </li>
+  <li>
+    <p>次に、<code class="language-plaintext highlighter-rouge">Ctrl + V</code>ショートカット キーを使用して、Obsidian Note に貼り付けます。</p>
+  </li>
+  <li>
+    <p>次に、新しく作成したイメージ ファイルの名前を選択します。画像ファイルは、現在のメモ ファイルが保存されているパスに保存されます。</p>
+  </li>
+  <li>
+    <p>画像のキャプションと適切なサイズを書き込みます</p>
+  </li>
+  <li>
+    <p>次に、画像ファイルを現在のノートが保存されているパスの <code class="language-plaintext highlighter-rouge">_img</code> フォルダーに移動します。</p>
+  </li>
+</ol>
+
+<p>画像管理に対する私のアプローチが気に入った場合は、Obsidian を少しセットアップし、2 つのコミュニティ プラグインをインストールする必要があります。行こうか？</p>
+<h2 id="画像ブロックの基本">画像ブロックの基本</h2>
+<p>ファイル名を感嘆符で始まる 2 つの角括弧で囲むと、Obsidian で画像として表示されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Obsidianノートに画像を追加するには 2 つの方法があります。</p>
+<ul>
+  <li>Obsidianの左側にあるファイルツリーウィンドウから画像ファイルをマウスでノートにドラッグ＆ドロップするだけ</li>
+  <li>キャプチャ プログラムまたはグラフィック ツールを使用して画像をクリップボード (Ctrl + C) にコピーし、Obsidian Note に貼り付けます。 (Ctrl + V)</li>
+</ul>
+
+<p>実際には、画像ファイルの絶対パスを画像ブロックに追加するのが理にかなっているように見えますが、マウスのドラッグ アンド ドロップまたは貼り付けによって画像ブロックを追加すると、ファイル名のみが構文に追加されます。おそらく画像ファイルの絶対パスやシンボルはObsidianの内部データベースで管理されているのでしょう。</p>
+
+<p>追加のコミュニティ プラグインを使用せずに、Obsidian 構文を使用してファイル名の右側に<code class="language-plaintext highlighter-rouge">OR</code>文字と画像の幅を追加することで画像サイズを調整できます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png.png|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>ただし、画像にキャプションを追加したい場合は、追加のコミュニティ プラグインをインストールする必要があります。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" alt="Obsidian の基本構文を使用して画像サイズを変更する" />
+<em>Obsidian の基本構文を使用して画像サイズを変更する</em></p>
+
+<h2 id="obsidianの設定">Obsidianの設定</h2>
+<p>この設定は、画像をクリップボードにコピーして Obsidian Note に貼り付けるときに画像ファイルが作成される場所に関連します。この設定は、画像ファイルだけでなく、各種添付ファイルを貼り付ける場合にも適用されます。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - 設定 - ファイルとリンク - 新しい添付ファイルのデフォルトの場所 - `現在のファイルと同じフォルダー`を選択します" width="972" height="747" />
+<em>Obsidian - 設定 - ファイルとリンク - 新しい添付ファイルのデフォルトの場所 - <code class="language-plaintext highlighter-rouge">現在のファイルと同じフォルダー</code>を選択します</em></p>
+
+<p><code class="language-plaintext highlighter-rouge">現在のファイルと同じフォルダ</code>を設定すると、ノートが置かれている場所に画像ファイルが作成されます。ノート用の画像ファイルがすべて準備できたら、そのファイルを手動で<code class="language-plaintext highlighter-rouge">_img</code>フォルダに移動することをお勧めします。メモが完成するまでは、貼り付けた画像がすべて有効であるという保証がないからです。</p>
+<h2 id="コミュニティプラグイン">コミュニティプラグイン</h2>
+<p>画像ファイルを管理するために上で示した方法を使用するには、2 つのコミュニティ プラグインをインストールする必要があります。</p>
+<h3 id="画像の名前を変更して貼り付け">画像の名前を変更して貼り付け</h3>
+<p>以下の<code class="language-plaintext highlighter-rouge">画像の名前を変更して貼り付け</code>プラグインは、画像をノートに貼り付けるときにポップアップを開きます。ポップアップでは、メモのタイトルをプレフィックスとして入力し、画像ファイルの名前をサフィックスとして入力できます。これは、メモに複数の画像が添付されている場合に、ファイル名で並べ替えて、どの画像ファイルがどの投稿に依存しているかを区別するのに役立ちます。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - コミュニティ プラグイン - 画像の名前変更を貼り付け" width="972" height="542" />
+<em>Obsidian - コミュニティ プラグイン - 画像の名前変更を貼り付け</em></p>
+
+<p>以下は、この記事に添付された画像ファイルを自動で振り分けた場合です。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Obsidian ファイル名による画像ファイルの自動分類" width="972" height="348" />
+<em>Obsidian ファイル名による画像ファイルの自動分類</em></p>
+
+<h3 id="画像のキャプション">画像のキャプション</h3>
+<p>コミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">画像キャプション</code>を検索すると、ダウンロード数が多い 2 つのプラグインが表示されますが、それらの使用法は似ています。最初のプラグインでは、画像の URL を入力して外部画像を追加できます。ただし、私の使用例では、外部イメージを追加する必要はありません。最初のプラグインは、黒い画像フレームと画像キャプションを追加します。 2枚目はグレーです。個人の好き嫌いに応じて最初のプラグインを選択しても問題ありません。しかし、私は 2 番目のプラグインの方が好きです。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - コミュニティ プラグイン - 画像キャプション" width="972" height="765" />
+<em>Obsidian - コミュニティ プラグイン - 画像キャプション</em></p>
+
+<p>画像ブロックを<code class="language-plaintext highlighter-rouge">OR</code>文字で区切って、ファイル名、キャプション、画像の横幅の順に編集すると、以下のように可愛らしいプーさんのキャプションとリサイズされた画像ファイルが表示されます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png|Lovely Pooh|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>これはどう？あなたはそれが好きですか？</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" alt="キャプションとサイズ変更された画像を含むObsidian画像ブロック" />
+<em>キャプションとサイズ変更された画像を含むObsidian画像ブロック</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/ja-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[iPhone 14からiPhone 15の外観]]></title>
@@ -57,28 +165,28 @@
       <td>$1199</td>
     </tr>
     <tr>
-      <td>画面 -<br />サイズ</td>
+      <td>表示 -<br />サイズ</td>
       <td>6.1インチ</td>
       <td>6.7インチ</td>
       <td>6.1インチ</td>
       <td>6.7インチ</td>
     </tr>
     <tr>
-      <td>画面 -<br />解決</td>
+      <td>表示 -<br />解像度</td>
       <td>2556×1179<br /> 460ppi</td>
       <td>2796×1290<br /> 460ppi</td>
       <td>2556×1179<br /> 460ppi</td>
       <td>2796×1290<br /> 460ppi</td>
     </tr>
     <tr>
-      <td>画面 -<br />リフレッシュレート</td>
+      <td>表示 -<br />リフレッシュレート</td>
       <td>最大120Hz</td>
       <td>最大120Hz</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td>画面 -<br />等</td>
+      <td>表示 -<br />等</td>
       <td>常時表示ディスプレイ</td>
       <td>常時表示ディスプレイ</td>
       <td> </td>
@@ -157,22 +265,22 @@
     <tr>
       <td>iPhone15</td>
       <td>アルミニウム<br />リング/スライドスイッチ</td>
-      <td>ピンク<br />黄色<br />緑<br />青<br />黒</td>
+      <td>ピンク、イエロー、グリーン、ブルー、ブラック</td>
     </tr>
     <tr>
       <td>iPhone15プラス</td>
       <td>アルミニウム<br />リング/スライドスイッチ</td>
-      <td>ピンク<br />黄色<br />緑<br />青<br />黒</td>
+      <td>ピンク、イエロー、グリーン、ブルー、ブラック</td>
     </tr>
     <tr>
       <td>iPhone15プロ</td>
       <td>チタン<br />アクションボタン</td>
-      <td>自然<br />青<br />白<br />黒</td>
+      <td>ナチュラル、ブルー、ホワイト、ブラック</td>
     </tr>
     <tr>
       <td>iPhone 15 プロマックス</td>
       <td>チタン<br />アクションボタン</td>
-      <td>自然<br />青<br />白<br />黒</td>
+      <td>ナチュラル、ブルー、ホワイト、ブラック</td>
     </tr>
   </tbody>
 </table>
@@ -308,14 +416,14 @@
     <tr>
       <td>AP</td>
       <td>エクシノス2400</td>
-      <td>韓国: Exynos 2100<br />その他: スナップドラドン 888</td>
+      <td>韓国: Exynos 2100<br />その他：スナップドラゴン888</td>
       <td>一般: スナップドラゴン 865<br />その他: Exynos 2100</td>
     </tr>
     <tr>
-      <td>画面</td>
-      <td>6.7インチ<br />(プラット)</td>
-      <td>6.7インチ<br />(プラット)</td>
-      <td>6.7インチ<br />（角）</td>
+      <td>ディスプレイ</td>
+      <td>6.7インチ<br />(プラットディスプレイ)</td>
+      <td>6.7インチ<br />(プラットディスプレイ)</td>
+      <td>6.7インチ<br />(エッジディスプレイ)</td>
     </tr>
     <tr>
       <td>ラム</td>
@@ -338,14 +446,14 @@
     <tr>
       <td>シングルコア<br />(ギークベンチ)</td>
       <td>2188</td>
-      <td>1067<br /> （S24比：49％）</td>
-      <td>864(S24比:39%)</td>
+      <td>1067<br /> (S24+との比較: 49%)</td>
+      <td>864<br /> (S24+比:39%)</td>
     </tr>
     <tr>
       <td>マルチコア<br />(ギークベンチ)</td>
       <td>6939</td>
-      <td>3404<br /> （S24比：49％）</td>
-      <td>3018(S24比：43%)</td>
+      <td>3404<br /> (S24+との比較: 49%)</td>
+      <td>3018<br /> (S24+との比較: 43%)</td>
     </tr>
   </tbody>
 </table>
@@ -387,6 +495,8 @@
 <p>S20+ または S21+ ユーザーであれば、新品の Galaxy S24 が大幅なパフォーマンス向上と Galaxy AI のブランド化が十分に考慮されたデバイスであることは間違いなく、購入を検討する価値があります。</p>
 
 <p>iPhone 15 Pro Max のチタン外装、ペンで写真を丸で囲む機能、画像を検索する機能、高倍率カメラの品質が必要ですか?</p>
+
+<p>Plus モデル間のアップグレードを検討している場合、これらの機能は適していません。 Ultra モデルにさらに 300 ドル支払えば、手に入れることができます。</p>
 
 <table>
   <thead>
@@ -439,8 +549,6 @@
     </tr>
   </tbody>
 </table>
-
-<p>ただし、Plus モデルからのアップグレードを探している場合は、これは望ましくないものです。 Ultra モデルにさらに 300 ドル支払えば、手に入れることができます。そして、それはあなたの通常の使用体験において意味があるでしょうか?</p>
 
 <p>サムスンは、S24 Ultra モデルでのみ、より耐久性の高いチタン外装と高倍率カメラをサポートしています。とりわけ、QualcommのSnapdragon 8 Gen 3はUltraモデルでのみ利用可能です。 S24+ は、アルミニウム製の外装、通常の S24 モデルと同じカメラ、および自社開発の Exynos 2400 を備えています。</p>
 
@@ -1019,7 +1127,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
-      <title><![CDATA[Obsidian md を docx、pptx に変換する - Pandoc]]></title>
+      <title><![CDATA[Obsidian Markdown を MS Word、Power Point に変換する - Pandoc]]></title>
       <link>https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</link>
       <guid>https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>

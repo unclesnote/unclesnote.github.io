@@ -21,8 +21,115 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Mon, 22 Jan 2024 05:05:20 +0900</lastBuildDate>
-    <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 10:12:10 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[黑曜石图像块 - 字幕、调整大小、插件]]></title>
+      <link>https://unclesnote.com/zh/240122101210/obsidian_image_block_captions_resizing_plugins</link>
+      <guid>https://unclesnote.com/zh/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+      <category><![CDATA[黑曜石]]></category>
+      <tag><![CDATA[黑曜石]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <description><![CDATA[如果您正在阅读本文，我认为您不是在阅读，因为您不知道如何将图像文件粘贴和添加到 Obsidian。我想您可能正在阅读这篇文章，想知道如何很好地管理图像文件，因为黑曜石与典型的基于网络的博客不同，它创建/保存的图像文件必须由作者管理。]]></description>
+      <content:encoded><![CDATA[<p>如果您正在阅读本文，我认为您不是在阅读，因为您不知道如何将图像文件粘贴和添加到 Obsidian。我想您可能正在阅读这篇文章，想知道如何很好地管理图像文件，因为黑曜石与典型的基于网络的博客不同，它创建/保存的图像文件必须由作者管理。</p>
+<h2 id="形象管理你喜欢我的方法吗">形象管理——你喜欢我的方法吗？</h2>
+<p>事实上，在 Obsidian 中管理图像文件的方法有多种，具体取决于您组合使用的社区插件。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" alt="形象管理——你喜欢我的方法吗？" />
+<em>形象管理——你喜欢我的方法吗？</em></p>
+
+<p>如何管理我的图像文件如下。</p>
+
+<ol>
+  <li>使用<code class="language-plaintext highlighter-rouge">Win + Shift + S</code>快捷键选择并捕获所需部分(保存到剪贴板)</li>
+</ol>
+
+<p>2.然后，使用<code class="language-plaintext highlighter-rouge">Ctrl + V</code>快捷键将其粘贴到Obsidian Note中</p>
+
+<ol>
+  <li>
+    <p>然后为新创建的图像文件选择一个名称。图像文件保存在当前笔记文件保存路径下。</p>
+  </li>
+  <li>
+    <p>为图像写下标题和适当的尺寸</p>
+  </li>
+</ol>
+
+<p>5.然后将图片文件移动到当前笔记保存路径下的<code class="language-plaintext highlighter-rouge">_img</code>文件夹中</p>
+
+<p>如果您喜欢我管理图像的方法，则需要进行一些黑曜石设置并安装两个社区插件。我们走吧？</p>
+<h2 id="图像块的基础知识">图像块的基础知识</h2>
+<p>如果用两个以感叹号开头的方括号括住文件名，它将在 Obsidian 中显示为图像。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>有两种方法可以将图像添加到黑曜石笔记中。</p>
+<ul>
+  <li>只需用鼠标将图像文件从Obsidian左侧的文件树窗口拖放到笔记中</li>
+  <li>使用捕获程序或图形工具将图像复制到剪贴板 (Ctrl + C)，然后将其粘贴到 Obsidian Note 中。 （Ctrl + V）</li>
+</ul>
+
+<p>事实上，将图像文件的绝对路径添加到图像块似乎是有意义的，但是当您通过鼠标拖放或粘贴添加图像块时，语法中只添加了文件名。也许图像文件的绝对路径和符号是由Obsidian的内部数据库管理的。</p>
+
+<p>无需额外的社区插件，您可以通过使用 Obsidian 语法在文件名右侧添加<code class="language-plaintext highlighter-rouge">OR</code>字符和图像宽度来调整图像大小。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png.png|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>但是，如果您想为图像添加标题，则需要安装额外的社区插件</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" alt="使用 Obsidian 基本语法更改图像大小" />
+<em>使用 Obsidian 基本语法更改图像大小</em></p>
+
+<h2 id="黑曜石设置">黑曜石设置</h2>
+<p>此设置与将图像复制到剪贴板然后粘贴到 Obsidian Note 时创建图像文件的位置有关。该设置不仅适用于粘贴图像文件，还适用于粘贴各种类型的附件。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - 设置 - 文件和链接 - 新附件的默认位置 - 选择`与当前文件相同的文件夹`" width="972" height="747" />
+<em>Obsidian - 设置 - 文件和链接 - 新附件的默认位置 - 选择<code class="language-plaintext highlighter-rouge">与当前文件相同的文件夹</code></em></p>
+
+<p>通过设置<code class="language-plaintext highlighter-rouge">与当前文件相同的文件夹</code>，会在笔记所在位置创建一个图像文件，当笔记的所有图像文件都准备好后，建议手动将文件移动到<code class="language-plaintext highlighter-rouge">_img</code>文件夹中。这是因为无法保证在注释完成之前粘贴的所有图像都有效。</p>
+<h2 id="社区插件">社区插件</h2>
+<p>要使用我上面展示的方法来管理图像文件，您需要安装两个社区插件。</p>
+<h3 id="粘贴图像重命名">粘贴图像重命名</h3>
+<p>当您将图像粘贴到笔记中时，下面的<code class="language-plaintext highlighter-rouge">粘贴图像重命名</code>插件会打开一个弹出窗口。在弹出窗口中，您可以输入注释标题作为前缀，输入图像文件的名称作为后缀。当注释中附加多个图像时，这可以帮助您按文件名排序并区分哪个图像文件依赖于哪个帖子。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - 社区插件 - 粘贴图像重命名" width="972" height="542" />
+<em>Obsidian - 社区插件 - 粘贴图像重命名</em></p>
+
+<p>下面是本文所附图片文件自动排序的情况。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="按黑曜石文件名自动排序图像文件" width="972" height="348" />
+<em>按黑曜石文件名自动排序图像文件</em></p>
+
+<h3 id="图片说明">图片说明</h3>
+<p>如果你在社区插件菜单中搜索<code class="language-plaintext highlighter-rouge">图片标题</code>，你会看到两个下载次数较多的插件，而且它们的用法类似。第一个插件允许您通过输入图像 URL 添加外部图像。但是，在我的用例中，不需要添加外部图像。第一个插件添加了一个黑色图像框和一个图像标题。第二个是灰色的。根据个人喜好选择第一个插件是没有问题的。但我更喜欢第二个插件。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - 社区插件 - 图像标题" width="972" height="765" />
+<em>Obsidian - 社区插件 - 图像标题</em></p>
+
+<p>如果用<code class="language-plaintext highlighter-rouge">OR</code>字符分隔图像块，并按照文件名、标题和图像宽度的顺序编辑它们，您可以看到可爱的小熊维尼标题和调整大小的图像文件，如下所示。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png|Lovely Pooh|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>这个怎么样？你喜欢它？</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" alt="带有标题和调整大小的图像的黑曜石图像块" />
+<em>带有标题和调整大小的图像的黑曜石图像块</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/zh-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[从 iPhone 14 到 iPhone 15 的外观]]></title>
@@ -57,28 +164,28 @@
       <td>1199 美元</td>
     </tr>
     <tr>
-      <td>展示 -<br />尺寸</td>
+      <td>显示 -<br />尺寸</td>
       <td>6.1寸</td>
       <td>6.7寸</td>
       <td>6.1寸</td>
       <td>6.7寸</td>
     </tr>
     <tr>
-      <td>展示 -<br />解决</td>
+      <td>显示 -<br />资源</td>
       <td>2556×1179<br /> 460像素/英寸</td>
       <td>2796×1290<br /> 460像素/英寸</td>
       <td>2556×1179<br /> 460像素/英寸</td>
       <td>2796×1290<br /> 460像素/英寸</td>
     </tr>
     <tr>
-      <td>展示 -<br />刷新率</td>
+      <td>显示 -<br />刷新率</td>
       <td>高达 120Hz</td>
       <td>高达 120Hz</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td>展示 -<br /> ETC</td>
+      <td>显示 -<br /> ETC</td>
       <td>常亮显示</td>
       <td>常亮显示</td>
       <td> </td>
@@ -157,22 +264,22 @@
     <tr>
       <td>iPhone 15</td>
       <td>铝<br />响铃/静音开关</td>
-      <td>粉色的<br />黄色的<br />绿色的<br />蓝色的<br />黑色的</td>
+      <td>粉色、黄色、绿色、蓝色、黑色</td>
     </tr>
     <tr>
       <td>iPhone 15 Plus</td>
       <td>铝<br />响铃/静音开关</td>
-      <td>粉色的<br />黄色的<br />绿色的<br />蓝色的<br />黑色的</td>
+      <td>粉色、黄色、绿色、蓝色、黑色</td>
     </tr>
     <tr>
       <td>iPhone 15 专业版</td>
       <td>钛<br />动作按钮</td>
-      <td>自然的<br />蓝色的<br />白色的<br />黑色的</td>
+      <td>自然色、蓝色、白色、黑色</td>
     </tr>
     <tr>
       <td>iPhone 15 Pro 最大</td>
       <td>钛<br />动作按钮</td>
-      <td>自然的<br />蓝色的<br />白色的<br />黑色的</td>
+      <td>自然色、蓝色、白色、黑色</td>
     </tr>
   </tbody>
 </table>
@@ -308,14 +415,14 @@
     <tr>
       <td>美联社</td>
       <td>Exynos 2400</td>
-      <td>韩国：Exynos 2100<br />其他：金鱼草888</td>
+      <td>韩国：Exynos 2100<br />其他：骁龙888</td>
       <td>通用：骁龙865<br />其他：Exynos 2100</td>
     </tr>
     <tr>
-      <td>展示</td>
-      <td>6.7寸<br />(平台)</td>
-      <td>6.7寸<br />(平台)</td>
-      <td>6.7寸<br />（边缘）</td>
+      <td>显示器</td>
+      <td>6.7寸<br />（平板展示）</td>
+      <td>6.7寸<br />（平板展示）</td>
+      <td>6.7寸<br />（边缘显示）</td>
     </tr>
     <tr>
       <td>内存</td>
@@ -338,14 +445,14 @@
     <tr>
       <td>单核<br />（Geekbench）</td>
       <td>2188</td>
-      <td>1067<br /> （与S24相比：49%）</td>
-      <td>864（与S24相比：39%）</td>
+      <td>1067<br /> （与 S24+ 相比：49%）</td>
+      <td>第864章<br />（与 S24+ 相比：39%）</td>
     </tr>
     <tr>
       <td>多核<br />（Geekbench）</td>
       <td>6939</td>
-      <td>3404<br /> （与S24相比：49%）</td>
-      <td>3018（与S24相比：43%）</td>
+      <td>3404<br /> （与 S24+ 相比：49%）</td>
+      <td>3018<br /> （与 S24+ 相比：43%）</td>
     </tr>
   </tbody>
 </table>
@@ -387,6 +494,8 @@
 <p>如果你是S20+或S21+用户，毫无疑问，全新的Galaxy S24是一款性能提升巨大、Galaxy AI品牌足够好的设备，值得考虑购买。</p>
 
 <p>你想要 iPhone 15 Pro Max 的钛金属外壳、用笔圈出照片、搜索图像以及更高倍率的拍照质量吗？</p>
+
+<p>如果您想在 Plus 型号之间进行升级，这些功能不适合您。如果你多花 300 美元购买 Ultra 型号，你就可以拥有它。</p>
 
 <table>
   <thead>
@@ -439,8 +548,6 @@
     </tr>
   </tbody>
 </table>
-
-<p>然而，如果您正在寻找 Plus 型号的升级版，那么这不是您想要的。如果你多花 300 美元购买 Ultra 型号，你就可以拥有它。这在您的典型使用体验中有意义吗？</p>
 
 <p>三星仅在 S24 Ultra 型号中支持更耐用的钛金属外壳和更高放大倍率的摄像头。最重要的是，高通的 Snapdragon 8 Gen 3 仅适用于 Ultra 型号。 S24+采用铝制外壳，配备与普通S24型号相同的摄像头，以及自主研发的Exynos 2400。</p>
 
@@ -1015,7 +1122,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
-      <title><![CDATA[将 Obsidian md 转换为 docx、pptx - Pandoc]]></title>
+      <title><![CDATA[将黑曜石 Markdown 转换为 MS Word、Power Point - Pandoc]]></title>
       <link>https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</link>
       <guid>https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
       <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>

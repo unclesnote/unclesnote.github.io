@@ -21,8 +21,116 @@
     <language>es</language>
     <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Mon, 22 Jan 2024 05:05:20 +0900</lastBuildDate>
-    <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 10:12:10 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Bloque de imágenes de obsidiana- subtítulos, cambio de tamaño, complementos]]></title>
+      <link>https://unclesnote.com/es/240122101210/obsidian_image_block_captions_resizing_plugins</link>
+      <guid>https://unclesnote.com/es/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+      <category><![CDATA[Obsidiana]]></category>
+      <tag><![CDATA[Obsidiana]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <description><![CDATA[Si estás leyendo esto, no creo que lo estés leyendo porque no sabes cómo pegar y agregar archivos de imágenes a Obsidian. Creo que probablemente estés leyendo]]></description>
+      <content:encoded><![CDATA[<p>Si estás leyendo esto, no creo que lo estés leyendo porque no sabes cómo pegar y agregar archivos de imágenes a Obsidian. Creo que probablemente estés leyendo esto y preguntándote cómo administrar bien los archivos de imágenes, ya que Obsidian, a diferencia de los blogs típicos basados ​​en la web, crea/guarda archivos de imágenes que el escritor debe administrar.</p>
+<h2 id="gestión-de-imágenes-te-gusta-mi-enfoque">Gestión de imágenes: ¿te gusta mi enfoque?</h2>
+<p>De hecho, hay varias formas de administrar archivos de imágenes en Obsidian, según los complementos de la comunidad que utilice en combinación.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" alt="Gestión de imágenes: ¿te gusta mi enfoque?" />
+<em>Gestión de imágenes: ¿te gusta mi enfoque?</em></p>
+
+<p>La forma de administrar mis archivos de imagen es la siguiente.</p>
+
+<ol>
+  <li>
+    <p>Utilice las teclas de método abreviado <code class="language-plaintext highlighter-rouge">Win + Shift + S</code> para seleccionar y capturar la parte deseada (guárdela en el portapapeles)</p>
+  </li>
+  <li>
+    <p>Luego, use la tecla de acceso directo <code class="language-plaintext highlighter-rouge">Ctrl + V</code> para pegarlo en Obsidian Note.</p>
+  </li>
+  <li>
+    <p>Luego elija un nombre para el archivo de imagen recién creado. El archivo de imagen se guarda en la ruta donde se guarda el archivo de nota actual.</p>
+  </li>
+  <li>
+    <p>Escribe un título y un tamaño apropiado para la imagen.</p>
+  </li>
+  <li>
+    <p>Luego, mueva el archivo de imagen a la carpeta <code class="language-plaintext highlighter-rouge">_img</code> en la ruta donde está guardada la nota actual.</p>
+  </li>
+</ol>
+
+<p>Si le gusta mi enfoque para administrar imágenes, deberá realizar una pequeña configuración de Obsidian e instalar dos complementos comunitarios. ¿Nos vamos?</p>
+<h2 id="conceptos-básicos-de-los-bloques-de-imágenes">Conceptos básicos de los bloques de imágenes.</h2>
+<p>Si rodea el nombre del archivo con dos corchetes que comienzan con un signo de exclamación, se mostrará como una imagen en Obsidian.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Hay dos formas de agregar imágenes a las notas de Obsidiana.</p>
+<ul>
+  <li>Simplemente arrastre y suelte el archivo de imagen desde la ventana del árbol de archivos en el lado izquierdo de Obsidian a la nota con el mouse.</li>
+  <li>Utilice un programa de captura o una herramienta gráfica para copiar la imagen al portapapeles (Ctrl + C) y luego péguela en Obsidian Note. (Ctrl+V)</li>
+</ul>
+
+<p>De hecho, parece tener sentido agregar la ruta absoluta del archivo de imagen al bloque de imagen, pero cuando agrega un bloque de imagen arrastrando y soltando o pegando con el mouse, solo se agrega el nombre del archivo a la sintaxis. Quizás la ruta absoluta y los símbolos del archivo de imagen sean administrados por la base de datos interna de Obsidian.</p>
+
+<p>Sin complementos comunitarios adicionales, puede ajustar el tamaño de la imagen agregando el carácter “O” y el ancho de la imagen a la derecha del nombre del archivo usando la sintaxis de Obsidian.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png.png|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Sin embargo, si desea agregar títulos a las imágenes, deberá instalar un complemento comunitario adicional.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" alt="Cambiar el tamaño de la imagen usando la sintaxis básica de Obsidian" />
+<em>Cambiar el tamaño de la imagen usando la sintaxis básica de Obsidian</em></p>
+
+<h2 id="configuración-de-obsidiana">Configuración de obsidiana</h2>
+<p>Esta configuración está relacionada con la ubicación donde se crea el archivo de imagen cuando la imagen se copia en el portapapeles y luego se pega en Obsidian Note. Esta configuración se aplica al pegar no solo archivos de imagen sino también varios tipos de archivos adjuntos.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - Configuración - Archivos y enlaces - Ubicación predeterminada para nuevos archivos adjuntos - Seleccione `Misma carpeta que el archivo actual`" width="972" height="747" />
+<em>Obsidian - Configuración - Archivos y enlaces - Ubicación predeterminada para nuevos archivos adjuntos - Seleccione <code class="language-plaintext highlighter-rouge">Misma carpeta que el archivo actual</code></em></p>
+
+<p>Al configurar “La misma carpeta que el archivo actual”, se crea un archivo de imagen en la ubicación donde se encuentra la nota, y cuando todos los archivos de imagen para la nota estén preparados, se recomienda mover manualmente el archivo a la carpeta “_img”. Esto se debe a que no hay garantía de que todas las imágenes pegadas sean válidas hasta que se complete la nota.</p>
+<h2 id="complementos-comunitarios">Complementos comunitarios</h2>
+<p>Para utilizar el método que mostré anteriormente para administrar archivos de imágenes, necesitará instalar dos complementos comunitarios.</p>
+<h3 id="pegar-cambio-de-nombre-de-imagen">Pegar cambio de nombre de imagen</h3>
+<p>El complemento “Pegar cambio de nombre de imagen” a continuación abre una ventana emergente cuando pegas una imagen en una nota. La ventana emergente le permite ingresar el título de la nota como prefijo y el nombre del archivo de imagen como sufijo. Esto le ayuda a ordenar por nombre de archivo y distinguir qué archivo de imagen depende de qué publicación cuando hay varias imágenes adjuntas a una nota.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - Complementos de la comunidad - Pegar cambio de nombre de imagen" width="972" height="542" />
+<em>Obsidian - Complementos de la comunidad - Pegar cambio de nombre de imagen</em></p>
+
+<p>A continuación se muestra un caso en el que los archivos de imagen adjuntos a este artículo se ordenan automáticamente.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Clasificación automática de archivos de imagen por nombre de archivo de obsidiana" width="972" height="348" />
+<em>Clasificación automática de archivos de imagen por nombre de archivo de obsidiana</em></p>
+
+<h3 id="pies-de-foto">Pies de foto</h3>
+<p>Si busca “título de imagen” en el menú de complementos de la comunidad, verá dos complementos con muchas descargas y su uso es similar. El primer complemento le permite agregar imágenes externas ingresando la URL de la imagen. Sin embargo, en mi caso de uso no es necesario agregar imágenes externas. El primer complemento agrega un marco de imagen negro y un título de imagen. El segundo es gris. No hay ningún problema en elegir el primer complemento según sus gustos y aversiones personales. Pero prefiero el segundo complemento.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - Complementos comunitarios - Pies de imagen" width="972" height="765" />
+<em>Obsidian - Complementos comunitarios - Pies de imagen</em></p>
+
+<p>Si separa los bloques de imagen con caracteres “O” y los edita en el orden de nombre de archivo, título y ancho de la imagen, podrá ver el hermoso título de Pooh y el archivo de imagen redimensionado como se muestra a continuación.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png|Lovely Pooh|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>¿Qué tal esto? ¿Te gusta?</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" alt="Bloque de imágenes de obsidiana con subtítulos e imágenes redimensionadas." />
+<em>Bloque de imágenes de obsidiana con subtítulos e imágenes redimensionadas.</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/es-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Aspecto del iPhone 15 desde el iPhone 14]]></title>
@@ -57,28 +165,28 @@
       <td>$1199</td>
     </tr>
     <tr>
-      <td>Mostrar -<br /> Tamaño</td>
+      <td>Pantallas -<br /> Tamaño</td>
       <td>6,1 pulgadas</td>
       <td>6,7 pulgadas</td>
       <td>6,1 pulgadas</td>
       <td>6,7 pulgadas</td>
     </tr>
     <tr>
-      <td>Mostrar -<br /> Resolución</td>
+      <td>Pantallas -<br /> res</td>
       <td>2556 x 1179<br /> 460 ppp</td>
       <td>2796 x 1290<br /> 460 ppp</td>
       <td>2556 x 1179<br /> 460 ppp</td>
       <td>2796 x 1290<br /> 460 ppp</td>
     </tr>
     <tr>
-      <td>Mostrar -<br /> Tasas de actualización</td>
+      <td>Pantallas -<br /> Tasas de actualización</td>
       <td>Hasta 120Hz</td>
       <td>Hasta 120Hz</td>
       <td> </td>
       <td> </td>
     </tr>
     <tr>
-      <td>Mostrar -<br /> Etc</td>
+      <td>Pantallas -<br /> Etc</td>
       <td>Pantalla siempre encendida</td>
       <td>Pantalla siempre encendida</td>
       <td> </td>
@@ -157,22 +265,22 @@
     <tr>
       <td>iPhone 15</td>
       <td>Aluminio<br /> Interruptor de anillo/silencioso</td>
-      <td>Rosa<br /> Amarillo<br /> Verde<br /> Azul<br /> Negro</td>
+      <td>Rosa, Amarillo, Verde, Azul, Negro</td>
     </tr>
     <tr>
       <td>iPhone 15 Plus</td>
       <td>Aluminio<br /> Interruptor de anillo/silencioso</td>
-      <td>Rosa<br /> Amarillo<br /> Verde<br /> Azul<br /> Negro</td>
+      <td>Rosa, Amarillo, Verde, Azul, Negro</td>
     </tr>
     <tr>
       <td>iPhone 15 Pro</td>
       <td>titanio<br /> Botón de acción</td>
-      <td>Natural<br /> Azul<br /> Blanco<br /> Negro</td>
+      <td>Natural, Azul, Blanco, Negro</td>
     </tr>
     <tr>
       <td>iPhone 15 Pro Max</td>
       <td>titanio<br /> Botón de acción</td>
-      <td>Natural<br /> Azul<br /> Blanco<br /> Negro</td>
+      <td>Natural, Azul, Blanco, Negro</td>
     </tr>
   </tbody>
 </table>
@@ -308,14 +416,14 @@
     <tr>
       <td>AP</td>
       <td>Exynos 2400</td>
-      <td>Corea: Exynos 2100<br /> Otros: Snapdradon 888</td>
-      <td>Generales: Snapdragon 865<br /> Otros: Exynos 2100</td>
+      <td>Corea: Exynos 2100<br /> Otros: SnapDragon 888</td>
+      <td>Generales: SnapDragon 865<br /> Otros: Exynos 2100</td>
     </tr>
     <tr>
-      <td>Mostrar</td>
-      <td>6,7 pulgadas<br /> (Plano)</td>
-      <td>6,7 pulgadas<br /> (Plano)</td>
-      <td>6,7 pulgadas<br /> (Borde)</td>
+      <td>Pantallas</td>
+      <td>6,7 pulgadas<br /> (Pantalla de plataforma)</td>
+      <td>6,7 pulgadas<br /> (Pantalla de plataforma)</td>
+      <td>6,7 pulgadas<br /> (Pantalla de borde)</td>
     </tr>
     <tr>
       <td>RAM</td>
@@ -338,14 +446,14 @@
     <tr>
       <td>Núcleo simple<br /> (banco geek)</td>
       <td>2188</td>
-      <td>1067<br /> (En comparación con S24: 49%)</td>
-      <td>864 (en comparación con S24: 39%)</td>
+      <td>1067<br /> (En comparación con S24+: 49%)</td>
+      <td>864<br /> (En comparación con S24+: 39%)</td>
     </tr>
     <tr>
       <td>multinúcleo<br /> (banco geek)</td>
       <td>6939</td>
-      <td>3404<br /> (En comparación con S24: 49%)</td>
-      <td>3018 (en comparación con S24: 43%)</td>
+      <td>3404<br /> (En comparación con S24+: 49%)</td>
+      <td>3018<br /> (En comparación con S24+: 43%)</td>
     </tr>
   </tbody>
 </table>
@@ -387,6 +495,8 @@
 <p>Si es usuario de S20+ o S21+, no hay duda de que el nuevo Galaxy S24 es un dispositivo con grandes mejoras de rendimiento y la marca Galaxy AI lo suficientemente buena como para considerar comprarlo.</p>
 
 <p>¿Quieres el exterior de titanio del iPhone 15 Pro Max, la capacidad de rodear fotos con un bolígrafo, buscar imágenes y tener una calidad de cámara con mayor aumento?</p>
+
+<p>Si está buscando actualizar entre los modelos Plus, estas funciones no son para usted. Si pagas $300 más por el modelo Ultra, puedes tenerlo.</p>
 
 <table>
   <thead>
@@ -439,8 +549,6 @@
     </tr>
   </tbody>
 </table>
-
-<p>Sin embargo, no es algo que desee si busca una actualización del modelo Plus. Si pagas $300 más por el modelo Ultra, puedes tenerlo. ¿Y eso tiene sentido en su experiencia de uso típica?</p>
 
 <p>Samsung admite un exterior de titanio más duradero y una cámara de mayor aumento solo en el modelo S24 Ultra. Sobre todo, el Snapdragon 8 Gen 3 de Qualcomm sólo está disponible en el modelo Ultra. El S24+ presenta un exterior de aluminio, la misma cámara que el modelo S24 normal y el Exynos 2400 de desarrollo propio.</p>
 
@@ -1019,7 +1127,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
-      <title><![CDATA[Convertir obsidiana md a docx, pptx - Pandoc]]></title>
+      <title><![CDATA[Convierta Obsidian Markdowns a MS Word, Power Point - Pandoc]]></title>
       <link>https://unclesnote.com/es/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</link>
       <guid>https://unclesnote.com/es/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
       <dc:creator><![CDATA[nota del tio]]></dc:creator>

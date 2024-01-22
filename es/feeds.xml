@@ -14,12 +14,24 @@
   <author><name><![CDATA[nota del tio]]></name></author>
   <id>https://unclesnote.com/es/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <entry>
+    <title><![CDATA[Bloque de imágenes de obsidiana- subtítulos, cambio de tamaño, complementos]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240122101210/obsidian_image_block_captions_resizing_plugins"/>
+    <id>https://unclesnote.com/es/240122101210/obsidian_image_block_captions_resizing_plugins</id>    
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+    <issued>Mon, 22 Jan 2024 10:12:10 +0900</issued>
+		<created>Mon, 22 Jan 2024 10:12:10 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Si estás leyendo esto, no creo que lo estés leyendo porque no sabes cómo pegar y agregar archivos de imágenes a Obsidian. Creo que probablemente estés leyendo]]></summary>
+    <category><![CDATA[Obsidiana]]></category>
+    <tag><![CDATA[Obsidiana]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/es-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Aspecto del iPhone 15 desde el iPhone 14]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240122050520/appearance_of_iphone_15_from_iphone_14"/>
     <id>https://unclesnote.com/es/240122050520/appearance_of_iphone_15_from_iphone_14</id>    
-    <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 05:05:20 +0900</issued>
 		<created>Mon, 22 Jan 2024 05:05:20 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Existen muchas diferencias entre la línea de iPhone normal y la línea Pro en términos de precio y especificaciones. Entre ellos, me gustaría hablar sobre la]]></summary>
@@ -31,7 +43,7 @@
     <title><![CDATA[¿Debería comprar el Samsung Galaxy S24+ del S20+ o del S21+?]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+"/>
     <id>https://unclesnote.com/es/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 04:10:31 +0900</issued>
 		<created>Mon, 22 Jan 2024 04:10:31 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[El 17 de enero de 2024, Samsung presentó su nueva serie Galaxy S24 con el nombre de "Galaxy AI" en su [canal de YouTube] (https://www.youtube.com/@Samsung).]]></summary>
@@ -88,10 +100,10 @@
     <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/es-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png"/>
   </entry>
   <entry>
-    <title><![CDATA[Convertir obsidiana md a docx, pptx - Pandoc]]></title>
+    <title><![CDATA[Convierta Obsidian Markdowns a MS Word, Power Point - Pandoc]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
     <id>https://unclesnote.com/es/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
-    <modified>Mon, 08 Jan 2024 11:11:19 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Si tiene un artículo bien organizado que utiliza Obsidian, es posible que de vez en cuando necesite compartirlo con un colega o amigo. Obsidian en sí ofrece la]]></summary>
@@ -199,7 +211,7 @@
     <title><![CDATA[Bloque de citas y rótulos de Obsidian]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[La definición del diccionario de rótulos es llamar en voz alta y se utiliza para llamar la atención del lector e informarle sobre información importante o]]></summary>

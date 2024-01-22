@@ -14,12 +14,24 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <entry>
+    <title><![CDATA[黑曜石图像块 - 字幕、调整大小、插件]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240122101210/obsidian_image_block_captions_resizing_plugins"/>
+    <id>https://unclesnote.com/zh/240122101210/obsidian_image_block_captions_resizing_plugins</id>    
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+    <issued>Mon, 22 Jan 2024 10:12:10 +0900</issued>
+		<created>Mon, 22 Jan 2024 10:12:10 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您正在阅读本文，我认为您不是在阅读，因为您不知道如何将图像文件粘贴和添加到 Obsidian。我想您可能正在阅读这篇文章，想知道如何很好地管理图像文件，因为黑曜石与典型的基于网络的博客不同，它创建/保存的图像文件必须由作者管理。]]></summary>
+    <category><![CDATA[黑曜石]]></category>
+    <tag><![CDATA[黑曜石]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/zh-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png"/>
+  </entry>
   <entry>
     <title><![CDATA[从 iPhone 14 到 iPhone 15 的外观]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240122050520/appearance_of_iphone_15_from_iphone_14"/>
     <id>https://unclesnote.com/zh/240122050520/appearance_of_iphone_15_from_iphone_14</id>    
-    <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 05:05:20 +0900</issued>
 		<created>Mon, 22 Jan 2024 05:05:20 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[常规 iPhone 系列和 Pro 系列在价格和规格方面存在许多差异。其中，我想谈谈常规型号和专业型号的外观。下面的表格仅列出了所有 iPhone 15 系列之间的差异。]]></summary>
@@ -31,7 +43,7 @@
     <title><![CDATA[应该从 S20+ 还是 S21+ 购买三星 Galaxy S24+？]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+"/>
     <id>https://unclesnote.com/zh/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 04:10:31 +0900</issued>
 		<created>Mon, 22 Jan 2024 04:10:31 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[2024 年 1 月 17 日，三星在其 [YouTube 频道](https://www.youtube.com/@Samsung) 上以`Galaxy AI`的名称解压了全新 Galaxy S24 系列。三星展示了以下五个演示作为 Galaxy S24 的卖点。如果您已经使用 Galaxy S20+ 或 S21+]]></summary>
@@ -88,10 +100,10 @@
     <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/zh-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png"/>
   </entry>
   <entry>
-    <title><![CDATA[将 Obsidian md 转换为 docx、pptx - Pandoc]]></title>
+    <title><![CDATA[将黑曜石 Markdown 转换为 MS Word、Power Point - Pandoc]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
     <id>https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
-    <modified>Mon, 08 Jan 2024 11:11:19 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[如果您有一篇使用 Obsidian 组织良好的文章，您可能偶尔需要与同事或朋友分享。 Obsidian 本身提供了导出为 PDF 文件的功能，但如果您想以可修改的 Word(docx) 或 Power Point(pptx) 文件的形式共享，复制和粘贴大量新文件是一个麻烦的事情麻烦。所以，我想介绍一下 Pandoc，]]></summary>
@@ -199,7 +211,7 @@
     <title><![CDATA[黑曜石的标注和报价块]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[字典中标注的定义是大声喊出，用于引起读者的注意并告知他们重要或附加信息。让我们了解一下 Obsidian 中表达标注的语法和类型。]]></summary>

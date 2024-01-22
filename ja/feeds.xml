@@ -14,12 +14,24 @@
   <author><name><![CDATA[アンクルズノート]]></name></author>
   <id>https://unclesnote.com/ja/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <entry>
+    <title><![CDATA[Obsidian 画像ブロック - キャプション、サイズ変更、プラグイン]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240122101210/obsidian_image_block_captions_resizing_plugins"/>
+    <id>https://unclesnote.com/ja/240122101210/obsidian_image_block_captions_resizing_plugins</id>    
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+    <issued>Mon, 22 Jan 2024 10:12:10 +0900</issued>
+		<created>Mon, 22 Jan 2024 10:12:10 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[これを読んでいるということは、Obsidian に画像ファイルを貼り付けて追加する方法がわからないので読んでいないと思います。 Obsidian は一般的な Web ベースのブログとは異なり、ライターが管理する必要がある画像ファイルを作成/保存するため、画像ファイルを適切に管理する方法について疑問に思ってこれを読んで]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/ja-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png"/>
+  </entry>
   <entry>
     <title><![CDATA[iPhone 14からiPhone 15の外観]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240122050520/appearance_of_iphone_15_from_iphone_14"/>
     <id>https://unclesnote.com/ja/240122050520/appearance_of_iphone_15_from_iphone_14</id>    
-    <modified>Mon, 22 Jan 2024 05:05:20 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 05:05:20 +0900</issued>
 		<created>Mon, 22 Jan 2024 05:05:20 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[通常のiPhoneラインナップとProラインナップには、価格や仕様の点で多くの違いがあります。その中からレギュラーモデルの登場とプロラインナップについてお話したいと思います。以下は、すべての iPhone 15 シリーズの違いのみをリストした表です。]]></summary>
@@ -31,7 +43,7 @@
     <title><![CDATA[Samsung Galaxy S24+ を S20+ または S21+ から購入する必要がありますか?]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+"/>
     <id>https://unclesnote.com/ja/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
     <issued>Mon, 22 Jan 2024 04:10:31 +0900</issued>
 		<created>Mon, 22 Jan 2024 04:10:31 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[2024 年 1 月 17 日、サムスンは [YouTube チャンネル](https://www.youtube.com/@Samsung) で`Galaxy AI`という名前で新しい Galaxy S24 シリーズを開梱しました。 Galaxy S24のセールスポイントとしてSamsungが提示したデモは以下の5]]></summary>
@@ -88,10 +100,10 @@
     <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/ja-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png"/>
   </entry>
   <entry>
-    <title><![CDATA[Obsidian md を docx、pptx に変換する - Pandoc]]></title>
+    <title><![CDATA[Obsidian Markdown を MS Word、Power Point に変換する - Pandoc]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
     <id>https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
-    <modified>Mon, 08 Jan 2024 11:11:19 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Obsidian を使用してよく整理された記事がある場合は、同僚や友人と共有する必要がある場合があります。 Obsidian 自体は PDF ファイルとしてエクスポートする機能を提供しますが、変更可能な Word (docx) または PowerPoint (pptx) ファイルの形式で共有したい場合は、多数の新しい]]></summary>
@@ -199,7 +211,7 @@
     <title><![CDATA[Obsidian のコールアウトと引用ブロック]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Mon, 22 Jan 2024 05:05:22 +0900</modified>
+    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[辞書のコールアウトの定義は、大声で呼びかけることであり、読者の注意を引き、重要な情報や追加情報を知らせるために使用されます。 Obsidian で吹き出しを表現するための文法と型について学びましょう。]]></summary>

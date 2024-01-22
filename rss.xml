@@ -21,8 +21,116 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Mon, 22 Jan 2024 05:05:20 +0900</lastBuildDate>
-    <pubDate>Mon, 22 Jan 2024 05:05:20 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 10:12:10 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Obsidian Image Block - captions, resizing, plugins]]></title>
+      <link>https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins</link>
+      <guid>https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+      <category><![CDATA[Obsidian]]></category>
+      <tag><![CDATA[Obsidian]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
+      <description><![CDATA[If you're reading this, I don't think you're reading because you don't know how to paste and add image files to Obsidian. I think you're probably reading this]]></description>
+      <content:encoded><![CDATA[<p>If you’re reading this, I don’t think you’re reading because you don’t know how to paste and add image files to Obsidian. I think you’re probably reading this wondering how to manage image files well, since Obsidian, unlike typical web-based blogs, creates/saved image files that must be managed by the writer.</p>
+<h2 id="image-management--do-you-like-my-approach">Image Management – Do you like my approach?</h2>
+<p>In fact, there are several ways to manage image files in Obsidian, depending on which community plugins you use in combination.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" alt="Image Management – Do you like my approach?" />
+<em>Image Management – Do you like my approach?</em></p>
+
+<p>How to manage my image files is as follows.</p>
+
+<ol>
+  <li>
+    <p>Use the <code class="language-plaintext highlighter-rouge">Win + Shift + S</code> shortcut keys to select and capture the desired part (save it to the clipboard)</p>
+  </li>
+  <li>
+    <p>Then, use the <code class="language-plaintext highlighter-rouge">Ctrl + V</code> shortcut key to paste it into Obsidian Note</p>
+  </li>
+  <li>
+    <p>Then choose a name for the newly created image file. The image file is saved in the path where the current note file is saved.</p>
+  </li>
+  <li>
+    <p>Write a caption and appropriate size for the image</p>
+  </li>
+  <li>
+    <p>Then, move the image file to the <code class="language-plaintext highlighter-rouge">_img</code> folder in the path where the current note is saved</p>
+  </li>
+</ol>
+
+<p>If you like my approach to managing images, you’ll need to do a little Obsidian setup and install two community plugins. Shall we go?</p>
+<h2 id="basics-of-image-blocks">Basics of image blocks</h2>
+<p>If you surround the file name with two square brackets starting with an exclamation point, it will be displayed as an image in Obsidian.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>There are two ways to add images to Obsidian notes.</p>
+<ul>
+  <li>Just drag and drop the image file from the file tree window on the left side of Obsidian to the note with the mouse</li>
+  <li>Use a capture program or graphics tool to copy the image to the clipboard (Ctrl + C) and then paste it into Obsidian Note. (Ctrl + V)</li>
+</ul>
+
+<p>In fact, it seems to make sense to add the absolute path of the image file to the image block, but when you add an image block through mouse drag and drop or paste, only the file name is added to the syntax. Perhaps the absolute path and symbols of the image file are managed by Obsidian’s internal database.</p>
+
+<p>Without additional community plugins, you can adjust the image size by adding the <code class="language-plaintext highlighter-rouge">OR</code> character and the image width to the right of the file name using Obsidian syntax.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png.png|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>However, if you want to add captions to images, you will need to install an additional community plugin</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" alt="Change image size using Obsidian basic syntax" />
+<em>Change image size using Obsidian basic syntax</em></p>
+
+<h2 id="obsidian-settings">Obsidian Settings</h2>
+<p>This setting is related to the location where the image file is created when the image is copied to the clipboard and then pasted into Obsidian Note. This setting is applied when pasting not only image files but also various types of attachments.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - Settings - Files and links - Default location for new attachments - Select `Same folder as current file`" width="972" height="747" />
+<em>Obsidian - Settings - Files and links - Default location for new attachments - Select <code class="language-plaintext highlighter-rouge">Same folder as current file</code></em></p>
+
+<p>By setting <code class="language-plaintext highlighter-rouge">Same folder as current file</code>, an image file is created in the location where the note is located, and when all image files for the note are prepared, it is recommended to manually move the file to the <code class="language-plaintext highlighter-rouge">_img</code> folder. This is because there is no guarantee that all images pasted will be valid until the note is completed.</p>
+<h2 id="community-plugins">Community plugins</h2>
+<p>To use the method I showed above for managing image files, you will need to install two community plugins.</p>
+<h3 id="paste-image-rename">Paste image rename</h3>
+<p>The <code class="language-plaintext highlighter-rouge">Paste image rename</code> plugin below opens a pop-up when you paste an image into a note. The pop-up allows you to enter the title of the note as a prefix and the name of the image file as a suffix. This helps you sort by file name and distinguish which image file is dependent on which post when there are multiple images attached to a note.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - Community Plugins - Paste image rename" width="972" height="542" />
+<em>Obsidian - Community Plugins - Paste image rename</em></p>
+
+<p>Below is a case in which the image files attached to this article are automatically sorted.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Automatic sorting of image files by Obsidian file name" width="972" height="348" />
+<em>Automatic sorting of image files by Obsidian file name</em></p>
+
+<h3 id="image-captions">Image Captions</h3>
+<p>If you search for <code class="language-plaintext highlighter-rouge">image caption</code> in the community plugin menu, you will see two plugins with many downloads and their usage is similar. The first plugin allows you to add external images by entering the image URL. However, in my use case there is no need to add external images. The first plugin adds a black image frame and an image caption. The second one is gray. There is no problem in choosing the first plugin depending on your personal likes and dislikes. But I prefer the second plugin.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - Community Plugins - Image Captions" width="972" height="765" />
+<em>Obsidian - Community Plugins - Image Captions</em></p>
+
+<p>If you separate the image blocks with <code class="language-plaintext highlighter-rouge">OR</code> characters and edit them in the order of file name, caption, and width of the image, you can see the lovely Pooh caption and resized image file as shown below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>![[myimage.png|Lovely Pooh|300]]
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>How about this? Do you like it?</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" alt="Obsidian image block with captions and resized images" />
+<em>Obsidian image block with captions and resized images</em></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/en-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Appearance of iPhone 15 from iPhone 14]]></title>
@@ -57,28 +165,28 @@
       <td>$1199</td>
     </tr>
     <tr>
-      <td>Display -<br />Size</td>
+      <td>Displays -<br />Size</td>
       <td>6.1 Inch</td>
       <td>6.7 Inch</td>
       <td>6.1 Inch</td>
       <td>6.7 Inch</td>
     </tr>
     <tr>
-      <td>Display -<br />Resolution</td>
+      <td>Displays -<br />Res</td>
       <td>2556 x 1179<br />460 ppi</td>
       <td>2796 x 1290<br />460 ppi</td>
       <td>2556 x 1179<br />460 ppi</td>
       <td>2796 x 1290<br />460 ppi</td>
     </tr>
     <tr>
-      <td>Display -<br />Refresh rates</td>
+      <td>Displays -<br />Refresh rates</td>
       <td> </td>
       <td> </td>
       <td>Up to 120Hz</td>
       <td>Up to 120Hz</td>
     </tr>
     <tr>
-      <td>Display -<br />Etc</td>
+      <td>Displays -<br />Etc</td>
       <td> </td>
       <td> </td>
       <td>Always-On display</td>
@@ -157,22 +265,22 @@
     <tr>
       <td>iPhone 15</td>
       <td>Aluminum<br />Ring/Slient switch</td>
-      <td>Pink<br />Yellow<br />Green<br />Blue<br />Black</td>
+      <td>Pink, Yellow, Green, Blue, Black</td>
     </tr>
     <tr>
       <td>iPhone 15 Plus</td>
       <td>Aluminum<br />Ring/Slient switch</td>
-      <td>Pink<br />Yellow<br />Green<br />Blue<br />Black</td>
+      <td>Pink, Yellow, Green, Blue, Black</td>
     </tr>
     <tr>
       <td>iPhone 15 Pro</td>
       <td>Titaium<br />Action button</td>
-      <td>Natural<br />Blue <br />White<br />Black</td>
+      <td>Natural, Blue, White, Black</td>
     </tr>
     <tr>
       <td>iPhone 15 Pro Max</td>
       <td>Titaium<br />Action button</td>
-      <td>Natural<br />Blue <br />White<br />Black</td>
+      <td>Natural, Blue, White, Black</td>
     </tr>
   </tbody>
 </table>
@@ -308,14 +416,14 @@
     <tr>
       <td>AP</td>
       <td>Exynos 2400</td>
-      <td>Korea: Exynos 2100<br />Other: Snapdradon 888</td>
-      <td>General: Snapdragon 865<br />Other: Exynos 2100</td>
+      <td>Korea: Exynos 2100<br />Other: SnapDragon 888</td>
+      <td>General: SnapDragon 865<br />Other: Exynos 2100</td>
     </tr>
     <tr>
-      <td>Display</td>
-      <td>6.7 Inch<br />(Plat)</td>
-      <td>6.7 Inch<br />(Plat)</td>
-      <td>6.7 Inch<br />(Edge)</td>
+      <td>Displays</td>
+      <td>6.7 Inch<br />(Plat Display)</td>
+      <td>6.7 Inch<br />(Plat Display)</td>
+      <td>6.7 Inch<br />(Edge Display)</td>
     </tr>
     <tr>
       <td>RAM</td>
@@ -338,14 +446,14 @@
     <tr>
       <td>Single Core<br />(Geekbench)</td>
       <td>2188</td>
-      <td>1067<br />(Compared to S24: 49%)</td>
-      <td>864(Compared to S24: 39%)</td>
+      <td>1067<br />(Compared to S24+: 49%)</td>
+      <td>864<br />(Compared to S24+: 39%)</td>
     </tr>
     <tr>
       <td>Multi-core<br />(Geekbench)</td>
       <td>6939</td>
-      <td>3404<br />(Compared to S24: 49%)</td>
-      <td>3018(Compared to S24: 43%)</td>
+      <td>3404<br />(Compared to S24+: 49%)</td>
+      <td>3018<br />(Compared to S24+: 43%)</td>
     </tr>
   </tbody>
 </table>
@@ -387,6 +495,8 @@
 <p>If you are a S20+ or S21+ user, there is no doubt that the brand new Galaxy S24 is a device with great performance improvements and the Galaxy AI branding well enough to consider purchasing.</p>
 
 <p>Do you want the titanium exterior of the iPhone 15 Pro Max, the ability to circle photos with a pen, search images, and have higher magnification camera quality?</p>
+
+<p>If you’re looking to upgrade between the Plus models, these features aren’t for you. If you pay $300 more for the Ultra model, you can have it.</p>
 
 <table>
   <thead>
@@ -439,8 +549,6 @@
     </tr>
   </tbody>
 </table>
-
-<p>However, it’s not something you’ll want if you’re looking for an upgrade from the Plus model. If you pay $300 more for the Ultra model, you can have it. And does that make sense in your typical usage experience?</p>
 
 <p>Samsung supports a more durable titanium exterior and a higher magnification camera only in the S24 Ultra model. Above all, Qualcomm’s Snapdragon 8 Gen 3 is only available in the Ultra model. The S24+ features an aluminum exterior, the same camera as the regular S24 model, and the self-developed Exynos 2400.</p>
 
@@ -1019,7 +1127,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
-      <title><![CDATA[Convert Obsidian md to docx, pptx - Pandoc]]></title>
+      <title><![CDATA[Convert Obsidian Markdowns to MS Word, Power Point - Pandoc]]></title>
       <link>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</link>
       <guid>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</guid>
       <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
