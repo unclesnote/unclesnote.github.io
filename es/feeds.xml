@@ -14,7 +14,19 @@
   <author><name><![CDATA[nota del tio]]></name></author>
   <id>https://unclesnote.com/es/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+  <modified>Mon, 22 Jan 2024 04:10:31 +0900</modified>
+  <entry>
+    <title><![CDATA[¿Debería comprar el Samsung Galaxy S24+ del S20+ o del S21+?]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+"/>
+    <id>https://unclesnote.com/es/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</id>    
+    <modified>Mon, 22 Jan 2024 04:10:31 +0900</modified>
+    <issued>Mon, 22 Jan 2024 04:10:31 +0900</issued>
+		<created>Mon, 22 Jan 2024 04:10:31 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[El 17 de enero de 2024, Samsung presentó su nueva serie Galaxy S24 con el nombre de "Galaxy AI" en su [canal de YouTube] (https://www.youtube.com/@Samsung).]]></summary>
+    <category><![CDATA[ÉL,Móvil]]></category>
+    <tag><![CDATA[ÉL,Móvil]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240122041031/es-thumb-unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Problemas que puede encontrar al instalar Ubuntu 22.04]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04"/>
@@ -175,7 +187,7 @@
     <title><![CDATA[Bloque de citas y rótulos de Obsidian]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/es/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <modified>Mon, 22 Jan 2024 04:10:32 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[La definición del diccionario de rótulos es llamar en voz alta y se utiliza para llamar la atención del lector e informarle sobre información importante o]]></summary>

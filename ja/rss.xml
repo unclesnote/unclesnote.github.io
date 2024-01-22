@@ -21,8 +21,204 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 19 Jan 2024 02:52:14 +0900</lastBuildDate>
-    <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 04:10:31 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 04:10:31 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Samsung Galaxy S24+ を S20+ または S21+ から購入する必要がありますか?]]></title>
+      <link>https://unclesnote.com/ja/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</link>
+      <guid>https://unclesnote.com/ja/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 04:10:31 +0900</pubDate>
+      <category><![CDATA[それ,携帯]]></category>
+      <tag><![CDATA[それ,携帯]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</guid>
+      <description><![CDATA[2024 年 1 月 17 日、サムスンは [YouTube チャンネル](https://www.youtube.com/@Samsung) で`Galaxy AI`という名前で新しい Galaxy S24 シリーズを開梱しました。 Galaxy S24のセールスポイントとしてSamsungが提示したデモは以下の5]]></description>
+      <content:encoded><![CDATA[<p>2024 年 1 月 17 日、サムスンは <a href="https://www.youtube.com/@Samsung" target="_blank">YouTube チャンネル</a> で<code class="language-plaintext highlighter-rouge">Galaxy AI</code>という名前で新しい Galaxy S24 シリーズを開梱しました。</p>
+
+<p>Galaxy S24のセールスポイントとしてSamsungが提示したデモは以下の5つです。</p>
+
+<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/3hPoEmlBQdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<ul>
+  <li>サークルで検索</li>
+  <li>ライブ翻訳</li>
+  <li>無敵のプロセッサー</li>
+  <li>チタンの靭性</li>
+  <li>エピック AI カメラ</li>
+</ul>
+
+<p>Galaxy S20+ や S21+ などのシリーズを 2 年以上使用している場合は、新しいブランドの Galaxy シリーズの購入に興味があるかもしれません。既存のPlusモデルのユーザーから見た新ブランドGalaxy S24がどのようなものなのかをお話したいと思います。</p>
+<h2 id="仕様---12gbのramが再適用されました">仕様 - 12GBのRAMが再適用されました</h2>
+
+<p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" alt="Galaxy S24+、S21+、20+ 前面" width="972" height="630" />
+<em>Galaxy S24+、S21+、20+ 前面</em></p>
+
+<p>Plusモデルをベースに、S24+、S21+、S20+の表面的なスペックを比較していきます。</p>
+
+<p>全体的な<code class="language-plaintext highlighter-rouge">パフォーマンス</code>の観点から見ると、S21+ は S24+ の約 50% のパフォーマンスを示し、S20+ は 40% のパフォーマンスを示します。 S21+ および S20+ ユーザーにとっては憂鬱な数字ですが、携帯電話で楽しむゲームやエクスペリエンスにパフォーマンスの不足を感じなければ意味がないかもしれません。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>アイテム</th>
+      <th>ギャラクシーS24+</th>
+      <th>ギャラクシーS21+</th>
+      <th>ギャラクシーS20+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AP</td>
+      <td>エクシノス2400</td>
+      <td>韓国: Exynos 2100<br />その他: スナップドラドン 888</td>
+      <td>一般: スナップドラゴン 865<br />その他: Exynos 2100</td>
+    </tr>
+    <tr>
+      <td>画面</td>
+      <td>6.7インチ<br />(プラット)</td>
+      <td>6.7インチ<br />(プラット)</td>
+      <td>6.7インチ<br />（角）</td>
+    </tr>
+    <tr>
+      <td>ラム</td>
+      <td>12GB</td>
+      <td>8GB</td>
+      <td>5G：12GB<br /> LTE：8GB</td>
+    </tr>
+    <tr>
+      <td>ストレージ</td>
+      <td>256GB / 512GB</td>
+      <td>128GB / 256GB</td>
+      <td>128GB / 256GB</td>
+    </tr>
+    <tr>
+      <td>外部SDスロット</td>
+      <td>いいえ</td>
+      <td>いいえ</td>
+      <td>はい</td>
+    </tr>
+    <tr>
+      <td>シングルコア<br />(ギークベンチ)</td>
+      <td>2188</td>
+      <td>1067<br /> （S24比：49％）</td>
+      <td>864(S24比:39%)</td>
+    </tr>
+    <tr>
+      <td>マルチコア<br />(ギークベンチ)</td>
+      <td>6939</td>
+      <td>3404<br /> （S24比：49％）</td>
+      <td>3018(S24比：43%)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">ディスプレイ</code>に関しては、S20+はエッジディスプレイ、その他のモデルはフラットディスプレイを採用しています。ディスプレイサイズは全モデル共通の6.7インチ。 Galaxy 7シリーズから、ディスプレイ横のベゼルの幅が狭くなりました。そのため、ケースを装着せずに片手で携帯電話を使用すると、誤ったタッチ入力が行われる可能性が高くなります。なので、両手で使ったり、ケースを付けたまま使うユーザーであれば、ディスプレイがエッジかフラットかは関係ないと思います。</p>
+
+<p>S20+ が 12GB の<code class="language-plaintext highlighter-rouge">RAM</code>を適用して以来、Plus モデルは 8GB の RAM を使用し続けましたが、最終的に 12GB の RAM が S24+ モデルに適用されました。 Samsung が RAM などのストレージ領域を使用する RAM Plus 機能を追加する前は、RAM 容量が大きな意味を持っていました。これは、複数のアプリを実行したり、マルチタスクを実行したり、アプリを切り替えたりするときに、前のアプリを最初から再起動するかどうかに関係するためです。</p>
+
+<p>S24+に12GBのRAMを適用した意図はわかりませんが、ストレージスペースを仮想RAMとして使用するよりも物理RAMを使用した方が速度と信頼性の点で優れているため、良いアップグレードだと思われます。</p>
+
+<p>S20+ ユーザーの場合、残念ながら、<code class="language-plaintext highlighter-rouge">外部 SD スロット</code>は S20+ および次の S シリーズからはサポートされていません。</p>
+<h2 id="galaxy-ai---イノベーションなし">Galaxy AI - イノベーションなし</h2>
+
+<p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_ai-circle_to_search.png" alt="Galaxy AI - サークルで検索" width="972" height="525" />
+<em>Galaxy AI - サークルで検索</em></p>
+
+<p>サムスンには、すでに知られている機能をパッケージ化してブランド化する能力があるようです。個人的には、画像のトリミングと翻訳機能をオフラインで処理するために別のプロセッサがインストールされたこと以外に技術的な改善はないと思います。</p>
+
+<p><strong>丸で検索してください</strong></p>
+
+<p>Galaxy S24 カメラで撮影している画面や写真を囲むと、Galaxy では画像のトリミングしかできない場合があります。その後、画像による検索は既存の Google Lands によって提供されます。文学画像のリアルタイム翻訳も可能で、類似画像やリンクも見つかります。</p>
+
+<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/5u-GJssF6u8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><strong>ライブ翻訳</strong></p>
+
+<p>Galaxy AI プロモーション ビデオのリアルタイム翻訳機能が驚きで魅力的である場合、あなたは、主に使用する言語とは異なる国に電話したり旅行したりすることがほとんどないユーザーである可能性があります。というのも、Google翻訳アプリは旅行者の間で非常に便利なアプリとして知られているからです。</p>
+
+<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/XaBrwzPQbhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>通話中の翻訳以外はGoogle翻訳アプリと全く同じ機能です。厳密に言えば、各文の継続的な翻訳であり、完全なリアルタイムではありません。メイン言語とは異なる言語を話す人々とどのくらいの頻度で会話するかを考えてみると、これが本当に必要な機能なのか、それとも単なる目新しい機能なのか、答えが見えてきます。</p>
+
+<p>電話でAirbnbを予約しますか？それとも、出張に行くのですが、英語が話せないので翻訳機能を使っていることを顧客に知らせたいですか?</p>
+<h2 id="グレードを区別する---300-ドル多く支払っていただけますか">グレードを区別する - 300 ドル多く支払っていただけますか?</h2>
+
+<p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-iphone_15_pro_max-galaxy_s24_ultra-galaxy_s24_plus.png" alt="iPhone 15 Pro Max - Galaxy S24 Ultra - Galaxy S24 Plus" width="972" height="489" />
+<em>iPhone 15 Pro Max - Galaxy S24 Ultra - Galaxy S24 Plus</em></p>
+
+<p>S20+ または S21+ ユーザーであれば、新品の Galaxy S24 が大幅なパフォーマンス向上と Galaxy AI のブランド化が十分に考慮されたデバイスであることは間違いなく、購入を検討する価値があります。</p>
+
+<p>iPhone 15 Pro Max のチタン外装、ペンで写真を丸で囲む機能、画像を検索する機能、高倍率カメラの品質が必要ですか?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>アイテム</th>
+      <th>S24ウルトラ</th>
+      <th>S24+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AP</td>
+      <td>スナップドラゴン 8 第 3 世代</td>
+      <td>エクシノス2400</td>
+    </tr>
+    <tr>
+      <td>ストレージ</td>
+      <td>256GB<br /> 512GB<br /> 1TB</td>
+      <td>256GB<br /> 512GB</td>
+    </tr>
+    <tr>
+      <td>画面</td>
+      <td>6.8インチ</td>
+      <td>6.7インチ</td>
+    </tr>
+    <tr>
+      <td>耐久性</td>
+      <td>チタンフレーム<br />コーニング ゴリラ アーマー</td>
+      <td>アルミフレーム<br />コーニングゴリラガラスビクター2</td>
+    </tr>
+    <tr>
+      <td>Sペン</td>
+      <td>はい</td>
+      <td>いいえ</td>
+    </tr>
+    <tr>
+      <td>カメラ</td>
+      <td>3倍、5倍の光学ズーム<br />2x、10x 光学ズームレベル<br />最大100倍のデジタルズーム</td>
+      <td>x3 光学ズーム<br />2倍の光学ズームレベル<br />最大 30 倍のデジタルズーム</td>
+    </tr>
+    <tr>
+      <td>重さ</td>
+      <td>232g</td>
+      <td>196g</td>
+    </tr>
+    <tr>
+      <td>価格</td>
+      <td>1,300ドルから</td>
+      <td>1,000ドルから</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ただし、Plus モデルからのアップグレードを探している場合は、これは望ましくないものです。 Ultra モデルにさらに 300 ドル支払えば、手に入れることができます。そして、それはあなたの通常の使用体験において意味があるでしょうか?</p>
+
+<p>サムスンは、S24 Ultra モデルでのみ、より耐久性の高いチタン外装と高倍率カメラをサポートしています。とりわけ、QualcommのSnapdragon 8 Gen 3はUltraモデルでのみ利用可能です。 S24+ は、アルミニウム製の外装、通常の S24 モデルと同じカメラ、および自社開発の Exynos 2400 を備えています。</p>
+
+<p>一般的なユーザーの経験に基づく私の個人的な意見では、別途購入したケースを携帯電話に取り付けて使用します。また、高倍率カメラのズームはどのくらいの頻度で使用できますか?また、ハードゲーマーでない方も、現行のS21+とS20+のどちらが性能不足なのかを考えてみると、購入欲の中に答えが見つかるかもしれません。</p>
+<h2 id="結論---プレゼント">結論 - プレゼント</h2>
+<p>Galaxy S24+ と比較すると、S23+ は 70%、S21+ は 50%、S20+ は 40% のパフォーマンスがあります。これは、S21+ および S20+ ユーザーにとって、2 年以上使用しているデバイスをアップグレードするためにウォレットを開いてしまうのは当然の誘惑かもしれません。</p>
+
+<p>前述したように、Samsung の AI 機能は、Google Lands アプリや Google Translate アプリなど、代替手段が存在するサービスです。したがって、AI 機能のためだけに新しい携帯電話を購入する場合、それは合理的な選択ではない可能性があります。そして、S21+とS20+のパフォーマンスは、基本的なデジタルライフを楽しむために不足しません。</p>
+
+<p>ただし、2 年以上新しいデバイスを購入したいという誘惑に耐えながら一生懸命働いてきた場合は、自分にプレゼントを贈るのも良い選択肢かもしれません。</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122041031/ja-thumb-unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_ai-circle_to_search.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-iphone_15_pro_max-galaxy_s24_ultra-galaxy_s24_plus.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Ubuntu 22.04 のインストール時に発生する可能性のある問題]]></title>
@@ -304,20 +500,10 @@ dotnet new console
       <td>Ctrl + .</td>
       <td>Quick Actions and Refactorings</td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
     <tr>
       <td>Ctrl + Shift + -</td>
-      <td><em>前進</em></td>
+      <td>Go Forward</td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
     <tr>
       <td>Ctrl + Alt + -</td>
       <td>Go Back</td>

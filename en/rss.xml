@@ -21,8 +21,204 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 19 Jan 2024 02:52:14 +0900</lastBuildDate>
-    <pubDate>Fri, 19 Jan 2024 02:52:14 +0900</pubDate>
+    <lastBuildDate>Mon, 22 Jan 2024 04:10:31 +0900</lastBuildDate>
+    <pubDate>Mon, 22 Jan 2024 04:10:31 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Should buy the Samsung Galaxy S24+ from S20+ or S21+?]]></title>
+      <link>https://unclesnote.com/en/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</link>
+      <guid>https://unclesnote.com/en/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Mon, 22 Jan 2024 04:10:31 +0900</pubDate>
+      <category><![CDATA[IT,Mobile]]></category>
+      <tag><![CDATA[IT,Mobile]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</guid>
+      <description><![CDATA[On January 17, 2024, Samsung unpacked its new Galaxy S24 series under the name of `Galaxy AI` on its [YouTube channel](https://www.youtube.com/@Samsung). There]]></description>
+      <content:encoded><![CDATA[<p>On January 17, 2024, Samsung unpacked its new Galaxy S24 series under the name of <code class="language-plaintext highlighter-rouge">Galaxy AI</code> on its <a href="https://www.youtube.com/@Samsung" target="_blank">YouTube channel</a>.</p>
+
+<p>There are five demos presented by Samsung as selling points for the Galaxy S24 as follows.</p>
+
+<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/3hPoEmlBQdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<ul>
+  <li>Circle to Search</li>
+  <li>Live Translate</li>
+  <li>Unbeatable Processor</li>
+  <li>Titanium Toughness</li>
+  <li>Epic AI Camera</li>
+</ul>
+
+<p>If you have been using a series such as the Galaxy S20+ or S21+ for more than two years, you may be interested in purchasing the new brand Galaxy series. I would like to talk about what the new brand Galaxy S24 is like from the perspective of users of the existing Plus model.</p>
+<h2 id="specification---12gb-of-ram-was-reapplied">Specification - 12GB of RAM was reapplied</h2>
+
+<p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" alt="Galaxy S24+, S21+, 20+ front" width="972" height="630" />
+<em>Galaxy S24+, S21+, 20+ front</em></p>
+
+<p>Based on the Plus model, we will compare some superficial specifications of the S24+, S21+, and S20+.</p>
+
+<p>From an overall <code class="language-plaintext highlighter-rouge">performance</code> perspective, the S21+ shows about 50% of the performance of the S24+, and the S20+ shows 40% of the performance. It’s a depressing number for S21+ and S20+ users, but it may be meaningless if you don’t feel a lack of performance in the games and experiences you enjoy with your phone.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Galaxy S24+</th>
+      <th>Galaxy S21+</th>
+      <th>Galaxy S20+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AP</td>
+      <td>Exynos 2400</td>
+      <td>Korea: Exynos 2100<br />Other: Snapdradon 888</td>
+      <td>General: Snapdragon 865<br />Other: Exynos 2100</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>6.7 Inch<br />(Plat)</td>
+      <td>6.7 Inch<br />(Plat)</td>
+      <td>6.7 Inch<br />(Edge)</td>
+    </tr>
+    <tr>
+      <td>RAM</td>
+      <td>12GB</td>
+      <td>8GB</td>
+      <td>5G: 12GB<br />LTE: 8GB</td>
+    </tr>
+    <tr>
+      <td>Storage</td>
+      <td>256GB / 512GB</td>
+      <td>128GB / 256GB</td>
+      <td>128GB / 256GB</td>
+    </tr>
+    <tr>
+      <td>External SD Slot</td>
+      <td>No</td>
+      <td>No</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Single Core<br />(Geekbench)</td>
+      <td>2188</td>
+      <td>1067<br />(Compared to S24: 49%)</td>
+      <td>864(Compared to S24: 39%)</td>
+    </tr>
+    <tr>
+      <td>Multi-core<br />(Geekbench)</td>
+      <td>6939</td>
+      <td>3404<br />(Compared to S24: 49%)</td>
+      <td>3018(Compared to S24: 43%)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In terms of <code class="language-plaintext highlighter-rouge">the display</code>, the S20+ uses an edge display, the other models use a flat display. The display size is the same for all models at 6.7 inches. Starting with the Galaxy 7 series, the width of the bezel next to the display has been reduced. Therefore, if you use your phone with one hand without a case, the possibility of making an incorrect touch input increases. So, if you are a user who uses your phone with two hands or with a case attached, I think it doesn’t matter whether the display is edged or flat.</p>
+
+<p>Since the S20+ applied 12GB of <code class="language-plaintext highlighter-rouge">RAM</code>, the Plus model continued to use 8GB of RAM, but 12GB of RAM was finally applied to the S24+ model. Before Samsung added the RAM Plus function, which uses storage space like RAM, RAM capacity had great significance. This is because when running multiple apps, multitasking, and switching between apps, it has to do with whether the previous app will restart from the beginning.</p>
+
+<p>I don’t know what the intention was for applying 12GB of RAM to the S24+, but it seems to be a good upgrade because using physical RAM is superior in terms of speed and reliability rather than using storage space as virtual RAM.</p>
+
+<p>If you are an S20+ user, unfortunately, <code class="language-plaintext highlighter-rouge">the external SD slot</code> is not supported from the S20+ and the next S series.</p>
+<h2 id="galaxy-ai---no-innovation">Galaxy AI - No innovation</h2>
+
+<p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_ai-circle_to_search.png" alt="Galaxy AI - Circle to Search" width="972" height="525" />
+<em>Galaxy AI - Circle to Search</em></p>
+
+<p>It seems that Samsung has the ability to package and brand already known features. Personally, I think there is no technological improvement except that a separate processor was installed to crop images and process translation functions offline.</p>
+
+<p><strong>Circle to Search</strong></p>
+
+<p>If you circle the screen or photo you’re taking with the Galaxy S24 camera, your Galaxy may only be able to crop the image. After that, search by image is provided by the already existing Google Lands. Real-time translation of literary images is also possible, and similar images and links are found.</p>
+
+<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/5u-GJssF6u8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><strong>Live Translate</strong></p>
+
+<p>If the real-time translation function of your Galaxy AI promotional video is surprising and fascinating, you are likely a user who rarely calls or travels to a country that is different from the language you primarily use. This is because the Google Translate app is known as a very useful app among travelers.</p>
+
+<iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/XaBrwzPQbhM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>Except for translation during a call, it has exactly the same function as the Google Translate app. Strictly speaking, it is a continuous translation of each sentence, not perfect real-time. If you think about how often you have conversations with people who speak a language different from your main language, you will come up with an answer as to whether this is a feature you really want or just a novelty feature.</p>
+
+<p>Do you book Airbnb over the phone? Or, are you going on a business trip and want to make your customers aware that you use the translation function because you don’t speak English?</p>
+<h2 id="differentiate-between-grades---can-you-pay-300-more">Differentiate between grades - Can you pay $300 more?</h2>
+
+<p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-iphone_15_pro_max-galaxy_s24_ultra-galaxy_s24_plus.png" alt="iPhone 15 Pro Max - Galaxy S24 Ultra - Galaxy S24 Plus" width="972" height="489" />
+<em>iPhone 15 Pro Max - Galaxy S24 Ultra - Galaxy S24 Plus</em></p>
+
+<p>If you are a S20+ or S21+ user, there is no doubt that the brand new Galaxy S24 is a device with great performance improvements and the Galaxy AI branding well enough to consider purchasing.</p>
+
+<p>Do you want the titanium exterior of the iPhone 15 Pro Max, the ability to circle photos with a pen, search images, and have higher magnification camera quality?</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>S24 Ultra</th>
+      <th>S24+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AP</td>
+      <td>Snapdragon 8 Gen 3</td>
+      <td>Exynos 2400</td>
+    </tr>
+    <tr>
+      <td>Storage</td>
+      <td>256 GB<br />512 GB<br />1 TB</td>
+      <td>256 GB<br />512 GB</td>
+    </tr>
+    <tr>
+      <td>Display</td>
+      <td>6.8 Inch</td>
+      <td>6.7 Inch</td>
+    </tr>
+    <tr>
+      <td>Durability</td>
+      <td>Titanium Frame<br />Corning Gorilla Armor</td>
+      <td>Aluminum frame<br />Corning Gorilla Glass Victors 2</td>
+    </tr>
+    <tr>
+      <td>S Pen</td>
+      <td>Yes</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Camera</td>
+      <td>3x, 5x Optical Zoom<br />2x, 10x Optical Zoom Level<br />Up to 100x Digital Zoom</td>
+      <td>x3 Optical Zoom<br />2x Optical Zoom Level<br />Up to 30x Digital Zoom</td>
+    </tr>
+    <tr>
+      <td>Weight</td>
+      <td>232 g</td>
+      <td>196 g</td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>Starting from $1,300</td>
+      <td>Starting from $1,000</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>However, it’s not something you’ll want if you’re looking for an upgrade from the Plus model. If you pay $300 more for the Ultra model, you can have it. And does that make sense in your typical usage experience?</p>
+
+<p>Samsung supports a more durable titanium exterior and a higher magnification camera only in the S24 Ultra model. Above all, Qualcomm’s Snapdragon 8 Gen 3 is only available in the Ultra model. The S24+ features an aluminum exterior, the same camera as the regular S24 model, and the self-developed Exynos 2400.</p>
+
+<p>In my personal opinion, based on the experience of a typical user, I will use a separately purchased case attached to the cell phone. And how often can high-magnification camera zoom be used? And if you are not a hard gamer, if you think about whether the current S21+ or S20+ is lacking in performance, you may be able to find the answer in your greed for purchase.</p>
+<h2 id="conclusion---gift">Conclusion - Gift</h2>
+<p>Compared to the Galaxy S24+, the S23+ has 70% performance, the S21+ has 50% performance, and the S20+ has 40% performance. This might be a reasonable temptation for S21+ and S20+ users to open their wallets to upgrade a device they’ve been using for more than two years.</p>
+
+<p>As mentioned above, Samsung’s AI features are services for which alternatives exist, such as the Google Lands app or the Google Translate app. Therefore, if you buy a new cell phone just because of its AI features, it may not be a reasonable choice. And, the performance of the S21+ and S20+ is not lacking to enjoy basic digital life.</p>
+
+<p>However, if you’ve been working hard and resisting the temptation to buy a new device for over two years, giving yourself a gift might be a good option.</p>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240122041031/en-thumb-unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+.png" />
+      <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_ai-circle_to_search.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-iphone_15_pro_max-galaxy_s24_ultra-galaxy_s24_plus.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Issues you may meet when installing Ubuntu 22.04]]></title>
@@ -304,20 +500,10 @@ dotnet new console
       <td>Ctrl + .</td>
       <td><em>Quick Actions and Refactorings</em></td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
     <tr>
       <td>Ctrl + Shift + -</td>
       <td><em>Go Forward</em></td>
     </tr>
-  </tbody>
-</table>
-
-<table>
-  <tbody>
     <tr>
       <td>Ctrl + Alt + -</td>
       <td><em>Go Back</em></td>

@@ -14,7 +14,19 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+  <modified>Mon, 22 Jan 2024 04:10:31 +0900</modified>
+  <entry>
+    <title><![CDATA[应该从 S20+ 还是 S21+ 购买三星 Galaxy S24+？]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+"/>
+    <id>https://unclesnote.com/zh/240122041031/should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+</id>    
+    <modified>Mon, 22 Jan 2024 04:10:31 +0900</modified>
+    <issued>Mon, 22 Jan 2024 04:10:31 +0900</issued>
+		<created>Mon, 22 Jan 2024 04:10:31 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[2024 年 1 月 17 日，三星在其 [YouTube 频道](https://www.youtube.com/@Samsung) 上以`Galaxy AI`的名称解压了全新 Galaxy S24 系列。三星展示了以下五个演示作为 Galaxy S24 的卖点。如果您已经使用 Galaxy S20+ 或 S21+]]></summary>
+    <category><![CDATA[它,移动的]]></category>
+    <tag><![CDATA[它,移动的]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240122041031/zh-thumb-unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+.png"/>
+  </entry>
   <entry>
     <title><![CDATA[安装 Ubuntu 22.04 时可能遇到的问题]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240119025214/issues_you_may_meet_when_installing_ubuntu_22_04"/>
@@ -175,7 +187,7 @@
     <title><![CDATA[黑曜石的标注和报价块]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <modified>Mon, 22 Jan 2024 04:10:32 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[字典中标注的定义是大声喊出，用于引起读者的注意并告知他们重要或附加信息。让我们了解一下 Obsidian 中表达标注的语法和类型。]]></summary>
