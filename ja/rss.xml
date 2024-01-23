@@ -35,6 +35,14 @@
       <guid isPermaLink="true">https://unclesnote.com/ja/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
       <description><![CDATA[これを読んでいるということは、Obsidian に画像ファイルを貼り付けて追加する方法がわからないので読んでいないと思います。 Obsidian は一般的な Web ベースのブログとは異なり、ライターが管理する必要がある画像ファイルを作成/保存するため、画像ファイルを適切に管理する方法について疑問に思ってこれを読んで]]></description>
       <content:encoded><![CDATA[<p>これを読んでいるということは、Obsidian に画像ファイルを貼り付けて追加する方法がわからないので読んでいないと思います。 Obsidian は一般的な Web ベースのブログとは異なり、ライターが管理する必要がある画像ファイルを作成/保存するため、画像ファイルを適切に管理する方法について疑問に思ってこれを読んでいると思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="画像管理--私のアプローチは気に入りましたか">画像管理 – 私のアプローチは気に入りましたか?</h2>
 <p>実際、Obsidian で画像ファイルを管理するには、どのコミュニティ プラグインを組み合わせて使用​​するかに応じて、いくつかの方法があります。</p>
 
@@ -93,21 +101,34 @@
 <em>Obsidian - 設定 - ファイルとリンク - 新しい添付ファイルのデフォルトの場所 - <code class="language-plaintext highlighter-rouge">現在のファイルと同じフォルダー</code>を選択します</em></p>
 
 <p><code class="language-plaintext highlighter-rouge">現在のファイルと同じフォルダ</code>を設定すると、ノートが置かれている場所に画像ファイルが作成されます。ノート用の画像ファイルがすべて準備できたら、そのファイルを手動で<code class="language-plaintext highlighter-rouge">_img</code>フォルダに移動することをお勧めします。メモが完成するまでは、貼り付けた画像がすべて有効であるという保証がないからです。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="コミュニティプラグイン">コミュニティプラグイン</h2>
 <p>画像ファイルを管理するために上で示した方法を使用するには、2 つのコミュニティ プラグインをインストールする必要があります。</p>
 <h3 id="画像の名前を変更して貼り付け">画像の名前を変更して貼り付け</h3>
-<p>以下の<code class="language-plaintext highlighter-rouge">画像の名前を変更して貼り付け</code>プラグインは、画像をノートに貼り付けるときにポップアップを開きます。ポップアップでは、メモのタイトルをプレフィックスとして入力し、画像ファイルの名前をサフィックスとして入力できます。これは、メモに複数の画像が添付されている場合に、ファイル名で並べ替えて、どの画像ファイルがどの投稿に依存しているかを区別するのに役立ちます。</p>
+<p><code class="language-plaintext highlighter-rouge">画像の名前変更貼り付け</code>プラグインを使用すると、<code class="language-plaintext highlighter-rouge">Ctrl + V</code>ショートカットを使用して画像を貼り付けることで、画像ファイルの名前を変更できます。</p>
 
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - コミュニティ プラグイン - 画像の名前変更を貼り付け" width="972" height="542" />
 <em>Obsidian - コミュニティ プラグイン - 画像の名前変更を貼り付け</em></p>
 
-<p>以下は、この記事に添付された画像ファイルを自動で振り分けた場合です。</p>
+<p>貼り付けると、ポップアップが開きます。メモの名前がファイル名として自動的に入力され、サフィックスとして画像ファイルの名前を追加できます。</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" alt="`画像の名前を変更して貼り付け`をインストールし、`Ctrl + V`で画像を貼り付けると、ファイル名変更ポップアップが開きます。" width="972" height="656" />
+<em><code class="language-plaintext highlighter-rouge">画像の名前を変更して貼り付け</code>をインストールし、<code class="language-plaintext highlighter-rouge">Ctrl + V</code>で画像を貼り付けると、ファイル名変更ポップアップが開きます。</em></p>
+
+<p>これは、メモに複数の画像が添付されている場合に、ファイル名で並べ替えて、どの画像ファイルがどの投稿に依存しているかを区別するのに役立ちます。以下は、この記事に添付された画像ファイルを自動で振り分けた場合です。</p>
 
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Obsidian ファイル名による画像ファイルの自動分類" width="972" height="348" />
 <em>Obsidian ファイル名による画像ファイルの自動分類</em></p>
 
 <h3 id="画像のキャプション">画像のキャプション</h3>
-<p>コミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">画像キャプション</code>を検索すると、ダウンロード数が多い 2 つのプラグインが表示されますが、それらの使用法は似ています。最初のプラグインでは、画像の URL を入力して外部画像を追加できます。ただし、私の使用例では、外部イメージを追加する必要はありません。最初のプラグインは、黒い画像フレームと画像キャプションを追加します。 2枚目はグレーです。個人の好き嫌いに応じて最初のプラグインを選択しても問題ありません。しかし、私は 2 番目のプラグインの方が好きです。</p>
+<p>コミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">画像キャプション</code>を検索すると、ダウンロード数でランキングされた上位 2 つの画像キャプション プラグインが表示されます。 2 つのプラグインの使用方法は似ています。最初のプラグインは画像サイズ変更のためのより多くのオプションを提供しますが、私の場合、複雑な機能は必要ありませんでした。そして何よりも、黒いキャプション フレームではなくグレーのキャプション フレームが気に入りました。 2 番目のプラグインをダウンロードしてアクティブ化します。最初のプラグインを選択しても問題ありません。</p>
 
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - コミュニティ プラグイン - 画像キャプション" width="972" height="765" />
 <em>Obsidian - コミュニティ プラグイン - 画像キャプション</em></p>
@@ -128,6 +149,7 @@
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
@@ -244,6 +266,13 @@
   </tbody>
 </table>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="チタン---pro-モデルのみ">チタン - Pro モデルのみ</h2>
 
 <p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" alt="iPhone 15 - 左側が Plus、右側が Pro Max" width="972" height="546" />
@@ -303,6 +332,13 @@
 
 <p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-side_button-pro_on_the_left_regular_on_the_right.png" alt="iPhone 15 - サイドボタン - 左側が Pro、右側が通常" width="972" height="583" />
 <em>iPhone 15 - サイドボタン - 左側が Pro、右側が通常</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="ディスプレイ---グレードを区別するのが非常に悪い">ディスプレイ - グレードを区別するのが非常に悪い</h2>
 <p><code class="language-plaintext highlighter-rouge">ディスプレイ</code>のサイズは以前のiPhone 14と同じです。<code class="language-plaintext highlighter-rouge">iPhone 15のレギュラーとプロ</code>は6.1インチ、<code class="language-plaintext highlighter-rouge">プラスとプロマックス</code>は6.7インチです。</p>
@@ -394,6 +430,14 @@
 </ul>
 
 <p>Galaxy S20+ や S21+ などのシリーズを 2 年以上使用している場合は、新しいブランドの Galaxy シリーズの購入に興味があるかもしれません。既存のPlusモデルのユーザーから見た新ブランドGalaxy S24がどのようなものなのかをお話したいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="仕様---12gbのramが再適用されました">仕様 - 12GBのRAMが再適用されました</h2>
 
 <p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" alt="Galaxy S24+、S21+、20+ 前面" width="972" height="630" />
@@ -487,6 +531,14 @@
 <p>通話中の翻訳以外はGoogle翻訳アプリと全く同じ機能です。厳密に言えば、各文の継続的な翻訳であり、完全なリアルタイムではありません。メイン言語とは異なる言語を話す人々とどのくらいの頻度で会話するかを考えてみると、これが本当に必要な機能なのか、それとも単なる目新しい機能なのか、答えが見えてきます。</p>
 
 <p>電話でAirbnbを予約しますか？それとも、出張に行くのですが、英語が話せないので翻訳機能を使っていることを顧客に知らせたいですか?</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="グレードを区別する---300-ドル多く支払っていただけますか">グレードを区別する - 300 ドル多く支払っていただけますか?</h2>
 
 <p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-iphone_15_pro_max-galaxy_s24_ultra-galaxy_s24_plus.png" alt="iPhone 15 Pro Max - Galaxy S24 Ultra - Galaxy S24 Plus" width="972" height="489" />
@@ -578,6 +630,14 @@
       <content:encoded><![CDATA[<p>私は長い間Ubuntu 20.04を使用しています。 Ubuntu 22.04 も <a href="https://en.wikipedia.org/wiki/Long-term_support" target="_blank">LTS</a> バージョンになっていることがわかり、新しいラップトップに Windows をインストールする際に Ubuntu 22.04 を試してみようと考えています。</p>
 
 <p>そこで、Ubuntu 20.04 ユーザーとして遭遇したことのない新たな問題をまとめたいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="端末が開かない">端末が開かない</h2>
 <p>初めて Ubuntu をインストールする場合、ターミナルが開かないという問題が発生する可能性があります。これは、VirtualBox ユーザーで、Windows の言語が英語でない場合、またはタイムゾーンの国が英語圏ではない場合に発生することがあります。理由はわかりませんが、問題の解決方法はわかっています。</p>
 
@@ -629,6 +689,14 @@ youraccount   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span c
       <guid isPermaLink="true">https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
       <description><![CDATA[C# ソフトウェアは、一般に Windows 上の Visual Studio で開発できます。ただし、Ubuntu 環境でも開発できます。有名な IDE は、Mono プロジェクトによって提供される MonoDevelop です。ただし、これ以上のものを使用する VS Code C# ソフトウェア開発環境を作成して]]></description>
       <content:encoded><![CDATA[<p>C# ソフトウェアは、一般に Windows 上の Visual Studio で開発できます。ただし、Ubuntu 環境でも開発できます。有名な IDE は、Mono プロジェクトによって提供される MonoDevelop です。ただし、これ以上のものを使用する VS Code C# ソフトウェア開発環境を作成してみましょう。 Ubuntu 20.04 に基づいています。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="net-ファミリをインストールする">.NET ファミリをインストールする</h2>
 <p>まず、.net を含むリポジトリを追加します。そして以下の 3 つをインストールしますが、他の 3 つは .NET SDK をインストールするだけで一緒にインストールされました。確認のために残りの 2 つをご覧ください。</p>
 <ul>
@@ -815,6 +883,14 @@ dotnet new console
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="ビルドとデバッグ用のアセットを生成する">ビルドとデバッグ用のアセットを生成する</h2>
 <p><code class="language-plaintext highlighter-rouge">コマンド パレット...</code>からアセットを作成できます。</p>
 
@@ -873,6 +949,14 @@ dotnet new console
       <guid isPermaLink="true">https://unclesnote.com/ja/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea</guid>
       <description><![CDATA[あなたは韓国に住んでいないが、韓国への旅行や出張中に宝くじの購入を考えていますか?韓国で宝くじをどこで、どのように、いつ買えるのかを紹介したいと思います。]]></description>
       <content:encoded><![CDATA[<p>あなたは韓国に住んでいないが、韓国への旅行や出張中に宝くじの購入を考えていますか?韓国で宝くじをどこで、どのように、いつ買えるのかを紹介したいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="東ヘンボグォンガチャ-645">東ヘンボグォンガチャ 6/45</h2>
 
 <p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-korea_lotto_mark_693rd_1st_place_lotto.png" alt="韓国ロトマーク / 第693回1等ロト" width="972" height="546" />
@@ -940,6 +1024,14 @@ dotnet new console
 </ul>
 
 <p>韓国を出国後に1位を獲得したことがわかった場合、韓国に戻ってくる際の税率は問題になりません。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="どこでいつ購入できますか">どこで/いつ購入できますか?</h2>
 
 <p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_spot_in_busan_korea-lotto_stores_that_have_produced_many_customer_winners_are_famous_so_people_sometimes_wait_in_line_to_buy_lottery_tickets.png" alt="韓国・釜山の宝くじスポット - 多くの当選者を輩出している宝くじ店は有名で、宝くじを買うために行列ができることもあります。" width="972" height="552" />
@@ -1061,6 +1153,14 @@ dotnet new console
       <content:encoded><![CDATA[<p>場合によっては、カテゴリごとに複数のボールトを作成して投稿を整理するユーザーもいるかもしれません。 Obsidian の Vault を開くたびに開くのは面倒かもしれません。そこで、Windows環境で保管庫ごとにObsidianを開くことができるショートカットアイコンを作成する方法を紹介したいと思います。</p>
 
 <p>原理を説明すると、ショートカット アイコンで<code class="language-plaintext highlighter-rouge">obsidian.exe</code>を実行するときに、最初に開くボールトを Obsidian に指示するパラメータを引数値として追加します。 Obsidian はこれを <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a> と呼びます。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="事前に知っておくべきこと">事前に知っておくべきこと</h2>
 <p>Obsidian Vault のショートカット アイコンを作成する前に、<code class="language-plaintext highlighter-rouge">obsidian.exe</code>へのパスと<code class="language-plaintext highlighter-rouge">Vault</code>へのパスを知っておく必要があります。結論から言うと、以下のフォームのコマンドラインをショートカットアイコンに設定します。</p>
 
@@ -1139,6 +1239,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <content:encoded><![CDATA[<p>Obsidian を使用してよく整理された記事がある場合は、同僚や友人と共有する必要がある場合があります。 Obsidian 自体は PDF ファイルとしてエクスポートする機能を提供しますが、変更可能な Word (docx) または PowerPoint (pptx) ファイルの形式で共有したい場合は、多数の新しいファイルをコピーして貼り付ける必要があります。面倒。</p>
 
 <p>そこで、この作業を簡単にしてくれる Obsidian コミュニティ プラグインである Pandoc を紹介したいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="パンドックとは何ですか"><strong>パンドック</strong>とは何ですか?</h2>
 <p><a href="https://pandoc.org/" target="_blank">Pandoc</a> は、1 つのマークアップ形式から PDF、MS Word、PowerPoint、さらに Markdown、HTML、LaTeX に変換するためのライブラリです。基本的に、これは Windows Powershell または Linux ターミナルでコマンドとして使用できる <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a> ツールです。</p>
 
@@ -1180,6 +1288,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 </ul>
 
 <p>すべてが完了したら、Obsidian を再起動します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="pandoc-プラグインの使用法"><strong>Pandoc プラグイン</strong>の使用法</h2>
 <p>Obsidian Markdown を希望のファイル形式に変換するには、<code class="language-plaintext highlighter-rouge">Ctrl + P</code>を押してクイック パレットを開きます。次に、<code class="language-plaintext highlighter-rouge">pandoc plugin</code>を検索して目的のファイル形式を選択すると、上で設定したエクスポートフォルダーにファイルが作成されます。</p>
 
@@ -1239,6 +1355,13 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
   <li>ReadItLater コミュニティ プラグインを使用して貼り付ける</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="iframe">iframe</h2>
 <p>Obsidian は Web ベースで開発されました。したがって、HTML タグを使用できます。したがって、<code class="language-plaintext highlighter-rouge">iframe</code> HTML タグを使用してビデオを埋め込むことができます。</p>
 
@@ -1286,6 +1409,13 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p><strong>悪いこと</strong> 
 ・プラグインの基本コンセプトはObsidianにURLを貼り付けて新規ノートを作成するため、作成中の記事に内容を貼り付けるには新規ノートから再度記事に貼り付ける必要があります。</p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="インストール方法と使用方法">インストール方法と使用方法</h3>
 <p>Obsidian のコミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">readitlater</code>を検索し、インストールして有効化します。</p>
 
@@ -1331,6 +1461,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <guid isPermaLink="true">https://unclesnote.com/ja/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[焼きパンは比較的価格の安くて暖かい食べ物なので、韓国で冬に主に販売される路上料理の一つです。そして、パンはパンとパンの単語の合成語です。]]></description>
       <content:encoded><![CDATA[<p>焼きパンは比較的価格の安くて暖かい食べ物なので、韓国で冬に主に販売される路上料理の一つです。そして、パンはパンとパンの単語の合成語です。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="種類">種類</h2>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="左 - パンパン、右 - 鯉パン" width="972" height="598" />
@@ -1353,6 +1491,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p>2021年に流行した感染症以前には、1ドルでフナパン3～4個を購入できるのが一般的でしたが、現在はインフレの影響で1ドルに2～3個を購入できます。これは、パンの中にあんこが入ったフナパンの基準であり、シュークリームやピザトッピングが入ったフナパンは価格が少し高いです。</p>
 
 <p>伝統的に市場や道路沿いでパンを購入することができ、決済手段として販売者はクレジットカードよりも現金購入を好む。時には、売り手は銀行口座に現金入金を要求することがあります。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="心理テスト">心理テスト</h2>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵.png" alt="フンパン" />
@@ -1381,6 +1527,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <guid isPermaLink="true">https://unclesnote.com/ja/231227193010/create_a_telegram_bot_and_send_a_message</guid>
       <description><![CDATA[Telegram は、比較的使いやすい API サービスを提供します。したがって、セキュリティが大きな問題ではない CI/CD システムでイベントを通知する簡単なツールとして使用できます。 Telegram を Jenkins システムに統合しようとしているのですが、Telegram ボットの基本的な作成方法を紹介し]]></description>
       <content:encoded><![CDATA[<p>Telegram は、比較的使いやすい API サービスを提供します。したがって、セキュリティが大きな問題ではない CI/CD システムでイベントを通知する簡単なツールとして使用できます。 Telegram を Jenkins システムに統合しようとしているのですが、Telegram ボットの基本的な作成方法を紹介したいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="概要">概要</h2>
 <p>Telegram メッセージを送信するには、Telegram ボットに一致する <code class="language-plaintext highlighter-rouge">token</code> とチャット ルームを示す <code class="language-plaintext highlighter-rouge">chatid</code> が必要です。</p>
 <ul>
@@ -1419,6 +1573,14 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 <em>電報 - <code class="language-plaintext highlighter-rouge">BotFather</code> - <code class="language-plaintext highlighter-rouge">newbot</code></em></p>
 
 <p>トークンは、Telegram API を使用してボットを制御するための最も基本的な認証情報です。したがって、公開されないように慎重に書き留めてください。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="telegram-getupdates-api-呼び出し---chatid">Telegram <strong>getUpdates</strong> API 呼び出し - <strong>chatid</strong></h2>
 <p>BotFather がボットを作成した場合は、Telegram でボットを見つけてメッセージを送信します。 <code class="language-plaintext highlighter-rouge">こんにちは</code>とメッセージを送りました。</p>
 
@@ -1494,6 +1656,13 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 
 <p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - 電報プラグイン" width="972" height="681" />
 <em>Jenkins - 電報プラグイン</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="telegram-メッセージを送信するための-groovy-関数">Telegram メッセージを送信するための Groovy 関数</h2>
 <p>Jenkins スクリプトで使用する 2 つの Groovy 関数を作成しました。 <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_message</code> は、文字列を挿入するだけで Telegram メッセージを送信する関数です。もう 1 つの <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_file</code> は、テキスト ファイルの内容を Telegram メッセージとして送信する関数です。</p>
@@ -1683,6 +1852,13 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
   <li>https://pkg.jenkins.io/debian</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="基本環境">基本環境</h2>
 <p>Jenkins が動作するには、JDK バージョン 8 以降が必要です。 JDK バージョン 11 をインストールします。</p>
 
@@ -1800,6 +1976,14 @@ vi /etc/default/jenkins
 <span class="c"># - --------------------------------------------------------</span>
 
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="synology-nas-コンテナ-ポートを構成しjenkins-を実行する">Synology NAS コンテナ ポートを構成し、Jenkins を実行する</h2>
 <p>その後、Synology NAS GUI で Ubuntu コンテナを停止し、外部接続用のポートを Jenkins に設定します。コンテナの<code class="language-plaintext highlighter-rouge">8080</code>ポートを<code class="language-plaintext highlighter-rouge">48080</code>ポートにマッピングしました。</p>
 
@@ -1852,6 +2036,14 @@ service jenkins restart
 <p>そのような人にとって、GUI インターフェイスで OS を有効にするための Ubuntu Docker に XRDP をインストールするのは最良の選択肢かもしれません。</p>
 
 <p>2つの方法を説明します。 1 つは、Ubuntu VM の Docker に XRDP をインストールすることです。もう 1 つは、Synology NAS の Docker アプリに Ubuntu コンテナを作成し、XRDP を通じて外部からアクセスできるように設定することです。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="ubuntu-vm-上の-xrdp-docker-コンテナ">Ubuntu VM 上の XRDP Docker コンテナ</h2>
 <h3 id="dockerイメージを構築してコンテナを実行する">Dockerイメージを構築してコンテナを実行する</h3>
 <p>以下の情報をもとにDockerイメージを作成していきます。以下の内容の<code class="language-plaintext highlighter-rouge">Dockerfile</code>を作成しましょう。</p>
@@ -1928,6 +2120,13 @@ docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="n
 <p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="XRDP 接続用の VirtualBox ポート転送設定" width="972" height="445" />
 <em>XRDP 接続用の VirtualBox ポート転送設定</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="xrdpリモートアクセス">XRDPリモートアクセス</h3>
 <p>次に、リモート デスクトップ接続を通じてアドレス<code class="language-plaintext highlighter-rouge">127.0.0.1:43389</code>に接続します。</p>
 
@@ -1955,6 +2154,13 @@ docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="n
 
 <p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="Synology NAS GUI - Ubuntu コンテナ - ポート設定" width="972" height="694" />
 <em>Synology NAS GUI - Ubuntu コンテナ - ポート設定</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h3 id="ubuntu-ssh-および-xrdp-パッケージをインストールする">ubuntu SSH および XRDP パッケージをインストールする</h3>
 <p>以下のコマンドに従って<code class="language-plaintext highlighter-rouge">openssh-server</code>をインストールします。 ssh は、後で Ubuntu Docker コンテナにリモートでアクセスするときに役立ちます。</p>
@@ -2100,6 +2306,14 @@ service xrdp restart
       <content:encoded><![CDATA[<p><strong>レノボSlim3 15ABA7 R5</strong>はフリーDOSが基本OSでインストールされており、別途ウィンドウをインストールする必要があります。</p>
 
 <p>Windowsのインストールのための基本とメモリをアップグレードする方法を学びましょう。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="スペック">スペック</h2>
 
 <p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="Lenovo Slim3 15ABA7 R5" width="972" height="875" />
@@ -2161,6 +2375,14 @@ service xrdp restart
 </pre></td><td class="rouge-code"><pre>OOBE\BYPASSNRO
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>Windowsのインストールが完了したら、USBスティックで保存したWiFiドライバをインストールします。そして、<a href="https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads" target="_blank">レノボドライバサイト</a>に接続してインストールできなかった残りのドライバをインストールする。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="メモリ購入">メモリ購入</h2>
 <p>以下のように<strong>レノボSlim3 15ABA7 R5</strong>はDDR4-3200 8GBのメモリがオンボード形式で装着されている。したがって、メモリデュアルチャネル構成を作成するために、8GB容量のDDR4-3200クロックメモリを購入します。</p>
 <ul>
@@ -2247,6 +2469,14 @@ service xrdp restart
 <p>おそらく Windows は各環境に適したディスプレイ設定をプリセットとしてレジストリに保存して管理しているのだと思いますが、この設定のひねりが原因でこの問題が発生する場合があるようです。</p>
 
 <p>この問題を解決するために私が見つけた方法は、Windows ディスプレイ構成レジストリ値を削除して初期化することです。結論から言うと、マルチディスプレイ環境を再度セットアップする必要があります。その方法を説明します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="1-windows-レジストリ-エディタを開きます">1. Windows レジストリ エディタを開きます</h2>
 <p><code class="language-plaintext highlighter-rouge">Windows + R</code>を使用して<code class="language-plaintext highlighter-rouge">ファイル名を指定して実行</code>ダイアログに<code class="language-plaintext highlighter-rouge">regedit</code>と入力するか、<code class="language-plaintext highlighter-rouge">スタート</code>メニューで<code class="language-plaintext highlighter-rouge">regedit.exe</code>を検索して<code class="language-plaintext highlighter-rouge">レジストリ エディタ</code>を実行します。</p>
 
@@ -2267,6 +2497,13 @@ service xrdp restart
 
 <p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="レジストリ エディタ - `GraphicsDrivers`フォルダ内の`Configuration`フォルダと`Connectivity`フォルダを削除します。" width="972" height="662" />
 <em>レジストリ エディタ - <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code>フォルダ内の<code class="language-plaintext highlighter-rouge">Configuration</code>フォルダと<code class="language-plaintext highlighter-rouge">Connectivity</code>フォルダを削除します。</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="3-windowsを再起動します">3. Windowsを再起動します。</h2>
 <p>Windows を再起動します。再起動が完了すると、Windows の観点からは、ディスプレイが新しく認識されたディスプレイになります。</p>
@@ -2290,6 +2527,14 @@ service xrdp restart
       <content:encoded><![CDATA[<p>辞書のコールアウトの定義は、大声で呼びかけることであり、読者の注意を引き、重要な情報や追加情報を知らせるために使用されます。</p>
 
 <p>Obsidian で吹き出しを表現するための文法と種類について学びましょう。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="引用ブロックと吹き出しブロックの違い">引用ブロックと吹き出しブロックの違い</h2>
 <p><strong>引用ブロック</strong>には、各行の <code class="language-plaintext highlighter-rouge">&gt;</code> で始まる文がリストされます。</p>
 
@@ -2349,6 +2594,14 @@ service xrdp restart
 </pre></td><td class="rouge-code"><pre>&gt; [!success]- Callouts block - Initially folded callouts block
 &gt; I am a callouts of type success.
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="吹き出しブロックのタイプ">吹き出しブロックのタイプ</h2>
 <p>Obsidian の事前定義された吹き出しブロックの色とアイコンは次のとおりです。</p>
 
@@ -2426,6 +2679,14 @@ service xrdp restart
       <content:encoded><![CDATA[<p>私の場合、Oracle VM VirtualBox の Ubuntu VM と Windows の間で頻繁にファイル共有が行われます。もちろん、ゲスト追加機能を使用してマウスをドラッグしてファイルを共有することもできますが、それでも不便な場合があります。</p>
 
 <p>そこで、Ubuntu VMでWindowsフォルダーを共有する方法を説明したいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="virtual-boxに共有フォルダーを追加する">Virtual Boxに共有フォルダーを追加する</h2>
 <p>Ubuntu VM の設定に移動します。次に、<code class="language-plaintext highlighter-rouge">共有フォルダー</code>タブに共有するフォルダーを追加します。</p>
 
@@ -2473,6 +2734,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 </pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> pooh vboxsf
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>最も重要な。最後に、Ubuntu VM を再起動します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="テスト">テスト</h2>
 <p>Ubuntu VM の再起動が完了したら、テストを実行してみましょう。</p>
 
@@ -2501,6 +2770,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>まとめると、Galaxy S24シリーズは2024年第1四半期に発売予定で、外装はチタン製でカメラ性能はダウングレードされ、モデルによってはSamsung ExynosとQualcomm Snapdragon APが搭載されると予想されています。</p>
 
 <p>それでは、関連する噂を詳しく見てみましょう。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="リリース時期---2023-年-12-月または-2024-年-1-月">リリース時期 - 2023 年 12 月または 2024 年 1 月</h2>
 
 <p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="米国ニューヨーク州タイムズスクエアのGalaxy S23電子看板広告" width="972" height="556" />
@@ -2517,6 +2794,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>IT専門家のLebegnerz氏による最近の予測によると、Galaxy S24シリーズ全体にチタン素材のフレームが採用され、全体的なデザインの美しさが向上すると予想されています。この動きは、AppleがiPhone 15 ProおよびPro Maxモデルにチタンフレームを導入したのと同様、より広範な戦略の一環とみられている。</p>
 
 <p>さらにエクステリアデザインも、これまでの丸みを帯びたフォルムからより角張ったデザインへと変革し、高級感をプラスする予定だ。 Ultraモデルの特徴的なエッジディスプレイが完全にフラットディスプレイに置き換えられるのではないかという憶測もある。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="カメラ---ダウングレード-ただし">カメラ - ダウングレード ただし、</h2>
 
 <p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Galaxy S24の前面と背面のレンダリングがSmart PixのOnLeaksによってリークされた" width="972" height="642" />
@@ -2606,6 +2891,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
       <content:encoded><![CDATA[<p>ソフトウェア開発目的で Ubuntu を使用する場合、ほとんどの場合英語で入力することになります。ただし、場合によっては、GNOME GUI に韓国語を入力する必要がある場合があります。</p>
 
 <p>そこで、デフォルト設定では英語入力しか許可されていないため、<code class="language-plaintext highlighter-rouge">ibus-hangul</code>プラグインを使用して韓国語入力を設定します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="ibus-ハングル">ibus-ハングル</h2>
 <p><code class="language-plaintext highlighter-rouge">ibus-hangul</code> は、Linux または Ubuntu 上でハングル入力方法をサポートするプラグインです。 <code class="language-plaintext highlighter-rouge">ibus</code>は<code class="language-plaintext highlighter-rouge">入力バス</code>の略です。 Ubuntu はすでにハングル入力をサポートしていますが、最適化されたハングル入力のためにアップグレードして<code class="language-plaintext highlighter-rouge">ibus-hangul</code>を使用します。</p>
 
@@ -2661,6 +2954,13 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="ファイル内容は同じですがファイルが異なります。左側は Windows PC 形式、右側は Linux UNIX 形式です" width="972" height="456" />
 <em>ファイル内容は同じですがファイルが異なります。左側は Windows PC 形式、右側は Linux UNIX 形式です</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="windowsとlinuxの改行の違い">WindowsとLinuxの改行の違い</h2>
 <p>ASCII 文字の観点から見ると、</p>
@@ -2732,6 +3032,13 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - EOL 変換 - `編集 &gt; EOL 変換 &gt; Windows (CR LF) または Unix (LF)`" width="972" height="614" />
 <em>Notepad++ - EOL 変換 - <code class="language-plaintext highlighter-rouge">編集 &gt; EOL 変換 &gt; Windows (CR LF) または Unix (LF)</code></em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h3 id="ubuntu-linux">Ubuntu (Linux)</h3>
 <p>Ubuntu環境では、ファイルのEOLステータスを確認して変換することもできます。</p>
@@ -2828,6 +3135,14 @@ pc.txt: ASCII text
       <content:encoded><![CDATA[<p>Ubuntu OSがインストールされたPCをメインコンピュータとして使用している場合を除き、ハードウェア仕様が低いPCを使用しているか、Oracle VM VirtualBoxにUbuntuをインストールしている可能性があります。</p>
 
 <p>主に SSH を使用してリモート接続する場合は大きな影響はありませんが、GNOME で UI を頻繁に操作する場合は、パフォーマンスが低下する可能性があります。そこで、Ubuntu のインストールおよび構成時にパフォーマンスを最適化するためのヒントをいくつか紹介します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="アニメーションをオフにする">アニメーションをオフにする</h2>
 <p>Virtual Box またはローエンド PC で Ubuntu を使用している場合、リソースが限られているため、アニメーションによって OS のパフォーマンスが低下する可能性があります。以下は、Ubuntu GNOME GUI でアニメーションをオフまたはオンにする方法です。ターミナルでコマンドを実行できます。</p>
 
@@ -2861,6 +3176,13 @@ pc.txt: ASCII text
 
 <p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="ドックアイコンのサイズ - [設定] &gt; [外観] &gt; [アイコン サイズ] のサイズ変更" width="972" height="616" />
 <em>ドックアイコンのサイズ - [設定] &gt; [外観] &gt; [アイコン サイズ] のサイズ変更</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="スワップサイズを増やす">スワップサイズを増やす</h2>
 <p>Virtual Box にインストールされた Ubuntu を使用している場合、仮想マシンは Windows コンピューターと共有されるため、8GB 未満のメモリが割り当てられる可能性があります。 Ubuntu をカジュアルに使用する場合は問題にならないかもしれませんが、大規模なプラットフォーム、BSP、またはソフトウェアをコンパイルしようとすると、メモリ不足がコンパイルの失敗につながる可能性があります。これは、スワップ サイズを増やすことで解決できます。</p>
@@ -2911,6 +3233,14 @@ pc.txt: ASCII text
 <p>そのため、Linux ベースの OS は、物理メモリが不足した場合にスワップファイルを作成し、ハードディスク上のファイルをメモリとして使用します。これはスワップ ファイルと呼ばれ、Windows 環境の仮想メモリに似ています。</p>
 
 <p>それでは、Ubuntu 20.04でのスワップファイルの作成と適用方法を説明したいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="チェックスワップ">チェックスワップ</h2>
 <p>私の Ubuntu 環境でのスワップ ステータスを確認するには、<code class="language-plaintext highlighter-rouge">free -m</code>コマンドを使用します。そして、システムの<code class="language-plaintext highlighter-rouge">root</code>に<code class="language-plaintext highlighter-rouge">swapfile</code>があるかどうかを確認してください。スワップ ファイルはルート パスに作成するのが一般的です。</p>
 
@@ -2992,6 +3322,14 @@ Setting up swapspace version 1, size <span class="o">=</span> 5 GiB <span class=
 no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c-b719-e54154ad8194
 <span class="nv">$ </span><span class="nb">sudo </span>swapon /swapfile
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="スワップファイルの登録">スワップファイルの登録</h2>
 <p>さて、最後に、Ubuntu が起動するたびにスワップファイルをロードするように Ubuntu を設定します。</p>
 
@@ -3028,6 +3366,13 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <content:encoded><![CDATA[<p>あなたがソフトウェア開発者で、開発環境が Ubuntu である場合に、インストールする必要がある必須の Ubuntu ソフトウェアをインストールする方法を説明します。</p>
 
 <p>実際、この記事は、新しい Ubuntu 環境を構成する際の参考になります。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="基本パッケージ">基本パッケージ</h2>
 <p>以下は便宜上、またソース コードのコンパイルに使用するための基本パッケージです。必要に応じてインストールできます。</p>
@@ -3116,6 +3461,14 @@ wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.as
 <span class="c">## install vscode remote extension which based on above openssh-server </span>
 code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="github-デスクトップ">GitHub デスクトップ</h2>
 
 <p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="GitHub デスクトップ" width="972" height="531" />
@@ -3178,6 +3531,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>ライセンス キーをお持ちでない場合は、評価期間が終了したときに再度リセット プロセスを実行する必要がある場合があります。そのため、ワークスペースを保存して使用し、更新されるたびに設定をエクスポートしてファイルとして保存することをお勧めします。</p>
 <h2 id="データベース">データベース</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="sqlite用dbブラウザ">SQLite用DBブラウザ</h3>
 
 <p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="SQLite用DBブラウザ" width="972" height="527" />
@@ -3197,6 +3558,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h3 id="mysql-ワークベンチ">MySQL ワークベンチ</h3>
 <p>これについては、後で MySQL Workbench を Ubuntu にインストールする必要があるときに説明します。</p>
 <h2 id="開発言語に依存">開発言語に依存</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="cシャープ">Cシャープ</h3>
 <p>私は C++ と Java で長い経験を持つ開発者です。 C Sharp 言語は、Java と同様の構文と生理機能を持ち、多くのパブリック ライブラリがあり、クロスプラットフォームをサポートしているため、興味深く楽しいソフトウェア開発言語です。 Ubuntuもサポートされています。</p>
 
@@ -3227,6 +3596,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <content:encoded><![CDATA[<p>Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?</p>
 
 <p>最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は、Web リンクを Chrome で開くように変更してみましょう。 Windows のデフォルト アプリと Outlook の設定で Chrome ブラウザを確認して設定します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="windows-のデフォルトの-web-ブラウザ設定">Windows のデフォルトの Web ブラウザ設定</h2>
 <p>Chrome ユーザーであれば、すでに Google Chrome をデフォルトの Web ブラウザとして設定しているかもしれません。 Office 365 のデフォルトのブラウザー設定があることを確認してください。</p>
 
@@ -3275,6 +3652,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" alt="Ubuntu ソフトウェア" />
 <em>Ubuntu ソフトウェア</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="ファイルブラウザ">ファイルブラウザ</h2>
 <h3 id="クルセイダー">クルセイダー</h3>
 <p>Windows 環境で Q-Dir または <a href="https://www.ghisler.com/download.htm" target="_blank">Total Commander</a> を使用した経験がある場合は、<a href="https://krusader.org" target="_blank">Krusader</a> で分割の経験を提供します。ウィンドウとマルチタブのファイルブラウジング。</p>
@@ -3290,6 +3674,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <span class="nb">sudo </span>apt <span class="nb">install </span>krusader
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="画像ビューアエディタ">画像ビューア/エディタ</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="グウェンビュー">グウェンビュー</h3>
 <p><a href="https://github.com/KDE/gwenview" target="_blank">GwenView</a> は、私がこれまで使用した中で最高の Ubuntu 画像ビューアです。より良い画像ビューアを見つけたら更新します。</p>
 
@@ -3344,6 +3736,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
 <span class="nb">chmod </span>777 <span class="k">*</span>.appimage
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="生産性">生産性</h2>
 <h3 id="イージーストロークジェスチャーマウスジェスチャーマクロ">イージーストロークジェスチャー(マウスジェスチャーマクロ)</h3>
 <p>Windows 上で <a href="https://www.tcbmi.com/strokeit" target="_blank">Strokeit</a> マウス ジェスチャ マクロ ソフトウェアを使用した経験がある場合は、<code class="language-plaintext highlighter-rouge">Easysteroid Gesture</code> が Ubuntu の最良の代替手段となります。</p>
@@ -3397,6 +3797,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </table>
 
 <h2 id="システム">システム</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="bleachbitfreespace-用クリーナー">BleachBit(FreeSpace 用クリーナー)</h3>
 <p><a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a>は、不要なファイルを削除して空き容量を増やす便利なソフトウェアです。 Linuxのほか、WindowsやMac OSなどさまざまなOSに対応しています。</p>
 
@@ -3436,6 +3844,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <guid isPermaLink="true">https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
       <description><![CDATA[私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィ]]></description>
       <content:encoded><![CDATA[<p>私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィールとは若干異なります。そこで、X86 Windows ブラウザ上で Jekyll をテストするための Virtual Box のポート転送方法を説明したいと思います。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="ubuntu-vm-上でローカルに-jekyll-を実行する">Ubuntu VM 上でローカルに Jekyll を実行する</h2>
 <p>まず、Ubuntu VM の<code class="language-plaintext highlighter-rouge">ifconfig</code>を使用してネットワーク インターフェイスの IP アドレスを確認します。私の場合、IP アドレスは<code class="language-plaintext highlighter-rouge">10.0.2.15</code>です。</p>
 
@@ -3526,6 +3942,13 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
   <li>Ubuntu が起動するたびにディスク デバイスを使用できるようにします。</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="1-ディスク-イメージを作成しubuntu-vm-にアタッチします">1. ディスク イメージを作成し、Ubuntu VM にアタッチします。</h2>
 <p>ディスクイメージは、Virtual Box Manager の<code class="language-plaintext highlighter-rouge">Virtual Media Manager</code>を通じて作成できます。</p>
 
@@ -3592,6 +4015,13 @@ gparted
 
 <p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - ディスク パーティションの UUID を確認する" width="972" height="711" />
 <em>Ubuntu VM - GParted - ディスク パーティションの UUID を確認する</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="3-起動するたびにディスクをマウントします">3. 起動するたびに、ディスクをマウントします</h2>
 <p>現在の状態では、フォーマットされたディスクデバイスの準備はできていますが、ファイルを書き込むためのパスがありません。そこで、特定のフォルダーをハードディスクデバイスに接続してパスを作成します。これが<code class="language-plaintext highlighter-rouge">マウント</code>です。</p>
@@ -3679,6 +4109,14 @@ VS Code の場合、<code class="language-plaintext highlighter-rouge">設定 &g
 
   <p><a href="https://code.visualstudio.com/api/references/theme-color" target="_blank">https://code.visualstudio.com/api/references/theme-color</a></p>
 </blockquote>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="文字色の設定方法">文字色の設定方法</h2>
 <p>テキストの色を変更するには、必要なテキストを中央に配置し、最初と最後に以下のコードを追加する必要があります。</p>
 <ul>
@@ -3758,6 +4196,13 @@ VS Code の場合、<code class="language-plaintext highlighter-rouge">設定 &g
   <li><code class="language-plaintext highlighter-rouge">\x1b</code> : エスケープ文字を16進数で表します。</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="2-スタイル">2. スタイル</h3>
 <p>テキストのスタイルを選択することもできますが、それが必要かどうかは疑問です。ログは読みやすいものでなければなりません。</p>
 <ul>
@@ -3793,6 +4238,13 @@ VS Code の場合、<code class="language-plaintext highlighter-rouge">設定 &g
   <li><code class="language-plaintext highlighter-rouge">46</code>: シアンの背景</li>
   <li><code class="language-plaintext highlighter-rouge">47</code>: 白背景</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h3 id="5-カラーリセット">5. カラーリセット</h3>
 <p>テキストの色とスタイルをリセットしない場合は、最初の設定のままになります。</p>

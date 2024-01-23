@@ -35,6 +35,14 @@
       <guid isPermaLink="true">https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins</guid>
       <description><![CDATA[If you're reading this, I don't think you're reading because you don't know how to paste and add image files to Obsidian. I think you're probably reading this]]></description>
       <content:encoded><![CDATA[<p>If you’re reading this, I don’t think you’re reading because you don’t know how to paste and add image files to Obsidian. I think you’re probably reading this wondering how to manage image files well, since Obsidian, unlike typical web-based blogs, creates/saved image files that must be managed by the writer.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="image-management--do-you-like-my-approach">Image Management – Do you like my approach?</h2>
 <p>In fact, there are several ways to manage image files in Obsidian, depending on which community plugins you use in combination.</p>
 
@@ -93,21 +101,34 @@
 <em>Obsidian - Settings - Files and links - Default location for new attachments - Select <code class="language-plaintext highlighter-rouge">Same folder as current file</code></em></p>
 
 <p>By setting <code class="language-plaintext highlighter-rouge">Same folder as current file</code>, an image file is created in the location where the note is located, and when all image files for the note are prepared, it is recommended to manually move the file to the <code class="language-plaintext highlighter-rouge">_img</code> folder. This is because there is no guarantee that all images pasted will be valid until the note is completed.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="community-plugins">Community plugins</h2>
 <p>To use the method I showed above for managing image files, you will need to install two community plugins.</p>
 <h3 id="paste-image-rename">Paste image rename</h3>
-<p>The <code class="language-plaintext highlighter-rouge">Paste image rename</code> plugin below opens a pop-up when you paste an image into a note. The pop-up allows you to enter the title of the note as a prefix and the name of the image file as a suffix. This helps you sort by file name and distinguish which image file is dependent on which post when there are multiple images attached to a note.</p>
+<p>The <code class="language-plaintext highlighter-rouge">Paste image rename</code> plugin allows you to rename an image file by pasting the image with the <code class="language-plaintext highlighter-rouge">Ctrl + V</code> shortcut.</p>
 
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - Community Plugins - Paste image rename" width="972" height="542" />
 <em>Obsidian - Community Plugins - Paste image rename</em></p>
 
-<p>Below is a case in which the image files attached to this article are automatically sorted.</p>
+<p>When you paste, a pop-up opens. The name of the note is automatically entered as the file name, and you can add the name of the image file as a suffix.</p>
+
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" alt="When you install `Paste image rename` and paste the image with `Ctrl + V`, the file name modification pop-up opens." width="972" height="656" />
+<em>When you install <code class="language-plaintext highlighter-rouge">Paste image rename</code> and paste the image with <code class="language-plaintext highlighter-rouge">Ctrl + V</code>, the file name modification pop-up opens.</em></p>
+
+<p>This helps you sort by file name and distinguish which image file is dependent on which post when there are multiple images attached to a note. Below is a case in which the image files attached to this article are automatically sorted.</p>
 
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Automatic sorting of image files by Obsidian file name" width="972" height="348" />
 <em>Automatic sorting of image files by Obsidian file name</em></p>
 
 <h3 id="image-captions">Image Captions</h3>
-<p>If you search for <code class="language-plaintext highlighter-rouge">image caption</code> in the community plugin menu, you will see two plugins with many downloads and their usage is similar. The first plugin allows you to add external images by entering the image URL. However, in my use case there is no need to add external images. The first plugin adds a black image frame and an image caption. The second one is gray. There is no problem in choosing the first plugin depending on your personal likes and dislikes. But I prefer the second plugin.</p>
+<p>If you search for <code class="language-plaintext highlighter-rouge">image caption</code> in the community plugin menu, you can see the top two image caption plugins ranked by downloads. The two plugins are similar in usage. The first plugin provides more options for image resizing, but in my case, I didn’t need any complicated features, and most of all, I liked the gray caption frame rather than the black caption frame. Download and activate the second plugin. There is no problem if you choose the first plugin.</p>
 
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - Community Plugins - Image Captions" width="972" height="765" />
 <em>Obsidian - Community Plugins - Image Captions</em></p>
@@ -128,6 +149,7 @@
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
@@ -244,6 +266,13 @@
   </tbody>
 </table>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="titanium---for-pro-models-only">Titanium - for Pro models only</h2>
 
 <p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" alt="iPhone 15 - Plus on the left, Pro Max on the right" width="972" height="546" />
@@ -303,6 +332,13 @@
 
 <p><img src="/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-side_button-pro_on_the_left_regular_on_the_right.png" alt="iPhone 15 - Side Button - Pro on the left, regular on the right" width="972" height="583" />
 <em>iPhone 15 - Side Button - Pro on the left, regular on the right</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="display---too-bad-to-distinguish-between-grades">Display - too bad to distinguish between grades</h2>
 <p><code class="language-plaintext highlighter-rouge">The display</code> size is the same as the previous iPhone 14. <code class="language-plaintext highlighter-rouge">The iPhone 15 regular and Pro</code> are 6.1 inches, and <code class="language-plaintext highlighter-rouge">the Plus and Pro Max</code> are 6.7 inches.</p>
@@ -394,6 +430,14 @@
 </ul>
 
 <p>If you have been using a series such as the Galaxy S20+ or S21+ for more than two years, you may be interested in purchasing the new brand Galaxy series. I would like to talk about what the new brand Galaxy S24 is like from the perspective of users of the existing Plus model.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="specification---12gb-of-ram-was-reapplied">Specification - 12GB of RAM was reapplied</h2>
 
 <p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" alt="Galaxy S24+, S21+, 20+ front" width="972" height="630" />
@@ -487,6 +531,14 @@
 <p>Except for translation during a call, it has exactly the same function as the Google Translate app. Strictly speaking, it is a continuous translation of each sentence, not perfect real-time. If you think about how often you have conversations with people who speak a language different from your main language, you will come up with an answer as to whether this is a feature you really want or just a novelty feature.</p>
 
 <p>Do you book Airbnb over the phone? Or, are you going on a business trip and want to make your customers aware that you use the translation function because you don’t speak English?</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="differentiate-between-grades---can-you-pay-300-more">Differentiate between grades - Can you pay $300 more?</h2>
 
 <p><img src="/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-iphone_15_pro_max-galaxy_s24_ultra-galaxy_s24_plus.png" alt="iPhone 15 Pro Max - Galaxy S24 Ultra - Galaxy S24 Plus" width="972" height="489" />
@@ -578,6 +630,14 @@
       <content:encoded><![CDATA[<p>I have been using Ubuntu 20.04 for a long time. I found out that Ubuntu 22.04 has also become an <a href="https://en.wikipedia.org/wiki/Long-term_support" target="_blank">LTS</a> version, and I am planning to try Ubuntu 22.04 while installing Windows on my new laptop.</p>
 
 <p>Accordingly, I would like to summarize new problems that I have not encountered as an Ubuntu 20.04 user.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="terminal-does-not-open">Terminal does not open</h2>
 <p>If you are installing Ubuntu for the first time, you may encounter a problem where the terminal does not open. This may occur if you are VirtualBox user and your Windows language is not English or the country in your time zone is not an English-speaking country. I’m not sure why, but I know how to solve the problem.</p>
 
@@ -629,6 +689,14 @@ youraccount   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span c
       <guid isPermaLink="true">https://unclesnote.com/en/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</guid>
       <description><![CDATA[C# software can be developed in Visual Studio on Windows in general. However, it can also be developed in Ubuntu environments. A well-known IDE is MonoDevelop]]></description>
       <content:encoded><![CDATA[<p>C# software can be developed in Visual Studio on Windows in general. However, it can also be developed in Ubuntu environments. A well-known IDE is MonoDevelop provided by the Mono project. However, let’s create a VS Code C# software development environment  that uses more than this. Based on Ubuntu 20.04.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="install-net-family">Install .NET family</h2>
 <p>First, we will add a repository that contains .net. And we will install the three below, and the other three were installed together just by installing the .NET SDK. Please look at the other two for confirmation purposes.</p>
 <ul>
@@ -815,6 +883,14 @@ dotnet new console
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="generate-assets-for-build-and-debug">Generate Assets for Build and Debug</h2>
 <p>You can create an Asset from <code class="language-plaintext highlighter-rouge">Command Palette...</code>.</p>
 
@@ -873,6 +949,14 @@ dotnet new console
       <guid isPermaLink="true">https://unclesnote.com/en/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea</guid>
       <description><![CDATA[Are you a person who does not live in Korea and are thinking about buying a lottery ticket while traveling or on a business trip to Korea? I would like to]]></description>
       <content:encoded><![CDATA[<p>Are you a person who does not live in Korea and are thinking about buying a lottery ticket while traveling or on a business trip to Korea? I would like to introduce where, how, and when you can buy lotto tickets in Korea.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="donghaeng-boggwon-lotto-645">Donghaeng BogGwon Lotto 6/45</h2>
 
 <p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-korea_lotto_mark_693rd_1st_place_lotto.png" alt="Korea Lotto Mark / 693rd 1st place lotto" width="972" height="546" />
@@ -940,6 +1024,14 @@ dotnet new console
 </ul>
 
 <p>If you find out that you won first place after leaving Korea, the tax rate will not be an issue for you to come back to Korea.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="wherewhen-can-i-buy">Where/When can I buy?</h2>
 
 <p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_spot_in_busan_korea-lotto_stores_that_have_produced_many_customer_winners_are_famous_so_people_sometimes_wait_in_line_to_buy_lottery_tickets.png" alt="Lotto spot in Busan, Korea - Lotto stores that have produced many customer winners are famous, so people sometimes wait in line to buy lottery tickets." width="972" height="552" />
@@ -1061,6 +1153,14 @@ dotnet new console
       <content:encoded><![CDATA[<p>In some cases, there may be users who organize their posts by creating multiple vaults according to categories. It can be annoying to open the Vault in Obsidian every time you open it. So, I would like to introduce a method of creating a shortcut icon that can open Obsidian for each vault in a Windows environment.</p>
 
 <p>To explain the principle, when running <code class="language-plaintext highlighter-rouge">obsidian.exe</code> by shortcut icon, you add parameters as argument values to tell Obsidian which vault to open first. Obsidian calls this <a href="https://help.obsidian.md/Concepts/Obsidian+URI" target="_blank">URI</a>.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="what-you-need-to-know-in-advance">What you need to know in advance</h2>
 <p>Before creating the Obsidian Vault shortcut icon, you need to know the path to <code class="language-plaintext highlighter-rouge">obsidian.exe</code> and the path to your <code class="language-plaintext highlighter-rouge">Vault</code>. In conclusion, we will set the command line in the form below to the shortcut icon.</p>
 
@@ -1139,6 +1239,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <content:encoded><![CDATA[<p>If you have a well-organized article using Obsidian, you may occasionally need to share it with a colleague or friend. Obsidian itself provides the ability to export as a PDF file, but if you want to share it in the form of a Word(docx) or Power Point(pptx) file that can be modified, copying and pasting a lot of new files is a hassle.</p>
 
 <p>So, I would like to introduce Pandoc, an Obsidian community plugin that can make this task easier.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="what-is-the-pandoc">What is the <strong>Pandoc</strong>?</h2>
 <p>The <a href="https://pandoc.org/" target="_blank">Pandoc</a> is a library for converting from one markup format to PDF, MS Word, and PowerPoint as well as Markdown, HTML, and LaTeX. Basically, it is a <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a> tool that can be used as a command in Windows Powershell or Linux terminal.</p>
 
@@ -1180,6 +1288,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 </ul>
 
 <p>When everything is completed, restart Obsidian.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="usage-of-the-pandoc-plugin">Usage Of The <strong>Pandoc Plugin</strong></h2>
 <p>To convert Obsidian Markdown to the file format you want, press <code class="language-plaintext highlighter-rouge">Ctrl + P</code> to open the Quick Palette. Then, if you search for <code class="language-plaintext highlighter-rouge">pandoc plugin</code> and select the desired file format, a file will be created in the Export folder set above.</p>
 
@@ -1239,6 +1355,13 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
   <li>Pasting using the ReadItLater community plugin</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="iframe">iframe</h2>
 <p>Obsidian was developed web-based. Therefore, you can use HTML tags. So, you can embed a video using the <code class="language-plaintext highlighter-rouge">iframe</code> HTML tag.</p>
 
@@ -1288,6 +1411,13 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
   <li>Since the basic concept of the plugin is to create a new note by pasting the URL into Obsidian, in order to paste the content into the article you are writing, you must paste it from the new note again to your article.</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="how-to-install-and-use">How to install and use</h3>
 <p>Search for <code class="language-plaintext highlighter-rouge">readitlater</code> in Obsidian’s community plugin menu, install and activate it.</p>
 
@@ -1333,6 +1463,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <guid isPermaLink="true">https://unclesnote.com/en/231230151433/korean_winter_street_food_bungeobbang</guid>
       <description><![CDATA[Bungeobbang is a relatively cheap and warm food, so it is one of the street foods that is mainly sold in Korea in the winter. And Bungeobbang is a compound]]></description>
       <content:encoded><![CDATA[<p>Bungeobbang is a relatively cheap and warm food, so it is one of the street foods that is mainly sold in Korea in the winter. And Bungeobbang is a compound word of the words carp and bread.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="type">type</h2>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" alt="Left - Bungeoppang, Right - Carp Bread" width="972" height="598" />
@@ -1355,6 +1493,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <p>Before the pandemic in 2021, it was common to buy 3 to 4 bungeoppang for 1 dollar, but now, due to the impact of inflation, you can buy 2 to 3 bungeoppang for 1 dollar. This is based on bungeoppang with sweet red beans inside, and bungeoppang with cream puffs or pizza toppings is a bit more expensive.</p>
 
 <p>You can usually buy bungeoppang at traditional markets or on the side of the road, and sellers prefer cash rather than credit cards as a payment method. Sometimes, the seller may ask for cash deposit into a bank account.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="psychological-test">psychological test</h2>
 
 <p><img src="/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-붕어빵.png" alt="fish bread" />
@@ -1383,6 +1529,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
       <guid isPermaLink="true">https://unclesnote.com/en/231227193010/create_a_telegram_bot_and_send_a_message</guid>
       <description><![CDATA[Telegram provides an API service that is relatively easy to use. Therefore, it can be used as an easy tool to notify events in CI/CD systems where security is]]></description>
       <content:encoded><![CDATA[<p>Telegram provides an API service that is relatively easy to use. Therefore, it can be used as an easy tool to notify events in CI/CD systems where security is not a major issue. I am trying to integrate Telegram into the Jenkins system, and I would like to introduce the basic method of creating a Telegram bot.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="overview">Overview</h2>
 <p>To send a Telegram message, <code class="language-plaintext highlighter-rouge">token</code> matching the Telegram bot and <code class="language-plaintext highlighter-rouge">chatid</code> indicating the chat room are required.</p>
 <ul>
@@ -1421,6 +1575,14 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 <em>Telegram - <code class="language-plaintext highlighter-rouge">BotFather</code> - <code class="language-plaintext highlighter-rouge">newbot</code></em></p>
 
 <p>Token is the most basic credential for controlling bots using the Telegram API. Therefore, write it down carefully so that it is not made public.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="telegram-getupdates-api-call---chatid">Telegram <strong>getUpdates</strong> API call - <strong>chatid</strong></h2>
 <p>If BotFather created a bot, find the bot in Telegram and send it a message. I sent a message saying <code class="language-plaintext highlighter-rouge">hello</code>.</p>
 
@@ -1496,6 +1658,13 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 
 <p><img src="/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" alt="Jenkins - Telegram Plugins" width="972" height="681" />
 <em>Jenkins - Telegram Plugins</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="groovy-functions-for-sending-telegram-messages">Groovy functions for sending Telegram messages</h2>
 <p>I created two Groovy functions to use in the Jenkins script. <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_message</code> is a function that sends a Telegram message by simply inserting a string. Another <code class="language-plaintext highlighter-rouge">func_telegram_sendMessage_file</code> is a function that sends the contents of a text file as a Telegram message.</p>
@@ -1685,6 +1854,13 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
   <li>https://pkg.jenkins.io/debian</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="basic-environment">Basic Environment</h2>
 <p>JDK version 8 or higher is required for Jenkins to operate. Install JDK version 11.</p>
 
@@ -1802,6 +1978,14 @@ vi /etc/default/jenkins
 <span class="c"># - --------------------------------------------------------</span>
 
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="configure-synology-nas-container-port-and-run-jenkins">Configure Synology NAS container port and run Jenkins</h2>
 <p>Afterwards, stop the Ubuntu container in the Synology NAS GUI and set the port for external connection to Jenkins. I mapped the container’s <code class="language-plaintext highlighter-rouge">8080</code> port to <code class="language-plaintext highlighter-rouge">48080</code> port.</p>
 
@@ -1854,6 +2038,14 @@ service jenkins restart
 <p>For such people, installing XRDP on Ubuntu Docker may be the best option to enable the OS with a GUI interface.</p>
 
 <p>I will explain two methods. One is to install XRDP in Docker of the Ubuntu VM, and the other is to create an Ubuntu container in Synology NAS’s Docker app and set it to be accessible externally through XRDP.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="xrdp-docker-container-on-ubuntu-vm">XRDP docker container on Ubuntu VM</h2>
 <h3 id="build-docker-image-and-run-container">Build Docker image and run container</h3>
 <p>We will create a Docker image based on the information below. Let’s create <code class="language-plaintext highlighter-rouge">Dockerfile</code> with the contents below.</p>
@@ -1930,6 +2122,13 @@ docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="n
 <p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" alt="VirtualBox port forwarding settings for XRDP connection" width="972" height="445" />
 <em>VirtualBox port forwarding settings for XRDP connection</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="xrdp-remote-access">XRDP remote access</h3>
 <p>Then, connect to the address <code class="language-plaintext highlighter-rouge">127.0.0.1:43389</code> through remote desktop connection.</p>
 
@@ -1957,6 +2156,13 @@ docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="n
 
 <p><img src="/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-synology_nas_gui-ubuntu_container-port_settings.png" alt="Synology NAS GUI - Ubuntu Container - Port Settings" width="972" height="694" />
 <em>Synology NAS GUI - Ubuntu Container - Port Settings</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h3 id="install-ubuntu-ssh-and-xrdp-packages">Install ubuntu SSH and XRDP packages</h3>
 <p>Install <code class="language-plaintext highlighter-rouge">openssh-server</code> by following the command below. ssh will be useful later when remotely accessing the Ubuntu docker container.</p>
@@ -2102,6 +2308,14 @@ service xrdp restart
       <content:encoded><![CDATA[<p><strong>Lenovo Slim3 15ABA7 R5</strong>has Free DOS installed as the default OS, so Windows must be installed separately.</p>
 
 <p>Let`s look at the basics for installing Windows and how to upgrade memory.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="spec">spec</h2>
 
 <p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" alt="Lenovo Slim3 15ABA7 R5" width="972" height="875" />
@@ -2163,6 +2377,14 @@ If you do not like this feature, you can change the <code class="language-plaint
 </pre></td><td class="rouge-code"><pre>OOBE\BYPASSNRO
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>Once Windows installation is complete, install the wireless LAN driver saved on the USB stick. Then, visit <a href="https://pcsupport.lenovo.com/kr/ko/products/laptops-and-netbooks/3-series/ideapad-3-15aba7/downloads" target="_blank">Lenovo driver site</a> and install the remaining drivers that could not be installed. do.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="memory-purchase">memory purchase</h2>
 <p>As shown below, <strong>Lenovo Slim3 15ABA7 R5</strong>is equipped with 8GB of DDR4-3200 memory onboard. Therefore, to create a dual-channel memory configuration, purchase 8GB of DDR4-3200 clock memory.</p>
 <ul>
@@ -2249,6 +2471,14 @@ If you do not like this feature, you can change the <code class="language-plaint
 <p>My guess is that Windows manages the display configuration suitable for each environment by storing it in the registry in the form of a preset, but it seems that this problem is sometimes caused by a twist in this configuration.</p>
 
 <p>The method I found to solve this problem is to delete and initialize the Windows display configuration registry value. In conclusion, you need to set up the multi-display environment again. I will explain how.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="1-open-windows-registry-editor">1. Open Windows Registry Editor</h2>
 <p>Enter <code class="language-plaintext highlighter-rouge">regedit</code> through the Run dialog with <code class="language-plaintext highlighter-rouge">Windows + R</code> or search for <code class="language-plaintext highlighter-rouge">regedit.exe</code> in Start menu to run <code class="language-plaintext highlighter-rouge">Registry Editor</code>.</p>
 
@@ -2269,6 +2499,13 @@ If you do not like this feature, you can change the <code class="language-plaint
 
 <p><img src="/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-registry_editor-remove_the_configuration_and_connectivity_folders_in_the_graphicsdrivers_folder.png" alt="Registry Editor - Remove the `Configuration` and `Connectivity` folders in the `GraphicsDrivers` folder" width="972" height="662" />
 <em>Registry Editor - Remove the <code class="language-plaintext highlighter-rouge">Configuration</code> and <code class="language-plaintext highlighter-rouge">Connectivity</code> folders in the <code class="language-plaintext highlighter-rouge">GraphicsDrivers</code> folder</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="3-reboot-the-windows">3. Reboot the Windows</h2>
 <p>Restart Windows. Once the reboot is complete, from Windows’ perspective, my displays become newly recognized displays.</p>
@@ -2292,6 +2529,14 @@ If you do not like this feature, you can change the <code class="language-plaint
       <content:encoded><![CDATA[<p>The dictionary definition of callout(s) is to call out loudly, and is used to draw the reader’s attention and inform them of important or additional information.</p>
 
 <p>Let’s learn about the grammar and types for expressing callouts in Obsidian.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="differences-between-quotation-and-callouts-blocks">Differences between quotation and callouts blocks</h2>
 <p>A <strong>quotation block</strong>lists sentences starting with <code class="language-plaintext highlighter-rouge">&gt;</code> on each line.</p>
 
@@ -2351,6 +2596,14 @@ If you do not like this feature, you can change the <code class="language-plaint
 </pre></td><td class="rouge-code"><pre>&gt; [!success]- Callouts block - Initially folded callouts block
 &gt; I am a callouts of type success.
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="callouts-block-types">Callouts Block Types</h2>
 <p>The colors and icons of the predefined callouts blocks in Obsidian are as follows.</p>
 
@@ -2428,6 +2681,14 @@ If you do not like this feature, you can change the <code class="language-plaint
       <content:encoded><![CDATA[<p>In my case, there is frequent file sharing between Ubuntu VM and Windows in Oracle VM VirtualBox. Of course, you can use the Guest Additions feature to share files by dragging the mouse, but there are still times when it is inconvenient.</p>
 
 <p>So, I would like to explain how to share a Windows folder with an Ubuntu VM.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="adding-shared-folder-on-virtual-box">Adding Shared Folder on Virtual Box</h2>
 <p>Go to the settings of your Ubuntu VM. Then, add the folder to be shared in the <code class="language-plaintext highlighter-rouge">Shared Folders</code> tab.</p>
 
@@ -2475,6 +2736,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 </pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> pooh vboxsf
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>Most important. Lastly, reboot the Ubuntu VM.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="testing">Testing</h2>
 <p>Once the reboot of the Ubuntu VM is complete, let’s perform a test.</p>
 
@@ -2503,6 +2772,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>In summary, the Galaxy S 24 series is scheduled to be released in the first quarter of 2024, has a titanium exterior, downgraded camera performance, and is expected to be equipped with Samsung Exynos and Qualcomm Snapdragon AP depending on the model.</p>
 
 <p>Now let’s take a closer look at the related rumors.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="when-to-release---december-2023-or-january-2024">When To Release - December 2023 or January 2024</h2>
 
 <p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" alt="Galaxy S23 electronic billboard advertisement in Times Square, New York, USA" width="972" height="556" />
@@ -2519,6 +2796,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>According to recent predictions by IT expert Lebegnerz, the entire Galaxy S24 series is expected to feature titanium material frames, enhancing the overall design aesthetics. This move is seen as part of a broader strategy, similar to Apple’s introduction of titanium frames in the iPhone 15 Pro and Pro Max models.</p>
 
 <p>Furthermore, the exterior design is anticipated to undergo a transformation, shifting from a rounded form to a more angular design, adding a touch of luxury. There are also speculations that the distinctive edge display of the Ultra model will be completely replaced with a flat display.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="camera---downgrade-but">Camera - Downgrade But,</h2>
 
 <p><img src="/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s24_front_and_back_renders_leaked_by_smart_pix_s_onleaks.png" alt="Galaxy S24 front and back renders leaked by Smart Pix's OnLeaks" width="972" height="642" />
@@ -2608,6 +2893,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
       <content:encoded><![CDATA[<p>If you use Ubuntu for software development purposes, you will mostly type in English. However, in some cases, it may be necessary to input Korean into the GNOME GUI.</p>
 
 <p>So, since the default settings only allow English input, we will use the <code class="language-plaintext highlighter-rouge">ibus-hangul</code> plugin to set up Korean input.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="ibus-hangul">ibus-hangul</h2>
 <p><code class="language-plaintext highlighter-rouge">ibus-hangul</code> is a plugin that supports the Hangul input method on Linux or Ubuntu. <code class="language-plaintext highlighter-rouge">ibus</code> stands for <code class="language-plaintext highlighter-rouge">Input Bus</code>. Ubuntu already supports Hangul input, but we will upgrade and use <code class="language-plaintext highlighter-rouge">ibus-hangul</code> for optimized Hangul input.</p>
 
@@ -2663,6 +2956,13 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" alt="Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format" width="972" height="456" />
 <em>Same file contents but different files, on the left is Windows PC format and on the right is Linux UNIX format</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="differences-of-line-breaks-between-windows-and-linux">Differences of line breaks between Windows and Linux</h2>
 <p>From an ASCII character perspective,</p>
@@ -2734,6 +3034,13 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-notepad++-eol_conversion-edit_eol_conversion_windows_cr_lf_or_unix_lf.png" alt="Notepad++ - EOL Conversion - `Edit &gt; EOL Conversion &gt; Windows (CR LF) Or Unix (LF)`" width="972" height="614" />
 <em>Notepad++ - EOL Conversion - <code class="language-plaintext highlighter-rouge">Edit &gt; EOL Conversion &gt; Windows (CR LF) Or Unix (LF)</code></em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h3 id="ubuntu-linux">Ubuntu (Linux)</h3>
 <p>In the Ubuntu environment, you can also check the EOL status of files and convert them.</p>
@@ -2830,6 +3137,14 @@ pc.txt: ASCII text
       <content:encoded><![CDATA[<p>Unless you are using a PC with Ubuntu OS installed as your main computer, you are likely to be using a PC with low hardware specifications or installing Ubuntu on Oracle VM VirtualBox.</p>
 
 <p>If you mainly use SSH to connect remotely, it won’t have much of an impact, but if you often manipulate the UI in GNOME, performance may be disappointing. So, here are some tips to optimize performance when installing and configuring Ubuntu.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="turn-off-animations">Turn Off Animations</h2>
 <p>If you use Ubuntu on Virtual Box or a low-end PC, animations may slow down the performance of the OS due to limited resources. Below is how to turn animations off and on in the Ubuntu GNOME GUI. You can run commands in the terminal.</p>
 
@@ -2863,6 +3178,13 @@ pc.txt: ASCII text
 
 <p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-dock_icon_size-settings_appearance_resize_icon_size.png" alt="Dock Icon Size - Settings &gt; Appearance &gt; Resize `Icon Size`" width="972" height="616" />
 <em>Dock Icon Size - Settings &gt; Appearance &gt; Resize <code class="language-plaintext highlighter-rouge">Icon Size</code></em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="increase-swap-size">Increase swap size</h2>
 <p>If you are using Ubuntu installed in Virtual Box, it is likely that less than 8GB of memory is allocated to the virtual machine because it is shared with your Windows computer. This may not be a problem if you use Ubuntu casually, but when attempting to compile a large platform, BSP, or software, insufficient memory can lead to compilation failure. This can be solved by increasing the swap size.</p>
@@ -2913,6 +3235,14 @@ pc.txt: ASCII text
 <p>Therefore, Linux-based OS creates a swapfile and uses files on the hard disk as memory when physical memory is insufficient. This is called a swap file, and is similar to virtual memory in the Windows environment.</p>
 
 <p>Now, I would like to explain how to create and apply a swapfile in Ubuntu 20.04.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="check-swap">Check swap</h2>
 <p>Use the <code class="language-plaintext highlighter-rouge">free -m</code> command to check the swap status in my Ubuntu environment. And check whether there is a <code class="language-plaintext highlighter-rouge">swapfile</code> in the system <code class="language-plaintext highlighter-rouge">root</code>. It is common to create a swap file in the root path.</p>
 
@@ -2994,6 +3324,14 @@ Setting up swapspace version 1, size <span class="o">=</span> 5 GiB <span class=
 no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c-b719-e54154ad8194
 <span class="nv">$ </span><span class="nb">sudo </span>swapon /swapfile
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="register-swapfile">Register swapfile</h2>
 <p>Now, finally, we will configure Ubuntu to load the swapfile every time it boots.</p>
 
@@ -3030,6 +3368,13 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
       <content:encoded><![CDATA[<p>If you are a software developer, and your development environment is Ubuntu, we will explain how to install the essential Ubuntu software you need to install.</p>
 
 <p>In fact, this article is more of a reference for me when configuring a new Ubuntu environment.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="basic-packages">Basic Packages</h2>
 <p>Below are the basic packages for convenience and for compilation of source code, you can install them if necessary.</p>
@@ -3118,6 +3463,14 @@ wget <span class="nt">-q</span> https://packages.microsoft.com/keys/microsoft.as
 <span class="c">## install vscode remote extension which based on above openssh-server </span>
 code <span class="nt">--install-extension</span> ms-vscode-remote.remote-ssh
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="github-desktop">GitHub Desktop</h2>
 
 <p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-github_desktop.png" alt="GitHub Desktop" width="972" height="531" />
@@ -3180,6 +3533,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>If you do not have a license key, you may need to perform the reset process again when the evaluation period ends. So, I recommend saving and using the workspace and exporting the settings every time it is updated and saving it as a file.</p>
 <h2 id="database">Database</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="db-browser-for-sqlite">DB Browser for SQLite</h3>
 
 <p><img src="/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-db_browser_for_sqlite.png" alt="DB Browser for SQLite" width="972" height="527" />
@@ -3199,6 +3560,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h3 id="mysql-workbench">MySQL Workbench</h3>
 <p>I will describe this later when I need to install MySQL Workbench on Ubuntu.</p>
 <h2 id="dependent-on-development-language">Dependent on development language</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="c-sharp">C Sharp</h3>
 <p>I am a developer with long experience in C++ and Java. The C Sharp language is an interesting and fun software development language because it has similar syntax and physiology to Java, has many public libraries, and supports cross-platform. Ubuntu is also supported.</p>
 
@@ -3229,6 +3598,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <content:encoded><![CDATA[<p>Have you ever clicked on a web link in Office 365 Outlook and suddenly been shown in the Edge browser, which was inconvenient?</p>
 
 <p>In a recent update, Microsoft reset the default browser in Outlook to Edge browser. For those who love Google Chrome, let’s change the web link to open on Chrome. We will check and set the Chrome browser in the Windows default app and Outlook settings.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="default-web-browser-settings-on-windows">Default Web Browser Settings on Windows</h2>
 <p>Maybe, if you’re a Chrome user, you’ve already set Google Chrome as your default web browser. Make sure you have the default browser settings for Office 365.</p>
 
@@ -3277,6 +3654,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" alt="Ubuntu Softwares" />
 <em>Ubuntu Softwares</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="file-browser">File Browser</h2>
 <h3 id="krusader">Krusader</h3>
 <p>If you have experience using Q-Dir or <a href="https://www.ghisler.com/download.htm" target="_blank">Total Commander</a> in a Windows environment, <a href="https://krusader.org" target="_blank">Krusader</a> offers the experience of split windows and multi-tab file browsing.</p>
@@ -3292,6 +3676,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <span class="nb">sudo </span>apt <span class="nb">install </span>krusader
 </pre></td></tr></tbody></table></code></pre></div></div>
 <h2 id="image-viewereditor">Image Viewer/Editor</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="gwenview">GwenView</h3>
 <p><a href="https://github.com/KDE/gwenview" target="_blank">GwenView</a> is the best Ubuntu image viewer I’ve ever used. I will update if I find a better image viewer.</p>
 
@@ -3346,6 +3738,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </pre></td><td class="rouge-code"><pre><span class="nb">cd</span> ~/Downloads
 <span class="nb">chmod </span>777 <span class="k">*</span>.appimage
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="productivity">Productivity</h2>
 <h3 id="easystroke-gesturemouse-gesture-macro">Easystroke Gesture(Mouse Gesture Macro)</h3>
 <p>If you have experience using <a href="https://www.tcbmi.com/strokeit" target="_blank">Strokeit</a> mouse gesture macro software on Windows, <code class="language-plaintext highlighter-rouge">Easystroke Gesture</code> is the best alternative for Ubuntu.</p>
@@ -3399,6 +3799,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 </table>
 
 <h2 id="system">System</h2>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="bleachbitcleaner-for-freespace">BleachBit(Cleaner For FreeSpace)</h3>
 <p><a href="https://www.bleachbit.org/features" target="_blank">BleachBit</a> is useful software to free up space by deleting unnecessary files. In addition to Linux, it supports various operating systems such as Windows and Mac OS.</p>
 
@@ -3438,6 +3846,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <guid isPermaLink="true">https://unclesnote.com/en/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
       <description><![CDATA[In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as]]></description>
       <content:encoded><![CDATA[<p>In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as Firefox in an Ubuntu VM are slightly different from the look and feel of an actual X86 Windows. So, I would like to explain the Virtual Box port forwarding method to test Jekyll on the X86 Windows browser.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="running-jekyll-locally-on-ubuntu-vm">Running Jekyll locally on Ubuntu VM</h2>
 <p>First, check the IP address of the network interface using <code class="language-plaintext highlighter-rouge">ifconfig</code> in the Ubuntu VM. In my case, the IP address is <code class="language-plaintext highlighter-rouge">10.0.2.15</code>.</p>
 
@@ -3528,6 +3944,13 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
   <li>Make the disk device available every time Ubuntu boots up.</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="1-create-a-disk-image-and-attach-it-to-an-ubuntu-vm">1. Create a disk image and attach it to an Ubuntu VM</h2>
 <p>Disk images can be created through <code class="language-plaintext highlighter-rouge">Virtual Media Manager</code> in the Virtual Box manager.</p>
 
@@ -3594,6 +4017,13 @@ gparted
 
 <p><img src="/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-ubuntu_vm-gparted-check_uuid_of_disk_partition.png" alt="Ubuntu VM - GParted - Check UUID of disk partition" width="972" height="711" />
 <em>Ubuntu VM - GParted - Check UUID of disk partition</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h2 id="3-every-bootup-mount-the-disk">3. Every bootup, mount the disk</h2>
 <p>In the current state, the formatted disk device is ready, but there is no path through which files can be written. So, we will create a path by connecting my specific folder to the hard disk device. This is <code class="language-plaintext highlighter-rouge">mount</code>.</p>
@@ -3681,6 +4111,14 @@ For parameters of <code class="language-plaintext highlighter-rouge">workbench.c
 
   <p><a href="https://code.visualstudio.com/api/references/theme-color" target="_blank">https://code.visualstudio.com/api/references/theme-color</a></p>
 </blockquote>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h2 id="how-to-set-text-color">How to set text color</h2>
 <p>To change the text color, you need to center the text you want and add the code below at the beginning and end.</p>
 <ul>
@@ -3760,6 +4198,13 @@ For parameters of <code class="language-plaintext highlighter-rouge">workbench.c
   <li><code class="language-plaintext highlighter-rouge">\x1b</code> : This represents the escape character using hexadecimal notation</li>
 </ul>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 <h3 id="2-style">2. Style</h3>
 <p>You can choose a text style, but I doubt it’s necessary. Logs should be easy to read.</p>
 <ul>
@@ -3795,6 +4240,13 @@ For parameters of <code class="language-plaintext highlighter-rouge">workbench.c
   <li><code class="language-plaintext highlighter-rouge">46</code>: Cyan background</li>
   <li><code class="language-plaintext highlighter-rouge">47</code>: White background</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 <h3 id="5-color-reset">5. Color Reset</h3>
 <p>If you do not reset the text color and style, it will continue as initially set.</p>
