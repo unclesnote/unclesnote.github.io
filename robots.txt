@@ -4,11 +4,14 @@ Disallow: /norobots/
 User-agent: Yeti
 Allow: /ko/
 
-User-agent: Daumoa
-Allow: /ko/
+User-agent: Yeti
+Allow: /en/
 
 User-agent: DAUM
 Allow: /ko/
+
+User-agent: DAUM
+Allow: /en/
 
 Sitemap: https://unclesnote.com/sitemap.xml
 
