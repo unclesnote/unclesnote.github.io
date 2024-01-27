@@ -3839,8 +3839,8 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
       <guid>https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
       <pubDate>Tue, 24 Oct 2023 18:52:05 +0900</pubDate>
-      <category><![CDATA[GitHub ページ,ジキル]]></category>
-      <tag><![CDATA[ジキル,バーチャルボックス,ポートフォワーディング,GitHubページ,GitHub]]></tag>
+      <category><![CDATA[ブログ,ジキル]]></category>
+      <tag><![CDATA[ジキル,バーチャルボックス,ポートフォワーディング,GitHubページ,GitHub,ブログ]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ja/231024185205/jekyll__github_pages_virtual_box_port_forwarding_method_for_windows_testing</guid>
       <description><![CDATA[私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィ]]></description>
       <content:encoded><![CDATA[<p>私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィールとは若干異なります。そこで、X86 Windows ブラウザ上で Jekyll をテストするための Virtual Box のポート転送方法を説明したいと思います。</p>

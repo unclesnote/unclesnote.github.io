@@ -335,8 +335,8 @@
     <issued>Tue, 24 Oct 2023 18:52:05 +0900</issued>
 		<created>Tue, 24 Oct 2023 18:52:05 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[제 경우에는 Virtual Box의 우분투 VM에서 Jekyll(GitHub Pages)을 빌드하고 테스트한 후 GitHub에 푸시합니다. 그러나 우분투 VM의 Firefox와 같은 브라우저의 모양과 느낌은 실제 X86 윈도우의 모양과 느낌과 약간 다릅니다. 그래서 X86 윈도우]]></summary>
-    <category><![CDATA[GitHub 페이지,지킬]]></category>
-    <tag><![CDATA[지킬,VirtualBox,포트포워딩,GitHub페이지,GitHub]]></tag>
+    <category><![CDATA[블로그,지킬]]></category>
+    <tag><![CDATA[지킬,VirtualBox,포트포워딩,GitHub페이지,GitHub,블로그]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/ko-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png"/>
   </entry>
   <entry>

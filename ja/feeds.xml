@@ -335,8 +335,8 @@
     <issued>Tue, 24 Oct 2023 18:52:05 +0900</issued>
 		<created>Tue, 24 Oct 2023 18:52:05 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[私の場合、Virtual Box の Ubuntu VM 上で Jekyll(GitHub Pages) をビルドしてテストし、それを GitHub にプッシュします。ただし、Ubuntu VM での Firefox などのブラウザーのルック アンド フィールは、実際の X86 Windows のルック アンド フィ]]></summary>
-    <category><![CDATA[GitHub ページ,ジキル]]></category>
-    <tag><![CDATA[ジキル,バーチャルボックス,ポートフォワーディング,GitHubページ,GitHub]]></tag>
+    <category><![CDATA[ブログ,ジキル]]></category>
+    <tag><![CDATA[ジキル,バーチャルボックス,ポートフォワーディング,GitHubページ,GitHub,ブログ]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/ja-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png"/>
   </entry>
   <entry>

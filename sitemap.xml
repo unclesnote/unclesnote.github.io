@@ -3409,6 +3409,9 @@
   <loc>https://unclesnote.com/zh/tags/%E5%8F%AF%E7%94%A8%E7%A9%BA%E9%97%B4</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/zh/tags/%E5%8D%9A%E5%AE%A2</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/zh/tags/%E5%85%8B%E9%B2%81%E8%90%A8%E5%BE%B7</loc>
 </url>
 <url>
@@ -3538,13 +3541,13 @@
   <loc>https://unclesnote.com/zh/categories/%E5%AE%83</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/zh/categories/%E5%8D%9A%E5%AE%A2</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/zh/categories/%E4%B9%8C%E7%8F%AD%E5%9B%BE</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/zh/categories/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91</loc>
-</url>
-<url>
-  <loc>https://unclesnote.com/zh/categories/github-%E9%A1%B5%E9%9D%A2</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/zh/categories/git</loc>
@@ -3668,6 +3671,9 @@
 </url>
 <url>
   <loc>https://unclesnote.com/ko/tags/%EB%B8%94%EB%A6%AC%EC%B9%98%EB%B9%84%ED%8A%B8</loc>
+</url>
+<url>
+  <loc>https://unclesnote.com/ko/tags/%EB%B8%94%EB%A1%9C%EA%B7%B8</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/ko/tags/%EB%AC%B8%EC%A0%9C%ED%95%B4%EA%B2%B0</loc>
@@ -3838,6 +3844,9 @@
   <loc>https://unclesnote.com/ko/categories/%EC%84%A4%EC%A0%95</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/ko/categories/%EB%B8%94%EB%A1%9C%EA%B7%B8</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/ko/categories/%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0</loc>
 </url>
 <url>
@@ -3863,9 +3872,6 @@
 </url>
 <url>
   <loc>https://unclesnote.com/ko/categories/it</loc>
-</url>
-<url>
-  <loc>https://unclesnote.com/ko/categories/github-%ED%8E%98%EC%9D%B4%EC%A7%80</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/ko/categories/git</loc>
@@ -3932,6 +3938,9 @@
 </url>
 <url>
   <loc>https://unclesnote.com/ja/tags/%E3%83%9D%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%AF%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0</loc>
+</url>
+<url>
+  <loc>https://unclesnote.com/ja/tags/%E3%83%96%E3%83%AD%E3%82%B0</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/ja/tags/%E3%83%96%E3%83%AA%E3%83%BC%E3%83%81%E3%83%93%E3%83%83%E3%83%88</loc>
@@ -4144,6 +4153,9 @@
   <loc>https://unclesnote.com/ja/categories/%E4%B8%80%E8%88%AC</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/ja/categories/%E3%83%96%E3%83%AD%E3%82%B0</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/ja/categories/%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3</loc>
 </url>
 <url>
@@ -4181,9 +4193,6 @@
 </url>
 <url>
   <loc>https://unclesnote.com/ja/categories/obsidian</loc>
-</url>
-<url>
-  <loc>https://unclesnote.com/ja/categories/github-%E3%83%9A%E3%83%BC%E3%82%B8</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/ja/categories/foods</loc>
@@ -4426,6 +4435,9 @@
   <loc>https://unclesnote.com/es/tags/citas</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/es/tags/blog</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/es/tags/blocdenotasplusplus</loc>
 </url>
 <url>
@@ -4460,9 +4472,6 @@
 </url>
 <url>
   <loc>https://unclesnote.com/es/categories/soluci%C3%B3n-de-problemas</loc>
-</url>
-<url>
-  <loc>https://unclesnote.com/es/categories/p%C3%A1ginas-de-github</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/es/categories/ordenador-personal</loc>
@@ -4502,6 +4511,9 @@
 </url>
 <url>
   <loc>https://unclesnote.com/es/categories/caja-virtual</loc>
+</url>
+<url>
+  <loc>https://unclesnote.com/es/categories/blog</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/es/categories/alimentos</loc>
@@ -4756,6 +4768,9 @@
   <loc>https://unclesnote.com/en/tags/callouts</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/en/tags/blog</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/en/tags/bleachbit</loc>
 </url>
 <url>
@@ -4804,9 +4819,6 @@
   <loc>https://unclesnote.com/en/categories/it</loc>
 </url>
 <url>
-  <loc>https://unclesnote.com/en/categories/github-pages</loc>
-</url>
-<url>
   <loc>https://unclesnote.com/en/categories/git</loc>
 </url>
 <url>
@@ -4823,6 +4835,9 @@
 </url>
 <url>
   <loc>https://unclesnote.com/en/categories/c-sharp</loc>
+</url>
+<url>
+  <loc>https://unclesnote.com/en/categories/blog</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/en</loc>

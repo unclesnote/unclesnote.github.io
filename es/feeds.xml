@@ -335,8 +335,8 @@
     <issued>Tue, 24 Oct 2023 18:52:05 +0900</issued>
 		<created>Tue, 24 Oct 2023 18:52:05 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[En mi caso, construyo y pruebo Jekyll (páginas de GitHub) en una máquina virtual de Ubuntu en Virtual Box y luego lo envío a GitHub. Sin embargo, la apariencia]]></summary>
-    <category><![CDATA[Páginas de GitHub,Jekyll]]></category>
-    <tag><![CDATA[Jekyll,VirtualBox,Reenvíodepuertos,PáginasdeGitHub,GitHub]]></tag>
+    <category><![CDATA[Blog,Jekyll]]></category>
+    <tag><![CDATA[Jekyll,VirtualBox,Reenvíodepuertos,PáginasdeGitHub,GitHub,Blog]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/es-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png"/>
   </entry>
   <entry>

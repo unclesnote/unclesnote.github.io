@@ -335,8 +335,8 @@
     <issued>Tue, 24 Oct 2023 18:52:05 +0900</issued>
 		<created>Tue, 24 Oct 2023 18:52:05 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[In my case, I build and test Jekyll(GitHub Pages) on an Ubuntu VM in Virtual Box, then push it to GitHub. However, the look and feel of browsers such as]]></summary>
-    <category><![CDATA[GitHub Pages,Jekyll]]></category>
-    <tag><![CDATA[Jekyll,VirtualBox,PortForwarding,GitHubPages,GitHub]]></tag>
+    <category><![CDATA[Blog,Jekyll]]></category>
+    <tag><![CDATA[Jekyll,VirtualBox,PortForwarding,GitHubPages,GitHub,Blog]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/en-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png"/>
   </entry>
   <entry>
