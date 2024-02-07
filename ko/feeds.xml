@@ -14,7 +14,19 @@
   <author><name><![CDATA[엉클스 노트]]></name></author>
   <id>https://unclesnote.com/ko/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+  <entry>
+    <title><![CDATA[시놀로지 NAS- 도커 컨테이너의 타임존 설정]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240207181924/synology_nas_docker_container_time_zone_settings"/>
+    <id>https://unclesnote.com/ko/240207181924/synology_nas_docker_container_time_zone_settings</id>    
+    <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+    <issued>Wed, 07 Feb 2024 18:19:24 +0900</issued>
+		<created>Wed, 07 Feb 2024 18:19:24 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[모두들 알듯이, 도커 이미지 빌드를 위한 명세서인 Dockerfile에서 이미지에 필요한 apt 패키지 설치를 추가 할 수 있다. 이것은 도커 이미지를 빌드하는 동안에 이미지에 apt 패키지가 설치하게 만든다. 일반적인 우분투 시스템에서 최초로 apt 패키지를 설치를 시도하면,]]></summary>
+    <category><![CDATA[우분투,도커]]></category>
+    <tag><![CDATA[Ubuntu,Docker]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/ko-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-"/>
+  </entry>
   <entry>
     <title><![CDATA[옵시디언 이미지 블록 - 캡션, 크기 조정, 플러그인]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240122101210/obsidian_image_block_captions_resizing_plugins"/>

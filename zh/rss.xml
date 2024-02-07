@@ -21,8 +21,149 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Mon, 22 Jan 2024 10:12:10 +0900</lastBuildDate>
-    <pubDate>Mon, 22 Jan 2024 10:12:10 +0900</pubDate>
+    <lastBuildDate>Wed, 07 Feb 2024 18:19:24 +0900</lastBuildDate>
+    <pubDate>Wed, 07 Feb 2024 18:19:24 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[Synology NAS-Docker 容器时区设置]]></title>
+      <link>https://unclesnote.com/zh/240207181924/synology_nas_docker_container_time_zone_settings</link>
+      <guid>https://unclesnote.com/zh/240207181924/synology_nas_docker_container_time_zone_settings</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Wed, 07 Feb 2024 18:19:24 +0900</pubDate>
+      <category><![CDATA[乌班图,码头工人]]></category>
+      <tag><![CDATA[乌班图,码头工人]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240207181924/synology_nas_docker_container_time_zone_settings</guid>
+      <description><![CDATA[众所周知，在构建Docker镜像的规范Dockerfile中，可以添加镜像所需的apt包安装。这会导致在构建 Docker 映像时将 apt 包安装到该映像中。当您第一次尝试在典型的 Ubuntu 系统中安装 apt 软件包时，系统会以交互方式要求您输入区域和城市，以在 tzdata 设置中设置时区。但是，这会导致]]></description>
+      <content:encoded><![CDATA[<p>众所周知，在构建Docker镜像的规范Dockerfile中，可以添加镜像所需的apt包安装。这会导致在构建 Docker 映像时将 apt 包安装到该映像中。</p>
+
+<p>当您第一次尝试在典型的 Ubuntu 系统中安装 apt 软件包时，系统会以交互方式要求您输入区域和城市，以在 tzdata 设置中设置时区。但是，这会导致 Docker 映像构建失败，因为 Docker 映像构建过程不支持交互式过程。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="debian_frontend-环境变量">DEBIAN_FRONTEND 环境变量</h2>
+<p>因此，要解决这个问题，您可以通过在 Dockerfile 中将<code class="language-plaintext highlighter-rouge">DEBIAN_FRONTEND</code>环境变量设置为<code class="language-plaintext highlighter-rouge">noninteractive</code>，在构建 Docker 映像时省略要求区域和城市设置时区的操作。</p>
+
+<p>下面是 Dockerfile 的一个简单示例。</p>
+
+<div class="language-Dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="rouge-code"><pre><span class="k">FROM</span><span class="s"> ubuntu:20.04</span>
+
+<span class="k">ENV</span><span class="s"> DEBIAN_FRONTEND=noninteractive</span>
+<span class="k">RUN </span>apt update <span class="o">&amp;&amp;</span> apt <span class="nb">install</span> <span class="nt">-y</span> vim git wget rsyslog <span class="nb">sudo</span>
+
+<span class="c"># add and so on ..</span>
+
+<span class="k">CMD</span><span class="s"> bash</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>到目前为止还没有问题。然而，当您开发利用当前时间的软件并使用 API 在源代码中获取当前时间时，问题就出现了。没有设置时区的系统时间以UTC为基础。因此，有可能您使用的软件开发语言的时间相关功能与系统时间处理重叠，导致软件故障。</p>
+<h2 id="tzdata-和时区设置">tzdata 和时区设置</h2>
+<p>因此，虽然这很烦人，但在创建并附加容器后，您必须使用以下命令单独手动设置时区。当然，您可以在 Docker 容器之外的 Linux 系统上设置容器的时区，但由于我使用 Synology NAS 的 Docker，因此很难找到方法来执行此操作。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>dpkg-reconfigure tzdata
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>下面是我设置时区的示例。如果底部<code class="language-plaintext highlighter-rouge">现在是当地时间</code>中的时间是您的当地时间，则时区设置正确。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+</pre></td><td class="rouge-code"><pre>root@img:~# dpkg-reconfigure tzdata
+debconf: unable to initialize frontend: Dialog
+debconf: <span class="o">(</span>No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.<span class="o">)</span>
+debconf: falling back to frontend: Readline
+Configuring tzdata
+<span class="nt">------------------</span>
+请选择您居住的地理区域。后续的配置问题将通过提供代表城市的城市列表来缩小范围  
+
+他们所在的时区。  
+
+1. 非洲 3. 南极洲 5. 北冰洋 7. 大西洋 9. 印度洋 11. 系统 V 时区 13. 以上都不是  
+
+2.美洲 4.澳大利亚 6.亚洲 8.欧洲 10.太平洋 12.美国  
+
+地理区域：6  
+
+请选择您所在时区对应的城市或地区。  
+
+1. 亚丁 11. 巴库 21. 大马士革 31. 香港 41. 喀什 51. 望加锡 61. 平壤  
+
+2. 新加坡 81. 乌戎潘当  
+
+...  
+
+9. 巴格达 19. 重庆 29. 希伯伦 39. 堪察加半岛 49. 澳门 59. 金边 69. 首尔  
+
+10. 东京 89. 叶卡捷琳堡  
+
+...  
+
+时区：69  
+
+当前默认时区: <span class="sb">`</span>Asia/Seoul<span class="sb">`</span>  
+
+现在当地时间：2024 年 2 月 1 日星期四 23:46:23 KST。  
+
+现在的世界时间是：UTC 2024 年 2 月 1 日星期四 14:46:23。  
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>![[docker-thumb.png</td>
+      <td>thumb]]</td>
+    </tr>
+  </tbody>
+</table>
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/zh-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[黑曜石图像块 - 字幕、调整大小、插件]]></title>

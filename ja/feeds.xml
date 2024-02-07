@@ -14,7 +14,19 @@
   <author><name><![CDATA[アンクルズノート]]></name></author>
   <id>https://unclesnote.com/ja/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+  <entry>
+    <title><![CDATA[シノロジーNAS-ドッカーコンテナのタイムゾーン設定]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240207181924/synology_nas_docker_container_time_zone_settings"/>
+    <id>https://unclesnote.com/ja/240207181924/synology_nas_docker_container_time_zone_settings</id>    
+    <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+    <issued>Wed, 07 Feb 2024 18:19:24 +0900</issued>
+		<created>Wed, 07 Feb 2024 18:19:24 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[誰もが知っているように、Dockerイメージをビルドするための仕様であるDockerfileで、イメージに必要なaptパッケージのインストールを追加できます。これにより、dockerイメージのビルド中にイメージにaptパッケージがインストールされます。一般的なUbuntuシステムで最初にaptパッケージをインストール]]></summary>
+    <category><![CDATA[Ubuntu,ドッカー]]></category>
+    <tag><![CDATA[Ubuntu,ドッカー]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/ja-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-"/>
+  </entry>
   <entry>
     <title><![CDATA[Obsidian 画像ブロック - キャプション、サイズ変更、プラグイン]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240122101210/obsidian_image_block_captions_resizing_plugins"/>

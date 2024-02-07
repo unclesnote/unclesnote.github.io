@@ -14,7 +14,19 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+  <entry>
+    <title><![CDATA[Synology NAS-Docker 容器时区设置]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240207181924/synology_nas_docker_container_time_zone_settings"/>
+    <id>https://unclesnote.com/zh/240207181924/synology_nas_docker_container_time_zone_settings</id>    
+    <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+    <issued>Wed, 07 Feb 2024 18:19:24 +0900</issued>
+		<created>Wed, 07 Feb 2024 18:19:24 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[众所周知，在构建Docker镜像的规范Dockerfile中，可以添加镜像所需的apt包安装。这会导致在构建 Docker 映像时将 apt 包安装到该映像中。当您第一次尝试在典型的 Ubuntu 系统中安装 apt 软件包时，系统会以交互方式要求您输入区域和城市，以在 tzdata 设置中设置时区。但是，这会导致]]></summary>
+    <category><![CDATA[乌班图,码头工人]]></category>
+    <tag><![CDATA[乌班图,码头工人]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/zh-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-"/>
+  </entry>
   <entry>
     <title><![CDATA[黑曜石图像块 - 字幕、调整大小、插件]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240122101210/obsidian_image_block_captions_resizing_plugins"/>

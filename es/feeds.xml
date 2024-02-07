@@ -14,7 +14,19 @@
   <author><name><![CDATA[nota del tio]]></name></author>
   <id>https://unclesnote.com/es/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Mon, 22 Jan 2024 10:12:10 +0900</modified>
+  <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+  <entry>
+    <title><![CDATA[Synology NAS- configuración de zona horaria del contenedor Docker]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240207181924/synology_nas_docker_container_time_zone_settings"/>
+    <id>https://unclesnote.com/es/240207181924/synology_nas_docker_container_time_zone_settings</id>    
+    <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+    <issued>Wed, 07 Feb 2024 18:19:24 +0900</issued>
+		<created>Wed, 07 Feb 2024 18:19:24 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Como todo el mundo sabe, en Dockerfile, que es la especificación para crear una imagen de Docker, puede agregar la instalación del paquete apt necesaria para]]></summary>
+    <category><![CDATA[ubuntu,Estibador]]></category>
+    <tag><![CDATA[ubuntu,Estibador]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/es-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-"/>
+  </entry>
   <entry>
     <title><![CDATA[Bloque de imágenes de obsidiana- subtítulos, cambio de tamaño, complementos]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240122101210/obsidian_image_block_captions_resizing_plugins"/>
