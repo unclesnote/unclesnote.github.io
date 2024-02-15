@@ -21,8 +21,271 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 07 Feb 2024 18:19:24 +0900</lastBuildDate>
-    <pubDate>Wed, 07 Feb 2024 18:19:24 +0900</pubDate>
+    <lastBuildDate>Thu, 15 Feb 2024 12:03:15 +0900</lastBuildDate>
+    <pubDate>Thu, 15 Feb 2024 12:03:15 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[ドッカー使用のための命令（CLI）ハンドブック]]></title>
+      <link>https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker</link>
+      <guid>https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Thu, 15 Feb 2024 12:03:15 +0900</pubDate>
+      <category><![CDATA[Ubuntu,ドッカー]]></category>
+      <tag><![CDATA[Ubuntu,ドッカー]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker</guid>
+      <description><![CDATA[Docker GUIを使わずに、シェル環境でCLIでDockerを制御するためのコマンドのハンドブックです。ドッカーイメージの作成と制御、ドッカーコンテナの作成と制御、イメージまたはコンテナを保存して読み込む方法を紹介します。]]></description>
+      <content:encoded><![CDATA[<p>Docker GUIを使わずに、シェル環境でCLIでDockerを制御するためのコマンドのハンドブックです。ドッカーイメージの作成と制御、ドッカーコンテナの作成と制御、イメージまたはコンテナを保存して読み込む方法を紹介します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="permission-denied-while-trying-to-connect-to-the-docker-daemon-socket"><em>permission denied while trying to connect to the Docker daemon socket</em></h2>
+<p>ドッカーをインストールしてドッカーに関連する命令を実行しようとすると、 <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code> の接続関連の権限エラーが発生する。システム側でドッカーがする動作は <code class="language-plaintext highlighter-rouge">root</code> 権限が必要なのでそうだ。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>docker images <span class="nt">-a</span>
+permission denied <span class="k">while </span>trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get <span class="s2">"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json?all=1"</span>: dial unix /var/run/docker.sock: connect: permission denied
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>以下のコマンドを使用して、あなたのUbuntuアカウントが <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code>にアクセスできるようにする権限を与えます。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo chmod 666 /var/run/docker.sock;sudo chown -R ${USER}:users /var/run/docker.sock
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="イメージ">イメージ</h2>
+<p><strong>Build Docker Image</strong></p>
+
+<p>ドッカーを使用するために最初にすべきことは、ドッカー画像を作成することです。以下のコマンドでドッカーイメージをビルドできます。あなたが書いた <code class="language-plaintext highlighter-rouge">Dockerfile</code>に基づいてドッカーイメージを構築するための明かりです。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># build general </span>
+docker build <span class="nt">-f</span> &lt;Dockerfile&gt; <span class="nt">-t</span> &lt;tag&gt; <span class="nb">.</span>
+
+<span class="c"># build without cache</span>
+docker build <span class="nt">-f</span> &lt;Dockerfile&gt; <span class="nt">--no-cache</span> <span class="nt">-t</span> &lt;tag&gt; <span class="nb">.</span>
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker build <span class="nt">-f</span> Dockerfile <span class="nt">-t</span> img-my <span class="nb">.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>List Docker Images and remove it</strong></p>
+
+<p>以下は、システムに登録されているドッカーイメージのリストを照会して削除するコマンドです。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c"># list</span>
+docker images <span class="nt">-a</span>
+
+<span class="c"># remove</span>
+docker rmi &lt;repository name&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Remove Docker images cache</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">Dockerfile</code>を修正していきながらドッカーすでにのビルドを繰り返すと、最初にイメージをビルドする時よりビルド時間が少なくなる。これは、ドッカーがレイヤード構造を持ち、変更されていない部分がシステムにキャッシュされるために可能です。しかし、キャッシュされたコンテンツはリポジトリのスペースを占有します。ドッカーキャッシュを削除する命令は以下の通りである。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="c"># remove docker cache</span>
+docker system prune <span class="nt">-a</span>
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+<span class="nv">$ </span>docker system prune <span class="nt">-a</span>
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all images without at least one container associated to them
+  - all build cache
+
+Are you sure you want to <span class="k">continue</span>? <span class="o">[</span>y/N] y
+Deleted build cache objects:
+kxgva6ktfwea5hiatrfmgyeq3
+...
+c5tvqn2p53ledfjz4nqyrbl1g
+gtdusijog41t1972eh4oggk37
+
+Total reclaimed space: 15.34GB
+
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="container">Container</h2>
+<p><strong>Create Container from Image</strong></p>
+
+<p>ドッカーイメージを作成した場合は、イメージに基づいてコンテナを作成するコマンドです。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> &lt;container name&gt; <span class="nt">-p</span> &lt;ubuntu machine port&gt;:&lt;docker port&gt; &lt;image name&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> cond-my <span class="nt">-p</span> 43389:3389 <span class="nt">-p</span> 48080:8080 <span class="nt">-p</span> 44000:4000 <span class="nt">-p</span> 422:22 img-my
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>List Docker Containers and remove it</strong></p>
+
+<p><code class="language-plaintext highlighter-rouge">run</code>コマンドでドッカーコンテナを最初に実行した場合、コンテナが作成されます。そして、 <code class="language-plaintext highlighter-rouge">ps</code>コマンドを使ってDockerコンテナの状態を照会し、コンテナリストを照会することができます。そして<code class="language-plaintext highlighter-rouge">rm</code>命令でドッカーコンテナの削除も可能です。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c"># list </span>
+docker ps <span class="nt">-a</span>
+
+<span class="c"># remove</span>
+docker <span class="nb">rm</span> &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Start、Stop、Attach</strong></p>
+
+<p>ドッカーリストを照会してドッカーコンテナのIDを見つけたら、 <code class="language-plaintext highlighter-rouge">start</code>コマンドを使ってドッカーコンテナを起動、停止( <code class="language-plaintext highlighter-rouge">stop</code>)し、ドッカーの内部に入ることができます( <code class="language-plaintext highlighter-rouge">attach</code>)。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="c"># start stopped container </span>
+docker start &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+<span class="c"># start stopped container &amp; enter container</span>
+docker start <span class="nt">-i</span> &lt;container <span class="nb">id</span><span class="o">&gt;</span>          
+
+<span class="c"># stop running container</span>
+docker stop &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+<span class="c"># enter running(started) container </span>
+docker attach &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+<span class="c"># pass to commands to running container</span>
+docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container names&gt; &lt;commands&gt;  
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="saveload-docker-image">Save/Load docker image</h2>
+<p><strong>Export Docker Image to file</strong></p>
+
+<p>私の場合は、シノロジーナスのドッカー機能を使用します。シノロジーは、デフォルトでドッカーハブに登録されている画像に基づいてコンテナを作成する機能をサポートしています。しかし、私は<code class="language-plaintext highlighter-rouge">Dockerfile</code>ベースで生成されたドッカーイメージをコンテナとして使用したいので、Ubuntuマシンで生成されたイメージをファイルとして保存し、シノロジードッカーからロードして使用しました。</p>
+
+<p>以下のコマンドは、システムに登録されているドッカーイメージをtar形式のファイルとして保存します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>docker save <span class="nt">-o</span> &lt;file name&gt; &lt;image name&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker save <span class="nt">-o</span> img-my.tar img-my
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Load Docker Image from Image file</strong></p>
+
+<p>以下のコマンドは、tarファイル形式のドッカーイメージをシステムにロードします。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>docker load <span class="nt">-i</span> &lt;file name&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker load <span class="nt">-i</span> img-my.tar
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Export Docker Container to Image</strong></p>
+
+<p>状況によっては、<code class="language-plaintext highlighter-rouge">Dockerfile</code>に記述した内容だけでイメージ内の環境を構成できないこともあります。そのため、手動で環境設定を完了したドッカーコンテナをイメージにする必要がある場合があります。以下の命令はドッカーコンテナを画像に変換します。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>docker commit &lt;container name&gt; &lt;image name <span class="o">=</span> repository name&gt;:&lt;tag&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="参考資料">参考資料</h2>
+<ul>
+  <li>Dockerイメージの抽出と読み込み：https://dongle94.github.io/docker/docker-image-extract/</li>
+</ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240215120315/ja-thumb-unclesnote-command_line_cli_handbook_for_using_docker.png" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[シノロジーNAS-ドッカーコンテナのタイムゾーン設定]]></title>
@@ -74,7 +337,10 @@
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>dpkg-reconfigure tzdata
 </pre></td></tr></tbody></table></code></pre></div></div>
-<p>以下はタイムゾーンを設定するための私の例です。下部に<code class="language-plaintext highlighter-rouge">Local time is now</code>の時間があなたの地域の時間であれば正しくタイムゾーンが設定されたのだ。</p>
+<p>以下はタイムゾーンを設定するための私の例です。下部に下のフレーズの時間があなたの地域の時間であれば正しくタイムゾーンが設定されているのだ。</p>
+<ul>
+  <li>Local time is now</li>
+</ul>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -103,67 +369,44 @@
 25
 26
 27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
 </pre></td><td class="rouge-code"><pre>root@img:~# dpkg-reconfigure tzdata
 debconf: unable to initialize frontend: Dialog
 debconf: <span class="o">(</span>No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.<span class="o">)</span>
 debconf: falling back to frontend: Readline
 Configuring tzdata
 <span class="nt">------------------</span>
-Please <span class="k">select </span>the geographic area <span class="k">in </span>which you live. Subsequent configuration questions will narrow this down by presenting a list of cities, representing the  
-
-<span class="nb">time </span>zones <span class="k">in </span>which they are located.  
-
-1. Africa 3. Antarctica 5. Arctic Ocean 7. Atlantic Ocean 9. Indian Ocean 11. System V timezones 13. None of the above  
-
-2. America 4. Australia 6. Asia 8. Europe 10. Pacific Ocean 12. US  
-
-Geographic area: 6  
-
-Please <span class="k">select </span>the city or region corresponding to your <span class="nb">time </span>zone.  
-
-1. Aden 11. Baku 21. Damascus 31. Hong Kong 41. Kashgar 51. Makassar 61. Pyongyang  
-
-2. Singapore 81. Ujung Pandang  
-
-...  
-
-9. Baghdad 19. Chongqing 29. Hebron 39. Kamchatka 49. Macau 59. Phnom Penh 69. Seoul  
-
-10. Tokyo 89. Yekaterinburg  
-
-...  
-
-Time zone: 69  
-
-Current default <span class="nb">time </span>zone: <span class="sb">`</span>Asia/Seoul<span class="sb">`</span>  
-
-Local <span class="nb">time </span>is now: Thu Feb 1 23:46:23 KST 2024。  
-
-Universal Time is now: Thu Feb 1 14:46:23 UTC 2024。  
-
+  
+Please <span class="k">select </span>the geographic area <span class="k">in </span>which you live. Subsequent configuration questions will narrow this down by presenting a list of cities, representing the
+<span class="nb">time </span>zones <span class="k">in </span>which they are located.
+  
+1. Africa   3. Antarctica  5. Arctic Ocean  7. Atlantic Ocean  9. Indian Ocean    11. System V timezones  13. None of the above
+2. America  4. Australia   6. Asia          8. Europe          10. Pacific Ocean  12. US
+Geographic area: 6
+  
+Please <span class="k">select </span>the city or region corresponding to your <span class="nb">time </span>zone.
+  
+1. Aden      11. Baku        21. Damascus          31. Hong Kong  41. Kashgar       51. Makassar      61. Pyongyang
+2. Singapore      81. Ujung Pandang
+...
+9. Baghdad   19. Chongqing   29. Hebron            39. Kamchatka  49. Macau         59. Phnom Penh    69. Seoul
+10. Tokyo          89. Yekaterinburg
+...
+Time zone: 69
+  
+Current default <span class="nb">time </span>zone: <span class="s1">'Asia/Seoul'</span>
+Local <span class="nb">time </span>is now:      Thu Feb  1 23:46:23 KST 2024.
+Universal Time is now:  Thu Feb  1 14:46:23 UTC 2024.
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<table>
-  <tbody>
-    <tr>
-      <td>![[docker-thumb.png</td>
-      <td>thumb]]</td>
-    </tr>
-  </tbody>
-</table>
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/ja-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-" /></item>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/ja-thumb-unclesnote-synology_nas_docker_container_time_zone_settings.png" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Obsidian 画像ブロック - キャプション、サイズ変更、プラグイン]]></title>
@@ -232,13 +475,13 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024。
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>ただし、画像にキャプションを追加したい場合は、追加のコミュニティ プラグインをインストールする必要があります。</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" alt="Obsidian の基本構文を使用して画像サイズを変更する" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png" alt="Obsidian の基本構文を使用して画像サイズを変更する" />
 <em>Obsidian の基本構文を使用して画像サイズを変更する</em></p>
 
 <h2 id="obsidianの設定">Obsidianの設定</h2>
 <p>この設定は、画像をクリップボードにコピーして Obsidian Note に貼り付けるときに画像ファイルが作成される場所に関連します。この設定は、画像ファイルだけでなく、各種添付ファイルを貼り付ける場合にも適用されます。</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - 設定 - ファイルとリンク - 新しい添付ファイルのデフォルトの場所 - `現在のファイルと同じフォルダー`を選択します" width="972" height="747" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - 設定 - ファイルとリンク - 新しい添付ファイルのデフォルトの場所 - `現在のファイルと同じフォルダー`を選択します" />
 <em>Obsidian - 設定 - ファイルとリンク - 新しい添付ファイルのデフォルトの場所 - <code class="language-plaintext highlighter-rouge">現在のファイルと同じフォルダー</code>を選択します</em></p>
 
 <p><code class="language-plaintext highlighter-rouge">現在のファイルと同じフォルダ</code>を設定すると、ノートが置かれている場所に画像ファイルが作成されます。ノート用の画像ファイルがすべて準備できたら、そのファイルを手動で<code class="language-plaintext highlighter-rouge">_img</code>フォルダに移動することをお勧めします。メモが完成するまでは、貼り付けた画像がすべて有効であるという保証がないからです。</p>
@@ -255,23 +498,23 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024。
 <h3 id="画像の名前を変更して貼り付け">画像の名前を変更して貼り付け</h3>
 <p><code class="language-plaintext highlighter-rouge">画像の名前変更貼り付け</code>プラグインを使用すると、<code class="language-plaintext highlighter-rouge">Ctrl + V</code>ショートカットを使用して画像を貼り付けることで、画像ファイルの名前を変更できます。</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - コミュニティ プラグイン - 画像の名前変更を貼り付け" width="972" height="542" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - コミュニティ プラグイン - 画像の名前変更を貼り付け" />
 <em>Obsidian - コミュニティ プラグイン - 画像の名前変更を貼り付け</em></p>
 
 <p>貼り付けると、ポップアップが開きます。メモの名前がファイル名として自動的に入力され、サフィックスとして画像ファイルの名前を追加できます。</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" alt="`画像の名前を変更して貼り付け`をインストールし、`Ctrl + V`で画像を貼り付けると、ファイル名変更ポップアップが開きます。" width="972" height="656" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" alt="`画像の名前を変更して貼り付け`をインストールし、`Ctrl + V`で画像を貼り付けると、ファイル名変更ポップアップが開きます。" />
 <em><code class="language-plaintext highlighter-rouge">画像の名前を変更して貼り付け</code>をインストールし、<code class="language-plaintext highlighter-rouge">Ctrl + V</code>で画像を貼り付けると、ファイル名変更ポップアップが開きます。</em></p>
 
 <p>これは、メモに複数の画像が添付されている場合に、ファイル名で並べ替えて、どの画像ファイルがどの投稿に依存しているかを区別するのに役立ちます。以下は、この記事に添付された画像ファイルを自動で振り分けた場合です。</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Obsidian ファイル名による画像ファイルの自動分類" width="972" height="348" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Obsidian ファイル名による画像ファイルの自動分類" />
 <em>Obsidian ファイル名による画像ファイルの自動分類</em></p>
 
 <h3 id="画像のキャプション">画像のキャプション</h3>
 <p>コミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">画像キャプション</code>を検索すると、ダウンロード数でランキングされた上位 2 つの画像キャプション プラグインが表示されます。 2 つのプラグインの使用方法は似ています。最初のプラグインは画像サイズ変更のためのより多くのオプションを提供しますが、私の場合、複雑な機能は必要ありませんでした。そして何よりも、黒いキャプション フレームではなくグレーのキャプション フレームが気に入りました。 2 番目のプラグインをダウンロードしてアクティブ化します。最初のプラグインを選択しても問題ありません。</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - コミュニティ プラグイン - 画像キャプション" width="972" height="765" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png" alt="Obsidian - コミュニティ プラグイン - 画像キャプション" />
 <em>Obsidian - コミュニティ プラグイン - 画像キャプション</em></p>
 
 <p>画像ブロックを<code class="language-plaintext highlighter-rouge">OR</code>文字で区切って、ファイル名、キャプション、画像の横幅の順に編集すると、以下のように可愛らしいプーさんのキャプションとリサイズされた画像ファイルが表示されます。</p>
@@ -284,15 +527,22 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024。
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" alt="キャプションとサイズ変更された画像を含むObsidian画像ブロック" />
 <em>キャプションとサイズ変更された画像を含むObsidian画像ブロック</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/ja-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
@@ -537,6 +787,14 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024。
 <em>カメラ穴のデザイン - iPhone 14 RegularとiPhone 15 Regularの間</em></p>
 
 <p>最後に、通常のモデルのユーザーも、プロモデルのユーザーと同じ<code class="language-plaintext highlighter-rouge">ダイナミックアイランド</code>の感性を感じることができます。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240122050520/ja-thumb-unclesnote-appearance_of_iphone_15_from_iphone_14.png" />
       <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" medium="image" />
@@ -752,6 +1010,14 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024。
 <p>前述したように、Samsung の AI 機能は、Google レンズ アプリや Google 翻訳アプリなど、代替手段が存在するサービスです。したがって、AI 機能のためだけに新しい携帯電話を購入する場合、それは合理的な選択ではない可能性があります。そして、S21+とS20+のパフォーマンスは、基本的なデジタルライフを楽しむために不足しません。</p>
 
 <p>ただし、2 年以上新しいデバイスを購入したいという誘惑に耐えながら一生懸命働いてきた場合は、自分にプレゼントを贈るのも良い選択肢かもしれません。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240122041031/ja-thumb-unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+.png" />
       <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" medium="image" />
@@ -815,6 +1081,14 @@ youraccount is not <span class="k">in </span>the sudoers file.  This incident wi
 youraccount   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
 
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/ja-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png" />
       <media:content url="https://unclesnote.com/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" medium="image" /></item>
@@ -1073,6 +1347,13 @@ dotnet new console
   </tbody>
 </table>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/ja-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png" />
       <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" medium="image" />
@@ -1273,6 +1554,14 @@ dotnet new console
 </table>
 
 <p>4 位と 5 位の当選者は宝くじ販売所で賞金を支払い、残りの当選者は農協銀行に来て賞金を受け取る必要があります。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240110010503/ja-thumb-unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea.png" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-korea_lotto_mark_693rd_1st_place_lotto.png" medium="image" />
@@ -1336,36 +1625,43 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <h2 id="obsidianのショートカット-アイコンを作成する">Obsidianのショートカット アイコンを作成する</h2>
 <p>Obsidian Vault のショートカット アイコンを作成する場所を右クリックし、[ショートカット] ボタンを押します。</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" alt="Obsidianのショートカットアイコン作成プロセス - ショートカットの作成" width="972" height="530" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png" alt="Obsidianのショートカットアイコン作成プロセス - ショートカットの作成" />
 <em>Obsidianのショートカットアイコン作成プロセス - ショートカットの作成</em></p>
 
 <p>次に、obsidian.exe へのフルパスを入力します。</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" alt="Obsidian ショートカット アイコン作成プロセス - obsidian.exe パス" width="972" height="710" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" alt="Obsidian ショートカット アイコン作成プロセス - obsidian.exe パス" />
 <em>Obsidian ショートカット アイコン作成プロセス - obsidian.exe パス</em></p>
 
 <p>次に、ショートカットアイコンの名前を入力します。</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" alt="Obsidianのショートカットアイコン作成手順 - アイコン名" width="972" height="710" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png" alt="Obsidianのショートカットアイコン作成手順 - アイコン名" />
 <em>Obsidianのショートカットアイコン作成手順 - アイコン名</em></p>
 
 <p>すると、入力した名前のObsidianショートカットアイコンが作成されます。そして、アイコンを右クリックして、<code class="language-plaintext highlighter-rouge">プロパティ</code>メニューを選択します。</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="作成したObsidianショートカットアイコンのプロパティメニュー" width="972" height="504" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png" alt="作成したObsidianショートカットアイコンのプロパティメニュー" />
 <em>作成したObsidianショートカットアイコンのプロパティメニュー</em></p>
 
 <p>obsidian.exe パスの後にスペースを 1 つ追加し、上で作成した Obsidian Vault パスを追加します。</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="Obsidianのショートカット アイコンのプロパティ" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png" alt="Obsidianのショートカット アイコンのプロパティ" />
 <em>Obsidianのショートカット アイコンのプロパティ</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/ja-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Obsidian Markdown を MS Word、Power Point に変換する - Pandoc]]></title>
@@ -1393,7 +1689,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>しかし、コマンドによる文書変換は煩雑であるため、GUI環境で簡単にPandocを利用できるようにプラグイン形式で提供されています。 Obsidian のコミュニティ プラグイン メニューを検索すると、2 つのプラグインが見つかります。この記事では、最初の<code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code>について説明します。実は2回目に検索した<code class="language-plaintext highlighter-rouge">Obsidian強化エクスポート</code>を使ってみたのですが、うまくいきませんでした。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" alt="Obsidian - `コミュニティ プラグイン` - `Pandoc プラグイン`" width="972" height="612" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png" alt="Obsidian - `コミュニティ プラグイン` - `Pandoc プラグイン`" />
 <em>Obsidian - <code class="language-plaintext highlighter-rouge">コミュニティ プラグイン</code> - <code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code></em></p>
 
 <h2 id="pandoc-をインストールする">Pandoc をインストールする</h2>
@@ -1406,19 +1702,19 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>Pandoc サイトにアクセスします。 Pandoc は、Windows、macOS、Linux などのさまざまな種類の OS インストール パッケージをサポートしています。ダウンロードとインストール。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" alt="Pandoc 公式サイト - ダウンロード" width="972" height="546" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png" alt="Pandoc 公式サイト - ダウンロード" />
 <em>Pandoc 公式サイト - ダウンロード</em></p>
 
 <p>Windows ユーザーの場合は、msi 形式のインストール パッケージをお勧めします。ポータブル版を zip 形式で使用したい場合は、大きな問題はありません。とにかく、適切な場所にダウンロードしてインストールまたは解凍します。</p>
 <h2 id="obsidian-に-pandoc-プラグイン-をインストールして構成する">Obsidian に <strong>Pandoc プラグイン</strong> をインストールして構成する</h2>
 <p>Obsidian の設定でコミュニティ プラグインの使用を許可し、コミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code>を検索してインストールします。そしてそれをアクティブ化します。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" alt="Obsidian - 設定 - コミュニティ プラグイン - Pandoc プラグイン" width="972" height="524" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png" alt="Obsidian - 設定 - コミュニティ プラグイン - Pandoc プラグイン" />
 <em>Obsidian - 設定 - コミュニティ プラグイン - Pandoc プラグイン</em></p>
 
 <p>プラグインをインストールしてアクティブ化したら、次のステップはプラグインをセットアップすることです。設定にPandoc Pluginの項目が追加されていることがわかります。ここで設定する必要がある部分は<code class="language-plaintext highlighter-rouge">エクスポートフォルダー</code>と<code class="language-plaintext highlighter-rouge">Pandocパス</code>です。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" alt="Obsidian - 設定 - コミュニティ プラグイン - `Pandoc プラグイン` 設定" width="972" height="416" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png" alt="Obsidian - 設定 - コミュニティ プラグイン - `Pandoc プラグイン` 設定" />
 <em>Obsidian - 設定 - コミュニティ プラグイン - <code class="language-plaintext highlighter-rouge">Pandoc プラグイン</code> 設定</em></p>
 
 <ul>
@@ -1440,12 +1736,12 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <h2 id="pandoc-プラグインの使用法"><strong>Pandoc プラグイン</strong>の使用法</h2>
 <p>Obsidian Markdown を希望のファイル形式に変換するには、<code class="language-plaintext highlighter-rouge">Ctrl + P</code>を押してクイック パレットを開きます。次に、<code class="language-plaintext highlighter-rouge">pandoc plugin</code>を検索して目的のファイル形式を選択すると、上で設定したエクスポートフォルダーにファイルが作成されます。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - 記事 - `Ctrl + P` - `pandoc plugin` を検索 - 変換したい形式を選択" width="972" height="657" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - 記事 - `Ctrl + P` - `pandoc plugin` を検索 - 変換したい形式を選択" />
 <em>Obsidian - 記事 - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - <code class="language-plaintext highlighter-rouge">pandoc plugin</code> を検索 - 変換したい形式を選択</em></p>
 
 <p><strong>投稿に画像が含まれていない場合は問題ありませんが、画像が含まれている場合は、画像ファイルが見つからないというエラーが表示されます</strong></p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" alt="Obsidian - Pandoc プラグイン - 画像ファイルを添付して投稿 - Word ドキュメント (docx) としてエクスポート" width="972" height="585" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" alt="Obsidian - Pandoc プラグイン - 画像ファイルを添付して投稿 - Word ドキュメント (docx) としてエクスポート" />
 <em>Obsidian - Pandoc プラグイン - 画像ファイルを添付して投稿 - Word ドキュメント (docx) としてエクスポート</em></p>
 
 <h2 id="pandoc-によるファイル変換エラーの解決策"><strong>Pandoc</strong> によるファイル変換エラーの解決策</h2>
@@ -1455,30 +1751,37 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>解決策は、エクスポート専用の新しいボールトを作成し、ドキュメント形式の変換が必要な場合にそれを使用することです。 md ファイルとイメージ ファイルを Vault ルートにコピーし、変換します。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="輸出専用の新しいObsidian保管庫" width="972" height="521" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png" alt="輸出専用の新しいObsidian保管庫" />
 <em>輸出専用の新しいObsidian保管庫</em></p>
 
 <p>もちろん、ファイルを変換するたびにエクスポートのために md ファイルとイメージ ファイルをボールトにコピーするのは面倒ですが、変換されたファイルの品質を考慮すると、価値のある手間かもしれません。以下はPandocでmdをword(docx)に変換した結果です。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="Pandoc によって作成された **Word** ファイル" width="972" height="563" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png" alt="Pandoc によって作成された **Word** ファイル" />
 <em>Pandoc によって作成された <strong>Word</strong> ファイル</em></p>
 
 <p>以下は、Pandoc を使用して md を PowerPoint (pptx) に変換した結果です。</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" alt="**PowerPoint ファイル** Pandoc によって作成されました" width="972" height="562" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png" alt="**PowerPoint ファイル** Pandoc によって作成されました" />
 <em><strong>PowerPoint ファイル</strong> Pandoc によって作成されました</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/ja-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[YouTube ビデオを Obsidian に埋め込む - iframe、ReadItLater]]></title>
@@ -1508,17 +1811,17 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>幸いなことに、YouTubeでは共有機能を通じてiframeタグを簡単に取得できる機能が提供されています。 YouTube動画の再生画面で<code class="language-plaintext highlighter-rouge">共有</code>ボタンを押すと、ポップアップが開いて<code class="language-plaintext highlighter-rouge">埋め込み</code>ボタンをクリックします。</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" alt="Youtube - `共有` - `埋め込み`" width="972" height="605" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png" alt="Youtube - `共有` - `埋め込み`" />
 <em>Youtube - <code class="language-plaintext highlighter-rouge">共有</code> - <code class="language-plaintext highlighter-rouge">埋め込み</code></em></p>
 
 <p>次に、<code class="language-plaintext highlighter-rouge">コピー</code>ボタンをクリックして、YouTube がビデオ共有用に作成した<code class="language-plaintext highlighter-rouge">iframe</code>タグをコピーします。</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" alt="Youtube - `共有` - `埋め込み` - `コピー`" width="972" height="680" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png" alt="Youtube - `共有` - `埋め込み` - `コピー`" />
 <em>Youtube - <code class="language-plaintext highlighter-rouge">共有</code> - <code class="language-plaintext highlighter-rouge">埋め込み</code> - <code class="language-plaintext highlighter-rouge">コピー</code></em></p>
 
 <p>そして、コピーしたiframeタグをObsidianに貼り付けると、再生・操作可能なYouTube動画が表示されます。</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - Obsidian から `iframe` HTML タグを貼り付けます" width="972" height="575" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - Obsidian から `iframe` HTML タグを貼り付けます" />
 <em>Obsidian - Obsidian から <code class="language-plaintext highlighter-rouge">iframe</code> HTML タグを貼り付けます</em></p>
 
 <p>この方法を使用すると、別のプラグインをインストールせずに、ビデオを Obsidian にすばやく埋め込むことができます。</p>
@@ -1560,12 +1863,12 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <h3 id="インストール方法と使用方法">インストール方法と使用方法</h3>
 <p>Obsidian のコミュニティ プラグイン メニューで<code class="language-plaintext highlighter-rouge">readitlater</code>を検索し、インストールして有効化します。</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" alt="Obsidian - コミュニティ プラグイン - `ReadItLater`" width="972" height="350" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png" alt="Obsidian - コミュニティ プラグイン - `ReadItLater`" />
 <em>Obsidian - コミュニティ プラグイン - <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
 
 <p>Webブラウザに表示されたURL、またはYouTubeの共有ボタンをクリックしてURLをクリップボードにコピーします。</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" alt="Youtube - `共有` - `コピー`" width="972" height="571" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png" alt="Youtube - `共有` - `コピー`" />
 <em>Youtube - <code class="language-plaintext highlighter-rouge">共有</code> - <code class="language-plaintext highlighter-rouge">コピー</code></em></p>
 
 <p>次に、Obsidian で<code class="language-plaintext highlighter-rouge">Ctrl + P</code>ショートカットを押し、<code class="language-plaintext highlighter-rouge">readitlater</code>を検索して、下のメニューを選択します。</p>
@@ -1573,23 +1876,30 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
   <li>ReadItLater: Save clipboard</li>
 </ul>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - `readitlater` を検索 - `ReadItLater: クリップボードを保存` を選択します" width="972" height="471" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - `readitlater` を検索 - `ReadItLater: クリップボードを保存` を選択します" />
 <em>Obsidian - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - <code class="language-plaintext highlighter-rouge">readitlater</code> を検索 - <code class="language-plaintext highlighter-rouge">ReadItLater: クリップボードを保存</code> を選択します</em></p>
 
 <p>すると、新しいノートが自動的に作成され、そのノートにメタデータとビデオが埋め込まれます。</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian - `ReadItLater` プラグインによって生成されたメモ" width="972" height="610" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian - `ReadItLater` プラグインによって生成されたメモ" />
 <em>Obsidian - <code class="language-plaintext highlighter-rouge">ReadItLater</code> プラグインによって生成されたメモ</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/ja-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[韓国の冬のストリートフード - パン]]></title>
@@ -1651,6 +1961,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
   <li><code class="language-plaintext highlighter-rouge">尾</code>から食べる人は慎重で繊細で思慮深い性格の人です。意外と鈍感な面があり、誰かがあなたを片思いしていても簡単に気づかないタイプです。</li>
   <li>パンパンを<code class="language-plaintext highlighter-rouge">半分に分けて</code>食べる人は勝負欲が強く、一度気にしたことは必ずこなすべき性格です。内面に臆病さがあり、友人、知人のお願いをうまく拒否できません。</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231230151433/ja-thumb-unclesnote-korean_winter_street_food_bungeobbang.png" />
       <media:content url="https://unclesnote.com/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" medium="image" />
@@ -1774,6 +2092,13 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 
 <p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="テレグラム - `sendMessage` API" width="972" height="762" />
 <em>テレグラム - <code class="language-plaintext highlighter-rouge">sendMessage</code> API</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/ja-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png" />
@@ -1974,6 +2299,14 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 <span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/ja-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png" />
       <media:content url="https://unclesnote.com/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" medium="image" /></item>
@@ -2157,6 +2490,14 @@ service jenkins restart
 72b349dadd5d4a83bac10060e536189e
 <span class="c"># - --------------------------------------------------------</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/ja-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png" />
       <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" medium="image" />
@@ -2425,6 +2766,14 @@ service xrdp restart
 <ul>
   <li>https://youtu.be/0rl5145aEMk?si=aoO3eZyDLPnmCfr</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/ja-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png" />
       <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" medium="image" />
@@ -2580,6 +2929,13 @@ service xrdp restart
 <p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - HWiNFO64 - システム概要 - メモリ" width="972" height="416" />
 <em>Lenovo Slim3 15ABA7 R5 - HWiNFO64 - システム概要 - メモリ</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/ja-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png" />
       <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" medium="image" />
@@ -2650,6 +3006,14 @@ service xrdp restart
 <p>Windows を再起動します。再起動が完了すると、Windows の観点からは、ディスプレイが新しく認識されたディスプレイになります。</p>
 
 <p>そのため、ディスプレイ設定でディスプレイの位置と向きを再設定する必要があります。要するに、これは非常に迷惑です。心よりお悔やみを申し上げます。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/ja-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
       <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
@@ -2708,7 +3072,7 @@ service xrdp restart
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>以下は、Obsidian 基本テーマのチップ タイプの吹き出しブロックです。</p>
 
-<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="Obsidian - 吹き出しブロック" width="972" height="210" />
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png" alt="Obsidian - 吹き出しブロック" />
 <em>Obsidian - 吹き出しブロック</em></p>
 
 <h2 id="吹き出しブロック折りたたみ機能">吹き出しブロック折りたたみ機能</h2>
@@ -2748,7 +3112,7 @@ service xrdp restart
 
 <p>吹き出しの種類に好みのテキストを書き込むことで、吹き出しの外観を変更できます。</p>
 
-<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" alt="Obsidian - コールアウトの定義済みタイプ" />
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png" alt="Obsidian - コールアウトの定義済みタイプ" />
 <em>Obsidian - コールアウトの定義済みタイプ</em></p>
 
 <p>この内容は <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a> で紹介されており、CSS を定義することで独自の吹き出しブロックをデザインできます。</p>
@@ -2800,12 +3164,20 @@ service xrdp restart
 
 &gt; [!bug] bug
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/ja-thumb-unclesnote-obsidian_callouts_and_quote_block.png" />
       <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[VirtualBox での Ubuntu 共有フォルダーのセットアップ - Windows ファイル共有]]></title>
@@ -2890,6 +3262,13 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="Ubuntu VM で`touch`コマンドを使用して`test.txt`ファイルを作成し、Windows で確認します。" width="972" height="562" />
 <em>Ubuntu VM で<code class="language-plaintext highlighter-rouge">touch</code>コマンドを使用して<code class="language-plaintext highlighter-rouge">test.txt</code>ファイルを作成し、Windows で確認します。</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/ja-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png" />
@@ -3012,6 +3391,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>2023 年 10 月 12 日、Galaxy S24+ のベンチマーク結果が Geekbench で発見されました。このモデルは<code class="language-plaintext highlighter-rouge">SM-S926B</code>として識別され、<code class="language-plaintext highlighter-rouge">Exynos 2400</code>チップセット、8GBのRAM、およびAndroid 14オペレーティングシステムを搭載しています。シングルコアスコアは<code class="language-plaintext highlighter-rouge">2067</code>、マルチコアスコアは<code class="language-plaintext highlighter-rouge">6520</code>を達成しました。</p>
 
 <p>これらのスコアは、Snapdragon 8 第 3 世代チップセットを搭載した Galaxy S24 Ultra のスコアよりも低く、Exynos 2400 の初期テストのパフォーマンスがわずかに低い可能性があることを示しています。 Galaxy S24 Ultraは、前モデルのGalaxy S23 Ultraと比較して、シングルコアで43%、マルチコアで36%のパフォーマンス向上が見込まれています。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/ja-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png" />
       <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" medium="image" />
@@ -3073,6 +3460,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>そして、デフォルトで追加されている<code class="language-plaintext highlighter-rouge">ハングル切り替えキー</code>をすべて削除します。これが実際に使用しているキーボードの言語切り替えキーと一致するという保証はありません。</p>
 
 <p><code class="language-plaintext highlighter-rouge">追加</code>ボタンをクリックし、新しいウィンドウが開いたら、キーボードの言語切り替えキーを押します。私のキーボードの場合、言語変更キーとして<code class="language-plaintext highlighter-rouge">Alt_R</code>が割り当てられていました。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/ja-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png" />
       <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" medium="image" />
@@ -3257,6 +3652,13 @@ pc.txt: ASCII text
 <p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="Windows での Git Bash へのアクセス" width="972" height="579" />
 <em>Windows での Git Bash へのアクセス</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/ja-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png" />
       <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" medium="image" />
@@ -3350,6 +3752,13 @@ pc.txt: ASCII text
 
 <p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="ブリーチビット" width="972" height="646" />
 <em>ブリーチビット</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/ja-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png" />
@@ -3489,6 +3898,13 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
 
 <p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="`アプリケーション`メニュー &gt; システムモニター" width="972" height="833" />
 <em><code class="language-plaintext highlighter-rouge">アプリケーション</code>メニュー &gt; システムモニター</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/ja-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png" />
@@ -3717,6 +4133,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
 <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0 dotnet-runtime-6.0 aspnetcore-runtime-6.0
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/ja-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
@@ -3770,6 +4194,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。" width="972" height="792" />
 <em>Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ja-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
@@ -3959,6 +4390,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="ブリーチビット" width="972" height="646" />
 <em>ブリーチビット</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/ja-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png" />
       <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" medium="image" />
@@ -4060,6 +4498,14 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 <em>VirtualBox Manager - ポート転送ルール</em></p>
 
 <p>これで、X86 Windows ブラウザで <code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code> に接続して Jekyll をテストできるようになりました。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/ja-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png" />
       <media:content url="https://unclesnote.com/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" medium="image" /></item>
@@ -4219,6 +4665,14 @@ gparted
 <span class="nv">UUID</span><span class="o">=</span>A4B5-D201  /boot/efi       vfat    <span class="nb">umask</span><span class="o">=</span>0077      0       1
 /swapfile                                 none            swap    sw              0       0
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/ja-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png" />
       <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" medium="image" />
@@ -4394,6 +4848,14 @@ VS Code の場合、<code class="language-plaintext highlighter-rouge">設定 &g
 <ul>
   <li><code class="language-plaintext highlighter-rouge">0</code>: すべてのスタイルと色をデフォルトにリセットします。</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/ja-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png" /></item></channel>
 </rss>

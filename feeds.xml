@@ -14,24 +14,36 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+  <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+  <entry>
+    <title><![CDATA[Command line (CLI) handbook for using Docker]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker"/>
+    <id>https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker</id>    
+    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <issued>Thu, 15 Feb 2024 12:03:15 +0900</issued>
+		<created>Thu, 15 Feb 2024 12:03:15 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[This is a handbook of commands to control Docker with CLI in a shell environment without using the Docker GUI. We introduce how to create and control Docker]]></summary>
+    <category><![CDATA[Ubuntu,Docker]]></category>
+    <tag><![CDATA[Ubuntu,Docker]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240215120315/en-thumb-unclesnote-command_line_cli_handbook_for_using_docker.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Synology NAS- Docker container time zone settings]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240207181924/synology_nas_docker_container_time_zone_settings"/>
     <id>https://unclesnote.com/en/240207181924/synology_nas_docker_container_time_zone_settings</id>    
-    <modified>Wed, 07 Feb 2024 18:19:24 +0900</modified>
+    <modified>Thu, 15 Feb 2024 12:03:17 +0900</modified>
     <issued>Wed, 07 Feb 2024 18:19:24 +0900</issued>
 		<created>Wed, 07 Feb 2024 18:19:24 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[As everyone knows, in the Dockerfile, which is the specification for building a Docker image, you can add the apt package installation required for the image.]]></summary>
     <category><![CDATA[Ubuntu,Docker]]></category>
     <tag><![CDATA[Ubuntu,Docker]]></tag>
-    <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/en-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-"/>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/en-thumb-unclesnote-synology_nas_docker_container_time_zone_settings.png"/>
   </entry>
   <entry>
     <title><![CDATA[Obsidian Image Block - captions, resizing, plugins]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins"/>
     <id>https://unclesnote.com/en/240122101210/obsidian_image_block_captions_resizing_plugins</id>    
-    <modified>Tue, 23 Jan 2024 09:40:30 +0900</modified>
+    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
     <issued>Mon, 22 Jan 2024 10:12:10 +0900</issued>
 		<created>Mon, 22 Jan 2024 10:12:10 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[If you're reading this, I don't think you're reading because you don't know how to paste and add image files to Obsidian. I think you're probably reading this]]></summary>
@@ -103,7 +115,7 @@
     <title><![CDATA[Create shortcut icons for multiple Obsidian vaults - URI]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri"/>
     <id>https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</id>    
-    <modified>Mon, 08 Jan 2024 11:11:21 +0900</modified>
+    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:21 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:21 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[In some cases, there may be users who organize their posts by creating multiple vaults according to categories. It can be annoying to open the Vault in]]></summary>
@@ -115,7 +127,7 @@
     <title><![CDATA[Convert Obsidian Markdowns to MS Word, Power Point - Pandoc]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc"/>
     <id>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</id>    
-    <modified>Mon, 22 Jan 2024 10:12:13 +0900</modified>
+    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:19 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:19 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[If you have a well-organized article using Obsidian, you may occasionally need to share it with a colleague or friend. Obsidian itself provides the ability to]]></summary>
@@ -127,7 +139,7 @@
     <title><![CDATA[Embed YouTube video into Obsidian - iframe, ReadItLater]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater"/>
     <id>https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</id>    
-    <modified>Sat, 30 Dec 2023 17:12:41 +0900</modified>
+    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
     <issued>Sat, 30 Dec 2023 17:12:41 +0900</issued>
 		<created>Sat, 30 Dec 2023 17:12:41 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[When writing articles in Obsidian, you may sometimes need to embed or scrap YouTube videos. There are two main ways to embed YouTube videos.]]></summary>
@@ -151,7 +163,7 @@
     <title><![CDATA[Create a Telegram bot and send a message]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231227193010/create_a_telegram_bot_and_send_a_message"/>
     <id>https://unclesnote.com/en/231227193010/create_a_telegram_bot_and_send_a_message</id>    
-    <modified>Wed, 27 Dec 2023 19:30:10 +0900</modified>
+    <modified>Thu, 15 Feb 2024 12:03:17 +0900</modified>
     <issued>Wed, 27 Dec 2023 19:30:10 +0900</issued>
 		<created>Wed, 27 Dec 2023 19:30:10 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Telegram provides an API service that is relatively easy to use. Therefore, it can be used as an easy tool to notify events in CI/CD systems where security is]]></summary>
@@ -202,7 +214,7 @@
     <modified>Thu, 14 Dec 2023 18:18:12 +0900</modified>
     <issued>Thu, 14 Dec 2023 18:18:12 +0900</issued>
 		<created>Thu, 14 Dec 2023 18:18:12 +0900</created>
-    <summary type="text/html" mode="escaped"><![CDATA[Lenovo Slim3 15ABA7 R5 has Free DOS installed as the default OS, so Windows must be installed separately. Let`s look at the basics for installing Windows and]]></summary>
+    <summary type="text/html" mode="escaped"><![CDATA[Lenovo Slim3 15ABA7 R5 has Free DOS installed as the default OS, so Windows must be installed separately. Let's look at the basics for installing Windows and]]></summary>
     <category><![CDATA[IT,PC]]></category>
     <tag><![CDATA[IT,PC,Lenovo,Laptop]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/en-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png"/>
@@ -223,7 +235,7 @@
     <title><![CDATA[Obsidian's Callouts And Quotation Block]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Wed, 24 Jan 2024 14:49:59 +0900</modified>
+    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[The dictionary definition of callout(s) is to call out loudly, and is used to draw the reader's attention and inform them of important or additional]]></summary>

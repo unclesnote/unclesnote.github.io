@@ -21,8 +21,271 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 07 Feb 2024 18:19:24 +0900</lastBuildDate>
-    <pubDate>Wed, 07 Feb 2024 18:19:24 +0900</pubDate>
+    <lastBuildDate>Thu, 15 Feb 2024 12:03:15 +0900</lastBuildDate>
+    <pubDate>Thu, 15 Feb 2024 12:03:15 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Command line (CLI) handbook for using Docker]]></title>
+      <link>https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker</link>
+      <guid>https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Thu, 15 Feb 2024 12:03:15 +0900</pubDate>
+      <category><![CDATA[Ubuntu,Docker]]></category>
+      <tag><![CDATA[Ubuntu,Docker]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker</guid>
+      <description><![CDATA[This is a handbook of commands to control Docker with CLI in a shell environment without using the Docker GUI. We introduce how to create and control Docker]]></description>
+      <content:encoded><![CDATA[<p>This is a handbook of commands to control Docker with CLI in a shell environment without using the Docker GUI. We introduce how to create and control Docker images, create and control Docker containers, and save and load images or containers.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="permission-denied-while-trying-to-connect-to-the-docker-daemon-socket"><em>permission denied while trying to connect to the Docker daemon socket</em></h2>
+<p>When you install Docker and try to execute Docker-related commands, a permission error related to access to <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code> occurs. From a system perspective, Docker’s actions seem to require <code class="language-plaintext highlighter-rouge">root</code> privileges.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nv">$ </span>docker images <span class="nt">-a</span>
+permission denied <span class="k">while </span>trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get <span class="s2">"http://%2Fvar%2Frun%2Fdocker.sock/v1.24/images/json?all=1"</span>: dial unix /var/run/docker.sock: connect: permission denied
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Use the command below to grant your Ubuntu account access to <code class="language-plaintext highlighter-rouge">/var/run/docker.sock</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>sudo chmod 666 /var/run/docker.sock;sudo chown -R ${USER}:users /var/run/docker.sock
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="image">Image</h2>
+<p><strong>Build Docker Image</strong></p>
+
+<p>The first thing you need to do to use Docker may be to create a Docker image. You can build a Docker image with the command below. This command builds a Docker image based on the <code class="language-plaintext highlighter-rouge">Dockerfile</code> you wrote.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre><span class="c"># build general </span>
+docker build <span class="nt">-f</span> &lt;Dockerfile&gt; <span class="nt">-t</span> &lt;tag&gt; <span class="nb">.</span>
+
+<span class="c"># build without cache</span>
+docker build <span class="nt">-f</span> &lt;Dockerfile&gt; <span class="nt">--no-cache</span> <span class="nt">-t</span> &lt;tag&gt; <span class="nb">.</span>
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker build <span class="nt">-f</span> Dockerfile <span class="nt">-t</span> img-my <span class="nb">.</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>List Docker Images and remove it</strong></p>
+
+<p>Below is the command to view and delete the list of Docker images registered in the system.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="c"># list</span>
+docker images <span class="nt">-a</span>
+
+<span class="c"># remove</span>
+docker rmi &lt;repository name&gt;
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Remove Docker images cache</strong></p>
+
+<p>If you repeat the build of the Docker image while modifying the <code class="language-plaintext highlighter-rouge">Dockerfile</code>, the build time will be less than when building the image for the first time. This is possible because Docker has a layered structure and unchanged parts are cached in the system. However, cached content takes up storage space. The command to delete the Docker cache is as follows.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+</pre></td><td class="rouge-code"><pre><span class="c"># remove docker cache</span>
+docker system prune <span class="nt">-a</span>
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+<span class="nv">$ </span>docker system prune <span class="nt">-a</span>
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all images without at least one container associated to them
+  - all build cache
+
+Are you sure you want to <span class="k">continue</span>? <span class="o">[</span>y/N] y
+Deleted build cache objects:
+kxgva6ktfwea5hiatrfmgyeq3
+...
+c5tvqn2p53ledfjz4nqyrbl1g
+gtdusijog41t1972eh4oggk37
+
+Total reclaimed space: 15.34GB
+
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="container">Container</h2>
+<p><strong>Create Container from Image</strong></p>
+
+<p>If you have created a Docker image, this is the command to create a container based on the image.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> &lt;container name&gt; <span class="nt">-p</span> &lt;ubuntu machine port&gt;:&lt;docker port&gt; &lt;image name&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker run <span class="nt">-d</span> <span class="nt">-it</span> <span class="nt">--name</span> cond-my <span class="nt">-p</span> 43389:3389 <span class="nt">-p</span> 48080:8080 <span class="nt">-p</span> 44000:4000 <span class="nt">-p</span> 422:22 img-my
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>List Docker Containers and remove it</strong></p>
+
+<p>If you first run a Docker container with the <code class="language-plaintext highlighter-rouge">run</code> command, a container is created. You can also check the status of Docker containers and list the containers through the <code class="language-plaintext highlighter-rouge">ps</code> command. You can also delete Docker containers with the <code class="language-plaintext highlighter-rouge">rm</code> command.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="c"># list </span>
+docker ps <span class="nt">-a</span>
+
+<span class="c"># remove</span>
+docker <span class="nb">rm</span> &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Start, Stop, Attach</strong></p>
+
+<p>If you find the ID of the Docker container by searching the Docker list, you can use the <code class="language-plaintext highlighter-rouge">start</code> command to start and stop the Docker container (<code class="language-plaintext highlighter-rouge">stop</code>) and enter inside Docker (<code class="language-plaintext highlighter-rouge">attach</code>).</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre></td><td class="rouge-code"><pre><span class="c"># start stopped container </span>
+docker start &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+<span class="c"># start stopped container &amp; enter container</span>
+docker start <span class="nt">-i</span> &lt;container <span class="nb">id</span><span class="o">&gt;</span>          
+
+<span class="c"># stop running container</span>
+docker stop &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+<span class="c"># enter running(started) container </span>
+docker attach &lt;container <span class="nb">id</span><span class="o">&gt;</span>
+
+<span class="c"># pass to commands to running container</span>
+docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container names&gt; &lt;commands&gt;  
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="saveload-docker-image">Save/Load docker image</h2>
+<p><strong>Export Docker Image to file</strong></p>
+
+<p>In my case, I use the Docker function of Synology NAS. Synology basically supports the ability to create containers based on images registered on Docker Hub. However, because I wanted to use the Docker image created based on the <code class="language-plaintext highlighter-rouge">Dockerfile</code> as a container, I saved the image created on the Ubuntu machine as a file and loaded it in Synology Docker.</p>
+
+<p>The command below saves the Docker image registered on the system as a tar file.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>docker save <span class="nt">-o</span> &lt;file name&gt; &lt;image name&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker save <span class="nt">-o</span> img-my.tar img-my
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Load Docker Image from Image file</strong></p>
+
+<p>The command below loads the Docker image in tar file format into the system.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre>docker load <span class="nt">-i</span> &lt;file name&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+docker load <span class="nt">-i</span> img-my.tar
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p><strong>Export Docker Container to Image</strong></p>
+
+<p>Depending on the situation, it may not be possible to configure the environment in the image with only the contents described in the <code class="language-plaintext highlighter-rouge">Dockerfile</code>. Therefore, sometimes you may need to create an image of a manually configured Docker container. The command below converts a Docker container to an image.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre>docker commit &lt;container name&gt; &lt;image name <span class="o">=</span> repository name&gt;:&lt;tag&gt;
+
+<span class="c"># -----------------------------------------------</span>
+<span class="c"># example</span>
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="references">References</h2>
+<ul>
+  <li>Extract and load Docker image: https://dongle94.github.io/docker/docker-image-extract/</li>
+</ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240215120315/en-thumb-unclesnote-command_line_cli_handbook_for_using_docker.png" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Synology NAS- Docker container time zone settings]]></title>
@@ -69,12 +332,15 @@
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>There are no problems up to this point. However, the problem starts when you develop software that utilizes the current time and use an API to get the current time within the source code. The time of a system without a time zone setting is based on UTC. Therefore, there is a possibility that the time-related functions of the software development language you use and system time processing overlap, causing software malfunction.</p>
 <h2 id="tzdata-and-time-zone-settings">tzdata and time zone settings</h2>
-<p>So, although it is very annoying, after creating and attaching a container, you must manually set the time zone separately using the command below. Of course, you can set the container<code class="language-plaintext highlighter-rouge">s time zone on a Linux system outside of a Docker container, but since I use Synology NAS</code>s Docker, it was difficult to find a way to do so.</p>
+<p>So, although it is very annoying, after creating and attaching a container, you must manually set the time zone separately using the command below. Of course, you can set the container’s time zone on a Linux system outside of a Docker container, but since I use Synology NAS’s Docker, it was difficult to find a way to do so.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre>dpkg-reconfigure tzdata
 </pre></td></tr></tbody></table></code></pre></div></div>
-<p>Below is my example for setting the time zone. If the time in <code class="language-plaintext highlighter-rouge">Local time is now</code> at the bottom is your local time, the time zone is set correctly.</p>
+<p>Below is my example for setting the time zone. If the time in the text below is your local time, the time zone is set correctly.</p>
+<ul>
+  <li>Local time is now</li>
+</ul>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 2
@@ -103,67 +369,44 @@
 25
 26
 27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
 </pre></td><td class="rouge-code"><pre>root@img:~# dpkg-reconfigure tzdata
 debconf: unable to initialize frontend: Dialog
 debconf: <span class="o">(</span>No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.<span class="o">)</span>
 debconf: falling back to frontend: Readline
 Configuring tzdata
 <span class="nt">------------------</span>
-Please <span class="k">select </span>the geographic area <span class="k">in </span>which you live. Subsequent configuration questions will narrow this down by presenting a list of cities, representing the  
-
-<span class="nb">time </span>zones <span class="k">in </span>which they are located.  
-
-1. Africa 3. Antarctica 5. Arctic Ocean 7. Atlantic Ocean 9. Indian Ocean 11. System V timezones 13. None of the above  
-
-2. America 4. Australia 6. Asia 8. Europe 10. Pacific Ocean 12. US  
-
-Geographic area: 6  
-
-Please <span class="k">select </span>the city or region corresponding to your <span class="nb">time </span>zone.  
-
-1. Aden 11. Baku 21. Damascus 31. Hong Kong 41. Kashgar 51. Makassar 61. Pyongyang  
-
-2. Singapore 81. Ujung Pandang  
-
-...  
-
-9. Baghdad 19. Chongqing 29. Hebron 39. Kamchatka 49. Macau 59. Phnom Penh 69. Seoul  
-
-10. Tokyo 89. Yekaterinburg  
-
-...  
-
-Time zone: 69  
-
-Current default <span class="nb">time </span>zone: <span class="sb">`</span>Asia/Seoul<span class="sb">`</span>  
-
-Local <span class="nb">time </span>is now: Thu Feb 1 23:46:23 KST 2024.  
-
-Universal Time is now: Thu Feb 1 14:46:23 UTC 2024.  
-
+  
+Please <span class="k">select </span>the geographic area <span class="k">in </span>which you live. Subsequent configuration questions will narrow this down by presenting a list of cities, representing the
+<span class="nb">time </span>zones <span class="k">in </span>which they are located.
+  
+1. Africa   3. Antarctica  5. Arctic Ocean  7. Atlantic Ocean  9. Indian Ocean    11. System V timezones  13. None of the above
+2. America  4. Australia   6. Asia          8. Europe          10. Pacific Ocean  12. US
+Geographic area: 6
+  
+Please <span class="k">select </span>the city or region corresponding to your <span class="nb">time </span>zone.
+  
+1. Aden      11. Baku        21. Damascus          31. Hong Kong  41. Kashgar       51. Makassar      61. Pyongyang
+2. Singapore      81. Ujung Pandang
+...
+9. Baghdad   19. Chongqing   29. Hebron            39. Kamchatka  49. Macau         59. Phnom Penh    69. Seoul
+10. Tokyo          89. Yekaterinburg
+...
+Time zone: 69
+  
+Current default <span class="nb">time </span>zone: <span class="s1">'Asia/Seoul'</span>
+Local <span class="nb">time </span>is now:      Thu Feb  1 23:46:23 KST 2024.
+Universal Time is now:  Thu Feb  1 14:46:23 UTC 2024.
 </pre></td></tr></tbody></table></code></pre></div></div>
 
-<table>
-  <tbody>
-    <tr>
-      <td>![[docker-thumb.png</td>
-      <td>thumb]]</td>
-    </tr>
-  </tbody>
-</table>
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
-      <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/en-thumb-unclesnote-synology_nas_docker_container_time_zone_settings-" /></item>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240207181924/en-thumb-unclesnote-synology_nas_docker_container_time_zone_settings.png" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Obsidian Image Block - captions, resizing, plugins]]></title>
@@ -232,13 +475,13 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024.
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>However, if you want to add captions to images, you will need to install an additional community plugin</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" alt="Change image size using Obsidian basic syntax" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png" alt="Change image size using Obsidian basic syntax" />
 <em>Change image size using Obsidian basic syntax</em></p>
 
 <h2 id="obsidian-settings">Obsidian Settings</h2>
 <p>This setting is related to the location where the image file is created when the image is copied to the clipboard and then pasted into Obsidian Note. This setting is applied when pasting not only image files but also various types of attachments.</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - Settings - Files and links - Default location for new attachments - Select `Same folder as current file`" width="972" height="747" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" alt="Obsidian - Settings - Files and links - Default location for new attachments - Select `Same folder as current file`" />
 <em>Obsidian - Settings - Files and links - Default location for new attachments - Select <code class="language-plaintext highlighter-rouge">Same folder as current file</code></em></p>
 
 <p>By setting <code class="language-plaintext highlighter-rouge">Same folder as current file</code>, an image file is created in the location where the note is located, and when all image files for the note are prepared, it is recommended to manually move the file to the <code class="language-plaintext highlighter-rouge">_img</code> folder. This is because there is no guarantee that all images pasted will be valid until the note is completed.</p>
@@ -255,23 +498,23 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024.
 <h3 id="paste-image-rename">Paste image rename</h3>
 <p>The <code class="language-plaintext highlighter-rouge">Paste image rename</code> plugin allows you to rename an image file by pasting the image with the <code class="language-plaintext highlighter-rouge">Ctrl + V</code> shortcut.</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - Community Plugins - Paste image rename" width="972" height="542" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png" alt="Obsidian - Community Plugins - Paste image rename" />
 <em>Obsidian - Community Plugins - Paste image rename</em></p>
 
 <p>When you paste, a pop-up opens. The name of the note is automatically entered as the file name, and you can add the name of the image file as a suffix.</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" alt="When you install `Paste image rename` and paste the image with `Ctrl + V`, the file name modification pop-up opens." width="972" height="656" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" alt="When you install `Paste image rename` and paste the image with `Ctrl + V`, the file name modification pop-up opens." />
 <em>When you install <code class="language-plaintext highlighter-rouge">Paste image rename</code> and paste the image with <code class="language-plaintext highlighter-rouge">Ctrl + V</code>, the file name modification pop-up opens.</em></p>
 
 <p>This helps you sort by file name and distinguish which image file is dependent on which post when there are multiple images attached to a note. Below is a case in which the image files attached to this article are automatically sorted.</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Automatic sorting of image files by Obsidian file name" width="972" height="348" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png" alt="Automatic sorting of image files by Obsidian file name" />
 <em>Automatic sorting of image files by Obsidian file name</em></p>
 
 <h3 id="image-captions">Image Captions</h3>
 <p>If you search for <code class="language-plaintext highlighter-rouge">image caption</code> in the community plugin menu, you can see the top two image caption plugins ranked by downloads. The two plugins are similar in usage. The first plugin provides more options for image resizing, but in my case, I didn’t need any complicated features, and most of all, I liked the gray caption frame rather than the black caption frame. Download and activate the second plugin. There is no problem if you choose the first plugin.</p>
 
-<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" alt="Obsidian - Community Plugins - Image Captions" width="972" height="765" />
+<p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png" alt="Obsidian - Community Plugins - Image Captions" />
 <em>Obsidian - Community Plugins - Image Captions</em></p>
 
 <p>If you separate the image blocks with <code class="language-plaintext highlighter-rouge">OR</code> characters and edit them in the order of file name, caption, and width of the image, you can see the lovely Pooh caption and resized image file as shown below.</p>
@@ -284,15 +527,22 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024.
 <p><img src="/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" alt="Obsidian image block with captions and resized images" />
 <em>Obsidian image block with captions and resized images</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240122101210/en-thumb-unclesnote-obsidian_image_block_captions_resizing_plugins.png" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
@@ -537,6 +787,14 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024.
 <em>Camera Hole Design - Between iPhone 14 Regular and iPhone 15 Regular</em></p>
 
 <p>Finally, regular model users can feel the same <code class="language-plaintext highlighter-rouge">dynamic island</code> sensibility as Pro model users.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240122050520/en-thumb-unclesnote-appearance_of_iphone_15_from_iphone_14.png" />
       <media:content url="https://unclesnote.com/assets/images/240122050520/unclesnote-appearance_of_iphone_15_from_iphone_14-iphone_15-plus_on_the_left_pro_max_on_the_right.png" medium="image" />
@@ -752,6 +1010,14 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024.
 <p>As mentioned above, Samsung’s AI features are services for which alternatives exist, such as the Google Lens app or the Google Translate app. Therefore, if you buy a new cell phone just because of its AI features, it may not be a reasonable choice. And, the performance of the S21+ and S20+ is not lacking to enjoy basic digital life.</p>
 
 <p>However, if you’ve been working hard and resisting the temptation to buy a new device for over two years, giving yourself a gift might be a good option.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240122041031/en-thumb-unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+.png" />
       <media:content url="https://unclesnote.com/assets/images/240122041031/unclesnote-should_buy_the_samsung_galaxy_s24+_from_s20+_or_s21+-galaxy_s24+_s21+_20+_front.png" medium="image" />
@@ -788,7 +1054,7 @@ Universal Time is now: Thu Feb 1 14:46:23 UTC 2024.
 <p>In <code class="language-plaintext highlighter-rouge">Settings &gt; Region &amp; Language</code>, change <code class="language-plaintext highlighter-rouge">Lanuage</code> from <code class="language-plaintext highlighter-rouge">English (United States)</code> to <code class="language-plaintext highlighter-rouge">English (United Kingdom)</code>.  Afterwards, you will need to re-login or reboot. Then, the problem may be solved.</p>
 
 <p>This is to re-imprint Ubuntu’s language settings. If the problem is resolved, you can change the Language back to English (United States).</p>
-<h2 id="youraccount-is-not-in-the-sudoers-file"><em>youraccount is not in the sudoers file</em></h2>
+<h2 id="youraccount-is-not-in-the-sudoers-file">youraccount is not in the sudoers file</h2>
 <p>This is the first problem I encountered when installing Ubuntu 22.04 version. When installing the existing Ubuntu 20.04 as an Ubuntu VM through Virtual Box, the account has sudo privileges by default. However, Ubuntu 22.04 requires you to additionally grant sudoer permissions to your account.</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
@@ -815,6 +1081,14 @@ youraccount is not <span class="k">in </span>the sudoers file.  This incident wi
 youraccount   <span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span> ALL
 
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240119025214/en-thumb-unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04.png" />
       <media:content url="https://unclesnote.com/assets/images/240119025214/unclesnote-issues_you_may_meet_when_installing_ubuntu_22_04-settings_regison_language.png" medium="image" /></item>
@@ -1073,6 +1347,13 @@ dotnet new console
   </tbody>
 </table>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240119025212/en-thumb-unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu.png" />
       <media:content url="https://unclesnote.com/assets/images/240119025212/unclesnote-c_sharp_development_environment_in_visual_studio_code_on_ubuntu-visual_studio_code-extension-c_sharp_dev_kit.png" medium="image" />
@@ -1273,6 +1554,14 @@ dotnet new console
 </table>
 
 <p>4th and 5th place winners will pay their winnings at lotto sales locations, and the remaining winners must visit Nonghyup (NH) Bank to receive their winnings.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240110010503/en-thumb-unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea.png" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-korea_lotto_mark_693rd_1st_place_lotto.png" medium="image" />
@@ -1336,36 +1625,43 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <h2 id="create-obsidian-shortcut-icon">Create Obsidian shortcut icon</h2>
 <p>Right-click the location where you want to create an Obsidian Vault shortcut icon and press the Shortcut button.</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" alt="Obsidian shortcut icon creation process - Shortcut creation" width="972" height="530" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png" alt="Obsidian shortcut icon creation process - Shortcut creation" />
 <em>Obsidian shortcut icon creation process - Shortcut creation</em></p>
 
 <p>Then enter the full path to obsidian.exe.</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" alt="Obsidian shortcut icon creation process - obsidian.exe path" width="972" height="710" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" alt="Obsidian shortcut icon creation process - obsidian.exe path" />
 <em>Obsidian shortcut icon creation process - obsidian.exe path</em></p>
 
 <p>Then, enter the name of the shortcut icon.</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" alt="Obsidian shortcut icon creation process - Icon name" width="972" height="710" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png" alt="Obsidian shortcut icon creation process - Icon name" />
 <em>Obsidian shortcut icon creation process - Icon name</em></p>
 
 <p>Then, an Obsidian shortcut icon with the name you entered will be created. And Right-click on the icon and select the Properties menu.</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" alt="Property menu of the created Obsidian shortcut icon" width="972" height="504" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png" alt="Property menu of the created Obsidian shortcut icon" />
 <em>Property menu of the created Obsidian shortcut icon</em></p>
 
 <p>Add one space after the obsidian.exe path and add the Obsidian Vault path created above.</p>
 
-<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" alt="Properties of Obsidian shortcut icon" />
+<p><img src="/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png" alt="Properties of Obsidian shortcut icon" />
 <em>Properties of Obsidian shortcut icon</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240108111121/en-thumb-unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri.png" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Convert Obsidian Markdowns to MS Word, Power Point - Pandoc]]></title>
@@ -1393,7 +1689,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>However, because document conversion using commands is complicated, Pandoc is provided in the form of a plug-in so that you can easily use Pandoc in a GUI environment. If you search in the community plugin menu in Obsidian, two plugins are found. In this article, we will talk about the first <code class="language-plaintext highlighter-rouge">Pandoc plugin</code>. Actually, I tried using <code class="language-plaintext highlighter-rouge">Obsidian Enhancing Export</code>, which was searched for the second time, but it didn’t work well.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" alt="Obsidian - `Community Plugins` - `Pandoc Plugin`" width="972" height="612" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png" alt="Obsidian - `Community Plugins` - `Pandoc Plugin`" />
 <em>Obsidian - <code class="language-plaintext highlighter-rouge">Community Plugins</code> - <code class="language-plaintext highlighter-rouge">Pandoc Plugin</code></em></p>
 
 <h2 id="install-pandoc">Install Pandoc</h2>
@@ -1406,19 +1702,19 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>Visit the Pandoc site. Pandoc supports various types of OS installation packages such as Windows, macOS, and Linux. Download and install.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" alt="Pandoc Official Site - Download" width="972" height="546" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png" alt="Pandoc Official Site - Download" />
 <em>Pandoc Official Site - Download</em></p>
 
 <p>If you are a Windows user, I recommend the installation package in msi format. If you want to use the portable version in zip format, it’s not a big problem. Anyway, download and install or unzip it to a suitable location.</p>
 <h2 id="install-and-configure-pandoc-plugin-in-obsidian">Install and configure <strong>Pandoc Plugin</strong> in Obsidian</h2>
 <p>Allow the use of the Community plugin in Obsidian’s Settings, and search for and install the <code class="language-plaintext highlighter-rouge">Pandoc plugin</code> in the Community plugin menu. And activate it.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" alt="Obsidian - Settings - Community Plugins - Pandoc Plugin" width="972" height="524" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png" alt="Obsidian - Settings - Community Plugins - Pandoc Plugin" />
 <em>Obsidian - Settings - Community Plugins - Pandoc Plugin</em></p>
 
 <p>Once the plugin has been installed and activated, the next step is to set up the plugin. You can see that the Pandoc Plugin item has been added to the settings. The parts that need to be set here are the <code class="language-plaintext highlighter-rouge">Export folder</code> and <code class="language-plaintext highlighter-rouge">Pandoc path</code>.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" alt="Obsidian - Settings - Community Plugin - `Pandoc Plugin` Settings" width="972" height="416" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png" alt="Obsidian - Settings - Community Plugin - `Pandoc Plugin` Settings" />
 <em>Obsidian - Settings - Community Plugin - <code class="language-plaintext highlighter-rouge">Pandoc Plugin</code> Settings</em></p>
 
 <ul>
@@ -1440,12 +1736,12 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <h2 id="usage-of-the-pandoc-plugin">Usage Of The <strong>Pandoc Plugin</strong></h2>
 <p>To convert Obsidian Markdown to the file format you want, press <code class="language-plaintext highlighter-rouge">Ctrl + P</code> to open the Quick Palette. Then, if you search for <code class="language-plaintext highlighter-rouge">pandoc plugin</code> and select the desired file format, a file will be created in the Export folder set above.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - Article - `Ctrl + P` - Search `pandoc plugin` - Select Format You Want To Convert it" width="972" height="657" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" alt="Obsidian - Article - `Ctrl + P` - Search `pandoc plugin` - Select Format You Want To Convert it" />
 <em>Obsidian - Article - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - Search <code class="language-plaintext highlighter-rouge">pandoc plugin</code> - Select Format You Want To Convert it</em></p>
 
 <p><strong>If your post doesn’t have any images, there won’t be a problem, but if it contains images, you’ll get an error saying the image file can’t be found</strong></p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" alt="Obsidian - Pandoc plugin - Post with attached image file - Export as Word Document (docx)" width="972" height="585" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" alt="Obsidian - Pandoc plugin - Post with attached image file - Export as Word Document (docx)" />
 <em>Obsidian - Pandoc plugin - Post with attached image file - Export as Word Document (docx)</em></p>
 
 <h2 id="file-conversion-error-solution-by-pandoc">File conversion error solution by <strong>Pandoc</strong></h2>
@@ -1455,30 +1751,37 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>The solution is to create a new vault for export purposes only and use it when document format conversion is needed. copy the md and image files to the vault root and convert them.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" alt="New Obsidian Vault for Export Purposes Only" width="972" height="521" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png" alt="New Obsidian Vault for Export Purposes Only" />
 <em>New Obsidian Vault for Export Purposes Only</em></p>
 
 <p>Of course, copying md files and image files to the vault for export purposes every time you convert a file is a hassle, but considering the quality of the converted files, it may be a worthwhile hassle. Below is the result of converting md to word (docx) with Pandoc.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" alt="**Word** file created by Pandoc" width="972" height="563" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png" alt="**Word** file created by Pandoc" />
 <em><strong>Word</strong> file created by Pandoc</em></p>
 
 <p>Below is the result of converting md to PowerPoint (pptx) using Pandoc.</p>
 
-<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" alt="**PowerPoint file** created by Pandoc" width="972" height="562" />
+<p><img src="/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png" alt="**PowerPoint file** created by Pandoc" />
 <em><strong>PowerPoint file</strong> created by Pandoc</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240108111119/en-thumb-unclesnote-convert_obsidian_md_to_docx_pptx_pandoc.png" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Embed YouTube video into Obsidian - iframe, ReadItLater]]></title>
@@ -1508,17 +1811,17 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 
 <p>Fortunately, YouTube provides a function that allows you to easily obtain iframe tags through the sharing function. When you press the ‘Share’ button on the YouTube video playback screen, click the ‘Embed’ button in the pop-up that opens.</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" alt="Youtube - `Share` - `Embed`" width="972" height="605" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png" alt="Youtube - `Share` - `Embed`" />
 <em>Youtube - <code class="language-plaintext highlighter-rouge">Share</code> - <code class="language-plaintext highlighter-rouge">Embed</code></em></p>
 
 <p>Then, click the <code class="language-plaintext highlighter-rouge">Copy</code> button to copy the <code class="language-plaintext highlighter-rouge">iframe</code> tag created by YouTube for video sharing.</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" alt="Youtube - `Share` - `Embed` - `Copy`" width="972" height="680" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png" alt="Youtube - `Share` - `Embed` - `Copy`" />
 <em>Youtube - <code class="language-plaintext highlighter-rouge">Share</code> - <code class="language-plaintext highlighter-rouge">Embed</code> - <code class="language-plaintext highlighter-rouge">Copy</code></em></p>
 
 <p>And, if you paste the copied iframe tag into Obsidian, a YouTube video that can be played and controlled will be displayed.</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - Paste `iframe` HTML tag from Obsidian" width="972" height="575" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png" alt="Obsidian - Paste `iframe` HTML tag from Obsidian" />
 <em>Obsidian - Paste <code class="language-plaintext highlighter-rouge">iframe</code> HTML tag from Obsidian</em></p>
 
 <p>This method allows you to quickly embed a video into Obsidian without installing a separate plugin.</p>
@@ -1562,12 +1865,12 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <h3 id="how-to-install-and-use">How to install and use</h3>
 <p>Search for <code class="language-plaintext highlighter-rouge">readitlater</code> in Obsidian’s community plugin menu, install and activate it.</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" alt="Obsidian - Community Plugins - `ReadItLater`" width="972" height="350" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png" alt="Obsidian - Community Plugins - `ReadItLater`" />
 <em>Obsidian - Community Plugins - <code class="language-plaintext highlighter-rouge">ReadItLater</code></em></p>
 
 <p>Click the URL displayed in the web browser or the share button on YouTube to copy the URL to the clipboard.</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" alt="Youtube - `Share` - `Copy`" width="972" height="571" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png" alt="Youtube - `Share` - `Copy`" />
 <em>Youtube - <code class="language-plaintext highlighter-rouge">Share</code> - <code class="language-plaintext highlighter-rouge">Copy</code></em></p>
 
 <p>Then, press the <code class="language-plaintext highlighter-rouge">Ctrl + P</code> shortcuts in Obsidian, search for <code class="language-plaintext highlighter-rouge">readitlater</code>, and select the menu below.</p>
@@ -1575,23 +1878,30 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
   <li>ReadItLater: Save clipboard</li>
 </ul>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - Search `readitlater` - Select `ReadItLater: Save clipboard`" width="972" height="471" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" alt="Obsidian - `Ctrl + P` - Search `readitlater` - Select `ReadItLater: Save clipboard`" />
 <em>Obsidian - <code class="language-plaintext highlighter-rouge">Ctrl + P</code> - Search <code class="language-plaintext highlighter-rouge">readitlater</code> - Select <code class="language-plaintext highlighter-rouge">ReadItLater: Save clipboard</code></em></p>
 
 <p>Then, a new note is automatically created, and metadata and video are embedded in the note.</p>
 
-<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian - Notes generated by the `ReadItLater` plugin" width="972" height="610" />
+<p><img src="/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png" alt="Obsidian - Notes generated by the `ReadItLater` plugin" />
 <em>Obsidian - Notes generated by the <code class="language-plaintext highlighter-rouge">ReadItLater</code> plugin</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231230171241/en-thumb-unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater.png" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Korean winter street food - Bungeobbang]]></title>
@@ -1629,7 +1939,7 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
 <iframe class="embed-video youtube" loading="lazy" src="https://www.youtube.com/embed/O2EJmma1sXE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
 <h2 id="price">price</h2>
-<p>As of December 2023, the value of 1 US dollar is approximately 1,300 won in Korean won. The basic unit for purchasing bungeoppang is usually 1,000 won and several pieces, so let`s assume it is 1 dollar.</p>
+<p>As of December 2023, the value of 1 US dollar is approximately 1,300 won in Korean won. The basic unit for purchasing bungeoppang is usually 1,000 won and several pieces, so let’s assume it is 1 dollar.</p>
 
 <p>Before the pandemic in 2021, it was common to buy 3 to 4 bungeoppang for 1 dollar, but now, due to the impact of inflation, you can buy 2 to 3 bungeoppang for 1 dollar. This is based on bungeoppang with sweet red beans inside, and bungeoppang with cream puffs or pizza toppings is a bit more expensive.</p>
 
@@ -1653,6 +1963,14 @@ C:<span class="se">\U</span>sers<span class="se">\m</span>yaccount<span class="s
   <li>People who eat from the tail are cautious, delicate, and thoughtful people. You are the type of person who is surprisingly insensitive and cannot easily notice even if someone has a crush on you.</li>
   <li>People who eat bungeoppang by ‘splitting it in half’ have a strong competitive spirit and have the personality to accomplish whatever they set their mind to. Because of my inner timidity, I have difficulty turning down requests from friends and acquaintances.</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231230151433/en-thumb-unclesnote-korean_winter_street_food_bungeobbang.png" />
       <media:content url="https://unclesnote.com/assets/images/231230151433/unclesnote-korean_winter_street_food_bungeobbang-왼쪽-붕어빵_오른쪽-잉어빵.png" medium="image" />
@@ -1776,6 +2094,13 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 
 <p><img src="/assets/images/231227193010/unclesnote-create_a_telegram_bot_and_send_a_message-telegram-sendmessage_api.png" alt="Telegram - `sendMessage` API" width="972" height="762" />
 <em>Telegram - <code class="language-plaintext highlighter-rouge">sendMessage</code> API</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231227193010/en-thumb-unclesnote-create_a_telegram_bot_and_send_a_message.png" />
@@ -1976,6 +2301,14 @@ https://api.telegram.org/bot6870000000:AAEz8Oaaaaaaaaaa-RBixhsHabbbbbbbbbb/sendM
 <span class="o">}</span>
 
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231227143211/en-thumb-unclesnote-sending_telegram_message_from_jenkins_pipeline_script.png" />
       <media:content url="https://unclesnote.com/assets/images/231227143211/unclesnote-sending_telegram_message_from_jenkins_pipeline_script-jenkins-telegram_plugins.png" medium="image" /></item>
@@ -2159,6 +2492,14 @@ service jenkins restart
 72b349dadd5d4a83bac10060e536189e
 <span class="c"># - --------------------------------------------------------</span>
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231223003139/en-thumb-unclesnote-setting_up_jenkins_on_synology_nas_docker.png" />
       <media:content url="https://unclesnote.com/assets/images/231223003139/unclesnote-setting_up_jenkins_on_synology_nas_docker-synology_nas_gui-docker-jenkins_port_settings.png" medium="image" />
@@ -2427,6 +2768,14 @@ service xrdp restart
 <ul>
   <li>https://youtu.be/0rl5145aEMk?si=aoO3eZyDLPnmCfr</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231223003138/en-thumb-unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas.png" />
       <media:content url="https://unclesnote.com/assets/images/231223003138/unclesnote-setting_up_xrdp_in_ubuntu_docker_on_synology_nas-virtualbox_port_forwarding_settings_for_xrdp_connection.png" medium="image" />
@@ -2445,10 +2794,10 @@ service xrdp restart
       <category><![CDATA[IT,PC]]></category>
       <tag><![CDATA[IT,PC,Lenovo,Laptop]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/en/231214181812/lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade</guid>
-      <description><![CDATA[Lenovo Slim3 15ABA7 R5 has Free DOS installed as the default OS, so Windows must be installed separately. Let`s look at the basics for installing Windows and]]></description>
+      <description><![CDATA[Lenovo Slim3 15ABA7 R5 has Free DOS installed as the default OS, so Windows must be installed separately. Let's look at the basics for installing Windows and]]></description>
       <content:encoded><![CDATA[<p><strong>Lenovo Slim3 15ABA7 R5</strong>has Free DOS installed as the default OS, so Windows must be installed separately.</p>
 
-<p>Let`s look at the basics for installing Windows and how to upgrade memory.</p>
+<p>Let’s look at the basics for installing Windows and how to upgrade memory.</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
@@ -2582,6 +2931,13 @@ If you do not like this feature, you can change the <code class="language-plaint
 <p><img src="/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5-hwinfo64-시스템_요약-메모리.png" alt="Lenovo Slim3 15ABA7 R5 - HWiNFO64 - System Summary - Memory" width="972" height="416" />
 <em>Lenovo Slim3 15ABA7 R5 - HWiNFO64 - System Summary - Memory</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231214181812/en-thumb-unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade.png" />
       <media:content url="https://unclesnote.com/assets/images/231214181812/unclesnote-lenovo_ideapad_slim3_15aba7_r5_windows_installation_memory_upgrade-레노버_slim3_15aba7_r5.png" medium="image" />
@@ -2652,6 +3008,14 @@ If you do not like this feature, you can change the <code class="language-plaint
 <p>Restart Windows. Once the reboot is complete, from Windows’ perspective, my displays become newly recognized displays.</p>
 
 <p>Therefore, you need to reset the position and orientation of the displays in the display settings. In short, this is very annoying. I offer my sincere condolences.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/en-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png" />
       <media:content url="https://unclesnote.com/assets/images/231214163036/unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10-windows_+_r_enter_regedit.png" medium="image" />
@@ -2710,7 +3074,7 @@ If you do not like this feature, you can change the <code class="language-plaint
 </pre></td></tr></tbody></table></code></pre></div></div>
 <p>Below is a tip type callouts block in the Obsidian basic theme.</p>
 
-<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" alt="Obsidian - Callouts Block" width="972" height="210" />
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png" alt="Obsidian - Callouts Block" />
 <em>Obsidian - Callouts Block</em></p>
 
 <h2 id="callouts-block-folding-function">Callouts Block Folding Function</h2>
@@ -2750,7 +3114,7 @@ If you do not like this feature, you can change the <code class="language-plaint
 
 <p>You can change the look of the callouts by writing the text you like in the callouts type.</p>
 
-<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" alt="Obsidian - Callouts Predefined Types" />
+<p><img src="/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png" alt="Obsidian - Callouts Predefined Types" />
 <em>Obsidian - Callouts Predefined Types</em></p>
 
 <p>This content is introduced in <a href="https://help.obsidian.md/Editing+and+formatting/Callouts" target="_blank">Obsidian Help</a>, and you can design your own callouts block by defining CSS.</p>
@@ -2802,12 +3166,20 @@ If you do not like this feature, you can change the <code class="language-plaint
 
 &gt; [!bug] bug
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231128001800/en-thumb-unclesnote-obsidian_callouts_and_quote_block.png" />
       <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Setting up Ubuntu shared folder in VirtualBox- Windows File Sharing]]></title>
@@ -2892,6 +3264,13 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 
 <p><img src="/assets/images/231106120100/unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange-create_a_test.txt_file_using_the_touch_command_in_ubuntu_vm_and_check_it_in_windows.png" alt="Create a `test.txt` file using the `touch` command in Ubuntu VM and check it in Windows." width="972" height="562" />
 <em>Create a <code class="language-plaintext highlighter-rouge">test.txt</code> file using the <code class="language-plaintext highlighter-rouge">touch</code> command in Ubuntu VM and check it in Windows.</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231106120100/en-thumb-unclesnote-seamless_windows_folder_sharing_with_ubuntu_vm_simplify_file_exchange.png" />
@@ -3014,6 +3393,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>On October 12, 2023, benchmark results for the Galaxy S24+ were discovered on Geekbench. The model is identified as <code class="language-plaintext highlighter-rouge">SM-S926B</code>, equipped with an <code class="language-plaintext highlighter-rouge">Exynos 2400</code> chipset, 8GB of RAM, and the Android 14 operating system. It achieved a single-core score of <code class="language-plaintext highlighter-rouge">2067</code> and a multi-core score of <code class="language-plaintext highlighter-rouge">6520</code>.</p>
 
 <p>These scores were lower than those of the Galaxy S24 Ultra, which is based on the Snapdragon 8 3rd generation chipset, indicating that the Exynos 2400 might have slightly lower performance in initial testing. The Galaxy S24 Ultra is expected to improve performance by 43% in single core and 36% in multi-core compared to the previous model, Galaxy S23 Ultra.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231106015914/en-thumb-unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup.png" />
       <media:content url="https://unclesnote.com/assets/images/231106015914/unclesnote-samsung_galaxy_s24_specs_and_release_date_rumor_roundup-galaxy_s23_electronic_billboard_advertisement_in_times_square_new_york_usa.png" medium="image" />
@@ -3075,6 +3462,14 @@ bash: <span class="nb">cd</span>: /home/pooh: Permission denied
 <p>And, remove all <code class="language-plaintext highlighter-rouge">Hangul Toggle Key</code> added by default. There is no guarantee that this will match the language switch key on the actual keyboard you are using.</p>
 
 <p>Click the <code class="language-plaintext highlighter-rouge">Add</code> button, and when a new window opens, press the language switch key on your keyboard. In the case of my keyboard, <code class="language-plaintext highlighter-rouge">Alt_R</code> was assigned as the language change key.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231104211615/en-thumb-unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04.png" />
       <media:content url="https://unclesnote.com/assets/images/231104211615/unclesnote-configuring_korean-english_conversion_key_with_ibus-hangul_in_ubuntu_20.04-search_region_and_run_region_lanugages.png" medium="image" />
@@ -3259,6 +3654,13 @@ pc.txt: ASCII text
 <p><img src="/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-accessing_git_bash_on_windows.png" alt="Accessing Git Bash on Windows" width="972" height="579" />
 <em>Accessing Git Bash on Windows</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231102144717/en-thumb-unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync.png" />
       <media:content url="https://unclesnote.com/assets/images/231102144717/unclesnote-line_break_differences_windows_and_linux_eol_check_and_git_repo_sync-same_file_contents_but_different_files_on_the_left_is_windows_pc_format_and_on_the_right_is_linux_unix_format.png" medium="image" />
@@ -3352,6 +3754,13 @@ pc.txt: ASCII text
 
 <p><img src="/assets/images/231102005314/unclesnote-how_to_optimize_ubuntu_20.04_performance-bleachbit.png" alt="BleachBit" width="972" height="646" />
 <em>BleachBit</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231102005314/en-thumb-unclesnote-how_to_optimize_ubuntu_20.04_performance.png" />
@@ -3491,6 +3900,13 @@ no label, <span class="nv">UUID</span><span class="o">=</span>747f641b-70cc-449c
 
 <p><img src="/assets/images/231102005313/unclesnote-how_to_increase_swapfile_size_in_ubuntu-applications_menu_system_monitor.png" alt="`Applications` Menu &gt; System Monitor" width="972" height="833" />
 <em><code class="language-plaintext highlighter-rouge">Applications</code> Menu &gt; System Monitor</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231102005313/en-thumb-unclesnote-how_to_increase_swapfile_size_in_ubuntu.png" />
@@ -3719,6 +4135,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <span class="nb">sudo </span>dpkg <span class="nt">-i</span> packages-microsoft-prod.deb<span class="p">;</span><span class="nb">rm </span>packages-microsoft-prod.deb
 <span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> dotnet-sdk-6.0 dotnet-runtime-6.0 aspnetcore-runtime-6.0
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231101003113/en-thumb-unclesnote-how_to_install_essential_ubuntu_software_for_software_developers.png" />
       <media:content url="https://unclesnote.com/assets/images/231101003113/unclesnote-how_to_install_essential_ubuntu_software_for_software_developers-visual_studio_code.png" medium="image" />
@@ -3772,6 +4196,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Options &gt; Advanced &gt; Select `Default Browser` in File and browser preferences" width="972" height="792" />
 <em>Office 365 Outlook - Options &gt; Advanced &gt; Select <code class="language-plaintext highlighter-rouge">Default Browser</code> in File and browser preferences</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/en-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
@@ -3961,6 +4392,13 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <p><img src="/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-bleachbit.png" alt="BleachBit" width="972" height="646" />
 <em>BleachBit</em></p>
 
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231028002032/en-thumb-unclesnote-essential_software_to_use_on_ubuntu_os.png" />
       <media:content url="https://unclesnote.com/assets/images/231028002032/unclesnote-essential_software_to_use_on_ubuntu_os-ubuntu_softwares.svg" medium="image" />
@@ -4062,6 +4500,14 @@ Configuration file: /home/myaccount/my_jekyll_root/_config.yml
 <em>VirtualBox Manager - Port Forwarding Rules</em></p>
 
 <p>Now you can test Jekyll by connecting to <code class="language-plaintext highlighter-rouge">127.0.0.1:4000</code> in your X86 Windows browser.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231024185205/en-thumb-unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing.png" />
       <media:content url="https://unclesnote.com/assets/images/231024185205/unclesnote-jekyll_github_pages_virtual_box_port_forwarding_method_for_windows_testing-virtualbox_manager-port_forwarding_rules.png" medium="image" /></item>
@@ -4221,6 +4667,14 @@ gparted
 <span class="nv">UUID</span><span class="o">=</span>A4B5-D201  /boot/efi       vfat    <span class="nb">umask</span><span class="o">=</span>0077      0       1
 /swapfile                                 none            swap    sw              0       0
 </pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231023215845/en-thumb-unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox.png" />
       <media:content url="https://unclesnote.com/assets/images/231023215845/unclesnote-how_to_attach_and_use_a_new_disk_image_for_the_ubuntu_20.04_vm_in_oracle_vm_virtualbox-oracle_vm_virtualbox_manager-create_virtual_hard_disk.png" medium="image" />
@@ -4396,6 +4850,14 @@ For parameters of <code class="language-plaintext highlighter-rouge">workbench.c
 <ul>
   <li><code class="language-plaintext highlighter-rouge">0</code>: Reset all styles and colors to default</li>
 </ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231023215842/en-thumb-unclesnote-how_to_specify_color_when_outputting_logs_to_terminal_or_console.png" /></item></channel>
 </rss>

@@ -4,6 +4,51 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
 >
 <url>
+  <loc>https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker</loc>
+  <lastmod>2024-02-15T12:03:15+09:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker" />
+</url>
+<url>
+  <loc>https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker</loc>
+  <lastmod>2024-02-15T12:03:15+09:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker" />
+</url>
+<url>
+  <loc>https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker</loc>
+  <lastmod>2024-02-15T12:03:15+09:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker" />
+</url>
+<url>
+  <loc>https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker</loc>
+  <lastmod>2024-02-15T12:03:15+09:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker" />
+</url>
+<url>
+  <loc>https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker</loc>
+  <lastmod>2024-02-15T12:03:15+09:00</lastmod>
+  <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="es" href="https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="zh" href="https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker" />
+  <xhtml:link rel="alternate" hreflang="ja" href="https://unclesnote.com/ja/240215120315/command_line_cli_handbook_for_using_docker" />
+</url>
+<url>
   <loc>https://unclesnote.com/zh/240207181924/synology_nas_docker_container_time_zone_settings</loc>
   <lastmod>2024-02-07T18:19:24+09:00</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240207181924/synology_nas_docker_container_time_zone_settings" />
@@ -55,22 +100,22 @@
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png</image:loc>
@@ -88,22 +133,22 @@
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png</image:loc>
@@ -121,22 +166,22 @@
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png</image:loc>
@@ -154,22 +199,22 @@
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png</image:loc>
@@ -187,22 +232,22 @@
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-image_management_–_do_you_like_my_approach.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-change_image_size_using_obsidian_basic_syntax.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_change_image_size_using_obsidian_basic_syntax.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-settings-files_and_links-default_location_for_new_attachments-select_same_folder_as_current_file.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-paste_image_rename.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-paste_image_rename.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_when_you_install_paste_image_rename_and_paste_the_image_with_ctrl_+_v_the_file_name_modification_pop-up_opens.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_automatic_sorting_of_image_files_by_obsidian_file_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian-community_plugins-image_captions.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-txt_obsidian-community_plugins-image_captions.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/240122101210/unclesnote-obsidian_image_block_captions_resizing_plugins-obsidian_image_block_with_captions_and_resized_images.png</image:loc>
@@ -712,19 +757,19 @@
   <loc>https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</loc>
   <lastmod>2024-01-08T11:11:21+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
@@ -736,19 +781,19 @@
   <loc>https://unclesnote.com/ko/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</loc>
   <lastmod>2024-01-08T11:11:21+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
@@ -760,19 +805,19 @@
   <loc>https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</loc>
   <lastmod>2024-01-08T11:11:21+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
@@ -784,19 +829,19 @@
   <loc>https://unclesnote.com/es/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</loc>
   <lastmod>2024-01-08T11:11:21+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
@@ -808,19 +853,19 @@
   <loc>https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</loc>
   <lastmod>2024-01-08T11:11:21+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-shortcut_creation.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-obsidian.exe_path.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_obsidian_shortcut_icon_creation_process-icon_name.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_property_menu_of_the_created_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-properties_of_obsidian_shortcut_icon.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111121/unclesnote-create_shortcut_icons_for_multiple_obsidian_vaults_uri-txt_properties_of_obsidian_shortcut_icon.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri" />
@@ -832,31 +877,31 @@
   <loc>https://unclesnote.com/zh/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</loc>
   <lastmod>2024-01-08T11:11:19+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
@@ -868,31 +913,31 @@
   <loc>https://unclesnote.com/ko/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</loc>
   <lastmod>2024-01-08T11:11:19+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
@@ -904,31 +949,31 @@
   <loc>https://unclesnote.com/ja/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</loc>
   <lastmod>2024-01-08T11:11:19+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
@@ -940,31 +985,31 @@
   <loc>https://unclesnote.com/es/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</loc>
   <lastmod>2024-01-08T11:11:19+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
@@ -976,31 +1021,31 @@
   <loc>https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc</loc>
   <lastmod>2024-01-08T11:11:19+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-pandoc_official_site-download.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_pandoc_official_site-download.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugins-pandoc_plugin.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-settings-community_plugin-pandoc_plugin_settings.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-article-ctrl_+_p-search_pandoc_plugin-select_format_you_want_to_convert_it.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_obsidian-pandoc_plugin-post_with_attached_image_file-export_as_word_document_docx.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-new_obsidian_vault_for_export_purposes_only.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_new_obsidian_vault_for_export_purposes_only.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-word_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_word_file_created_by_pandoc.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-powerpoint_file_created_by_pandoc.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/240108111119/unclesnote-convert_obsidian_md_to_docx_pptx_pandoc-txt_powerpoint_file_created_by_pandoc.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/240108111119/convert_obsidian_md_to_docx_pptx_pandoc" />
@@ -1012,25 +1057,25 @@
   <loc>https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</loc>
   <lastmod>2023-12-30T17:12:41+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
@@ -1042,25 +1087,25 @@
   <loc>https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</loc>
   <lastmod>2023-12-30T17:12:41+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
@@ -1072,25 +1117,25 @@
   <loc>https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</loc>
   <lastmod>2023-12-30T17:12:41+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
@@ -1102,25 +1147,25 @@
   <loc>https://unclesnote.com/es/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</loc>
   <lastmod>2023-12-30T17:12:41+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
@@ -1132,25 +1177,25 @@
   <loc>https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</loc>
   <lastmod>2023-12-30T17:12:41+09:00</lastmod>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-embed-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-embed-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-paste_iframe_html_tag_from_obsidian.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-community_plugins-readitlater.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-community_plugins-readitlater.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-youtube-share-copy.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_youtube-share-copy.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-ctrl_+_p-search_readitlater-select_readitlater_save_clipboard.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231230171241/unclesnote-embed_youtube_video_into_obsidian_iframe_readitlater-txt_obsidian-notes_generated_by_the_readitlater_plugin.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater" />
@@ -1945,13 +1990,13 @@
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block" />
@@ -1966,13 +2011,13 @@
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block" />
@@ -1987,13 +2032,13 @@
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block" />
@@ -2008,13 +2053,13 @@
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block" />
@@ -2029,13 +2074,13 @@
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-quotation_block.png</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_block.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_block.png</image:loc>
   </image:image>
   <image:image>
     <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-folding_of_callouts_block.gif</image:loc>
   </image:image>
   <image:image>
-    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-obsidian-callouts_predefined_types.png</image:loc>
+    <image:loc>https://unclesnote.com/assets/images/231128001800/unclesnote-obsidian_callouts_and_quote_block-txt_obsidian-callouts_predefined_types.png</image:loc>
   </image:image>
   <xhtml:link rel="alternate" hreflang="en" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block" />
   <xhtml:link rel="alternate" hreflang="ko" href="https://unclesnote.com/ko/231128001800/obsidian_callouts_and_quote_block" />
@@ -3295,9 +3340,6 @@
   <loc>https://unclesnote.com/zh/tags/%E9%BB%98%E8%AE%A4%E6%B5%8F%E8%A7%88%E5%99%A8</loc>
 </url>
 <url>
-  <loc>https://unclesnote.com/zh/tags/%E9%BB%91%E6%9B%9C%E7%9F%B3</loc>
-</url>
-<url>
   <loc>https://unclesnote.com/zh/tags/%E9%B1%BC%E9%9D%A2%E5%8C%85</loc>
 </url>
 <url>
@@ -3508,6 +3550,9 @@
   <loc>https://unclesnote.com/zh/tags/sendmessage</loc>
 </url>
 <url>
+  <loc>https://unclesnote.com/zh/tags/obsidian</loc>
+</url>
+<url>
   <loc>https://unclesnote.com/zh/tags/mysql%E5%B7%A5%E4%BD%9C%E5%8F%B0</loc>
 </url>
 <url>
@@ -3536,9 +3581,6 @@
 </url>
 <url>
   <loc>https://unclesnote.com/zh/tags/curl</loc>
-</url>
-<url>
-  <loc>https://unclesnote.com/zh/categories/%E9%BB%91%E6%9B%9C%E7%9F%B3</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/zh/categories/%E9%A3%9F%E5%93%81</loc>
@@ -3593,6 +3635,9 @@
 </url>
 <url>
   <loc>https://unclesnote.com/zh/categories/%E4%B8%AA%E4%BA%BA%E7%94%B5%E8%84%91</loc>
+</url>
+<url>
+  <loc>https://unclesnote.com/zh/categories/obsidian</loc>
 </url>
 <url>
   <loc>https://unclesnote.com/zh/categories/git</loc>
