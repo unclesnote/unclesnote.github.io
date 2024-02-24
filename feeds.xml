@@ -14,15 +14,27 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <entry>
+    <title><![CDATA[Free Charting Library and GPU Acceleration in C# Windows Forms]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
+    <id>https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</id>    
+    <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+    <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
+		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Many chart drawing libraries can be found in the Nuget package manager of the Visual Studio 2022 software, but if you visit the actual development company]]></summary>
+    <category><![CDATA[C Sharp]]></category>
+    <tag><![CDATA[CSharp]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/en-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Command line (CLI) handbook for using Docker]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker"/>
     <id>https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Sun, 25 Feb 2024 01:58:45 +0900</modified>
     <issued>Thu, 15 Feb 2024 12:03:15 +0900</issued>
 		<created>Thu, 15 Feb 2024 12:03:15 +0900</created>
-    <summary type="text/html" mode="escaped"><![CDATA[This is a handbook of commands to control Docker with CLI in a shell environment without using the Docker GUI. We introduce how to create and control Docker]]></summary>
+    <summary type="text/html" mode="escaped"><![CDATA[This is a handbook of commands to control Docker using [CLI](https://en.wikipedia.org/wiki/Command-line_interface) (Command-Line Interface) in a shell]]></summary>
     <category><![CDATA[Ubuntu,Docker]]></category>
     <tag><![CDATA[Ubuntu,Docker]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240215120315/en-thumb-unclesnote-command_line_cli_handbook_for_using_docker.png"/>

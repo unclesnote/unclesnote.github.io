@@ -14,15 +14,27 @@
   <author><name><![CDATA[엉클스 노트]]></name></author>
   <id>https://unclesnote.com/ko/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <entry>
+    <title><![CDATA[C# Windows Forms의 무료 차트 라이브러리와 GPU 가속]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
+    <id>https://unclesnote.com/ko/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</id>    
+    <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+    <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
+		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Visual Studio 2022 소프트웨어의 Nuget 패키지 관리자에서 많은 차트 그리기 라이브러리가 검색되지만, 실제 개발회사 사이트에 방문해 보면 무료로 사용하면 기능에 제한이 있거나 회사에서 사용하면 결제를 해야하는 유료정책을 가지고 있는 경우가 있다. 그 대안으로 이크로]]></summary>
+    <category><![CDATA[C 샤프]]></category>
+    <tag><![CDATA[CSharp]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/ko-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
+  </entry>
   <entry>
     <title><![CDATA[도커 사용을 위한 명령어(CLI) 핸드북]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker"/>
     <id>https://unclesnote.com/ko/240215120315/command_line_cli_handbook_for_using_docker</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Sun, 25 Feb 2024 01:58:45 +0900</modified>
     <issued>Thu, 15 Feb 2024 12:03:15 +0900</issued>
 		<created>Thu, 15 Feb 2024 12:03:15 +0900</created>
-    <summary type="text/html" mode="escaped"><![CDATA[도커 GUI를 사용하지 않고 Shell 환경에서 CLI로 도커를 제어하는 명령어들의 핸드북입니다. 도커 이미지 생성 및 제어, 도커 컨테이너 생성 및 제어, 이미지 혹은 컨테이저를 저장하고 로드하는 방법을 소개합니다.]]></summary>
+    <summary type="text/html" mode="escaped"><![CDATA[도커 GUI를 사용하지 않고 Shell 환경에서 [CLI](https://en.wikipedia.org/wiki/Command-line_interface) (Command-Line Interface)로 도커를 제어하는 명령어들의 핸드북입니다. 도커 이미지 생성 및 제어, 도커 컨테이너]]></summary>
     <category><![CDATA[우분투,도커]]></category>
     <tag><![CDATA[Ubuntu,Docker]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240215120315/ko-thumb-unclesnote-command_line_cli_handbook_for_using_docker.png"/>

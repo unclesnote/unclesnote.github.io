@@ -14,15 +14,27 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <entry>
+    <title><![CDATA[C# Windows 窗体中的免费图表库和 GPU 加速]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
+    <id>https://unclesnote.com/zh/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</id>    
+    <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+    <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
+		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[很多图表绘制库都可以在Visual Studio 2022软件的Nuget包管理器中找到，但是如果你访问实际的开发公司网站，你可能会发现如果免费使用或者公司有授权的话，功能上会有限制。付费政策，如果您使用它，则需要付费。作为替代方案，我想介绍一下微软官方支持的图表库和其他免费提供的图表库。]]></summary>
+    <category><![CDATA[C夏普]]></category>
+    <tag><![CDATA[夏普]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/zh-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
+  </entry>
   <entry>
     <title><![CDATA[使用 Docker 的命令行 (CLI) 手册]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker"/>
     <id>https://unclesnote.com/zh/240215120315/command_line_cli_handbook_for_using_docker</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Sun, 25 Feb 2024 01:58:45 +0900</modified>
     <issued>Thu, 15 Feb 2024 12:03:15 +0900</issued>
 		<created>Thu, 15 Feb 2024 12:03:15 +0900</created>
-    <summary type="text/html" mode="escaped"><![CDATA[这是一本在 shell 环境中使用 CLI 控制 Docker 的命令手册，无需使用 Docker GUI。我们介绍如何创建和控制 Docker 镜像、创建和控制 Docker 容器以及保存和加载镜像或容器。]]></summary>
+    <summary type="text/html" mode="escaped"><![CDATA[这是在 shell 环境中使用 [CLI](https://en.wikipedia.org/wiki/Command-line_interface)(命令行界面)控制 Docker 的命令手册，无需使用 Docker GUI。我们介绍如何创建和控制 Docker 镜像、创建和控制 Docker 容器以及保存和加载镜]]></summary>
     <category><![CDATA[乌班图,码头工人]]></category>
     <tag><![CDATA[乌班图,码头工人]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240215120315/zh-thumb-unclesnote-command_line_cli_handbook_for_using_docker.png"/>

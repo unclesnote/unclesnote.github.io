@@ -21,8 +21,79 @@
     <language>es</language>
     <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Thu, 15 Feb 2024 12:03:15 +0900</lastBuildDate>
-    <pubDate>Thu, 15 Feb 2024 12:03:15 +0900</pubDate>
+    <lastBuildDate>Sun, 25 Feb 2024 01:58:39 +0900</lastBuildDate>
+    <pubDate>Sun, 25 Feb 2024 01:58:39 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Biblioteca de gráficos gratuita y aceleración de GPU en C# Windows Forms]]></title>
+      <link>https://unclesnote.com/es/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</link>
+      <guid>https://unclesnote.com/es/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Sun, 25 Feb 2024 01:58:39 +0900</pubDate>
+      <category><![CDATA[Do sostenido]]></category>
+      <tag><![CDATA[CSharp]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</guid>
+      <description><![CDATA[Se pueden encontrar muchas bibliotecas de dibujo de gráficos en el administrador de paquetes Nuget del software Visual Studio 2022, pero cuando visita el sitio]]></description>
+      <content:encoded><![CDATA[<p>Se pueden encontrar muchas bibliotecas de dibujo de gráficos en el administrador de paquetes Nuget del software Visual Studio 2022, pero cuando visita el sitio real de la empresa de desarrollo, es posible que descubra que existen restricciones en las funciones si lo usa de forma gratuita o si la empresa tiene una póliza paga que requiere pago si la usas. Como alternativa, me gustaría presentarles la biblioteca de gráficos oficialmente respaldada por Microsoft y otras bibliotecas de gráficos disponibles gratuitamente.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022_manage_nuget_packages..-많은_차트_라이브러리를_다운로드_받을_수_있지만_유료이거나_기능상_제약이_있다.png" alt="`Visual Studio 2022 &gt; Administrar paquetes Nuget...`: se pueden descargar muchas bibliotecas de gráficos, pero son de pago o tienen limitaciones funcionales." />
+<em><code class="language-plaintext highlighter-rouge">Visual Studio 2022 &gt; Administrar paquetes Nuget...</code>: se pueden descargar muchas bibliotecas de gráficos, pero son de pago o tienen limitaciones funcionales.</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="gráficos-de-microsoft">gráficos de microsoft</h2>
+<p>El control de gráfico proporcionado por Microsoft tiene las siguientes características.</p>
+<ul>
+  <li>El control de gráficos no se puede utilizar en WPF ni en proyectos generales de aplicaciones de Windows Forms.</li>
+  <li>El control de gráficos se puede utilizar en un proyecto de aplicación de Windows Forms, pero el proyecto debe crearse con <code class="language-plaintext highlighter-rouge">.NET Framework</code>.</li>
+  <li>Por supuesto, dado que es un proyecto de aplicación de Windows Forms, la aceleración de GPU no se puede utilizar en operaciones de dibujo.</li>
+</ul>
+
+<blockquote class="prompt-info">
+  <p>.NET Framework frente a .NET<br />
+Originalmente, Microsoft admitía principalmente .NET Framework para Windows y .NET Core para multiplataforma, pero en 2020, .NET Framework 4.8.1 fue la última versión e integró .NET Framework y .NET Core en un nuevo sistema llamado .NET. … Solicité por nombre. A partir de 2024, la versión .NET 8.0 es la más reciente.</p>
+</blockquote>
+<p>Al crear un proyecto, seleccione “Aplicación Windows Forms (.NET Framework)”.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-프로젝트_생성.png" alt="Visual Studio 2022: crear proyecto" />
+<em>Visual Studio 2022: crear proyecto</em></p>
+
+<p>Y seleccione <code class="language-plaintext highlighter-rouge">.NET Framework 4.8</code> en Framework. La versión 4.8 es la última versión de .NET Framework.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022.net_framework_4.8_선택.png" alt="Visual Studio 2022: seleccione .NET Framework 4.8" />
+<em>Visual Studio 2022: seleccione .NET Framework 4.8</em></p>
+
+<p>Si el proyecto se creó correctamente, puede ver que el control Gráfico está disponible en la sección Datos del Diseñador de formularios.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-form_디자이너.png" alt="Visual Studio 2022 - Diseñador de formularios" />
+<em>Visual Studio 2022 - Diseñador de formularios</em></p>
+
+<h3 id="uso-de-la-aceleración-de-gpu---sharpdx">Uso de la aceleración de GPU - SharpDX</h3>
+<p>De forma predeterminada, la aceleración de GPU no está disponible en la aplicación Windows Forms. Sin embargo, al utilizar la biblioteca SharpDX, puede utilizar la aceleración de GPU a través de DirectX.</p>
+
+<p>En referencia a la publicación del blog a continuación, no parecía simple porque la aplicación Windows Forms requiere procesamiento adicional mientras que la aceleración de GPU está disponible de forma predeterminada en WPF. Escribiré y compartiré una clase para facilitar el uso de GPU al utilizar Microsoft Charts.</p>
+<ul>
+  <li>https://luckygg.tistory.com/389</li>
+</ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/es-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022_manage_nuget_packages..-많은_차트_라이브러리를_다운로드_받을_수_있지만_유료이거나_기능상_제약이_있다.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-프로젝트_생성.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022.net_framework_4.8_선택.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-form_디자이너.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Manual de línea de comando (CLI) para usar Docker]]></title>
@@ -33,8 +104,8 @@
       <category><![CDATA[ubuntu,Estibador]]></category>
       <tag><![CDATA[ubuntu,Estibador]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker</guid>
-      <description><![CDATA[Este es un manual de comandos para controlar Docker con CLI en un entorno de shell sin utilizar la GUI de Docker. Presentamos cómo crear y controlar imágenes]]></description>
-      <content:encoded><![CDATA[<p>Este es un manual de comandos para controlar Docker con CLI en un entorno de shell sin utilizar la GUI de Docker. Presentamos cómo crear y controlar imágenes de Docker, crear y controlar contenedores de Docker y guardar y cargar imágenes o contenedores.</p>
+      <description><![CDATA[Este es un manual de comandos para controlar Docker usando [CLI](https://en.wikipedia.org/wiki/Command-line_interface) (Interfaz de línea de comandos) en un]]></description>
+      <content:encoded><![CDATA[<p>Este es un manual de comandos para controlar Docker usando <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a> (Interfaz de línea de comandos) en un entorno de shell sin usar la GUI de Docker. Presentamos cómo crear y controlar imágenes de Docker, crear y controlar contenedores de Docker y guardar y cargar imágenes o contenedores.</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->

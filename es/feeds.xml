@@ -14,15 +14,27 @@
   <author><name><![CDATA[nota del tio]]></name></author>
   <id>https://unclesnote.com/es/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <entry>
+    <title><![CDATA[Biblioteca de gráficos gratuita y aceleración de GPU en C# Windows Forms]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
+    <id>https://unclesnote.com/es/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</id>    
+    <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+    <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
+		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Se pueden encontrar muchas bibliotecas de dibujo de gráficos en el administrador de paquetes Nuget del software Visual Studio 2022, pero cuando visita el sitio]]></summary>
+    <category><![CDATA[Do sostenido]]></category>
+    <tag><![CDATA[CSharp]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/es-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Manual de línea de comando (CLI) para usar Docker]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker"/>
     <id>https://unclesnote.com/es/240215120315/command_line_cli_handbook_for_using_docker</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Sun, 25 Feb 2024 01:58:45 +0900</modified>
     <issued>Thu, 15 Feb 2024 12:03:15 +0900</issued>
 		<created>Thu, 15 Feb 2024 12:03:15 +0900</created>
-    <summary type="text/html" mode="escaped"><![CDATA[Este es un manual de comandos para controlar Docker con CLI en un entorno de shell sin utilizar la GUI de Docker. Presentamos cómo crear y controlar imágenes]]></summary>
+    <summary type="text/html" mode="escaped"><![CDATA[Este es un manual de comandos para controlar Docker usando [CLI](https://en.wikipedia.org/wiki/Command-line_interface) (Interfaz de línea de comandos) en un]]></summary>
     <category><![CDATA[ubuntu,Estibador]]></category>
     <tag><![CDATA[ubuntu,Estibador]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240215120315/es-thumb-unclesnote-command_line_cli_handbook_for_using_docker.png"/>

@@ -21,8 +21,79 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Thu, 15 Feb 2024 12:03:15 +0900</lastBuildDate>
-    <pubDate>Thu, 15 Feb 2024 12:03:15 +0900</pubDate>
+    <lastBuildDate>Sun, 25 Feb 2024 01:58:39 +0900</lastBuildDate>
+    <pubDate>Sun, 25 Feb 2024 01:58:39 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Free Charting Library and GPU Acceleration in C# Windows Forms]]></title>
+      <link>https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</link>
+      <guid>https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Sun, 25 Feb 2024 01:58:39 +0900</pubDate>
+      <category><![CDATA[C Sharp]]></category>
+      <tag><![CDATA[CSharp]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</guid>
+      <description><![CDATA[Many chart drawing libraries can be found in the Nuget package manager of the Visual Studio 2022 software, but if you visit the actual development company]]></description>
+      <content:encoded><![CDATA[<p>Many chart drawing libraries can be found in the Nuget package manager of the Visual Studio 2022 software, but if you visit the actual development company site, you may find that there are restrictions on functions if you use it for free or that the company has a paid policy that requires payment if you use it. As an alternative, I would like to introduce the chart library officially supported by Microsoft and other freely available chart libraries.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022_manage_nuget_packages..-많은_차트_라이브러리를_다운로드_받을_수_있지만_유료이거나_기능상_제약이_있다.png" alt="`Visual Studio 2022 &gt; Manage Nuget Packages ...` - Many chart libraries can be downloaded, but they are paid or have functional limitations." />
+<em><code class="language-plaintext highlighter-rouge">Visual Studio 2022 &gt; Manage Nuget Packages ...</code> - Many chart libraries can be downloaded, but they are paid or have functional limitations.</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="microsoft-charts">microsoft charts</h2>
+<p>The chart control provided by Microsoft has the following features.</p>
+<ul>
+  <li>Chart control cannot be used in WPF and general Windows Forms App projects.</li>
+  <li>Chart control can be used in a Windows Forms App project, but the project must be created with <code class="language-plaintext highlighter-rouge">.NET Framework</code>.</li>
+  <li>Of course, since it is a Windows Forms App project, GPU acceleration cannot be used in drawing operations.</li>
+</ul>
+
+<blockquote class="prompt-info">
+  <p>.NET Framework VS .NET<br />
+Originally, Microsoft mainly supported .NET Framework for Windows support and .NET Core for cross-platform, but in 2020, .NET Framework 4.8.1 was the last version and integrated .NET Framework and .NET Core into a new system called .NET. I applied by name. As of 2024, .NET 8.0 version is the latest.</p>
+</blockquote>
+<p>When creating a project, select <code class="language-plaintext highlighter-rouge">Windows Forms App (.NET Framework)</code>.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-프로젝트_생성.png" alt="Visual Studio 2022 - Create Project" />
+<em>Visual Studio 2022 - Create Project</em></p>
+
+<p>And select <code class="language-plaintext highlighter-rouge">.NET Framework 4.8</code> in Framework. Version 4.8 is the last version of the .NET Framework.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022.net_framework_4.8_선택.png" alt="Visual Studio 2022 - Select .NET Framework 4.8" />
+<em>Visual Studio 2022 - Select .NET Framework 4.8</em></p>
+
+<p>If the project has been created successfully, you can see that the Chart control is available in the Data section of the Form Designer.</p>
+
+<p><img src="/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-form_디자이너.png" alt="Visual Studio 2022 - Form Designer" />
+<em>Visual Studio 2022 - Form Designer</em></p>
+
+<h3 id="using-gpu-acceleration---sharpdx">Using GPU Acceleration - SharpDX</h3>
+<p>By default, GPU acceleration is not available in Windows Forms App. However, using the SharpDX library, you can use GPU acceleration through DirectX.</p>
+
+<p>Referring to the blog post below, it did not seem simple because Windows Forms App requires additional processing while GPU acceleration is available by default in WPF. I will write and share a class for easy GPU use when using Microsoft Charts.</p>
+<ul>
+  <li>https://luckygg.tistory.com/389</li>
+</ul>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/en-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022_manage_nuget_packages..-많은_차트_라이브러리를_다운로드_받을_수_있지만_유료이거나_기능상_제약이_있다.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-프로젝트_생성.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022.net_framework_4.8_선택.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240225015839/unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms-txt_visual_studio_2022-form_디자이너.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Command line (CLI) handbook for using Docker]]></title>
@@ -33,8 +104,8 @@
       <category><![CDATA[Ubuntu,Docker]]></category>
       <tag><![CDATA[Ubuntu,Docker]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/en/240215120315/command_line_cli_handbook_for_using_docker</guid>
-      <description><![CDATA[This is a handbook of commands to control Docker with CLI in a shell environment without using the Docker GUI. We introduce how to create and control Docker]]></description>
-      <content:encoded><![CDATA[<p>This is a handbook of commands to control Docker with CLI in a shell environment without using the Docker GUI. We introduce how to create and control Docker images, create and control Docker containers, and save and load images or containers.</p>
+      <description><![CDATA[This is a handbook of commands to control Docker using [CLI](https://en.wikipedia.org/wiki/Command-line_interface) (Command-Line Interface) in a shell]]></description>
+      <content:encoded><![CDATA[<p>This is a handbook of commands to control Docker using <a href="https://en.wikipedia.org/wiki/Command-line_interface" target="_blank">CLI</a> (Command-Line Interface) in a shell environment without using the Docker GUI. We introduce how to create and control Docker images, create and control Docker containers, and save and load images or containers.</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
