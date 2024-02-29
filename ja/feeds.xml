@@ -19,7 +19,7 @@
     <title><![CDATA[C＃Windowsフォームの無料チャートライブラリとGPUアクセラレーション]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
     <id>https://unclesnote.com/ja/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</id>    
-    <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+    <modified>Thu, 29 Feb 2024 15:36:38 +0900</modified>
     <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
 		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Visual Studio 2022ソフトウェアのNugetパッケージマネージャで多くのチャート描画ライブラリが検索されますが、実際の開発会社サイトにアクセスしてみると無料で使用すると機能に制限があるか、会社で使用すると決済をしなければならない有料ポリシーがある場合がある。その代わりに、イクロソフトが公式にサポートす]]></summary>
@@ -239,8 +239,8 @@
     <issued>Thu, 14 Dec 2023 16:30:36 +0900</issued>
 		<created>Thu, 14 Dec 2023 16:30:36 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[私は職場と自宅の間で 1 台のラップトップを使用するユーザーです。職場と自宅の両方でラップトップに 2 つ以上のディスプレイを接続して使用していますが、一部のディスプレイだけがラップトップに認識され、ディスプレイ設定に入るときに非アクティブとして表示されることがあります。おそらく Windows は各環境に適したディ]]></summary>
-    <category><![CDATA[コンピューター,トラブルシューティング]]></category>
-    <tag><![CDATA[コンピューター,トラブルシューティング]]></tag>
+    <category><![CDATA[それ,トラブルシューティング]]></category>
+    <tag><![CDATA[コンピューター,トラブルシューティング,それ]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/ja-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png"/>
   </entry>
   <entry>
@@ -347,8 +347,8 @@
     <issued>Tue, 31 Oct 2023 00:34:17 +0900</issued>
 		<created>Tue, 31 Oct 2023 00:34:17 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Office 365 Outlook で Web リンクをクリックすると、突然 Edge ブラウザーが表示されて不便になったことはありませんか?最近のアップデートで、Microsoft は Outlook のデフォルトのブラウザを Edge ブラウザにリセットしました。 Google Chrome を愛用している人は]]></summary>
-    <category><![CDATA[コンピューター,トラブルシューティング]]></category>
-    <tag><![CDATA[見通し,デフォルトブラウザ,クロム,パソコン,コンピューター,トラブルシューティング]]></tag>
+    <category><![CDATA[それ,トラブルシューティング]]></category>
+    <tag><![CDATA[見通し,デフォルトブラウザ,クロム,パソコン,コンピューター,トラブルシューティング,それ]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ja-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png"/>
   </entry>
   <entry>

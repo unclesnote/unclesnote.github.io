@@ -3,12 +3,10 @@ Disallow: /norobots/
 
 User-agent: Yeti
 Allow: /ko/
-Allow: /en/
 Allow: /sitemap.xml
 
 User-agent: DAUM
 Allow: /ko/
-Allow: /en/
 Allow: /sitemap.xml
 
 Sitemap: https://unclesnote.com/sitemap.xml

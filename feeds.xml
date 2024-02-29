@@ -19,7 +19,7 @@
     <title><![CDATA[Free Charting Library and GPU Acceleration in C# Windows Forms]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
     <id>https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</id>    
-    <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+    <modified>Thu, 29 Feb 2024 15:36:38 +0900</modified>
     <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
 		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Many chart drawing libraries can be found in the Nuget package manager of the Visual Studio 2022 software, but if you visit the actual development company]]></summary>
@@ -239,8 +239,8 @@
     <issued>Thu, 14 Dec 2023 16:30:36 +0900</issued>
 		<created>Thu, 14 Dec 2023 16:30:36 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[I am a user who uses one laptop between work and home. I use two or more displays connected to my laptop both at work and at home, but sometimes only some]]></summary>
-    <category><![CDATA[Computer,TroubleShooting]]></category>
-    <tag><![CDATA[Computer,TroubleShooting]]></tag>
+    <category><![CDATA[IT,TroubleShooting]]></category>
+    <tag><![CDATA[Computer,TroubleShooting,IT]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231214163036/en-thumb-unclesnote-display_inactivity_issues_in_multiple_display_configurations_in_windows_10.png"/>
   </entry>
   <entry>
@@ -347,8 +347,8 @@
     <issued>Tue, 31 Oct 2023 00:34:17 +0900</issued>
 		<created>Tue, 31 Oct 2023 00:34:17 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Have you ever clicked on a web link in Office 365 Outlook and suddenly been shown in the Edge browser, which was inconvenient? In a recent update, Microsoft]]></summary>
-    <category><![CDATA[Computer,TroubleShooting]]></category>
-    <tag><![CDATA[Outlook,DefaultBrowser,Chrome,PC,Computer,TroubleShooting]]></tag>
+    <category><![CDATA[IT,TroubleShooting]]></category>
+    <tag><![CDATA[Outlook,DefaultBrowser,Chrome,PC,Computer,TroubleShooting,IT]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/en-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png"/>
   </entry>
   <entry>
