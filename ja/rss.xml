@@ -21,8 +21,242 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Sun, 25 Feb 2024 01:58:39 +0900</lastBuildDate>
-    <pubDate>Sun, 25 Feb 2024 01:58:39 +0900</pubDate>
+    <lastBuildDate>Fri, 08 Mar 2024 18:59:44 +0900</lastBuildDate>
+    <pubDate>Fri, 08 Mar 2024 18:59:44 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[WindowsでPCを開いたときの長い読み込み時間の問題]]></title>
+      <link>https://unclesnote.com/ja/240308185944/long_loading_time_issue_when_opening_windows_my_pc</link>
+      <guid>https://unclesnote.com/ja/240308185944/long_loading_time_issue_when_opening_windows_my_pc</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Fri, 08 Mar 2024 18:59:44 +0900</pubDate>
+      <category><![CDATA[それ,トラブルシューティング]]></category>
+      <tag><![CDATA[それ,トラブルシューティング]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240308185944/long_loading_time_issue_when_opening_windows_my_pc</guid>
+      <description><![CDATA[Windows `私のPC`を開いたが、ロードに時間がかかる問題の原因はいくつかあります。しかし、あなたがネットワーク共有フォルダをドライブとして登録した状態で、登録したネットワークドライブが現在接続できない状態であれば、これは私のPCにドライブが表示されるまでに長い時間がかかる問題に原因である可能性があります。当然]]></description>
+      <content:encoded><![CDATA[<p>Windows <code class="language-plaintext highlighter-rouge">私のPC</code>を開いたが、ロードに時間がかかる問題の原因はいくつかあります。しかし、あなたがネットワーク共有フォルダをドライブとして登録した状態で、登録したネットワークドライブが現在接続できない状態であれば、これは私のPCにドライブが表示されるまでに長い時間がかかる問題に原因である可能性があります。</p>
+
+<p>当然のことながら、接続できないネットワークドライブにマウスの右クリックメニューを介して接続を解除および削除することができますが、長い読み込みとともにこの方法すら不可能になる可能性があります。だから少し複雑ですが、Windowsのコマンドプロンプトからコマンドを介してネットワークドライブを削除する方法を紹介します。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="コマンドプロンプトウィンドウを開く">コマンドプロンプトウィンドウを開く</h2>
+<p><code class="language-plaintext highlighter-rouge">Windows + R</code>ショートカットを押して<code class="language-plaintext highlighter-rouge">実行</code>ウィンドウを開きます。それから <code class="language-plaintext highlighter-rouge">cmd</code>と入力してコマンドプロンプトを開きます。</p>
+
+<p><img src="/assets/images/240308185944/unclesnote-long_loading_time_issue_when_opening_windows_my_pc-txt_윈도우_+_r_단축키_실행_cmd_입력_확인.png" alt="`Windows + R`ショートカットを実行&gt; `cmd`入力&gt;確認" />
+<em><code class="language-plaintext highlighter-rouge">Windows + R</code>ショートカットを実行&gt; <code class="language-plaintext highlighter-rouge">cmd</code>入力&gt;確認</em></p>
+
+<h2 id="ネットワークドライブの検索と削除">ネットワークドライブの検索と削除</h2>
+<p>コマンドプロンプトで <code class="language-plaintext highlighter-rouge">net use</code>コマンドを入力します。入力すると、登録されたネットワークドライの状態を調べてみることができます。私の場合は、Zドライブが<code class="language-plaintext highlighter-rouge">Disconnected</code>状態で表示され、私のPCの長いロード問題の原因として予想されます。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32&gt;net use
+New connections will be remembered.
+
+
+Status       Local     Remote                    Network
+
+<span class="nt">-------------------------------------------------------------------------------</span>
+OK                  R:   <span class="se">\\</span>pcname.ad.company.com<span class="se">\D</span>ata   Microsoft Windows Network
+Disconnected Z:   <span class="se">\\</span>192.168.0.20<span class="se">\u</span>sername                Microsoft Windows Network
+The <span class="nb">command </span>completed successfully.
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>削除したいドライブ文字が確認されたら、以下のコマンドでネットワークドライブを削除できます。</p>
+<ul>
+  <li>net use /delete &lt;ドライブ文字:&gt;</li>
+</ul>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32&gt;net use /delete Z: 
+Z: was deleted successfully.
+
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>私の場合は、Zドライブを削除した後、私のPCの長いロードの問題はもはや再現されませんでした。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="付録">付録</h2>
+<p>以下は、上記の <code class="language-plaintext highlighter-rouge">net use</code> コマンドで利用可能なオプションの詳細です。</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+</pre></td><td class="rouge-code"><pre>C:<span class="se">\W</span>indows<span class="se">\S</span>ystem32&gt;net use /h
+The syntax of this <span class="nb">command </span>is:
+
+NET USE
+<span class="o">[</span>devicename | <span class="k">*</span><span class="o">]</span> <span class="o">[</span><span class="se">\\</span>computername<span class="se">\s</span>harename[<span class="se">\v</span>olume] <span class="o">[</span>password | <span class="k">*</span><span class="o">]]</span>
+        <span class="o">[</span>/USER:[domainname<span class="se">\]</span>username]
+        <span class="o">[</span>/USER:[dotted domain name<span class="se">\]</span>username]
+        <span class="o">[</span>/USER:[username@dotted domain name]
+        <span class="o">[</span>/SMARTCARD]
+        <span class="o">[</span>/SAVECRED]
+        <span class="o">[</span>/REQUIREINTEGRITY]
+        <span class="o">[</span>/REQUIREPRIVACY]
+        <span class="o">[</span>/WRITETHROUGH]
+        <span class="o">[[</span>/DELETE] | <span class="o">[</span>/PERSISTENT:<span class="o">{</span>YES | NO<span class="o">}]]</span>
+
+NET USE <span class="o">{</span>devicename | <span class="k">*</span><span class="o">}</span> <span class="o">[</span>password | <span class="k">*</span><span class="o">]</span> /HOME
+
+NET USE <span class="o">[</span>/PERSISTENT:<span class="o">{</span>YES | NO<span class="o">}]</span>
+
+NET USE connects a computer to a shared resource or disconnects a
+computer from a shared resource. When used without options, it lists
+the computer<span class="s1">'s connections.
+
+devicename       Assigns a name to connect to the resource or specifies
+                 the device to be disconnected. There are two kinds of
+                 devicenames: disk drives (D: through Z:) and printers
+                 (LPT1: through LPT3:). Type an asterisk instead of a
+                 specific devicename to assign the next available
+                 devicename.
+\\computername   Is the name of the computer controlling the shared
+                 resource. If the computername contains blank characters,
+                 enclose the double backslash (\\) and the computername
+                 in quotation marks (" "). The computername may be from
+                 1 to 15 characters long.
+\sharename       Is the network name of the shared resource.
+\volume          Specifies a NetWare volume on the server. You must have
+                 Client Services for Netware (Windows Workstations)
+                 or Gateway Service for Netware (Windows Server)
+                 installed and running to connect to NetWare servers.
+password         Is the password needed to access the shared resource.
+*                Produces a prompt for the password. The password is
+                 not displayed when you type it at the password prompt.
+/USER            Specifies a different username with which the connection
+                 is made.
+domainname       Specifies another domain. If domain is omitted,
+                 the current logged on domain is used.
+username         Specifies the username with which to logon.
+/SMARTCARD       Specifies that the connection is to use credentials on
+                 a smart card.
+/SAVECRED        Specifies that the username and password are to be saved.
+                 This switch is ignored unless the command prompts for username
+                 and password.
+/HOME            Connects a user to their home directory.
+/DELETE          Cancels a network connection and removes the connection
+                 from the list of persistent connections.
+/REQUIREINTEGRITY
+                 Requires a signed connection to the share. The operation will fail
+                 if the provider does not support signed connections.
+/REQUIREPRIVACY  Requires an encrypted connection to the share. The operation will fail
+                 if the provider does not support encrypted connections.
+
+/PERSISTENT      Controls the use of persistent network connections.
+                 The default is the setting used last.
+YES              Saves connections as they are made, and restores
+                 them at next logon.
+NO               Does not save the connection being made or subsequent
+                 connections; existing connections will be restored at
+                 next logon. Use the /DELETE switch to remove
+                 persistent connections.
+
+NET HELP command | MORE displays Help one screen at a time.
+
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240308185944/ja-thumb-unclesnote-long_loading_time_issue_when_opening_windows_my_pc.png" />
+      <media:content url="https://unclesnote.com/assets/images/240308185944/unclesnote-long_loading_time_issue_when_opening_windows_my_pc-txt_윈도우_+_r_단축키_실행_cmd_입력_확인.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[C＃Windowsフォームの無料チャートライブラリとGPUアクセラレーション]]></title>
@@ -30,8 +264,8 @@
       <guid>https://unclesnote.com/ja/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</guid>
       <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
       <pubDate>Sun, 25 Feb 2024 01:58:39 +0900</pubDate>
-      <category><![CDATA[Cシャープ]]></category>
-      <tag><![CDATA[Cシャープ]]></tag>
+      <category><![CDATA[Cシャープ,WinForms]]></category>
+      <tag><![CDATA[Cシャープ,WinForms]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ja/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms</guid>
       <description><![CDATA[Visual Studio 2022ソフトウェアのNugetパッケージマネージャで多くのチャート描画ライブラリが検索されますが、実際の開発会社サイトにアクセスしてみると無料で使用すると機能に制限があるか、会社で使用すると決済をしなければならない有料ポリシーがある場合がある。その代わりに、イクロソフトが公式にサポートす]]></description>
       <content:encoded><![CDATA[<p>Visual Studio 2022ソフトウェアのNugetパッケージマネージャで多くのチャート描画ライブラリが検索されますが、実際の開発会社サイトにアクセスしてみると無料で使用すると機能に制限があるか、会社で使用すると決済をしなければならない有料ポリシーがある場合がある。その代わりに、イクロソフトが公式にサポートするチャートライブラリと他の無料で利用可能なチャートライブラリを紹介しようとする。</p>

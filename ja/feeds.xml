@@ -14,7 +14,19 @@
   <author><name><![CDATA[アンクルズノート]]></name></author>
   <id>https://unclesnote.com/ja/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <entry>
+    <title><![CDATA[WindowsでPCを開いたときの長い読み込み時間の問題]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
+    <id>https://unclesnote.com/ja/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
+    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
+		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Windows `私のPC`を開いたが、ロードに時間がかかる問題の原因はいくつかあります。しかし、あなたがネットワーク共有フォルダをドライブとして登録した状態で、登録したネットワークドライブが現在接続できない状態であれば、これは私のPCにドライブが表示されるまでに長い時間がかかる問題に原因である可能性があります。当然]]></summary>
+    <category><![CDATA[それ,トラブルシューティング]]></category>
+    <tag><![CDATA[それ,トラブルシューティング]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240308185944/ja-thumb-unclesnote-long_loading_time_issue_when_opening_windows_my_pc.png"/>
+  </entry>
   <entry>
     <title><![CDATA[C＃Windowsフォームの無料チャートライブラリとGPUアクセラレーション]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
@@ -23,8 +35,8 @@
     <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
 		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Visual Studio 2022ソフトウェアのNugetパッケージマネージャで多くのチャート描画ライブラリが検索されますが、実際の開発会社サイトにアクセスしてみると無料で使用すると機能に制限があるか、会社で使用すると決済をしなければならない有料ポリシーがある場合がある。その代わりに、イクロソフトが公式にサポートす]]></summary>
-    <category><![CDATA[Cシャープ]]></category>
-    <tag><![CDATA[Cシャープ]]></tag>
+    <category><![CDATA[Cシャープ,WinForms]]></category>
+    <tag><![CDATA[Cシャープ,WinForms]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/ja-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
   </entry>
   <entry>

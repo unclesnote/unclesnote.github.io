@@ -14,7 +14,19 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <entry>
+    <title><![CDATA[Long loading time issue when opening Windows My PC]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
+    <id>https://unclesnote.com/en/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
+    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
+		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[When you open Windows `This PC`, the problem of long loading time can be caused by several reasons. However, if you have registered a network shared folder as]]></summary>
+    <category><![CDATA[IT,TroubleShooting]]></category>
+    <tag><![CDATA[IT,TroubleShooting]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240308185944/en-thumb-unclesnote-long_loading_time_issue_when_opening_windows_my_pc.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Free Charting Library and GPU Acceleration in C# Windows Forms]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
@@ -23,8 +35,8 @@
     <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
 		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Many chart drawing libraries can be found in the Nuget package manager of the Visual Studio 2022 software, but if you visit the actual development company]]></summary>
-    <category><![CDATA[C Sharp]]></category>
-    <tag><![CDATA[CSharp]]></tag>
+    <category><![CDATA[C Sharp,WinForms]]></category>
+    <tag><![CDATA[CSharp,WinForms]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/en-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
   </entry>
   <entry>

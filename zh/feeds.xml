@@ -14,7 +14,19 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <entry>
+    <title><![CDATA[打开 Windows My PC 时加载时间过长的问题]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
+    <id>https://unclesnote.com/zh/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
+    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
+		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[当您打开Windows`此电脑`时，加载时间过长的问题可能由多种原因引起。但是，如果您已将网络共享文件夹注册为驱动器，并且注册的网络驱动器当前无法访问，则可能会导致驱动器需要很长时间才能出现在您的电脑上。当然，您可以通过右键菜单断开并删除无法访问的网络驱动器，但由于加载时间较长，即使这种方法也可能行不通。因此，虽然有]]></summary>
+    <category><![CDATA[它,故障排除]]></category>
+    <tag><![CDATA[它,故障排除]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240308185944/zh-thumb-unclesnote-long_loading_time_issue_when_opening_windows_my_pc.png"/>
+  </entry>
   <entry>
     <title><![CDATA[C# Windows 窗体中的免费图表库和 GPU 加速]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
@@ -23,8 +35,8 @@
     <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
 		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[很多图表绘制库都可以在Visual Studio 2022软件的Nuget包管理器中找到，但是如果你访问实际的开发公司网站，你可能会发现如果免费使用或者公司有授权的话，功能上会有限制。付费政策，如果您使用它，则需要付费。作为替代方案，我想介绍一下微软官方支持的图表库和其他免费提供的图表库。]]></summary>
-    <category><![CDATA[C夏普]]></category>
-    <tag><![CDATA[夏普]]></tag>
+    <category><![CDATA[C夏普,窗体]]></category>
+    <tag><![CDATA[夏普,窗体]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/zh-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
   </entry>
   <entry>

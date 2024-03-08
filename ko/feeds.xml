@@ -14,7 +14,19 @@
   <author><name><![CDATA[엉클스 노트]]></name></author>
   <id>https://unclesnote.com/ko/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Sun, 25 Feb 2024 01:58:39 +0900</modified>
+  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <entry>
+    <title><![CDATA[윈도우 내PC를 열었을때 긴 로딩 시간 문제]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
+    <id>https://unclesnote.com/ko/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
+    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
+		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[윈도우 `내 PC`를 열었는데, 로딩 시간이 길게 소요되는 문제의 원인은 여러가지 일 수 있습니다. 하지만, 당신이 네트워크 공유 폴더를 드라이브로 등록설정 한 상태이고, 등록한 네트워크 드라이브가 현재 접속이 불가능한 상태라면, 이것은 내 PC에 드라이브들이 표시되기 까지 오랜]]></summary>
+    <category><![CDATA[IT,문제 해결]]></category>
+    <tag><![CDATA[IT,TroubleShooting]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240308185944/ko-thumb-unclesnote-long_loading_time_issue_when_opening_windows_my_pc.png"/>
+  </entry>
   <entry>
     <title><![CDATA[C# Windows Forms의 무료 차트 라이브러리와 GPU 가속]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240225015839/free_charting_library_and_gpu_acceleration_in_c-_windows_forms"/>
@@ -23,8 +35,8 @@
     <issued>Sun, 25 Feb 2024 01:58:39 +0900</issued>
 		<created>Sun, 25 Feb 2024 01:58:39 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Visual Studio 2022 소프트웨어의 Nuget 패키지 관리자에서 많은 차트 그리기 라이브러리가 검색되지만, 실제 개발회사 사이트에 방문해 보면 무료로 사용하면 기능에 제한이 있거나 회사에서 사용하면 결제를 해야하는 유료정책을 가지고 있는 경우가 있다. 그 대안으로 이크로]]></summary>
-    <category><![CDATA[C 샤프]]></category>
-    <tag><![CDATA[CSharp]]></tag>
+    <category><![CDATA[C 샤프,WinForms]]></category>
+    <tag><![CDATA[CSharp,WinForms]]></tag>
     <media:thumbnail url="https://unclesnote.com/assets/images/240225015839/ko-thumb-unclesnote-free_charting_library_and_gpu_acceleration_in_c_sharp_windows_forms.png"/>
   </entry>
   <entry>
