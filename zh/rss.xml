@@ -21,8 +21,134 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 08 Mar 2024 18:59:44 +0900</lastBuildDate>
-    <pubDate>Fri, 08 Mar 2024 18:59:44 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Mar 2024 00:58:32 +0900</lastBuildDate>
+    <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[2024 年最新 - 如何在 Windows 11 中将任务栏向左移动 - Explorer Patcher]]></title>
+      <link>https://unclesnote.com/zh/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</link>
+      <guid>https://unclesnote.com/zh/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+      <category><![CDATA[它,故障排除]]></category>
+      <tag><![CDATA[它,故障排除]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <description><![CDATA[如果您一直使用 Windows 10 或者熟悉 Ubuntu 任务栏，您可能会失望地发现 Windows 11 中无法移动任务栏的位置。就我而言，我进行软件编码，我想将任务栏移至左侧以确保显示屏底部的空间并创建一个舒适的编码环境。那么，我想介绍一下如何在2024年最新的Windows 11中将任务栏移至左侧。]]></description>
+      <content:encoded><![CDATA[<p>如果您一直在使用 Windows 10 或者熟悉 Ubuntu 任务栏，您可能会失望地发现 Windows 11 中无法移动任务栏的位置。</p>
+
+<p>就我而言，我进行软件编码，我想将任务栏移至左侧以确保显示屏底部的空间并创建一个舒适的编码环境。那么，我想介绍一下如何在2024年最新的Windows 11中将任务栏移至左侧。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="注册表值修改方法-不起作用">注册表值修改方法-不起作用</h2>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" alt="更改任务栏位置 - 修改注册表不再有效" />
+<em>更改任务栏位置 - 修改注册表不再有效</em></p>
+
+<p>恩，那就对了。通过修改注册表来更改任务栏的位置不再有效。随着 Windows 11 的更新，这似乎变得不可能了。作为替代方案，Windows 11 中默认没有提供已知的方法。但是，有一些软件可以让您配置任务栏。</p>
+
+<p>《Start 11》的售价为每份 10 美元，我还没有尝试过。与每个人一样，付费软件的安装可能很麻烦。</p>
+<ul>
+  <li><a href="https://www.stardock.com/products/start11/">Start 11</a>：付费(每份约 10 美元)，提供 30 天评估期</li>
+  <li><a href="https://github.com/valinet/ExplorerPatcher">Explorer Patcher</a>：免费开源(分布在 GitHub 上)</li>
+</ul>
+
+<p>相反，<code class="language-plaintext highlighter-rouge">Explorer Patcher</code>有免费政策。软件发布在 GitHub 上，如果你查看历史记录，就会发现频繁的代码修改。这可能意味着该软件还不稳定，也可能是它正在快速发展。所以，我决定押注于后者并尝试一下。</p>
+<h2 id="windows-10-和-windows-11-任务栏比较">Windows 10 和 Windows 11 任务栏比较</h2>
+<p>您可能突然想知道是否要比较 Windows 10 和 Windows 11 的任务栏。原因是我们决定使用的Explorer Patcher软件试图遵循<code class="language-plaintext highlighter-rouge">Windows 10如何操作任务栏的概念</code>。</p>
+
+<p>关于<code class="language-plaintext highlighter-rouge">任务栏内容对齐</code>功能，Windows 10默认为左对齐，且对齐方式无法更改。不过，Windows 11的任务栏内容在发布之初仅支持居中对齐，但现在可以在设置中更改为左对齐。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>物品</th>
+      <th>Windows 10</th>
+      <th>视窗11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>任务栏内容排序</td>
+      <td>左对齐</td>
+      <td>提供左对齐和居中对齐选项</td>
+    </tr>
+    <tr>
+      <td>任务栏位置</td>
+      <td>可以左、右、上、下移动</td>
+      <td>固定在下面</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>关于<code class="language-plaintext highlighter-rouge">任务栏位置</code>，Windows 10 允许您将其向上、向下、向左或向上移动。不过Windows 11中任务栏的位置是固定在底部的，在官方设置中无法更改。</p>
+<blockquote class="prompt-tip">
+  <p>将任务栏内容左对齐<br />
+Explorer Patcher软件遵循Windows 10的操作理念，只允许任务栏内容左对齐。如果您决定使用软件来移动任务栏，则此提示毫无意义。通常，更改任务栏内容对齐方式的设置位于<code class="language-plaintext highlighter-rouge">设置 &gt; 个性化 &gt; 任务栏行为 &gt; 任务栏对齐方式</code>中。</p>
+</blockquote>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="设置任务栏位置">设置任务栏位置</h2>
+<p>访问分发<code class="language-plaintext highlighter-rouge">Explorer Patcher</code>软件的 <a href="https://github.com/valinet/ExplorerPatcher" target="_blank">GitHub 存储库</a> 站点并下载可执行文件。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" alt="`Explorer Patcher` GitHub 存储库 - 下载可执行文件" />
+<em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> GitHub 存储库 - 下载可执行文件</em></p>
+
+<p>当您运行可执行文件时，任务栏不会有明显变化。但是，如果右键单击任务栏，您可以看到已添加<code class="language-plaintext highlighter-rouge">属性</code>和<code class="language-plaintext highlighter-rouge">任务栏设置</code>项。运行属性。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" alt="Windows 11 - 右键单击​​任务栏" />
+<em>Windows 11 - 右键单击​​任务栏</em></p>
+
+<p>Explorer Patcher的属性窗口会显示许多设置项。我们感兴趣的项目位于<code class="language-plaintext highlighter-rouge">任务栏选项卡</code>中。</p>
+
+<p>如上所述，这款软件有一个遵循Windows 10任务栏操作方法的概念。如果将任务栏样式设置为 Windows 10，则没有像 Windows 11 那样使任务栏内容居中的选项。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" alt="`Explorer Patcher` - 属性设置" />
+<em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - 属性设置</em></p>
+
+<p><strong>a.</strong>此设置设置任务栏在主显示屏上的位置。</p>
+
+<p><strong>b.</strong>仅对拥有多个显示器的用户有意义。设置主显示屏以外的显示屏的任务栏位置。</p>
+
+<p><strong>c.</strong>设置多次运行同一个软件时是否在任务栏上显示单个图标。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" alt="Windows 11 - 当多个相同的软件运行时，它们在任务栏上显示为单个图标。" />
+<em>Windows 11 - 当多个相同的软件运行时，它们在任务栏上显示为单个图标。</em></p>
+
+<p><strong>d.</strong>按照您想要的方式设置完所有内容后，您将需要重新启动资源管理器才能使其完全生效。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" alt="Windows 11 - 将任务栏移至左侧" />
+<em>Windows 11 - 将任务栏移至左侧</em></p>
+
+<h2 id="笔记">笔记</h2>
+<p><a href="https://pureinfotech.com/move-taskbar-top-side-windows-11/" target="_blank">https://pureinfotech.com/move-taskbar-top-side-windows-11/</a></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/zh-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[打开 Windows My PC 时加载时间过长的问题]]></title>

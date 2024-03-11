@@ -14,12 +14,24 @@
   <author><name><![CDATA[nota del tio]]></name></author>
   <id>https://unclesnote.com/es/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <entry>
+    <title><![CDATA[Lo último en 2024- cómo mover la barra de tareas hacia la izquierda en Windows 11 - Explorer Patcher]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
+    <id>https://unclesnote.com/es/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</id>    
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+    <issued>Tue, 12 Mar 2024 00:58:32 +0900</issued>
+		<created>Tue, 12 Mar 2024 00:58:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Si ha estado usando Windows 10 o está familiarizado con la barra de tareas de Ubuntu, es posible que le haya decepcionado saber que no puede mover la posición]]></summary>
+    <category><![CDATA[ÉL,Solución de problemas]]></category>
+    <tag><![CDATA[ÉL,Solucióndeproblemas]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/es-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Problema de tiempo de carga prolongado al abrir Windows Mi PC]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/es/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
     <id>https://unclesnote.com/es/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
-    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
     <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
 		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Cuando abres `Esta PC` de Windows, el problema del tiempo de carga prolongado puede deberse a varias razones. Sin embargo, si ha registrado una carpeta]]></summary>

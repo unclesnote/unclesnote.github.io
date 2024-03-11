@@ -14,12 +14,24 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <entry>
+    <title><![CDATA[2024 年最新 - 如何在 Windows 11 中将任务栏向左移动 - Explorer Patcher]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
+    <id>https://unclesnote.com/zh/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</id>    
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+    <issued>Tue, 12 Mar 2024 00:58:32 +0900</issued>
+		<created>Tue, 12 Mar 2024 00:58:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[如果您一直使用 Windows 10 或者熟悉 Ubuntu 任务栏，您可能会失望地发现 Windows 11 中无法移动任务栏的位置。就我而言，我进行软件编码，我想将任务栏移至左侧以确保显示屏底部的空间并创建一个舒适的编码环境。那么，我想介绍一下如何在2024年最新的Windows 11中将任务栏移至左侧。]]></summary>
+    <category><![CDATA[它,故障排除]]></category>
+    <tag><![CDATA[它,故障排除]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/zh-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png"/>
+  </entry>
   <entry>
     <title><![CDATA[打开 Windows My PC 时加载时间过长的问题]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
     <id>https://unclesnote.com/zh/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
-    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
     <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
 		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[当您打开Windows`此电脑`时，加载时间过长的问题可能由多种原因引起。但是，如果您已将网络共享文件夹注册为驱动器，并且注册的网络驱动器当前无法访问，则可能会导致驱动器需要很长时间才能出现在您的电脑上。当然，您可以通过右键菜单断开并删除无法访问的网络驱动器，但由于加载时间较长，即使这种方法也可能行不通。因此，虽然有]]></summary>

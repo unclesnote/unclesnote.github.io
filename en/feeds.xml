@@ -14,12 +14,24 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <entry>
+    <title><![CDATA[Latest in 2024 - How to move the taskbar to the left in Windows 11 - Explorer Patcher]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
+    <id>https://unclesnote.com/en/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</id>    
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+    <issued>Tue, 12 Mar 2024 00:58:32 +0900</issued>
+		<created>Tue, 12 Mar 2024 00:58:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[If you have been using Windows 10 or are familiar with the Ubuntu taskbar, you may have been disappointed to learn that you cannot move the position of the]]></summary>
+    <category><![CDATA[IT,TroubleShooting]]></category>
+    <tag><![CDATA[IT,TroubleShooting]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/en-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Long loading time issue when opening Windows My PC]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
     <id>https://unclesnote.com/en/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
-    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
     <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
 		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[When you open Windows `This PC`, the problem of long loading time can be caused by several reasons. However, if you have registered a network shared folder as]]></summary>

@@ -21,8 +21,134 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 08 Mar 2024 18:59:44 +0900</lastBuildDate>
-    <pubDate>Fri, 08 Mar 2024 18:59:44 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Mar 2024 00:58:32 +0900</lastBuildDate>
+    <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Latest in 2024 - How to move the taskbar to the left in Windows 11 - Explorer Patcher]]></title>
+      <link>https://unclesnote.com/en/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</link>
+      <guid>https://unclesnote.com/en/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+      <category><![CDATA[IT,TroubleShooting]]></category>
+      <tag><![CDATA[IT,TroubleShooting]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <description><![CDATA[If you have been using Windows 10 or are familiar with the Ubuntu taskbar, you may have been disappointed to learn that you cannot move the position of the]]></description>
+      <content:encoded><![CDATA[<p>If you have been using Windows 10 or are familiar with the Ubuntu taskbar, you may have been disappointed to learn that you cannot move the position of the taskbar in Windows 11.</p>
+
+<p>In my case, I do software coding, and I wanted to move the taskbar to the left to secure space at the bottom of the display and create a comfortable coding environment. So, I would like to introduce how to move the taskbar to the left in the latest Windows 11 in 2024.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="registry-value-modification-method---does-not-work">Registry value modification method - does not work</h2>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" alt="Changing the taskbar location - Modifying the registry no longer works" />
+<em>Changing the taskbar location - Modifying the registry no longer works</em></p>
+
+<p>Yes, that’s right. Changing the location of the taskbar by modifying the registry no longer works. It seems to have become impossible with the Windows 11 update. As an alternative, there is no known method provided by default in Windows 11. However, there is software that allows you to configure the taskbar.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Start 11</code> is priced at $10 per copy and I haven`t tried it yet. As with everyone, paid software can be burdensome to install.</p>
+<ul>
+  <li><a href="https://www.stardock.com/products/start11/">Start 11</a>: Paid (about $10 per copy), 30-day evaluation period provided</li>
+  <li><a href="https://github.com/valinet/ExplorerPatcher">Explorer Patcher</a>: Free open source (distributed on GitHub)</li>
+</ul>
+
+<p>Instead, <code class="language-plaintext highlighter-rouge">Explorer Patcher</code> has a free policy. Software is distributed on GitHub, and if you look at the history, frequent code modifications are made. This may mean that the software is not yet stable, or it may be that it is developing rapidly. So, I decided to bet on the latter and give it a try.</p>
+<h2 id="comparison-of-taskbars-between-windows-10-and-windows-11">Comparison of taskbars between Windows 10 and Windows 11</h2>
+<p>You may suddenly be wondering whether you want to compare the taskbars of Windows 10 and Windows 11. The reason is that the Explorer Patcher software we decided to use tries to follow the ‘concept of how Windows 10 operates the taskbar’.</p>
+
+<p>Regarding the <code class="language-plaintext highlighter-rouge">Alignment of taskbar contents</code> function, Windows 10 defaults to left alignment and the alignment cannot be changed. However, Windows 11’s taskbar content only supported center alignment at the beginning of release, but can now be changed to left alignment in the settings.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>item</th>
+      <th>Windows 10</th>
+      <th>Windows 11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sorting of taskbar content</td>
+      <td>Left align</td>
+      <td>Left and center alignment options available</td>
+    </tr>
+    <tr>
+      <td>Taskbar location</td>
+      <td>Can move left, right, up, and down</td>
+      <td>pinned below</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Regarding the <code class="language-plaintext highlighter-rouge">taskbar position</code>, Windows 10 allows you to move it up, down, left, or up. However, the position of the taskbar in Windows 11 is fixed at the bottom and cannot be changed in the official settings.</p>
+<blockquote class="prompt-tip">
+  <p>Align taskbar content to the left<br />
+Explorer Patcher software follows the operating concept of Windows 10, which only allows left-alignment of taskbar content. This tip is meaningless if you decide to use software to move the taskbar. Generally, settings for changing the alignment of taskbar content are located in ‘Settings &gt; Personalization &gt; Taskbar Behavior &gt; Taskbar Alignment’.</p>
+</blockquote>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="set-taskbar-position">Set taskbar position</h2>
+<p>Visit the <a href="https://github.com/valinet/ExplorerPatcher" target="_blank">GitHub Repository</a> site that distributes the <code class="language-plaintext highlighter-rouge">Explorer Patcher</code> software and download the executable file.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" alt="`Explorer Patcher` GitHub repository - Download executable file" />
+<em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> GitHub repository - Download executable file</em></p>
+
+<p>When you run the executable file, there will be no significant change in the taskbar. However, if you right-click on the taskbar, you can see that <code class="language-plaintext highlighter-rouge">Properties</code> and <code class="language-plaintext highlighter-rouge">Taskbar settings</code> items have been added. Run Properties.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" alt="Windows 11 - Right-click on the taskbar" />
+<em>Windows 11 - Right-click on the taskbar</em></p>
+
+<p>Explorer Patcher’s Properties window will display many setting items. The item we<code class="language-plaintext highlighter-rouge">re interested in here is in the </code>Taskbar tab`.</p>
+
+<p>As mentioned above, this software has a concept that follows the Windows 10 taskbar operation method. If you set the Taskbar style to Windows 10, there is no option to center the taskbar content like in Windows 11.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" alt="`Explorer Patcher` - Properties settings" />
+<em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - Properties settings</em></p>
+
+<p><strong>a.</strong>This setting sets the position of the taskbar on the main display.</p>
+
+<p><strong>b.</strong>Only meaningful for users with multiple displays. Set the taskbar position for displays other than the main display.</p>
+
+<p><strong>c.</strong>Sets whether to display a single icon on the taskbar when running the same software multiple times.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" alt="Windows 11 - When several of the same software are running, they are displayed as a single icon on the taskbar." />
+<em>Windows 11 - When several of the same software are running, they are displayed as a single icon on the taskbar.</em></p>
+
+<p><strong>d.</strong>Once you have everything set up the way you want, you will need to restart Explorer for it to take full effect.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" alt="Windows 11 - Move taskbar to the left" />
+<em>Windows 11 - Move taskbar to the left</em></p>
+
+<h2 id="note">Note</h2>
+<p><a href="https://pureinfotech.com/move-taskbar-top-side-windows-11/" target="_blank">https://pureinfotech.com/move-taskbar-top-side-windows-11/</a></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/en-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Long loading time issue when opening Windows My PC]]></title>

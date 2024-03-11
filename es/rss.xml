@@ -21,8 +21,134 @@
     <language>es</language>
     <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 08 Mar 2024 18:59:44 +0900</lastBuildDate>
-    <pubDate>Fri, 08 Mar 2024 18:59:44 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Mar 2024 00:58:32 +0900</lastBuildDate>
+    <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Lo último en 2024- cómo mover la barra de tareas hacia la izquierda en Windows 11 - Explorer Patcher]]></title>
+      <link>https://unclesnote.com/es/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</link>
+      <guid>https://unclesnote.com/es/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+      <category><![CDATA[ÉL,Solución de problemas]]></category>
+      <tag><![CDATA[ÉL,Solucióndeproblemas]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <description><![CDATA[Si ha estado usando Windows 10 o está familiarizado con la barra de tareas de Ubuntu, es posible que le haya decepcionado saber que no puede mover la posición]]></description>
+      <content:encoded><![CDATA[<p>Si ha estado usando Windows 10 o está familiarizado con la barra de tareas de Ubuntu, es posible que le haya decepcionado saber que no puede mover la posición de la barra de tareas en Windows 11.</p>
+
+<p>En mi caso, codifico software y quería mover la barra de tareas hacia la izquierda para asegurar espacio en la parte inferior de la pantalla y crear un entorno de codificación cómodo. Entonces, me gustaría presentarles cómo mover la barra de tareas hacia la izquierda en la última versión de Windows 11 en 2024.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="método-de-modificación-del-valor-del-registro-no-funciona">Método de modificación del valor del registro: no funciona</h2>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" alt="Cambiar la ubicación de la barra de tareas: modificar el registro ya no funciona" />
+<em>Cambiar la ubicación de la barra de tareas: modificar el registro ya no funciona</em></p>
+
+<p>Sí, eso es correcto. Cambiar la ubicación de la barra de tareas modificando el registro ya no funciona. Parece haberse vuelto imposible con la actualización de Windows 11. Como alternativa, no existe ningún método conocido proporcionado de forma predeterminada en Windows 11. Sin embargo, existe un software que permite configurar la barra de tareas.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Start 11</code> tiene un precio de 10 dólares por copia y aún no lo he probado. Como ocurre con todos, el software pago puede resultar complicado de instalar.</p>
+<ul>
+  <li><a href="https://www.stardock.com/products/start11/">Inicio 11</a>: Pagado (alrededor de $10 por copia), se proporciona un período de evaluación de 30 días</li>
+  <li><a href="https://github.com/valinet/ExplorerPatcher">Explorer Patcher</a>: código abierto gratuito (distribuido en GitHub)</li>
+</ul>
+
+<p>En cambio, “Explorer Patcher” tiene una política gratuita. El software se distribuye en GitHub y, si observa el historial, se realizan modificaciones frecuentes del código. Esto puede significar que el software aún no es estable o que se está desarrollando rápidamente. Así que decidí apostar por esto último y darle una oportunidad.</p>
+<h2 id="comparación-de-barras-de-tareas-entre-windows-10-y-windows-11">Comparación de barras de tareas entre Windows 10 y Windows 11</h2>
+<p>Quizás de repente te preguntes si quieres comparar las barras de tareas de Windows 10 y Windows 11. La razón es que el software Explorer Patcher que decidimos utilizar intenta seguir el “concepto de cómo Windows 10 opera la barra de tareas”.</p>
+
+<p>Con respecto a la función “Alineación del contenido de la barra de tareas”, Windows 10 tiene de forma predeterminada la alineación izquierda y la alineación no se puede cambiar. Sin embargo, el contenido de la barra de tareas de Windows 11 solo admitía la alineación central al comienzo del lanzamiento, pero ahora se puede cambiar a la alineación izquierda en la configuración.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>artículo</th>
+      <th>ventanas 10</th>
+      <th>ventanas 11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Clasificación del contenido de la barra de tareas</td>
+      <td>Alinear a la izquierda</td>
+      <td>Opciones de alineación izquierda y central disponibles</td>
+    </tr>
+    <tr>
+      <td>Ubicación de la barra de tareas</td>
+      <td>Puede moverse hacia la izquierda, derecha, arriba y abajo.</td>
+      <td>fijado a continuación</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>En cuanto a la <code class="language-plaintext highlighter-rouge">posición de la barra de tareas</code>, Windows 10 te permite moverla hacia arriba, abajo, izquierda o arriba. Sin embargo, la posición de la barra de tareas en Windows 11 está fija en la parte inferior y no se puede cambiar en la configuración oficial.</p>
+<blockquote class="prompt-tip">
+  <p>Alinear el contenido de la barra de tareas a la izquierda<br />
+El software Explorer Patcher sigue el concepto operativo de Windows 10, que sólo permite la alineación hacia la izquierda del contenido de la barra de tareas. Este consejo no tiene sentido si decide utilizar un software para mover la barra de tareas. Generalmente, las configuraciones para cambiar la alineación del contenido de la barra de tareas se encuentran en “Configuración &gt; Personalización &gt; Comportamiento de la barra de tareas &gt; Alineación de la barra de tareas”.</p>
+</blockquote>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="establecer-la-posición-de-la-barra-de-tareas">Establecer la posición de la barra de tareas</h2>
+<p>Visite el sitio <a href="https://github.com/valinet/ExplorerPatcher" target="_blank">Repositorio de GitHub</a> que distribuye el software <code class="language-plaintext highlighter-rouge">Explorer Patcher</code> y descargue el archivo ejecutable.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" alt="Repositorio GitHub `Explorer Patcher` - Descargar archivo ejecutable" />
+<em>Repositorio GitHub <code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - Descargar archivo ejecutable</em></p>
+
+<p>Cuando ejecute el archivo ejecutable, no habrá cambios significativos en la barra de tareas. Sin embargo, si hace clic derecho en la barra de tareas, podrá ver que se han agregado los elementos “Propiedades” y “Configuración de la barra de tareas”. Ejecutar propiedades.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" alt="Windows 11: haga clic derecho en la barra de tareas" />
+<em>Windows 11: haga clic derecho en la barra de tareas</em></p>
+
+<p>La ventana Propiedades de Explorer Patcher mostrará muchos elementos de configuración. El elemento que nos interesa aquí está en la <code class="language-plaintext highlighter-rouge">pestaña Barra de tareas</code>.</p>
+
+<p>Como se mencionó anteriormente, este software tiene un concepto que sigue el método de operación de la barra de tareas de Windows 10. Si configura el estilo de la barra de tareas en Windows 10, no hay ninguna opción para centrar el contenido de la barra de tareas como en Windows 11.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" alt="`Explorer Patcher` - Configuración de propiedades" />
+<em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - Configuración de propiedades</em></p>
+
+<p><strong>a.</strong>Esta configuración establece la posición de la barra de tareas en la pantalla principal.</p>
+
+<p><strong>b.</strong>Solo es significativo para usuarios con múltiples pantallas. Establezca la posición de la barra de tareas para pantallas distintas a la pantalla principal.</p>
+
+<p><strong>c.</strong>Establece si se muestra un solo icono en la barra de tareas cuando se ejecuta el mismo software varias veces.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" alt="Windows 11: cuando se ejecutan varios programas iguales, se muestran como un único icono en la barra de tareas." />
+<em>Windows 11: cuando se ejecutan varios programas iguales, se muestran como un único icono en la barra de tareas.</em></p>
+
+<p><strong>d.</strong>Una vez que haya configurado todo como desea, deberá reiniciar Explorer para que surta efecto completo.</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" alt="Windows 11: mover la barra de tareas a la izquierda" />
+<em>Windows 11: mover la barra de tareas a la izquierda</em></p>
+
+<h2 id="nota">Nota</h2>
+<p><a href="https://pureinfotech.com/move-taskbar-top-side-windows-11/" target="_blank">https://pureinfotech.com/move-taskbar-top-side-windows-11/</a></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/es-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Problema de tiempo de carga prolongado al abrir Windows Mi PC]]></title>

@@ -14,12 +14,24 @@
   <author><name><![CDATA[アンクルズノート]]></name></author>
   <id>https://unclesnote.com/ja/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <entry>
+    <title><![CDATA[2024年最新 - Windows11のタスクバー左に移動方法 - Explorer Patcher]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
+    <id>https://unclesnote.com/ja/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</id>    
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+    <issued>Tue, 12 Mar 2024 00:58:32 +0900</issued>
+		<created>Tue, 12 Mar 2024 00:58:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[Windows 10を使用してから使用したり、Ubuntuのタスクバーに慣れている場合は、Windows 11でタスクバーの位置を移動できないことを知って失望したかもしれません。私の場合はソフトウェアコーディングをしますが、ディスプレイの下部スペースを確保して快適なコーディング環境を作るために左に作業バーを移動したか]]></summary>
+    <category><![CDATA[それ,トラブルシューティング]]></category>
+    <tag><![CDATA[それ,トラブルシューティング]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/ja-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png"/>
+  </entry>
   <entry>
     <title><![CDATA[WindowsでPCを開いたときの長い読み込み時間の問題]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
     <id>https://unclesnote.com/ja/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
-    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
     <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
 		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Windows `私のPC`を開いたが、ロードに時間がかかる問題の原因はいくつかあります。しかし、あなたがネットワーク共有フォルダをドライブとして登録した状態で、登録したネットワークドライブが現在接続できない状態であれば、これは私のPCにドライブが表示されるまでに長い時間がかかる問題に原因である可能性があります。当然]]></summary>

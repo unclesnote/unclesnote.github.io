@@ -14,12 +14,24 @@
   <author><name><![CDATA[엉클스 노트]]></name></author>
   <id>https://unclesnote.com/ko/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <entry>
+    <title><![CDATA[2024년 최신 - 윈도우11의 작업표시줄 왼쪽으로 이동방법 - Explorer Patcher]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
+    <id>https://unclesnote.com/ko/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</id>    
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+    <issued>Tue, 12 Mar 2024 00:58:32 +0900</issued>
+		<created>Tue, 12 Mar 2024 00:58:32 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[윈도우10을 사용할때 부터 사용했거나 혹은 우분투 작업표시줄에 익숙한 당신이라면, 윈도우11에서 작업표시줄의 위치를 이동할 수 없다는 사실을 알고 실망 했을지도 모릅니다. 저의경우는 소프트트웨어 코딩을 하는데, 디스플레이의 하단 공간을 확보해서 쾌적한 코딩환경을 만들기 위해서 왼쪽으로]]></summary>
+    <category><![CDATA[IT,문제 해결]]></category>
+    <tag><![CDATA[IT,TroubleShooting]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/ko-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png"/>
+  </entry>
   <entry>
     <title><![CDATA[윈도우 내PC를 열었을때 긴 로딩 시간 문제]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240308185944/long_loading_time_issue_when_opening_windows_my_pc"/>
     <id>https://unclesnote.com/ko/240308185944/long_loading_time_issue_when_opening_windows_my_pc</id>    
-    <modified>Fri, 08 Mar 2024 18:59:44 +0900</modified>
+    <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
     <issued>Fri, 08 Mar 2024 18:59:44 +0900</issued>
 		<created>Fri, 08 Mar 2024 18:59:44 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[윈도우 `내 PC`를 열었는데, 로딩 시간이 길게 소요되는 문제의 원인은 여러가지 일 수 있습니다. 하지만, 당신이 네트워크 공유 폴더를 드라이브로 등록설정 한 상태이고, 등록한 네트워크 드라이브가 현재 접속이 불가능한 상태라면, 이것은 내 PC에 드라이브들이 표시되기 까지 오랜]]></summary>

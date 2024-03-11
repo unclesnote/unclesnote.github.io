@@ -21,8 +21,134 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 08 Mar 2024 18:59:44 +0900</lastBuildDate>
-    <pubDate>Fri, 08 Mar 2024 18:59:44 +0900</pubDate>
+    <lastBuildDate>Tue, 12 Mar 2024 00:58:32 +0900</lastBuildDate>
+    <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[2024年最新 - Windows11のタスクバー左に移動方法 - Explorer Patcher]]></title>
+      <link>https://unclesnote.com/ja/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</link>
+      <guid>https://unclesnote.com/ja/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+      <category><![CDATA[それ,トラブルシューティング]]></category>
+      <tag><![CDATA[それ,トラブルシューティング]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
+      <description><![CDATA[Windows 10を使用してから使用したり、Ubuntuのタスクバーに慣れている場合は、Windows 11でタスクバーの位置を移動できないことを知って失望したかもしれません。私の場合はソフトウェアコーディングをしますが、ディスプレイの下部スペースを確保して快適なコーディング環境を作るために左に作業バーを移動したか]]></description>
+      <content:encoded><![CDATA[<p>Windows 10を使用してから使用したり、Ubuntuのタスクバーに慣れている場合は、Windows 11でタスクバーの位置を移動できないことを知って失望したかもしれません。</p>
+
+<p>私の場合はソフトウェアコーディングをしますが、ディスプレイの下部スペースを確保して快適なコーディング環境を作るために左に作業バーを移動したかったのです。そこで2024年最新のWindows11のタスクバーを左に移動する方法を紹介しようとしています。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="レジストリ値の変更方法---動作不可">レジストリ値の変更方法 - 動作不可</h2>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" alt="タスクバーの場所を変更する - レジストリを変更する方法はもう動作しません" />
+<em>タスクバーの場所を変更する - レジストリを変更する方法はもう動作しません</em></p>
+
+<p>はい、そうです。レジストリを変更してタスクバーの位置を変更する方法はもう機能しません。 Windows11が更新されて不可能になったようです。その代わりに、Windows11がデフォルトで提供する方法は知られていません。ただし、タスクバーを設定できるソフトウェアが存在します。</p>
+
+<p><code class="language-plaintext highlighter-rouge">Start 11</code>は、1コピーあたり10ドルの価格が策定されており、まだ試していません。誰でもそうであるように、有料ポリシーのソフトウェアはインストールに負担があります。</p>
+<ul>
+  <li><a href="https://www.stardock.com/products/start11/">Start 11</a>:有料(1コピーあたり10ドル程度)、30日評価期間提供</li>
+  <li><a href="https://github.com/valinet/ExplorerPatcher">Explorer Patcher</a>: 無料オープンソース</li>
+</ul>
+
+<p>代わりに <code class="language-plaintext highlighter-rouge">Explorer Patcher</code>は無料のポリシーを持っています。 FitHubでソフトウェアを配布しますが、履歴を見ると頻繁なコード修正が行われています。これはまだソフトウェアが安定していないという話かもしれませんし、急速に発展していると見られるかもしれません。それで、私は後者に賭けて試してみることにしました。</p>
+<h2 id="windows10とwindows11のタスクバーの比較">Windows10とWindows11のタスクバーの比較</h2>
+<p>突然、Windows10とWindows11のタスクバーを比較しようとしているかどうか疑問があります。その理由は、私たちが使用することを決めたExplorer Patcherソフトウェアが<code class="language-plaintext highlighter-rouge">Windows 10がタスクバーを運用するコンセプト</code>に従おうとしているからです。</p>
+
+<p><code class="language-plaintext highlighter-rouge">タスクバーコンテンツの並べ替え</code>機能に関して、ウィンドウ10は左揃えがデフォルトであり、並べ替えを変更することはできません。しかし、Windows 11のタスクバーのコンテンツはリリース初期には中央揃えのみサポートしていましたが、現在は設定から​​左揃えに変更が可能です。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>アイテム</th>
+      <th>Windows10</th>
+      <th>Windows11</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>タスクバーの内容の並べ替え</td>
+      <td>左揃え</td>
+      <td>左、中央揃え選択可能</td>
+    </tr>
+    <tr>
+      <td>タスクバーの位置</td>
+      <td>左、右、上、下移動可能</td>
+      <td>下に固定</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">タスクバーの位置</code>に関して、ウィンドウ10は上、下、左、上の移動が可能です。ただし、Windows11のタスクバーの位置は下に固定されており、公式の設定では変更できません。</p>
+<blockquote class="prompt-tip">
+  <p>タスクバーの内容を左揃え<br />
+Explorer Patcherソフトウェアは、タスクバーのコンテンツの左揃えのみが可能なWindows10の運用コンセプトに従います。タスクバーを移動するためにソフトウェアを使用することにした場合、意味のないヒントです。通常、タスクバーの内容の並べ替えを変更するための設定は、<code class="language-plaintext highlighter-rouge">設定</code>&gt;<code class="language-plaintext highlighter-rouge">個人設定</code>&gt;<code class="language-plaintext highlighter-rouge">タスクバーの動作</code>&gt;<code class="language-plaintext highlighter-rouge">タスクバーの配置</code>にあります。</p>
+</blockquote>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="タスクバーの位置の設定">タスクバーの位置の設定</h2>
+<p><code class="language-plaintext highlighter-rouge">Explorer Patcher</code>ソフトウェアを配布する<code class="language-plaintext highlighter-rouge">FateHub Repository</code>(https://github.com/valinet/ExplorerPatcher)サイトにアクセスして実行ファイルをダウンロードします。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" alt="`Explorer Patcher` FitHub Repository - ダウンロード実行ファイル" />
+<em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> FitHub Repository - ダウンロード実行ファイル</em></p>
+
+<p>実行ファイルを実行すると、タスクバーに大きな変更はありません。しかし、タスクバーを右クリックすると、 <code class="language-plaintext highlighter-rouge">Properties</code> と <code class="language-plaintext highlighter-rouge">Taskbar settings</code> アイテムが追加されたことを確認できます。 Properties を実行します。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" alt="Windows 11 - タスクバーを右クリック" />
+<em>Windows 11 - タスクバーを右クリック</em></p>
+
+<p>Explorer PatcherのPropertiesウィンドウには多くの設定項目が表示されます。ここで私たちが興味を持っている必要があるものは<code class="language-plaintext highlighter-rouge">Taskbar</code>タブにあります。</p>
+
+<p>上記のように、このソフトウェアはWindows 10のタスクバーの操作方法に従うコンセプトを持っています。 Taskbar styleをWindows 10に設定した場合、Windows 11のようにタスクバーの内容を中央揃えする設定はオプションにありません。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" alt="`Explorer Patcher` - プロパティ設定" />
+<em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - プロパティ設定</em></p>
+
+<p><strong>a.</strong>メインディスプレイのタスクバーの位置を設定する設定です。</p>
+
+<p><strong>b.</strong>マルチディスプレイを使用しているユーザーにのみ意味があります。メインディスプレイを除く他のディスプレイのタスクバーの位置を設定します。</p>
+
+<p><strong>c.</strong>同じソフトウェアを複数実行したときに、タスクバーにアイコンを1つのアイコンとして表示するかどうかを設定します。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" alt="Windows 11 - 同じソフトウェアが複数実行されているとき、タスクバーに1つのアイコンを合わせて表示" />
+<em>Windows 11 - 同じソフトウェアが複数実行されているとき、タスクバーに1つのアイコンを合わせて表示</em></p>
+
+<p><strong>d.</strong>すべて必要に応じて設定した場合は、これを完全に適用するためにエクスプローラを再起動する必要があります。</p>
+
+<p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" alt="Windows 11 - タスクバーの左に移動" />
+<em>Windows 11 - タスクバーの左に移動</em></p>
+
+<h2 id="注意事項">注意事項</h2>
+<p><a href="https://pureinfotech.com/move-taskbar-top-side-windows-11/" target="_blank">https://pureinfotech.com/move-taskbar-top-side-windows-11/</a></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240312005832/ja-thumb-unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher.png" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher_깃허브_레포지터리-다운로드_실행파일.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[WindowsでPCを開いたときの長い読み込み時間の問題]]></title>
