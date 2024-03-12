@@ -33,10 +33,10 @@
       <category><![CDATA[IT,문제 해결]]></category>
       <tag><![CDATA[IT,TroubleShooting]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ko/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
-      <description><![CDATA[윈도우10을 사용할때 부터 사용했거나 혹은 우분투 작업표시줄에 익숙한 당신이라면, 윈도우11에서 작업표시줄의 위치를 이동할 수 없다는 사실을 알고 실망 했을지도 모릅니다. 저의경우는 소프트트웨어 코딩을 하는데, 디스플레이의 하단 공간을 확보해서 쾌적한 코딩환경을 만들기 위해서 왼쪽으로]]></description>
-      <content:encoded><![CDATA[<p>윈도우10을 사용할때 부터 사용했거나 혹은 우분투 작업표시줄에 익숙한 당신이라면, 윈도우11에서 작업표시줄의 위치를 이동할 수 없다는 사실을 알고 실망 했을지도 모릅니다.</p>
+      <description><![CDATA[윈도우10 혹은 우분투 작업표시줄에 익숙한 당신이라면, 윈도우11에서 작업표시줄의 위치를 이동할 수 없다는 사실을 알고 실망 했을지도 모릅니다. 저의 경우는 소프트트웨어 코딩을 하는데, 디스플레이의 하단 공간을 확보해서 쾌적한 코딩환경을 만들기 위해서 왼쪽으로 작업표시줄을 이동하고]]></description>
+      <content:encoded><![CDATA[<p>윈도우10 혹은 우분투 작업표시줄에 익숙한 당신이라면, 윈도우11에서 작업표시줄의 위치를 이동할 수 없다는 사실을 알고 실망 했을지도 모릅니다.</p>
 
-<p>저의경우는 소프트트웨어 코딩을 하는데, 디스플레이의 하단 공간을 확보해서 쾌적한 코딩환경을 만들기 위해서 왼쪽으로 작업표시줄을 이동하고 싶었습니다. 그래서 2024년 최신의 윈도우11의 작업표시줄을 왼쪽으로 이동하는 방법을 소개하려고 합니다.</p>
+<p>저의 경우는 소프트트웨어 코딩을 하는데, 디스플레이의 하단 공간을 확보해서 쾌적한 코딩환경을 만들기 위해서 왼쪽으로 작업표시줄을 이동하고 싶었습니다. 그래서 2024년 최신의 윈도우11의 작업표시줄을 왼쪽으로 이동하는 방법을 소개하려고 합니다.</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
@@ -50,9 +50,11 @@
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" alt="작업 표시줄 위치 변경 - 레지스트리를 수정는 방식은 더 이상 동작불가" />
 <em>작업 표시줄 위치 변경 - 레지스트리를 수정는 방식은 더 이상 동작불가</em></p>
 
-<p>네 맞습니다. 레지스트리를 수정해서 작업표시줄의 위치를 변경하는 방식은 더 이상 동작하지 않습니다. 윈도우11이 업데이트 되면서 불가능해 진것 같습니다. 그 대안으로 윈도우11이 기본으로 제공하는 방법은 알려진게 없습니다. 하지만, 작업 표시줄을 설정 가능한 소프트웨어들이 존재합니다.</p>
+<p>많은 사이트들에서 윈도우11의 작업표시줄을 이동하는 방법으로 레지스트리를 수정하는 방식을 소개하고 있습니다. 하지만, 레지스트리 값의 수정을 통한 방법은 더 이상 동작하지 않습니다.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Start 11</code>은 1카피 당 10 달러의 가격이 책정되어 있고 아직 사용해 보지 않았습니다. 누구나 그렇 듯, 유료 정책의 소프트웨어는 설치하기에 부담이 있습니다.</p>
+<p>윈도우11이 패치가 되면서 불가능해 진것 같습니다. 그 대안으로 윈도우11이 기본으로 제공하는 방법은 알려진게 없습니다. 하지만, 작업 표시줄을 설정 가능한 소프트웨어들이 존재합니다.</p>
+
+<p>2개의 소프트웨어를 소개 하겠습니다. 그 중에 하나인 <code class="language-plaintext highlighter-rouge">Start 11</code>는 1카피 당 10 달러의 가격이 책정되어 있고 아직 사용해 보지 않았습니다. 누구나 그렇 듯, 유료 정책의 소프트웨어는 설치하기에 부담이 있습니다.</p>
 <ul>
   <li><a href="https://www.stardock.com/products/start11/">Start 11</a>: 유료(1 카피당 10달러 정도), 30일 평가기간 제공</li>
   <li><a href="https://github.com/valinet/ExplorerPatcher">Explorer Patcher</a>: 무료 오픈소스(깃허브 배포)</li>
@@ -88,7 +90,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">작업표시줄 위치</code> 관련해서 윈도우 10은 상, 하, 좌, 위 이동이 가능합니다. 하지만 윈도우11의 작업표시줄 위치는 아래에 고정되어 있고 공식적인 설정에서는 변경이 불가능합니다.</p>
 <blockquote class="prompt-tip">
-  <p>작업표시줄 컨텐츠를 왼쪽정렬<br />
+  <p>**작업표시줄 컨텐츠를 왼쪽정렬 **<br />
 Explorer Patcher 소프트웨어는 작업표시줄 컨텐츠의 왼쪽 정렬만 가능한 윈도우10의 운용컨셉을 따릅니다. 작업표시줄을 이동하기 위해서 소프트웨어를 사용하기로 결정했다면 의미가 없는 팁이긴 합니다. 일반적으로 작업표시줄 컨텐츠의 정렬을 변경하기 위한 설정은 <code class="language-plaintext highlighter-rouge">설정 &gt; 개인설정 &gt; 작업 표시줄 동작 &gt; 작업표시줄 맞춤</code> 에 있습니다.</p>
 </blockquote>
 
@@ -110,23 +112,24 @@ Explorer Patcher 소프트웨어는 작업표시줄 컨텐츠의 왼쪽 정렬�
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" alt="윈도우11 - 작업표시줄에 마우스 오른쪽 클릭" />
 <em>윈도우11 - 작업표시줄에 마우스 오른쪽 클릭</em></p>
 
-<p>Explorer Patcher 의 Properties 윈도우는 많은 설정항목을 표시 될 것입니다. 여기서 우리가 관심을 가져야 할 항목은 <code class="language-plaintext highlighter-rouge">Taskbar 탭</code>에 있습니다.</p>
-
-<p>위에서 언급 했듯이, 이 소프트웨어는 윈도우10의 작업표시줄 운용방식을 따르는 컨셉을 가지고 있습니다. 당신이 Taskbar style을 윈도우10으로 설정했다면 윈도우11과 같이 작업표시줄 컨텐츠를 가운데 정렬하는 설정은 옵션에 없습니다.</p>
+<p>Explorer Patcher 의 Properties 윈도우에는 많은 설정항목이이 표시 될 것입니다. 여기서 우리가 관심을 가져야 할 항목은 <code class="language-plaintext highlighter-rouge">Taskbar 탭</code>에 있습니다.</p>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" alt="`Explorer Patcher` - Properties 설정" />
 <em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - Properties 설정</em></p>
 
-<p><strong>a.</strong>메인 디스플레이의 작업표시줄의 위치를 설정하는 설정입니다.</p>
-
-<p><strong>b.</strong>다중 디스플레이를 사용하는 사용자에게만 의미가 있습니다. 메인 디스플레이를 제외한 다른 디스플레이들의 작업표시줄 위치를 설정합니다.</p>
-
-<p><strong>c.</strong>동일한 소프트웨어를 여러게 실행 했을때, 작업표시줄에 아이콘을 하나의 아이콘으로 표시할지 여부를 설정합니다.</p>
+<p>위에서 언급 했듯이, 이 소프트웨어는 윈도우10의 작업표시줄 운용방식을 따르는 컨셉을 가지고 있습니다. 그렇기 때문에, 당신이 Taskbar style을 윈도우10으로 설정했다면 윈도우11과 같이 작업표시줄 컨텐츠를 가운데 정렬하는 설정은 옵션에 없습니다.</p>
+<ul>
+  <li><strong>a.</strong> 메인 디스플레이의 작업표시줄의 위치를 설정합니다.</li>
+  <li><strong>b.</strong> 다중 디스플레이를 사용하는 사용자에게만 의미가 있습니다. 메인 디스플레이를 제외한 다른 디스플레이들의 작업표시줄 위치를 설정합니다.</li>
+  <li><strong>c.</strong> 동일한 소프트웨어를 여러게 실행 했을때, 메인 디스플레이 작업표시줄에 아이콘을 하나로 표시할지 여부를 설정합니다.</li>
+  <li><strong>d.</strong> 메인 디스플레이가 아닌 다중 디스플레이에서 작업표시줄 아이콘을 하나의 아이콘으로 표시할지 여부를 설정합니다.</li>
+  <li><strong>e.</strong> 모두 원하는 대로 설정 했다면, 이것을 완벽하게 적용하기 위해서 Explorer를 재시작해야 합니다.</li>
+</ul>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" alt="윈도우11 - 같은 소프트웨어들이 여러개 실행 되었을때, 작업표시줄에 하나의 아이콘으로 합쳐서 표시" />
 <em>윈도우11 - 같은 소프트웨어들이 여러개 실행 되었을때, 작업표시줄에 하나의 아이콘으로 합쳐서 표시</em></p>
 
-<p><strong>d.</strong>모두 원하는 대로 설정 했다면, 이것을 완벽하게 적용하기 위해서 Explorer를 재시작해야 합니다.</p>
+<p>마지막 까지 잘 따라오셨다면, 아래 사진과 같이 작업표시줄이 왼쪽으로 이동 된 것을 확인 할 수 있습니다.</p>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" alt="윈도우11 - 작업표시줄 왼쪽으로 이동" />
 <em>윈도우11 - 작업표시줄 왼쪽으로 이동</em></p>

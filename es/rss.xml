@@ -33,8 +33,8 @@
       <category><![CDATA[ÉL,Solución de problemas]]></category>
       <tag><![CDATA[ÉL,Solucióndeproblemas]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/es/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
-      <description><![CDATA[Si ha estado usando Windows 10 o está familiarizado con la barra de tareas de Ubuntu, es posible que le haya decepcionado saber que no puede mover la posición]]></description>
-      <content:encoded><![CDATA[<p>Si ha estado usando Windows 10 o está familiarizado con la barra de tareas de Ubuntu, es posible que le haya decepcionado saber que no puede mover la posición de la barra de tareas en Windows 11.</p>
+      <description><![CDATA[Si está acostumbrado a la barra de tareas de Windows 10 o Ubuntu, es posible que se sienta decepcionado al saber que no puede mover la posición de la barra de]]></description>
+      <content:encoded><![CDATA[<p>Si está acostumbrado a la barra de tareas de Windows 10 o Ubuntu, es posible que se sienta decepcionado al saber que no puede mover la posición de la barra de tareas en Windows 11.</p>
 
 <p>En mi caso, codifico software y quería mover la barra de tareas hacia la izquierda para asegurar espacio en la parte inferior de la pantalla y crear un entorno de codificación cómodo. Entonces, me gustaría presentarles cómo mover la barra de tareas hacia la izquierda en la última versión de Windows 11 en 2024.</p>
 
@@ -50,9 +50,11 @@
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" alt="Cambiar la ubicación de la barra de tareas: modificar el registro ya no funciona" />
 <em>Cambiar la ubicación de la barra de tareas: modificar el registro ya no funciona</em></p>
 
-<p>Sí, eso es correcto. Cambiar la ubicación de la barra de tareas modificando el registro ya no funciona. Parece haberse vuelto imposible con la actualización de Windows 11. Como alternativa, no existe ningún método conocido proporcionado de forma predeterminada en Windows 11. Sin embargo, existe un software que permite configurar la barra de tareas.</p>
+<p>Muchos sitios están introduciendo un método para modificar el registro moviendo la barra de tareas en Windows 11. Sin embargo, modificar el valor del registro ya no funciona.</p>
 
-<p><code class="language-plaintext highlighter-rouge">Start 11</code> tiene un precio de 10 dólares por copia y aún no lo he probado. Como ocurre con todos, el software pago puede resultar complicado de instalar.</p>
+<p>Parece haberse vuelto imposible después de que se parchó Windows 11. Como alternativa, no existe ningún método conocido proporcionado de forma predeterminada en Windows 11. Sin embargo, existe un software que permite configurar la barra de tareas.</p>
+
+<p>Presentaré dos software. Uno de ellos, “Start 11”, tiene un precio de 10 dólares por copia y aún no lo he probado. Como ocurre con todos, el software pago puede resultar complicado de instalar.</p>
 <ul>
   <li><a href="https://www.stardock.com/products/start11/">Inicio 11</a>: Pagado (alrededor de $10 por copia), se proporciona un período de evaluación de 30 días</li>
   <li><a href="https://github.com/valinet/ExplorerPatcher">Explorer Patcher</a>: código abierto gratuito (distribuido en GitHub)</li>
@@ -88,7 +90,7 @@
 
 <p>En cuanto a la <code class="language-plaintext highlighter-rouge">posición de la barra de tareas</code>, Windows 10 te permite moverla hacia arriba, abajo, izquierda o arriba. Sin embargo, la posición de la barra de tareas en Windows 11 está fija en la parte inferior y no se puede cambiar en la configuración oficial.</p>
 <blockquote class="prompt-tip">
-  <p>Alinear el contenido de la barra de tareas a la izquierda<br />
+  <p><strong>Contenido de la barra de tareas alineado a la izquierda</strong><br />
 El software Explorer Patcher sigue el concepto operativo de Windows 10, que sólo permite la alineación hacia la izquierda del contenido de la barra de tareas. Este consejo no tiene sentido si decide utilizar un software para mover la barra de tareas. Generalmente, las configuraciones para cambiar la alineación del contenido de la barra de tareas se encuentran en “Configuración &gt; Personalización &gt; Comportamiento de la barra de tareas &gt; Alineación de la barra de tareas”.</p>
 </blockquote>
 
@@ -110,23 +112,24 @@ El software Explorer Patcher sigue el concepto operativo de Windows 10, que sól
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄에_마우스_오른쪽_클릭.png" alt="Windows 11: haga clic derecho en la barra de tareas" />
 <em>Windows 11: haga clic derecho en la barra de tareas</em></p>
 
-<p>La ventana Propiedades de Explorer Patcher mostrará muchos elementos de configuración. El elemento que nos interesa aquí está en la <code class="language-plaintext highlighter-rouge">pestaña Barra de tareas</code>.</p>
-
-<p>Como se mencionó anteriormente, este software tiene un concepto que sigue el método de operación de la barra de tareas de Windows 10. Si configura el estilo de la barra de tareas en Windows 10, no hay ninguna opción para centrar el contenido de la barra de tareas como en Windows 11.</p>
+<p>Muchos elementos de configuración se mostrarán en la ventana Propiedades de Explorer Patcher. El elemento que nos interesa aquí está en la <code class="language-plaintext highlighter-rouge">pestaña Barra de tareas</code>.</p>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" alt="`Explorer Patcher` - Configuración de propiedades" />
 <em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - Configuración de propiedades</em></p>
 
-<p><strong>a.</strong>Esta configuración establece la posición de la barra de tareas en la pantalla principal.</p>
-
-<p><strong>b.</strong>Solo es significativo para usuarios con múltiples pantallas. Establezca la posición de la barra de tareas para pantallas distintas a la pantalla principal.</p>
-
-<p><strong>c.</strong>Establece si se muestra un solo icono en la barra de tareas cuando se ejecuta el mismo software varias veces.</p>
+<p>Como se mencionó anteriormente, este software tiene un concepto que sigue el método de operación de la barra de tareas de Windows 10. Por lo tanto, si configura el estilo de la barra de tareas en Windows 10, no hay ninguna opción para centrar el contenido de la barra de tareas como en Windows 11.</p>
+<ul>
+  <li><strong>a.</strong> Establece la posición de la barra de tareas en la pantalla principal.</li>
+  <li><strong>b.</strong> Solo es significativo para usuarios con múltiples pantallas. Establezca la posición de la barra de tareas para pantallas distintas a la pantalla principal.</li>
+  <li><strong>c.</strong> Establece si se muestra un icono en la barra de tareas de la pantalla principal cuando se ejecuta el mismo software varias veces.</li>
+  <li><strong>d.</strong> Establece si se mostrará el ícono de la barra de tareas como un solo ícono en varias pantallas distintas de la pantalla principal.</li>
+  <li><strong>e.</strong> Una vez que haya configurado todo como desea, deberá reiniciar Explorer para que surta efecto por completo.</li>
+</ul>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" alt="Windows 11: cuando se ejecutan varios programas iguales, se muestran como un único icono en la barra de tareas." />
 <em>Windows 11: cuando se ejecutan varios programas iguales, se muestran como un único icono en la barra de tareas.</em></p>
 
-<p><strong>d.</strong>Una vez que haya configurado todo como desea, deberá reiniciar Explorer para que surta efecto completo.</p>
+<p>Si siguió hasta el final, podrá ver que la barra de tareas se ha movido hacia la izquierda como se muestra en la imagen a continuación.</p>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" alt="Windows 11: mover la barra de tareas a la izquierda" />
 <em>Windows 11: mover la barra de tareas a la izquierda</em></p>

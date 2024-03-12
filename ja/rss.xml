@@ -33,10 +33,10 @@
       <category><![CDATA[それ,トラブルシューティング]]></category>
       <tag><![CDATA[それ,トラブルシューティング]]></tag>
       <guid isPermaLink="true">https://unclesnote.com/ja/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher</guid>
-      <description><![CDATA[Windows 10を使用してから使用したり、Ubuntuのタスクバーに慣れている場合は、Windows 11でタスクバーの位置を移動できないことを知って失望したかもしれません。私の場合はソフトウェアコーディングをしますが、ディスプレイの下部スペースを確保して快適なコーディング環境を作るために左に作業バーを移動したか]]></description>
-      <content:encoded><![CDATA[<p>Windows 10を使用してから使用したり、Ubuntuのタスクバーに慣れている場合は、Windows 11でタスクバーの位置を移動できないことを知って失望したかもしれません。</p>
+      <description><![CDATA[Windows10またはUbuntuのタスクバーに慣れているあなたなら、Windows11でタスクバーの位置を移動できないことを知って失望したかもしれません。私の場合はソフトウェアコーディングをしますが、ディスプレイの下部スペースを確保して快適なコーディング環境を作るために左に作業バーを移動したかったです。そこで20]]></description>
+      <content:encoded><![CDATA[<p>Windows10またはUbuntuのタスクバーに慣れているあなたなら、Windows11でタスクバーの位置を移動できないことを知って失望したかもしれません。</p>
 
-<p>私の場合はソフトウェアコーディングをしますが、ディスプレイの下部スペースを確保して快適なコーディング環境を作るために左に作業バーを移動したかったのです。そこで2024年最新のWindows11のタスクバーを左に移動する方法を紹介しようとしています。</p>
+<p>私の場合はソフトウェアコーディングをしますが、ディスプレイの下部スペースを確保して快適なコーディング環境を作るために左に作業バーを移動したかったです。そこで2024年最新のWindows11のタスクバーを左に移動する方法を紹介しようとしています。</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
@@ -50,9 +50,11 @@
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_작업_표시줄_위치_변경-레지스트리를_수정는_방식은_더_이상_동작불가.png" alt="タスクバーの場所を変更する - レジストリを変更する方法はもう動作しません" />
 <em>タスクバーの場所を変更する - レジストリを変更する方法はもう動作しません</em></p>
 
-<p>はい、そうです。レジストリを変更してタスクバーの位置を変更する方法はもう機能しません。 Windows11が更新されて不可能になったようです。その代わりに、Windows11がデフォルトで提供する方法は知られていません。ただし、タスクバーを設定できるソフトウェアが存在します。</p>
+<p>多くのサイトでWindows11のタスクバーを移動する方法でレジストリを修正する方法を紹介しています。ただし、レジストリ値を変更する方法はもう機能しません。</p>
 
-<p><code class="language-plaintext highlighter-rouge">Start 11</code>は、1コピーあたり10ドルの価格が策定されており、まだ試していません。誰でもそうであるように、有料ポリシーのソフトウェアはインストールに負担があります。</p>
+<p>Windows11がパッチになって不可能になったようです。その代わりに、Windows11がデフォルトで提供する方法は知られていません。ただし、タスクバーを設定できるソフトウェアが存在します。</p>
+
+<p>2つのソフトウェアを紹介します。その中のひとつ<code class="language-plaintext highlighter-rouge">Start 11</code>は、1コピーあたり10ドルの価格が策定されており、まだ使ってみていません。誰でもそうであるように、有料ポリシーのソフトウェアはインストールに負担があります。</p>
 <ul>
   <li><a href="https://www.stardock.com/products/start11/">Start 11</a>:有料(1コピーあたり10ドル程度)、30日評価期間提供</li>
   <li><a href="https://github.com/valinet/ExplorerPatcher">Explorer Patcher</a>: 無料オープンソース</li>
@@ -88,7 +90,7 @@
 
 <p><code class="language-plaintext highlighter-rouge">タスクバーの位置</code>に関して、ウィンドウ10は上、下、左、上の移動が可能です。ただし、Windows11のタスクバーの位置は下に固定されており、公式の設定では変更できません。</p>
 <blockquote class="prompt-tip">
-  <p>タスクバーの内容を左揃え<br />
+  <p><strong>タスクバーの内容を左揃え</strong><br />
 Explorer Patcherソフトウェアは、タスクバーのコンテンツの左揃えのみが可能なWindows10の運用コンセプトに従います。タスクバーを移動するためにソフトウェアを使用することにした場合、意味のないヒントです。通常、タスクバーの内容の並べ替えを変更するための設定は、<code class="language-plaintext highlighter-rouge">設定</code>&gt;<code class="language-plaintext highlighter-rouge">個人設定</code>&gt;<code class="language-plaintext highlighter-rouge">タスクバーの動作</code>&gt;<code class="language-plaintext highlighter-rouge">タスクバーの配置</code>にあります。</p>
 </blockquote>
 
@@ -112,21 +114,22 @@ Explorer Patcherソフトウェアは、タスクバーのコンテンツの左�
 
 <p>Explorer PatcherのPropertiesウィンドウには多くの設定項目が表示されます。ここで私たちが興味を持っている必要があるものは<code class="language-plaintext highlighter-rouge">Taskbar</code>タブにあります。</p>
 
-<p>上記のように、このソフトウェアはWindows 10のタスクバーの操作方法に従うコンセプトを持っています。 Taskbar styleをWindows 10に設定した場合、Windows 11のようにタスクバーの内容を中央揃えする設定はオプションにありません。</p>
-
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_explorer_patcher-properties_설정.png" alt="`Explorer Patcher` - プロパティ設定" />
 <em><code class="language-plaintext highlighter-rouge">Explorer Patcher</code> - プロパティ設定</em></p>
 
-<p><strong>a.</strong>メインディスプレイのタスクバーの位置を設定する設定です。</p>
-
-<p><strong>b.</strong>マルチディスプレイを使用しているユーザーにのみ意味があります。メインディスプレイを除く他のディスプレイのタスクバーの位置を設定します。</p>
-
-<p><strong>c.</strong>同じソフトウェアを複数実行したときに、タスクバーにアイコンを1つのアイコンとして表示するかどうかを設定します。</p>
+<p>上記のように、このソフトウェアはWindows 10のタスクバーの操作方法に従うコンセプトを持っています。そのため、Taskbar styleをWindows 10に設定した場合、Windows 11のようにタスクバーのコンテンツを中央揃えする設定はオプションにありません。</p>
+<ul>
+  <li><strong>a.</strong> メインディスプレイのタスクバーの位置を設定します。</li>
+  <li><strong>b.</strong> マルチディスプレイを使用しているユーザーにのみ意味があります。メインディスプレイを除く他のディスプレイのタスクバーの位置を設定します。</li>
+  <li><strong>c.</strong>同じソフトウェアを複数実行したときに、メインディスプレイのタスクバーにアイコンを1つとして表示するかどうかを設定します。</li>
+  <li><strong>d.</strong> メインディスプレイではなく、マルチディスプレイでタスクバーアイコンを 1 つのアイコンで表示するかどうかを設定します。</li>
+  <li><strong>e.</strong>すべてが好きなように設定されている場合は、これを完全に適用するためにExplorerを再起動する必要があります。</li>
+</ul>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-같은_소프트웨어들이_여러개_실행_되었을때_작업표시줄에_하나의_아이콘으로_합쳐서_표시.png" alt="Windows 11 - 同じソフトウェアが複数実行されているとき、タスクバーに1つのアイコンを合わせて表示" />
 <em>Windows 11 - 同じソフトウェアが複数実行されているとき、タスクバーに1つのアイコンを合わせて表示</em></p>
 
-<p><strong>d.</strong>すべて必要に応じて設定した場合は、これを完全に適用するためにエクスプローラを再起動する必要があります。</p>
+<p>最後までよくついてきたら、下の写真のようにタスクバーが左に移動されたことを確認できます。</p>
 
 <p><img src="/assets/images/240312005832/unclesnote-latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher-txt_윈도우11-작업표시줄_왼쪽으로_이동.png" alt="Windows 11 - タスクバーの左に移動" />
 <em>Windows 11 - タスクバーの左に移動</em></p>
