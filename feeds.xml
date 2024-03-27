@@ -14,7 +14,19 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+  <entry>
+    <title><![CDATA[Obsidian heading (subheading) decoration - CSS Snippets]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
+    <id>https://unclesnote.com/en/240327185243/obsidian_heading_subheading_decoration_css_snippets</id>    
+    <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+    <issued>Wed, 27 Mar 2024 18:52:43 +0900</issued>
+		<created>Wed, 27 Mar 2024 18:52:43 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[You may be using a theme you like in Obsidian, but sometimes the heading style defined in the theme may make it difficult to distinguish readable paragraphs.]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240327185243/en-thumb-unclesnote-obsidian_heading_subheading_decoration_css_snippets.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Latest in 2024 - How to move the taskbar to the left in Windows 11 - Explorer Patcher]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
@@ -151,7 +163,7 @@
     <title><![CDATA[Create shortcut icons for multiple Obsidian vaults - URI]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri"/>
     <id>https://unclesnote.com/en/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:21 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:21 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[In some cases, there may be users who organize their posts by creating multiple vaults according to categories. It can be annoying to open the Vault in]]></summary>
@@ -175,7 +187,7 @@
     <title><![CDATA[Embed YouTube video into Obsidian - iframe, ReadItLater]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater"/>
     <id>https://unclesnote.com/en/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Sat, 30 Dec 2023 17:12:41 +0900</issued>
 		<created>Sat, 30 Dec 2023 17:12:41 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[When writing articles in Obsidian, you may sometimes need to embed or scrap YouTube videos. There are two main ways to embed YouTube videos.]]></summary>
@@ -271,7 +283,7 @@
     <title><![CDATA[Obsidian's Callouts And Quotation Block]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/en/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[The dictionary definition of callout(s) is to call out loudly, and is used to draw the reader's attention and inform them of important or additional]]></summary>

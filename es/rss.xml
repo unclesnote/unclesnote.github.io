@@ -21,8 +21,236 @@
     <language>es</language>
     <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Tue, 12 Mar 2024 00:58:32 +0900</lastBuildDate>
-    <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Decoración de encabezado (subtítulo) de obsidiana - Fragmentos CSS]]></title>
+      <link>https://unclesnote.com/es/240327185243/obsidian_heading_subheading_decoration_css_snippets</link>
+      <guid>https://unclesnote.com/es/240327185243/obsidian_heading_subheading_decoration_css_snippets</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+      <category><![CDATA[Obsidiana]]></category>
+      <tag><![CDATA[Obsidiana]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/240327185243/obsidian_heading_subheading_decoration_css_snippets</guid>
+      <description><![CDATA[Es posible que esté utilizando un tema que le guste en Obsidian, pero a veces el estilo de título definido en el tema puede dificultar la distinción de]]></description>
+      <content:encoded><![CDATA[<p>Es posible que esté utilizando un tema que le guste en Obsidian, pero a veces el estilo de título definido en el tema puede dificultar la distinción de párrafos legibles. Entonces, me gustaría presentarle cómo definir su propio estilo de título.</p>
+
+<p>Este puede ser un proceso un poco complicado, pero usaremos la función <code class="language-plaintext highlighter-rouge">CSS Snippets</code> compatible con Obsidian.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-css_snippets_기능을_사용해_재정의한_해딩_소제목.png" alt="Obsidiana: títulos (subtítulos) redefinidos mediante la función CSS Snippets" />
+<em>Obsidiana: títulos (subtítulos) redefinidos mediante la función CSS Snippets</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="enfoque-y-principios">Enfoque y principios</h2>
+<p>Obsidian Editor fue desarrollado en la web. Entonces, cuando presionas la tecla de acceso directo <code class="language-plaintext highlighter-rouge">Ctrl + Shift + i</code> en el Editor Obsidian, se abre una ventana de depuración en el lado derecho de Obsidian, como las herramientas de desarrollo del navegador Chrome. En la ventana de depuración, puede ver el código HTML y el código de la hoja de estilo (CSS) de la página de Obsidian y depurar diversa información web.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-개발자_도구.png" alt="Obsidiana - Herramientas para desarrolladores" />
+<em>Obsidiana - Herramientas para desarrolladores</em></p>
+
+<p>En este artículo, el enfoque para cambiar el estilo de título de Obsidian es redefinir el estilo de título (CSS, hoja de estilos) definido en el tema. La característica que hace esto posible es el “Fragmento CSS” de Obsidian.</p>
+
+<p>Para utilizar la función <code class="language-plaintext highlighter-rouge">CSS Snippet</code>, debes escribir un código de hoja de estilo web (CSS). Te recomiendo que primero apliques la plantilla que te proporcioné y la estudies más tarde para que se vea bonita.</p>
+<blockquote class="prompt-info">
+  <p><strong>Cómo abrir herramientas de desarrollo web en Obsidian</strong><br />
+Dependiendo del sistema operativo que estés utilizando, existen diferencias en cómo abrir las herramientas de desarrollador web en Obsidian. Debes presionar la tecla de acceso directo con la tecla Bloq Mayús en tu teclado apagada.</p>
+
+  <ul>
+    <li><strong>Windows</strong>: Ctrl + Mayús + i</li>
+    <li><strong>MacOS</strong>: Opción + Comando + i</li>
+  </ul>
+
+  <p>Si desea redefinir el estilo de más bloques, debe analizar las propiedades del código HTML utilizando herramientas de desarrollo.</p>
+</blockquote>
+<p>Además, saber un poco sobre las etiquetas HTML le ayudará a comprender lo que está pasando.</p>
+
+<p>Al definir la profundidad de un título, la sintaxis Markdown utilizada en Obsidian agrega el número de objetos punzantes (# caracteres) para definir la profundidad del título. La función HTML equivalente utiliza la etiqueta h.</p>
+
+<p>El número después de la etiqueta h en HTML corresponde al número de objetos punzantes (caracteres #) en Obsidian. Creo que será más fácil de entender si miras el ejemplo a continuación.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>Obsidian: Heading 1, HTML: h1 tag
+<span class="c">#</span>
+
+Obsidian: Heading 2, HTML: h2 tag
+<span class="c">##</span>
+
+Obsidian: Heading 3, HTML: h3 tag
+<span class="c">###</span>
+
+Obsidian: Heading 4, HTML: h4 tag
+<span class="c">####</span>
+
+Obsidian: Heading 5, HTML: h5 tag
+<span class="c">#####</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="crear-archivo-css">Crear archivo CSS</h2>
+<p>Cuando crea un repositorio de Obsidian, se crea una carpeta <code class="language-plaintext highlighter-rouge">.obsidian</code> en la carpeta raíz del repositorio de forma predeterminada. Cree una carpeta de “fragmentos” en esa carpeta.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언.obsidian_폴더-snippets_폴더_생성-mystyle.css_생성.png" alt="Obsidian - carpeta .obsidian - crear carpeta de fragmentos - crear mystyle.css" />
+<em>Obsidian - carpeta .obsidian - crear carpeta de fragmentos - crear mystyle.css</em></p>
+
+<p>Luego, cree un archivo <code class="language-plaintext highlighter-rouge">mystyle.css</code> en la carpeta creada, pegue el código de la hoja de estilos (CSS) a continuación y guárdelo.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="c">/* h1 */</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h1</span><span class="o">,</span> <span class="nc">.HyperMD-header-1</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-1</span> <span class="p">{</span>    
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span><span class="m">#f4d03f</span><span class="p">,</span> <span class="m">#fffb89</span><span class="p">,</span> <span class="m">#16a085</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#000000</span><span class="p">;</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="cp">!important</span><span class="p">;</span>    
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">25px</span> <span class="m">25px</span> <span class="m">30px</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">12px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h2 */</span>
+<span class="nt">h2</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h2</span><span class="o">,</span> <span class="nc">.HyperMD-header-2</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-2</span> <span class="p">{</span>    
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span><span class="m">#dcdcdc</span><span class="p">,</span> <span class="m">#bebebe</span><span class="p">,</span> <span class="m">#aaaaaa</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#000000</span><span class="p">;</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">15px</span> <span class="cp">!important</span><span class="p">;</span>    
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">25px</span> <span class="m">25px</span> <span class="m">29px</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>       
+<span class="p">}</span>
+
+<span class="c">/* h3 */</span>
+<span class="nt">h3</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h3</span><span class="o">,</span> <span class="nc">.HyperMD-header-3</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-3</span> <span class="p">{</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.2em</span> <span class="m">1em</span> <span class="m">0.2em</span> <span class="m">0.0em</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h4 */</span>
+<span class="nt">h4</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h4</span><span class="o">,</span> <span class="nc">.HyperMD-header-4</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-4</span> <span class="p">{</span>    
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h5 */</span>
+<span class="nt">h5</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h5</span><span class="o">,</span> <span class="nc">.HyperMD-header-5</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-5</span> <span class="p">{</span>    
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Para explicar brevemente el código, se divide en un total de 5 párrafos, y cada párrafo redefine el estilo desde el primer encabezado (h1) hasta el quinto encabezado (h5). La fuente y el tamaño de fuente establecidos en el tema se utilizan tal cual, y el color, el borde y el fondo de la fuente se redefinen.</p>
+
+<p>A continuación se muestra una breve descripción de las propiedades que se utilizan en cada párrafo de código. Si desea ajustarlo, puede consultarlo y crear su propio estilo de título.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Atributos en párrafos</th>
+      <th>explicación</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>color</td>
+      <td>color de letra</td>
+    </tr>
+    <tr>
+      <td>border-bottom</td>
+      <td>Margen debajo del bloque de encabezado, espacio entre el bloque de encabezado y la línea general<br /> (También puedes usar la etiqueta de margen, pero no funciona en Obsidian)</td>
+    </tr>
+    <tr>
+      <td>padding</td>
+      <td>Margen interno del bloque de rumbo<br /><br /> Primer número: margen superior<br /> Segundo número: margen inferior</td>
+    </tr>
+    <tr>
+      <td>background</td>
+      <td>Color de fondo negro</td>
+    </tr>
+    <tr>
+      <td>border-radius</td>
+      <td>Doblado de borde cuadrado del bloque de encabezado</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="configuración-de-fragmentos-de-obsidiana">Configuración de fragmentos de obsidiana</h2>
+<p>Seleccione la pestaña “Apariencia” en la configuración de Obsidian.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance.png" alt="Obsidiana - Tema (Aparición)" />
+<em>Obsidiana - Tema (Aparición)</em></p>
+
+<p>Y, si <code class="language-plaintext highlighter-rouge">mystyle.css</code> guardado en el paso anterior aparece en la parte inferior del menú, actívelo.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" alt="Obsidian - Tema (Apariencia) - Habilitar fragmentos de CSS" />
+<em>Obsidian - Tema (Apariencia) - Habilitar fragmentos de CSS</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240327185243/es-thumb-unclesnote-obsidian_heading_subheading_decoration_css_snippets.png" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-css_snippets_기능을_사용해_재정의한_해딩_소제목.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-개발자_도구.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언.obsidian_폴더-snippets_폴더_생성-mystyle.css_생성.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Lo último en 2024- cómo mover la barra de tareas hacia la izquierda en Windows 11 - Explorer Patcher]]></title>

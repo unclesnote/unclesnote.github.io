@@ -14,7 +14,19 @@
   <author><name><![CDATA[アンクルズノート]]></name></author>
   <id>https://unclesnote.com/ja/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+  <entry>
+    <title><![CDATA[Obsidianハディング（小タイトル）を飾る - CSS Snippets]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
+    <id>https://unclesnote.com/ja/240327185243/obsidian_heading_subheading_decoration_css_snippets</id>    
+    <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+    <issued>Wed, 27 Mar 2024 18:52:43 +0900</issued>
+		<created>Wed, 27 Mar 2024 18:52:43 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[あなたはObsidianでお気に入りのテーマを見つけて使用していますが、時々テーマで定義されたハディングスタイルが文の段落を読みやすく区別するのが難しいかもしれません。そのため、独自のハディングスタイルを定義する方法を紹介したいと思います。少し複雑な手順かもしれませんが、Obsidianでサポートされている`CSS]]></summary>
+    <category><![CDATA[黒曜石]]></category>
+    <tag><![CDATA[黒曜石]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240327185243/ja-thumb-unclesnote-obsidian_heading_subheading_decoration_css_snippets.png"/>
+  </entry>
   <entry>
     <title><![CDATA[2024年最新 - Windows11のタスクバー左に移動方法 - Explorer Patcher]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
@@ -151,7 +163,7 @@
     <title><![CDATA[複数の Obsidian 保管庫のショートカット アイコンを作成する - URI]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri"/>
     <id>https://unclesnote.com/ja/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:21 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:21 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[場合によっては、カテゴリごとに複数のボールトを作成して投稿を整理するユーザーもいるかもしれません。 Obsidian の Vault を開くたびに開くのは面倒かもしれません。そこで、Windows環境で保管庫ごとにObsidianを開くことができるショートカットアイコンを作成する方法を紹介したいと思います。原理を説明]]></summary>
@@ -175,7 +187,7 @@
     <title><![CDATA[YouTube ビデオを Obsidian に埋め込む - iframe、ReadItLater]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater"/>
     <id>https://unclesnote.com/ja/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Sat, 30 Dec 2023 17:12:41 +0900</issued>
 		<created>Sat, 30 Dec 2023 17:12:41 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[Obsidian で記事を書くとき、場合によっては YouTube ビデオを埋め込んだりスクラップしたりする必要があるかもしれません。 YouTube 動画を埋め込むには主に 2 つの方法があります。]]></summary>
@@ -271,7 +283,7 @@
     <title><![CDATA[Obsidian のコールアウトと引用ブロック]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/ja/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[辞書のコールアウトの定義は、大声で呼びかけることであり、読者の注意を引き、重要な情報や追加情報を知らせるために使用されます。 Obsidian で吹き出しを表現するための文法と型について学びましょう。]]></summary>

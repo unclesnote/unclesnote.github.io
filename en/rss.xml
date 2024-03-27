@@ -21,8 +21,236 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Tue, 12 Mar 2024 00:58:32 +0900</lastBuildDate>
-    <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[Obsidian heading (subheading) decoration - CSS Snippets]]></title>
+      <link>https://unclesnote.com/en/240327185243/obsidian_heading_subheading_decoration_css_snippets</link>
+      <guid>https://unclesnote.com/en/240327185243/obsidian_heading_subheading_decoration_css_snippets</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+      <category><![CDATA[Obsidian]]></category>
+      <tag><![CDATA[Obsidian]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240327185243/obsidian_heading_subheading_decoration_css_snippets</guid>
+      <description><![CDATA[You may be using a theme you like in Obsidian, but sometimes the heading style defined in the theme may make it difficult to distinguish readable paragraphs.]]></description>
+      <content:encoded><![CDATA[<p>You may be using a theme you like in Obsidian, but sometimes the heading style defined in the theme may make it difficult to distinguish readable paragraphs. So, I would like to introduce you to how to define your own heading style.</p>
+
+<p>This may be a slightly complicated process, but we are going to use the <code class="language-plaintext highlighter-rouge">CSS Snippets</code> feature supported by Obsidian.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-css_snippets_기능을_사용해_재정의한_해딩_소제목.png" alt="Obsidian - Headings (subheadings) redefined using CSS Snippets function" />
+<em>Obsidian - Headings (subheadings) redefined using CSS Snippets function</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="approach-and-principles">Approach and principles</h2>
+<p>Obsidian Editor was developed on the web. So, when you press the <code class="language-plaintext highlighter-rouge">Ctrl + Shift + i</code> shortcut key in the Obsidian Editor, a debugging window opens on the right side of Obsidian, like the developer tools of the Chrome browser. In the debugging window, you can view the HTML code and style sheet (CSS) code of the Obsidian page, and debug various web information.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-개발자_도구.png" alt="Obsidian - Developer Tools" />
+<em>Obsidian - Developer Tools</em></p>
+
+<p>In this article, the approach to change the Obsidian heading style is to redefine the heading style (CSS, style sheet) defined in the theme. The feature that makes this possible is Obsidian’s <code class="language-plaintext highlighter-rouge">CSS Snippet</code>.</p>
+
+<p>In order to use the <code class="language-plaintext highlighter-rouge">CSS Snippet</code> function, you must write a web style sheet (CSS) code. I recommend that you first apply the template I provided and study it later to make it look pretty.</p>
+<blockquote class="prompt-info">
+  <p><strong>How ​​to open web developer tools in Obsidian</strong><br />
+Depending on the OS you`re using, there are differences in how to open the web developer tools in Obsidian. You must press the shortcut key with the Caps Lock key on your keyboard turned off.</p>
+
+  <ul>
+    <li><strong>Windows</strong>: Ctrl + Shift + i</li>
+    <li><strong>MacOS</strong>: Option + Command + i</li>
+  </ul>
+
+  <p>If you want to redefine the style of more blocks, you need to analyze the properties of the HTML code using developer tools.</p>
+</blockquote>
+<p>Additionally, knowing a little bit about HTML tags will help you understand what’s going on.</p>
+
+<p>When defining the depth of a heading, the Markdown syntax used in Obsidian adds the number of sharps (# characters) to define the depth of the heading. The equivalent HTML function uses the h tag.</p>
+
+<p>The number after the h tag in HTML corresponds to the number of sharps (# characters) in Obsidian. I think it will be easier to understand if you look at the example below.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>Obsidian: Heading 1, HTML: h1 tag
+<span class="c">#</span>
+
+Obsidian: Heading 2, HTML: h2 tag
+<span class="c">##</span>
+
+Obsidian: Heading 3, HTML: h3 tag
+<span class="c">###</span>
+
+Obsidian: Heading 4, HTML: h4 tag
+<span class="c">####</span>
+
+Obsidian: Heading 5, HTML: h5 tag
+<span class="c">#####</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="create-css-file">Create CSS file</h2>
+<p>When you create an Obsidian repository, a <code class="language-plaintext highlighter-rouge">.obsidian</code> folder is created in the repository root folder by default. Create a <code class="language-plaintext highlighter-rouge">snippets</code> folder in that folder.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언.obsidian_폴더-snippets_폴더_생성-mystyle.css_생성.png" alt="Obsidian - .obsidian folder - create snippets folder - create mystyle.css" />
+<em>Obsidian - .obsidian folder - create snippets folder - create mystyle.css</em></p>
+
+<p>Then, create a <code class="language-plaintext highlighter-rouge">mystyle.css</code> file in the created folder, paste the style sheet (CSS) code below and save it.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="c">/* h1 */</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h1</span><span class="o">,</span> <span class="nc">.HyperMD-header-1</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-1</span> <span class="p">{</span>    
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span><span class="m">#f4d03f</span><span class="p">,</span> <span class="m">#fffb89</span><span class="p">,</span> <span class="m">#16a085</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#000000</span><span class="p">;</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="cp">!important</span><span class="p">;</span>    
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">25px</span> <span class="m">25px</span> <span class="m">30px</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">12px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h2 */</span>
+<span class="nt">h2</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h2</span><span class="o">,</span> <span class="nc">.HyperMD-header-2</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-2</span> <span class="p">{</span>    
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span><span class="m">#dcdcdc</span><span class="p">,</span> <span class="m">#bebebe</span><span class="p">,</span> <span class="m">#aaaaaa</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#000000</span><span class="p">;</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">15px</span> <span class="cp">!important</span><span class="p">;</span>    
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">25px</span> <span class="m">25px</span> <span class="m">29px</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>       
+<span class="p">}</span>
+
+<span class="c">/* h3 */</span>
+<span class="nt">h3</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h3</span><span class="o">,</span> <span class="nc">.HyperMD-header-3</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-3</span> <span class="p">{</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.2em</span> <span class="m">1em</span> <span class="m">0.2em</span> <span class="m">0.0em</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h4 */</span>
+<span class="nt">h4</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h4</span><span class="o">,</span> <span class="nc">.HyperMD-header-4</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-4</span> <span class="p">{</span>    
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h5 */</span>
+<span class="nt">h5</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h5</span><span class="o">,</span> <span class="nc">.HyperMD-header-5</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-5</span> <span class="p">{</span>    
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>To briefly explain the code, it is divided into a total of 5 paragraphs, and each paragraph redefines the style from the 1st heading (h1) to the 5th heading (h5). The font and font size set in the theme are used as is, and the font color, border, and background are redefined.</p>
+
+<p>Below is a brief description of the properties being used in each code paragraph. If you want to tune it, you can refer to it and create your own heading style.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attributes in Paragraphs</th>
+      <th>explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>color</td>
+      <td>letter color</td>
+    </tr>
+    <tr>
+      <td>border-bottom</td>
+      <td>Margin below heading block, gap between heading block and general line<br /> (You can also use the margin tag, but it doesn`t work in Obsidian)</td>
+    </tr>
+    <tr>
+      <td>padding</td>
+      <td>Internal margin of heading block<br /><br /> First number: upper margin<br /> Second number: bottom margin</td>
+    </tr>
+    <tr>
+      <td>background</td>
+      <td>Heading Black background color</td>
+    </tr>
+    <tr>
+      <td>border-radius</td>
+      <td>Heading block square edge bending</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="obsidian-snippets-settings">Obsidian Snippets Settings</h2>
+<p>Select the ‘Appearance’ tab in Obsidian settings.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance.png" alt="Obsidian - Theme (Appearance)" />
+<em>Obsidian - Theme (Appearance)</em></p>
+
+<p>And, if <code class="language-plaintext highlighter-rouge">mystyle.css</code> saved in the above step is displayed at the bottom of the menu, activate it.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" alt="Obsidian - Theme (Appearance) - Enable CSS snippets" />
+<em>Obsidian - Theme (Appearance) - Enable CSS snippets</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240327185243/en-thumb-unclesnote-obsidian_heading_subheading_decoration_css_snippets.png" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-css_snippets_기능을_사용해_재정의한_해딩_소제목.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-개발자_도구.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언.obsidian_폴더-snippets_폴더_생성-mystyle.css_생성.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Latest in 2024 - How to move the taskbar to the left in Windows 11 - Explorer Patcher]]></title>

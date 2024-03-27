@@ -14,7 +14,19 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Tue, 12 Mar 2024 00:58:32 +0900</modified>
+  <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+  <entry>
+    <title><![CDATA[Obsidian标题（副标题）装饰 - CSS 片段]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
+    <id>https://unclesnote.com/zh/240327185243/obsidian_heading_subheading_decoration_css_snippets</id>    
+    <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+    <issued>Wed, 27 Mar 2024 18:52:43 +0900</issued>
+		<created>Wed, 27 Mar 2024 18:52:43 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[您可能在 Obsidian 中使用您喜欢的主题，但有时主题中定义的标题样式可能会导致难以区分可读段落。因此，我想向您介绍如何定义自己的标题样式。这可能是一个稍微复杂的过程，但我们将使用 Obsidian 支持的`CSS Snippets`功能。]]></summary>
+    <category><![CDATA[Obsidian]]></category>
+    <tag><![CDATA[Obsidian]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240327185243/zh-thumb-unclesnote-obsidian_heading_subheading_decoration_css_snippets.png"/>
+  </entry>
   <entry>
     <title><![CDATA[2024 年最新 - 如何在 Windows 11 中将任务栏向左移动 - Explorer Patcher]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240312005832/latest_in_2024_how_to_move_the_taskbar_to_the_left_in_windows_11_explorer_patcher"/>
@@ -151,7 +163,7 @@
     <title><![CDATA[为多个Obsidian保险库创建快捷方式图标 - URI]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri"/>
     <id>https://unclesnote.com/zh/240108111121/create_shortcut_icons_for_multiple_obsidian_vaults_uri</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Mon, 08 Jan 2024 11:11:21 +0900</issued>
 		<created>Mon, 08 Jan 2024 11:11:21 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[在某些情况下，可能有用户通过根据类别创建多个保管库来组织帖子。每次在 Obsidian 中打开 Vault 时都会很烦人。所以，我想介绍一种在Windows环境下为每个Vault创建一个可以打开Obsidian的快捷方式图标的方法。为了解释原理，当通过快捷方式图标运行`obsidian.exe`时，您添加参数作为参数]]></summary>
@@ -175,7 +187,7 @@
     <title><![CDATA[将 YouTube 视频嵌入 Obsidian - iframe、ReadItLater]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater"/>
     <id>https://unclesnote.com/zh/231230171241/embed_youtube_video_into_obsidian_iframe_readitlater</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Sat, 30 Dec 2023 17:12:41 +0900</issued>
 		<created>Sat, 30 Dec 2023 17:12:41 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[在 Obsidian 中撰写文章时，您有时可能需要嵌入或剪贴 YouTube 视频。嵌入 YouTube 视频有两种主要方法。]]></summary>
@@ -271,7 +283,7 @@
     <title><![CDATA[Obsidian的标注和报价块]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block"/>
     <id>https://unclesnote.com/zh/231128001800/obsidian_callouts_and_quote_block</id>    
-    <modified>Thu, 15 Feb 2024 12:03:15 +0900</modified>
+    <modified>Wed, 27 Mar 2024 18:52:48 +0900</modified>
     <issued>Tue, 28 Nov 2023 00:18:00 +0900</issued>
 		<created>Tue, 28 Nov 2023 00:18:00 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[字典中标注的定义是大声喊出，用于引起读者的注意并告知他们重要或附加信息。让我们了解一下 Obsidian 中表达标注的语法和类型。]]></summary>

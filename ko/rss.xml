@@ -21,8 +21,236 @@
     <language>ko</language>
     <description><![CDATA[엉클 샘의 IT & 개발 낙서장]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Tue, 12 Mar 2024 00:58:32 +0900</lastBuildDate>
-    <pubDate>Tue, 12 Mar 2024 00:58:32 +0900</pubDate>
+    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
+    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[옵시디언 해딩(소제목) 꾸미기 - CSS Snippets]]></title>
+      <link>https://unclesnote.com/ko/240327185243/obsidian_heading_subheading_decoration_css_snippets</link>
+      <guid>https://unclesnote.com/ko/240327185243/obsidian_heading_subheading_decoration_css_snippets</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+      <category><![CDATA[옵시디언]]></category>
+      <tag><![CDATA[Obsidian]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/240327185243/obsidian_heading_subheading_decoration_css_snippets</guid>
+      <description><![CDATA[당신은 옵시디언에서 마음에드는 테마를 찾아 사용중이겠지만, 때때로 테마에서 정의한 해딩 스타일이 글의 단락을 가독성 있게 구분하기에 어려움이 있을 수 있습니다. 그래서 나만의 해딩 스타일을 정의하는 방법을 소개 하고자 합니다. 약간 복잡한 절차 일 수도 있지만, 옵시디언에서 지원하는]]></description>
+      <content:encoded><![CDATA[<p>당신은 옵시디언에서 마음에드는 테마를 찾아 사용중이겠지만, 때때로 테마에서 정의한 해딩 스타일이 글의 단락을 가독성 있게 구분하기에 어려움이 있을 수 있습니다. 그래서 나만의 해딩 스타일을 정의하는 방법을 소개 하고자 합니다.</p>
+
+<p>약간 복잡한 절차 일 수도 있지만, 옵시디언에서 지원하는 <code class="language-plaintext highlighter-rouge">CSS Snippets</code> 기능을 사용하려 합니다.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-css_snippets_기능을_사용해_재정의한_해딩_소제목.png" alt="옵시디언 - CSS Snippets 기능을 사용해 재정의한 해딩(소제목)" />
+<em>옵시디언 - CSS Snippets 기능을 사용해 재정의한 해딩(소제목)</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="접근방식-및-원리">접근방식 및 원리</h2>
+<p>옵시디언 에디터는 웹 기반으로 개발되었습니다. 그래서, 옵시디언 에디터에서 <code class="language-plaintext highlighter-rouge">Ctrl + Shift + i </code> 단축키를 누르면 크롬 브라우저의 개발자도구처럼 옵시디언 우측에 디버깅 윈도우가 열립니다. 디버깅 윈도우에서 옵시디언 페이지의 HTML 코드, 스타일시트(CSS) 코드를 볼 수 있고, 그리고 여러가지를 웹 정보를 디버깅 할 수 있습니다.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-개발자_도구.png" alt="옵시디언 - 개발자 도구" />
+<em>옵시디언 - 개발자 도구</em></p>
+
+<p>이 글에서 옵시디언 해딩 스타일을 변경하기 위한 접근 방식은 테마에서 정의한 해딩 스타일(CSS, 스타일시트)를 재정의 하는 것입니다. 이것을 가능하게 만드는 기능이 옵시디언의 <code class="language-plaintext highlighter-rouge">CSS Snippet</code> 입니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">CSS Snippet</code> 기능을 사용하기 위해서는 웹의 스타일시트(CSS) 코드를 작성해야 하는데, 우선, 제가 제공한 템플릿을 적용해 보고 추후 공부해서 예쁘게 꾸미는 것을 추천합니다.</p>
+<blockquote class="prompt-info">
+  <p><strong>옵시디언에서 웹의 개발자도구 여는 방법</strong><br />
+당신이 사용하고 있는 OS에 따라서, 옵시디언에서 웹 개발자 도구를 여는 방법에 차이가 있습니다. 키보드의 Caps Lock 키가 꺼진 상태에서 단축키를 눌러야 합니다.</p>
+
+  <ul>
+    <li><strong>윈도우</strong>: Ctrl + Shift + i</li>
+    <li><strong>MacOS</strong>: Option + Command + i</li>
+  </ul>
+
+  <p>더 많은 블럭의 스타일을 재정의 하고 싶다면 개발자도구를 활용해 HTML 코드의 프로퍼티 분석이 필요합니다.</p>
+</blockquote>
+<p>더해서, 약간의 HTML 태그와 관련된 내용을 알고 간다면, 앞으로 설명할 내용을 이해하는데 도움이 됩니다.</p>
+
+<p>옵시디언에서 사용하는 마크다운 문법은 해딩의 깊이를 정의할 때, 샵(# 문자)의 개수를 추가해 해딩의 깊이를 정의합니다. 이에 상응하는 HTML 기능으로 h 태그를 사용합니다.</p>
+
+<p>HTML의 h 태그뒤에 붙는 숫자는 옵시디언의 샵(# 문자)의 갯수와 일치합니다. 아래의 예시를 본다면 이해가 쉬울 것 같습니다.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre>Obsidian: Heading 1, HTML: h1 tag
+<span class="c">#</span>
+
+Obsidian: Heading 2, HTML: h2 tag
+<span class="c">##</span>
+
+Obsidian: Heading 3, HTML: h3 tag
+<span class="c">###</span>
+
+Obsidian: Heading 4, HTML: h4 tag
+<span class="c">####</span>
+
+Obsidian: Heading 5, HTML: h5 tag
+<span class="c">#####</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="css-파일-생성">CSS 파일 생성</h2>
+<p>옵시디언 저장소를 생성하면, 기본적으로 저장소 루트폴더에 <code class="language-plaintext highlighter-rouge">.obsidian</code> 폴더가 생성됩니다. 해당 폴더안에 <code class="language-plaintext highlighter-rouge">snippets</code> 폴더를 생성합니다.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언.obsidian_폴더-snippets_폴더_생성-mystyle.css_생성.png" alt="옵시디언 - .obsidian 폴더 - snippets 폴더 생성 - mystyle.css 생성" />
+<em>옵시디언 - .obsidian 폴더 - snippets 폴더 생성 - mystyle.css 생성</em></p>
+
+<p>그리고 생성한 폴더안에 <code class="language-plaintext highlighter-rouge">mystyle.css</code> 파일을 생성하는데 아래 스타일시트(CSS) 코드를 붙여넣기 하고 저장합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="c">/* h1 */</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h1</span><span class="o">,</span> <span class="nc">.HyperMD-header-1</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-1</span> <span class="p">{</span>    
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span><span class="m">#f4d03f</span><span class="p">,</span> <span class="m">#fffb89</span><span class="p">,</span> <span class="m">#16a085</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#000000</span><span class="p">;</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="cp">!important</span><span class="p">;</span>    
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">25px</span> <span class="m">25px</span> <span class="m">30px</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">12px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h2 */</span>
+<span class="nt">h2</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h2</span><span class="o">,</span> <span class="nc">.HyperMD-header-2</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-2</span> <span class="p">{</span>    
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span><span class="m">#dcdcdc</span><span class="p">,</span> <span class="m">#bebebe</span><span class="p">,</span> <span class="m">#aaaaaa</span><span class="p">);</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#000000</span><span class="p">;</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">5px</span> <span class="m">15px</span> <span class="cp">!important</span><span class="p">;</span>    
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">25px</span> <span class="m">25px</span> <span class="m">29px</span> <span class="m">1px</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>       
+<span class="p">}</span>
+
+<span class="c">/* h3 */</span>
+<span class="nt">h3</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h3</span><span class="o">,</span> <span class="nc">.HyperMD-header-3</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-3</span> <span class="p">{</span>    
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">0.2em</span> <span class="m">1em</span> <span class="m">0.2em</span> <span class="m">0.0em</span> <span class="cp">!important</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h4 */</span>
+<span class="nt">h4</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h4</span><span class="o">,</span> <span class="nc">.HyperMD-header-4</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-4</span> <span class="p">{</span>    
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+
+<span class="c">/* h5 */</span>
+<span class="nt">h5</span><span class="o">,</span> <span class="nc">.markdown-rendered</span> <span class="nt">h5</span><span class="o">,</span> <span class="nc">.HyperMD-header-5</span><span class="o">,</span> <span class="nc">.HyperMD-list-line</span> <span class="nc">.cm-header-5</span> <span class="p">{</span>    
+    <span class="nl">color</span><span class="p">:</span> <span class="m">#37421d</span><span class="p">;</span>
+    <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">0px</span> <span class="nb">solid</span> <span class="n">var</span><span class="p">(</span><span class="n">--background-primary</span><span class="p">);</span>    
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>코드에대해 간단히 설명하자면, 총 5개의 단락으로 구분되는데 각각의 단락은 1번째 해딩(h1)부터 5번째 해딩(h5)까지 스타일을 재정의합니다. 테마에서 정한 글꼴과 글자 사이즈는 그대로 사용하고, 폰트 색상, 테두리, 배경을 재정의 합니다.</p>
+
+<p>아래는 각각의 코드 단락에서 사용중인 속성의 간단한 설명입니다. 튜닝을 원한다면 참고해서 나만의 해딩스타일을 만들 수 있습니다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>단락안에 속성</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>color</em></td>
+      <td>글자 색상</td>
+    </tr>
+    <tr>
+      <td><em>border-bottom</em></td>
+      <td>해딩블럭의 아래 여백, 해딩블럭과 일반 라인과의 간격 <br />(margin 태그를 사용 할 수도 있지만, 옵시디언에서 동작하지 않음)</td>
+    </tr>
+    <tr>
+      <td><em>padding</em></td>
+      <td>해딩블럭의 내부 여백<br /><br />첫번째 숫자: 위 여백<br />두번째 숫자: 아래 여백</td>
+    </tr>
+    <tr>
+      <td><em>background</em></td>
+      <td>해딩블랙의 배경색상</td>
+    </tr>
+    <tr>
+      <td><em>border-radius</em></td>
+      <td>해딩블럭 네모의 엣지 굴곡</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="옵시디언-snippets-설정">옵시디언 Snippets 설정</h2>
+<p>옵시디언 설정에서 <code class="language-plaintext highlighter-rouge">테마(Appearance)</code> 탭을 선택합니다.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance.png" alt="옵시디언 - 테마(Appearance)" />
+<em>옵시디언 - 테마(Appearance)</em></p>
+
+<p>그리고, 메뉴 하단에 위 단계에서 저장한 <code class="language-plaintext highlighter-rouge">mystyle.css</code>가 표시된다면 활성화 합니다.</p>
+
+<p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" alt="옵시디언 - 테마(Appearance) - CSS snippets 활성화" />
+<em>옵시디언 - 테마(Appearance) - CSS snippets 활성화</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240327185243/ko-thumb-unclesnote-obsidian_heading_subheading_decoration_css_snippets.png" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-css_snippets_기능을_사용해_재정의한_해딩_소제목.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-개발자_도구.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언.obsidian_폴더-snippets_폴더_생성-mystyle.css_생성.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[2024년 최신 - 윈도우11의 작업표시줄 왼쪽으로 이동방법 - Explorer Patcher]]></title>
