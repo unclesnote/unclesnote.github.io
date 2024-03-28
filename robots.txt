@@ -2,8 +2,7 @@ User-agent: *
 Disallow: /norobots/
 
 User-agent: Yeti
-Allow: /ko/
-Allow: /sitemap.xml
+Allow: /
 
 User-agent: DAUM
 Allow: /ko/
