@@ -5,8 +5,7 @@ User-agent: Yeti
 Allow: /
 
 User-agent: DAUM
-Allow: /ko/
-Allow: /sitemap.xml
+Allow: /
 
 Sitemap: https://unclesnote.com/sitemap.xml
 
