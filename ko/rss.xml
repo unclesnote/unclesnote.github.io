@@ -237,6 +237,8 @@ Obsidian: Heading 5, HTML: h5 tag
 <p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" alt="옵시디언 - 테마(Appearance) - CSS snippets 활성화" />
 <em>옵시디언 - 테마(Appearance) - CSS snippets 활성화</em></p>
 
+<p>이제, 해딩을 정의해 작성된 글을 열어볼까요? 해딩의 스타일이 변경되었나요? 수고하셨습니다.</p>
+
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -2159,7 +2161,7 @@ dotnet new console
 
 <h2 id="게임-방법">게임 방법</h2>
 
-<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" alt="동행복권 - 로또 당첨결과" width="972" height="455" />
+<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" alt="동행복권 - 로또 당첨결과" />
 <em>동행복권 - 로또 당첨결과</em></p>
 
 <p>총 7개의 로또 당첨번호가 발표됩니다.</p>
@@ -2230,7 +2232,7 @@ dotnet new console
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-50_000_won_usd_37_jpy_5_450_banknotes_that_the_bank_of_korea_began_issuing_in_2009.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_spot_in_busan_korea-lotto_stores_that_have_produced_many_customer_winners_are_famous_so_people_sometimes_wait_in_line_to_buy_lottery_tickets.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_stores.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[여러 옵시디언 보관소에 대한 바로가기 아이콘 만들기 - URI]]></title>
@@ -4836,14 +4838,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h2 id="윈도우의-기본-웹-브라우저-설정">윈도우의 기본 웹 브라우저 설정</h2>
 <p>아마도 Chrome 사용자라면 이미 Google Chrome을 기본 웹 브라우저로 설정했을 것입니다. Office 365에 대한 기본 브라우저 설정이 있는지 확인하세요.</p>
 
-<p><code class="language-plaintext highlighter-rouge">CTRL + I</code> 단축키를 사용하여 <code class="language-plaintext highlighter-rouge">윈도우 설정</code>을 엽니다. 그런 다음 <code class="language-plaintext highlighter-rouge">default</code> 키워드를 입력하여 <code class="language-plaintext highlighter-rouge">기본 앱</code>을 찾아 선택합니다.</p>
+<p><code class="language-plaintext highlighter-rouge">Win + I</code> 단축키를 사용하여 <code class="language-plaintext highlighter-rouge">윈도우 설정</code>을 엽니다. 그런 다음 <code class="language-plaintext highlighter-rouge">default</code> 키워드를 입력하여 <code class="language-plaintext highlighter-rouge">기본 앱</code>을 찾아 선택합니다.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="윈도우 설정 - `기본값` 검색" width="972" height="515" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" alt="윈도우 설정 - `기본값` 검색" />
 <em>윈도우 설정 - <code class="language-plaintext highlighter-rouge">기본값</code> 검색</em></p>
 
 <p>그런 다음 <code class="language-plaintext highlighter-rouge">기본 앱</code> 탭의 <code class="language-plaintext highlighter-rouge">웹 브라우저</code> 섹션에서 <code class="language-plaintext highlighter-rouge">Google Chrome</code> 브라우저를 선택하세요.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="설정 &gt; 기본앱 &gt; 웹브라우저에서 `Google Chrome` 선택" width="972" height="599" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" alt="설정 &gt; 기본앱 &gt; 웹브라우저에서 `Google Chrome` 선택" />
 <em>설정 &gt; 기본앱 &gt; 웹브라우저에서 <code class="language-plaintext highlighter-rouge">Google Chrome</code> 선택</em></p>
 
 <h2 id="office-365-outlook에서-하이퍼링크를-열도록-앱-설정">Office 365 Outlook에서 하이퍼링크를 열도록 앱 설정</h2>
@@ -4851,12 +4853,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>Outlook에서는 <code class="language-plaintext highlighter-rouge">ALT + F</code> 단축키를 사용하여 왼쪽 메뉴 표시줄을 보고 <code class="language-plaintext highlighter-rouge">옵션</code>을 선택합니다.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - 옵션" width="972" height="335" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" alt="Office 365 Outlook - 옵션" />
 <em>Office 365 Outlook - 옵션</em></p>
 
 <p><code class="language-plaintext highlighter-rouge">고급</code> 탭을 선택하세요. <code class="language-plaintext highlighter-rouge">파일 및 브라우저 기본 설정</code> 섹션에서 하이퍼링크를 열려는 브라우저를 <code class="language-plaintext highlighter-rouge">기본 브라우저</code>로 변경하세요. 그런 다음 <code class="language-plaintext highlighter-rouge">확인</code>을 누르세요. 첫 번째 섹션에서는 윈도우 기본 브라우저를 Chrome으로 설정했으므로 여기서 기본 브라우저는 Chrome입니다.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - 옵션 &gt; 고급 &gt; 파일 및 브라우저 기본 설정에서 `기본 브라우저` 선택" width="972" height="792" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - 옵션 &gt; 고급 &gt; 파일 및 브라우저 기본 설정에서 `기본 브라우저` 선택" />
 <em>Office 365 Outlook - 옵션 &gt; 고급 &gt; 파일 및 브라우저 기본 설정에서 <code class="language-plaintext highlighter-rouge">기본 브라우저</code> 선택</em></p>
 
 <!-- Google Adsense - block -->
@@ -4868,10 +4870,10 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ko-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[윈도우 도구 대신 필수 우분투 소프트웨어]]></title>

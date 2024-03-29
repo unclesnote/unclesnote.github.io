@@ -237,6 +237,8 @@ Obsidian: Heading 5, HTML: h5 tag
 <p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" alt="Obsidian - 主题（外观） - 启用 CSS 片段" />
 <em>Obsidian - 主题（外观） - 启用 CSS 片段</em></p>
 
+<p>现在，我们要打开定义标题的文章吗？标题风格有变化吗？感谢你的付出</p>
+
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -2154,7 +2156,7 @@ dotnet new console
 
 <h2 id="怎么玩">怎么玩</h2>
 
-<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" alt="Donghaeng BogGwon - 乐透中奖结果" width="972" height="455" />
+<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" alt="Donghaeng BogGwon - 乐透中奖结果" />
 <em>Donghaeng BogGwon - 乐透中奖结果</em></p>
 
 <p>共公布7个彩票中奖号码。</p>
@@ -2225,7 +2227,7 @@ dotnet new console
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-50_000_won_usd_37_jpy_5_450_banknotes_that_the_bank_of_korea_began_issuing_in_2009.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_spot_in_busan_korea-lotto_stores_that_have_produced_many_customer_winners_are_famous_so_people_sometimes_wait_in_line_to_buy_lottery_tickets.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_stores.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[为多个Obsidian保险库创建快捷方式图标 - URI]]></title>
@@ -4831,14 +4833,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h2 id="windows-上的默认-web-浏览器设置">Windows 上的默认 Web 浏览器设置</h2>
 <p>如果您是 Chrome 用户，也许您已经将 Google Chrome 设置为默认网络浏览器。确保您具有 Office 365 的默认浏览器设置。</p>
 
-<p>使用<code class="language-plaintext highlighter-rouge">CTRL + I</code>快捷键打开<code class="language-plaintext highlighter-rouge">Windows 设置</code>。然后，输入<code class="language-plaintext highlighter-rouge">default</code>关键字查找并选择<code class="language-plaintext highlighter-rouge">默认应用程序</code>。</p>
+<p>使用<code class="language-plaintext highlighter-rouge">Win + I</code>快捷键打开<code class="language-plaintext highlighter-rouge">Windows 设置</code>。然后，输入<code class="language-plaintext highlighter-rouge">default</code>关键字以查找并选择<code class="language-plaintext highlighter-rouge">默认应用</code>。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows 设置 - 搜索`默认`" width="972" height="515" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" alt="Windows 设置 - 搜索`默认`" />
 <em>Windows 设置 - 搜索<code class="language-plaintext highlighter-rouge">默认</code></em></p>
 
 <p>然后，在<code class="language-plaintext highlighter-rouge">默认应用程序</code>选项卡中，选择<code class="language-plaintext highlighter-rouge">Web 浏览器</code>部分中的<code class="language-plaintext highlighter-rouge">Google Chrome</code>浏览器。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="设置 &gt; 默认应用 &gt; 在网络浏览器上选择`Google Chrome`" width="972" height="599" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" alt="设置 &gt; 默认应用 &gt; 在网络浏览器上选择`Google Chrome`" />
 <em>设置 &gt; 默认应用 &gt; 在网络浏览器上选择<code class="language-plaintext highlighter-rouge">Google Chrome</code></em></p>
 
 <h2 id="设置应用程序以打开-office-365-outlook-中的超链接">设置应用程序以打开 Office 365 Outlook 中的超链接</h2>
@@ -4846,12 +4848,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>在 Outlook 中，使用<code class="language-plaintext highlighter-rouge">ALT + F</code>快捷键查看左侧菜单栏并选择<code class="language-plaintext highlighter-rouge">选项</code>。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - 选项" width="972" height="335" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" alt="Office 365 Outlook - 选项" />
 <em>Office 365 Outlook - 选项</em></p>
 
 <p>选择<code class="language-plaintext highlighter-rouge">高级</code>选项卡。在<code class="language-plaintext highlighter-rouge">文件和浏览器首选项</code>部分中，将要打开超链接的浏览器更改为<code class="language-plaintext highlighter-rouge">默认浏览器</code>。然后按<code class="language-plaintext highlighter-rouge">确定</code>。在第一节中我们将Windows默认浏览器设置为Chrome，所以这里的默认浏览器是Chrome。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - 选项 &gt; 高级 &gt; 在文件和浏览器首选项中选择`默认浏览器`" width="972" height="792" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - 选项 &gt; 高级 &gt; 在文件和浏览器首选项中选择`默认浏览器`" />
 <em>Office 365 Outlook - 选项 &gt; 高级 &gt; 在文件和浏览器首选项中选择<code class="language-plaintext highlighter-rouge">默认浏览器</code></em></p>
 
 <!-- Google Adsense - block -->
@@ -4863,10 +4865,10 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/zh-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[替代 Windows 工具的必备 Ubuntu 软件]]></title>

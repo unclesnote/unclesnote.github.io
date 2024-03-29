@@ -237,6 +237,8 @@ Obsidian: Heading 5, HTML: h5 tag
 <p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" alt="Obsidian - テーマ(Appearance) - CSS snippetsを有効にする" />
 <em>Obsidian - テーマ(Appearance) - CSS snippetsを有効にする</em></p>
 
+<p>さて、ハディングを定義して書かれた記事を開いてみましょうか？ハディングのスタイルが変更されましたか？お疲れ様でした。</p>
+
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -2159,7 +2161,7 @@ dotnet new console
 
 <h2 id="遊び方">遊び方</h2>
 
-<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" alt="東ヘンボグォン - 宝くじ当選結果" width="972" height="455" />
+<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" alt="東ヘンボグォン - 宝くじ当選結果" />
 <em>東ヘンボグォン - 宝くじ当選結果</em></p>
 
 <p>合計7つの宝くじの当選番号が発表されます。</p>
@@ -2230,7 +2232,7 @@ dotnet new console
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-50_000_won_usd_37_jpy_5_450_banknotes_that_the_bank_of_korea_began_issuing_in_2009.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_spot_in_busan_korea-lotto_stores_that_have_produced_many_customer_winners_are_famous_so_people_sometimes_wait_in_line_to_buy_lottery_tickets.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_stores.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[複数の Obsidian 保管庫のショートカット アイコンを作成する - URI]]></title>
@@ -4834,14 +4836,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h2 id="windows-のデフォルトの-web-ブラウザ設定">Windows のデフォルトの Web ブラウザ設定</h2>
 <p>Chrome ユーザーであれば、すでに Google Chrome をデフォルトの Web ブラウザとして設定しているかもしれません。 Office 365 のデフォルトのブラウザー設定があることを確認してください。</p>
 
-<p><code class="language-plaintext highlighter-rouge">CTRL + I</code>ショートカットを使用して<code class="language-plaintext highlighter-rouge">Windows 設定</code>を開きます。次に、<code class="language-plaintext highlighter-rouge">default</code>キーワードを入力して<code class="language-plaintext highlighter-rouge">Default apps</code>を検索し、選択します。</p>
+<p><code class="language-plaintext highlighter-rouge">Win + I</code>ショートカットを使用して<code class="language-plaintext highlighter-rouge">Windows 設定</code>を開きます。次に、<code class="language-plaintext highlighter-rouge">default</code>キーワードを入力して<code class="language-plaintext highlighter-rouge">Default apps</code>を検索し、選択します。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Windows 設定 - `デフォルト`を検索" width="972" height="515" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" alt="Windows 設定 - `デフォルト`を検索" />
 <em>Windows 設定 - <code class="language-plaintext highlighter-rouge">デフォルト</code>を検索</em></p>
 
 <p>次に、<code class="language-plaintext highlighter-rouge">デフォルトのアプリ</code>タブの<code class="language-plaintext highlighter-rouge">Web ブラウザ</code>セクションで<code class="language-plaintext highlighter-rouge">Google Chrome</code>ブラウザを選択します。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="設定 &gt; デフォルトのアプリ &gt; Web ブラウザーで`Google Chrome`を選択" width="972" height="599" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" alt="設定 &gt; デフォルトのアプリ &gt; Web ブラウザーで`Google Chrome`を選択" />
 <em>設定 &gt; デフォルトのアプリ &gt; Web ブラウザーで<code class="language-plaintext highlighter-rouge">Google Chrome</code>を選択</em></p>
 
 <h2 id="office-365-outlook-でハイパーリンクを開くようにアプリを設定する">Office 365 Outlook でハイパーリンクを開くようにアプリを設定する</h2>
@@ -4849,12 +4851,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>Outlook では、<code class="language-plaintext highlighter-rouge">ALT + F</code>ショートカットを使用して左側のメニュー バーを表示し、<code class="language-plaintext highlighter-rouge">オプション</code>を選択します。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - オプション" width="972" height="335" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" alt="Office 365 Outlook - オプション" />
 <em>Office 365 Outlook - オプション</em></p>
 
 <p><code class="language-plaintext highlighter-rouge">詳細</code>タブを選択します。 <code class="language-plaintext highlighter-rouge">ファイルとブラウザの設定</code>セクションで、ハイパーリンクを開くブラウザを<code class="language-plaintext highlighter-rouge">デフォルトのブラウザ</code>に変更します。次に<code class="language-plaintext highlighter-rouge">OK</code>を押します。最初のセクションでは Windows のデフォルトのブラウザを Chrome に設定したため、ここでのデフォルトのブラウザは Chrome です。</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。" width="972" height="792" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。" />
 <em>Office 365 Outlook - [オプション] &gt; [詳細設定] &gt; [ファイルとブラウザーの設定] で [既定のブラウザー] を選択します。</em></p>
 
 <!-- Google Adsense - block -->
@@ -4866,10 +4868,10 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/ja-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Windows ツールの代わりに必須の Ubuntu ソフトウェア]]></title>

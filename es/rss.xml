@@ -237,6 +237,8 @@ Obsidian: Heading 5, HTML: h5 tag
 <p><img src="/assets/images/240327185243/unclesnote-obsidian_heading_subheading_decoration_css_snippets-txt_옵시디언-테마_appearance-css_snippets_활성화.png" alt="Obsidian - Tema (Apariencia) - Habilitar fragmentos de CSS" />
 <em>Obsidian - Tema (Apariencia) - Habilitar fragmentos de CSS</em></p>
 
+<p>Ahora, ¿abrimos el artículo que define el título? ¿Ha cambiado el estilo del título? Gracias por su esfuerzo</p>
+
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
 <p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -2159,7 +2161,7 @@ dotnet new console
 
 <h2 id="cómo-jugar">Cómo jugar</h2>
 
-<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" alt="Donghaeng BogGwon - Resultados de ganancias de lotería" width="972" height="455" />
+<p><img src="/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" alt="Donghaeng BogGwon - Resultados de ganancias de lotería" />
 <em>Donghaeng BogGwon - Resultados de ganancias de lotería</em></p>
 
 <p>Se anunciarán un total de 7 números ganadores de la lotería.</p>
@@ -2230,7 +2232,7 @@ dotnet new console
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-50_000_won_usd_37_jpy_5_450_banknotes_that_the_bank_of_korea_began_issuing_in_2009.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_spot_in_busan_korea-lotto_stores_that_have_produced_many_customer_winners_are_famous_so_people_sometimes_wait_in_line_to_buy_lottery_tickets.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-lotto_stores.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240110010503/unclesnote-how_foreigners_buy_lotto_6_45_tickets_in_korea-txt_donghaeng_boggwon-lotto_winning_results.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Cree íconos de acceso directo para múltiples bóvedas de obsidiana - URI]]></title>
@@ -4836,14 +4838,14 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 <h2 id="configuración-predeterminada-del-navegador-web-en-windows">Configuración predeterminada del navegador web en Windows</h2>
 <p>Quizás, si eres usuario de Chrome, ya hayas configurado Google Chrome como tu navegador web predeterminado. Asegúrese de tener la configuración predeterminada del navegador para Office 365.</p>
 
-<p>Abra “Configuración de Windows” usando el acceso directo “CTRL + I”. Luego, ingrese la palabra clave “predeterminada” para buscar y seleccionar “Aplicaciones predeterminadas”.</p>
+<p>Abra “Configuración de Windows” usando el acceso directo “Win + I”. Luego, ingrese la palabra clave “predeterminada” para buscar y seleccionar “Aplicaciones predeterminadas”.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" alt="Configuración de Windows: buscar &quot;predeterminado&quot;" width="972" height="515" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" alt="Configuración de Windows: buscar &quot;predeterminado&quot;" />
 <em>Configuración de Windows: buscar “predeterminado”</em></p>
 
 <p>Luego, en la pestaña “Aplicaciones predeterminadas”, seleccione el navegador “Google Chrome” en la sección “Navegador web”.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" alt="Configuración &gt; Aplicaciones predeterminadas &gt; Seleccione `Google Chrome` en el navegador web" width="972" height="599" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" alt="Configuración &gt; Aplicaciones predeterminadas &gt; Seleccione `Google Chrome` en el navegador web" />
 <em>Configuración &gt; Aplicaciones predeterminadas &gt; Seleccione <code class="language-plaintext highlighter-rouge">Google Chrome</code> en el navegador web</em></p>
 
 <h2 id="configurar-aplicaciones-para-abrir-hipervínculos-en-office-365-outlook">Configurar aplicaciones para abrir hipervínculos en Office 365 Outlook</h2>
@@ -4851,12 +4853,12 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 <p>En Outlook, use el acceso directo <code class="language-plaintext highlighter-rouge">ALT + F</code> para ver la barra de menú izquierda y seleccione <code class="language-plaintext highlighter-rouge">Opciones</code>.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" alt="Office 365 Outlook - Opciones" width="972" height="335" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" alt="Office 365 Outlook - Opciones" />
 <em>Office 365 Outlook - Opciones</em></p>
 
 <p>Seleccione la pestaña “Avanzado”. En la sección “Preferencias de archivos y navegador”, cambie el navegador en el que desea abrir el hipervínculo a “Navegador predeterminado”. Luego presione <code class="language-plaintext highlighter-rouge">Aceptar</code>. En la primera sección configuramos el navegador predeterminado de Windows en Chrome, por lo que el navegador predeterminado aquí es Chrome.</p>
 
-<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Opciones &gt; Avanzado &gt; Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador" width="972" height="792" />
+<p><img src="/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" alt="Office 365 Outlook - Opciones &gt; Avanzado &gt; Seleccione `Navegador predeterminado` en Preferencias de archivo y navegador" />
 <em>Office 365 Outlook - Opciones &gt; Avanzado &gt; Seleccione <code class="language-plaintext highlighter-rouge">Navegador predeterminado</code> en Preferencias de archivo y navegador</em></p>
 
 <!-- Google Adsense - block -->
@@ -4868,10 +4870,10 @@ kdtgaKEEik7aNiI3jXvp5r34wViVJCiX7m2y7pqBV9gZIvP9hP9KPnP++++
 
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/231031003417/es-thumb-unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome.png" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-windows_settings-search_default.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_windows_settings-search_default.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_settings_default_apps_select_google_chrome_on_web_browser.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/231031003417/unclesnote-how_to_change_the_default_browser_in_office_365_outlook_to_chrome-txt_office_365_outlook-options_advanced_select_default_browser_in_file_and_browser_preferences.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Software esencial de Ubuntu en lugar de herramientas de Windows]]></title>

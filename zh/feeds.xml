@@ -19,7 +19,7 @@
     <title><![CDATA[Obsidian标题（副标题）装饰 - CSS 片段]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
     <id>https://unclesnote.com/zh/240327185243/obsidian_heading_subheading_decoration_css_snippets</id>    
-    <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+    <modified>Fri, 29 Mar 2024 09:56:49 +0900</modified>
     <issued>Wed, 27 Mar 2024 18:52:43 +0900</issued>
 		<created>Wed, 27 Mar 2024 18:52:43 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[您可能在 Obsidian 中使用您喜欢的主题，但有时主题中定义的标题样式可能会导致难以区分可读段落。因此，我想向您介绍如何定义自己的标题样式。这可能是一个稍微复杂的过程，但我们将使用 Obsidian 支持的`CSS Snippets`功能。]]></summary>
@@ -151,7 +151,7 @@
     <title><![CDATA[外国人如何在韩国购买 Lotto 6/45 彩票]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea"/>
     <id>https://unclesnote.com/zh/240110010503/how_foreigners_buy_lotto_6_45_tickets_in_korea</id>    
-    <modified>Fri, 19 Jan 2024 02:52:14 +0900</modified>
+    <modified>Fri, 29 Mar 2024 09:56:49 +0900</modified>
     <issued>Wed, 10 Jan 2024 01:05:03 +0900</issued>
 		<created>Wed, 10 Jan 2024 01:05:03 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[您是不住在韩国但正在考虑在韩国旅行或出差时购买彩票的人吗？我想介绍一下在韩国哪里、如何以及何时可以购买乐透彩票。]]></summary>
@@ -379,7 +379,7 @@
     <title><![CDATA[如何将 Office 365 Outlook 中的默认浏览器更改为 Chrome]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome"/>
     <id>https://unclesnote.com/zh/231031003417/how_to_change_the_default_browser_in_office_365_outlook_to_chrome</id>    
-    <modified>Tue, 31 Oct 2023 00:34:17 +0900</modified>
+    <modified>Fri, 29 Mar 2024 09:56:49 +0900</modified>
     <issued>Tue, 31 Oct 2023 00:34:17 +0900</issued>
 		<created>Tue, 31 Oct 2023 00:34:17 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[您是否曾经在 Office 365 Outlook 中单击某个 Web 链接，然后突然显示在 Edge 浏览器中，这很不方便？在最近的更新中，微软将 Outlook 中的默认浏览器重置为 Edge 浏览器。对于那些喜欢 Google Chrome 的人，让我们将网页链接更改为在 Chrome 上打开。我们将在Wind]]></summary>
