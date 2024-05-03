@@ -21,8 +21,64 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
-    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
+    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[StrokIt, WinSplit Revolution not working in Windows 11]]></title>
+      <link>https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
+      <guid>https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+      <category><![CDATA[IT,Productivity]]></category>
+      <tag><![CDATA[IT,Productivity]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <description><![CDATA[I installed StrokeIt, a previously used mouse gesture software, on Windows 11, but it doesn`t work well after booting?]]></description>
+      <content:encoded><![CDATA[<p>I installed StrokeIt, a previously used mouse gesture software, on Windows 11, but it doesn`t work well after booting?</p>
+<ul>
+  <li>I drew a gesture with the right mouse button, but the action does not work and a line is drawn like in paint?</li>
+  <li>Doesn`t it sometimes get stuck? Afterwards, the normal Windows action of right-clicking does not work.</li>
+</ul>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="Mouse Gesture Software - StrokeIt - Command Editor" />
+<em>Mouse Gesture Software - StrokeIt - Command Editor</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="cause">cause</h2>
+<p>My guess is that Windows 11 runs auto-start apps in the background while the login screen is displayed when booting. So, it seems that problems occur because apps that intercept (hook) mouse events or key events (StrokeIt, WinSplit Revolution) are lowered in priority or do not get permission.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="Windows screen splitting software that can be controlled with shortcut keys - WinSplit Revolution - Layout settings" />
+<em>Windows screen splitting software that can be controlled with shortcut keys - WinSplit Revolution - Layout settings</em></p>
+
+<p>The solution is to sign out of Windows and then log back in for normal operation.</p>
+<h2 id="solution">solution</h2>
+<p>While logged in to Windows, press the <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> shortcut key. Then press Sign out.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - Sign Out" />
+<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - Sign Out</em></p>
+
+<p>Afterwards, the login screen will be displayed again, so log in again. Is StrokeIt working properly?</p>
+
+<p>Sometimes, there are apps that are very useful to some people, but they were developed a long time ago and have no maintenance or updates to date. It is a hassle to log in again, but if there is no alternative, it seems like an inconvenience worth enduring.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/en-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Obsidian heading (subheading) decoration - CSS Snippets]]></title>

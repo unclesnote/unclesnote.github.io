@@ -14,7 +14,19 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <entry>
+    <title><![CDATA[StrokIt、WinSplit Revolution 在 Windows 11 中无法运行]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>
+    <id>https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</id>    
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+    <issued>Fri, 03 May 2024 23:36:22 +0900</issued>
+		<created>Fri, 03 May 2024 23:36:22 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[我在Windows 11上安装了以前使用过的鼠标手势软件StrokeIt，但启动后无法正常使用？]]></summary>
+    <category><![CDATA[它,生产率]]></category>
+    <tag><![CDATA[它,生产率]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/zh-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Obsidian标题（副标题）装饰 - CSS 片段]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
@@ -139,7 +151,7 @@
     <title><![CDATA[Ubuntu 上 Visual Studio Code 中的 C# 开发环境]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu"/>
     <id>https://unclesnote.com/zh/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</id>    
-    <modified>Fri, 19 Jan 2024 02:52:12 +0900</modified>
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
     <issued>Fri, 19 Jan 2024 02:52:12 +0900</issued>
 		<created>Fri, 19 Jan 2024 02:52:12 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[C#软件一般可以在Windows上的Visual Studio中开发。不过，它也可以在Ubuntu环境中开发。一个著名的IDE是Mono项目提供的MonoDevelop。然而，让我们创建一个使用的不仅仅是这个的 VS Code C# 软件开发环境。基于Ubuntu 20.04。]]></summary>

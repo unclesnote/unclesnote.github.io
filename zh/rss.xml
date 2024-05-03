@@ -21,8 +21,64 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
-    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
+    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[StrokIt、WinSplit Revolution 在 Windows 11 中无法运行]]></title>
+      <link>https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
+      <guid>https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+      <category><![CDATA[它,生产率]]></category>
+      <tag><![CDATA[它,生产率]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <description><![CDATA[我在Windows 11上安装了以前使用过的鼠标手势软件StrokeIt，但启动后无法正常使用？]]></description>
+      <content:encoded><![CDATA[<p>我在Windows 11上安装了以前使用过的鼠标手势软件StrokeIt，但启动后无法正常使用？</p>
+<ul>
+  <li>我用鼠标右键画了一个手势，但该动作不起作用并且像画画一样画了一条线？</li>
+  <li>有时不会被卡住吗？此后，正常的 Windows 右键单击​​操作将不起作用。</li>
+</ul>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="鼠标手势软件 - StrokeIt - 命令编辑器" />
+<em>鼠标手势软件 - StrokeIt - 命令编辑器</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="原因">原因</h2>
+<p>我的猜测是，Windows 11 在后台运行自动启动应用程序，同时启动时显示登录屏幕。因此，出现问题的原因似乎是拦截(挂钩)鼠标事件或按键事件(StrokeIt、WinSplit Revolution)的应用程序的优先级降低或未获得许可。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="可通过快捷键控制的Windows分屏软件-WinSplit Revolution-布局设置" />
+<em>可通过快捷键控制的Windows分屏软件-WinSplit Revolution-布局设置</em></p>
+
+<p>解决方案是注销 Windows，然后重新登录以进行正常操作。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>登录 Windows 后，按<code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code>快捷键。然后按退出。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - 注销" />
+<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - 注销</em></p>
+
+<p>之后，将再次显示登录屏幕，因此请重新登录。 StrokeIt 工作正常吗？</p>
+
+<p>有时，有些应用程序对某些人来说非常有用，但它们是很久以前开发的，并且迄今为止没有维护或更新。再次登录确实很麻烦，但如果没有办法的话，似乎这种麻烦还是值得忍受的。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/zh-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[Obsidian标题（副标题）装饰 - CSS 片段]]></title>

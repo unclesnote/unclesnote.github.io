@@ -14,7 +14,19 @@
   <author><name><![CDATA[アンクルズノート]]></name></author>
   <id>https://unclesnote.com/ja/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <entry>
+    <title><![CDATA[Windows 11でStrokIt、WinSplit Revolutionの動作不能の問題]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>
+    <id>https://unclesnote.com/ja/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</id>    
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+    <issued>Fri, 03 May 2024 23:36:22 +0900</issued>
+		<created>Fri, 03 May 2024 23:36:22 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[従来よく使用していたマウスジェスチャーソフトウェアであるStrokeItをWindows11にインストールしましたが、起動後はうまく動作しませんか？]]></summary>
+    <category><![CDATA[それ,生産性]]></category>
+    <tag><![CDATA[それ,生産性]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/ja-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Obsidianハディング（小タイトル）を飾る - CSS Snippets]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
@@ -139,7 +151,7 @@
     <title><![CDATA[Ubuntu 上の Visual Studio Code での C# 開発環境]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu"/>
     <id>https://unclesnote.com/ja/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</id>    
-    <modified>Fri, 19 Jan 2024 02:52:12 +0900</modified>
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
     <issued>Fri, 19 Jan 2024 02:52:12 +0900</issued>
 		<created>Fri, 19 Jan 2024 02:52:12 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[C# ソフトウェアは、一般に Windows 上の Visual Studio で開発できます。ただし、Ubuntu 環境でも開発できます。有名な IDE は、Mono プロジェクトによって提供される MonoDevelop です。ただし、これ以上のものを使用する VS Code C# ソフトウェア開発環境を作成して]]></summary>

@@ -21,8 +21,64 @@
     <language>es</language>
     <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
-    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
+    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[StrokIt, WinSplit Revolution no funciona en Windows 11]]></title>
+      <link>https://unclesnote.com/es/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
+      <guid>https://unclesnote.com/es/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+      <category><![CDATA[ÉL,Productividad]]></category>
+      <tag><![CDATA[ÉL,Productividad]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <description><![CDATA[Instalé StrokeIt, un software de gestos del mouse usado anteriormente, en Windows 11, pero ¿no funciona bien después del arranque?]]></description>
+      <content:encoded><![CDATA[<p>Instalé StrokeIt, un software de gestos del mouse usado anteriormente, en Windows 11, pero ¿no funciona bien después del arranque?</p>
+<ul>
+  <li>¿Dibujé un gesto con el botón derecho del mouse, pero la acción no funciona y se dibuja una línea como en Paint?</li>
+  <li>¿No se atasca a veces? Posteriormente, la acción normal de Windows de hacer clic derecho no funciona.</li>
+</ul>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="Software de gestos del mouse - StrokeIt - Editor de comandos" />
+<em>Software de gestos del mouse - StrokeIt - Editor de comandos</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="causa">causa</h2>
+<p>Supongo que Windows 11 ejecuta aplicaciones de inicio automático en segundo plano mientras se muestra la pantalla de inicio de sesión al iniciar. Entonces, parece que las aplicaciones que interceptan (enganchan) eventos del mouse o eventos clave (StrokeIt, WinSplit Revolution) pierden prioridad o no pueden obtener permiso, lo que causa problemas.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="Software para dividir la pantalla de Windows que se puede controlar con teclas de acceso directo - WinSplit Revolution - Configuración de diseño" />
+<em>Software para dividir la pantalla de Windows que se puede controlar con teclas de acceso directo - WinSplit Revolution - Configuración de diseño</em></p>
+
+<p>La solución es cerrar sesión en Windows y luego volver a iniciarla para que funcione normalmente.</p>
+<h2 id="solución">solución</h2>
+<p>Mientras está conectado a Windows, presione la tecla de acceso directo <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Supr</code>. Luego presione Cerrar sesión.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Supr` - Cerrar sesión" />
+<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Supr</code> - Cerrar sesión</em></p>
+
+<p>Luego, se mostrará nuevamente la pantalla de inicio de sesión, así que inicie sesión nuevamente. ¿StrokeIt funciona correctamente?</p>
+
+<p>En ocasiones, hay aplicaciones que son muy útiles para algunas personas, pero fueron desarrolladas hace mucho tiempo y no tienen mantenimiento ni actualizaciones a la fecha. Es una molestia volver a iniciar sesión, pero si no hay alternativa, parece un inconveniente que vale la pena soportar.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/es-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Decoración de encabezado (subtítulo) de obsidiana - Fragmentos CSS]]></title>

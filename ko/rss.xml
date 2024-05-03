@@ -21,8 +21,64 @@
     <language>ko</language>
     <description><![CDATA[엉클 샘의 IT & 개발 낙서장]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
-    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
+    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[윈도우11에서 StrokIt, WinSplit Revolution 동작불가 문제]]></title>
+      <link>https://unclesnote.com/ko/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
+      <guid>https://unclesnote.com/ko/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+      <category><![CDATA[IT,생산력]]></category>
+      <tag><![CDATA[IT,Productivity]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <description><![CDATA[기존에 잘 사용하던 마우스제스처 소프트웨어인 StrokeIt을 윈도우11에 설치 했는데, 부팅이후 잘 동작하지 않나요?]]></description>
+      <content:encoded><![CDATA[<p>기존에 잘 사용하던 마우스제스처 소프트웨어인 StrokeIt을 윈도우11에 설치 했는데, 부팅이후 잘 동작하지 않나요?</p>
+<ul>
+  <li>마우스 우측 버튼으로 제스처를 그렸는데 액션이 동작하지 않고 그림판처럼 선이 그려지나요?</li>
+  <li>때로는 행이 걸리지 않나요? 이후 마우스 우클릭 하는 일반적인 윈도우 액션이 동작하지 않습니다.</li>
+</ul>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="마우스 제스처 소프트웨어 - StrokeIt - Command Editor" />
+<em>마우스 제스처 소프트웨어 - StrokeIt - Command Editor</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="원인">원인</h2>
+<p>추측 컨데, 윈도우11은 부팅 시 로그인 화면이 표시되는 상태에서 자동 시작앱들을 백그라운드로 실행하는 것 같습니다. 그래서 마우스 이벤트 혹은 키 이벤트를 가로채(후킹)는 기능의 앱들(StrokeIt, WinSplit Revolution) 이 우선순위에서 밀리거나 권한을 얻지 못해 문제가 발생하는 것 같습니다.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="단축키로 제어가능한 윈도우 화면분할 소프트웨어 - WinSplit Revolution - Layout settings" />
+<em>단축키로 제어가능한 윈도우 화면분할 소프트웨어 - WinSplit Revolution - Layout settings</em></p>
+
+<p>해결책은 윈도우를 사인아웃 한 이후에 다시 로그인 하면 정상 동작합니다.</p>
+<h2 id="해결책">해결책</h2>
+<p>윈도우를 로그인 한 상태에서 <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> 단축키를 누릅니다. 그리고 Sign out을 누릅니다.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="윈도우 - `Ctrl + Alt + Del` - Sign Out" />
+<em>윈도우 - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - Sign Out</em></p>
+
+<p>이후, 로그인 화면이 다시 표시되는데, 로그인을 다시 합니다. StrokeIt이 정상 동작하나요?</p>
+
+<p>때때로, 일부 사람들에게 매우 유용한 앱들이 있지만, 오래전에 개발되었고 현재까지는 유지보수나 업데이트가 없는 앱들이 있습니다. 다시 로그인 하는것이 번거러운 일이지만, 대체제가 없다면 감수 해야할 귀찮음 인것 같습니다.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/ko-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[옵시디언 해딩(소제목) 꾸미기 - CSS Snippets]]></title>

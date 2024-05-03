@@ -14,7 +14,19 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <entry>
+    <title><![CDATA[StrokIt, WinSplit Revolution not working in Windows 11]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>
+    <id>https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</id>    
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+    <issued>Fri, 03 May 2024 23:36:22 +0900</issued>
+		<created>Fri, 03 May 2024 23:36:22 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[I installed StrokeIt, a previously used mouse gesture software, on Windows 11, but it doesn`t work well after booting?]]></summary>
+    <category><![CDATA[IT,Productivity]]></category>
+    <tag><![CDATA[IT,Productivity]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/en-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Obsidian heading (subheading) decoration - CSS Snippets]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
@@ -139,7 +151,7 @@
     <title><![CDATA[C# development environment in Visual Studio Code on Ubuntu]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu"/>
     <id>https://unclesnote.com/en/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</id>    
-    <modified>Fri, 19 Jan 2024 02:52:12 +0900</modified>
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
     <issued>Fri, 19 Jan 2024 02:52:12 +0900</issued>
 		<created>Fri, 19 Jan 2024 02:52:12 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[C# software can be developed in Visual Studio on Windows in general. However, it can also be developed in Ubuntu environments. A well-known IDE is MonoDevelop]]></summary>

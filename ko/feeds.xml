@@ -14,7 +14,19 @@
   <author><name><![CDATA[엉클스 노트]]></name></author>
   <id>https://unclesnote.com/ko/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Wed, 27 Mar 2024 18:52:43 +0900</modified>
+  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <entry>
+    <title><![CDATA[윈도우11에서 StrokIt, WinSplit Revolution 동작불가 문제]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>
+    <id>https://unclesnote.com/ko/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</id>    
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+    <issued>Fri, 03 May 2024 23:36:22 +0900</issued>
+		<created>Fri, 03 May 2024 23:36:22 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[기존에 잘 사용하던 마우스제스처 소프트웨어인 StrokeIt을 윈도우11에 설치 했는데, 부팅이후 잘 동작하지 않나요?]]></summary>
+    <category><![CDATA[IT,생산력]]></category>
+    <tag><![CDATA[IT,Productivity]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/ko-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png"/>
+  </entry>
   <entry>
     <title><![CDATA[옵시디언 해딩(소제목) 꾸미기 - CSS Snippets]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240327185243/obsidian_heading_subheading_decoration_css_snippets"/>
@@ -139,7 +151,7 @@
     <title><![CDATA[우분투의 Visual Studio Code의 C# 개발 환경]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu"/>
     <id>https://unclesnote.com/ko/240119025212/c-_development_environment_in_visual_studio_code_on_ubuntu</id>    
-    <modified>Fri, 19 Jan 2024 02:52:12 +0900</modified>
+    <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
     <issued>Fri, 19 Jan 2024 02:52:12 +0900</issued>
 		<created>Fri, 19 Jan 2024 02:52:12 +0900</created>
     <summary type="text/html" mode="escaped"><![CDATA[C# 소프트웨어는 일반적으로 윈도우의 Visual Studio에서 개발할 수 있습니다. 그러나 우분투 환경에서도 개발이 가능합니다. 잘 알려진 IDE로는 Mono 프로젝트에서 제공하는 MonoDevelop이 있습니다. 하지만 이보다 더 많은 것을 사용하는 VS Code C# 소프트웨어]]></summary>

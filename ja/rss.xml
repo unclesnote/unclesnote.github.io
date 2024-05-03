@@ -21,8 +21,64 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Wed, 27 Mar 2024 18:52:43 +0900</lastBuildDate>
-    <pubDate>Wed, 27 Mar 2024 18:52:43 +0900</pubDate>
+    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
+    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[Windows 11でStrokIt、WinSplit Revolutionの動作不能の問題]]></title>
+      <link>https://unclesnote.com/ja/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
+      <guid>https://unclesnote.com/ja/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+      <category><![CDATA[それ,生産性]]></category>
+      <tag><![CDATA[それ,生産性]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
+      <description><![CDATA[従来よく使用していたマウスジェスチャーソフトウェアであるStrokeItをWindows11にインストールしましたが、起動後はうまく動作しませんか？]]></description>
+      <content:encoded><![CDATA[<p>従来よく使用していたマウスジェスチャーソフトウェアであるStrokeItをWindows11にインストールしましたが、起動後はうまく動作しませんか？</p>
+<ul>
+  <li>マウスの右ボタンでジェスチャーを描いたが、アクションが動作せず、ペイントのように線が描かれますか？</li>
+  <li>時には行がかかりませんか？以来、マウスを右クリックする一般的なウィンドウアクションは動作しません。</li>
+</ul>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="マウスジェスチャーソフトウェア - StrokeIt - Command Editor" />
+<em>マウスジェスチャーソフトウェア - StrokeIt - Command Editor</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="原因">原因</h2>
+<p>推測的には、Windows11は起動時にログイン画面が表示された状態で自動起動アプリをバックグラウンドで実行するようです。そのため、マウスイベントやキーイベントを傍受(フッキング)は、機能のアプリ(StrokeIt、WinSplit Revolution)が優先順位で押されたり権限を得られずに問題が発生するようです。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="ショートカットで制御可能なウィンドウ画面分割ソフトウェア - WinSplit Revolution - Layout settings" />
+<em>ショートカットで制御可能なウィンドウ画面分割ソフトウェア - WinSplit Revolution - Layout settings</em></p>
+
+<p>解決策は、ウィンドウをサインアウトした後に再度ログインすると正常に動作します。</p>
+<h2 id="解決策">解決策</h2>
+<p>ウィンドウをログインした状態で、<code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code>ショートカットを押します。そしてサインアウトを押します。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - サインアウト" />
+<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - サインアウト</em></p>
+
+<p>その後、ログイン画面が再び表示されますが、ログインをやり直してください。 StrokeItは正常に動作しますか？</p>
+
+<p>時々、一部の人には非常に便利なアプリがありますが、古くから開発されており、現在までメンテナンスやアップデートのないアプリがあります。もう一度ログインするのは面倒なことですが、代替剤がなければ監修しなければならない面倒です。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/ja-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Obsidianハディング（小タイトル）を飾る - CSS Snippets]]></title>
