@@ -56,8 +56,10 @@
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="可通过快捷键控制的Windows分屏软件-WinSplit Revolution-布局设置" />
 <em>可通过快捷键控制的Windows分屏软件-WinSplit Revolution-布局设置</em></p>
 
-<p>解决方案是注销 Windows，然后重新登录以进行正常操作。</p>
-<h2 id="解决方案">解决方案</h2>
+<p>另一个猜测是Windows 11支持<code class="language-plaintext highlighter-rouge">快速启动</code>功能，该功能可以在Windows关闭时保存以前应用程序的状态，并在下次启动时快速启动它们。然而，当使用<code class="language-plaintext highlighter-rouge">快速启动</code>功能关闭 Windows 后重新启动时，应用程序似乎表现异常。</p>
+
+<p>解决方案是退出 Windows，然后重新登录或禁用<code class="language-plaintext highlighter-rouge">快速启动</code>功能。</p>
+<h2 id="解决方案---退出">解决方案 - 退出</h2>
 <p>登录 Windows 后，按<code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code>快捷键。然后按退出。</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - 注销" />
@@ -74,11 +76,45 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
+<h2 id="解决方案---禁用快速启动">解决方案 - 禁用<code class="language-plaintext highlighter-rouge">快速启动</code></h2>
+<p>下图显示了 <a href="https://support.lenovo.com/hr/en/solutions/ht513773-how-to-enable-or-disable-fast-startup-on-windows-11" target="_blank">Lenovo 网站</a>这是对11中<code class="language-plaintext highlighter-rouge">快速启动</code>的解释。 Windows 11支持<code class="language-plaintext highlighter-rouge">快速启动</code>功能，该功能可以在Windows关闭时保存以前应用程序的状态，而不是完全终止它们，并在下次启动时快速启动它们。然而，当使用<code class="language-plaintext highlighter-rouge">快速启动</code>功能关闭 Windows 后重新启动时，应用程序似乎表现异常。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" alt="联想网站 - Windows 11`快速启动`功能说明" />
+<em>联想网站 - Windows 11<code class="language-plaintext highlighter-rouge">快速启动</code>功能说明</em></p>
+
+<p>它的优点是可以节省启动 Windows 时重新启动大型软件的时间，但有时似乎会导致某些软件出现故障。</p>
+
+<p>要禁用<code class="language-plaintext highlighter-rouge">快速启动</code>，请按<code class="language-plaintext highlighter-rouge">Windows + R</code>快捷键并从<code class="language-plaintext highlighter-rouge">运行</code>菜单运行<code class="language-plaintext highlighter-rouge">control.exe</code>。这是运行 Windows 10 及更早版本中使用的控制面板的方法。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" alt="`Windows + R` 快捷方式 - 运行 - 运行 `control.exe`" />
+<em><code class="language-plaintext highlighter-rouge">Windows + R</code> 快捷方式 - 运行 - 运行 <code class="language-plaintext highlighter-rouge">control.exe</code></em></p>
+
+<p>在搜索中打开电源按钮相关选项。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" alt="控制面板 - 更改电源按钮选项" />
+<em>控制面板 - 更改电源按钮选项</em></p>
+
+<p>然后按允许您更改禁用设置的按钮，禁用<code class="language-plaintext highlighter-rouge">快速启动</code>并应用。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" alt="控制面板 - 电源按钮选项 - 禁用`快速启动`" />
+<em>控制面板 - 电源按钮选项 - 禁用<code class="language-plaintext highlighter-rouge">快速启动</code></em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/zh-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[Obsidian标题（副标题）装饰 - CSS 片段]]></title>

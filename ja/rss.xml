@@ -56,8 +56,10 @@
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="ショートカットで制御可能なウィンドウ画面分割ソフトウェア - WinSplit Revolution - Layout settings" />
 <em>ショートカットで制御可能なウィンドウ画面分割ソフトウェア - WinSplit Revolution - Layout settings</em></p>
 
-<p>解決策は、ウィンドウをサインアウトした後に再度ログインすると正常に動作します。</p>
-<h2 id="解決策">解決策</h2>
+<p>もう1つの推測はWindows 11で <code class="language-plaintext highlighter-rouge">fast startup</code>機能がサポートされています。しかし、 <code class="language-plaintext highlighter-rouge">fast startup</code>機能でウィンドウが終了した後に再起動すると、アプリが異常動作をするようです。</p>
+
+<p>解決策は、ウィンドウをサインアウトした後に再ログインするか、 <code class="language-plaintext highlighter-rouge">fast startup</code>機能を無効にすることです。</p>
+<h2 id="解決策---sign-out">解決策 - Sign out</h2>
 <p>ウィンドウをログインした状態で、<code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code>ショートカットを押します。そしてサインアウトを押します。</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - サインアウト" />
@@ -74,11 +76,45 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
+<h2 id="解決策---fast-startupを無効にする">解決策 - <code class="language-plaintext highlighter-rouge">fast startup</code>を無効にする</h2>
+<p>下の写真は<a href="https://support.lenovo.com/hr/en/solutions/ht513773-how-to-enable-or-disable-fast-startup-on-windows-11" target="_blank">レノボサイト</a>で案内するウィンドウ11の <code class="language-plaintext highlighter-rouge">fast startup</code>が何であるかについての説明です。 Windows 11は <code class="language-plaintext highlighter-rouge">fast startup</code>機能をサポートしています。これは、Windowsの終了時に以前のアプリを完全に終了せずに状態を保存し、次の起動で素早く起動する機能です。しかし、 <code class="language-plaintext highlighter-rouge">fast startup</code>機能でウィンドウが終了した後に再起動すると、アプリが異常動作をするようです。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" alt="Lenovo Site - Windows 11の `fast startup`機能説明" />
+<em>Lenovo Site - Windows 11の <code class="language-plaintext highlighter-rouge">fast startup</code>機能説明</em></p>
+
+<p>Windowsの起動時に重いソフトウェアを再起動する時間を節約できるというメリットがありますが、時々一部のソフトウェアが異常動作する問題の原因になるようです。</p>
+
+<p><code class="language-plaintext highlighter-rouge">fast startup</code>を無効にするために、<code class="language-plaintext highlighter-rouge">Windows + R</code>ショートカットを押して<code class="language-plaintext highlighter-rouge">実行</code>メニューから<code class="language-plaintext highlighter-rouge">control.exe</code>を実行します。これは、Windows 10以前のバージョンで使用していたコントロールパネルを実行する方法です。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" alt="`Windows + R`ショートカット - 実行 - `control.exe`実行" />
+<em><code class="language-plaintext highlighter-rouge">Windows + R</code>ショートカット - 実行 - <code class="language-plaintext highlighter-rouge">control.exe</code>実行</em></p>
+
+<p>パワーボタン関連のオプションを検索で開きます。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" alt="コントロールパネル - パワーボタンオプションの変更" />
+<em>コントロールパネル - パワーボタンオプションの変更</em></p>
+
+<p>そして利用できない設定を変更可能にするボタンを押して、 <code class="language-plaintext highlighter-rouge">fast startup</code> を無効にして適用します。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" alt="コントロールパネル - パワーボタンオプション - `fast startup`を無効にする" />
+<em>コントロールパネル - パワーボタンオプション - <code class="language-plaintext highlighter-rouge">fast startup</code>を無効にする</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/ja-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Obsidianハディング（小タイトル）を飾る - CSS Snippets]]></title>

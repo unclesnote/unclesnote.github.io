@@ -56,8 +56,10 @@
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="Software para dividir la pantalla de Windows que se puede controlar con teclas de acceso directo - WinSplit Revolution - Configuración de diseño" />
 <em>Software para dividir la pantalla de Windows que se puede controlar con teclas de acceso directo - WinSplit Revolution - Configuración de diseño</em></p>
 
-<p>La solución es cerrar sesión en Windows y luego volver a iniciarla para que funcione normalmente.</p>
-<h2 id="solución">solución</h2>
+<p>Otra suposición es que Windows 11 admite la función de <code class="language-plaintext highlighter-rouge">inicio rápido</code>, que guarda el estado de las aplicaciones anteriores cuando se apaga Windows y las inicia rápidamente en el siguiente inicio. Sin embargo, al reiniciar después de cerrar Windows usando la función de “inicio rápido”, las aplicaciones parecen comportarse de manera anormal.</p>
+
+<p>La solución es cerrar sesión en Windows y luego volver a iniciarla o desactivar la función de “inicio rápido”.</p>
+<h2 id="solución-cerrar-sesión">Solución: cerrar sesión</h2>
 <p>Mientras está conectado a Windows, presione la tecla de acceso directo <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Supr</code>. Luego presione Cerrar sesión.</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Supr` - Cerrar sesión" />
@@ -74,11 +76,45 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
+<h2 id="solución-deshabilite-el-inicio-rápido">Solución: deshabilite el “inicio rápido”</h2>
+<p>La siguiente foto muestra las instrucciones de Windows proporcionadas en el <a href="https://support.lenovo.com/hr/en/solutions/ht513773-how-to-enable-or-disable-fast-startup-on-windows-11" target="_blank">sitio de Lenovo</a>. Esta es una explicación de qué es el “inicio rápido” en 11. Windows 11 admite la función de <code class="language-plaintext highlighter-rouge">inicio rápido</code>, que es una función que guarda el estado de las aplicaciones anteriores cuando Windows se apaga en lugar de finalizarlas por completo y las inicia rápidamente en el siguiente inicio. Sin embargo, al reiniciar después de cerrar Windows usando la función de “inicio rápido”, las aplicaciones parecen comportarse de manera anormal.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" alt="Sitio de Lenovo: descripción de la función de &quot;inicio rápido&quot; de Windows 11" />
+<em>Sitio de Lenovo: descripción de la función de “inicio rápido” de Windows 11</em></p>
+
+<p>Tiene la ventaja de ahorrar tiempo al reiniciar software pesado al iniciar Windows, pero a veces parece provocar que algún software no funcione correctamente.</p>
+
+<p>Para deshabilitar el “inicio rápido”, presione la tecla de acceso directo “Windows + R” y ejecute “control.exe” desde el menú “Ejecutar”. Así es como se ejecuta el Panel de control utilizado en Windows 10 y versiones anteriores.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" alt="Acceso directo `Windows + R` - Ejecutar - Ejecutar `control.exe`" />
+<em>Acceso directo <code class="language-plaintext highlighter-rouge">Windows + R</code> - Ejecutar - Ejecutar <code class="language-plaintext highlighter-rouge">control.exe</code></em></p>
+
+<p>Abra las opciones relacionadas con el botón de encendido en la búsqueda.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" alt="Panel de control: cambiar las opciones del botón de encendido" />
+<em>Panel de control: cambiar las opciones del botón de encendido</em></p>
+
+<p>Luego presione el botón que le permite cambiar la configuración deshabilitada, deshabilite el “inicio rápido” y aplique.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" alt="Panel de control - Opciones del botón de encendido - Desactivar &quot;inicio rápido&quot;" />
+<em>Panel de control - Opciones del botón de encendido - Desactivar “inicio rápido”</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/es-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Decoración de encabezado (subtítulo) de obsidiana - Fragmentos CSS]]></title>

@@ -56,8 +56,10 @@
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="Windows screen splitting software that can be controlled with shortcut keys - WinSplit Revolution - Layout settings" />
 <em>Windows screen splitting software that can be controlled with shortcut keys - WinSplit Revolution - Layout settings</em></p>
 
-<p>The solution is to sign out of Windows and then log back in for normal operation.</p>
-<h2 id="solution">solution</h2>
+<p>Another guess is that Windows 11 supports the <code class="language-plaintext highlighter-rouge">fast startup</code> function, which saves the state of previous apps when Windows is shut down and starts them quickly on the next boot. However, when rebooting after Windows is shut down using the <code class="language-plaintext highlighter-rouge">fast startup</code> function, apps seem to behave abnormally.</p>
+
+<p>The solution is to sign out of Windows and then log back in or disable the <code class="language-plaintext highlighter-rouge">fast startup</code> feature.</p>
+<h2 id="solution---sign-out">Solution - Sign out</h2>
 <p>While logged in to Windows, press the <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> shortcut key. Then press Sign out.</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - Sign Out" />
@@ -74,11 +76,45 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
+<h2 id="solution---disable-fast-startup">Solution - Disable <code class="language-plaintext highlighter-rouge">fast startup</code></h2>
+<p>The photo below shows the Windows instructions provided on <a href="https://support.lenovo.com/hr/en/solutions/ht513773-how-to-enable-or-disable-fast-startup-on-windows-11" target="_blank">Lenovo site</a>. This is an explanation of what <code class="language-plaintext highlighter-rouge">fast startup</code> in 11 is. Windows 11 supports the <code class="language-plaintext highlighter-rouge">fast startup</code> function, which is a function that saves the state of previous apps when Windows shuts down rather than completely terminating them and starts them quickly on the next boot. However, when rebooting after Windows is shut down using the <code class="language-plaintext highlighter-rouge">fast startup</code> function, apps seem to behave abnormally.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" alt="Lenovo site - Description of Windows 11’s ‘fast startup’ function" />
+<em>Lenovo site - Description of Windows 11’s ‘fast startup’ function</em></p>
+
+<p>It has the advantage of saving time on restarting heavy software when booting Windows, but it sometimes seems to cause some software to malfunction.</p>
+
+<p>To disable <code class="language-plaintext highlighter-rouge">fast startup</code>, press the <code class="language-plaintext highlighter-rouge">Windows + R</code> shortcut key and run <code class="language-plaintext highlighter-rouge">control.exe</code> from the <code class="language-plaintext highlighter-rouge">Run</code> menu. This is how to run the Control Panel used in Windows 10 and earlier versions.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" alt="`Windows + R` shortcut - Run - Run `control.exe`" />
+<em><code class="language-plaintext highlighter-rouge">Windows + R</code> shortcut - Run - Run <code class="language-plaintext highlighter-rouge">control.exe</code></em></p>
+
+<p>Open the power button related options in search.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" alt="Control Panel - Change Power Button Options" />
+<em>Control Panel - Change Power Button Options</em></p>
+
+<p>Then press the button that allows you to change disabled settings, disable <code class="language-plaintext highlighter-rouge">fast startup</code> and apply.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" alt="Control Panel - Power Button Options - Disable `fast startup`" />
+<em>Control Panel - Power Button Options - Disable <code class="language-plaintext highlighter-rouge">fast startup</code></em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/en-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Obsidian heading (subheading) decoration - CSS Snippets]]></title>
