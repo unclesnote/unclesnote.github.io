@@ -25,7 +25,7 @@
     <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
     <item>
       <author>Uncle's Note</author>
-      <title><![CDATA[StrokIt, WinSplit Revolution not working in Windows 11]]></title>
+      <title><![CDATA[StrokeIt, WinSplit Revolution not working in Windows 11]]></title>
       <link>https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
       <guid>https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
       <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
@@ -38,6 +38,7 @@
 <ul>
   <li>You draw a gesture with the right mouse button, but the action does not work and a line is drawn like in Paint?</li>
   <li>Doesn`t the line get stuck sometimes? Afterwards, the normal Windows action of right-clicking does not work.</li>
+  <li>Or, isn`t the software that divides Windows using shortcut keys unable to operate properly?</li>
 </ul>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="Mouse Gesture Software - StrokeIt - Command Editor" />
@@ -51,23 +52,18 @@
 </script></p>
 
 <h2 id="cause">cause</h2>
-<p>My guess is that Windows 11 runs auto-start apps in the background while the login screen is displayed when booting. So, it seems that problems occur because apps that intercept (hook) mouse events or key events (StrokeIt, WinSplit Revolution) are lowered in priority or do not get permission.</p>
+<h3 id="guess-1---sign-out">Guess 1 - Sign out</h3>
+<p>My guess is that Windows 11 runs autostart apps in the background while the login screen is displayed when booting. So, it seems that apps that intercept (hook) mouse events or key events (StrokeIt, WinSplit Revolution) are lowered in priority or are unable to obtain permission, causing problems.</p>
+
+<p>It seems that signing out of Windows and logging back in may also be a solution to the problem.</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="Windows screen splitting software that can be controlled with shortcut keys - WinSplit Revolution - Layout settings" />
 <em>Windows screen splitting software that can be controlled with shortcut keys - WinSplit Revolution - Layout settings</em></p>
 
+<h3 id="guess-2---fast-startup">Guess 2 - fast startup</h3>
 <p>Another guess is that Windows 11 supports the <code class="language-plaintext highlighter-rouge">fast startup</code> function, which saves the state of previous apps when Windows is shut down and starts them quickly on the next boot. However, when rebooting after Windows is shut down using the <code class="language-plaintext highlighter-rouge">fast startup</code> function, apps seem to behave abnormally.</p>
 
-<p>The solution is to sign out of Windows and then log back in or disable the <code class="language-plaintext highlighter-rouge">fast startup</code> feature.</p>
-<h2 id="solution---sign-out">Solution - Sign out</h2>
-<p>While logged in to Windows, press the <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> shortcut key. Then press Sign out.</p>
-
-<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - Sign Out" />
-<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - Sign Out</em></p>
-
-<p>Afterwards, the login screen will be displayed again, so log in again. Is StrokeIt working properly?</p>
-
-<p>Sometimes, there are apps that are very useful to some people, but they were developed a long time ago and have no maintenance or updates to date. It is a hassle to log in again, but if there is no alternative, it seems like an inconvenience worth enduring.</p>
+<p>I think disabling the <code class="language-plaintext highlighter-rouge">fast startup</code> feature in Windows 11 may be a solution.</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
@@ -76,7 +72,20 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
-<h2 id="solution---disable-fast-startup">Solution - Disable <code class="language-plaintext highlighter-rouge">fast startup</code></h2>
+<h3 id="guess-3--run-strokeit-as-administrator">Guess 3 – Run StrokeIt as Administrator</h3>
+<p>As an option to use mouse gestures in the popular Chrome browser, you can also use the <a href="https://chrome.google.com/webstore/detail/crxmouse-chrome-mouse-ges/jlgkpaicikihijadgifklkbpdajbkhjo" target="_blank">CrxMouse Chrome Gestures</a> extension. However, it seems that mouse gesture software such as StrokeIt sometimes malfunctions in the combination of Windows 11 and Chrome.</p>
+
+<p>Closing the auto-running StrokeIt and running it again with administrator privileges seems to be a solution to the problem.</p>
+<h2 id="common-solution---sign-out">Common solution - Sign out</h2>
+<p>While logged in to Windows, press the <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> shortcut key. Then press Sign out.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - Sign Out" />
+<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - Sign Out</em></p>
+
+<p>Afterwards, the login screen will be displayed again, so log in again. Is StrokeIt working properly?</p>
+
+<p>Sometimes, there are apps that are very useful to some people, but they were developed a long time ago and have no maintenance or updates to date. It is a hassle to log in again, but if there is no alternative, it seems like an inconvenience worth enduring.</p>
+<h2 id="common-solution---disable-fast-startup">Common solution - disable <code class="language-plaintext highlighter-rouge">fast startup</code></h2>
 <p>The photo below shows the Windows instructions provided on <a href="https://support.lenovo.com/hr/en/solutions/ht513773-how-to-enable-or-disable-fast-startup-on-windows-11" target="_blank">Lenovo site</a>. This is an explanation of what <code class="language-plaintext highlighter-rouge">fast startup</code> in 11 is. Windows 11 supports the <code class="language-plaintext highlighter-rouge">fast startup</code> function, which is a function that saves the state of previous apps when Windows shuts down rather than completely terminating them and starts them quickly on the next boot. However, when rebooting after Windows is shut down using the <code class="language-plaintext highlighter-rouge">fast startup</code> function, apps seem to behave abnormally.</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" alt="Lenovo site - Description of Windows 11’s ‘fast startup’ function" />
@@ -106,6 +115,31 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
+<h2 id="strokeit-solution---run-with-administrator-privileges">StrokeIt solution - Run with administrator privileges</h2>
+<p>It seems that mouse gesture software such as StrokeIt sometimes malfunctions in the combination of Windows 11 and Chrome. It is very annoying to have to run StrokeIt as administrator every time you boot. However, if you love StrokeIt, this is an unavoidable annoyance.</p>
+
+<p>If StrokeIt is already running, quit it.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-종료.png" alt="StrokeIt - Quit" />
+<em>StrokeIt - Quit</em></p>
+
+<p>Alternatively, turn off the Windows autorun feature to manually run StrokeIt with administrator privileges every time you boot. Automatic execution is not necessary as normal operation is not guaranteed.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-윈도우_자동실행_비활성화.png" alt="StrokeIt - Disable Windows Autorun" />
+<em>StrokeIt - Disable Windows Autorun</em></p>
+
+<p>Then, right-click the StrokeIt icon to run it with administrator privileges.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-관리자_권한으로_실행.png" alt="StrokeIt - Run as Administrator" />
+<em>StrokeIt - Run as Administrator</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/en-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
@@ -114,7 +148,10 @@
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-윈도우_자동실행_비활성화.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-관리자_권한으로_실행.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[Obsidian heading (subheading) decoration - CSS Snippets]]></title>

@@ -25,7 +25,7 @@
     <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
     <item>
       <author>nota del tio</author>
-      <title><![CDATA[StrokIt, WinSplit Revolution no funciona en Windows 11]]></title>
+      <title><![CDATA[StrokeIt, WinSplit Revolution no funciona en Windows 11]]></title>
       <link>https://unclesnote.com/es/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
       <guid>https://unclesnote.com/es/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
       <dc:creator><![CDATA[nota del tio]]></dc:creator>
@@ -38,6 +38,7 @@
 <ul>
   <li>¿Dibujas un gesto con el botón derecho del ratón, pero la acción no funciona y se dibuja una línea como en Paint?</li>
   <li>¿No se atasca a veces la línea? Posteriormente, la acción normal de Windows de hacer clic derecho no funciona.</li>
+  <li>¿O el software que divide Windows mediante teclas de método abreviado no puede funcionar correctamente?</li>
 </ul>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="Software de gestos del mouse - StrokeIt - Editor de comandos" />
@@ -51,23 +52,18 @@
 </script></p>
 
 <h2 id="causa">causa</h2>
+<h3 id="adivina-1-cerrar-sesión">Adivina 1: cerrar sesión</h3>
 <p>Supongo que Windows 11 ejecuta aplicaciones de inicio automático en segundo plano mientras se muestra la pantalla de inicio de sesión al iniciar. Entonces, parece que las aplicaciones que interceptan (enganchan) eventos del mouse o eventos clave (StrokeIt, WinSplit Revolution) pierden prioridad o no pueden obtener permiso, lo que causa problemas.</p>
+
+<p>Parece que cerrar sesión en Windows y volver a iniciarla también puede ser una solución al problema.</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="Software para dividir la pantalla de Windows que se puede controlar con teclas de acceso directo - WinSplit Revolution - Configuración de diseño" />
 <em>Software para dividir la pantalla de Windows que se puede controlar con teclas de acceso directo - WinSplit Revolution - Configuración de diseño</em></p>
 
+<h3 id="adivina-2-inicio-rápido">Adivina 2: inicio rápido</h3>
 <p>Otra suposición es que Windows 11 admite la función de <code class="language-plaintext highlighter-rouge">inicio rápido</code>, que guarda el estado de las aplicaciones anteriores cuando se apaga Windows y las inicia rápidamente en el siguiente inicio. Sin embargo, al reiniciar después de cerrar Windows usando la función de “inicio rápido”, las aplicaciones parecen comportarse de manera anormal.</p>
 
-<p>La solución es cerrar sesión en Windows y luego volver a iniciarla o desactivar la función de “inicio rápido”.</p>
-<h2 id="solución-cerrar-sesión">Solución: cerrar sesión</h2>
-<p>Mientras está conectado a Windows, presione la tecla de acceso directo <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Supr</code>. Luego presione Cerrar sesión.</p>
-
-<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Supr` - Cerrar sesión" />
-<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Supr</code> - Cerrar sesión</em></p>
-
-<p>Luego, se mostrará nuevamente la pantalla de inicio de sesión, así que inicie sesión nuevamente. ¿StrokeIt funciona correctamente?</p>
-
-<p>En ocasiones, hay aplicaciones que son muy útiles para algunas personas, pero fueron desarrolladas hace mucho tiempo y no tienen mantenimiento ni actualizaciones a la fecha. Es una molestia volver a iniciar sesión, pero si no hay alternativa, parece un inconveniente que vale la pena soportar.</p>
+<p>Creo que deshabilitar la función de “inicio rápido” en Windows 11 puede ser una solución.</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
@@ -76,7 +72,20 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
-<h2 id="solución-deshabilite-el-inicio-rápido">Solución: deshabilite el “inicio rápido”</h2>
+<h3 id="adivina-3-ejecuta-strokeit-como-administrador">Adivina 3: ejecuta StrokeIt como administrador</h3>
+<p>Como opción para usar los gestos del mouse en el popular navegador Chrome, también puede usar la extensión <a href="https://chrome.google.com/webstore/detail/crxmouse-chrome-mouse-ges/jlgkpaicikihijadgifklkbpdajbkhjo" target="_blank">CrxMouse Chrome Gestures</a>. Sin embargo, parece que el software de gestos del mouse como StrokeIt a veces funciona mal en la combinación de Windows 11 y Chrome.</p>
+
+<p>Cerrar StrokeIt de ejecución automática y ejecutarlo nuevamente con privilegios de administrador parece ser una solución al problema.</p>
+<h2 id="solución-común-cerrar-sesión">Solución común: cerrar sesión</h2>
+<p>Mientras está conectado a Windows, presione la tecla de acceso directo <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Supr</code>. Luego presione Cerrar sesión.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Supr` - Cerrar sesión" />
+<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Supr</code> - Cerrar sesión</em></p>
+
+<p>Luego, se mostrará nuevamente la pantalla de inicio de sesión, así que inicie sesión nuevamente. ¿StrokeIt funciona correctamente?</p>
+
+<p>En ocasiones, hay aplicaciones que son muy útiles para algunas personas, pero fueron desarrolladas hace mucho tiempo y no tienen mantenimiento ni actualizaciones a la fecha. Es una molestia volver a iniciar sesión, pero si no hay alternativa, parece un inconveniente que vale la pena soportar.</p>
+<h2 id="solución-común-deshabilitar-el-inicio-rápido">Solución común: deshabilitar el “inicio rápido”</h2>
 <p>La siguiente foto muestra las instrucciones de Windows proporcionadas en el <a href="https://support.lenovo.com/hr/en/solutions/ht513773-how-to-enable-or-disable-fast-startup-on-windows-11" target="_blank">sitio de Lenovo</a>. Esta es una explicación de qué es el “inicio rápido” en 11. Windows 11 admite la función de <code class="language-plaintext highlighter-rouge">inicio rápido</code>, que es una función que guarda el estado de las aplicaciones anteriores cuando Windows se apaga en lugar de finalizarlas por completo y las inicia rápidamente en el siguiente inicio. Sin embargo, al reiniciar después de cerrar Windows usando la función de “inicio rápido”, las aplicaciones parecen comportarse de manera anormal.</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" alt="Sitio de Lenovo: descripción de la función de &quot;inicio rápido&quot; de Windows 11" />
@@ -106,6 +115,31 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
+<h2 id="solución-strokeit-ejecútela-con-privilegios-de-administrador">Solución StrokeIt: ejecútela con privilegios de administrador</h2>
+<p>Parece que el software de gestos del mouse como StrokeIt a veces funciona mal en la combinación de Windows 11 y Chrome. Es muy molesto tener que ejecutar StrokeIt como administrador cada vez que arrancas. Sin embargo, si te encanta StrokeIt, esto es una molestia inevitable.</p>
+
+<p>Si StrokeIt ya se está ejecutando, ciérrelo.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-종료.png" alt="StrokeIt - Salir" />
+<em>StrokeIt - Salir</em></p>
+
+<p>Alternativamente, desactive la función de ejecución automática de Windows para ejecutar StrokeIt manualmente con privilegios de administrador cada vez que inicie. La ejecución automática no es necesaria ya que no se garantiza el funcionamiento normal.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-윈도우_자동실행_비활성화.png" alt="StrokeIt - Desactivar la ejecución automática de Windows" />
+<em>StrokeIt - Desactivar la ejecución automática de Windows</em></p>
+
+<p>Luego, haga clic derecho en el icono de StrokeIt para ejecutarlo con privilegios de administrador.</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-관리자_권한으로_실행.png" alt="StrokeIt - Ejecutar como administrador" />
+<em>StrokeIt - Ejecutar como administrador</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/es-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
@@ -114,7 +148,10 @@
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-윈도우_자동실행_비활성화.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-관리자_권한으로_실행.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[Decoración de encabezado (subtítulo) de obsidiana - Fragmentos CSS]]></title>

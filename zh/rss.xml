@@ -25,7 +25,7 @@
     <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
     <item>
       <author>叔叔的笔记</author>
-      <title><![CDATA[StrokIt、WinSplit Revolution 在 Windows 11 中无法运行]]></title>
+      <title><![CDATA[StrokeIt、WinSplit Revolution 在 Windows 11 中无法运行]]></title>
       <link>https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</link>
       <guid>https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11</guid>
       <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
@@ -37,7 +37,8 @@
       <content:encoded><![CDATA[<p>我在Windows 10上安装了StrokeIt这个你在Windows 10中用得很好的鼠标手势软件，但在Windows 11上却无法正常使用？</p>
 <ul>
   <li>您用鼠标右键绘制了一个手势，但该操作不起作用并且像画图一样绘制了一条线？</li>
-  <li>有时线路不会被卡住吗？此后，正常的 Windows 右键单击​​操作将不起作用。</li>
+  <li>有时线路不会被卡住吗？此后，正常的 Windows 右键单击​​操作将不起作用。
+——或者说，用快捷键分割Windows的软件不是无法正常运行吗？</li>
 </ul>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" alt="鼠标手势软件 - StrokeIt - 命令编辑器" />
@@ -51,23 +52,18 @@
 </script></p>
 
 <h2 id="原因">原因</h2>
+<h3 id="猜测-1---退出">猜测 1 - 退出</h3>
 <p>我的猜测是，Windows 11 在后台运行自动启动应用程序，同时启动时显示登录屏幕。因此，出现问题的原因似乎是拦截(挂钩)鼠标事件或按键事件(StrokeIt、WinSplit Revolution)的应用程序的优先级降低或未获得许可。</p>
+
+<p>注销 Windows 并重新登录似乎也可以解决该问题。</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_단축키로_제어가능한_윈도우_화면분할_소프트웨어-winsplit_revolution-layout_settings.png" alt="可通过快捷键控制的Windows分屏软件-WinSplit Revolution-布局设置" />
 <em>可通过快捷键控制的Windows分屏软件-WinSplit Revolution-布局设置</em></p>
 
+<h3 id="猜想2快速启动">猜想2——快速启动</h3>
 <p>另一个猜测是Windows 11支持<code class="language-plaintext highlighter-rouge">快速启动</code>功能，该功能可以在Windows关闭时保存以前应用程序的状态，并在下次启动时快速启动它们。然而，当使用<code class="language-plaintext highlighter-rouge">快速启动</code>功能关闭 Windows 后重新启动时，应用程序似乎表现异常。</p>
 
-<p>解决方案是退出 Windows，然后重新登录或禁用<code class="language-plaintext highlighter-rouge">快速启动</code>功能。</p>
-<h2 id="解决方案---退出">解决方案 - 退出</h2>
-<p>登录 Windows 后，按<code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code>快捷键。然后按退出。</p>
-
-<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - 注销" />
-<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - 注销</em></p>
-
-<p>之后，将再次显示登录屏幕，因此请重新登录。 StrokeIt 工作正常吗？</p>
-
-<p>有时，有些应用程序对某些人来说非常有用，但它们是很久以前开发的，并且迄今为止没有维护或更新。再次登录确实很麻烦，但如果没有办法的话，似乎这种麻烦还是值得忍受的。</p>
+<p>看来禁用Windows 11的<code class="language-plaintext highlighter-rouge">快速启动</code>功能或许可以作为解决方案。</p>
 
 <!-- Google Adsense - block -->
 <!-- 4000-unote-disp-00 -->
@@ -76,7 +72,20 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
-<h2 id="解决方案---禁用快速启动">解决方案 - 禁用<code class="language-plaintext highlighter-rouge">快速启动</code></h2>
+<h3 id="猜想-3--以管理员身份运行-strokeit">猜想 3 – 以管理员身份运行 StrokeIt</h3>
+<p>作为在流行的 Chrome 浏览器中使用鼠标手势的选项，您还可以使用 <a href="https://chrome.google.com/webstore/detail/crxmouse-chrome-mouse-ges/jlgkpaicikihijadgifklkbpdajbkhjo" target="_blank">CrxMouse Chrome Gestures</a> 扩展程序。不过，像StrokeIt这样的鼠标手势软件在Windows 11和Chrome的组合中似乎有时会出现故障。</p>
+
+<p>关闭自动运行的StrokeIt并以管理员权限再次运行似乎是解决问题的方法。</p>
+<h2 id="常见解决方案---退出">常见解决方案 - 退出</h2>
+<p>登录 Windows 后，按<code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code>快捷键。然后按退出。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우-ctrl_+_alt_+_del-sign_out.png" alt="Windows - `Ctrl + Alt + Del` - 注销" />
+<em>Windows - <code class="language-plaintext highlighter-rouge">Ctrl + Alt + Del</code> - 注销</em></p>
+
+<p>之后，将再次显示登录屏幕，因此请重新登录。 StrokeIt 工作正常吗？</p>
+
+<p>有时，有些应用程序对某些人来说非常有用，但它们是很久以前开发的，并且迄今为止没有维护或更新。再次登录确实很麻烦，但如果没有办法的话，似乎这种麻烦还是值得忍受的。</p>
+<h2 id="常见解决方案---禁用快速启动">常见解决方案 - 禁用<code class="language-plaintext highlighter-rouge">快速启动</code></h2>
 <p>下图显示了 <a href="https://support.lenovo.com/hr/en/solutions/ht513773-how-to-enable-or-disable-fast-startup-on-windows-11" target="_blank">Lenovo 网站</a>这是对11中<code class="language-plaintext highlighter-rouge">快速启动</code>的解释。 Windows 11支持<code class="language-plaintext highlighter-rouge">快速启动</code>功能，该功能可以在Windows关闭时保存以前应用程序的状态，而不是完全终止它们，并在下次启动时快速启动它们。然而，当使用<code class="language-plaintext highlighter-rouge">快速启动</code>功能关闭 Windows 后重新启动时，应用程序似乎表现异常。</p>
 
 <p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" alt="联想网站 - Windows 11`快速启动`功能说明" />
@@ -106,6 +115,31 @@
      (adsbygoogle = window.adsbygoogle || []).push({});
 </script></p>
 
+<h2 id="strokeit-解决方案---以管理员权限运行">StrokeIt 解决方案 - 以管理员权限运行</h2>
+<p>看起来像StrokeIt这样的鼠标手势软件在Windows 11和Chrome的组合中有时会出现故障。每次启动时都必须以管理员身份运行 StrokeIt，这非常烦人。然而，如果你喜欢StrokeIt，这是一个不可避免的烦恼。</p>
+
+<p>如果 StrokeIt 已在运行，请退出它。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-종료.png" alt="StrokeIt - 戒烟" />
+<em>StrokeIt - 戒烟</em></p>
+
+<p>或者，关闭 Windows 自动运行功能，以便在每次启动时以管理员权限手动运行 StrokeIt。由于不能保证正常运行，因此不需要自动执行。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-윈도우_자동실행_비활성화.png" alt="StrokeIt - 禁用 Windows 自动运行" />
+<em>StrokeIt - 禁用 Windows 自动运行</em></p>
+
+<p>然后，右键单击 StrokeIt 图标以使用管理员权限运行它。</p>
+
+<p><img src="/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-관리자_권한으로_실행.png" alt="StrokeIt - 以管理员身份运行" />
+<em>StrokeIt - 以管理员身份运行</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
 ]]></content:encoded>
       <media:thumbnail url="https://unclesnote.com/assets/images/240503233622/zh-thumb-unclesnote-strokit_winsplit_revolution_not_working_in_windows_11.png" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_마우스_제스처_소프트웨어-strokeit-command_editor.png" medium="image" />
@@ -114,7 +148,10 @@
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_레노버_사이트-윈도우11의_fast_startup_기능_설명.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_윈도우_+_r_단축키-실행-control.exe_실행.png" medium="image" />
       <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션_변경.png" medium="image" />
-      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" /></item>
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_제어판-파워버튼_옵션-fast_startup_비활성화.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-윈도우_자동실행_비활성화.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240503233622/unclesnote-strokit_winsplit_revolution_not_working_in_windows_11-txt_strokeit-관리자_권한으로_실행.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[Obsidian标题（副标题）装饰 - CSS 片段]]></title>
