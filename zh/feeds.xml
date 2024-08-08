@@ -14,7 +14,19 @@
   <author><name><![CDATA[叔叔的笔记]]></name></author>
   <id>https://unclesnote.com/zh/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+  <entry>
+    <title><![CDATA[如何在 KakaoTalk 访问被阻止的公司网络中连接到 PC KakaoTalk]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked"/>
+    <id>https://unclesnote.com/zh/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</id>    
+    <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+    <issued>Thu, 08 Aug 2024 19:20:27 +0900</issued>
+		<created>Thu, 08 Aug 2024 19:20:27 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[在公司或特殊的本地网络环境中，可能存在无法访问PC版KakaoTalk应用程序的情况。原因是公司网络层面对 KakaoTalk 服务器的访问被阻止。理论上，您可以使用代理或 VPN 访问 KakaoTalk 服务器。然而，就我而言，即使是已知的代理服务器和 VPN 服务也被阻止访问公司网络。因此，我想到可以通过笔记本]]></summary>
+    <category><![CDATA[它,生产率]]></category>
+    <tag><![CDATA[它,生产率]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/zh-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png"/>
+  </entry>
   <entry>
     <title><![CDATA[StrokeIt、WinSplit Revolution 在 Windows 11 中无法运行]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/zh/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>

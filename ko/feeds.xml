@@ -14,7 +14,19 @@
   <author><name><![CDATA[엉클스 노트]]></name></author>
   <id>https://unclesnote.com/ko/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+  <entry>
+    <title><![CDATA[카카오톡 접속이 막힌 회사 네트워크에서 PC카카오톡 접속방법]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked"/>
+    <id>https://unclesnote.com/ko/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</id>    
+    <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+    <issued>Thu, 08 Aug 2024 19:20:27 +0900</issued>
+		<created>Thu, 08 Aug 2024 19:20:27 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[회사나 특수한 로컬 네트워크 환경에서 PC버전 카카오톡 앱의 접속이 불가능한 경우가 있습니다. 그 이유는 회사 네트워크 수준에서 카카오톡 서버의 접속을 막았기 때문입니다. 문론, 프록시나 VPN을 사용하면 카카오톡 서버에 접속이 가능 할 수 있습니다. 하지만, 저의 경우는 알려진]]></summary>
+    <category><![CDATA[IT,생산력]]></category>
+    <tag><![CDATA[IT,Productivity]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/ko-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png"/>
+  </entry>
   <entry>
     <title><![CDATA[윈도우11에서 StrokeIt, WinSplit Revolution 동작불가 문제]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ko/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>

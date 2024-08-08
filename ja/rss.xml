@@ -21,8 +21,114 @@
     <language>ja</language>
     <description><![CDATA[アンクルサムのIT＆開発落書き]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
-    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <lastBuildDate>Thu, 08 Aug 2024 19:20:27 +0900</lastBuildDate>
+    <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+    <item>
+      <author>アンクルズノート</author>
+      <title><![CDATA[カカオトーク接続が妨げられた会社ネットワークでPCカカオトーク接続方法]]></title>
+      <link>https://unclesnote.com/ja/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</link>
+      <guid>https://unclesnote.com/ja/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <dc:creator><![CDATA[アンクルズノート]]></dc:creator>
+      <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+      <category><![CDATA[それ,生産性]]></category>
+      <tag><![CDATA[それ,生産性]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ja/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <description><![CDATA[会社や特殊なローカルネットワーク環境でPC版カカオトークアプリの接続ができない場合があります。その理由は、会社のネットワークレベルでカカオトークサーバーの接続を妨げたためです。文論、プロキシ、またはVPNを使用すると、カカオトークサーバーに接続できます。しかし、私の場合は、既知のプロキシサーバーやVPNサービスでさえ]]></description>
+      <content:encoded><![CDATA[<p>会社や特殊なローカルネットワーク環境でPC版カカオトークアプリの接続ができない場合があります。その理由は、会社のネットワークレベルでカカオトークサーバーの接続を妨げたためです。文論、プロキシ、またはVPNを使用すると、カカオトークサーバーに接続できます。しかし、私の場合は、既知のプロキシサーバーやVPNサービスでさえ会社ネットワークからの接続を禁止した場合でした。</p>
+
+<p>そこで、個人のスマートフォンのホットスポットWi-Fiをラップトップで使うと、カカオトーク接続ができないかというアイデアがありました。はい、そうです。プライベートホットスポットネットワークを使用する会社のラップタブでは、PCカカオトークアプリの接続が可能です。しかし、会社イントラネットの接続はできません。</p>
+
+<p>一般的なラップトップのネットワーク接続手段には、イーサネット(有線LAN)とWi-Fiがあります。そこで、イーサネットでは会社のイントラネットや接続が許可されたインターネットサイトを使用し、Wi-Fiでは個人のスマートフォンのホットスポットを接続してカカオトークだけを使うと良いのではないかというアイデアができました。しかし、`有線LANとWi-Fiの両方が接続されている状態で使用するネットワークの優先順位は、最初に接続されたネットワークでのみ可能です。初めて接続した会社のイーサネットネットワークを使用します。そのため、カカオトークサーバーの接続は会社のネットワークルールによって不可能です。逆にWi-Fiを先に接続すれば、カカオトークアプリの接続は可能だろうが、会社イントラネットの使用は不可能です。ちなみに会社イントラネットのアクセスが別途の認証を通じて外部ネットワークにアクセス可能であっても、どうやら個人のホットスポットを介した接続なので、スマートフォンのデータ使用量が多くなります。</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" alt="제한적인 회사 네트워크에서 PC 카카오톡 접속방법-1" /><br />
+だから、上記のアイデアを可能にする方法を共有しようとしています。それは<code class="language-plaintext highlighter-rouge">カカオトークアプリだけがスマートフォンのホットスポットが接続されているWi-Fiネットワークを有効にすることです</code> Wi-Fiが切断され、戻ってカカオトークアプリにログインする必要があるという欠点があります。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="forcebindip環境設定">ForceBindIP環境設定</h2>
+<p>実際、1つのアプリが特定のネットワークインターフェイスを書き込むようにバインドするライブラリは、<a href="https://r1ch.net/projects/forcebindip" target="_blank">r1ch.net</a>で共有されています。しかし、コマンドラインユーティリティライブラリなので、<a href="https://github.com/ixjb94/ForceBindIP-Gui" target="_blank">ixjb94</a> さんがGUIアプリを提供して使いやすくなりました。</p>
+<h3 id="1-forcebindip-132ライブラリのダウンロードとインストール">1. ForceBindIP-1.32ライブラリのダウンロードとインストール</h3>
+<p>GUIアプリとライブラリの互換性のために、ixjb94のFitHub RepoからForceBindIP-1.32ライブラリをダウンロードしてください。</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/blob/main/ForceBindIP/ForceBindIP-1.32.zip</li>
+</ul>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" alt="ForceBindIP-1.32.zipに付属のファイル" />
+<em>ForceBindIP-1.32.zipに付属のファイル</em></p>
+
+<p>そして、適当なところにzipファイルを解凍し、同封されたファイル4個を下のフォルダがそれぞ​​れコピーします。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>C:\Windows\system32
+C:\Windows\sysWOW64
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="2-forcebindip-132ライブラリを使用したguiアプリの設定">2. ForceBindIP-1.32ライブラリを使用したGUIアプリの設定</h3>
+<p>上記の手順でライブラリをシステムにコピーした場合は、ixjb94が開発したGUIアプリを以下からダウンロードしてください。</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/releases/download/binary/ForceBindIP.-.Gui.exe</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>は、実質的にカカオトークアプリがWi-Fiネットワークを有効にするGUIアプリです。特に設定はありません。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="forcebindipの使用">ForceBindIPの使用</h2>
+<h3 id="1-イーサネット有線lan会社ネットワークとwi-fi個人ホットスポット接続">1. イーサネット(有線LAN、会社ネットワーク)とWi-Fi(個人ホットスポット)接続</h3>
+<p>イーサネットに接続されている企業ネットワークがプライマリネットワークになることが重要です。一度、イーサネットにケーブルを外し、Wi-Fiを切断します。そして、イーサネットポートに会社の有線LANを接続します。インターネットがうまくいくことを確認した後、スマートフォンのホットスポットをオンにしてラップトップからWi-Fiに接続します。</p>
+<h3 id="2-カカオトークアプリ終了">2. カカオトークアプリ終了</h3>
+<p><code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>として使用するネットワークインタフェースを設定して、カカオトークアプリを起動します。すでにカカオトークが実行されている場合、<code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>はカカオトークアプリを実行しません。そのため、カカオトークアプリが起動している場合は、アプリを終了します。ウインドウの右下にカカオトークアプリアイコンにマウス右クリックして終了します。</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" alt="Windows右下&gt;カカオトークアイコンマウス右クリック&gt;終了" />
+<em>Windows右下&gt;カカオトークアイコンマウス右クリック&gt;終了</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h3 id="3-カカオトークアプリの実行">3. カカオトークアプリの実行</h3>
+<p>上記の手順でダウンロードした <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>を実行してください。</p>
+
+<p>Aは、Bアプリが使用するネットワークインターフェースを選択する部分です。 Wi-Fiネットワークアダプタを選択します。アダプタのリストは、使用しているPCの環境によって異なります。</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" alt="ForceBindIP.-.Gui.exe" />
+<em>ForceBindIP.-.Gui.exe</em></p>
+
+<p>そして、Bにカカオトークがインストールされたパスのexeファイルを入力します。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Cでx86を選択し、DのRun Applicationボタンを押します。</p>
+
+<p>カカオトークアプリが起動しますが、ログインできますか？うまくいけば、一つのヒントを提供します。スマートフォンのホットスポットのWi-Fiを接続するときは、自動接続チェックボックスを選択してください。スマートフォンを持って席を離れると、Wi-Fiの接続が切断され、カカオトークがログアウトされます。もう一度席に戻ると、戻ってくるとWi-Fiが自動的に接続されます。この時、カカオトークがログアウトになっているなら、ログインだけをやり直してください。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/ja-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" medium="image" /></item>
     <item>
       <author>アンクルズノート</author>
       <title><![CDATA[Windows 11でStrokeIt、WinSplit Revolutionの動作不能の問題]]></title>

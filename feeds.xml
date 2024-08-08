@@ -14,7 +14,19 @@
   <author><name><![CDATA[Uncle's Note]]></name></author>
   <id>https://unclesnote.com/en/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+  <entry>
+    <title><![CDATA[How to access PC KakaoTalk on a company network where access to KakaoTalk is blocked]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked"/>
+    <id>https://unclesnote.com/en/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</id>    
+    <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+    <issued>Thu, 08 Aug 2024 19:20:27 +0900</issued>
+		<created>Thu, 08 Aug 2024 19:20:27 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[There are cases where access to the PC version of KakaoTalk app is not possible in a company or special local network environment. This is because access to]]></summary>
+    <category><![CDATA[IT,Productivity]]></category>
+    <tag><![CDATA[IT,Productivity]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/en-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png"/>
+  </entry>
   <entry>
     <title><![CDATA[StrokeIt, WinSplit Revolution not working in Windows 11]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/en/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>

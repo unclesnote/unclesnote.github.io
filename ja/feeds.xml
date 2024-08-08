@@ -14,7 +14,19 @@
   <author><name><![CDATA[アンクルズノート]]></name></author>
   <id>https://unclesnote.com/ja/rss.xml</id>
   <info><![CDATA[]]></info>
-  <modified>Fri, 03 May 2024 23:36:22 +0900</modified>
+  <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+  <entry>
+    <title><![CDATA[カカオトーク接続が妨げられた会社ネットワークでPCカカオトーク接続方法]]></title>
+    <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked"/>
+    <id>https://unclesnote.com/ja/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</id>    
+    <modified>Thu, 08 Aug 2024 19:20:27 +0900</modified>
+    <issued>Thu, 08 Aug 2024 19:20:27 +0900</issued>
+		<created>Thu, 08 Aug 2024 19:20:27 +0900</created>
+    <summary type="text/html" mode="escaped"><![CDATA[会社や特殊なローカルネットワーク環境でPC版カカオトークアプリの接続ができない場合があります。その理由は、会社のネットワークレベルでカカオトークサーバーの接続を妨げたためです。文論、プロキシ、またはVPNを使用すると、カカオトークサーバーに接続できます。しかし、私の場合は、既知のプロキシサーバーやVPNサービスでさえ]]></summary>
+    <category><![CDATA[それ,生産性]]></category>
+    <tag><![CDATA[それ,生産性]]></tag>
+    <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/ja-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png"/>
+  </entry>
   <entry>
     <title><![CDATA[Windows 11でStrokeIt、WinSplit Revolutionの動作不能の問題]]></title>
     <link rel="alternate" type="text/html" href="https://unclesnote.com/ja/240503233622/strokit_winsplit_revolution_not_working_in_windows_11"/>

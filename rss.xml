@@ -21,8 +21,114 @@
     <language>en</language>
     <description><![CDATA[Uncle Sammy's IT & Dev Scribblepad]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
-    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <lastBuildDate>Thu, 08 Aug 2024 19:20:27 +0900</lastBuildDate>
+    <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+    <item>
+      <author>Uncle's Note</author>
+      <title><![CDATA[How to access PC KakaoTalk on a company network where access to KakaoTalk is blocked]]></title>
+      <link>https://unclesnote.com/en/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</link>
+      <guid>https://unclesnote.com/en/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <dc:creator><![CDATA[Uncle's Note]]></dc:creator>
+      <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+      <category><![CDATA[IT,Productivity]]></category>
+      <tag><![CDATA[IT,Productivity]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/en/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <description><![CDATA[There are cases where access to the PC version of KakaoTalk app is not possible in a company or special local network environment. This is because access to]]></description>
+      <content:encoded><![CDATA[<p>There are cases where access to the PC version of KakaoTalk app is impossible in a company or special local network environment. This is because access to the KakaoTalk server is blocked at the company network level. Of course, you can access the KakaoTalk server by using a proxy or VPN. However, in my case, even known proxy servers and VPN services were blocked from accessing the company network.</p>
+
+<p>So, I had an idea that if I use my personal smartphone’s hotspot Wi-Fi on my laptop, I might be able to access KakaoTalk. Yes, that’s right. I can access the PC KakaoTalk app on my company laptop that uses my personal hotspot network. However, I can`t access the company intranet.</p>
+
+<p>The network connection methods of a typical laptop are Ethernet (wired LAN) and Wi-Fi. So, I thought it would be good to use the company intranet and allowed Internet sites with Ethernet, and connect to the personal smartphone hotspot with Wi-Fi to only use KakaoTalk. However, <code class="language-plaintext highlighter-rouge">the priority of the network to be used when both wired LAN and Wi-Fi are connected is only possible with the first connected network.</code> In other words, if you connect the company wired LAN to the Ethernet port and then connect the hotspot to Wi-Fi, the KakaoTalk app will use the company Ethernet network that was connected first. Therefore, access to the KakaoTalk server is not possible due to the company network rules. On the other hand, if you connect to Wi-Fi first, you can access the KakaoTalk app, but you cannot use the company intranet. In addition, even if access to the company intranet is possible through separate authentication as an external network, it will still use a lot of smartphone data because it is connected through a personal hotspot.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" alt="제한적인 회사 네트워크에서 PC 카카오톡 접속방법-1" /><br />
+So, I want to share a way to make the idea I mentioned above possible. That is, <code class="language-plaintext highlighter-rouge">Set only the KakaoTalk app to use the Wi-Fi network that your smartphone hotspot is connected to.</code> It may seem like a magically sweet suggestion, but it has the disadvantage of using your personal internet data, and when you move your smartphone away from your laptop, the Wi-Fi connection will be disconnected, and you will have to come back and log in to the KakaoTalk app again.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="forcebindip-preferences">ForceBindIP Preferences</h2>
+<p>In fact, the library for binding an app to use a specific network interface is shared on <a href="https://r1ch.net/projects/forcebindip" target="_blank">r1ch.net</a>. However, since it is a command-line utility library, <a href="https://github.com/ixjb94/ForceBindIP-Gui" target="_blank">ixjb94</a> has provided a GUI app to make it easier to use.</p>
+<h3 id="1-download-and-install-the-forcebindip-132-library">1. Download and install the ForceBindIP-1.32 library</h3>
+<p>For compatibility with GUI apps and libraries, download the ForceBindIP-1.32 library from ixjb94’s GitHub repo.</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/blob/main/ForceBindIP/ForceBindIP-1.32.zip</li>
+</ul>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" alt="Files included in ForceBindIP-1.32.zip" />
+<em>Files included in ForceBindIP-1.32.zip</em></p>
+
+<p>Then, unzip the zip file to a suitable location and copy the four enclosed files to each folder below.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>C:\Windows\system32
+C:\Windows\sysWOW64
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="2-setting-up-a-gui-app-that-uses-the-forcebindip-132-library">2. Setting up a GUI app that uses the ForceBindIP-1.32 library</h3>
+<p>If you copied the library to your system in the above steps, download the GUI app developed by ixjb94 below.</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/releases/download/binary/ForceBindIP.-.Gui.exe</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code> is a GUI app that actually sets the KakaoTalk app to use the Wi-Fi network. There is nothing special to configure.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="using-forcebindip">Using ForceBindIP</h2>
+<h3 id="1-connect-to-ethernet-wired-lan-company-network-and-wi-fi-personal-hotspot">1. Connect to Ethernet (wired LAN, company network) and Wi-Fi (personal hotspot)</h3>
+<p>It is important that the company network connected to Ethernet becomes the primary network. First, remove the cable to Ethernet and disconnect from Wi-Fi. Then, connect the company wired LAN to the Ethernet port. After confirming that the Internet is working well, turn on the smartphone hotspot and connect to Wi-Fi from the laptop.</p>
+<h3 id="2-exit-the-kakaotalk-app">2. Exit the KakaoTalk app</h3>
+<p>We will run the KakaoTalk app by setting the network interface to use with <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>. If KakaoTalk is already running, the KakaoTalk app will not run due to <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>. Therefore, if the KakaoTalk app is running, exit the app. Right-click on the KakaoTalk app icon at the bottom right of the window and exit it.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" alt="Right click on the KakaoTalk icon at the bottom right of the window &gt; Exit" />
+<em>Right click on the KakaoTalk icon at the bottom right of the window &gt; Exit</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h3 id="3-launch-the-kakaotalk-app">3. Launch the KakaoTalk app</h3>
+<p>Run <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code> downloaded in the above step.</p>
+
+<p>A is the part where you select the network interface that the B app will use. Select a Wi-Fi network adapter. The list of adapters will vary depending on the environment of the PC you are using.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" alt="ForceBindIP.-.Gui.exe" />
+<em>ForceBindIP.-.Gui.exe</em></p>
+
+<p>Then, enter the exe file of the path where KakaoTalk is installed in B.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Select x86 in C and press the Run Application button in D.</p>
+
+<p>The KakaoTalk app will launch, but are you able to log in? If so, here’s a tip. When connecting to the Wi-Fi of your smartphone hotspot, check the box for automatic connection. If you leave your smartphone behind, the Wi-Fi connection will be disconnected and KakaoTalk will be logged out. When you return to your seat, the Wi-Fi will be automatically connected. If KakaoTalk is logged out at this time, you can simply log in again.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/en-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" medium="image" /></item>
     <item>
       <author>Uncle's Note</author>
       <title><![CDATA[StrokeIt, WinSplit Revolution not working in Windows 11]]></title>

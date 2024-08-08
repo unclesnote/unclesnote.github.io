@@ -21,8 +21,114 @@
     <language>zh</language>
     <description><![CDATA[山姆大叔的 IT 与开发涂鸦书]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
-    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <lastBuildDate>Thu, 08 Aug 2024 19:20:27 +0900</lastBuildDate>
+    <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+    <item>
+      <author>叔叔的笔记</author>
+      <title><![CDATA[如何在 KakaoTalk 访问被阻止的公司网络中连接到 PC KakaoTalk]]></title>
+      <link>https://unclesnote.com/zh/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</link>
+      <guid>https://unclesnote.com/zh/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <dc:creator><![CDATA[叔叔的笔记]]></dc:creator>
+      <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+      <category><![CDATA[它,生产率]]></category>
+      <tag><![CDATA[它,生产率]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/zh/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <description><![CDATA[在公司或特殊的本地网络环境中，可能存在无法访问PC版KakaoTalk应用程序的情况。原因是公司网络层面对 KakaoTalk 服务器的访问被阻止。理论上，您可以使用代理或 VPN 访问 KakaoTalk 服务器。然而，就我而言，即使是已知的代理服务器和 VPN 服务也被阻止访问公司网络。因此，我想到可以通过笔记本]]></description>
+      <content:encoded><![CDATA[<p>在公司或特殊的本地网络环境中，可能存在无法访问PC版KakaoTalk应用程序的情况。原因是公司网络层面对 KakaoTalk 服务器的访问被阻止。理论上，您可以使用代理或 VPN 访问 KakaoTalk 服务器。然而，就我而言，即使是已知的代理服务器和 VPN 服务也被阻止访问公司网络。</p>
+
+<p>因此，我想到可以通过笔记本电脑上的个人智能手机的热点 Wi-Fi 连接到 KakaoTalk。恩，那就对了。 PC KakaoTalk 应用程序可以从该公司的 LabTap 访问，该应用程序使用个人热点网络。但无法访问公司内网。</p>
+
+<p>笔记本电脑常见的网络连接方式包括以太网(有线局域网)和Wi-Fi。因此，我想到了一个好主意：使用公司内部网和允许通过以太网访问的互联网站点，并通过 Wi-Fi 连接到个人智能手机的热点来使用 KakaoTalk。然而，<code class="language-plaintext highlighter-rouge">当有线局域网和Wi-Fi同时连接时，要使用的网络的优先级仅适用于最先连接的网络。</code>也就是说，如果您将公司的有线局域网连接到以太网端口，然后再连接Wi-Fi 热点，将无法访问 KakaoTalk 应用程序，您将使用最初连接的公司以太网网络。因此，由于公司网络规则，无法访问 KakaoTalk 服务器。相反，如果您先连接Wi-Fi，您将能够访问KakaoTalk应用程序，但无法使用公司内网。此外，尽管可以通过单独的身份验证通过外部网络访问公司内网，但由于是通过个人热点连接，因此智能手机数据使用量会增加。</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" alt="제한적인 회사 네트워크에서 PC 카카오톡 접속방법-1" /><br />
+所以，我想分享一下如何使上述想法成为可能。这个想法是只允许 KakaoTalk 应用程序使用您的智能手机热点所连接的 Wi-Fi 网络。本质上，这似乎是一个神奇的提议，但它会耗尽您的个人互联网数据，并且可以在以下情况下使用。您的智能手机远离笔记本电脑的缺点是 Wi-Fi 连接丢失，您必须返回并重新登录 KakaoTalk 应用程序。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="forcebindip-首选项">ForceBindIP 首选项</h2>
+<p>事实上，绑定应用程序以使用特定网络接口的库在 <a href="https://r1ch.net/projects/forcebindip" target="_blank">r1ch.net</a> 上共享。但是，由于它是一个命令行实用程序库，<a href="https://github.com/ixjb94/ForceBindIP-Gui" target="_blank">ixjb94</a> 提供了一个 GUI 应用程序以使其更易于使用。</p>
+<h3 id="1下载并安装forcebindip-132库">1.下载并安装ForceBindIP-1.32库</h3>
+<p>为了保证 GUI 应用程序和库之间的兼容性，请从 ixjb94 的 GitHub 存储库下载 ForceBindIP-1.32 库。</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/blob/main/ForceBindIP/ForceBindIP-1.32.zip</li>
+</ul>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" alt="ForceBindIP-1.32.zip 中包含的文件" />
+<em>ForceBindIP-1.32.zip 中包含的文件</em></p>
+
+<p>然后，将 zip 文件解压缩到适当的位置，并将其中的四个文件复制到下面的文件夹中。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>C:\Windows\system32
+C:\Windows\sysWOW64
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="2-使用-forcebindip-132-库设置-gui-应用程序">2. 使用 ForceBindIP-1.32 库设置 GUI 应用程序</h3>
+<p>如果您在上述步骤中将库复制到系统中，请从下面下载 ixjb94 开发的 GUI 应用程序。</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/releases/download/binary/ForceBindIP.-.Gui.exe</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code> 实际上是一个 GUI 应用程序，用于将 KakaoTalk 应用程序配置为使用 Wi-Fi 网络。没有什么需要特别设定的。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="使用forcebindip">使用ForceBindIP</h2>
+<h3 id="1-连接以太网有线局域网公司网络和wi-fi个人热点">1. 连接以太网（有线局域网、公司网络）和Wi-Fi（个人热点）</h3>
+<p>连接到以太网的公司网络成为主要网络非常重要。首先，拔掉以太网线并断开 WiFi 连接。然后将公司的有线局域网连接到以太网端口。确认互联网正常工作后，打开智能手机热点并连接到笔记本电脑上的 Wi-Fi。</p>
+<h3 id="2-关闭kakaotalk应用程序">2. 关闭KakaoTalk应用程序</h3>
+<p>我们将通过设置与<code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>一起使用的网络接口来运行 KakaoTalk 应用程序。如果 KakaoTalk 已在运行，则 KakaoTalk 应用程序将因<code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>而无法运行。因此，如果 KakaoTalk 应用程序正在运行，请关闭该应用程序。右键单击窗口右下角的 KakaoTalk 应用程序图标将其关闭。</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" alt="窗口右下角 &gt; 右键单击​​ KakaoTalk 图标 &gt; 退出" />
+<em>窗口右下角 &gt; 右键单击​​ KakaoTalk 图标 &gt; 退出</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h3 id="3运行kakaotalk应用程序">3.运行KakaoTalk应用程序</h3>
+<p>运行在上述步骤中下载的<code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>。</p>
+
+<p>A 是应用程序 B 选择要使用的网络接口的地方。选择 Wi-Fi 网络适配器。适配器列表因您使用的 PC 环境而异。</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" alt="ForceBindIP.-.Gui.exe" />
+<em>ForceBindIP.-.Gui.exe</em></p>
+
+<p>然后在B中输入KakaoTalk安装路径的exe文件。</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>在 C 中选择 x86，然后按 D 中的<code class="language-plaintext highlighter-rouge">运行应用程序</code>按钮。</p>
+
+<p>KakaoTalk 应用程序可以正常登录吗？如果进展顺利的话，我会给你一个提示。连接到智能手机热点的 Wi-Fi 时，选择自动连接复选框。如果您携带智能手机离开房间，Wi-Fi 连接将被断开，KakaoTalk 将被注销。当您返回座位时，Wi-Fi 将自动连接。此时，如果您已退出KakaoTalk，只需重新登录即可。</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/zh-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" medium="image" /></item>
     <item>
       <author>叔叔的笔记</author>
       <title><![CDATA[StrokeIt、WinSplit Revolution 在 Windows 11 中无法运行]]></title>

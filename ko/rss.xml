@@ -21,8 +21,114 @@
     <language>ko</language>
     <description><![CDATA[엉클 샘의 IT & 개발 낙서장]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
-    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <lastBuildDate>Thu, 08 Aug 2024 19:20:27 +0900</lastBuildDate>
+    <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+    <item>
+      <author>엉클스 노트</author>
+      <title><![CDATA[카카오톡 접속이 막힌 회사 네트워크에서 PC카카오톡 접속방법]]></title>
+      <link>https://unclesnote.com/ko/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</link>
+      <guid>https://unclesnote.com/ko/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <dc:creator><![CDATA[엉클스 노트]]></dc:creator>
+      <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+      <category><![CDATA[IT,생산력]]></category>
+      <tag><![CDATA[IT,Productivity]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/ko/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <description><![CDATA[회사나 특수한 로컬 네트워크 환경에서 PC버전 카카오톡 앱의 접속이 불가능한 경우가 있습니다. 그 이유는 회사 네트워크 수준에서 카카오톡 서버의 접속을 막았기 때문입니다. 문론, 프록시나 VPN을 사용하면 카카오톡 서버에 접속이 가능 할 수 있습니다. 하지만, 저의 경우는 알려진]]></description>
+      <content:encoded><![CDATA[<p>회사나 특수한 로컬 네트워크 환경에서 PC버전 카카오톡 앱의 접속이 불가능한 경우가 있습니다. 그 이유는 회사 네트워크 수준에서 카카오톡 서버의 접속을 막았기 때문입니다. 문론, 프록시나 VPN을 사용하면 카카오톡 서버에 접속이 가능 할 수 있습니다. 하지만, 저의 경우는 알려진 프록시 서버나 VPN 서비스 조차 회사 네트워크에서 접속을 금지시킨 경우였습니다.</p>
+
+<p>그래서, 개인 스마트폰의 핫스팟 와이파이를 랩탑에서 사용하면 카카오톡 접속이 가능하지 않을까란 아이디어가 있었습니다. 예 맞습니다. 개인 핫스팟 네트워크를 사용하는 회사 랩탭에서는 PC 카카오톡 앱의 접속이 가능합니다. 하지만, 회사 인트라넷의 접속이 불가능 합니다.</p>
+
+<p>일반적인 랩탑의 네트워크 연결수단은 이더넷(유선랜)과 와이파이가 있습니다. 그래서, 이더넷으로는 회사 인트라넷 및 접속이 허용된 인터넷 사이트들을 사용하고, 와이파이로는 개인 스마트폰의 핫스팟을 연결해 카카오톡만 사용하면 좋지 않을까란 아이디어가 생겼습니다. 하지만, <code class="language-plaintext highlighter-rouge">유선랜과 와이파이가 모두 연결된 상태에서 사용할 네트워크의 우선순위는 처음 연결된 네트워크로만 가능합니다.</code> 다시말해서, 회사 유선랜을 이더넷 포트에 연결하고 이후 핫스팟을 와이파이에 연결한다면, 카카오톡 앱의 접속은 처음 연결한 회사 이더넷 네트워크를 사용하게 됩니다. 그래서 카카오톡 서버의 접속이 회사 네트워크 규칙에 의해 불가능합니다. 반대로 와이파이를 먼저 연결한다면, 카카오톡 앱의 접속은 가능하겠지만, 회사 인트라넷의 사용은 불가능합니다. 덧붙여서 회사 인트라넷의 접근이 별도의 인증을 통해 외부 네트워크로 접근 가능하더라도, 아무래도 개인 핫스팟을 통한 접속이기 때문에 스마트폰 데이터 사용량이 많아집니다.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" alt="제한적인 회사 네트워크에서 PC 카카오톡 접속방법-1" /><br />
+그래서, 위에서 언급한 아이디어가 가능하도록 하는 방법을 공유하려 합니다. 그것은 <code class="language-plaintext highlighter-rouge">카카오톡 앱만 스마트폰 핫스팟이 연결된 와이파이 네트워크를 사용하도록 설정하는 것입니다.</code> 문론, 마술같이 달콤한 제안처럼 보일 수 있지만, 아무래도 개인 인터넷 데이터를 사용한다는 점, 그리고 내 랩탑에서 스마트폰이 멀어지면 와이파이 접속이 끊기고, 돌아와서 다시 카카오톡 앱을 로그인 해야 한다는 단점이 있습니다.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="forcebindip-환경설정">ForceBindIP 환경설정</h2>
+<p>사실, 하나의 앱이 특정 네트워크 인터페이스를 쓰도록 바인딩 하는 라이브러리는 <a href="https://r1ch.net/projects/forcebindip" target="_blank">r1ch.net</a>에 공유되어 있습니다. 하지만 명령줄 유틸리티 라이브러리이기 때문에 <a href="https://github.com/ixjb94/ForceBindIP-Gui" target="_blank">ixjb94</a> 님이 GUI 앱을 제공해 사용하게 쉽게 되었습니다.</p>
+<h3 id="1-forcebindip-132-라이브러리-다운로드-및-설치">1. ForceBindIP-1.32 라이브러리 다운로드 및 설치</h3>
+<p>GUI 앱과 라이브러리의 호환성을 위해 ixjb94님의 깃허브 레포에서 ForceBindIP-1.32 라이브러리를 다운로드 받습니다.</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/blob/main/ForceBindIP/ForceBindIP-1.32.zip</li>
+</ul>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" alt="ForceBindIP-1.32.zip에 동봉된 파일들" />
+<em>ForceBindIP-1.32.zip에 동봉된 파일들</em></p>
+
+<p>그리고, 적당한 곳에 zip파일 압축을 풀고, 동봉된 파일 4개를 아래의 폴더가 각각 복사합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>C:\Windows\system32
+C:\Windows\sysWOW64
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="2-forcebindip-132-라이브러리를-사용하는-gui-앱-설정">2. ForceBindIP-1.32 라이브러리를 사용하는 GUI 앱 설정</h3>
+<p>위 단계에서 라이브러리를 시스템에 복사 했다면, ixjb94님이 개발한 GUI 앱을 아래에서 다운로드 합니다.</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/releases/download/binary/ForceBindIP.-.Gui.exe</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>이 실질적으로 카카오톡앱이 와이파이 네트워크를 사용하도록 설정하는 GUI 앱입니다. 딱히 설정할 것은 없습니다.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="forcebindip-사용">ForceBindIP 사용</h2>
+<h3 id="1-이더넷유선랜-회사-네트워크과-와이파이개인-핫스팟-연결">1. 이더넷(유선랜, 회사 네트워크)과 와이파이(개인 핫스팟) 연결</h3>
+<p>이더넷에 연결된 회사 네트워크가 기본 네트워크가 되는것이 중요합니다. 일단, 이더넷에 케이블을 제거하고 와이파이 연결을 끊습니다. 그리고 이더넷 포트에 회사 유선랜을 연결합니다. 인터넷이 잘 되는것을 확인한 이후, 스마트폰 핫스팟을 켜고 랩탑에서 와이파이로 연결합니다.</p>
+<h3 id="2-카카오톡-앱-종료">2. 카카오톡 앱 종료</h3>
+<p><code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>로 사용할 네트워크 인터페이스를 설정해 카카오톡 앱을 실행할 것입니다. 만약, 이미 카카오톡이 실행되어 있을경우, <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>에 의해 카카오톡 앱이 실행되지 않습니다. 그렇기 때문에 카카오톡 앱이 실행 중이라면, 앱을 종료합니다. 윈도우 우측 하단에 카카오톡 앱 아이콘에 마우스 우클릭을 해서 종료합니다.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" alt="윈도우 우측하단 &gt; 카카오톡 아이콘 마우스 우클릭 &gt; 종료" />
+<em>윈도우 우측하단 &gt; 카카오톡 아이콘 마우스 우클릭 &gt; 종료</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h3 id="3-카카오톡-앱-실행">3. 카카오톡 앱 실행</h3>
+<p>위 단계에서 다운로드 받은 <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>를 실행합니다.</p>
+
+<p>A는 B앱이 사용할 네트워크 인터페이스를 선택하는 부분입니다. 와이파이 네트워크 어뎁터를 선택합니다. 어뎁터 목록은 사용하고 있는 PC의 환경에 따라서 다릅니다.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" alt="ForceBindIP.-.Gui.exe" />
+<em>ForceBindIP.-.Gui.exe</em></p>
+
+<p>그리고, B에 카카오톡이 설치된 경로의 exe 파일을 입력합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>C에서 x86을 선택하고 D의 Run Application 버튼을 누릅니다.</p>
+
+<p>카카오톡 앱이 실행 될텐데, 로그인이 잘 되나요? 잘 된다면, 팁을 하나 드리겠습니다. 스마트폰 핫스팟의 와이파이를 연결할때 자동연결 체크박스를 선택해 주세요. 스마트폰을 가지고 자리를 떠나면, 와이파이 연결이 끊기고 카카오톡이 로그아웃 될것입니다. 다시 자리로 돌아오면 돌아오면 와이파이가 자동연결 될 것입니다. 이때, 카카오톡이 로그아웃이 되어있다면, 로그인만 다시 해주면 됩니다.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/ko-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" medium="image" /></item>
     <item>
       <author>엉클스 노트</author>
       <title><![CDATA[윈도우11에서 StrokeIt, WinSplit Revolution 동작불가 문제]]></title>

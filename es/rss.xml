@@ -21,8 +21,114 @@
     <language>es</language>
     <description><![CDATA[Libro de garabatos de TI y desarrollo del tío Sam]]></description>
     <generator>https://unclesnote.com</generator>
-    <lastBuildDate>Fri, 03 May 2024 23:36:22 +0900</lastBuildDate>
-    <pubDate>Fri, 03 May 2024 23:36:22 +0900</pubDate>
+    <lastBuildDate>Thu, 08 Aug 2024 19:20:27 +0900</lastBuildDate>
+    <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+    <item>
+      <author>nota del tio</author>
+      <title><![CDATA[Cómo conectarse a la PC KakaoTalk en una red empresarial donde el acceso a KakaoTalk está bloqueado]]></title>
+      <link>https://unclesnote.com/es/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</link>
+      <guid>https://unclesnote.com/es/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <dc:creator><![CDATA[nota del tio]]></dc:creator>
+      <pubDate>Thu, 08 Aug 2024 19:20:27 +0900</pubDate>
+      <category><![CDATA[ÉL,Productividad]]></category>
+      <tag><![CDATA[ÉL,Productividad]]></tag>
+      <guid isPermaLink="true">https://unclesnote.com/es/240808192027/how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked</guid>
+      <description><![CDATA[Puede haber casos en los que el acceso a la versión para PC de la aplicación KakaoTalk no sea posible en una empresa o en un entorno de red local especial. El]]></description>
+      <content:encoded><![CDATA[<p>Puede haber casos en los que el acceso a la versión para PC de la aplicación KakaoTalk no sea posible en una empresa o en un entorno de red local especial. El motivo es que el acceso al servidor KakaoTalk fue bloqueado a nivel de red de la empresa. En teoría, es posible que puedas acceder a los servidores de KakaoTalk mediante un proxy o una VPN. Sin embargo, en mi caso, incluso a los servidores proxy y servicios VPN conocidos se les bloqueó el acceso a la red de la empresa.</p>
+
+<p>Entonces, tuve la idea de poder conectarme a KakaoTalk usando el punto de acceso Wi-Fi de mi teléfono inteligente personal en mi computadora portátil. Sí, eso es correcto. Se puede acceder a la aplicación KakaoTalk para PC desde LabTap de la empresa, que utiliza una red de punto de acceso personal. Sin embargo, no es posible el acceso a la intranet de la empresa.</p>
+
+<p>Los métodos de conexión de red comunes para computadoras portátiles incluyen Ethernet (LAN por cable) y Wi-Fi. Entonces, se me ocurrió la idea de que sería una buena idea utilizar la intranet de la empresa y los sitios de Internet a los que se permite acceder a través de Ethernet, y usar KakaoTalk conectándose al punto de acceso de un teléfono inteligente personal a través de Wi-Fi. Sin embargo, “cuando se conectan tanto la LAN por cable como Wi-Fi, la prioridad de la red que se utilizará solo está disponible para la red conectada primero”. En otras palabras, si conecta la LAN por cable de la empresa al puerto Ethernet y luego conecta el punto de acceso a Wi-Fi, no será posible acceder a la aplicación KakaoTalk. Utilizará la red Ethernet corporativa a la que se conectó por primera vez. Por lo tanto, el acceso al servidor KakaoTalk no es posible debido a las reglas de la red de la empresa. Por el contrario, si primero se conecta a Wi-Fi, podrá acceder a la aplicación KakaoTalk, pero no podrá utilizar la intranet de la empresa. Además, aunque se puede acceder a la intranet de la empresa a través de una red externa mediante autenticación separada, el uso de datos del teléfono inteligente aumenta porque la conexión se realiza a través de un punto de acceso personal.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" alt="제한적인 회사 네트워크에서 PC 카카오톡 접속방법-1" /><br />
+Entonces, me gustaría compartir cómo hacer posibles las ideas mencionadas anteriormente. La idea es permitir que solo la aplicación KakaoTalk use la red Wi-Fi a la que está conectado el punto de acceso de su teléfono inteligente. En esencia, puede parecer una propuesta mágicamente dulce, pero consume sus datos personales de Internet y puede usarse cuando sea necesario. su teléfono inteligente está lejos de su computadora portátil. La desventaja es que la conexión Wi-Fi se pierde y debe regresar e iniciar sesión en la aplicación KakaoTalk nuevamente.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="preferencias-de-forcebindip">Preferencias de ForceBindIP</h2>
+<p>De hecho, una biblioteca que vincula una aplicación para usar una interfaz de red específica se comparte en <a href="https://r1ch.net/projects/forcebindip" target="_blank">r1ch.net</a>. Sin embargo, debido a que es una biblioteca de utilidades de línea de comandos, <a href="https://github.com/ixjb94/ForceBindIP-Gui" target="_blank">ixjb94</a> proporcionó una aplicación GUI para facilitar su uso.</p>
+<h3 id="1-descargue-e-instale-la-biblioteca-forcebindip-132">1. Descargue e instale la biblioteca ForceBindIP-1.32</h3>
+<p>Para compatibilidad entre la aplicación GUI y la biblioteca, descargue la biblioteca ForceBindIP-1.32 del repositorio GitHub de ixjb94.</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/blob/main/ForceBindIP/ForceBindIP-1.32.zip</li>
+</ul>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" alt="Archivos incluidos en ForceBindIP-1.32.zip" />
+<em>Archivos incluidos en ForceBindIP-1.32.zip</em></p>
+
+<p>Luego, descomprima el archivo zip en una ubicación adecuada y copie los cuatro archivos adjuntos en las carpetas siguientes.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre>C:\Windows\system32
+C:\Windows\sysWOW64
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="2-configurar-una-aplicación-gui-usando-la-biblioteca-forcebindip-132">2. Configurar una aplicación GUI usando la biblioteca ForceBindIP-1.32</h3>
+<p>Si copió la biblioteca a su sistema en el paso anterior, descargue la aplicación GUI desarrollada por ixjb94 desde abajo.</p>
+<ul>
+  <li>https://github.com/ixjb94/ForceBindIP-Gui/releases/download/binary/ForceBindIP.-.Gui.exe</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code> es en realidad una aplicación GUI que configura la aplicación KakaoTalk para usar la red Wi-Fi. No hay nada que configurar en particular.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h2 id="utilice-forcebindip">Utilice ForceBindIP</h2>
+<h3 id="1-conecte-ethernet-lan-cableada-red-empresarial-y-wi-fi-punto-de-acceso-personal">1. Conecte Ethernet (LAN cableada, red empresarial) y Wi-Fi (punto de acceso personal)</h3>
+<p>Es importante que la red de la empresa conectada a Ethernet se convierta en la red principal. Primero, retira el cable Ethernet y desconecta la conexión WiFi. Luego conecte la LAN cableada de la empresa al puerto Ethernet. Después de confirmar que Internet está funcionando, encienda el punto de acceso de su teléfono inteligente y conéctese a Wi-Fi en su computadora portátil.</p>
+<h3 id="2-cierra-la-aplicación-kakaotalk">2. Cierra la aplicación KakaoTalk</h3>
+<p>Ejecutaremos la aplicación KakaoTalk configurando la interfaz de red que se usará con <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>. Si KakaoTalk ya se está ejecutando, la aplicación KakaoTalk no se ejecutará debido a <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code>. Por lo tanto, si la aplicación KakaoTalk se está ejecutando, ciérrela. Haga clic derecho en el ícono de la aplicación KakaoTalk en la parte inferior derecha de la ventana para cerrarla.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" alt="Abajo a la derecha de la ventana &gt; Haga clic derecho en el icono de KakaoTalk &gt; Salir" />
+<em>Abajo a la derecha de la ventana &gt; Haga clic derecho en el icono de KakaoTalk &gt; Salir</em></p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+<h3 id="3-ejecute-la-aplicación-kakaotalk">3. Ejecute la aplicación KakaoTalk</h3>
+<p>Ejecute <code class="language-plaintext highlighter-rouge">ForceBindIP.-.Gui.exe</code> descargado en el paso anterior.</p>
+
+<p>A es donde la aplicación B selecciona la interfaz de red que se utilizará. Seleccione el adaptador de red Wi-Fi. La lista de adaptadores varía según el entorno de PC que esté utilizando.</p>
+
+<p><img src="/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" alt="ForceBindIP.-.Gui.exe" />
+<em>ForceBindIP.-.Gui.exe</em></p>
+
+<p>Luego, en B, ingrese el archivo exe de la ruta donde está instalado KakaoTalk.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre>C:\Program Files (x86)\Kakao\KakaoTalk\KakaoTalk.exe
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>Seleccione x86 en C y presione el botón Ejecutar aplicación en D.</p>
+
+<p>La aplicación KakaoTalk se ejecutará. ¿Puedes iniciar sesión correctamente? Si va bien te daré un consejo. Cuando se conecte al Wi-Fi del punto de acceso de su teléfono inteligente, seleccione la casilla de verificación Conectar automáticamente. Si sale de la habitación con su teléfono inteligente, la conexión Wi-Fi se desconectará y se cerrará la sesión de KakaoTalk. Cuando regreses a tu asiento, el Wi-Fi se conectará automáticamente cuando regreses. En este momento, si no ha iniciado sesión en KakaoTalk, simplemente inicie sesión nuevamente.</p>
+
+<!-- Google Adsense - block -->
+<!-- 4000-unote-disp-00 -->
+<p><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4780870735701245" data-ad-slot="5398228929" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+
+]]></content:encoded>
+      <media:thumbnail url="https://unclesnote.com/assets/images/240808192027/es-thumb-unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked.png" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-제한적인_회사_네트워크에서_pc_카카오톡_접속방법-1.svg" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip-1.32.zip에_동봉된_파일들.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_윈도우_우측하단_카카오톡_아이콘_마우스_우클릭_종료.png" medium="image" />
+      <media:content url="https://unclesnote.com/assets/images/240808192027/unclesnote-how_to_access_pc_kakaotalk_on_a_company_network_where_access_to_kakaotalk_is_blocked-txt_forcebindip.gui.exe.png" medium="image" /></item>
     <item>
       <author>nota del tio</author>
       <title><![CDATA[StrokeIt, WinSplit Revolution no funciona en Windows 11]]></title>
